@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" style="border: 1px solid rgb(6, 102, 44);">
+        <caption>Docker Containers</caption>
+       <tr>
+        <td colspan="3" align="center"><center>
+            Docker Containers Cheat Sheet
+        </center>
+    </td>
+       </tr>
+        <tr>
+            <th>Category</th>
+            <th>Commands</th>
+            <th>Details</th>           
+        </tr>
+        <tr>
+            <td rowspan="3">General</td>
+        </tr>
+        <tr>
+            <td>docker --d</td>
+            <td>Start the docker daemon</td>
+        </tr>
+        <tr>
+            <td>docker --help</td>
+            <td>Get help with Docker.Can also use -help on subcommands</td>
+        </tr>
+        <tr>
+            <td rowspan="6">Images</td>
+        </tr>
+        <tr>
+            <td>docker build -t image-name</td>
+            <td>Build an image from Docker file</td>
+        </tr>
+        <tr>
+            <td>docker build -t image-name --no-cache</td>
+            <td>Build an image from Docker file without the cache</td>
+        </tr>
+        </tr>
+        <tr>
+            <td>docker images</td>
+            <td>List lcoal images</td>
+        </tr>
+        </tr>
+        <tr>
+            <td>docker rmi image-name</td>
+            <td>Delete an images</td>
+        </tr>
+        <tr>
+            <td>docker image prune</td>
+            <td>Remove all unused images</td>
+        </tr>
+        <tr>
+            <td rowspan="5">Container Registry</td>
+        </tr>
+        <tr>
+            <td>docker login -u user-name</td>
+            <td>Login to Docker Hub</td>
+        </tr>
+        <tr>
+            <td>docker push username/imagename:tag</td>
+            <td>Publish an image to Docker hub</td>
+        </tr>
+        <tr>
+            <td>docker pull image-name:tag</td>
+            <td>Pull an image from Docker hub</td>
+        </tr>
+        <tr>
+            <td>docker tag imageName newName:version</td>
+            <td>Rename an existing tag name</td>
+        </tr>
+        <tr>
+            <td rowspan="4">Status</td>
+        </tr>
+        <tr>
+            <td>docker stats --all</td>
+            <td>Docker stats of all container</td>
+        </tr>
+        <tr>
+            <td>docker top container-name or container id</td>
+            <td>Display the running processes of a container</td>
+        </tr>
+        <tr>
+            <td>docker history imageName or imageId</td>
+            <td>Shows history of docker image</td>
+        </tr>
+        <tr>
+            <td rowspan="13">Containers</td>
+        </tr>
+        <tr>
+            <td>docker run --name containerName imageName</td>
+            <td>Create and run a container from an image, with a custom name</td>
+        </tr>
+        
+        <tr>
+            <td>docker run -d imageName</td>
+            <td>Run a container in a background</td>
+        </tr>
+        
+        <tr>
+            <td>docker run -p hostPort:containerPort imageName</td>
+            <td>Run a container and publish a container ports to the host.</td>
+        </tr>
+        
+        <tr>
+            <td>docker start/stop containerName or containerId</td>
+            <td>Start or Stop a container</td>
+        </tr>
+        
+        <tr>
+            <td>docker rm containerName</td>
+            <td>Remove a stopped container</td>
+        </tr>
+        
+        <tr>
+            <td>docker exex -it containerName sh</td>
+            <td>Open or attach a shell inside a running container</td>
+        </tr>
+        <tr>
+            <td>docker kill containerName</td>
+            <td>Kill/stop a running a container</td>
+        </tr>
+        <tr>
+            <td>docker logs -f  containerName</td>
+            <td>Fetch and follow the logs of the container</td>
+        </tr>
+        
+        <tr>
+            <td>docker inspect containerName/containerId</td>
+            <td>To inspect a running container</td>
+        </tr>
+        <tr>
+            <td>docker ps</td>
+            <td>To list currently running container</td>
+        </tr>
+        <tr>
+            <td>docker ps --all</td>
+            <td>List all container running and stopped</td>
+        </tr>
+        <tr>
+            <td>docker container stats</td>
+            <td>View resource usage stats</td>
+        </tr>
+
+         <tr>
+            <td rowspan="6">Networking</td>
+        </tr>
+        <tr>
+            <td>docker network ls</td>
+            <td>List all the networks</td>
+        </tr>
+        
+        <tr>
+            <td>docker network create --driver driverName bridgeName</td>
+            <td>Create a network`</td>
+        </tr>
+        <tr>
+            <td>docker connect network networkName containerName</td>
+            <td>Connect a running container to a network`</td>
+        </tr>
+        <tr>
+            <td>docker network disconnect networkName containerName</td>
+            <td>Disconnect a container from a network`</td>
+        </tr>
+        <tr>
+            <td>docker network rm networkName</td>
+            <td>Remove a network</td>
+        </tr>
+        <tr>
+            <td rowspan="6">Docker Compose</td>
+        </tr>
+        <tr>
+            <td>docker compose up</td>
+            <td>Create and start containers</td>
+        </tr>
+        <tr>
+            <td>docker compose down</td>
+            <td>Stop and remove containers network</td>
+        </tr>
+        <tr>
+            <td>docker compose logs</td>
+            <td>View output from containers</td>
+        </tr>
+        <tr>
+            <td>docker compose events</td>
+            <td>Receive real time events from containers</td>
+        </tr>
+        <tr>
+            <td>docker compose ps</td>
+            <td>List containers launched as part of compose</td>
+        </tr>
+    </table>
+</body>
+</html>
