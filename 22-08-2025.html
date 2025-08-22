@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friday</title>
+</head>
+<body>
+    <form  acton="/submit" method="post">
+        <label for="uname">Name:</label>
+        <input type="text" id="uname" name="name" 
+        placeholder="Enter your name" >
+        <br>
+        <label for="email">Email:</label>
+        <input
+        type="email" id="emailId" name="emailName"/>
+        <br>
+        <label for="devops">DevOps:</label>
+        <select id="devopsId" name="devopsName">
+            <option value="Terraform">Terraform</option>
+            <option value="docker">Docker</option>
+            <option value="kubernetes">kubernetes</option>
+            <option value="Jenkins">Jenkins</option>
+        </select>
+        <br>
+        <label for="message">Message:</label>
+       <textarea name="message" rows="4" cols="10"></textarea>
+       <br>
+       <label for="check">Are you a devops eng?</label>
+       <input type="checkbox" id="checkId" 
+       name="checkName" value="yes"/>
+       <br>
+       <fieldset>
+        <legend>Gender :</legend>
+       <input type="radio" name="gender" id="maleId" value="male">Male</input>
+       <input type="radio" name="gender" id="femaleId" value="female">Female</input>
+       </fieldset>
+       <br>
+       <label for="userName">Username:</label>
+       <input type="text" name="userName" 
+       id="unameId"/><br>   
+       <label for="pwd">Password:</label>
+       
+       <input type="password" id="pwdId" name="pwdName"/>
+       <br>
+       <label for="file">Please upload your file:</label>
+       <input type="file" id="fileId" name="fileName" />
+       <br>
+       <label for="rangeName">Range :</label>
+       <input type="range" id="rangeId" name="rangeName" min="1" max="10"/><br>
+       <br>
+       <label for="dobName">DOB:</label>
+       <input type="date" id="dobId" name="dobName"/><br>
+       
+       <br>
+       <label for="timeName">Time:</label>
+       <input type="time" value="14:30" id="timeId" name="timeName"/><br>
+       
+       <br>
+       <label for="colorName">Color:</label>
+       <input type="color" id="colorId" name="colorName"/><br>
+       
+       <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
