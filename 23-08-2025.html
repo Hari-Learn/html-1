@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neat Plain HTML (No CSS)</title>
+    <meta name="description" content="A clean, readable HTML template without any CSS." />
+  </head>
+  <body>
+    <header>
+      <h1>Neat Plain HTML</h1>
+      <p>A clean, readable starter page with zero CSS.</p>
+      <nav aria-label="Primary">
+        <a href="#intro">Intro</a> |
+        <a href="#features">Features</a> |
+        <a href="#examples">Examples</a> |
+        <a href="#contact">Contact</a>
+      </nav>
+      <hr />
+    </header>
+
+    <main id="intro">
+      <article>
+        <h2>Introduction</h2>
+        <p>This page uses only semantic HTML elements so it stays readable without any styling. It is intentionally minimal and accessible.</p>
+        <p>Use it as a quick template for notes, documentation, or simple landing pages.</p>
+      </article>
+
+      <section id="features">
+        <h2>Features</h2>
+        <ul>
+          <li>Semantic layout: <code>header</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>aside</code>, <code>footer</code>.</li>
+          <li>Simple <strong>navigation</strong> with anchor links.</li>
+          <li>Examples of lists, tables, forms, and code blocks.</li>
+          <li>Fully accessible structure and metadata.</li>
+        </ul>
+      </section>
+
+      <section id="examples">
+        <h2>Examples</h2>
+
+        <h3>List</h3>
+        <ol>
+          <li>Keep content concise.</li>
+          <li>Use headings to create structure.</li>
+          <li>Prefer semantic elements over styling.</li>
+        </ol>
+
+        <h3>Table</h3>
+        <table>
+          <caption>Sample Data</caption>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Qty</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Apples</td>
+              <td>4</td>
+              <td>Crisp and sweet</td>
+            </tr>
+            <tr>
+              <td>Bread</td>
+              <td>1</td>
+              <td>Whole grain</td>
+            </tr>
+            <tr>
+              <td>Milk</td>
+              <td>2</td>
+              <td>2% fat</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Form</h3>
+        <form id="contact" action="#" method="post">
+          <fieldset>
+            <legend>Contact</legend>
+            <label for="name">Name</label><br />
+            <input id="name" name="name" type="text" required /><br /><br />
+
+            <label for="email">Email</label><br />
+            <input id="email" name="email" type="email" required /><br /><br />
+
+            <label for="msg">Message</label><br />
+            <textarea id="msg" name="message" rows="5"></textarea><br /><br />
+
+            <button type="submit">Send</button>
+          </fieldset>
+        </form>
+
+        <h3>Code</h3>
+        <pre><code>// Quick tip
+// Keep markup semantic and simple
+function hello(name){
+  return `Hello, ${name}!`;
+}
+</code></pre>
+
+        <h3>Details</h3>
+        <details>
+          <summary>Why no CSS?</summary>
+          <p>Sometimes you just need a clear, printable, easily shareable page without build steps or styling.</p>
+        </details>
+      </section>
+
+      <aside>
+        <hr />
+        <h2>Notes</h2>
+        <p>This sidebar can hold references, links, or small tips.</p>
+      </aside>
+    </main>
+
+    <footer>
+      <hr />
+      <p>&copy; 2025 Plain HTML Demo</p>
+      <p><a href="#top">Back to top</a></p>
+    </footer>
+  </body>
+</html>
