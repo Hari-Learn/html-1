@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Form</title>
+</head>
+<body  style="font-family: Arial, sans-serif;">
+
+  <form action="/submit" method="post">
+    <table align="center" width="50%" cellpadding="15" bgcolor="#ffffff" border="1" style="margin-top: 50px; border-color: #b3d9ff;">
+      <tr>
+        <td colspan="2" align="center" bgcolor="#cce6ff">
+          <h2>Contact Us</h2>
+        </td>
+      </tr>
+      <tr>
+        <td width="30%">Name:</td>
+        <td><input type="text" name="name" size="40" required></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="email" name="email" size="40" required></td>
+      </tr>
+      <tr>
+        <td>Subject:</td>
+        <td><input type="text" name="subject" size="40"></td>
+      </tr>
+      <tr>
+        <td>Message:</td>
+        <td><textarea name="message" rows="5" cols="38" required></textarea></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="submit" value="Send Message">
+        </td>
+      </tr>
+    </table>
+  </form>
+
+</body>
+</html>
