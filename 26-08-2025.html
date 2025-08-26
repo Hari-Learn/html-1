@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Flexbox Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+    }
+
+    .box {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #333;
+    }
+
+    h3 {
+      margin: 10px 0;
+      font-size: 18px;
+      color: #555;
+    }
+
+    details {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box">
+      <h1>WORKLOAD</h1>
+      <h3>Things that run your apps</h3>
+      <div>        
+        <p>Pod-Replicaset-Deployment-Statefulset-Daemonset-Job-Cronjob</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <h1>NETWORKING</h1>
+      <h3>How things talk to each other</h3>
+      <div>
+        <p>Service - (ClusterIP-Nodeport-LoadBalancer) Ingress - Network Policies - Endpoint Slice - External </p>
+      </div>
+    </div>
+
+    <div class="box">
+      <h1>STORAGE</h1>
+      <h3>How things get/store data</h3>
+      <div>
+      <p>Volume-PersistentVP, Persistent VPC , Secrets-Sensitive Data, ConfigMap-NonSesitive Data</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <h1>SECURITY & ACCESS MANAGEMENT</h1>
+      <h3>What can do what</h3>
+      <div>        
+        <p>Service Account, Role/ClusterRole , RoleBinding/Cluster RoleBinding, Network Policy</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <h1>CLUSTER MANAGEMENT</h1>
+      <h3>How cluster itself organised</h3>
+      <div>
+        
+        <p>Namespaces, Node , ResourcesQuota , Request-LimitRange</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <h1>SCALABILITY</h1>
+      <h3>Scale the nodes on need</h3>
+      <div>        
+        <p>HPA-Scale In/Out by pods, VPA Scale In/Out by resources</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
