@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Linux Network Commands</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .command-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .command-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 300px;
+      box-sizing: border-box;
+      transition: transform 0.2s;
+    }
+
+    .command-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .command {
+      font-family: monospace;
+      font-size: 16px;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .explanation {
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .command-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>50 Linux Network Commands with Explanations</h1>
+
+  <div class="command-container">
+
+    <!-- Sample 10 commands with explanations -->
+    <div class="command-card">
+      <div class="command">ifconfig</div>
+      <div class="explanation">Displays or configures network interfaces (deprecated in favor of `ip`).</div>
+    </div>
+
+    <div class="command-card">
+      <div class="command">ip addr</div>
+      <div class="explanation">Shows IP addresses assigned to all interfaces.</div>
+    </div>
+
+    <div class="command-card">
+      <div class="command">ip link</div>
+      <div class="explanation">Displays network interfaces and their state.</div>
+    </div>
+
+    <div class="command-card">
+      <div class="command">ping google.com</div>
+      <div class="explanation">Sends ICMP packets to check connectivity to a host.</div>
+    </div>
+
+    <div class="command-card">
+      <div class="command">traceroute google.com</div>
+      <div class="explanation">Shows the path taken by packets to reach a host.</div>
+    </div>
+
+    <div class="command-card">
+      <div class="command">netstat -tulnp</div>
+      <div class="explanation">Displays listening ports and associated processes.</div>
+    </div>
+
+    <div class="command-card">
+      <div class="command">ss -tulwn</div>
+      <div class="explanation">Shows active sockets with faster output than netstat.</div>
+    </div>
+
+    <div class="command-card">
+      <div class="command">nslookup example.com</div>
+      <div class="explanation">Queries DNS to get domain name or IP address information.</div>
+    </div>
+
+    <div class="command-card">
+      <div class="command">dig example.com</div>
+      <div class="explanation">Another DNS lookup tool with more detailed output than nslookup.</div>
+    </div>
+
+    <div class="command-card">
+      <div class="command">tcpdump -i eth0</div>
+      <div class="explanation">Captures network packets on interface eth0.</div>
+    </div>
+
+    <div class="command-card">
+      <div class="command">ssh keygen -t rsa</div>
+      <div class="explanation">Use this cmd to generate/create ssh key pair of authentication. Private key stays with you public key goes on the server.</div>
+    </div>
+
+    <div class="command-card">
+      <div class="command">scp file.txt user@remote:/etc</div>
+      <div class="explanation">Use this cmd for send the file to remote server in secure way</div>
+    </div>
+
+    
+    <div class="command-card">
+      <div class="command">iptraf -ng</div>
+      <div class="explanation">Real time monitoring tool for networking, like who is talking on the network</div>
+    </div>
+
+     <div class="command-card">
+      <div class="command">lsof -i :8080</div>
+      <div class="explanation">Shows whos using this port, find out which process using this port in your system</div>
+    </div>
+
+     <div class="command-card">
+      <div class="command">ethtool eno16</div>
+      <div class="explanation">Display network interface staus detail info</div>
+    </div>
+
+     <div class="command-card">
+      <div class="command">arp -a</div>
+      <div class="explanation">List out the ip with MAC address, nw interface association in a network</div>
+    </div>
+
+     <div class="command-card">
+      <div class="command">hostnamectl status</div>
+      <div class="explanation">Shows full system identity and OS info</div>
+    </div>
+
+    <div class="command-card">
+      <div class="command">mtr www.google.com</div>
+      <div class="explanation">(My TraceRoot - MTR)- 3rd party tool Real time traceroot+ping</div>
+    </div>
+
+     <div class="command-card">
+      <div class="command">cat /etc/resolv.conf</div>
+      <div class="explanation">Display the content of DNS Configuration file on a linux system</div>
+    </div>
+
+    <div class="command-card">
+      <div class="command">iw dev</div>
+      <div class="explanation">Display the list of wireless interfaces and their status</div>
+    </div>
+    <!-- You can add 40 more commands below in same structure -->
+
+  </div>
+
+</body>
+</html>
+
