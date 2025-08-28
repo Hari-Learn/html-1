@@ -166,6 +166,67 @@
       <div class="command">iw dev</div>
       <div class="explanation">Display the list of wireless interfaces and their status</div>
     </div>
+    
+    <div class="command-card">
+      <div class="command">ssh-copy-id -i /root/.ssh/id_rsa.pub root@192.168.11.212</div>
+      <div class="explanation">Install rsa keys, copied securly to remote user, enable
+        passwordless ssh login
+      </div>
+    </div>
+    
+    <div class="command-card">
+      <div class="command">ssh 192.168.11.212</div>
+      <div class="explanation">Login to remote server using ssh
+      </div>
+    </div>
+    
+    <div class="command-card">
+      <div class="command"> nc/ncat/netcat -zv 192.168.11.3</div>
+      <div class="explanation">Powerful networking tool, 
+        port scanning, port listening, file transfer etc
+      </div>
+    </div>
+    <div class="command-card">
+      <div class="command"> rsync f1.txt root@192.168.11.1</div>
+      <div class="explanation">Delta transfer-transfer only changes,advance tool than cp and scp
+      </div>
+    </div>
+    <div class="command-card">
+      <div class="command"> nmtui</div>
+      <div class="explanation">Network manager text user interface, easy to use
+        network configuration tool
+      </div>
+    </div>
+    <div class="command-card">
+      <div class="command"> ss -l</div>
+      <div class="explanation">Listening sockets
+      </div>
+    </div>
+    
+    <div class="command-card">
+      <div class="command"> nmcli</div>
+      <div class="explanation">Network manager client tool
+      </div>
+    </div>
+    <div class="command-card">
+      <div class="command"> nmcli device show</div>
+      <div class="explanation">Network manager client tool
+      nmcli device
+      nmcli connection show nmcli connection show
+      nmcli device wifi List
+      </div></div>
+        <div class="command-card">
+      <div class="command">  nmcli connection show</div>
+      <div class="explanation">Network manager client  to list the connections list
+      </div>
+    </div>
+      <div class="command-card">
+      <div class="command">  nmcli device wifi list</div>
+      <div class="explanation">Network manager client  to list
+        connected device wifi list
+      </div>
+    </div>
+    
     <!-- You can add 40 more commands below in same structure -->
 
   </div>
