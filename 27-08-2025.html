@@ -226,6 +226,57 @@
         connected device wifi list
       </div>
     </div>
+
+    <div class="command-card">
+      <div class="command"> nc -l 8090</div>
+      <div class="explanation">Arbitary TCP & UDP connections and listens
+        on port 8090
+      </div>
+    </div>
+    <div class="command-card">
+      <div class="command"> nc -l 8090 >> f1.txt</div>
+      <div class="explanation">Arbitary TCP & UDP connections and listens
+        on port 8090 and save the output to f1.txt file
+      </div>
+    </div>
+    <div class="command-card">
+      <div class="command"> ss -t a</div>
+      <div class="explanation">Show all TCP sockets staticts 
+      </div>
+    </div>
+    <div class="command-card">
+      <div class="command">dig +short A google.com</div>
+      <div class="explanation">
+Get only a record of ip(filter only ip)      </div>
+    </div>
+    <div class="command-card">
+      <div class="command">nload</div>
+      <div class="explanation">
+      3rd party tool need to install & visual representation of 
+    incoming and outgoing traffic      </div>
+    </div>
+    <div class="command-card">
+      <div class="command">iperf -c server-ip</div>
+      <div class="explanation">
+      Tools to perform TCP/UDP bandwidth measure      </div>
+    </div>
+    <div class="command-card">
+      <div class="command">fping google.com gamil.com</div>
+      <div class="explanation">
+      Quickly perform multiple hosts packets      </div>
+    </div>
+    <div class="command-card">
+      <div class="command">iftop -n</div>
+      <div class="explanation">
+     Realtime console based network bandwidth tool     </div>
+    </div>
+    <div class="command-card">
+      <div class="command">tcpdump -A -i</div>
+      <div class="explanation">
+     output in ASCII format     </div>
+    </div>
+
+    
     
     <!-- You can add 40 more commands below in same structure -->
 
