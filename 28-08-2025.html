@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nmap Cheat Sheet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      color: #004466;
+    }
+    code {
+      background-color: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .command {
+      font-weight: bold;
+    }
+    .desc {
+      display: block;
+      margin-top: 3px;
+      color: #555;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9em;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Nmap Cheat Sheet</h1>
+  <p>Your quick reference for essential Nmap commands</p>
+
+  <section>
+    <h2>🔍 Basic Scans</h2>
+    <ul>
+      <li>
+        <span class="command"><code>nmap 192.168.1.1</code></span>
+        <span class="desc">Scan a single IP</span>
+      </li>
+      <li>
+        <span class="command"><code>nmap 192.168.1.1-10</code></span>
+        <span class="desc">Scan a range of IPs</span>
+      </li>
+      <li>
+        <span class="command"><code>nmap 192.168.1.0/24</code></span>
+        <span class="desc">Scan a subnet</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>⚙️ Port Scanning</h2>
+    <ul>
+      <li>
+        <span class="command"><code>nmap -p 80 192.168.1.1</code></span>
+        <span class="desc">Scan a specific port</span>
+      </li>
+      <li>
+        <span class="command"><code>nmap -p 1-1000 192.168.1.1</code></span>
+        <span class="desc">Scan a port range</span>
+      </li>
+      <li>
+        <span class="command"><code>nmap -p- 192.168.1.1</code></span>
+        <span class="desc">Scan all 65535 ports</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🎯 Scan Types</h2>
+    <ul>
+      <li>
+        <span class="command"><code>nmap -sS 192.168.1.1</code></span>
+        <span class="desc">TCP SYN scan (stealth scan)</span>
+      </li>
+      <li>
+        <span class="command"><code>nmap -sT 192.168.1.1</code></span>
+        <span class="desc">TCP connect scan</span>
+      </li>
+      <li>
+        <span class="command"><code>nmap -sU 192.168.1.1</code></span>
+        <span class="desc">UDP scan</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🧠 OS & Service Detection</h2>
+    <ul>
+      <li>
+        <span class="command"><code>nmap -O 192.168.1.1</code></span>
+        <span class="desc">Detect OS</span>
+      </li>
+      <li>
+        <span class="command"><code>nmap -sV 192.168.1.1</code></span>
+        <span class="desc">Detect service versions</span>
+      </li>
+      <li>
+        <span class="command"><code>nmap -A 192.168.1.1</code></span>
+        <span class="desc">Aggressive scan (OS, services, scripts, traceroute)</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📜 Output Options</h2>
+    <ul>
+      <li>
+        <span class="command"><code>nmap -oN output.txt 192.168.1.1</code></span>
+        <span class="desc">Normal output to file</span>
+      </li>
+      <li>
+        <span class="command"><code>nmap -oX output.xml 192.168.1.1</code></span>
+        <span class="desc">XML output to file</span>
+      </li>
+      <li>
+        <span class="command"><code>nmap -oA allformats 192.168.1.1</code></span>
+        <span class="desc">Output in all formats (normal, XML, grepable)</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>💣 Vulnerability & Script Scanning</h2>
+    <ul>
+      <li>
+        <span class="command"><code>nmap --script vuln 192.168.1.1</code></span>
+        <span class="desc">Run default vulnerability scripts</span>
+      </li>
+      <li>
+        <span class="command"><code>nmap --script http-enum 192.168.1.1</code></span>
+        <span class="desc">Enumerate web server paths</span>
+      </li>
+      <li>
+        <span class="command"><code>nmap --script-help default</code></span>
+        <span class="desc">List info on default scripts</span>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ for ethical hackers and sysadmins | Nmap Cheat Sheet</p>
+  </footer>
+
+</body>
+</html>
