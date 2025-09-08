@@ -1,0 +1,21 @@
+.flex-container{
+    display: flex;
+    background-color: black;
+    padding: 20px;
+    height:200px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item{
+    background-color: lightgreen;
+    padding: 20px;
+    height: 200px;
+    width: 100px;
+    flex-grow: 1;
+    margin:5px
+}
+
+.item2{
+    flex-grow: 2;
+}
