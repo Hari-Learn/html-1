@@ -1,0 +1,53 @@
+.item{
+    background-color: lightblue;
+    padding: 20px 10px;
+    margin: 2px;
+    flex:1;
+}
+.container{
+    display: flex;
+    
+}
+.contain{
+    display: flex;
+    
+}
+.item1{
+    order:2;
+}
+.item2{
+    order:0;
+}   
+.item3{
+    order:4;
+}
+
+.item4{
+    order:1;
+}
+.item5{
+    order:3;
+}
+
+.item6{
+    order:6;
+}
+
+.items1{
+    order:3
+}
+.items2{
+    order:4;
+}
+.items3{
+    order:6;
+}
+.items4{
+    order:5;
+}
+.items5{
+    order:2;
+}
+.items6{
+    order:1;
+}
