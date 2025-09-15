@@ -1,0 +1,27 @@
+body{
+    display:grid;
+    grid-template-columns: 70% 30%;
+    grid-template-areas: 
+    "header header" 
+    "main aside" 
+    "footer footer";
+    grid-template-rows: 80px 500px 50px;
+}
+
+
+.header{
+    grid-area: header;
+    background-color: lightblue;
+}
+.main{
+    grid-area: main;
+    background-color: lightgreen;
+}
+.side-menu{
+    grid-area: aside;
+    background-color: lightgoldenrodyellow;
+}
+.footer{
+    grid-area:footer;
+    background-color: lightcoral;
+}
