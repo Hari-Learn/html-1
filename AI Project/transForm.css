@@ -6,5 +6,18 @@
     height: 200px;
     margin:80px auto;
     transform: translateX(100px);
-    transform: scale(2);
+    transform: scale(1.5);
+}
+
+.con{
+    background-color: lightgreen;
+    width: 300px;
+    height: 200px;
+    margin:80px auto;
+    transition: 0.5s ;
+}
+
+.con:hover{
+    transform: scale(1.5);
+    transform: rotate(45deg);
 }
