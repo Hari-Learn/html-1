@@ -3,6 +3,7 @@
     height: 100px;
     background-color: lightblue;
     animation:slideRight 2s ease-out 5;
+    /* animation:colorChange 2s ease-in 2; */
 }
 
 @keyframes slideRight{
@@ -11,5 +12,12 @@
     }
     to{
         transform: translateX(200px);
+        background-color: lightsalmon;
     }
+}
+
+@keyframes colorChange{
+    0%{ background-color: lightblue;}
+    50%{background-color: lightpink;}
+    100%{background-color: lightsalmon;}
 }
