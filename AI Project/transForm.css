@@ -1,0 +1,10 @@
+
+
+.container{
+    background-color: lightpink;
+    width: 300px;
+    height: 200px;
+    margin:80px auto;
+    transform: translateX(100px);
+    transform: scale(2);
+}
