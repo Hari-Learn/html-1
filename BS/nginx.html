@@ -1,11 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nginx server</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NGINX Web Server</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    Welcome to nginx server
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-green-600 text-white py-6 shadow">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-3xl font-bold">NGINX Web Server</h1>
+      <p class="text-sm mt-1">Fast, modern, and efficient web server</p>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10 space-y-16">
+
+    <!-- Features -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-700 mb-4">Key Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold mb-2">Event-driven Architecture</h3>
+          <p>Handles massive concurrent connections with low memory usage.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold mb-2">Reverse Proxy & Load Balancing</h3>
+          <p>Distributes traffic efficiently with built-in reverse proxy capabilities.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold mb-2">SSL & HTTP/2 Support</h3>
+          <p>Modern security and performance standards out of the box.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold mb-2">Static File Handling</h3>
+          <p>Optimized for serving static content with caching and compression.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold mb-2">Modular Configuration</h3>
+          <p>Simple and scalable configuration for all use cases.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-700 mb-6">Why Choose NGINX?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-xl mb-2">Speed & Efficiency</h3>
+          <p>NGINX serves static content faster and uses less memory than traditional servers.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-xl mb-2">Built for Scale</h3>
+          <p>Perfect for microservices, container orchestration, and cloud-native applications.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-xl mb-2">Security Focused</h3>
+          <p>Robust SSL handling, DDoS mitigation, and secure configurations available.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-xl mb-2">Open Source</h3>
+          <p>Community-driven with enterprise options via NGINX Plus.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-700 mb-6">Comparison: NGINX vs Others</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+        <!-- Column Headers -->
+        <div class="font-bold text-green-700 text-base">NGINX</div>
+        <div class="font-bold text-red-700 text-base">Apache</div>
+        <div class="font-bold text-blue-700 text-base">LiteSpeed</div>
+
+        <!-- Row: Performance -->
+        <div class="bg-green-100 p-4 rounded">High-performance, event-driven</div>
+        <div class="bg-red-100 p-4 rounded">Process-based, lower concurrency</div>
+        <div class="bg-blue-100 p-4 rounded">Very fast, commercial support</div>
+
+        <!-- Row: Memory Usage -->
+        <div class="bg-green-100 p-4 rounded">Very low memory usage</div>
+        <div class="bg-red-100 p-4 rounded">Higher memory footprint</div>
+        <div class="bg-blue-100 p-4 rounded">Low, optimized</div>
+
+        <!-- Row: Reverse Proxy -->
+        <div class="bg-green-100 p-4 rounded">Built-in support</div>
+        <div class="bg-red-100 p-4 rounded">Available via modules</div>
+        <div class="bg-blue-100 p-4 rounded">Included by default</div>
+
+        <!-- Row: Licensing -->
+        <div class="bg-green-100 p-4 rounded">Fully Open Source</div>
+        <div class="bg-red-100 p-4 rounded">Open Source</div>
+        <div class="bg-blue-100 p-4 rounded">Free + Commercial version</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-center text-sm text-gray-600 py-6 mt-16">
+    Built with ❤️ using Tailwind CSS — © 2025 Web Server Overview
+  </footer>
+
 </body>
 </html>
