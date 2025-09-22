@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nmap Quick Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        h2 {
+            color: #34495e;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .flag {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .description {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Nmap Quick Guide</h1>
+
+    <div class="section">
+        <h2>What is Nmap?</h2>
+        <p>Nmap (Network Mapper) is a free and open-source tool for network discovery and security auditing.</p>
+    </div>
+
+    <div class="section">
+        <h2>Common Flags</h2>
+
+        <p><span class="flag">-sV</span> <br>
+        <span class="description">Version detection. Helps find vulnerabilities in specific software versions and is useful for troubleshooting.</span></p>
+
+        <p><span class="flag">-A</span> <br>
+        <span class="description">Aggressive scan. Enables OS detection, version detection, script scanning, and traceroute.</span></p>
+
+        <p><span class="flag">-O</span> <br>
+        <span class="description">OS detection only. Tries to determine the target operating system.</span></p>
+
+        <p><span class="flag">-sT</span> <br>
+        <span class="description">TCP connect scan (full TCP handshake). Less stealthy but works when SYN scan is not possible.</span></p>
+
+        <p><span class="flag">-sS</span> <br>
+        <span class="description">Stealth SYN scan. Sends SYN packets and waits for responses without completing the handshake. Less detectable.</span></p>
+
+    </div>
+
+</body>
+</html>
