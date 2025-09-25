@@ -9,8 +9,17 @@
     <h1>Event Handling in JavaScript</h1>
     <p>Inline event</p>
     <button onclick="alert('Hi there')"> Click Me</button>
+    <button onclick="callFunc()">Call Function</button>
+    <p>Using Addevent Listener</p>
+    <button id="myBtn">Using Listener</button>
     <script>
-
+        const btn = document.getElementById('myBtn');
+        btn.addEventListener('click',function(){
+            alert('listenter clicked');
+        });
+        function callFunc(){
+            alert('Function Called');
+        }
 
     </script>
     
