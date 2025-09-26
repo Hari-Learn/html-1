@@ -8,6 +8,7 @@
 <body>
     <h1>Gotcha</h1>
     <button onclick="myFunc()" id="myBtn">Click Me</button>
+    <button id="mybtn1">Clear</button>
     <p id="demo"></p>
     <p id="demo1"></p>
 
@@ -18,7 +19,14 @@
             document.getElementById("demo").innerHTML = x;
             document.getElementById("demo1").innerHTML = y;
         }
+        document.getElementById("mybtn1").addEventListener('click',function(){
+            document.getElementById("demo").innerHTML = '';
+            document.getElementById("demo1").innerHTML = '';
+        });
         console.log(y);
+        console.log(x);
+        
+
     </script>
 </body>
 </html>
