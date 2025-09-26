@@ -8,13 +8,17 @@
 <body>
     <h1>Gotcha</h1>
     <button onclick="myFunc()" id="myBtn">Click Me</button>
-    <button id="mybtn1">Clear</button>
+    <button onmouseout="onMouseOut1()" id="mybtn1">Clear</button>
     <p id="demo"></p>
     <p id="demo1"></p>
 
     <script>
         var x = "Hello there..";
         let y = 'Let be there';
+        let onMouseOut1 = () => {
+             console.log('On mouseover dey...')
+            }
+        
         function myFunc(){
             document.getElementById("demo").innerHTML = x;
             document.getElementById("demo1").innerHTML = y;
@@ -23,6 +27,12 @@
             document.getElementById("demo").innerHTML = '';
             document.getElementById("demo1").innerHTML = '';
         });
+
+        function onMouseOut(){
+            console.log('Mouse Out');    
+        }
+
+        
         console.log(y);
         console.log(x);
         
