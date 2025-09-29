@@ -41,6 +41,10 @@
         numbers.forEach(function(num){
             console.log(num);
         });
+        console.log("Using forEach with arrow function");
+        numbers.forEach((index,val)=>{
+            console.log(index,val);
+        });
         //numbers.foreach(num => console.log(num));
         console.log("Using for of loop");
         for(const num of numbers){
