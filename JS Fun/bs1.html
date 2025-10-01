@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Burp Suite Cheatsheet — Fullscreen No Scroll</title>
+<style>
+  /* Fullscreen, no-scroll, adaptive cheatsheet */
+  :root{
+    --bg:#ffffff;
+    --card:#fbfdff;
+    --border:#e6eef6;
+    --accent:#0b62a8;
+    --muted:#5b6570;
+    --text:#0b1220;
+    --shadow: 0 8px 30px rgba(11,38,72,0.06);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+
+  /* Force full-screen and remove scrolling */
+  html,body{
+    height:100%;
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    overflow:hidden; /* no scroll anywhere */
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* Responsive base font: will shrink/grow to help fit content */
+  html { font-size: clamp(11px, 0.9vw + 0.3vh, 15px); }
+
+  /* Layout container uses full viewport */
+  .wrap{
+    box-sizing:border-box;
+    height:100vh;            /* full viewport height */
+    width:100vw;             /* full viewport width */
+    padding:calc(12px + 1vmin); 
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  header{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex:0 0 auto;
+    padding-bottom:6px;
+  }
+  .logo{
+    width:56px; height:56px; border-radius:8px;
+    background:linear-gradient(135deg,var(--accent),#3b82f6);
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;
+    box-shadow:var(--shadow); flex:0 0 56px;
+    font-size:1.25rem;
+  }
+  h1{margin:0;font-size:1.05rem;}
+  p.lead{margin:2px 0 0;color:var(--muted);font-size:0.85rem;}
+
+  /* Main grid takes remaining space and adapts columns */
+  .grid{
+    flex:1 1 auto;
+    display:grid;
+    gap:12px;
+    /* Try a wide multi-column layout that adapts to viewport */
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 1fr;
+    align-items:stretch;
+    justify-items:stretch;
+  }
+
+  /* Card styling */
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:10px;
+    border-radius:8px;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    overflow:hidden; /* prevent inner scrolling */
+  }
+  h2{margin:0;color:var(--accent);font-size:0.95rem;}
+  p, li{margin:0;color:var(--text);line-height:1.25;font-size:0.92rem;}
+  ul{padding-left:16px;}
+  .muted{color:var(--muted);font-size:0.82rem;}
+  code{background:#f3f7fb;padding:3px 6px;border-radius:6px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;font-size:0.85rem;}
+  .kbd{background:#0b1220;color:#fff;padding:4px 8px;border-radius:6px;font-size:0.78rem;display:inline-block;}
+
+  /* Pre-set card spans to create separate boxes */
+  .overview{grid-column: span 2;}
+  .core{grid-column: span 2;}
+  .workflow{grid-column: span 2;}
+  .shortcuts{grid-column: span 2;}
+  .intruder{grid-column: span 1;}
+  .bapp{grid-column: span 1;}
+  .headers{grid-column: span 1;}
+  .safety{grid-column: span 1;}
+  .reference{grid-column: span 6; /* full width bottom row */ }
+
+  /* Make sure text reduces on narrower viewports to keep no-scroll */
+  @media (max-width:1600px){
+    html { font-size: clamp(10px, 1vw + 0.2vh, 14px); }
+  }
+  @media (max-width:1200px){
+    .grid{grid-template-columns: repeat(4, 1fr); }
+    .overview{grid-column:span 2;}
+    .core{grid-column:span 2;}
+    .workflow{grid-column:span 4;}
+    .reference{grid-column:span 4;}
+  }
+  @media (max-width:900px){
+    .grid{grid-template-columns: repeat(2, 1fr); }
+    .overview{grid-column:span 2;}
+    .core{grid-column:span 2;}
+    .workflow{grid-column:span 2;}
+    .shortcuts{grid-column:span 2;}
+    .reference{grid-column:span 2;}
+    html { font-size: clamp(9px, 1.4vw + 0.2vh, 13px); }
+  }
+  @media (max-width:600px){
+    /* single column on tiny screens, aggressively reduce font so everything fits */
+    .grid{grid-template-columns: 1fr; }
+    .overview,.core,.workflow,.shortcuts,.intruder,.bapp,.headers,.safety{grid-column:span 1;}
+    .reference{grid-column:span 1;}
+    html { font-size: clamp(8px, 2.2vw + 0.2vh, 12px); }
+  }
+
+  /* keep footer compact */
+  footer{flex:0 0 auto;text-align:center;color:var(--muted);font-size:0.8rem;}
+</style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <header>
+      <div class="logo">B</div>
+      <div>
+        <h1>Burp Suite — Cheatsheet</h1>
+        <p class="lead">Fullscreen, no-scroll layout — compact & readable. Test only with permission.</p>
+      </div>
+    </header>
+
+    <div class="grid" role="region" aria-label="Cheatsheet grid">
+      <section class="card overview" aria-labelledby="ov">
+        <h2 id="ov">Overview</h2>
+        <p class="muted">What it is</p>
+        <p>Burp Suite (PortSwigger) — intercepting proxy + toolset for testing web apps: Proxy, Target, Repeater, Intruder, Scanner (Pro), Decoder, Sequencer, Extender.</p>
+      </section>
+
+      <section class="card core" aria-labelledby="core">
+        <h2 id="core">Core Tools</h2>
+        <ul>
+          <li><strong>Proxy</strong> — intercept/modify HTTP(S)</li>
+          <li><strong>Target</strong> — site map & inspection</li>
+          <li><strong>Repeater</strong> — manual tampering & resend</li>
+          <li><strong>Intruder</strong> — automated payloads/fuzzing</li>
+          <li><strong>Scanner</strong> (Pro) — active & passive scans</li>
+        </ul>
+      </section>
+
+      <section class="card workflow" aria-labelledby="wf">
+        <h2 id="wf">Typical Quick Workflow</h2>
+        <ol style="padding-left:16px;margin:0">
+          <li>Point browser to proxy <code>127.0.0.1:8080</code> and install Burp CA cert for HTTPS.</li>
+          <li>Browse app to populate Target; use Spider/content discovery for mapping.</li>
+          <li>Send interesting requests to Repeater/Intruder/Scanner as needed.</li>
+          <li>Analyze with Decoder, Sequencer and Comparer; export reports if required.</li>
+        </ol>
+      </section>
+
+      <section class="card shortcuts" aria-labelledby="sc">
+        <h2 id="sc">Shortcuts & Quick Actions</h2>
+        <p class="muted">Keys & tips</p>
+        <ul>
+          <li><span class="kbd">Ctrl+R</span> → Send to Repeater</li>
+          <li><span class="kbd">Ctrl+I</span> → Send to Intruder</li>
+          <li>Right-click a request → Send to Repeater/Intruder/Scanner/Comparer</li>
+          <li>Proxy → HTTP history → search / export selected</li>
+        </ul>
+      </section>
+
+      <section class="card intruder" aria-labelledby="intr">
+        <h2 id="intr">Intruder Modes</h2>
+        <ul>
+          <li><strong>Sniper</strong> — single param focused</li>
+          <li><strong>Clusterbomb</strong> — combinatorial multi-position (noisy)</li>
+          <li><strong>Pitchfork</strong> — parallel aligned payload sets</li>
+          <li><strong>Turbo</strong> — fast (use cautiously)</li>
+        </ul>
+      </section>
+
+      <section class="card bapp" aria-labelledby="bapp">
+        <h2 id="bapp">Useful BApp Extensions</h2>
+        <p class="muted">Install via Extender → BApp Store</p>
+        <ul>
+          <li>Logger++ — enhanced logging</li>
+          <li>JSON / Pretty Print — response formatting</li>
+          <li>Autorize — authorization checks</li>
+          <li>Turbo Intruder (advanced) — high-performance fuzzing</li>
+        </ul>
+      </section>
+
+      <section class="card headers" aria-labelledby="hdr">
+        <h2 id="hdr">Headers & Checks</h2>
+        <ul>
+          <li><code>Host</code>, <code>Cookie</code>, <code>Referer</code>, <code>User-Agent</code> — often relevant</li>
+          <li>Compare status codes, body length, timing, header presence</li>
+          <li>Use Comparer to diff responses quickly</li>
+        </ul>
+      </section>
+
+      <section class="card safety" aria-labelledby="safe">
+        <h2 id="safe">Safety & Legal</h2>
+        <p class="muted">Be responsible</p>
+        <p>Only test systems you own or have explicit permission to test. Unauthorized scanning/exploitation is illegal. Keep logs; avoid destructive actions.</p>
+      </section>
+
+      <section class="card reference" aria-labelledby="ref">
+        <h2 id="ref">Quick Reference</h2>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <div style="flex:1 1 220px;min-width:170px">
+            <p class="muted">Proxy</p>
+            <p>Intercept toggle → capture & edit requests. Use "Match & Replace" for automated edits.</p>
+          </div>
+          <div style="flex:1 1 220px;min-width:170px">
+            <p class="muted">Repeater</p>
+            <p>Manual tampering: change params/headers/body then resend to observe behavior.</p>
+          </div>
+          <div style="flex:1 1 220px;min-width:170px">
+            <p class="muted">Intruder</p>
+            <p>Set positions → payload sets → attack type → run (careful: noisy).</p>
+          </div>
+          <div style="flex:1 1 220px;min-width:170px">
+            <p class="muted">Scanner (Pro)</p>
+            <p>Passive & active vulnerability checks — only on authorized targets.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div>Created for quick reference — always get explicit permission before testing.</div>
+    </footer>
+  </div>
+</body>
+</html>
