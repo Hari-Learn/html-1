@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Burp Suite Cheatsheet</title>
+  <style>
+    /* Simple, lightweight CSS — white background, boxed cards */
+    :root{
+      --bg:#ffffff;
+      --card:#fbfdff;
+      --border:#e6eef6;
+      --accent:#0b62a8;
+      --muted:#6b7280;
+      --text:#0b1220;
+      --shadow: 0 6px 18px rgba(11,38,72,0.06);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
+    .wrap{max-width:1000px;margin:28px auto;padding:20px;box-sizing:border-box;}
+    header{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+    .logo{
+      width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#3b82f6);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;box-shadow:var(--shadow);
+      font-size:20px;
+    }
+    h1{font-size:20px;margin:0;color:var(--text);}
+    p.lead{margin:6px 0 0;color:var(--muted);font-size:13px;}
+
+    /* Grid for boxes */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      padding:14px;
+      border-radius:10px;
+      box-shadow:var(--shadow);
+    }
+    .card.wide{grid-column:span 3;}
+    .card.medium{grid-column:span 2;}
+    h2{margin:0 0 8px;font-size:15px;color:var(--accent);}
+    p, li{color:var(--text);font-size:13px;line-height:1.45;margin:0 0 8px;}
+    ul{padding-left:18px;margin:0 0 8px;}
+    .muted{color:var(--muted);font-size:13px;}
+    code{background:#f3f7fb;padding:3px 6px;border-radius:6px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;font-size:12px;color:var(--text);}
+    .kbd{background:#0b1220;color:#fff;padding:4px 8px;border-radius:6px;font-size:12px;display:inline-block;}
+    .sep{height:1px;background:var(--border);margin:10px 0;border-radius:2px;}
+
+    footer{margin-top:18px;color:var(--muted);font-size:12px;text-align:center;}
+
+    @media (max-width:980px){
+      .grid{grid-template-columns:repeat(2, 1fr);}
+      .card.wide{grid-column:span 2;}
+      .card.medium{grid-column:span 2;}
+    }
+    @media (max-width:640px){
+      .grid{grid-template-columns:1fr;}
+      .card.wide{grid-column:span 1;}
+      .card.medium{grid-column:span 1;}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">B</div>
+      <div>
+        <h1>Burp Suite — Cheatsheet (white)</h1>
+        <p class="lead">Separate boxes for quick scanning. Use only with permission — be ethical.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Overview -->
+      <div class="card">
+        <h2>Overview</h2>
+        <p class="muted">What it is</p>
+        <p>Burp Suite is a web application security testing platform (PortSwigger) that provides an intercepting proxy and a set of tools to analyze, manipulate, and test web traffic.</p>
+      </div>
+
+      <!-- Core tools -->
+      <div class="card">
+        <h2>Core Tools</h2>
+        <ul>
+          <li><strong>Proxy</strong> — intercept & modify HTTP(S).</li>
+          <li><strong>Target</strong> — sitemap & manual inspection.</li>
+          <li><strong>Repeater</strong> — craft & resend requests.</li>
+          <li><strong>Intruder</strong> — automated fuzzing & payloads.</li>
+          <li><strong>Scanner</strong> (Pro) — automated vulnerability scanning.</li>
+          <li><strong>Decoder / Comparer / Sequencer / Extender</strong> — helpers & plugins.</li>
+        </ul>
+      </div>
+
+      <!-- Quick workflow -->
+      <div class="card">
+        <h2>Typical Quick Workflow</h2>
+        <ol style="padding-left:18px;margin:0 0 8px;">
+          <li>Set browser proxy → <code>127.0.0.1:8080</code> and install Burp CA certificate for HTTPS.</li>
+          <li>Browse app to populate Target → map endpoints.</li>
+          <li>Send interesting requests to Repeater / Intruder / Scanner.</li>
+          <li>Analyze with Decoder, Sequencer, and Comparer.</li>
+        </ol>
+      </div>
+
+      <!-- Shortcuts -->
+      <div class="card medium">
+        <h2>Shortcuts & Quick Actions</h2>
+        <p class="muted">Common shortcuts</p>
+        <ul>
+          <li><span class="kbd">Ctrl+R</span> → Send selected item to Repeater.</li>
+          <li><span class="kbd">Ctrl+I</span> → Send to Intruder.</li>
+          <li><span class="kbd">Right-click</span> a request → Send to Repeater / Intruder / Scanner / Comparer.</li>
+          <li>Proxy → HTTP history → search or export selected items.</li>
+        </ul>
+        <div class="sep"></div>
+        <p class="muted">Quick tips</p>
+        <ul>
+          <li>Use "Match and Replace" for repetitive header edits.</li>
+          <li>Turn Intercept OFF while crawling unless you need to modify specific requests.</li>
+        </ul>
+      </div>
+
+      <!-- Intruder modes -->
+      <div class="card">
+        <h2>Intruder Modes</h2>
+        <ul>
+          <li><strong>Sniper</strong> — single position, targeted testing.</li>
+          <li><strong>Clusterbomb</strong> — combinatorial multi-position (noisy).</li>
+          <li><strong>Pitchfork</strong> — parallel payload sets (aligned).</li>
+          <li><strong>Turbo</strong> — fastest execution (use with caution).</li>
+        </ul>
+      </div>
+
+      <!-- BApp and plugins -->
+      <div class="card">
+        <h2>Useful BApp Extensions</h2>
+        <p class="muted">Install via Extender → BApp Store</p>
+        <ul>
+          <li>Logger++ — enhanced logging</li>
+          <li>JSON Beautifier / Pretty Print — easier reading</li>
+          <li>Autorize — authorization testing helper</li>
+          <li>Turbo Intruder (advanced) — high-performance fuzzing</li>
+        </ul>
+      </div>
+
+      <!-- Common headers -->
+      <div class="card">
+        <h2>Headers & Response Checks</h2>
+        <ul>
+          <li><code>Host</code>, <code>Cookie</code>, <code>Referer</code>, <code>User-Agent</code> — check differences.</li>
+          <li>Compare status codes, body length, timing, and header presence.</li>
+          <li>Use Comparer to diff two responses quickly.</li>
+        </ul>
+      </div>
+
+      <!-- Safety -->
+      <div class="card">
+        <h2>Safety & Legal</h2>
+        <p class="muted">Be responsible</p>
+        <p>Only test systems you own or have explicit permission to test. Unauthorized scanning or exploitation is illegal. Keep logs, report findings clearly, and avoid destructive actions.</p>
+      </div>
+
+      <!-- One-line quick reference -->
+      <div class="card wide">
+        <h2>Quick Reference</h2>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:220px">
+            <p class="muted">Proxy</p>
+            <p>Intercept toggle → capture requests; right-click → send to tools.</p>
+          </div>
+          <div style="flex:1;min-width:220px">
+            <p class="muted">Repeater</p>
+            <p>Manual tampering — change parameters, headers, bodies, then resend.</p>
+          </div>
+          <div style="flex:1;min-width:220px">
+            <p class="muted">Intruder</p>
+            <p>Configure positions, select payload sets, choose attack type, run (be cautious).</p>
+          </div>
+          <div style="flex:1;min-width:220px">
+            <p class="muted">Scanner (Pro)</p>
+            <p>Active & Passive checks — use on authorized targets only.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <div>Created for quick reference — always get explicit permission before testing.</div>
+      <div style="margin-top:6px;color:var(--muted)">PortSwigger / Burp Suite are trademarks of PortSwigger Ltd.</div>
+    </footer>
+  </div>
+</body>
+</html>
