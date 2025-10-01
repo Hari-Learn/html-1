@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Burp Suite Cheatsheet</title>
+
+  <style>
+    /* Simple, lightweight CSS */
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#06b6d4;
+      --muted:#9aa4b2;
+      --text:#e6eef6;
+      --glass: rgba(255,255,255,0.03);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071024 80%);color:var(--text);}
+    .wrap{max-width:980px;margin:28px auto;padding:22px;box-sizing:border-box;}
+    header{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+    .logo{
+      width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#3b82f6);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#012;box-shadow:0 6px 18px rgba(3,7,18,0.6);
+    }
+    h1{font-size:20px;margin:0;}
+    p.lead{margin:6px 0 0;color:var(--muted);font-size:13px;}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:16px;margin-top:18px;}
+    .card{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,12,0.6);}
+    .card.small{padding:10px;font-size:14px;}
+    h2{margin:6px 0 10px;font-size:15px;}
+    ul{margin:8px 0 0;padding-left:18px;color:var(--text);line-height:1.45;}
+    li{margin-bottom:6px;color:var(--text);font-size:13px;}
+    .muted{color:var(--muted);font-size:13px;}
+    code{background:var(--glass);padding:3px 6px;border-radius:6px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;font-size:12px;color:var(--text);}
+    .kbd{background:#051226;border:1px solid rgba(255,255,255,0.03);padding:4px 8px;border-radius:6px;font-size:12px;display:inline-block;}
+    .list-grid{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:8px;}
+    footer{margin-top:12px;color:var(--muted);font-size:12px;text-align:center;}
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr; }
+    }
+    /* small visual separators */
+    .sep{height:1px;background:linear-gradient(90deg, transparent, rgba(255,255,255,0.02), transparent);margin:10px 0;border-radius:2px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">B</div>
+      <div>
+        <h1>Burp Suite — Quick Cheatsheet</h1>
+        <p class="lead">Concise summary of the core tools, workflows and shortcuts. Use responsibly — always have permission.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Left / Main -->
+      <div>
+        <div class="card">
+          <h2>What it is</h2>
+          <p class="muted">Burp Suite is a web application security testing platform (PortSwigger). It contains an intercepting proxy plus modular tools for scanning, manipulating and replaying traffic.</p>
+
+          <div class="sep"></div>
+
+          <h2>Core tools (at-a-glance)</h2>
+          <ul>
+            <li><strong>Proxy</strong> — intercept & modify HTTP(S) requests/responses.</li>
+            <li><strong>Target</strong> — site map, manual inspection and issue tracker.</li>
+            <li><strong>Spider / Content discovery</strong> — map application (note: active scanning may be noisy).</li>
+            <li><strong>Scanner</strong> (Pro) — automated vulnerability scanning.</li>
+            <li><strong>Repeater</strong> — craft and resend single requests for manual testing.</li>
+            <li><strong>Intruder</strong> — automated fuzzing / parameter-based attacks (careful: can be noisy).</li>
+            <li><strong>Decoder</strong> — encode/decode data (Base64, hex, URL, etc.).</li>
+            <li><strong>Comparer</strong> — compare responses/requests (diffs).</li>
+            <li><strong>Sequencer</strong> — analyze randomness/entropy of tokens.</li>
+            <li><strong>Extender</strong> — add BApp extensions (via BApp Store).</li>
+          </ul>
+
+          <div class="sep"></div>
+
+          <h2>Typical quick workflow</h2>
+          <ol style="padding-left:18px;color:var(--text);line-height:1.45">
+            <li>Configure browser proxy → <code>127.0.0.1:8080</code> and install Burp CA cert for HTTPS.</li>
+            <li>Proxy → Intercept off (unless capturing specific request). Browse the app to populate Target & Spider.</li>
+            <li>Review Target site map → identify interesting pages/endpoints.</li>
+            <li>Send chosen request to Repeater / Intruder / Scanner as needed.</li>
+            <li>Use Decoder/Comparer for analysis and Extender for automation/plugins.</li>
+          </ol>
+
+          <div class="sep"></div>
+
+          <h2>Safe testing reminder</h2>
+          <p class="muted">Only test systems you own or have explicit authorization to test. Unauthorized scanning, fuzzing, or exploitation is illegal and unethical.</p>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card">
+          <h2>Shortcuts & quick tips</h2>
+          <div class="list-grid">
+            <div>
+              <p class="muted">Global</p>
+              <ul>
+                <li><span class="kbd">Ctrl+R</span> — Repeater (send selected request).</li>
+                <li><span class="kbd">Ctrl+I</span> — Intruder (send selected request).</li>
+                <li><span class="kbd">Ctrl+Shift+I</span> — Open Scanner (Pro) for selected node.</li>
+                <li><span class="kbd">Ctrl+P</span> — Proxy settings.</li>
+              </ul>
+            </div>
+            <div>
+              <p class="muted">Proxy</p>
+              <ul>
+                <li>Intercept: <span class="kbd">Intercept is On/Off</span> toggle in Proxy tab.</li>
+                <li>Right-click a proxied request → "Send to Repeater/Intruder/Scanner/Comparer".</li>
+                <li>Use "Match and Replace" rules for simple automated modifications.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sep"></div>
+
+          <h2>Common quick actions</h2>
+          <ul>
+            <li><strong>Save request flow:</strong> Project → Save state or Export selected items.</li>
+            <li><strong>Search across history:</strong> Proxy → HTTP history → search box.</li>
+            <li><strong>Generate CSRF token patterns:</strong> use Sequencer to analyze randomness.</li>
+            <li><strong>Decode an encoded value:</strong> Copy → Decoder → select interpretation (Base64, URL, etc.).</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Right / Sidebar -->
+      <aside>
+        <div class="card small">
+          <h2>Quick tools cheat</h2>
+          <ul>
+            <li><strong>Proxy</strong>: intercept, forward, edit.</li>
+            <li><strong>Repeater</strong>: manual request tampering & testing.</li>
+            <li><strong>Intruder</strong>: payload positions, payload sets, attack types (Sniper, Clusterbomb, Pitchfork).</li>
+            <li><strong>Scanner</strong>: passive & active checks (Pro).</li>
+            <li><strong>Sequencer</strong>: entropy, PRNG checks.</li>
+          </ul>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card small">
+          <h2>Intruder modes (brief)</h2>
+          <ul>
+            <li><strong>Sniper</strong> — one payload position at a time (single param testing).</li>
+            <li><strong>Clusterbomb</strong> — multiple positions, combinatorial (powerful & noisy).</li>
+            <li><strong>Pitchfork</strong> — parallel payload sets (aligned lengths).</li>
+            <li><strong>Turbo</strong> — fastest, less control (use cautiously).</li>
+          </ul>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card small">
+          <h2>Useful BApp extensions</h2>
+          <p class="muted">Popular additions (check BApp Store inside Burp):</p>
+          <ul>
+            <li>Logger++ — enhanced logging.</li>
+            <li>JSON Beautifier / Beautifier — pretty-print responses.</li>
+            <li>Autorize — authorization testing helper.</li>
+            <li>Turbo Intruder (separate) — high-performance fuzzing (use with permission).</li>
+          </ul>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card small">
+          <h2>Common headers & notes</h2>
+          <ul>
+            <li><code>Host</code>, <code>User-Agent</code>, <code>Cookie</code>, <code>Referer</code> — often relevant while testing auth/CSRF.</li>
+            <li>Watch for differences in responses: status codes, length, timing, header presence.</li>
+            <li>Use Comparer to diff responses quickly.</li>
+          </ul>
+        </div>
+
+      </aside>
+    </div>
+
+    <footer>
+      <div>Created for quick reference — follow ethical rules & get explicit permission before testing.</div>
+      <div style="margin-top:6px;color:var(--muted)">PortSwigger / Burp Suite are trademarks of PortSwigger Ltd.</div>
+    </footer>
+  </div>
+</body>
+</html>
