@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Burp — Compact Ops</title>
+<style>
+  :root{
+    --bg:#fff; --card:#fafcff; --accent:#0b62a8; --muted:#6b7280; --text:#0b1220; --border:#eef3fb;
+    font-family:system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  }
+  html,body{height:100%;margin:0;background:var(--bg);color:var(--text);}
+  .wrap{max-width:1100px;margin:24px auto;padding:16px;box-sizing:border-box;}
+  header{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+  .logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#3b82f6);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;}
+  h1{margin:0;font-size:18px;}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;}
+  .card{background:var(--card);border:1px solid var(--border);padding:10px;border-radius:8px;}
+  h2{margin:0 0 8px;font-size:14px;color:var(--accent);}
+  ul{margin:0;padding-left:16px;color:var(--text);font-size:13px;line-height:1.3;}
+  li{margin:6px 0;}
+  .muted{color:var(--muted);font-size:13px;}
+  @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">B</div>
+      <div>
+        <h1>Burp — Compact Ops</h1>
+        <div class="muted">Short notes: installation, automation, OAST, reporting, troubleshooting</div>
+      </div>
+    </header>
+
+    <div class="grid" role="main">
+      <section class="card">
+        <h2>Install & License</h2>
+        <ul>
+          <li>Use bundled Java or compatible JRE.</li>
+          <li>Keep license keys and backups safe.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Headless / CI</h2>
+        <ul>
+          <li>Run headless JAR for automated scans.</li>
+          <li>Export JSON/XML for CI parsing.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Project Backups</h2>
+        <ul>
+          <li>Save project files before major changes.</li>
+          <li>Keep exports for team sharing.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Session & Macros</h2>
+        <ul>
+          <li>Use macros for multi-step logins.</li>
+          <li>Test macros manually before scans.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>OAST / Collaborator</h2>
+        <ul>
+          <li>Use Collaborator to capture blind callbacks.</li>
+          <li>Consider privacy and logs management.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Scan Tuning</h2>
+        <ul>
+          <li>Adjust speed/threads to limit load.</li>
+          <li>Disable irrelevant checks to reduce noise.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Reporting</h2>
+        <ul>
+          <li>Export JSON/XML for tracking systems.</li>
+          <li>Obfuscate sensitive data before sharing.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Troubleshoot</h2>
+        <ul>
+          <li>Install Burp CA if HTTPS missing.</li>
+          <li>Check proxy settings and Java heap for large projects.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>APIs & Automation</h2>
+        <ul>
+          <li>Use Pro API for scripted scans and exports.</li>
+          <li>Rate-limit automation; keep secrets in CI vaults.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div style="margin-top:12px;text-align:center;color:var(--muted);font-size:13px;">
+      Short & focused — no repetition from your cheatsheet. Use only with permission.
+    </div>
+  </div>
+</body>
+</html>
