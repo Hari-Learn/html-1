@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>XSS — ELI10 (Boxes)</title>
+<style>
+  /* Same box model / simple style as before — white background, cards */
+  :root{
+    --bg:#fff; --card:#fbfdff; --border:#eef3fb; --accent:#b32d2d;
+    --muted:#6b7280; --text:#0b1220; --shadow: 0 6px 18px rgba(11,38,72,0.06);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1100px;margin:24px auto;padding:16px;box-sizing:border-box;}
+  header{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+  .logo{width:48px;height:48px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;}
+  h1{margin:0;font-size:18px;}
+  .muted{color:var(--muted);font-size:13px;}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;}
+  .card{background:var(--card);border:1px solid var(--border);padding:12px;border-radius:8px;box-shadow:var(--shadow);}
+  h2{margin:0 0 8px;font-size:14px;color:var(--accent);}
+  p, li{margin:0 0 8px;font-size:13px;line-height:1.4;color:var(--text);}
+  ul{padding-left:16px;margin:0;}
+  code{background:#f3f7fb;padding:3px 6px;border-radius:6px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,"Roboto Mono","Courier New",monospace;font-size:12px;}
+  .small{font-size:12px;color:var(--muted);}
+  @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">X</div>
+      <div>
+        <h1>XSS — Explain Like I'm 10</h1>
+        <div class="muted">Simple, harmless examples + how to prevent it. For learning and authorized testing only.</div>
+      </div>
+    </header>
+
+    <div class="grid" role="main">
+      <section class="card">
+        <h2>What is XSS?</h2>
+        <p>Imagine a website is like a diary page that shows messages. If someone can make the diary show a secret message that runs code (a tiny program) instead of plain text, that's XSS. The website is letting someone put code into others' pages.</p>
+      </section>
+
+      <section class="card">
+        <h2>Why it matters (simple)</h2>
+        <ul>
+          <li>Bad code can run in visitors' browsers.</li>
+          <li>It can trick users or change what they see.</li>
+          <li>It's often used by attackers to pretend they are the site or to steal information — so it's serious.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Types of XSS (short)</h2>
+        <ul>
+          <li><strong>Stored</strong> — code is saved on the website (e.g., comment) and shows to everyone later.</li>
+          <li><strong>Reflected</strong> — code is in a link and shows when someone clicks it.</li>
+          <li><strong>DOM XSS</strong> — the page's own scripts put unsafe text into the page and run it.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Harmless demo snippets</h2>
+        <p class="small">These show that code runs without doing anything harmful. Use only on sites you are allowed to test.</p>
+        <ul>
+          <li><strong>Popup (visible proof)</strong>: <code>&lt;script&gt;alert('test')&lt;/script&gt;</code></li>
+          <li><strong>Console message</strong>: <code>&lt;script&gt;console.log('xss')&lt;/script&gt;</code></li>
+          <li><strong>DOM marker</strong>: <code>&lt;script&gt;document.body.setAttribute('data-xss','1')&lt;/script&gt;</code></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>How attackers often inject</h2>
+        <ul>
+          <li>Typing code into a comment box that the site later displays.</li>
+          <li>Putting code in a URL parameter (the link shows it back).</li>
+          <li>Making the page's JavaScript take user input and insert it into the page without checking.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Simple tests (safe)</h2>
+        <p class="small">Quick checks that don't steal data:</p>
+        <ul>
+          <li>Enter <code>&lt;script&gt;console.log('x')&lt;/script&gt;</code> into a text field and see if it appears as code or escaped text.</li>
+          <li>Try an image tag with an error handler that logs: <code>&lt;img src=x onerror="console.log('err')"&gt;</code></li>
+          <li>Look for unexpected HTML being shown instead of plain text.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>How to prevent XSS (easy)</h2>
+        <ul>
+          <li><strong>Escape output:</strong> turn special characters into harmless text before showing them (e.g., &lt; becomes &amp;lt;).</li>
+          <li><strong>Use safe APIs:</strong> don't insert raw HTML with innerHTML; prefer text-only methods.</li>
+          <li><strong>Validate input:</strong> check that inputs look like you expect (but escaping output is the best defense).</li>
+          <li><strong>Content Security Policy (CSP):</strong> a rule that helps browsers block many XSS attacks.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Developer checklist (one line each)</h2>
+        <ul>
+          <li>Escape user data where it’s shown.</li>
+          <li>Avoid eval() and unsafe HTML insertion.</li>
+          <li>Use CSP to restrict scripts.</li>
+          <li>Sanitize rich text editors on the server.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Testing safety & ethics</h2>
+        <ul>
+          <li>Always have permission to test a site.</li>
+          <li>Use non-destructive checks (console, DOM markers, Collaborator for blind tests).</li>
+          <li>Don't exfiltrate real user data in tests.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Reporting an XSS</h2>
+        <ul>
+          <li>Show the exact input used and where you put it (form/URL).</li>
+          <li>Show the harmless proof (console message, DOM marker or Collaborator callback).</li>
+          <li>Explain impact: what an attacker could do if exploited.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Extra: Blind XSS</h2>
+        <p class="small">When the code runs somewhere you can't see (server-side logs, admin panels)</p>
+        <ul>
+          <li>Use an OAST/Collaborator to get a callback proving execution.</li>
+          <li>Do not send real data in the payload; only proof tokens/adapters set up for testing.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div style="margin-top:12px;text-align:center;color:var(--muted);font-size:13px;">
+      Simplified explanation for learning. For actual security testing, follow authorization rules and safe methods.
+    </div>
+  </div>
+</body>
+</html>
