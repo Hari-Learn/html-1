@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nikto Tool Overview</title>
+  <style>
+    /* Vanilla, light-theme, minimal, no-scroll layout */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      height: 100vh;
+      overflow: hidden; /* prevent scrolling */
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 16px 24px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header h1 {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    header p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      padding: 20px 24px;
+      gap: 20px;
+    }
+
+    .section {
+      background: #fff;
+      padding: 16px;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .section h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .section ul {
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    .section p,
+    .section li {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .notice {
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 10px;
+      border: 1px solid #ffeeba;
+      border-radius: 4px;
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    footer {
+      padding: 12px 24px;
+      font-size: 13px;
+      color: #888;
+      background-color: #fafafa;
+      border-top: 1px solid #ddd;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-height: 650px) {
+      .section p,
+      .section li {
+        font-size: 13px;
+      }
+
+      header h1 {
+        font-size: 18px;
+      }
+
+      header p {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nikto — Web Server Scanner (Overview)</h1>
+    <p>Simple overview of features, use cases, and ethical notice. Full width. No scroll.</p>
+  </header>
+
+  <div class="content">
+    <div class="section">
+      <div>
+        <h2>What is Nikto?</h2>
+        <p>Nikto is an open-source web server scanner that checks for:</p>
+        <ul>
+          <li>Common server vulnerabilities and misconfigurations</li>
+          <li>Outdated server software</li>
+          <li>Insecure files (like backup files or test scripts)</li>
+          <li>Insecure or default server configurations</li>
+        </ul>
+
+        <h2>Who Uses Nikto?</h2>
+        <ul>
+          <li>Penetration testers (with permission)</li>
+          <li>System administrators validating server security</li>
+          <li>Developers testing local or staging environments</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div>
+        <h2>Responsible Use</h2>
+        <p><strong>Nikto is a security tool. Use it only on systems you own or have written permission to test.</strong></p>
+
+        <h2>Best Practices</h2>
+        <ul>
+          <li>Never scan production servers without approval</li>
+          <li>Review results manually — false positives are possible</li>
+          <li>Use alongside other tools for deeper assessments</li>
+        </ul>
+
+        <div class="notice">
+          ⚠️ Unauthorized scanning is illegal and unethical. Always get permission.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Educational use only — No commands or exploits shown. • Updated Oct 2025
+  </footer>
+</body>
+</html>
