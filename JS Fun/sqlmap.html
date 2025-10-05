@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>sqlmap — Quick Info</title>
+  <style>
+    /* Minimal CSS */
+    :root{
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --accent:#0b63d4;
+      --muted:#5a6a78;
+      --radius:10px;
+      --shadow: 0 6px 18px rgba(12,24,48,0.08);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #122028;
+    }
+
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#eef4fb 70%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      line-height:1.45;
+    }
+
+    .card{
+      width: min(900px, 96%);
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:20px;
+      align-items:start;
+    }
+
+    @media (max-width:800px){
+      .card{grid-template-columns:1fr; padding:20px;}
+    }
+
+    header{
+      grid-column: 1 / -1;
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+
+    .logo{
+      width:52px;
+      height:52px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#2a9df4);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      box-shadow: 0 6px 14px rgba(11,99,212,0.18);
+      font-size:22px;
+    }
+
+    h1{margin:0;font-size:20px;}
+    p.lead{margin:6px 0 0;color:var(--muted);font-size:14px;}
+
+    .content{
+      padding-right:6px;
+    }
+
+    .box{
+      background:#fbfdff;
+      border-radius:8px;
+      padding:14px;
+      border:1px solid #eef4f9;
+    }
+
+    .muted{color:var(--muted);font-size:14px;}
+    ul{margin:8px 0 12px 20px;}
+    li{margin:6px 0;}
+    .aside{
+      padding-left:8px;
+    }
+
+    .pill{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(11,99,212,0.08);
+      color:var(--accent);
+      font-weight:600;
+      font-size:13px;
+    }
+
+    footer{
+      grid-column:1 / -1;
+      margin-top:12px;
+      font-size:13px;
+      color:var(--muted);
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    a{color:var(--accent); text-decoration:none;}
+    a:focus, a:hover {text-decoration:underline;}
+    .notice{
+      background:#fff4e6;
+      color:#7a4b00;
+      border:1px solid #ffe6b8;
+      padding:10px 12px;
+      border-radius:8px;
+      font-size:13px;
+    }
+
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <header>
+      <div class="logo" aria-hidden="true">sql</div>
+      <div>
+        <h1 id="title">sqlmap — overview & guidance</h1>
+        <p class="lead">High-level summary of what sqlmap is, its capabilities, and ethical/legal guidance.</p>
+      </div>
+      <div style="margin-left:auto" class="pill" aria-hidden="true">Info Card</div>
+    </header>
+
+    <section class="content" aria-labelledby="overview">
+      <div class="box" id="overview">
+        <h2 style="margin-top:0;font-size:16px;">What is sqlmap?</h2>
+        <p class="muted">
+          <strong>sqlmap</strong> is an open-source automated tool that helps assess web applications for SQL injection vulnerabilities and (at a high level) can identify database types and interaction patterns. It is widely used by security professionals for testing the resilience of applications against SQL injection when performed with permission.
+        </p>
+
+        <h3 style="font-size:15px;margin-bottom:6px;">Key capabilities (high-level)</h3>
+        <ul>
+          <li>Detection of SQL injection vulnerabilities in web inputs (automated testing patterns).</li>
+          <li>Database fingerprinting — determining the type/version of the backend DBMS (e.g., MySQL, PostgreSQL) in a defensive context.</li>
+          <li>Support for many DBMS backends and common injection techniques (described conceptually).</li>
+          <li>Integration helpers for penetration testers and auditors to speed up safe, authorized testing.</li>
+        </ul>
+
+        <h3 style="font-size:15px;margin-bottom:6px;">Intended users & use cases</h3>
+        <ul>
+          <li>Security auditors and penetration testers performing authorized assessments.</li>
+          <li>Developers and QA teams validating input handling and prepared-statement coverage.</li>
+          <li>Academic study of database security and defenses (in controlled labs).</li>
+        </ul>
+
+        <div style="margin-top:10px;" class="notice" role="note">
+          Ethical & Legal reminder: Use only on systems you own or where you have explicit written permission. Unauthorized testing or exploitation is illegal and can cause harm.
+        </div>
+      </div>
+
+      <div style="height:14px"></div>
+
+      <div class="box" aria-labelledby="limitations">
+        <h3 id="limitations" style="font-size:15px;margin-top:0">Limitations & responsible use</h3>
+        <p class="muted">
+          Automated tools can produce false positives/negatives and may cause unintended effects on target systems (e.g., load, data exposure). Always:
+        </p>
+        <ul>
+          <li>Have explicit authorization before testing.</li>
+          <li>Test in staging/lab environments when possible.</li>
+          <li>Complement automation with manual review by qualified professionals.</li>
+        </ul>
+      </div>
+    </section>
+
+    <aside class="aside" aria-labelledby="quick">
+      <div class="box" id="quick">
+        <h3 id="quick-title" style="margin-top:0;font-size:15px;">Quick facts</h3>
+        <p class="muted"><strong>Type:</strong> Open-source security testing tool (for SQLi discovery)</p>
+        <p class="muted"><strong>Audience:</strong> Security professionals, researchers</p>
+        <p class="muted"><strong>Risk:</strong> Dual-use — can be misused if applied without permission</p>
+
+        <h4 style="margin-top:10px;font-size:14px;">Good practices</h4>
+        <ul>
+          <li>Work with scope & rules of engagement.</li>
+          <li>Keep backups and notify stakeholders.</li>
+          <li>Report findings responsibly — include remediation guidance.</li>
+        </ul>
+      </div>
+
+      <div style="height:12px"></div>
+
+      <div class="box" aria-labelledby="resources">
+        <h3 id="resources" style="margin-top:0;font-size:15px;">Further resources</h3>
+        <p class="muted" style="margin-bottom:6px;">
+          For learning about SQL injection and defenses (safe, non-exploitative):
+        </p>
+        <ul>
+          <li><span class="muted">OWASP — SQL Injection</span> (overview of vulnerability classes and mitigations)</li>
+          <li><span class="muted">Secure coding guides — input validation, parameterized queries</span></li>
+        </ul>
+      </div>
+    </aside>
+
+    <footer>
+      <div>Prepared responsibly — educational overview only.</div>
+      <div class="muted">Last updated: <strong><!-- static timestamp --></strong> (this page has no live updates)</div>
+    </footer>
+  </main>
+</body>
+</html>
