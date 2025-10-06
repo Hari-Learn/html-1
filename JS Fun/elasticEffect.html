@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elastic Animation Check</title>
+<style>
+  body {
+    margin: 0; padding: 20px;
+    display: flex;
+    gap: 20px;
+    background: #f4f9f5;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+  }
+
+  .box {
+    flex: 1;
+    height: 200px;
+    background: linear-gradient(to bottom, #e6f7b3, #b2d96b);
+    border-radius: 12px 12px 0 0;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+
+    /* Start invisible and scaled down */
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  @keyframes elastic-in {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    40% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    60% {
+      transform: scale(0.95);
+    }
+    80% {
+      transform: scale(1.03);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .elastic-animate {
+    animation: elastic-in 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  }
+</style>
+</head>
+<body>
+
+<div class="box" id="box1">Box 1</div>
+<div class="box" id="box2">Box 2</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (!localStorage.getItem('boxElasticAnimated')) {
+      document.getElementById('box1').classList.add('elastic-animate');
+      document.getElementById('box2').classList.add('elastic-animate');
+      localStorage.setItem('boxElasticAnimated', 'true');
+    } else {
+      // Show boxes immediately without animation on reload
+      const boxes = document.querySelectorAll('.box');
+      boxes.forEach(box => {
+        box.style.opacity = '1';
+        box.style.transform = 'scale(1)';
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -86,7 +86,34 @@
     main { flex-direction: column; padding: 12px; gap: 12px; }
     .box-left, .box-right { width: 100%; height: auto; overflow: auto; }
   }
+
+  @keyframes elastic-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  80% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.elastic-animate {
+  animation: elastic-in 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
 </style>
+
+
 </head>
 <body>
   <div class="wrap">
@@ -133,5 +160,20 @@
       30/70 box model layout • gradient header • full-width page • no vertical scroll
     </footer>
   </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Check if animation already shown in localStorage
+    const animated = localStorage.getItem('boxElasticAnimated');
+
+    if (!animated) {
+      // Add class to boxes
+      document.querySelector('.box-left').classList.add('elastic-animate');
+      document.querySelector('.box-right').classList.add('elastic-animate');
+
+      // Mark as animated so next page load skips animation
+      localStorage.setItem('boxElasticAnimated', 'true');
+    }
+  });
+</script>
 </body>
 </html>
