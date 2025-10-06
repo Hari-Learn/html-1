@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Metasploit Framework — Full Width Demo</title>
+<style>
+  /* Minimal reset + box model */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  /* Ensure no vertical scroll, content fits exactly in viewport */
+  body {
+    min-height: 100vh;
+    overflow: hidden; /* prevents vertical scroll */
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #111;
+    line-height: 1.4;
+  }
+
+  /* Layout: header + main + footer exactly fill the viewport */
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* exact viewport height */
+    width: 100%;   /* full width */
+  }
+
+  header {
+    width: 100%;
+    padding: 14px 24px;
+    background: linear-gradient(90deg,#0b3d91,#1e6fd8);
+    color: #fff;
+  }
+
+  /* Hero area takes remaining space; remains full width and won't cause vertical scroll */
+  main {
+    width: 100%;
+    padding: 24px;
+    background: #fafafa;
+    /* main consumes remaining space */
+    flex: 1 1 auto;
+    overflow: auto; /* allows internal scrolling if content inside main is too large */
+  }
+
+  /* Make sure internal scrollbars appear only inside the main area if needed,
+     but top-level page won't scroll vertically. */
+  .content {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,#ffffff,#f2f6ff 60%);
+    padding: 18px;
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+
+  footer {
+    width: 100%;
+    padding: 10px 24px;
+    background: #111827;
+    color: #d1d5db;
+    font-size: 13px;
+  }
+
+  /* Simple typographic styles - left aligned (not centered) */
+  h1 { margin: 0 0 8px 0; font-size: 20px; font-weight: 600; }
+  p { margin: 0 0 12px 0; font-size: 14px; }
+  ul { margin: 8px 0 0 20px; padding: 0; font-size: 14px; }
+
+  /* Make links obvious */
+  a { color: #0b3d91; text-decoration: none; border-bottom: 1px dotted rgba(11,61,145,0.3); }
+  a:hover { text-decoration: underline; }
+
+  /* Small responsive tweak: reduce padding on very narrow viewports */
+  @media (max-width:420px){
+    header, main, footer { padding-left: 12px; padding-right: 12px; }
+    h1 { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Metasploit Framework</h1>
+      <div style="font-size:12px; opacity:.95;">Quick summary • Full‑width layout demo</div>
+    </header>
+
+    <main>
+      <section class="content" role="main" aria-labelledby="intro">
+        <h2 id="intro" style="margin-top:0;">What is Metasploit?</h2>
+        <p>
+          Metasploit Framework is an open‑source platform used for developing, testing, and executing exploit code
+          against remote targets. It's widely used by security professionals for penetration testing and research.
+        </p>
+
+        <h3 style="margin-bottom:6px;">Core concepts</h3>
+        <ul>
+          <li><strong>Exploit</strong> — code that takes advantage of a vulnerability.</li>
+          <li><strong>Payload</strong> — code delivered by an exploit (e.g., a reverse shell).</li>
+          <li><strong>Module</strong> — organized pieces in Metasploit (exploits, aux, post, payloads).</li>
+        </ul>
+
+        <h3 style="margin-top:12px; margin-bottom:6px;">Typical workflow</h3>
+        <ol style="margin:0 0 12px 20px; font-size:14px;">
+          <li>Recon &amp; identify a target and vulnerable service.</li>
+          <li>Select an exploit module and configure options (RHOST, RPORT, etc.).</li>
+          <li>Choose payload and set listeners (e.g., a reverse TCP handler).</li>
+          <li>Run the exploit and perform post‑exploitation tasks.</li>
+        </ol>
+
+        <p style="margin-top:6px;">
+          <strong>Note:</strong> Use Metasploit only in authorized environments (your lab, VMs, or with explicit permission).
+        </p>
+
+        <p style="margin-top:12px;">
+          Want a tiny example command to try in a controlled lab? Try:
+          <code style="background:#eef2ff;padding:2px 6px;border-radius:4px;">msfconsole</code>
+          then search for modules with
+          <code style="background:#eef2ff;padding:2px 6px;border-radius:4px;">search <em>service</em></code>.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div>Full‑width demo • no vertical scroll on page (viewport sized). Left‑aligned content.</div>
+    </footer>
+  </div>
+</body>
+</html>
