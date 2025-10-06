@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Metasploit Framework — 30/70 Box Layout</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+
+  body {
+    min-height: 100vh;
+    overflow: hidden;  /* prevent vertical scroll */
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    color: #111;
+    background: #f4f9f5;
+  }
+
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+  }
+
+  header {
+    width: 100%;
+    padding: 14px 24px;
+    background: linear-gradient(90deg, #d5f7b6, #519c3e); /* lemon green to dark green */
+    color: #10320c;
+  }
+
+  main {
+    flex: 1 1 auto;
+    display: flex;
+    width: 100%;
+    padding: 18px;
+    gap: 18px;
+    align-items: stretch;
+  }
+
+  /* Left box: 30% width */
+  .box-left {
+    flex: 0 0 30%;
+    background: #ffffff;
+    padding: 18px;
+    border: 1px solid rgba(0,0,0,0.06);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+
+  /* Right box: 70% width */
+  .box-right {
+    flex: 1 1 70%;
+    background: #ffffff;
+    padding: 18px;
+    border: 1px solid rgba(0,0,0,0.06);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+
+  h1 { margin: 0 0 6px; font-size: 20px; font-weight: 600; }
+  h2 { margin: 0 0 10px; font-size: 16px; color: #2b6e1d; }
+  p { margin: 0 0 10px; font-size: 14px; }
+  ul, ol { margin: 6px 0 0 18px; font-size: 14px; }
+  li { margin-bottom: 6px; }
+
+  footer {
+    width: 100%;
+    padding: 10px 24px;
+    background: #10320c;
+    color: #d1e7d3;
+    font-size: 13px;
+  }
+
+  @media (max-width: 720px) {
+    main { flex-direction: column; padding: 12px; gap: 12px; }
+    .box-left, .box-right { width: 100%; height: auto; overflow: auto; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Metasploit Framework</h1>
+      <div style="font-size:12px;">30/70 layout • lemon green gradient header • full width</div>
+    </header>
+
+    <main>
+      <!-- Left box: 30% width -->
+      <section class="box-left" aria-labelledby="core">
+        <h2 id="core">Core Concepts</h2>
+
+        <p><strong>Exploit:</strong> Code that triggers a vulnerability to gain access.</p>
+        <p><strong>Payload:</strong> Code executed after exploitation (e.g., shell).</p>
+        <ul>
+          <li><strong>Exploit Modules</strong></li>
+          <li><strong>Payload Modules</strong></li>
+          <li><strong>Auxiliary/Post Modules</strong></li>
+        </ul>
+        <p><strong>Think of:</strong> Metasploit = Exploit + Payload + Handler.</p>
+      </section>
+
+      <!-- Right box: 70% width -->
+      <section class="box-right" aria-labelledby="workflow">
+        <h2 id="workflow">Typical Workflow</h2>
+        <ol>
+          <li><strong>Recon:</strong> Use <code>nmap</code> to find live hosts and open ports.</li>
+          <li><strong>Search:</strong> In Metasploit: <code>search vsftpd</code></li>
+          <li><strong>Set Options:</strong>
+            <ul>
+              <li><code>set RHOST 192.168.56.101</code></li>
+              <li><code>set LHOST 192.168.56.1</code></li>
+            </ul>
+          </li>
+          <li><strong>Exploit:</strong> Run the module: <code>exploit</code></li>
+          <li><strong>Post:</strong> Dump hashes, escalate privileges, pivot if needed.</li>
+        </ol>
+        <p><strong>Note:</strong> Use Metasploit only in test labs or with explicit authorization.</p>
+      </section>
+    </main>
+
+    <footer>
+      30/70 box model layout • gradient header • full-width page • no vertical scroll
+    </footer>
+  </div>
+</body>
+</html>
