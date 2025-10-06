@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Metasploit Framework — Two Equal Boxes (Full Width)</title>
+<style>
+  /* Minimal reset + box model */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    min-height: 100vh;
+    overflow: hidden;            /* prevent page vertical scroll */
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #111;
+    line-height: 1.4;
+    background: #f7f9fc;
+  }
+
+  /* Page layout: full width, header + main (two boxes) + footer */
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* exact viewport height so page won't scroll */
+    width: 100%;
+  }
+
+  header {
+    width: 100%;
+    padding: 14px 24px;
+    background: linear-gradient(90deg,#0b3d91,#1e6fd8);
+    color: #fff;
+  }
+
+  /* Main area occupies remaining viewport height */
+  main {
+    flex: 1 1 auto;
+    width: 100%;
+    padding: 18px;       /* outer padding - does not center content */
+    display: flex;
+    gap: 18px;           /* gap between boxes */
+    align-items: stretch;
+  }
+
+  /* Two equal boxes: each takes half of the available width */
+  .box {
+    flex: 1 1 0;         /* equal widths */
+    min-width: 0;        /* allow shrinking without overflow */
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;        /* match main's height (no extra vertical page scroll) */
+    overflow: hidden;    /* keep page from scrolling; content kept concise */
+    box-shadow: 0 1px 2px rgba(11,61,145,0.04);
+  }
+
+  /* headings and small styling */
+  h1 { margin: 0 0 6px 0; font-size: 20px; font-weight: 600; }
+  h2 { margin: 0 0 10px 0; font-size: 16px; color: #0b3d91; }
+  p { margin: 0 0 10px 0; font-size: 14px; }
+  ul { margin: 6px 0 0 18px; font-size: 14px; }
+  li { margin-bottom: 6px; }
+
+  footer {
+    width: 100%;
+    padding: 10px 24px;
+    background: #111827;
+    color: #d1d5db;
+    font-size: 13px;
+  }
+
+  /* Keep layout usable on very narrow screens: stack boxes vertically */
+  @media (max-width: 720px) {
+    main { flex-direction: column; gap: 12px; padding: 12px; }
+    .box { height: auto; overflow: auto; } /* allow internal scroll on small screens */
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Metasploit Framework</h1>
+      <div style="font-size:12px; opacity:.95;">Two equal boxes • full width • no page vertical scroll</div>
+    </header>
+
+    <main>
+      <!-- Left box: Core Concepts -->
+      <section class="box" aria-labelledby="core">
+        <h2 id="core">Core Concepts</h2>
+
+        <p><strong>Exploit</strong> — code that triggers a vulnerability to take control or run code on a target.</p>
+
+        <p><strong>Payload</strong> — the code delivered by an exploit (e.g., a reverse shell, meterpreter).</p>
+
+        <ul>
+          <li><strong>Module types:</strong> <em>exploit</em>, <em>auxiliary</em>, <em>post</em>, <em>payload</em>.</li>
+          <li><strong>Handlers:</strong> listeners that accept incoming connections from reverse payloads.</li>
+          <li><strong>Encoders/Listeners:</strong> tools to help deliver payloads and avoid detection in lab tests.</li>
+        </ul>
+
+        <p style="margin-top:8px;"><strong>Tip:</strong> Think of Metasploit as a library of building blocks — pick an exploit, configure options, attach a payload, and run a handler.</p>
+      </section>
+
+      <!-- Right box: Typical Workflow -->
+      <section class="box" aria-labelledby="workflow">
+        <h2 id="workflow">Typical Workflow</h2>
+
+        <p><strong>1. Reconnaissance</strong> — discover hosts/services (e.g., nmap) and gather versions.</p>
+
+        <p><strong>2. Select module</strong> — use Metasploit to search for matching exploits (e.g., `search vsftpd`).</p>
+
+        <p><strong>3. Configure</strong> — set `RHOST`, `RPORT`, payload options, LHOST for reverse connections:</p>
+        <ul>
+          <li><code>set RHOST 192.168.56.101</code></li>
+          <li><code>set LHOST 192.168.56.1</code></li>
+        </ul>
+
+        <p><strong>4. Launch & handle</strong> — run the exploit and let the handler wait for the payload to connect back.</p>
+
+        <p><strong>5. Post‑exploitation</strong> — gather data, escalate privileges, and clean up in authorized lab tests.</p>
+
+        <p style="margin-top:8px;"><strong>Safety:</strong> Only run these steps in VMs/labs or on systems with explicit permission.</p>
+      </section>
+    </main>
+
+    <footer>
+      <div>Full‑width layout • boxes are equal width & height (viewport constrained). Stacked on narrow screens.</div>
+    </footer>
+  </div>
+</body>
+</html>
