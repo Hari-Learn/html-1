@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OpenVAS / GVM — Overview</title>
+  <style>
+    /* Minimal CSS: responsive two-column layout */
+    :root {
+      --gap: 18px;
+      --max-width: 1000px;
+      --accent: #0b5cff;
+      --muted: #555;
+      --bg: #f7f8fb;
+      --card: #ffffff;
+    }
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#222;background:var(--bg);}
+    .wrap{max-width:var(--max-width);margin:28px auto;padding:18px;display:grid;grid-template-columns:1fr 320px;gap:var(--gap);}
+    header{grid-column:1/-1;display:flex;align-items:baseline;gap:12px;}
+    h1{margin:0;font-size:1.25rem;color:var(--accent);}
+    p.lead{margin:0;color:var(--muted);font-size:0.95rem;}
+    article, aside{background:var(--card);padding:14px;border-radius:8px;box-shadow:0 1px 4px rgba(12,20,40,0.06);}
+    article h2{margin-top:0;font-size:1.05rem;color:#0a3a8a;}
+    section + section{margin-top:12px;}
+    ul{margin:8px 0 12px 18px;color:var(--muted);}
+    .note{font-size:0.9rem;color:#6a6a6a;background:#f1f6ff;padding:8px;border-radius:6px;border:1px solid rgba(11,92,255,0.06);}
+    footer{grid-column:1/-1;text-align:center;color:var(--muted);font-size:0.85rem;margin-top:8px;}
+    @media (max-width:920px){
+      .wrap{grid-template-columns:1fr; padding:12px;}
+      aside{order:2;}
+    }
+    /* tiny visual nicety for severity labels */
+    .sev{display:inline-block;padding:3px 8px;border-radius:999px;font-weight:600;font-size:0.8rem}
+    .sev.low{background:#e6f7e6;color:#1c7a1c}
+    .sev.medium{background:#fff4e0;color:#a56a00}
+    .sev.high{background:#ffe6e6;color:#a40000}
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <header>
+      <h1>OpenVAS / GVM — Quick Overview</h1>
+      <p class="lead">A high‑level explanation of what OpenVAS (now part of GVM) is, its components, and responsible uses.</p>
+    </header>
+
+    <article aria-labelledby="what">
+      <h2 id="what">What is OpenVAS / GVM?</h2>
+      <p>
+        OpenVAS originally referred to the open‑source vulnerability scanner project. Today it's commonly encountered as part of the
+        Greenbone Vulnerability Management (GVM) ecosystem. GVM is a framework for performing vulnerability scanning and producing
+        reports used to find weaknesses in systems so they can be remediated.
+      </p>
+
+      <section aria-labelledby="components">
+        <h2 id="components">Key components (high level)</h2>
+        <ul>
+          <li><strong>OpenVAS/GVMD (scanner/engine):</strong> the core scanning engine that runs checks against targets.</li>
+          <li><strong>GVM Manager (gvmd):</strong> manages scan tasks, schedules, credentials and stores results.</li>
+          <li><strong>Greenbone Security Assistant (GSA):</strong> a web interface for configuring and viewing scans & reports.</li>
+          <li><strong>Network Vulnerability Tests (NVTs) / feeds:</strong> the signature/knowledge base used to check vulnerabilities.</li>
+          <li><strong>Reporting:</strong> produces results with severity indicators (e.g., CVSS) and remediation hints.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="scan-types">
+        <h2 id="scan-types">Scan types (conceptual)</h2>
+        <p class="note">
+          Scans are typically <strong>authenticated</strong> (use credentials to assess internal configuration) or <strong>unauthenticated</strong>
+          (external checks like open ports and known service issues). Different scan profiles focus on speed, depth, or compliance checks.
+        </p>
+        <ul>
+          <li><strong>Unauthenticated discovery:</strong> finds open ports and visible services.</li>
+          <li><strong>Authenticated checks:</strong> probe configuration and missing patches when credentials are provided.</li>
+          <li><strong>Policy/compliance scans:</strong> validate settings against baselines or standards.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="outputs">
+        <h2 id="outputs">What the scanner outputs</h2>
+        <p>
+          Typical outputs include a list of findings with severity (low / medium / high), vulnerability identifiers (e.g., CVE/CVSS),
+          references, and high‑level remediation suggestions. Reports are intended to guide patching and configuration fixes.
+        </p>
+        <p>
+          Example severity labels:
+          <span class="sev.low">LOW</span>
+          <span class="sev.medium">MEDIUM</span>
+          <span class="sev.high">HIGH</span>
+        </p>
+      </section>
+
+      <section aria-labelledby="use-cases">
+        <h2 id="use-cases">Legitimate uses</h2>
+        <ul>
+          <li>Internal security assessments by authorized teams.</li>
+          <li>Vulnerability management workflows (discover → prioritize → remediate → verify).</li>
+          <li>Compliance validation and periodic security scanning.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="legal">
+        <h2 id="legal">Legal & ethical note</h2>
+        <p style="color:#611">
+          Scanning systems without explicit authorization may be illegal and unethical. Always have written permission (for example, a
+          signed scope of work or a penetration testing authorization) before running any scans against systems you do not own.
+        </p>
+      </section>
+    </article>
+
+    <aside aria-labelledby="quick-tips">
+      <h2 id="quick-tips">Practical tips (non-actionable)</h2>
+
+      <section>
+        <h3 style="margin:6px 0 8px">Learning & documentation</h3>
+        <p style="margin:0;color:var(--muted)">Start with the official GVM / Greenbone documentation and community resources for installation and safe usage. Look for:</p>
+        <ul>
+          <li>Overview docs & architecture diagrams</li>
+          <li>Feed differences (community vs enterprise)</li>
+          <li>How to read reports and map findings to remediation</li>
+        </ul>
+      </section>
+
+      <section style="margin-top:10px;">
+        <h3 style="margin:6px 0 8px">Operational best practices</h3>
+        <ul>
+          <li>Run scans in a controlled maintenance window if doing intrusive checks.</li>
+          <li>Prioritize findings by risk (business impact + severity).</li>
+          <li>Keep your vulnerability feeds and scanner software updated.</li>
+        </ul>
+      </section>
+
+      <section style="margin-top:10px;">
+        <h3 style="margin:6px 0 8px">What to avoid</h3>
+        <ul>
+          <li>Avoid scanning external targets you don't own or aren't authorized to test.</li>
+          <li>Don't treat scan results as flawless — validate critical findings manually.</li>
+        </ul>
+      </section>
+
+      <section style="margin-top:12px;">
+        <h3 style="margin:6px 0 8px">Further study (topics)</h3>
+        <ul>
+          <li>Vulnerability lifecycle and CVE/CVSS basics</li>
+          <li>Secure configuration baselines (CIS, industry guides)</li>
+          <li>Incident response and patch management integration</li>
+        </ul>
+      </section>
+    </aside>
+
+    <footer>
+      Content provided for educational and defensive purposes only — do not scan systems without permission.
+    </footer>
+  </div>
+</body>
+</html>
