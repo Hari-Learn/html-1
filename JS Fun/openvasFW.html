@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OpenVAS / GVM - Explained Visually</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f4f8;
+      color: #222;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 100%;
+    }
+
+    .box {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      flex: 1 1 calc(33.33% - 20px); /* 3 per row on desktop */
+      padding: 20px;
+      min-width: 280px;
+      max-width: 100%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .box h2 {
+      font-size: 1.1rem;
+      color: #0b5cff;
+      margin-bottom: 10px;
+    }
+
+    .box p, .box ul {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .box ul {
+      padding-left: 18px;
+    }
+
+    .note {
+      background: #e9f3ff;
+      border-left: 4px solid #0b5cff;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    @media (max-width: 900px) {
+      .box {
+        flex: 1 1 100%; /* Full width on small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Understanding OpenVAS / GVM</h1>
+
+  <div class="container">
+
+    <div class="box">
+      <h2>What is OpenVAS?</h2>
+      <p>OpenVAS (Open Vulnerability Assessment System) is a free, open-source vulnerability scanner. It's now part of the <strong>Greenbone Vulnerability Management (GVM)</strong> system used to assess and report on network security issues.</p>
+    </div>
+
+    <div class="box">
+      <h2>GVM Components</h2>
+      <ul>
+        <li><strong>OpenVAS Scanner:</strong> Executes tests against target systems.</li>
+        <li><strong>GVMD:</strong> Manages scan configs, targets, tasks, and results.</li>
+        <li><strong>GSA:</strong> Web interface for users (GUI).</li>
+        <li><strong>Feeds:</strong> Updated vulnerability test data (NVTs).</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>How It Works</h2>
+      <p>The scanner sends probes to discover systems, services, and known vulnerabilities. Results are analyzed and matched with known CVEs and security advisories.</p>
+      <div class="note">Scans can be authenticated (with credentials) or unauthenticated (external probes).</div>
+    </div>
+
+    <div class="box">
+      <h2>Scan Types</h2>
+      <ul>
+        <li>🟢 Unauthenticated Scan (surface-level)</li>
+        <li>🔐 Authenticated Scan (deep, with system access)</li>
+        <li>📄 Policy-based Compliance Scan</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Common Output</h2>
+      <p>Each scan generates a report showing vulnerabilities, severity levels (Low/Medium/High/Critical), CVE IDs, affected services, and remediation advice.</p>
+    </div>
+
+    <div class="box">
+      <h2>Example Severities</h2>
+      <ul>
+        <li><strong>Low:</strong> Minor issues, minimal risk.</li>
+        <li><strong>Medium:</strong> Could be exploited with some effort.</li>
+        <li><strong>High:</strong> Likely to be exploited, serious impact.</li>
+        <li><strong>Critical:</strong> Immediate attention needed!</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Use Cases</h2>
+      <ul>
+        <li>Internal security audits</li>
+        <li>Network vulnerability assessments</li>
+        <li>Compliance verification (e.g., ISO, NIST)</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Scan only systems you own or have permission to assess.</li>
+        <li>Keep your feed updated (daily/weekly).</li>
+        <li>Prioritize remediation based on severity + impact.</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Ethical & Legal Note</h2>
+      <p>Running OpenVAS against systems without permission is illegal and unethical. Always get written authorization before scanning.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    ⚠️ This content is for educational, defensive, and authorized security assessment use only.
+  </footer>
+
+</body>
+</html>
