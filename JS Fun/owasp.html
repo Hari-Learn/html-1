@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>OWASP ZAP — Box Model (no vertical scroll)</title>
+<style>
+  /* Minimal CSS, full-width layout, no vertical scroll */
+  :root{
+    --bg: #0f1724;
+    --panel: #0b1220;
+    --accent: #18a999;
+    --muted: #9aa6b2;
+    --card: #071123;
+  }
+  html,body{
+    height:100%;
+    margin:0;
+    background:linear-gradient(180deg,var(--bg),#071428 120%);
+    color:#e6f0f2;
+    font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow:hidden; /* ensure no vertical scroll */
+  }
+
+  /* Full viewport container */
+  .wrap{
+    display:flex;
+    flex-direction:row;
+    gap:24px;
+    padding:28px;
+    box-sizing:border-box;
+    height:100vh; /* prevents vertical scroll */
+    width:100%;
+    align-items:stretch;
+  }
+
+  /* Left info panel (fluid) */
+  .info{
+    flex:1 1 55%;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:12px;
+    padding:22px;
+    box-shadow: 0 6px 22px rgba(2,6,23,0.6);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    min-width:280px;
+  }
+  .title{
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .logo{
+    background:var(--accent);
+    color:#03211f;
+    font-weight:700;
+    padding:10px 12px;
+    border-radius:8px;
+    font-size:18px;
+    letter-spacing:0.6px;
+  }
+  h1{
+    font-size:clamp(16px, 2.4vw, 24px);
+    margin:0;
+    line-height:1.05;
+  }
+  p.lead{
+    margin:0;
+    color:var(--muted);
+    font-size:clamp(12px,1.6vw,14px);
+  }
+
+  .meta{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:6px;
+  }
+  .chip{
+    background:rgba(255,255,255,0.03);
+    color:var(--muted);
+    padding:6px 10px;
+    border-radius:999px;
+    font-size:12px;
+  }
+
+  /* Info body */
+  .info-body{
+    margin-top:6px;
+    color:#dfeff0;
+    font-size:13px;
+    line-height:1.35;
+    overflow:hidden; /* avoid internal vertical scrolling */
+  }
+
+  .bullets{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:12px;
+    margin-top:10px;
+    font-size:13px;
+  }
+  .bullet{
+    background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+    padding:10px;
+    border-radius:8px;
+    color:var(--muted);
+  }
+
+  /* Right visualization panel (fixed min width) */
+  .viz{
+    flex:0 0 45%;
+    min-width:360px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+    border-radius:12px;
+    padding:18px;
+    box-shadow: 0 6px 22px rgba(2,6,23,0.6);
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    align-items:stretch;
+  }
+
+  .viz header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .viz h2{
+    margin:0;
+    font-size:14px;
+    letter-spacing:0.2px;
+  }
+  .viz .sub{
+    color:var(--muted);
+    font-size:12px;
+  }
+
+  /* Box model canvas area - we use a flexible square that scales to available height */
+  .canvas-wrap{
+    flex:1 1 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    min-height:0; /* prevents overflow */
+    overflow:hidden; /* no internal scroll */
+  }
+
+  /* The visualization itself is a nested set of boxes illustrating margin, border, padding, content.
+     We'll keep the overall drawing responsive and centered. */
+  .box-root{
+    --size: min(68vmin, 420px); /* scale to viewport but not too large */
+    width:var(--size);
+    height:var(--size);
+    position:relative;
+    display:grid;
+    place-items:center;
+  }
+
+  /* outermost area representing margin */
+  .margin{
+    box-sizing:content-box;
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg, rgba(24,169,153,0.03), rgba(24,169,153,0.01));
+    border-radius:10px;
+    display:grid;
+    place-items:center;
+    position:relative;
+  }
+
+  .border{
+    width:calc(100% - 36px); /* visualize margin spacing */
+    height:calc(100% - 36px);
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:6px solid rgba(24,169,153,0.18); /* border visualization */
+    border-radius:8px;
+    display:grid;
+    place-items:center;
+    position:relative;
+  }
+
+  .padding{
+    width:calc(100% - 52px);
+    height:calc(100% - 52px);
+    background:linear-gradient(180deg, rgba(5,10,15,0.6), rgba(3,8,14,0.85));
+    border-radius:6px;
+    display:grid;
+    place-items:center;
+    padding:12px;
+    box-sizing:border-box;
+    position:relative;
+    outline: 2px dashed rgba(255,255,255,0.03);
+  }
+
+  .content{
+    width:100%;
+    height:100%;
+    background:linear-gradient(180deg,#03121a,#071428);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    align-items:center;
+    justify-content:center;
+    padding:12px;
+    box-sizing:border-box;
+    color:var(--muted);
+    font-size:13px;
+    text-align:center;
+  }
+
+  /* Labels placed around the visualization */
+  .label{
+    position:absolute;
+    font-size:12px;
+    color:var(--muted);
+    background:rgba(2,6,12,0.6);
+    padding:6px 8px;
+    border-radius:6px;
+    backdrop-filter:blur(4px);
+  }
+  .lbl-margin{ top:8px; left:50%; transform:translateX(-50%); }
+  .lbl-border{ left:8px; top:50%; transform:translateY(-50%); }
+  .lbl-padding{ right:8px; top:50%; transform:translateY(-50%); }
+  .lbl-content{ bottom:8px; left:50%; transform:translateX(-50%); }
+
+  /* small legend */
+  .legend{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    justify-content:flex-end;
+    color:var(--muted);
+    font-size:12px;
+  }
+  .legend .swatch{
+    width:12px;height:12px;border-radius:3px;display:inline-block;margin-right:6px;
+  }
+  .sw-margin{ background:rgba(24,169,153,0.06); box-shadow:inset 0 0 0 1px rgba(24,169,153,0.04);}
+  .sw-border{ background:rgba(24,169,153,0.22);}
+  .sw-padding{ background:rgba(255,255,255,0.03);}
+  .sw-content{ background:linear-gradient(180deg,#03121a,#071428); border:1px solid rgba(255,255,255,0.02);}
+
+  /* Responsive tweaks to keep everything within viewport height */
+  @media (max-width:880px){
+    .wrap{ flex-direction:column; padding:14px; gap:12px; }
+    .info{ order:2; flex:1 1 auto; min-height:0; }
+    .viz{ order:1; min-width:0; flex:1 1 auto; }
+    .box-root{ --size: min(58vmin, 380px); }
+    .legend{ justify-content:flex-start; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Left: Info about OWASP ZAP -->
+    <section class="info" aria-labelledby="zap-title">
+      <div class="title">
+        <div class="logo">ZAP</div>
+        <div>
+          <h1 id="zap-title">OWASP ZAP — Zed Attack Proxy</h1>
+          <p class="lead">An open-source web application security scanner for finding vulnerabilities during development and testing.</p>
+        </div>
+      </div>
+
+      <div class="meta" aria-hidden="true">
+        <div class="chip">Open Source</div>
+        <div class="chip">Web Proxy</div>
+        <div class="chip">Active Project</div>
+        <div class="chip">Good for learning</div>
+      </div>
+
+      <div class="info-body">
+        <strong>Overview</strong>
+        <p style="margin-top:6px;">
+          OWASP ZAP is a proxy-based tool that helps security testers intercept, inspect, and manipulate HTTP(S) traffic between a web browser and web applications. It provides automated scanners, passive scanning, scripting, and many integrations suitable for defensive and offensive security learning — always use on authorized targets.
+        </p>
+
+        <div class="bullets" style="margin-top:12px;">
+          <div class="bullet"><strong>Primary uses</strong><br>Proxying, spidering, active/passive scanning, fuzzing.</div>
+          <div class="bullet"><strong>Good for</strong><br>Beginners learning web app security and proxy workflows.</div>
+          <div class="bullet"><strong>Platforms</strong><br>Cross-platform (Windows, macOS, Linux, Docker).</div>
+          <div class="bullet"><strong>Learn</strong><br>OWASP ZAP docs, official tutorials, and safe lab environments.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right: Visualization -->
+    <aside class="viz" aria-labelledby="viz-title">
+      <header>
+        <div>
+          <h2 id="viz-title">CSS Box Model — Visualized (applied to a ZAP UI element)</h2>
+          <div class="sub">Content, padding, border, margin — how an element is sized and spaced</div>
+        </div>
+        <div class="legend" aria-hidden="true">
+          <div><span class="swatch sw-margin"></span>Margin</div>
+          <div style="margin-left:8px;"><span class="swatch sw-border"></span>Border</div>
+          <div style="margin-left:8px;"><span class="swatch sw-padding"></span>Padding</div>
+          <div style="margin-left:8px;"><span class="swatch sw-content"></span>Content</div>
+        </div>
+      </header>
+
+      <div class="canvas-wrap" role="img" aria-label="Box model diagram showing margin, border, padding and content">
+        <div class="box-root" title="Box model diagram">
+          <div class="margin" aria-hidden="true">
+            <div class="border" aria-hidden="true">
+              <div class="padding" aria-hidden="true">
+                <div class="content" id="content-box">
+                  <div style="font-weight:600;color:#c8f6ee;font-size:14px;">ZAP Panel (Element)</div>
+                  <div style="font-size:12px;color:var(--muted);margin-top:6px;">
+                    Example: a tool panel entry (e.g., Sites tree item)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Labels -->
+          <div class="label lbl-margin">margin: 18px (space outside)</div>
+          <div class="label lbl-border">border: 6px (visual edge)</div>
+          <div class="label lbl-padding">padding: 12px (inner space)</div>
+          <div class="label lbl-content">content: variable (text / UI)</div>
+        </div>
+      </div>
+
+      <!-- small explanatory footnote, kept compact to prevent vertical overflow -->
+      <div style="font-size:12px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;">
+        <div>Note: All spacing values above are illustrative — the CSS box model controls how an element's total size is computed.</div>
+        <div style="opacity:0.9;font-size:11px;">No vertical scroll • Minimal CSS</div>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>
