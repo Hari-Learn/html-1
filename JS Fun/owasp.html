@@ -22,6 +22,50 @@
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
     overflow:hidden; /* ensure no vertical scroll */
+    transition: background 0.5s ease, color 0.5s ease;
+  }
+
+  /* Vanilla background theme */
+  body.vanilla-bg {
+    background: #fdf6e3;
+    color: #5c4b29;
+  }
+  body.vanilla-bg .info {
+    background: #f7f2db;
+    color: #5c4b29;
+    box-shadow: 0 4px 12px rgb(156 134 61 / 0.25);
+  }
+  body.vanilla-bg .viz {
+    background: #f9f7e6;
+    color: #5c4b29;
+    box-shadow: 0 4px 12px rgb(156 134 61 / 0.25);
+  }
+  body.vanilla-bg .logo {
+    background: #d1be63;
+    color: #403e0f;
+  }
+  body.vanilla-bg .chip {
+    background: #e6dfb4;
+    color: #5c4b29;
+  }
+  body.vanilla-bg .label {
+    background: rgba(255 255 255 / 0.7);
+    color: #5c4b29;
+    backdrop-filter: none;
+  }
+  body.vanilla-bg .legend .swatch.sw-margin {
+    background: #e2dba7;
+    box-shadow: inset 0 0 0 1px #c4bc89;
+  }
+  body.vanilla-bg .legend .swatch.sw-border {
+    background: #c9be74;
+  }
+  body.vanilla-bg .legend .swatch.sw-padding {
+    background: #ebe6c3;
+  }
+  body.vanilla-bg .legend .swatch.sw-content {
+    background: #f9f7e6;
+    border-color: #cfcf9e;
   }
 
   /* Full viewport container */
@@ -47,6 +91,7 @@
     flex-direction:column;
     gap:12px;
     min-width:280px;
+    transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
   }
   .title{
     display:flex;
@@ -61,6 +106,7 @@
     border-radius:8px;
     font-size:18px;
     letter-spacing:0.6px;
+    transition: background 0.5s ease, color 0.5s ease;
   }
   h1{
     font-size:clamp(16px, 2.4vw, 24px);
@@ -85,6 +131,7 @@
     padding:6px 10px;
     border-radius:999px;
     font-size:12px;
+    transition: background 0.5s ease, color 0.5s ease;
   }
 
   /* Info body */
@@ -122,6 +169,7 @@
     flex-direction:column;
     gap:14px;
     align-items:stretch;
+    transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
   }
 
   .viz header{
@@ -224,116 +272,149 @@
     border-radius:6px;
     backdrop-filter:blur(4px);
   }
-  .lbl-margin{ top:8px; left:50%; transform:translateX(-50%); }
-  .lbl-border{ left:8px; top:50%; transform:translateY(-50%); }
-  .lbl-padding{ right:8px; top:50%; transform:translateY(-50%); }
-  .lbl-content{ bottom:8px; left:50%; transform:translateX(-50%); }
+  .label.margin {
+    top:0;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .label.border {
+    top:50%;
+    right:0;
+    transform: translateX(50%) translateY(-50%);
+  }
+  .label.padding {
+    bottom:0;
+    left:50%;
+    transform: translateX(-50%) translateY(50%);
+  }
+  .label.content {
+    top:50%;
+    left:0;
+    transform: translateX(-50%) translateY(-50%);
+  }
 
-  /* small legend */
+  /* Legend for colors */
   .legend{
     display:flex;
-    gap:8px;
-    align-items:center;
-    justify-content:flex-end;
-    color:var(--muted);
+    gap:12px;
+    margin-top:12px;
+    justify-content:center;
     font-size:12px;
+    color:var(--muted);
   }
-  .legend .swatch{
-    width:12px;height:12px;border-radius:3px;display:inline-block;margin-right:6px;
+  .swatch{
+    width:22px;
+    height:22px;
+    border-radius:6px;
+    box-shadow: 0 0 0 1px #0c1928 inset;
+    flex-shrink:0;
   }
-  .sw-margin{ background:rgba(24,169,153,0.06); box-shadow:inset 0 0 0 1px rgba(24,169,153,0.04);}
-  .sw-border{ background:rgba(24,169,153,0.22);}
-  .sw-padding{ background:rgba(255,255,255,0.03);}
-  .sw-content{ background:linear-gradient(180deg,#03121a,#071428); border:1px solid rgba(255,255,255,0.02);}
+  .swatch.sw-margin {
+    background: rgba(24,169,153,0.12);
+    box-shadow: inset 0 0 0 1px rgba(24,169,153,0.6);
+  }
+  .swatch.sw-border {
+    background: rgba(24,169,153,0.27);
+  }
+  .swatch.sw-padding {
+    background: rgba(255,255,255,0.04);
+  }
+  .swatch.sw-content {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
 
-  /* Responsive tweaks to keep everything within viewport height */
-  @media (max-width:880px){
-    .wrap{ flex-direction:column; padding:14px; gap:12px; }
-    .info{ order:2; flex:1 1 auto; min-height:0; }
-    .viz{ order:1; min-width:0; flex:1 1 auto; }
-    .box-root{ --size: min(58vmin, 380px); }
-    .legend{ justify-content:flex-start; }
-  }
+  /* Toggle Button Styles (inline styles added to button itself, minimal here) */
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <!-- Left: Info about OWASP ZAP -->
-    <section class="info" aria-labelledby="zap-title">
-      <div class="title">
-        <div class="logo">ZAP</div>
-        <div>
-          <h1 id="zap-title">OWASP ZAP — Zed Attack Proxy</h1>
-          <p class="lead">An open-source web application security scanner for finding vulnerabilities during development and testing.</p>
-        </div>
-      </div>
+<div class="wrap">
 
-      <div class="meta" aria-hidden="true">
-        <div class="chip">Open Source</div>
-        <div class="chip">Web Proxy</div>
-        <div class="chip">Active Project</div>
-        <div class="chip">Good for learning</div>
-      </div>
+  <!-- TOGGLE BUTTON for Vanilla BG -->
+  <button id="bgToggleBtn" aria-pressed="false" aria-label="Toggle vanilla background" title="Toggle vanilla background" style="
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 9999;
+    padding: 6px 14px;
+    background: var(--accent);
+    color: #03211f;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 4px 10px rgba(24,169,153,0.4);
+    transition: background 0.3s ease;
+  ">
+    Vanilla BG
+  </button>
 
-      <div class="info-body">
-        <strong>Overview</strong>
-        <p style="margin-top:6px;">
-          OWASP ZAP is a proxy-based tool that helps security testers intercept, inspect, and manipulate HTTP(S) traffic between a web browser and web applications. It provides automated scanners, passive scanning, scripting, and many integrations suitable for defensive and offensive security learning — always use on authorized targets.
-        </p>
+  <section class="info" role="main" aria-label="OWASP ZAP Box Model Info">
+    <div class="title">
+      <div class="logo" aria-label="OWASP ZAP Logo">OWASP ZAP</div>
+      <h1>Box Model Explained</h1>
+    </div>
+    <p class="lead">A detailed layout visualization of CSS Box Model concepts without vertical scroll.</p>
 
-        <div class="bullets" style="margin-top:12px;">
-          <div class="bullet"><strong>Primary uses</strong><br>Proxying, spidering, active/passive scanning, fuzzing.</div>
-          <div class="bullet"><strong>Good for</strong><br>Beginners learning web app security and proxy workflows.</div>
-          <div class="bullet"><strong>Platforms</strong><br>Cross-platform (Windows, macOS, Linux, Docker).</div>
-          <div class="bullet"><strong>Learn</strong><br>OWASP ZAP docs, official tutorials, and safe lab environments.</div>
-        </div>
-      </div>
-    </section>
+    <div class="meta" aria-label="Tags">
+      <div class="chip">Margin</div>
+      <div class="chip">Border</div>
+      <div class="chip">Padding</div>
+      <div class="chip">Content</div>
+    </div>
 
-    <!-- Right: Visualization -->
-    <aside class="viz" aria-labelledby="viz-title">
-      <header>
-        <div>
-          <h2 id="viz-title">CSS Box Model — Visualized (applied to a ZAP UI element)</h2>
-          <div class="sub">Content, padding, border, margin — how an element is sized and spaced</div>
-        </div>
-        <div class="legend" aria-hidden="true">
-          <div><span class="swatch sw-margin"></span>Margin</div>
-          <div style="margin-left:8px;"><span class="swatch sw-border"></span>Border</div>
-          <div style="margin-left:8px;"><span class="swatch sw-padding"></span>Padding</div>
-          <div style="margin-left:8px;"><span class="swatch sw-content"></span>Content</div>
-        </div>
-      </header>
+    <div class="info-body">
+      <p>The CSS box model describes the rectangular boxes generated for elements in the document tree and consists of margins, borders, padding, and the content area.</p>
+      <ul class="bullets">
+        <li class="bullet"><strong>Margin:</strong> Transparent area outside the border.</li>
+        <li class="bullet"><strong>Border:</strong> Area between margin and padding.</li>
+        <li class="bullet"><strong>Padding:</strong> Space between content and border.</li>
+        <li class="bullet"><strong>Content:</strong> The actual content inside the box.</li>
+      </ul>
+    </div>
+  </section>
 
-      <div class="canvas-wrap" role="img" aria-label="Box model diagram showing margin, border, padding and content">
-        <div class="box-root" title="Box model diagram">
-          <div class="margin" aria-hidden="true">
-            <div class="border" aria-hidden="true">
-              <div class="padding" aria-hidden="true">
-                <div class="content" id="content-box">
-                  <div style="font-weight:600;color:#c8f6ee;font-size:14px;">ZAP Panel (Element)</div>
-                  <div style="font-size:12px;color:var(--muted);margin-top:6px;">
-                    Example: a tool panel entry (e.g., Sites tree item)
-                  </div>
-                </div>
+  <section class="viz" aria-label="Box Model Visualization">
+    <header>
+      <h2>Box Model Visualization</h2>
+      <span class="sub">Responsive & no vertical scroll</span>
+    </header>
+
+    <div class="canvas-wrap" role="img" aria-label="Visual representation of CSS Box Model">
+      <div class="box-root" tabindex="0">
+        <div class="margin">
+          <span class="label margin" aria-hidden="true">Margin</span>
+          <div class="border">
+            <span class="label border" aria-hidden="true">Border</span>
+            <div class="padding">
+              <span class="label padding" aria-hidden="true">Padding</span>
+              <div class="content">
+                <span class="label content" aria-hidden="true">Content</span>
+                <p>Content Area</p>
               </div>
             </div>
           </div>
-
-          <!-- Labels -->
-          <div class="label lbl-margin">margin: 18px (space outside)</div>
-          <div class="label lbl-border">border: 6px (visual edge)</div>
-          <div class="label lbl-padding">padding: 12px (inner space)</div>
-          <div class="label lbl-content">content: variable (text / UI)</div>
         </div>
       </div>
+    </div>
 
-      <!-- small explanatory footnote, kept compact to prevent vertical overflow -->
-      <div style="font-size:12px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;">
-        <div>Note: All spacing values above are illustrative — the CSS box model controls how an element's total size is computed.</div>
-        <div style="opacity:0.9;font-size:11px;">No vertical scroll • Minimal CSS</div>
-      </div>
-    </aside>
-  </div>
+    <div class="legend" aria-label="Color legend">
+      <div class="swatch sw-margin" title="Margin area"></div> Margin
+      <div class="swatch sw-border" title="Border area"></div> Border
+      <div class="swatch sw-padding" title="Padding area"></div> Padding
+      <div class="swatch sw-content" title="Content area"></div> Content
+    </div>
+  </section>
+</div>
+
+<script>
+  const btn = document.getElementById('bgToggleBtn');
+  btn.addEventListener('click', () => {
+    const isVanilla = document.body.classList.toggle('vanilla-bg');
+    btn.setAttribute('aria-pressed', isVanilla);
+    btn.textContent = isVanilla ? 'Default BG' : 'Vanilla BG';
+  });
+</script>
 </body>
 </html>
