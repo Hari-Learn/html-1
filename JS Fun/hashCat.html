@@ -97,7 +97,34 @@
       font-size: 0.78rem;
       margin-left: auto;
     }
+    #setT{
+        display: none;
+    }
   </style>
+  <script>
+    setTimeout(()=>{
+        document.getElementById("setT").style.display="block";
+    },5000);
+
+    function fetchData(){
+        
+        return new Promise((resolve,reject) => {
+            setTimeout(() => {
+            let data= "Gotcha";
+            let error = false;
+            if(!error){
+                resolve("Gotcha");
+            } else {
+                reject("Error while fetching data");    
+            }
+        }, 5000);
+            
+        });
+    }
+
+    fetchData().then(success=>console.log(success)).catch(err=>console.log(err));
+    
+  </script>
 </head>
 <body>
 
@@ -174,7 +201,7 @@
       </ul>
     </div>
 
-    <div class="card">
+    <div class="card" id="setT">
       <h2>Further Reading</h2>
       <ul>
         <li><a href="https://hashcat.net" target="_blank">Official Hashcat Website</a></li>
