@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Tamil from './components/tamil.jsx'
+import English from './components/english.jsx'
 import './App.css'
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
       </div>
       <h1>Welcome to React Bootcamp</h1>
       <Tamil />
-      
+      <English />
       
     </>
   )
