@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hashcat — Overview & Concepts</title>
+  <style>
+    :root {
+      --bg: #f7fbfc;
+      --card: #ffffff;
+      --accent: #0e92b8;
+      --muted: #516470;
+      --shadow: 0 6px 18px rgba(14,146,184,0.1);
+      --radius: 14px;
+      --pad: 20px;
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: #123;
+    }
+    header {
+      padding: var(--pad);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #e4f6fb;
+      border-bottom: 1px solid #d1f0f8;
+    }
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #54c0e8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      box-shadow: var(--shadow);
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: var(--accent);
+    }
+    .small {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    main {
+      padding: var(--pad);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card);
+      padding: 16px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #073b4c;
+    }
+    p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    ul {
+      padding-left: 20px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    footer {
+      text-align: center;
+      padding: 12px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: #e9f9fd;
+      border-top: 1px solid #d1f0f8;
+    }
+    .accent-pill {
+      background: rgba(14,146,184,0.08);
+      color: var(--accent);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.78rem;
+      margin-left: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">HC</div>
+    <div>
+      <h1>Hashcat — Conceptual Overview</h1>
+      <div class="small">Ethical use, high-level explanation, no operational guidance</div>
+    </div>
+    <div class="accent-pill">Sea Blue Theme</div>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>What is Hashcat?</h2>
+      <p>
+        <strong>Hashcat</strong> is an advanced password recovery tool used for testing the security of password hashes.
+        It is designed to recover lost passwords or evaluate the strength of existing ones using high-speed processing from CPUs and GPUs.
+      </p>
+      <p>
+        It is widely used by ethical hackers, cybersecurity researchers, and IT administrators to audit password storage systems.
+        Unauthorized use of Hashcat is illegal and unethical.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Hash Types Supported</h2>
+      <ul>
+        <li>MD5, SHA-1, SHA-256, SHA-512</li>
+        <li>bcrypt, PBKDF2, scrypt</li>
+        <li>Windows hashes (NTLM), Unix hashes (/etc/shadow)</li>
+        <li>Custom application-specific hashes</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Attack Modes (Conceptual)</h2>
+      <ul>
+        <li><strong>Dictionary:</strong> Uses wordlists of known/common passwords.</li>
+        <li><strong>Brute-force:</strong> Tries all character combinations.</li>
+        <li><strong>Mask attack:</strong> Uses patterns like `??a??n` to reduce guesses.</li>
+        <li><strong>Combinator:</strong> Combines two or more words together.</li>
+        <li><strong>Rule-based:</strong> Applies smart mutations (e.g., capitalizing, reversing).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Legitimate Use Cases</h2>
+      <ul>
+        <li>Password recovery for users (with permission)</li>
+        <li>Testing password policy effectiveness</li>
+        <li>Auditing internal systems</li>
+        <li>Educational use in cybersecurity labs</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Ethics & Legal Use</h2>
+      <p>
+        Hashcat should only be used in environments where you have explicit permission.
+        Running password recovery on systems or data you don't own is illegal in most countries.
+        Always follow ethical hacking guidelines and local laws.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Defensive Countermeasures</h2>
+      <ul>
+        <li>Use slow, secure hash algorithms (bcrypt, scrypt, Argon2)</li>
+        <li>Add salts to passwords to prevent hash reuse attacks</li>
+        <li>Use multi-factor authentication (MFA)</li>
+        <li>Educate users on strong, unique passwords</li>
+        <li>Rotate passwords regularly in sensitive systems</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Further Reading</h2>
+      <ul>
+        <li><a href="https://hashcat.net" target="_blank">Official Hashcat Website</a></li>
+        <li><a href="https://owasp.org" target="_blank">OWASP Password Guidelines</a></li>
+        <li><a href="https://haveibeenpwned.com" target="_blank">Check for Leaked Passwords</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    For educational and ethical use only. Avoid unauthorized access or testing.
+  </footer>
+
+</body>
+</html>
