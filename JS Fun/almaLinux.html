@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlmaLinux Overview</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      min-height: 100vh;
+      box-sizing: border-box;
+      padding: 20px;
+      justify-content: space-around;
+    }
+
+    .box {
+      flex: 1 1 300px;
+      max-width: 500px;
+      margin: 10px;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+      border-radius: 6px;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+      color: #005eaa;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    @media (max-height: 500px) {
+      body {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <div class="box">
+      <h1>What is AlmaLinux?</h1>
+      <p>AlmaLinux is an open-source, community-driven Linux distribution that is a 1:1 binary-compatible replacement for Red Hat Enterprise Linux (RHEL). It's designed for users and organizations that need a free, stable, and production-ready operating system.</p>
+    </div>
+
+    <div class="box">
+      <h2>Why Was It Created?</h2>
+      <p>After Red Hat announced it would shift CentOS from a stable RHEL clone to CentOS Stream (a rolling pre-release), many users needed a true RHEL-compatible alternative. AlmaLinux was created by CloudLinux in response, and is now managed by the independent AlmaLinux OS Foundation.</p>
+    </div>
+
+    <div class="box">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Free and open-source forever</li>
+        <li>Enterprise-grade stability</li>
+        <li>1:1 binary compatible with RHEL</li>
+        <li>Backed by a non-profit foundation</li>
+        <li>Supports both x86_64 and ARM architectures</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>RHEL vs CentOS vs AlmaLinux</h2>
+      <ul>
+        <li><strong>RHEL:</strong> Commercial, subscription-based</li>
+        <li><strong>CentOS Stream:</strong> Upstream of RHEL (not 1:1)</li>
+        <li><strong>AlmaLinux:</strong> Downstream, identical to RHEL, free</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Common Use Cases</h2>
+      <ul>
+        <li>Web and database servers</li>
+        <li>Cloud and virtualization platforms</li>
+        <li>Enterprise environments</li>
+        <li>CI/CD pipelines for RHEL-compatible apps</li>
+        <li>Scientific computing and research</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Governance & Support</h2>
+      <p>AlmaLinux is maintained by the AlmaLinux OS Foundation, a community-led non-profit. Anyone can contribute. Long-term support (LTS) versions are provided for 10 years, with timely security and bug updates.</p>
+    </div>
+
+    <div class="box">
+      <h2>Who Should Use AlmaLinux?</h2>
+      <p>If you're looking for a free, RHEL-compatible OS for production, testing, or development — and want long-term support without vendor lock-in — AlmaLinux is a strong choice. It's ideal for sysadmins, enterprises, cloud platforms, and hosting providers.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
