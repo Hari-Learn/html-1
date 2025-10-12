@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Burp Suite Basics - Full Page Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #f0f0f0;
+      color: #222;
+    }
+
+    header {
+      background: #ff6600;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .box {
+      border: 2px solid #ccc;
+      padding: 20px;
+      margin: 10px;
+      background: white;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
+    .half-width {
+      flex: 1 1 48%;
+    }
+
+    .third-width {
+      flex: 1 1 31%;
+    }
+
+    h2 {
+      color: #ff6600;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    a {
+      color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Burp Suite Basics - Explain Like I'm 10</h1>
+    <p>Your first step into ethical hacking and web security tools</p>
+  </header>
+
+  <div class="box full-width">
+    <h2>🕵️ What is Burp Suite?</h2>
+    <p>Burp Suite is a tool that helps security testers (ethical hackers) find problems in websites, like broken locks or hidden doors. It's like using a magnifying glass to inspect how websites talk to your browser.</p>
+  </div>
+
+  <div class="flex-container">
+    <div class="box half-width">
+      <h2>🔗 Proxy</h2>
+      <p>Acts like a middleman between your browser and the website. It lets you see and change what data is being sent and received.</p>
+      <ul>
+        <li>Capture requests</li>
+        <li>Edit before sending</li>
+        <li>Pause and inspect traffic</li>
+      </ul>
+    </div>
+
+    <div class="box half-width">
+      <h2>📡 Repeater</h2>
+      <p>Lets you resend the same request over and over with small changes to see how the website reacts.</p>
+      <ul>
+        <li>Manual testing</li>
+        <li>Try different inputs</li>
+        <li>Check responses</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="flex-container">
+    <div class="box third-width">
+      <h2>🧠 Scanner (Pro only)</h2>
+      <p>Automatically checks for common website issues like insecure login pages, broken access controls, etc.</p>
+    </div>
+
+    <div class="box third-width">
+      <h2>📁 Intruder</h2>
+      <p>Tries lots of inputs very fast, like guessing passwords or testing forms with many values.</p>
+    </div>
+
+    <div class="box third-width">
+      <h2>🧪 Decoder</h2>
+      <p>Helps you turn weird-looking data (like <code>%20</code> or Base64) into something readable.</p>
+    </div>
+  </div>
+
+  <div class="box full-width">
+    <h2>🚦 Why Do Beginners Use Burp Suite?</h2>
+    <ul>
+      <li>To learn how websites and browsers communicate</li>
+      <li>To find weak spots in test sites (legally!)</li>
+      <li>To practice ethical hacking safely</li>
+    </ul>
+  </div>
+
+  <div class="box full-width">
+    <h2>🔒 Is This Legal?</h2>
+    <p>Yes, if you have permission! You can only test your own apps or websites you're allowed to test (like <a href="https://portswigger.net/web-security" target="_blank">PortSwigger’s Web Security Academy</a>).</p>
+  </div>
+
+  <div class="box full-width">
+    <h2>🚀 Getting Started</h2>
+    <ol>
+      <li>Download Burp Suite from <a href="https://portswigger.net/burp" target="_blank">portswigger.net/burp</a></li>
+      <li>Install it and run it</li>
+      <li>Set your browser to use the Burp proxy</li>
+      <li>Visit a test site and inspect the traffic</li>
+    </ol>
+  </div>
+
+</body>
+</html>
