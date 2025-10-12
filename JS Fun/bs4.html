@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Burp Suite - ELI5</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f0fa;
+      color: #3a3a3a;
+    }
+
+    header {
+      background: #b388eb;
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .box {
+      border: 2px solid #d3c0f9;
+      background: #ffffff;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
+    .half-width {
+      flex: 1 1 48%;
+    }
+
+    .third-width {
+      flex: 1 1 31%;
+    }
+
+    h2 {
+      color: #6a0dad;
+      margin-bottom: 10px;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+    }
+
+    a {
+      color: #6a0dad;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Burp Suite </h1>
+    <p>Learning about web safety — the fun and simple way!</p>
+  </header>
+
+  <div class="box full-width">
+    <h2>🌐 What is Burp Suite?</h2>
+    <p>Imagine you're playing a game where you talk to a robot (a website). Burp Suite lets you listen to what you're saying and what the robot says back. That way, you can learn if the robot is doing something wrong or if someone is cheating!</p>
+  </div>
+
+  <div class="flex-container">
+    <div class="box half-width">
+      <h2>👂 Proxy</h2>
+      <p>It's like a walkie-talkie that lets you hear every message between you and the website. You can also press "pause" to change things before they are sent.</p>
+    </div>
+
+    <div class="box half-width">
+      <h2>🔁 Repeater</h2>
+      <p>This tool lets you send the same message again and again, like asking “Can I have candy?” 10 times with different words. You see what answers you get!</p>
+    </div>
+  </div>
+
+  <div class="flex-container">
+    <div class="box third-width">
+      <h2>🤖 Scanner (Pro only)</h2>
+      <p>A robot helper that looks for broken locks on websites — so bad guys can't get in.</p>
+    </div>
+
+    <div class="box third-width">
+      <h2>🔐 Intruder</h2>
+      <p>It tries lots of guesses really fast, like unlocking a toy box with every key to find the right one.</p>
+    </div>
+
+    <div class="box third-width">
+      <h2>🔡 Decoder</h2>
+      <p>It changes weird codes into normal words — like turning “%20” into a space!</p>
+    </div>
+  </div>
+
+  <div class="box full-width">
+    <h2>🎯 Why Should I Learn This?</h2>
+    <p>If you want to keep websites safe, Burp Suite is like a superhero tool belt! It helps you stop bad things before they happen.</p>
+  </div>
+
+  <div class="box full-width">
+    <h2>✅ Is It Okay to Use?</h2>
+    <p>Only if you're allowed! It's like testing someone’s toys — you need to ask first. There are practice websites made just for learning, like <a href="https://portswigger.net/web-security" target="_blank">this one</a>.</p>
+  </div>
+
+  <div class="box full-width">
+    <h2>🚀 How Do I Start?</h2>
+    <ol>
+      <li>Ask an adult or teacher to help you download Burp Suite from <a href="https://portswigger.net/burp" target="_blank">portswigger.net/burp</a></li>
+      <li>Open it and follow a tutorial</li>
+      <li>Try it on a learning site</li>
+      <li>Play with the tools and see how websites work!</li>
+    </ol>
+  </div>
+
+</body>
+</html>
