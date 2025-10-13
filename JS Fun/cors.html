@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Understanding CORS (ELI10)</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #FFF8F0; /* soft cream */
+      color: #2B1B17;
+    }
+
+    header, footer {
+      background-color: #800020; /* burgundy */
+      color: #FAF9F6; /* off-white text */
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    h1, h2 {
+      margin: 0;
+    }
+
+    .content-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 40px 20px;
+    }
+
+    .box {
+      background-color: #FADADD; /* soft pink */
+      border: 1px solid #D4AF95; /* rose gold */
+      border-radius: 15px;
+      padding: 25px;
+      margin: 15px;
+      flex: 1 1 300px;
+      max-width: 500px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .box h2 {
+      color: #800020; /* burgundy */
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      background-color: #FFF0F5; /* light pink */
+      border-left: 4px solid #D4AF95;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 10px;
+      font-size: 0.95em;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      border-top: 2px solid #D4AF95;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      .content-section {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🔐 What is CORS?</h1>
+    <p>Cross-Origin Resource Sharing Explained Like You're 10</p>
+  </header>
+
+  <section class="content-section">
+
+    <div class="box">
+      <h2>🌍 What is CORS?</h2>
+      <p>
+        CORS stands for <strong>Cross-Origin Resource Sharing</strong>. It’s a rule your browser follows when one website tries to talk to another website.
+      </p>
+      <div class="highlight">
+        Imagine you're in school, and one classroom wants to borrow markers from another — they need permission first. CORS is that permission system.
+      </div>
+    </div>
+
+    <div class="box">
+      <h2>🔒 Why Do We Need It?</h2>
+      <p>
+        Without CORS, any random website could steal your data by pretending to be someone else.
+      </p>
+      <ul>
+        <li>Stops malicious sites from accessing your info</li>
+        <li>Protects APIs and services from misuse</li>
+        <li>Keeps your cookies and credentials safe</li>
+      </ul>
+      <div class="highlight">
+        CORS is like a security guard checking if someone has permission to enter the building.
+      </div>
+    </div>
+
+    <div class="box">
+      <h2>🧠 How CORS Works (ELI10)</h2>
+      <p>
+        When a website (like <code>coolgames.com</code>) tries to ask for info from another site (like <code>mybank.com</code>), the browser asks:
+        <em>“Hey <code>mybank.com</code>, is it okay if <code>coolgames.com</code> talks to you?”</em>
+      </p>
+      <div class="highlight">
+        If the bank says YES by sending special headers, the browser allows it. If not, the request is blocked.
+      </div>
+      <p>
+        This whole check is invisible to you, but it happens in milliseconds every time your browser loads something from another site.
+      </p>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>🧾 Built with ❤️ using a burgundy theme | CORS keeps the web secure</p>
+  </footer>
+
+</body>
+</html>
