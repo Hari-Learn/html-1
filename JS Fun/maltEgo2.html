@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maltego: Visual OSINT Tool</title>
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --primary: #003049;      /* Midnight Blue */
+      --accent: #D62828;       /* Persimmon */
+      --highlight: #F77F00;    /* Honey Yellow */
+      --background: #FFF8F0;   /* Ivory */
+      --text: #2B2D42;         /* Gunmetal */
+      --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 20px 10px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    header p {
+      margin: 5px 0 0 0;
+      font-size: 1em;
+    }
+
+    main {
+      padding: 0 10px;
+      margin-top: 0;
+    }
+
+    .section {
+      background: white;
+      margin-top: 20px;
+      padding: 15px 20px;
+      border-left: 5px solid var(--highlight);
+      border-radius: 8px;
+      box-shadow: var(--box-shadow);
+    }
+
+    h2 {
+      color: var(--accent);
+    }
+
+    ul, ol {
+      margin-left: 20px;
+    }
+
+    .icon {
+      margin-right: 8px;
+      color: var(--accent);
+    }
+
+    .use-case-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .use-case {
+      flex: 1 1 250px;
+      background-color: var(--highlight);
+      padding: 15px;
+      border-radius: 8px;
+      color: var(--primary);
+      box-shadow: var(--box-shadow);
+    }
+
+    .use-case i {
+      font-size: 1.2em;
+      margin-right: 6px;
+      color: var(--primary);
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .use-case-boxes {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-project-diagram"></i> Maltego Tool</h1>
+    <p>Reveal connections in the digital world visually and intelligently</p>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2><i class="fas fa-question-circle icon"></i> What is Maltego?</h2>
+      <p>
+        Maltego is a powerful OSINT (Open Source Intelligence) and link analysis tool that helps you uncover relationships between people, domains, organizations, emails, social media, and more. It creates a dynamic graph that shows how all the data is connected.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2><i class="fas fa-search icon"></i> How to Use Maltego</h2>
+      <ol>
+        <li>Download and install Maltego Community or Professional edition.</li>
+        <li>Create a new graph and choose a starting point (e.g., domain, IP, email).</li>
+        <li>Right-click the node and run transforms to fetch more related data.</li>
+        <li>Expand the graph by exploring connected nodes and patterns.</li>
+        <li>Use filters, layouts, and notes to refine your investigation.</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2><i class="fas fa-tools icon"></i> What Can You Do?</h2>
+      <ul>
+        <li><i class="fas fa-globe icon"></i> Find website ownership and hosting details</li>
+        <li><i class="fas fa-envelope icon"></i> Discover email addresses tied to accounts</li>
+        <li><i class="fas fa-link icon"></i> Reveal relationships between people and assets</li>
+        <li><i class="fas fa-user-secret icon"></i> Map out attacker infrastructure in cybersecurity</li>
+        <li><i class="fas fa-database icon"></i> Check for breached data and leaked credentials</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2><i class="fas fa-bullseye icon"></i> What Will You Achieve?</h2>
+      <ul>
+        <li>Faster investigation with automated transforms</li>
+        <li>Clear, visual representation of complex relationships</li>
+        <li>Better threat intelligence and profiling</li>
+        <li>Support for decision making and incident response</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2><i class="fas fa-lightbulb icon"></i> Use Case Examples</h2>
+      <div class="use-case-boxes">
+        <div class="use-case">
+          <i class="fas fa-shield-alt"></i> <strong>Cybersecurity</strong><br>
+          Track malicious IPs, domains, and phishing campaigns.
+        </div>
+        <div class="use-case">
+          <i class="fas fa-user-secret"></i> <strong>Investigations</strong><br>
+          Reveal identity footprints and connections for profiling.
+        </div>
+        <div class="use-case">
+          <i class="fas fa-building"></i> <strong>Company Research</strong><br>
+          See what infrastructure or domains are linked to a company.
+        </div>
+        <div class="use-case">
+          <i class="fas fa-newspaper"></i> <strong>Journalism</strong><br>
+          Track sources and verify authenticity via OSINT.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Maltego OSINT Visualizer | Crafted with insights & underrated colors 🌐
+  </footer>
+
+</body>
+</html>
