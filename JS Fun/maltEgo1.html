@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maltego Explained</title>
+  <style>
+    :root {
+      --primary-color: #3f51b5;
+      --accent-color: #ffc107;
+      --background-color: #f5f5f5;
+      --text-color: #212121;
+      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      text-color:#ffffff;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .section {
+      background-color: white;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: var(--box-shadow);
+      border-left: 6px solid var(--primary-color);
+    }
+
+    h1, h2 {
+      color: var(--primary-color);
+      
+    }
+
+    .section h3 {
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .color-boxes {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .color-box {
+      flex: 1 1 200px;
+      padding: 20px;
+      border-radius: 8px;
+      color: white;
+      box-shadow: var(--box-shadow);
+    }
+
+    .indigo { background-color: #3f51b5; }
+    .amber { background-color: #ffc107; color: #212121; }
+    .teal { background-color: #009688; }
+    .deep-orange { background-color: #ff5722; }
+    .green { background-color: #4caf50; }
+
+    footer {
+      background-color: #303f9f;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h4>Understanding Maltego</h4>
+    <p>Powerful Visual Link Analysis & OSINT Tool</p>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>What is Maltego?</h2>
+      <p>
+        Maltego is a data visualization and investigation tool used to uncover hidden connections between people, domains, emails, companies, infrastructure, and much more. It pulls information from public and commercial sources and shows the results as a visual graph.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>What Can You Do with Maltego?</h2>
+      <ul>
+        <li>Find out who owns a domain or website</li>
+        <li>Discover related infrastructure (like shared IPs or servers)</li>
+        <li>Explore email addresses linked to a domain or user</li>
+        <li>Visualize connections between people, companies, and networks</li>
+        <li>Investigate cybersecurity threats and phishing attacks</li>
+        <li>Map social networks and online presence of a target</li>
+        <li>Check for public data breaches using an email address</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>How to Use Maltego (Step-by-Step)</h2>
+      <ol>
+        <li><strong>Download and install Maltego</strong> from the official site (Community Edition is free).</li>
+        <li><strong>Create a new graph</strong> and choose a starting entity (like a domain name or email address).</li>
+        <li><strong>Run transforms</strong> — these are automated queries that fetch data from sources like WHOIS, Shodan, or social media.</li>
+        <li><strong>Explore the results</strong> visually. Each node represents data, and connections show relationships.</li>
+        <li><strong>Drill deeper</strong> by right-clicking any node and running more transforms to expand the graph.</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>What Will You Achieve?</h2>
+      <p>By using Maltego, you can:</p>
+      <ul>
+        <li>Uncover hidden connections quickly</li>
+        <li>Build detailed intelligence reports</li>
+        <li>Support digital forensics and incident response</li>
+        <li>Reduce time spent on manual OSINT gathering</li>
+        <li>Support decision-making with visual evidence</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Sample Use Cases</h2>
+      <div class="color-boxes">
+        <div class="color-box indigo">
+          <h3>Cybersecurity</h3>
+          <p>Investigate malicious domains, phishing, malware infrastructure.</p>
+        </div>
+        <div class="color-box amber">
+          <h3>Digital Forensics</h3>
+          <p>Trace digital footprints and reconstruct attacker pathways.</p>
+        </div>
+        <div class="color-box teal">
+          <h3>Journalism</h3>
+          <p>Link people to companies or leaked databases for exposés.</p>
+        </div>
+        <div class="color-box deep-orange">
+          <h3>Fraud Detection</h3>
+          <p>Expose networks of scam websites or fake profiles.</p>
+        </div>
+        <div class="color-box green">
+          <h3>Threat Intelligence</h3>
+          <p>Map out threat actor infrastructure and indicators of compromise (IOCs).</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 | Maltego Explainer Page | Built with Material Design Colors
+  </footer>
+
+</body>
+</html>
