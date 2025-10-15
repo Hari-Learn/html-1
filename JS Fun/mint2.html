@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Linux Mint Overview</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #F1FAF2;
+      color: #2D2D2D;
+    }
+
+    header {
+      background-color: #52B788; /* Darker green */
+      padding: 30px;
+      text-align: center;
+      color: #ffffff; /* White text */
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 40px 20px;
+      gap: 30px;
+    }
+
+    .box {
+      background-color: #D8F3DC;
+      border-radius: 12px;
+      border: 1px solid #B7E4C7;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 25px;
+      flex: 1 1 300px;
+      max-width: 500px;
+    }
+
+    .box h2 {
+      margin-top: 0;
+      color: #2D6A4F;
+    }
+
+    .split-container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .half-box {
+      flex: 1 1 50%;
+      padding: 20px;
+      background-color: #E9F5EC;
+      border-radius: 12px;
+      border: 1px solid #B7E4C7;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .half-box h3 {
+      margin-top: 0;
+      color: #2D6A4F;
+    }
+
+    @media (max-width: 768px) {
+      .container,
+      .split-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .half-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Discover Linux Mint</h1>
+  </header>
+
+  <section class="container">
+    <div class="box">
+      <h2>What is Linux Mint?</h2>
+      <p>
+        Linux Mint is a modern, free, and open-source desktop operating system based on Ubuntu and Debian.
+        It emphasizes ease of use, performance, and a comfortable user interface for new and experienced users alike.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Why Choose Linux Mint?</h2>
+      <p>
+        It offers a familiar desktop environment, especially for users migrating from Windows.
+        With strong community support, multimedia support out of the box, and easy software management,
+        it’s a great daily driver.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Desktop Versions</h2>
+      <p>
+        Linux Mint offers Cinnamon (modern & full-featured), MATE (classic & light), and Xfce (ultra-light).
+        Choose the one that suits your hardware and workflow best.
+      </p>
+    </div>
+  </section>
+
+  <section class="split-container">
+    <div class="half-box">
+      <h3>More About Linux Mint</h3>
+      <p>
+        Linux Mint is known for its stability and long-term support. It avoids radical design changes,
+        providing a consistent experience over time. Mint updates are managed via a custom Update Manager,
+        giving users control over when and how to update their system safely.
+      </p>
+      <p>
+        It also includes Timeshift, a powerful snapshot tool, that lets you roll back your system if something goes wrong.
+      </p>
+    </div>
+
+    <div class="half-box">
+      <h3>Sample Use Cases</h3>
+      <ul>
+        <li>🏠 Home users looking for a stable, virus-free desktop</li>
+        <li>💻 Developers needing a customizable Linux environment</li>
+        <li>📚 Schools and labs wanting free OS with essential tools</li>
+        <li>🖥️ Reviving old PCs with lightweight versions (MATE/Xfce)</li>
+        <li>🧪 Testing open-source software in a safe environment</li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>
