@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Linux Mint Overview</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #F1FAF2; /* Light mint */
+      color: #2D2D2D; /* Dark text */
+    }
+
+    header {
+      background-color: #95D5B2; /* Soft green */
+      padding: 30px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 40px 20px;
+      gap: 30px;
+    }
+
+    .box {
+      background-color: #D8F3DC; /* Pale green */
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      flex: 1 1 300px;
+      max-width: 500px;
+    }
+
+    .box h2 {
+      margin-top: 0;
+      color: #2D6A4F;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Discover Linux Mint</h1>
+  </header>
+
+  <section class="container">
+    <div class="box">
+      <h2>What is Linux Mint?</h2>
+      <p>
+        Linux Mint is a modern, elegant, and easy-to-use operating system based on Ubuntu and Debian.
+        It’s known for its stability, simplicity, and strong community support. Mint aims to provide a
+        complete experience out of the box with media codecs, useful software, and a polished desktop environment.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Why Choose Linux Mint?</h2>
+      <p>
+        Linux Mint is ideal for beginners and experienced users alike. It offers a familiar desktop interface,
+        low hardware requirements, and excellent software management through its Software Manager and
+        APT package system. It's also privacy-respecting and free of ads or telemetry.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Desktop Versions</h2>
+      <p>
+        Mint comes in three main desktop flavors:
+        <strong>Cinnamon</strong> (modern & feature-rich),
+        <strong>MATE</strong> (lightweight and traditional),
+        and <strong>Xfce</strong> (ultra-lightweight).
+        You can choose the one that best fits your system's performance and your personal workflow.
+      </p>
+    </div>
+  </section>
+
+</body>
+</html>
