@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tool Concepts — DroidSheep & Wireshark</title>
+  <style>
+    :root{
+      --bg:#0f1724;          /* dark navy */
+      --panel:#0f1724;       /* same as bg to allow full-width feel */
+      --card:#0ffffffa;      /* translucent white */
+      --accent1:#00c2a8;     /* teal */
+      --accent2:#6c5ce7;     /* purple */
+      --muted:#cbd5e1;
+      --danger:#ff6b6b;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      background: linear-gradient(180deg, #061226 0%, #0f1724 100%);
+      color:var(--muted);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Header */
+    header {
+      width:100%;
+      box-sizing:border-box;
+      padding:18px 28px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      background: linear-gradient(90deg, rgba(108,92,231,0.06), rgba(0,194,168,0.03));
+      position:sticky;
+      top:0;
+      z-index:10;
+      backdrop-filter: blur(6px);
+    }
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo {
+      width:44px;
+      height:44px;
+      border-radius:10px;
+      background: linear-gradient(135deg, var(--accent2), var(--accent1));
+      box-shadow: 0 6px 18px rgba(12,8,40,0.6);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      font-size:18px;
+    }
+    h1 {
+      margin:0;
+      color:#e6eef7;
+      font-size:18px;
+      letter-spacing:0.2px;
+    }
+    header p { margin:0; color: #a7b6c3; font-size:13px; }
+
+    /* Full width main container — content spans the whole page */
+    main.full-width {
+      width:100%;
+      box-sizing:border-box;
+      padding:26px;
+      display:block;
+    }
+
+    /* Top summary banner */
+    .intro {
+      background: linear-gradient(90deg, rgba(108,92,231,0.08), rgba(0,194,168,0.03));
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+      color:#e8f3f0;
+      margin-bottom:18px;
+      display:flex;
+      gap:18px;
+      align-items:center;
+    }
+    .intro .title {
+      font-size:16px;
+      font-weight:600;
+      color:#f5fbfa;
+    }
+    .intro .subtitle { color:#c7dde0; font-size:13px; }
+
+    /* grid of small boxes */
+    .grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;
+      padding:16px;
+      box-shadow: 0 8px 26px rgba(2,6,23,0.5);
+      border: 1px solid rgba(255,255,255,0.03);
+      color:#e8eef7;
+      min-height:120px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .card .card-head {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.02);
+      font-size:13px;
+      color:#dceff0;
+    }
+    .accent {
+      padding:8px 12px;
+      border-radius:10px;
+      color:white;
+      font-weight:600;
+      font-size:13px;
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      box-shadow: 0 6px 16px rgba(12,8,40,0.5);
+    }
+
+    h2.card-title {
+      margin:0;
+      color:#eaf6f2;
+      font-size:15px;
+    }
+    p.card-text {
+      margin:0;
+      color:#bcd1d7;
+      font-size:13px;
+      line-height:1.45;
+    }
+    ul {
+      margin:8px 0 0 18px;
+      color:#bcd1d7;
+    }
+
+    /* warning box */
+    .warn {
+      background: linear-gradient(90deg, rgba(255,107,107,0.07), rgba(255,255,255,0.01));
+      border-left:4px solid rgba(255,107,107,0.95);
+      padding:10px 12px;
+      border-radius:8px;
+      color:#ffdede;
+      font-size:13px;
+    }
+
+    /* footer */
+    footer {
+      margin-top:20px;
+      padding:10px 26px 40px;
+      color:#9fb0ba;
+      font-size:13px;
+    }
+
+    /* small responsive tweak for very narrow screens */
+    @media (max-width:420px){
+      header { padding:14px; }
+      main.full-width { padding:16px; }
+      .intro { padding:12px; flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand" aria-hidden="false">
+      <div class="logo">TS</div>
+      <div>
+        <h1>Tool Concepts — DroidSheep &amp; Wireshark</h1>
+        <p>Concise, full-width reference cards — what, why, how, best use cases</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="full-width" role="main">
+    <section class="intro" aria-label="page intro">
+      <div>
+        <div class="title">Overview</div>
+        <div class="subtitle">Two network tools explained: one focused on session-sniffing concepts, the other on packet analysis. Ethical use emphasized.</div>
+      </div>
+      <div style="margin-left:auto" aria-hidden="true">
+        <span class="chip">Security</span>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="tool summaries">
+
+      <!-- DroidSheep: What -->
+      <article class="card" aria-labelledby="ds-what">
+        <div class="card-head">
+          <h2 id="ds-what" class="card-title">DroidSheep — What</h2>
+          <div class="accent">Session hijacking</div>
+        </div>
+        <p class="card-text">
+          DroidSheep is an Android app historically used to detect and display web sessions on the same Wi‑Fi network.
+          Conceptually it monitors traffic and surfaces unprotected (HTTP) session tokens that could allow an attacker to impersonate a user.
+        </p>
+      </article>
+
+      <!-- DroidSheep: Why -->
+      <article class="card" aria-labelledby="ds-why">
+        <div class="card-head">
+          <h2 id="ds-why" class="card-title">DroidSheep — Why</h2>
+          <div class="chip">Purpose</div>
+        </div>
+        <p class="card-text">
+          Why it exists: to demonstrate how insecure unencrypted web sessions can be captured on shared networks.
+          It served as an educational/penetration testing tool to raise awareness about using HTTPS, secure cookies, and network protections.
+        </p>
+      </article>
+
+      <!-- DroidSheep: How (conceptual) -->
+      <article class="card" aria-labelledby="ds-how">
+        <div class="card-head">
+          <h2 id="ds-how" class="card-title">DroidSheep — How (conceptual)</h2>
+          <div class="chip">Concept</div>
+        </div>
+        <p class="card-text">
+          Conceptually DroidSheep passively listens for HTTP traffic on a local network and extracts session identifiers (cookies).
+          With a stolen session token an attacker could impersonate the session owner on sites that do not enforce TLS or other protections.
+        </p>
+        <p style="margin-top:auto; font-size:12px; color:#d9e9e7;"><strong>Note:</strong> This is a conceptual description — not a how-to for attacks.</p>
+      </article>
+
+      <!-- DroidSheep: Best Use Case -->
+      <article class="card" aria-labelledby="ds-best">
+        <div class="card-head">
+          <h2 id="ds-best" class="card-title">DroidSheep — Best use case</h2>
+          <div class="chip">Ethical testing</div>
+        </div>
+        <p class="card-text">
+          Best used by security educators and penetration testers in controlled environments to:
+        </p>
+        <ul>
+          <li>Demonstrate the need for HTTPS and secure cookie flags.</li>
+          <li>Teach safe network configuration and client hardening.</li>
+          <li>Validate security controls on test networks with explicit permission.</li>
+        </ul>
+      </article>
+
+      <!-- Wireshark: What -->
+      <article class="card" aria-labelledby="ws-what">
+        <div class="card-head">
+          <h2 id="ws-what" class="card-title">Wireshark — What</h2>
+          <div class="accent" style="background:linear-gradient(90deg,#3b82f6,#6c5ce7)">Packet analyzer</div>
+        </div>
+        <p class="card-text">
+          Wireshark is a powerful, open-source network protocol analyzer used to capture and inspect packets on wired and wireless networks.
+          It displays protocol layers and detailed packet contents for deep traffic analysis and troubleshooting.
+        </p>
+      </article>
+
+      <!-- Wireshark: Why -->
+      <article class="card" aria-labelledby="ws-why">
+        <div class="card-head">
+          <h2 id="ws-why" class="card-title">Wireshark — Why</h2>
+          <div class="chip">Diagnostics</div>
+        </div>
+        <p class="card-text">
+          Wireshark helps network engineers, developers, and security teams diagnose problems, verify protocol behavior, analyze performance,
+          and investigate security incidents at the packet level.
+        </p>
+      </article>
+
+      <!-- Wireshark: How (conceptual) -->
+      <article class="card" aria-labelledby="ws-how">
+        <div class="card-head">
+          <h2 id="ws-how" class="card-title">Wireshark — How (conceptual)</h2>
+          <div class="chip">Capture & Inspect</div>
+        </div>
+        <p class="card-text">
+          Wireshark captures traffic from an interface (or reads saved capture files) and decodes protocol layers (Ethernet, IP, TCP/UDP, HTTP, TLS, etc.).
+          It provides filters to isolate flows and detailed hex/dissected views to examine headers and payloads.
+        </p>
+      </article>
+
+      <!-- Wireshark: Best Use Case -->
+      <article class="card" aria-labelledby="ws-best">
+        <div class="card-head">
+          <h2 id="ws-best" class="card-title">Wireshark — Best use case</h2>
+          <div class="chip">Forensics & debugging</div>
+        </div>
+        <p class="card-text">
+          Ideal for:
+        </p>
+        <ul>
+          <li>Debugging protocol implementations and API issues.</li>
+          <li>Network performance troubleshooting and latency analysis.</li>
+          <li>Investigating suspicious traffic in authorized incident response scenarios.</li>
+        </ul>
+      </article>
+
+    </section>
+
+    <section style="margin-top:18px;">
+      <div class="card" style="display:block;">
+        <div class="card-head">
+          <h2 class="card-title">Legal & Ethical Notice</h2>
+          <div class="chip">Important</div>
+        </div>
+        <div style="display:flex;gap:12px; margin-top:8px; align-items:flex-start;">
+          <div style="flex:1">
+            <p class="card-text">
+              Both tools operate at the network level. Capturing or manipulating other people's traffic without explicit authorization
+              is illegal in many jurisdictions and unethical. Use these tools only:
+            </p>
+            <ul>
+              <li>On networks you own or have explicit permission to test.</li>
+              <li>In lab environments for education, research, or defense.</li>
+              <li>Following applicable laws, policies, and responsible disclosure practices.</li>
+            </ul>
+          </div>
+          <div style="width:260px">
+            <div class="warn">
+              ⚠️ Reminder: educational/defensive descriptions only. If you need help with secure configuration or learning packet analysis
+              safely, ask for lab-friendly examples or capture filters.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Created for learning: concise conceptual cards — <strong>DroidSheep</strong> (session-sniffing concept) and <strong>Wireshark</strong> (packet analysis).
+    Need a dark/light theme toggle, downloadable PDF, or split CSS/JS files? Tell me which and I'll include it.
+  </footer>
+</body>
+</html>
