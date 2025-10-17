@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Security Concepts — Quick Guide</title>
+  <style>
+    /* Page-wide basics */
+    :root{
+      --bg: #fdfbf8;           /* warm linen */
+      --header: #f3f8f6;       /* sea-foam tint */
+      --footer: #fff6ee;       /* soft peach */
+      --card: #fffefb;         /* off-white for cards */
+      --muted: #4a4a57;        /* heading text */
+      --accent: #d9f0e8;       /* subtle card accent */
+      --shadow: 0 4px 14px rgba(34,34,50,0.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    header, main, section, footer {
+      padding: 2rem 4%;
+      width: 100%;
+    }
+
+    header {
+      background: var(--header);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    header .intro {
+      display:block;
+      max-width:1100px;
+    }
+
+    h1 { margin: 0 0 .6rem 0; color: var(--muted); font-size:1.6rem; }
+    p.lead { margin:0; color: #5b616a; }
+
+    /* inline-block cards layout (div-div-div) */
+    .cards {
+      width: 100%;
+      margin-top: 1rem;
+      /* prevent white-space collapse by using font-size 0 on wrapper */
+      font-size: 0;
+    }
+
+    .card {
+      display: inline-block;
+      vertical-align: top;
+      width: 30%;
+      min-width: 220px;             /* keeps boxes readable on narrow windows */
+      margin: 0.8% 1%;
+      padding: 1rem;
+      background: linear-gradient(180deg, var(--card), #fff);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      font-size: 0.95rem;           /* restore font-size for content */
+      color: #1f2a2a;
+      border: 1px solid rgba(10,10,10,0.02);
+    }
+
+    .card h3 {
+      margin: 0 0 0.6rem 0;
+      color: #36404a;
+      font-size: 1.02rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: #384246;
+      font-size: 0.95rem;
+    }
+
+    .tag {
+      display:inline-block;
+      margin-top: .6rem;
+      padding: .18rem .46rem;
+      border-radius: 999px;
+      font-size: .78rem;
+      color:#32544a;
+      background: var(--accent);
+    }
+
+    section {
+      background: transparent;
+    }
+
+    footer {
+      background: var(--footer);
+      border-top: 1px solid rgba(0,0,0,0.04);
+      text-align: center;
+      font-size: .9rem;
+      color: #39403f;
+    }
+
+    /* small screens: stack */
+    @media (max-width: 920px){
+      .card { width: 47%; min-width: 200px; }
+    }
+    @media (max-width: 560px){
+      header, main, section, footer { padding: 1rem 3%; }
+      .cards { font-size: 0; }
+      .card { width: 100%; margin: 0 0 1rem 0; display:block; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="intro">
+      <h1>Threat & Incident Glossary</h1>
+      <p class="lead">Short, practical definitions for common security concepts — arranged as small inline tiles so you can scan them quickly.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="cards">
+      <!-- vulnerability -->
+      <div class="card">
+        <h3>Vulnerability</h3>
+        <p>
+          A weakness in software, hardware, or procedures that can be exploited to cause unintended behavior or loss. Examples: unpatched software, misconfigured permissions, insecure defaults.
+        </p>
+        <div class="tag">Weakness → Exploit</div>
+      </div>
+
+      <!-- threat -->
+      <div class="card">
+        <h3>Threat</h3>
+        <p>
+          Anything that can potentially cause harm to an asset — usually an actor (e.g., hacker, insider) or event (e.g., natural disaster) capable of exploiting vulnerabilities.
+        </p>
+        <div class="tag">Actor / Event</div>
+      </div>
+
+      <!-- risk -->
+      <div class="card">
+        <h3>Risk</h3>
+        <p>
+          The likelihood that a threat will exploit a vulnerability and the impact if it does. Risk = Likelihood × Impact. Risk drives prioritization and mitigation choices.
+        </p>
+        <div class="tag">Likelihood × Impact</div>
+      </div>
+
+      <!-- payload -->
+      <div class="card">
+        <h3>Payload</h3>
+        <p>
+          The harmful component delivered by an exploit — e.g., a malicious script, ransomware binary, or data exfiltration routine. Payload does the “damage” after access is gained.
+        </p>
+        <div class="tag">Exploit output</div>
+      </div>
+
+      <!-- vigilance -->
+      <div class="card">
+        <h3>Vigilance</h3>
+        <p>
+          Continuous awareness and monitoring to detect anomalies and suspicious behavior early. Includes logging, alerts, routine audits, threat hunting, and employee awareness.
+        </p>
+        <div class="tag">Monitor & Respond</div>
+      </div>
+
+      <!-- autopsy -->
+      <div class="card">
+        <h3>Autopsy (Post‑mortem)</h3>
+        <p>
+          A structured investigation after an incident to understand root cause, timeline, and missed controls. Goal: learn, document, and prevent recurrence with concrete action items.
+        </p>
+        <div class="tag">Root cause analysis</div>
+      </div>
+
+      <!-- osinf (OSINT) -->
+      <div class="card">
+        <h3>OSINF (OSINT)</h3>
+        <p>
+          Open‑Source Intelligence: collecting publicly available information (web, social, registries) to profile targets, discover attack surface, or gather context for investigations.
+        </p>
+        <div class="tag">Public data</div>
+      </div>
+    </div>
+  </main>
+
+  <section>
+    <div class="cards">
+      <div class="card">
+        <h3>Putting it Together</h3>
+        <p>
+          Example flow: OSINT reveals exposed asset → vulnerability exists → threat actor crafts payload → likelihood + impact define risk → vigilance detects activity → autopsy improves defenses.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Practical Tips</h3>
+        <p>
+          Prioritize fixes by risk, monitor high‑value assets, keep inventories up to date, practice incident response drills, and document autopsies with measurable follow-ups.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Short Checklist</h3>
+        <p>
+          Inventory → Patch → Harden → Monitor → Back up → Test response → Perform autopsies and close gaps.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div style="max-width:1100px;margin:auto;">
+      <small>&copy; 2025 Security Quick Guide — scan, learn, repeat.</small>
+    </div>
+  </footer>
+
+</body>
+</html>
