@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Understanding CSRF</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f4ee;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #fffdf8;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      max-width: 700px;
+      width: 90%;
+    }
+
+    h1 {
+      color: #6b4c9a;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      color: #4c6b6b;
+      margin-top: 1.5rem;
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 0.5rem 0;
+    }
+
+    code {
+      background-color: #eee7fa;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: #4c3c64;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>What is CSRF?</h1>
+    <p>
+      CSRF stands for <strong>Cross-Site Request Forgery</strong>. It's a type of attack that tricks a user into submitting a request they did not intend. It typically targets state-changing requests (like updating a password or making a purchase) without the user’s knowledge.
+    </p>
+
+    <h2>Why is it Dangerous?</h2>
+    <p>
+      CSRF exploits the trust a site has in a user's browser. If a user is logged into a site, a malicious site can send a request on their behalf — using cookies automatically sent by the browser — without their consent.
+    </p>
+
+    <h2>How Does it Work?</h2>
+    <p>
+      Imagine you're logged into <code>example.com</code>, and visit a malicious site with this code:
+    </p>
+    <pre><code>&lt;img src="https://example.com/delete-account" /&gt;</code></pre>
+    <p>
+      Your browser sends the request including your session cookies — and your account gets deleted.
+    </p>
+
+    <h2>How to Prevent CSRF</h2>
+    <ul>
+      <li><strong>Use CSRF Tokens</strong>: Generate a unique token per form/session and validate it on the server.</li>
+      <li><strong>SameSite Cookies</strong>: Set <code>SameSite=Strict</code> or <code>Lax</code> to block cross-origin requests.</li>
+      <li><strong>Double Submit Cookies</strong>: Send a CSRF token in a cookie and a form field, and compare both server-side.</li>
+      <li><strong>Check Referer/Origin Header</strong>: Validate incoming requests are from trusted domains.</li>
+    </ul>
+
+    <h2>Best Practices</h2>
+    <p>
+      CSRF protection should be enabled for all state-changing operations (POST, PUT, DELETE). Combine token-based defenses with browser-level controls for stronger protection.
+    </p>
+  </div>
+</body>
+</html>
