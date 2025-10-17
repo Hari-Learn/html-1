@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSRF Explained</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f6f3;
+      color: #333;
+    }
+
+    header, main, section, footer {
+      padding: 2rem 5%;
+    }
+
+    header {
+      background-color: #e7ecf2;
+      border-bottom: 1px solid #ccc;
+    }
+
+    footer {
+      background-color: #e9f7f1;
+      border-top: 1px solid #ccc;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    h1, h2 {
+      color: #4d4d66;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    code {
+      background-color: #f3efff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: #5c4687;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      header, main, section, footer {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Understanding CSRF (Cross-Site Request Forgery)</h1>
+    <div class="card">
+      <p>
+        CSRF is a web security vulnerability that tricks users into performing unwanted actions on websites where they’re authenticated.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>What is CSRF?</h2>
+      <p>
+        Cross-Site Request Forgery occurs when a malicious website causes a user's browser to perform an unwanted action on a trusted site where the user is logged in.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Why is it Dangerous?</h2>
+      <p>
+        If the user is authenticated, the attacker can force actions like changing account settings or making purchases — all without the user's knowledge.
+      </p>
+    </div>
+  </main>
+
+  <section>
+    <div class="card">
+      <h2>How Does It Work?</h2>
+      <p>
+        Here’s a simple example of how CSRF works:
+      </p>
+      <pre><code>&lt;img src="https://example.com/delete-account" /&gt;</code></pre>
+      <p>
+        If you're logged in, the request may go through — and your account might be deleted.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Prevention Techniques</h2>
+      <ul>
+        <li><strong>CSRF Tokens:</strong> Include a unique token in every form.</li>
+        <li><strong>SameSite Cookies:</strong> Prevent cookies from being sent on cross-site requests.</li>
+        <li><strong>Referer/Origin Checks:</strong> Validate where the request comes from.</li>
+        <li><strong>Double Submit Cookies:</strong> Send the CSRF token in both a cookie and a request field.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="card">
+      <p>&copy; 2025 WebSec Guide | Protect your users from CSRF</p>
+    </div>
+  </footer>
+
+</body>
+</html>
