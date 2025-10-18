@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>John the Ripper - Explained</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 800px;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    h2 {
+      color: #34495e;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    code {
+      background-color: #eef;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>John the Ripper: Password Cracking Tool</h1>
+
+    <h2>🔍 What is John the Ripper?</h2>
+    <p>
+      <strong>John the Ripper</strong> (often abbreviated as <code>john</code>) is a fast and powerful password-cracking tool. It is used by security professionals, ethical hackers, and system administrators to test password strength and recover lost passwords.
+    </p>
+
+    <h2>❓ Why Use It?</h2>
+    <p>
+      Passwords are a common attack vector. John the Ripper helps identify weak or easy-to-guess passwords in systems. It's a valuable tool for:
+    </p>
+    <ul>
+      <li>Security audits</li>
+      <li>Penetration testing</li>
+      <li>Recovering forgotten passwords</li>
+      <li>Testing custom password hashes</li>
+    </ul>
+
+    <h2>⚙️ How Does It Work?</h2>
+    <p>
+      John the Ripper works by taking hashed passwords (like those from <code>/etc/shadow</code> on Linux) and trying to match them using:
+    </p>
+    <ul>
+      <li><strong>Dictionary attacks:</strong> Using a wordlist of common passwords</li>
+      <li><strong>Brute force:</strong> Trying all possible combinations</li>
+      <li><strong>Hybrid attacks:</strong> Modifying dictionary words (like <code>password123</code>)</li>
+    </ul>
+    <p>
+      It supports many hash types: MD5, SHA, DES, bcrypt, and even Windows hashes (LM/NTLM).
+    </p>
+
+    <h2>🧪 Common Use Cases</h2>
+    <ul>
+      <li>Check if user passwords are strong enough</li>
+      <li>Audit password policies in organizations</li>
+      <li>Recover lost credentials (with permission)</li>
+      <li>Training for cybersecurity professionals</li>
+    </ul>
+
+    <h2>▶️ Example Usage</h2>
+    <p>
+      Assuming you have a file of hashes called <code>hashes.txt</code>:
+    </p>
+    <pre><code>john hashes.txt --wordlist=/usr/share/wordlists/rockyou.txt</code></pre>
+
+    <p>
+      This tells John to try cracking the hashes using the <code>rockyou</code> wordlist.
+    </p>
+
+    <h2>⚠️ Ethical Use Only</h2>
+    <p>
+      John the Ripper should only be used in environments where you have explicit permission. Unauthorized use is illegal and unethical.
+    </p>
+  </div>
+
+</body>
+</html>
