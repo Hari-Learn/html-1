@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Snort Tools — Quick Overview</title>
+  <style>
+    /* Reset & basics */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height: 100%; }
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#fbf7fb 0%, #f5f6f8 100%); /* very light pink -> grey */
+      color: #333;
+      line-height: 1.45;
+      padding: 24px;
+    }
+
+    /* Page layout: full-width stack, not centered */
+    .stack {
+      width: 100%;
+      display: block;            /* full width, stacked vertically */
+      gap: 18px;
+    }
+
+    /* Each full-width band */
+    .band {
+      width: 100%;
+      padding: 18px;             /* spacing around the inner small box */
+      margin-bottom: 14px;
+    }
+
+    /* Light color bands for subtle separation */
+    .band.header { background: #fff0f6; }   /* light pink */
+    .band.main   { background: #fcfbfc; }   /* near-white */
+    .band.section{ background: #f7f7f9; }   /* very light grey */
+    .band.info   { background: #fff3f8; }   /* another light pink */
+    .band.footer { background: #f2f2f4; }   /* light grey */
+
+    /* Small boxed card inside each band */
+    .small-box {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(21,21,21,0.06);
+      padding: 18px 20px;
+      max-width: 1280px;   /* keeps content readable but still left-aligned */
+      width: 100%;
+      /* left-aligned, not centered: no auto margin */
+    }
+
+    /* Headers in boxes */
+    .small-box h1, .small-box h2, .small-box h3 {
+      color: #6b3340; /* muted burgundy/pinkish */
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .small-box h1 { font-size: 1.35rem; }
+    .small-box h2 { font-size: 1.05rem; color: #57585b; }
+    .small-box p { color: #444; margin-bottom: 10px; font-size: 0.98rem; }
+
+    /* layout for info boxes that are two-column on wide screens */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    /* subtle rule list */
+    .list {
+      margin-top: 8px;
+      padding-left: 18px;
+      color: #444;
+    }
+    .muted { color: #6b6b6b; font-size: 0.92rem; }
+
+    /* Footer small print */
+    .small { font-size: 0.86rem; color: #6b6b6b; }
+
+    /* Responsiveness: stack the two-column into one on narrow screens */
+    @media (max-width: 880px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stack" role="main">
+
+    <!-- 1) Header band -->
+    <section class="band header" aria-label="Header">
+      <div class="small-box" role="banner">
+        <h1>Snort Tools — Quick Overview</h1>
+        <p class="muted">A concise primer explaining what Snort is, why it’s used, how it works, and common base use-cases. Styled in soft light pink + grey with full-width bands and small rounded content cards.</p>
+      </div>
+    </section>
+
+    <!-- 2) Main band -->
+    <section class="band main" aria-label="Main">
+      <div class="small-box" role="main">
+        <h2>Main Concepts of Snort</h2>
+        <p><strong>Snort</strong> is an open-source network intrusion detection and prevention system (IDS/IPS). It inspects network traffic in real-time and uses a rules-based language to detect suspicious patterns and take actions (alert, log, drop).</p>
+        <ul class="list">
+          <li><strong>Detection engine:</strong> pattern and protocol analysis via rules.</li>
+          <li><strong>Preprocessors:</strong> normalize and reassemble traffic (HTTP, DNS, FTP, etc.).</li>
+          <li><strong>Output & alerting:</strong> logs, unified2, console, or external SIEMs.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3) Section band -->
+    <section class="band section" aria-label="Section: Snort components">
+      <div class="small-box">
+        <h2>Core Snort Tools & Components</h2>
+        <p class="muted">Snort ecosystem typically includes several companion utilities and helpers:</p>
+        <div class="grid-2" aria-hidden="false">
+          <div>
+            <h3>Snort (engine)</h3>
+            <p>Primary process that captures packets, applies preprocessors, runs rules, and emits alerts.</p>
+          </div>
+          <div>
+            <h3>Rules & rule managers</h3>
+            <p>Rule sets (e.g., community or subscription rules). Tools like <em>PulledPork</em> or <em>Oinkmaster</em> help fetch/update/manage rule files.</p>
+          </div>
+          <div>
+            <h3>Barnyard2</h3>
+            <p>A parser/forwarder that consumes Snort's binary output (unified2) and forwards events to databases or SIEMs.</p>
+          </div>
+          <div>
+            <h3>Snorby / Sguil / BASE</h3>
+            <p>Web and console front-ends for incident investigation, alert triage, and visualizing Snort events.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) Info band: WHAT & WHY (one of the 6 boxes) -->
+    <section class="band info" aria-label="What and Why">
+      <div class="small-box">
+        <h2>What & Why</h2>
+
+        <h3>What is Snort?</h3>
+        <p>Snort is a signature- and anomaly-based network intrusion detection and prevention system capable of real-time traffic analysis and packet logging.</p>
+
+        <h3>Why use Snort?</h3>
+        <ul class="list">
+          <li>Open-source and widely supported—strong rule community and mature ecosystem.</li>
+          <li>Flexible: runs as IDS (alert/log) or IPS (inline blocking) depending on deployment.</li>
+          <li>Customizable rules allow detection of new threats and environment-specific policies.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5) Info band: HOW & BASE USECASE (another of the 6 boxes) -->
+    <section class="band info" aria-label="How and Base Usecase">
+      <div class="small-box">
+        <h2>How & Base Use Cases</h2>
+
+        <h3>How Snort Works (high level)</h3>
+        <ol class="list">
+          <li>Packet capture: uses libpcap to capture live packets or reads pcap files.</li>
+          <li>Preprocessing: normalizes traffic, handles reassembly, decodes protocols.</li>
+          <li>Rule matching: runs each packet/flow against rule sets and detection logic.</li>
+          <li>Action/Output: generates alerts, logs, or takes inline blocking actions.</li>
+        </ol>
+
+        <h3>Base Use Cases</h3>
+        <ul class="list">
+          <li><strong>Network IDS:</strong> monitor network perimeter and internal segments to detect malicious activity.</li>
+          <li><strong>IPS (inline):</strong> drop or reject suspicious traffic in high-risk segments.</li>
+          <li><strong>Forensic logging:</strong> capture and preserve suspicious network traffic for analysis.</li>
+          <li><strong>Threat hunting & compliance:</strong> feed alerts into SIEMs and correlate with logs for compliance/audit requirements.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6) Footer band -->
+    <footer class="band footer" aria-label="Footer">
+      <div class="small-box" role="contentinfo">
+        <h2>Getting Started & Notes</h2>
+        <p class="muted">If you plan to try Snort:</p>
+        <ul class="list">
+          <li>Use a machine with a NIC that supports promiscuous/monitoring (if needed).</li>
+          <li>Manage rules carefully: outdated or overly-broad rules generate noise (false positives).</li>
+          <li>Consider Barnyard2 or a modern integration to forward events to your logging/analytics stack instead of relying on flat files.</li>
+        </ul>
+        <p class="small">This page is a conceptual overview — for installation, configuration samples, and tuning, consult the official Snort documentation and your organization's security policy.</p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
