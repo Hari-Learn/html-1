@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Understanding Aircrack-ng</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fafa;
+      color: #333;
+      padding: 30px;
+    }
+
+    .content-box {
+      max-width: 100%;
+      background-color: #ffffff;
+      padding: 25px;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      color: #2a4d69;
+    }
+
+    h2 {
+      color: #4a7c59;
+      margin-top: 20px;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+
+      .content-box {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content-box">
+    <h1>What is Aircrack-ng?</h1>
+    <p><strong>Aircrack-ng</strong> is a powerful network software suite used for auditing wireless networks. It’s widely known for its ability to crack WEP and WPA/WPA2-PSK keys using captured packets.</p>
+
+    <h2>🔍 Main Features</h2>
+    <p>Aircrack-ng isn’t a single tool, but a suite of utilities for monitoring, attacking, testing, and cracking Wi-Fi networks. Key tools include:</p>
+    <ul>
+      <li><strong>airmon-ng</strong> – enables monitor mode on wireless interfaces</li>
+      <li><strong>airodump-ng</strong> – captures packets in monitor mode</li>
+      <li><strong>aireplay-ng</strong> – injects packets for attacks like deauthentication</li>
+      <li><strong>aircrack-ng</strong> – performs key cracking from captured handshakes</li>
+    </ul>
+
+    <h2>⚙️ How It Works</h2>
+    <p>Aircrack-ng operates by first putting your wireless card in monitor mode to listen to Wi-Fi traffic. It then captures packets from nearby networks, especially WPA handshakes during device connections. Once enough data is collected, it uses dictionary or brute-force attacks to guess the network password.</p>
+
+    <h2>⚠️ Legal and Ethical Use</h2>
+    <p><strong>Important:</strong> Aircrack-ng should only be used for testing your own networks or with explicit permission. Unauthorized access to networks is illegal and unethical.</p>
+
+    <h2>🔗 Final Thoughts</h2>
+    <p>Aircrack-ng is a go-to tool for Wi-Fi security professionals. It allows penetration testers to assess the strength of encryption and the resilience of their wireless network setups.</p>
+  </div>
+</body>
+</html>
