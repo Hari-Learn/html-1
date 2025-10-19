@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Circle Border Frame</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f5f7fa;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .frame {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      overflow: visible;
+    }
+
+    .half-circle {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #e0f7fa;
+      border: 1px solid #b2ebf2;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Top - upward facing */
+    .top {
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Bottom - downward facing */
+    .bottom {
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      bottom: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Left - right facing */
+    .left {
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
+      left: -25px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #fce4ec;
+      border-color: #f8bbd0;
+    }
+
+    /* Right - left facing */
+    .right {
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+      right: -25px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #fff9c4;
+      border-color: #ffe082;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="frame">
+    <div class="half-circle top"></div>
+    
+    <div class="half-circle bottom"></div>
+    <div class="half-circle left"></div>
+    <div class="half-circle right"></div>
+  </div>
+
+</body>
+</html>
