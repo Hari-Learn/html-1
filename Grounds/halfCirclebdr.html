@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page Border with Half Circles</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background-color: #f5f7fa;
+      position: relative;
+      font-family: sans-serif;
+    }
+
+    .border-container {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Allows clicks through */
+      z-index: -1;
+    }
+
+    .row, .column {
+      display: flex;
+      position: absolute;
+    }
+
+    /* Top row (downward facing semicircles) */
+    .top-row {
+      top: 0;
+      left: 0;
+      right: 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Bottom row (upward facing semicircles) */
+    .bottom-row {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Left column (right-facing semicircles) */
+    .left-column {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* Right column (left-facing semicircles) */
+    .right-column {
+      top: 0;
+      bottom: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .half-circle {
+      width: 50px;
+      height: 50px;
+      background-color: #e0f7fa;
+      border: 1px solid #b2ebf2;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Curved directions */
+    .down {
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+    }
+
+    .up {
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+    }
+
+    .left {
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+    }
+
+    .right {
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
+      background-color: #fce4ec;
+      border-color: #f8bbd0;
+    }
+
+    /* Optional: content inside the page */
+    .content {
+      padding: 60px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="border-container">
+    <!-- Top border -->
+    <div class="row top-row">
+      <!-- Repeat as needed -->
+      <div class="half-circle down"></div>
+      <div class="half-circle down"></div>
+      <div class="half-circle down"></div>
+      <div class="half-circle down"></div>
+      <div class="half-circle down"></div>
+      <div class="half-circle down"></div>
+      <div class="half-circle down"></div>
+      <div class="half-circle down"></div>
+    </div>
+
+    <!-- Bottom border -->
+    <div class="row bottom-row">
+      <div class="half-circle up"></div>
+      <div class="half-circle up"></div>
+      <div class="half-circle up"></div>
+      <div class="half-circle up"></div>
+      <div class="half-circle up"></div>
+      <div class="half-circle up"></div>
+      <div class="half-circle up"></div>
+      <div class="half-circle up"></div>
+    </div>
+
+    <!-- Left border -->
+    <div class="column left-column">
+      <div class="half-circle right"></div>
+      <div class="half-circle right"></div>
+      <div class="half-circle right"></div>
+      <div class="half-circle right"></div>
+      <div class="half-circle right"></div>
+      <div class="half-circle right"></div>
+    </div>
+
+    <!-- Right border -->
+    <div class="column right-column">
+      <div class="half-circle left"></div>
+      <div class="half-circle left"></div>
+      <div class="half-circle left"></div>
+      <div class="half-circle left"></div>
+      <div class="half-circle left"></div>
+      <div class="half-circle left"></div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Hello 👋</h1>
+    <p>This page has a half-circle border all around!</p>
+  </div>
+
+</body>
+</html>
