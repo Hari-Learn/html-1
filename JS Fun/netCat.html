@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Netcat Tools Concepts</title>
+  <style>
+    /* Gradient background for the full page */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e9f9);
+      min-height: 100vh;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      color: #2c3e50;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Container to center and constrain content width */
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    /* Responsive two-column layout on larger screens */
+    @media(min-width: 720px) {
+      .container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Each box with rounded corners and shadows */
+    .box {
+      background: #ffffffdd; /* semi-transparent white */
+      border-radius: 16px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Header inside each box with background color and white text */
+    .box-header {
+      background: #3f51b5;
+      color: #fff;
+      padding: 18px 24px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      box-shadow: inset 0 -3px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Content inside each box */
+    .box-content {
+      padding: 24px 28px;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #2c3e50;
+      flex-grow: 1;
+    }
+
+    /* Page main heading */
+    h1 {
+      width: 100%;
+      max-width: 1000px;
+      margin-bottom: 50px;
+      color: #3f51b5;
+      font-weight: 800;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Understanding Netcat Tools</h1>
+  <div class="container">
+    <div class="box">
+      <div class="box-header">What is Netcat?</div>
+      <div class="box-content">
+        Netcat (often called the “Swiss Army knife” of networking) is a versatile command-line tool used for reading from and writing to network connections using TCP or UDP protocols. It is widely used for network debugging, port scanning, and transferring data.
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-header">Why Use Netcat?</div>
+      <div class="box-content">
+        Netcat provides a simple and efficient way to explore, debug, and interact with network services. It can establish raw connections, making it invaluable for penetration testing, network troubleshooting, and transferring files between systems without needing complex setups.
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-header">How Does Netcat Work?</div>
+      <div class="box-content">
+        Netcat works by opening TCP or UDP connections to a specified port on a target machine. It can act as both client and server, sending or receiving data over the network. Users can pipe input and output, making it scriptable and adaptable for many networking tasks.
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-header">Use Cases of Netcat</div>
+      <div class="box-content">
+        Common uses include port scanning, banner grabbing, transferring files, creating reverse shells during penetration testing, debugging network services, and acting as a backdoor for remote access. Its flexibility makes it a favorite tool for sysadmins and security professionals alike.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
