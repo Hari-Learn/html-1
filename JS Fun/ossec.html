@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OSSEC Tools Concepts</title>
+  <style>
+    /* Full page gradient background */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f9f9f9, #d7e8f7);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      color: #333;
+    }
+
+    /* Container for the content */
+    .container {
+      max-width: 900px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    /* Boxes with rounded corners and shadows */
+    .box {
+      background: #ffffffdd; /* Slightly transparent white */
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #4a90e2;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    /* Responsive for larger screens */
+    @media(min-width: 700px) {
+      .container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Understanding OSSEC Tools</h1>
+  <div class="container">
+    <div class="box">
+      <h2>What is OSSEC?</h2>
+      <p>
+        OSSEC (Open Source Security Event Correlator) is a free, open-source Host-based Intrusion Detection System (HIDS). It helps monitor and analyze logs, detect malware, perform rootkit detection, and provide real-time alerts on suspicious activities within computer systems.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Why Use OSSEC?</h2>
+      <p>
+        OSSEC helps organizations improve their security posture by providing continuous monitoring, threat detection, and compliance auditing. It is lightweight, scalable, and supports various platforms, making it a versatile choice for protecting servers and networks.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>How Does OSSEC Work?</h2>
+      <p>
+        OSSEC works by collecting logs from multiple sources such as system files, firewalls, and applications. It analyzes these logs using predefined rules to identify potential threats. When suspicious activity is detected, OSSEC triggers alerts and can automate responses like blocking IPs or executing scripts.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Use Cases of OSSEC</h2>
+      <p>
+        Common use cases include monitoring server integrity, detecting unauthorized access, compliance auditing (e.g., PCI-DSS, HIPAA), malware detection, and centralized log management. OSSEC is widely used in both small businesses and large enterprises to safeguard IT infrastructure.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
