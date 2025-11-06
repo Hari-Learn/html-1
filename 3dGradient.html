@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d-Gradient</title>
+    <style>
+        .morph-bg{
+            width: 750px;
+            height: 300px;
+            background: linear-gradient(45deg, #ee7752, #e73c7e,#23a6d5,#23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 8s ease infinite, morph 5s ease infinite;
+            border-radius: 20px;
+            transform-style: preserve-3d;
+            
+            border: 2.5px solid #eee;
+        }
+        .parent {
+  width: 200px;
+  height: 200px;
+  background: lightblue;
+  margin: 50px;
+  transform: rotateY(45deg);
+  /* transform-style: flat; is default */
+  transform-style: preserve-3d;
+}
+
+.child {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  transform: translateZ(50px); /* try to move forward in 3D */
+}
+
+body {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  perspective: 600px; /* Important for seeing 3D */
+}
+
+.parent {
+  width: 150px;
+  height: 150px;
+  background: lightblue;
+  transform: rotateY(45deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent.flat {
+  transform-style: flat; /* default, flatten children */
+}
+
+.parent.preserve {
+  transform-style: preserve-3d; /* children keep 3D */
+}
+
+.child {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  transform: translateZ(50px); /* move forward in 3D */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="morph-bg">
+
+    </div>
+    <div class="parent">
+  <div class="child">Child</div>
+</div>
+
+<div class="container">
+  <div class="parent flat">
+    <div class="child">Flat</div>
+  </div>
+
+  <div class="parent preserve">
+    <div class="child">3D</div>
+  </div>
+</div>
+
+
+</body>
+</html>
