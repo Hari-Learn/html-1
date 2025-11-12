@@ -13,10 +13,17 @@
     }
 
     header {
-        background-color: #3498db;
+        
         color: white;
         text-align: center;
         padding: 20px 0;
+        background-image: url('headerBg.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto;
+        background-color: rgba(255,255,255,10); /* fade layer */
+        background-blend-mode: lighten; /* or try 'overlay', 'screen', 'soft-light' */
+        background-color: #3498db;
     }
 
     nav {
@@ -48,7 +55,21 @@
         box-sizing: border-box;
         padding: 15px;
         margin: 5px;
-        border-radius: 10px;
+        border-radius: 10px;display: inline-block;
+    width: 48%;
+    vertical-align: top;
+    background: repeating-linear-gradient(
+        135deg,
+        #ffffff,
+        #ffffff 10px,
+        #f9f9f9 10px,
+        #f9f9f9 20px
+    );
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    padding: 15px;
+    margin: 5px;
+    height: 60vh;
     }
 
     footer {
