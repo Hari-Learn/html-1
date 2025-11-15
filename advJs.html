@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Concepts</title>
 
     <style>
@@ -12,19 +12,31 @@
             background: #f7f7f7;
         }
 
-        /* Navbar */
+        /* NAV BAR */
         nav {
             background-color: #2c3e50;
-            padding: 15px;
-            color: white;
+            padding: 15px 0;
             text-align: center;
-            font-size: 20px;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            padding: 5px 10px;
+        }
+
+        nav a:hover {
+            background: #1a252f;
+            border-radius: 4px;
         }
 
         /* Header */
         header {
             background-color: #3498db;
-            padding: 40px;
+            padding: 20px;
             text-align: center;
             color: white;
         }
@@ -33,7 +45,7 @@
         .container {
             width: 100%;
             padding: 30px 0;
-            text-align: center; /* needed for inline-block centering */
+            text-align: center;
         }
 
         /* Inline sections */
@@ -66,16 +78,22 @@
 </head>
 <body>
 
-    <nav>JavaScript Concepts Overview</nav>
+    <!-- REAL NAV BAR -->
+   
 
     <header>
         <h1>Important JavaScript Concepts for Interviews</h1>
         <p>Higher-Order Functions • Promises • Async & Await</p>
     </header>
+     <nav>
+        <a href="#">Home</a>
+        <a href="#">Higher Order Fn</a>
+        <a href="#">Promises</a>
+        <a href="#">Async & Await</a>
+    </nav>
 
     <div class="container">
 
-        <!-- SECTION 1 -->
         <div class="section one">
             <h2>Higher-Order Functions</h2>
             <p>A higher-order function is one that:</p>
@@ -83,28 +101,25 @@
                 <li>Takes another function as an argument</li>
                 <li>Returns a function</li>
             </ul>
-            <p>Common examples: <code>map()</code>, <code>filter()</code>, <code>reduce()</code>.</p>
+            <p>Examples: <code>map()</code>, <code>filter()</code>, <code>reduce()</code>.</p>
         </div>
 
-        <!-- SECTION 2 -->
         <div class="section two">
-            <h2>Promises in JavaScript</h2>
-            <p>A Promise represents the result of an asynchronous operation.</p>
-            <p>States:</p>
+            <h2>Promises</h2>
+            <p>A Promise represents an asynchronous value.</p>
             <ul>
                 <li>Pending</li>
                 <li>Fulfilled</li>
                 <li>Rejected</li>
             </ul>
-            <p>Helps avoid callback hell.</p>
+            <p>Used to avoid callback hell.</p>
         </div>
 
-        <!-- SECTION 3 -->
         <div class="section three">
             <h2>Async & Await</h2>
-            <p><strong>async/await</strong> allows writing asynchronous code in a synchronous style.</p>
-            <p><code>await</code> pauses execution until a Promise resolves.</p>
-            <p>Cleaner and easier to read than .then() chains.</p>
+            <p>Async/await makes async code look synchronous.</p>
+            <p><code>await</code> pauses until the Promise resolves.</p>
+            <p>Improves readability.</p>
         </div>
 
     </div>
