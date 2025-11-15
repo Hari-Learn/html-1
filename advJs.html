@@ -9,7 +9,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f5f5f5;
+            background: #f7f7f7;
         }
 
         /* Navbar */
@@ -29,26 +29,30 @@
             color: white;
         }
 
-        /* Main container */
+        /* Container full width */
         .container {
             width: 100%;
-            margin: 0 auto;
-            padding: 20px 0;
+            padding: 30px 0;
+            text-align: center; /* needed for inline-block centering */
         }
 
-        /* 3 sections (no flex/grid) */
+        /* Inline sections */
         .section {
-            width: 90%;
-            margin: 20px auto;
+            display: inline-block;
+            width: 30%;
+            margin: 10px;
             padding: 20px;
+            vertical-align: top;
             border-radius: 8px;
             line-height: 1.6;
+            box-sizing: border-box;
+            text-align: left;
         }
 
-        /* Color themes */
-        .one { background-color: #e8f4fa; }   /* Light Sky Blue */
-        .two { background-color: #eaf9e6; }   /* Light Green */
-        .three { background-color: #fff4e6; } /* Light Orange */
+        /* Light color themes */
+        .one { background-color: #e8f4fa; }
+        .two { background-color: #eaf9e6; }
+        .three { background-color: #fff4e6; }
 
         /* Footer */
         footer {
@@ -62,9 +66,7 @@
 </head>
 <body>
 
-    <nav>
-        JavaScript Concepts Overview
-    </nav>
+    <nav>JavaScript Concepts Overview</nav>
 
     <header>
         <h1>Important JavaScript Concepts for Interviews</h1>
@@ -76,52 +78,38 @@
         <!-- SECTION 1 -->
         <div class="section one">
             <h2>Higher-Order Functions</h2>
-            <p>
-                A <strong>higher-order function</strong> is a function that either:
-            </p>
+            <p>A higher-order function is one that:</p>
             <ul>
                 <li>Takes another function as an argument</li>
                 <li>Returns a function</li>
             </ul>
-            <p>
-                Common examples include <code>map()</code>, <code>filter()</code>, and <code>reduce()</code>.
-            </p>
+            <p>Common examples: <code>map()</code>, <code>filter()</code>, <code>reduce()</code>.</p>
         </div>
 
         <!-- SECTION 2 -->
         <div class="section two">
             <h2>Promises in JavaScript</h2>
-            <p>
-                A <strong>Promise</strong> represents a value that may be available now, later, or never.
-                It has 3 states:
-            </p>
+            <p>A Promise represents the result of an asynchronous operation.</p>
+            <p>States:</p>
             <ul>
                 <li>Pending</li>
                 <li>Fulfilled</li>
                 <li>Rejected</li>
             </ul>
-            <p>
-                Promises help avoid callback hell and make async code cleaner.
-            </p>
+            <p>Helps avoid callback hell.</p>
         </div>
 
         <!-- SECTION 3 -->
         <div class="section three">
             <h2>Async & Await</h2>
-            <p>
-                <strong>async/await</strong> is a modern way to handle asynchronous operations.
-                It makes async code look synchronous.
-            </p>
-            <p>
-                <code>await</code> pauses the function until the promise resolves, improving readability.
-            </p>
+            <p><strong>async/await</strong> allows writing asynchronous code in a synchronous style.</p>
+            <p><code>await</code> pauses execution until a Promise resolves.</p>
+            <p>Cleaner and easier to read than .then() chains.</p>
         </div>
 
     </div>
 
-    <footer>
-        &copy; 2025 JavaScript Interview Prep | All Rights Reserved
-    </footer>
+    <footer>&copy; 2025 JavaScript Interview Prep | All Rights Reserved</footer>
 
 </body>
 </html>
