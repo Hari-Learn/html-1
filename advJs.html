@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Concepts</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #2c3e50;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #3498db;
+            padding: 40px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Main container */
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* 3 sections (no flex/grid) */
+        .section {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+
+        /* Color themes */
+        .one { background-color: #e8f4fa; }   /* Light Sky Blue */
+        .two { background-color: #eaf9e6; }   /* Light Green */
+        .three { background-color: #fff4e6; } /* Light Orange */
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        JavaScript Concepts Overview
+    </nav>
+
+    <header>
+        <h1>Important JavaScript Concepts for Interviews</h1>
+        <p>Higher-Order Functions • Promises • Async & Await</p>
+    </header>
+
+    <div class="container">
+
+        <!-- SECTION 1 -->
+        <div class="section one">
+            <h2>Higher-Order Functions</h2>
+            <p>
+                A <strong>higher-order function</strong> is a function that either:
+            </p>
+            <ul>
+                <li>Takes another function as an argument</li>
+                <li>Returns a function</li>
+            </ul>
+            <p>
+                Common examples include <code>map()</code>, <code>filter()</code>, and <code>reduce()</code>.
+            </p>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="section two">
+            <h2>Promises in JavaScript</h2>
+            <p>
+                A <strong>Promise</strong> represents a value that may be available now, later, or never.
+                It has 3 states:
+            </p>
+            <ul>
+                <li>Pending</li>
+                <li>Fulfilled</li>
+                <li>Rejected</li>
+            </ul>
+            <p>
+                Promises help avoid callback hell and make async code cleaner.
+            </p>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div class="section three">
+            <h2>Async & Await</h2>
+            <p>
+                <strong>async/await</strong> is a modern way to handle asynchronous operations.
+                It makes async code look synchronous.
+            </p>
+            <p>
+                <code>await</code> pauses the function until the promise resolves, improving readability.
+            </p>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2025 JavaScript Interview Prep | All Rights Reserved
+    </footer>
+
+</body>
+</html>
