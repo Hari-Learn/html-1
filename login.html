@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
  <style>
-    * {
+ * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,7 +17,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f5f5f5;
+
+  /* Gradient background */
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
 
 .container {
@@ -27,11 +29,11 @@ body {
 }
 
 .login-box {
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   padding: 30px 40px;
   width: 320px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -42,6 +44,7 @@ h2 {
   margin-bottom: 10px;
 }
 
+/* Input with floating label on hover only */
 .input-group {
   position: relative;
   display: flex;
@@ -50,9 +53,8 @@ h2 {
 
 .input-group input {
   padding: 12px;
-  padding-top: 20px;
   border: 1px solid #aaa;
-  border-radius: 5px;
+  border-radius: 6px;
   outline: none;
   font-size: 14px;
 }
@@ -63,24 +65,23 @@ h2 {
   top: 12px;
   color: #666;
   font-size: 14px;
-  transition: 0.2s ease;
   pointer-events: none;
-}
-
-/* floating effect */
-.input-group input:focus + label,
-.input-group input:hover + label,
-.input-group input:not(:placeholder-shown) + label {
-  top: -6px;
-  left: 8px;
   background: white;
   padding: 0 4px;
+  transition: 0.2s ease;
+}
+
+/* Float label ONLY on hover or focus */
+.input-group input:hover + label,
+.input-group input:focus + label {
+  top: -8px;
+  left: 8px;
   font-size: 12px;
   color: #333;
 }
 
 .btn {
-  padding: 12px;
+ padding: 12px;
   border: none;
   background: #007bff;
   color: white;
@@ -93,11 +94,12 @@ h2 {
   background: #005fcc;
 }
 
+
  </style>
 </head>
 <body>
 
-  <div class="container">
+ <div class="container">
     <div class="login-box">
       <h2>Login</h2>
 
@@ -114,6 +116,7 @@ h2 {
       <button class="btn">Login</button>
     </div>
   </div>
+
 
 </body>
 </html>
