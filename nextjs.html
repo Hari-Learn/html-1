@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Next.js Basics 2025</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    header, footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    nav {
+        background: #555;
+        color: #fff;
+        padding: 10px;
+    }
+
+    nav a {
+        color: white;
+        margin-right: 15px;
+        text-decoration: none;
+    }
+
+    /* Main container uses the full width */
+    .container {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Two columns without flex/grid */
+    .left-col {
+        float: left;
+        width: 25%;
+        padding: 10px;
+        background: #f0f0f0;
+        box-sizing: border-box;
+        min-height: 400px;
+    }
+
+    .right-col {
+        float: left;
+        width: 75%;
+        padding: 10px;
+        box-sizing: border-box;
+        background: #fafafa;
+        min-height: 400px;
+    }
+
+    /* Clear float */
+    .clear {
+        clear: both;
+    }
+
+    footer {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Next.js Basics (2025/2026)</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Docs</a>
+    <a href="#">Tutorials</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="left-col">
+        <h3>Topics</h3>
+        <ul>
+            <li>What is Next.js?</li>
+            <li>App Router</li>
+            <li>Server Components</li>
+            <li>Data Fetching</li>
+            <li>Routing</li>
+            <li>API Routes</li>
+            <li>Deployment</li>
+        </ul>
+    </div>
+
+    <div class="right-col">
+        <h2>Basics of Next.js (2025/2026)</h2>
+        <p>
+            Next.js in 2025 and 2026 continues to evolve as the leading React framework for 
+            production-grade applications. It provides a hybrid model combining server-side 
+            rendering (SSR), static generation, and client-side rendering, giving developers 
+            the flexibility to choose the best method per page or component.
+        </p>
+
+        <h3>1. App Router</h3>
+        <p>
+            The App Router, introduced in Next.js 13 and now fully stable, is the default 
+            method for building applications. It uses the <code>/app</code> directory and 
+            introduces layouts, nested routing, and streaming.
+        </p>
+
+        <h3>2. React Server Components (RSC)</h3>
+        <p>
+            RSCs are now the standard way to render most UI. They reduce client-side 
+            JavaScript and improve performance, especially for large applications.
+        </p>
+
+        <h3>3. Data Fetching</h3>
+        <p>
+            Next.js supports <code>fetch()</code> inside Server Components, enabling 
+            automatic caching, revalidation, and incremental static regeneration (ISR). 
+            Developers can easily define caching rules using revalidate settings.
+        </p>
+
+        <h3>4. Route Handlers</h3>
+        <p>
+            API Routes have been replaced by Route Handlers inside the <code>/app</code> directory, 
+            offering better performance, streaming responses, and full control over HTTP behavior.
+        </p>
+
+        <h3>5. Deployment</h3>
+        <p>
+            Deploying Next.js apps in 2025/2026 is simple through platforms like Vercel, AWS, Netlify, 
+            and Docker. Edge rendering and serverless functions offer fast global performance.
+        </p>
+
+        <p>
+            Overall, Next.js remains one of the strongest choices for building fast, scalable, 
+            and modern web applications.
+        </p>
+    </div>
+
+    <div class="clear"></div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Next.js Basics Page</p>
+</footer>
+
+</body>
+</html>
