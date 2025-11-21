@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Next.js App Router – Basics to Intermediate</title>
+<style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f9f9f9; }
+
+    header, footer {
+        background: #1a1a1a;
+        color: #fff;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    nav {
+        background: #333;
+        padding: 10px;
+    }
+
+    nav a {
+        color: white;
+        margin-right: 15px;
+        text-decoration: none;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .left-col {
+        float: left;
+        width: 25%;
+        background: #efefef;
+        padding: 10px;
+        box-sizing: border-box;
+        min-height: 500px;
+    }
+
+    .right-col {
+        float: left;
+        width: 75%;
+        background: #fff;
+        padding: 15px;
+        box-sizing: border-box;
+        min-height: 500px;
+    }
+
+    .clear { clear: both; }
+
+    pre { background: #eee; padding: 10px; overflow-x: auto; }
+    code { background: #eee; padding: 2px 4px; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Next.js App Router: Basic to Intermediate Guide</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Basics</a>
+    <a href="#">Intermediate</a>
+    <a href="#">Docs</a>
+</nav>
+
+<div class="container">
+
+    <!-- LEFT COLUMN -->
+    <div class="left-col">
+        <h3>Topics Covered</h3>
+        <ul>
+            <li>App Router Overview</li>
+            <li>Project Structure</li>
+            <li>Routing Basics</li>
+            <li>Layouts</li>
+            <li>Server Components</li>
+            <li>Client Components</li>
+            <li>Data Fetching</li>
+            <li>Loading, Error, Not Found</li>
+            <li>Route Groups</li>
+            <li>Route Handlers (API)</li>
+            <li>Dynamic Routes</li>
+            <li>Metadata</li>
+        </ul>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-col">
+        <h2>Next.js App Router Overview</h2>
+        <p>
+            The App Router (introduced in Next.js 13 and now standard in 2025) provides a powerful 
+            file-system-based routing system using the <code>/app</code> directory. It enables 
+            layouts, nested routing, React Server Components, streaming, and built-in data fetching.
+        </p>
+
+        <h2>1. App Router Project Structure</h2>
+        <pre><code>app/
+ ├─ layout.js      (Root Layout)
+ ├─ page.js        (Home Page)
+ ├─ about/
+ │   └─ page.js    (About Page)
+ └─ api/
+     └─ hello/route.js  (API Endpoint)
+</code></pre>
+
+        <h2>2. Routing Basics</h2>
+        <p>A folder becomes a route. A <code>page.js</code> file returns UI.</p>
+        <pre><code>// app/page.js
+export default function Home() {
+  return &lt;h1&gt;Welcome to Next.js App Router&lt;/h1&gt;;
+}
+</code></pre>
+
+        <h2>3. Layouts (Shared UI)</h2>
+        <p>Layouts wrap all child routes and persist across navigation.</p>
+        <pre><code>// app/layout.js
+export default function RootLayout({ children }) {
+  return (
+    &lt;html&gt;
+      &lt;body&gt;
+        &lt;header&gt;My Header&lt;/header&gt;
+        {children}
+      &lt;/body&gt;
+    &lt;/html&gt;
+  );
+}
+</code></pre>
+
+        <h2>4. Server Components (Default)</h2>
+        <p>
+            Most components are Server Components by default, meaning they run on the server.  
+            They reduce bundle size and load faster.
+        </p>
+
+        <pre><code>export default async function Page() {
+  const data = await fetch("https://api.example.com/posts").then(r =&gt; r.json());
+  return &lt;pre&gt;{JSON.stringify(data, null, 2)}&lt;/pre&gt;;
+}
+</code></pre>
+
+        <h2>5. Client Components</h2>
+        <p>
+            Add <code>"use client"</code> to use hooks, events, or interactive UI.
+        </p>
+
+        <pre><code>"use client";
+import { useState } from "react";
+
+export default function Counter() {
+  const [n, setN] = useState(0);
+  return &lt;button onClick={() =&gt; setN(n + 1)}&gt;Count {n}&lt;/button&gt;;
+}
+</code></pre>
+
+        <h2>6. Data Fetching (Advanced Features)</h2>
+        <p>Supports caching, ISR, revalidation, and streaming.</p>
+
+        <pre><code>export async function Page() {
+  const data = await fetch("https://api.example.com/users", {
+    next: { revalidate: 60 } // ISR every 60 sec
+  }).then(r =&gt; r.json());
+
+  return &lt;div&gt;{data.name}&lt;/div&gt;;
+}
+</code></pre>
+
+        <h2>7. Loading UI (Streaming)</h2>
+        <pre><code>// app/dashboard/loading.js
+export default function Loading() {
+  return &lt;p&gt;Loading content...&lt;/p&gt;;
+}
+</code></pre>
+
+        <h2>8. Error & Not Found Pages</h2>
+        <pre><code>// app/error.js
+export default function Error() {
+  return &lt;h2&gt;Something went wrong!&lt;/h2&gt;;
+}
+</code></pre>
+
+        <pre><code>// app/not-found.js
+export default function NotFound() {
+  return &lt;h1&gt;404 - Page Not Found&lt;/h1&gt;;
+}
+</code></pre>
+
+        <h2>9. Route Groups</h2>
+        <p>Used to organize folders without affecting the route URL.</p>
+
+        <pre><code>app/
+ └─ (dashboard)
+    ├─ layout.js
+    └─ page.js
+</code></pre>
+
+        <h2>10. Dynamic Routes</h2>
+        <pre><code>// app/posts/[id]/page.js
+export default function Post({ params }) {
+  return &lt;h1&gt;Post ID: {params.id}&lt;/h1&gt;;
+}
+</code></pre>
+
+        <h2>11. Route Handlers (API Endpoints)</h2>
+        <pre><code>// app/api/user/route.js
+export async function GET() {
+  return Response.json({ name: "John Doe" });
+}
+</code></pre>
+
+        <h2>12. Metadata (SEO)</h2>
+        <pre><code>export const metadata = {
+  title: "My Page",
+  description: "SEO metadata for App Router"
+};
+</code></pre>
+
+        <h2>You're Ready for Intermediate Next.js!</h2>
+        <p>
+            With these concepts, you're ready to build real-world dashboards, blogs, SaaS apps,  
+            or full-stack projects using the App Router.
+        </p>
+    </div>
+
+    <div class="clear"></div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Next.js App Router Guide – Single Page</p>
+</footer>
+
+</body>
+</html>
