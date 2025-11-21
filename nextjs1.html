@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Next.js Basics – What You Should Learn</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    header, footer {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    nav {
+        background: #444;
+        color: #fff;
+        padding: 10px;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin-right: 15px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Two columns without flex/grid */
+    .left-col {
+        float: left;
+        width: 25%;
+        background: #f1f1f1;
+        padding: 10px;
+        box-sizing: border-box;
+        min-height: 400px;
+    }
+
+    .right-col {
+        float: left;
+        width: 75%;
+        background: #fafafa;
+        padding: 10px;
+        box-sizing: border-box;
+        min-height: 400px;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    h2, h3 {
+        margin-top: 20px;
+    }
+
+    code {
+        background: #eee;
+        padding: 2px 4px;
+        border-radius: 3px;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Basic Things to Learn in Next.js (2025/2026)</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Basics</a>
+    <a href="#">Tutorial</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+
+    <div class="left-col">
+        <h3>Learning Checklist</h3>
+        <ul>
+            <li>Installation</li>
+            <li>Pages & Routes</li>
+            <li>App Router</li>
+            <li>Layouts</li>
+            <li>Server vs Client Components</li>
+            <li>Data Fetching</li>
+            <li>API Routes / Route Handlers</li>
+            <li>Static vs Server Rendering</li>
+            <li>Deployment</li>
+        </ul>
+    </div>
+
+    <div class="right-col">
+        <h2>Basics You Must Learn in Next.js</h2>
+        <p>
+            Next.js is a React framework that makes building production-ready applications easier.  
+            Here are the essential things every beginner should learn.
+        </p>
+
+        <h3>1. Install Next.js</h3>
+        <p>Install Node.js and create a new Next.js app:</p>
+        <pre><code>npx create-next-app@latest my-next-app
+cd my-next-app
+npm run dev
+        </code></pre>
+
+        <h3>2. Understand the App Router</h3>
+        <p>
+            The App Router (using the <code>/app</code> folder) is the latest and recommended way 
+            to build Next.js apps. It supports layouts, nested routes, and server components.
+        </p>
+
+        <h3>3. Learn Pages & Routing</h3>
+        <p>
+            Every folder inside <code>/app</code> becomes a route.  
+            Example: <code>app/about/page.js</code> → <b>/about</b>
+        </p>
+
+        <h3>4. Layouts</h3>
+        <p>
+            Layouts allow shared UI such as headers and footers.  
+            Example:
+        </p>
+        <pre><code>export default function Layout({ children }) {
+  return (
+    &lt;html&gt;
+      &lt;body&gt;
+        &lt;header&gt;My Site&lt;/header&gt;
+        {children}
+      &lt;/body&gt;
+    &lt;/html&gt;
+  );
+}
+        </code></pre>
+
+        <h3>5. Server vs Client Components</h3>
+        <p>
+            By default, components are **Server Components** (faster, no JS on client).  
+            Use <code>"use client"</code> at the top if you need client-side JS, such as for interactive UI.
+        </p>
+
+        <h3>6. Data Fetching</h3>
+        <p>
+            You can fetch data directly in server components using <code>fetch()</code>.
+        </p>
+        <pre><code>export default async function Page() {
+  const data = await fetch("https://api.example.com/posts").then(r => r.json());
+  return &lt;div&gt;{JSON.stringify(data)}&lt;/div&gt;;
+}
+        </code></pre>
+
+        <h3>7. API Routes (Route Handlers)</h3>
+        <p>
+            Create backend API inside the app folder:
+        </p>
+        <pre><code>// app/api/hello/route.js
+export function GET() {
+  return Response.json({ message: "Hello API" });
+}
+        </code></pre>
+
+        <h3>8. Rendering Types</h3>
+        <ul>
+            <li><b>SSR</b> – Server-Side Rendering</li>
+            <li><b>SSG</b> – Static Site Generation</li>
+            <li><b>ISR</b> – Incremental Static Regeneration</li>
+            <li><b>CSR</b> – Client-Side Rendering</li>
+        </ul>
+
+        <h3>9. Deployment</h3>
+        <p>
+            Deploy easily on:
+        </p>
+        <ul>
+            <li>Vercel (best)</li>
+            <li>Netlify</li>
+            <li>AWS</li>
+            <li>Docker</li>
+        </ul>
+
+        <h2>Simple Tutorial: Your First Page</h2>
+
+        <p>Create a file:</p>
+        <pre><code>app/hello/page.js
+        </code></pre>
+
+        <p>Add this:</p>
+        <pre><code>export default function Hello() {
+  return &lt;h1&gt;Hello from Next.js!&lt;/h1&gt;;
+}
+        </code></pre>
+
+        <p>
+            Now visit <b>http://localhost:3000/hello</b> — that’s your first custom route!
+        </p>
+
+        <h3>You’re ready to build!</h3>
+        <p>
+            With these basics, you can now create full apps, blogs, dashboards, API backends, 
+            and more using Next.js.
+        </p>
+
+    </div>
+
+    <div class="clear"></div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Next.js Learning Page</p>
+</footer>
+
+</body>
+</html>
