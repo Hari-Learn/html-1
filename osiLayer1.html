@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ICMP Echo Through OSI Layers</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f0f4f9;
+        }
+        .layer-card {
+            border-left: 5px solid #198754;
+            margin-bottom: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <span class="navbar-brand">ICMP Echo Across OSI Layers</span>
+        </div>
+    </nav>
+
+    <div class="container mt-4 mb-5">
+        <h1 class="mb-4 text-center">How an ICMP Echo (Ping) Travels Through the OSI Model</h1>
+        <p class="lead text-center">
+            This page explains how a simple <strong>ICMP Echo Request (Ping)</strong> is processed step-by-step 
+            through all seven layers of the OSI Model, including encapsulation at each level.
+        </p>
+
+        <!-- Application Layer -->
+        <div class="layer-card">
+            <h4>7. Application Layer — ICMP Echo Generation</h4>
+            <p>
+                When a user runs the <code>ping</code> command, the system creates an 
+                <strong>ICMP Echo Request</strong> message.  
+                Although ICMP is technically a Network Layer protocol, the <em>request to generate</em> 
+                the Echo message originates from the Application Layer.
+            </p>
+            <p>
+                Content Created:  
+                <ul>
+                    <li>Type: Echo Request (Type 8)</li>
+                    <li>Identifier & Sequence Number</li>
+                    <li>Payload Data (often timestamp or text)</li>
+                </ul>
+            </p>
+        </div>
+
+        <!-- Presentation Layer -->
+        <div class="layer-card">
+            <h4>6. Presentation Layer — Data Formatting / Encapsulation</h4>
+            <p>
+                The presentation layer prepares and formats the ICMP message.  
+                For example:
+            </p>
+            <ul>
+                <li>Converts data to the proper byte order</li>
+                <li>Ensures any needed encoding is applied</li>
+                <li>Prepares structure for transport</li>
+            </ul>
+            <p>No encryption or compression is applied for ICMP, but formatting still occurs.</p>
+        </div>
+
+        <!-- Session Layer -->
+        <div class="layer-card">
+            <h4>5. Session Layer — Timing & Session Handling</h4>
+            <p>
+                The session layer adds timing context. For ping, this is used to:
+            </p>
+            <ul>
+                <li>Record timestamp for Round-Trip Time (RTT)</li>
+                <li>Track individual ping attempts</li>
+                <li>Match responses to their requests</li>
+            </ul>
+        </div>
+
+        <!-- Transport Layer -->
+        <div class="layer-card">
+            <h4>4. Transport Layer — No TCP/UDP Used (But Handling Occurs)</h4>
+            <p>
+                ICMP does <strong>not</strong> use TCP or UDP.  
+                However, the transport layer still plays a role conceptually:
+            </p>
+            <ul>
+                <li>No port numbers used</li>
+                <li>No TCP handshake or UDP datagram</li>
+                <li>Hands the ICMP data directly to the Network Layer</li>
+            </ul>
+        </div>
+
+        <!-- Network Layer -->
+        <div class="layer-card">
+            <h4>3. Network Layer — IP Packet Encapsulation + Routing</h4>
+            <p>
+                The ICMP message is encapsulated inside an <strong>IPv4 packet</strong>.
+            </p>
+
+            <p>Packet Includes:</p>
+            <ul>
+                <li><strong>Source IP:</strong> Your device's IP</li>
+                <li><strong>Destination IP:</strong> Target host's IP</li>
+                <li>Protocol: ICMP (Type 1)</li>
+                <li>TTL, Header Checksum, Flags</li>
+            </ul>
+
+            <p>
+                At this point the device knows the <strong>destination IP</strong> but not the MAC address.  
+                It creates an ARP request:
+            </p>
+            <ul>
+                <li>“Who has this IP? Tell me your MAC address.”</li>
+                <li>Sent as a broadcast frame</li>
+            </ul>
+        </div>
+
+        <!-- Data Link Layer -->
+        <div class="layer-card">
+            <h4>2. Data Link Layer — Frame Encapsulation + ARP Result</h4>
+
+            <p>The ARP reply returns with the destination MAC address.</p>
+
+            <p>Then the device creates an Ethernet frame:</p>
+            <ul>
+                <li><strong>Source MAC:</strong> Your NIC's MAC</li>
+                <li><strong>Destination MAC:</strong> Target device's MAC (found via ARP)</li>
+                <li>EtherType: IPv4</li>
+                <li>Payload: IPv4 packet (which includes ICMP message)</li>
+            </ul>
+
+            <p>
+                Before ARP response, the frame was encapsulated <strong>without destination MAC</strong>  
+                because it hadn’t been learned yet. After ARP, the full frame is constructed.
+            </p>
+        </div>
+
+        <!-- Physical Layer -->
+        <div class="layer-card">
+            <h4>1. Physical Layer — NIC + Ethernet Transmission</h4>
+            <p>
+                The NIC (Network Interface Card) converts the Ethernet frame into:
+            </p>
+            <ul>
+                <li>Electrical signals (copper)</li>
+                <li>Light pulses (fiber)</li>
+                <li>Radio waves (Wi-Fi)</li>
+            </ul>
+
+            <p>
+                The Ethernet protocol defines:
+            </p>
+            <ul>
+                <li>Frame timing</li>
+                <li>Voltage/waveform levels</li>
+                <li>Bit-rate signaling</li>
+            </ul>
+
+            <p>This is the final step before the signal travels across the physical medium.</p>
+        </div>
+    </div>
+
+    <footer class="text-center py-3 bg-light">
+        <p class="mb-0">© 2025 ICMP & OSI Process Explanation</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCNA Class Notes</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 70px;
+        }
+        .day-links a {
+            margin: 0 5px;
+            font-size: 1.2rem;
+        }
+        .section-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+        }
+        .section-header {
+            background-color: #f45b00;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px 5px 0 0;
+            margin-bottom: 12px;
+            font-weight: 600;
+            margin:0;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .navbarbg{
+            background: linear-gradient(to right, #283048, #859398);
+        }
+        .footerbg{
+            background: linear-gradient(to right, #859398, #283048);
+        }
+        .badgeBg{
+            background: linear-gradient(to right, #859398, #283048);
+            border:1px solid #fff;
+        }
+        .flare {
+  background: linear-gradient(to right, #f12711, #f5af19);
+}
+
+.titanium {
+  background: linear-gradient(to right, #283048, #859398);
+}
+
+.row.mb-3 {
+  column-gap: 5px;
+}
+
+        ul.check-list {
+    list-style: none; /* remove default bullets */
+    padding-left: 15px;  /* remove extra padding */
+}
+
+ul.check-list li::before {
+    content: "👉 "; /* checkmark before each item */
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbarbg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">CCNA Notes</a>
+            <div class="ms-auto day-links">
+                <a href="#" class="btn btn-outline-light btn-sm">Days</a>
+                
+                <a href="day1.html"><span class="badge text-bg-secondary badgeBg">1</span></a>
+                <a href="day2.html"><span class="badge text-bg-secondary badgeBg">2</span></a>
+                <a href="day3.html"><span class="badge text-bg-secondary badgeBg">3</span></a>
+                <a href="day4.html"><span class="badge text-bg-secondary badgeBg">4</span></a>
+                <a href="day5.html"><span class="badge text-bg-secondary badgeBg">5</span></a>
+                <a href="day6.html"><span class="badge text-bg-secondary badgeBg">6</span></a>
+                <a href="day7.html"><span class="badge text-bg-secondary badgeBg">7</span></a>
+                <a href="day8.html"><span class="badge text-bg-secondary badgeBg">8</span></a>
+                <a href="day9.html"><span class="badge text-bg-secondary badgeBg">9</span></a>
+                <a href="day10.html"><span class="badge text-bg-secondary badgeBg">10</span></a>
+                <a href="day11.html"><span class="badge text-bg-secondary badgeBg">11</span></a>
+                <a href="day12.html"><span class="badge text-bg-secondary badgeBg">12</span></a>
+                <a href="day13.html"><span class="badge text-bg-secondary badgeBg">13</span></a>
+                <a href="day14.html"><span class="badge text-bg-secondary badgeBg">14</span></a>
+                <a href="day15.html"><span class="badge text-bg-secondary badgeBg">15</span></a>
+                <a href="day16.html"><span class="badge text-bg-secondary badgeBg">16</span></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+
+    <main class="container">
+        <!-- Upper Section -->
+         <div style="display: flex; justify-content: space-between;">
+         <h6>📆Date : 19-11-2025</h6>
+         <h6>🧞Instructor Name : Suren</h6></div>
+        <div style="display:flex;gap:5px;" >
+            <!-- Left: Topics Covered -->
+            <div class="section-box " style="flex: 0 0 32%">
+                <h5 class="">Topics Covered Today</h5>
+                <ul class="check-list">
+                    <li>Network</li>
+                    <li>Network Connectivity</li>
+                    <li>Network Interface card-NIC</li>
+                    <li>Unshielded Twisted Pair - UTP</li>
+                    <li>Deivce - PIN Table</li>
+                    <li>Connector</li>
+                    <li>Crimping</li>
+                    <li>Crimpring Tools</li>
+                    <li>Crimping method</li>
+                    <li>MDI-MDIX-AutoMDIX</li>
+                    
+                </ul>
+            </div>
+            <!-- Right: Understanding -->
+            <div class="section-box" style="flex: 0 0 68%; margin-left: 0px;" >
+                <h5>What I Understood</h5>
+                <p>
+                    Today’s class was an introduction to what is network, Connectivity and their internal behaviours.
+                    <h6>Key takeaways:</h6>
+                    <ul class="check-list">
+                    <li>What is Network? <br/> 
+                        <i>Two or more devices interconnected to provide data sharing, resource sharing, information and communications.</i></li>
+
+                    <li>Connecting 2 system is called as <b>MEDIUM</b></li>
+
+                    <li>Types of Medium : <br/>
+                        <i>Radio Frequency   </i> <br/>
+                        <i>Electrical Signal</i> <br/>
+                        <i> Light signal</i></li> <br/>
+
+                    </ul>
+                    <h6></h6>
+                    
+
+                    <h6>Network Interface Card (NIC)</h6>
+                    <ul class="check-list">
+                        <li>All network device has 4 pin which is +T -T +R -R</li>
+                        <li>T- Transmit R- Receive</li>
+                        <li>Talk => Transmit -> Receive not T - T T must be to R and vice versa for communication</li>                  
+                    </ul>  
+                    <h6>Unsheided Twisted Pair - UTP</h6>
+                    <ul class="check-list">
+                        <li>Contains 8 copper wire</li>
+                        <li>T568B</li>
+                        <li>1 - White Orange</li>
+                        <li>2 - Orange</li>                  
+                        <li>3 = White Green</li>
+                        <li>4 - Blue</li>                  
+                        <li>5 - White Blue</li>
+                        <li>6 - Green</li>                  
+                        <li>7 - White Brown</li>
+                        <li>8 - Brown</li>                  
+                                          
+                    </ul>               
+                </p>
+
+                <div style="display: flex;padding: 5px;margin: 5px; justify-content: space-between;">
+                    <div>Connector - RJ45 <br>
+                        <img src="./img/rj45.png" width="120" height="120" alt=""></div>
+                    <div>Crimping Tools<br>
+                        <img src="./img/crimpingTool.png" width="120" height="120" alt=""></div>
+                    <div>Crimping Methods - <br><b>Cross Cable <br> Straight Cable</b></div>
+
+                </div>
+                
+                <h6>NIC and their types</h6>
+                 <ul class="check-list">
+                    <li>Network Interface card</li>
+                    <li>Contains Ip and MAC</li>
+                    <li>Types of NIC <br>
+                        Wired - Wireless</li>
+                    <li>Wired - 2 types UTP and Fiber</li>
+                    <li><b>Function of NIC</b></li>
+                    <li><i>Used to convert binary signal into electrical signal and vice versa</i></li>
+                    <li>NIC Port</li>
+                    <li>MDI Media Dependent Interface</li>
+                    <li>MDIX Media Dependent Interface Crossover</li>
+                    <li>AutoMDIX Auto Media Dependent Interface</li>
+                    
+                </ul>
+                <h6>Easy to remember: Different device - straight cable  Same device - Cross cable</h6>
+
+            </div>
+        </div>
+
+        <!-- Lower Section -->
+        <div class="row">
+            <!-- Left: Summary -->
+            <div class="col-12 section-box">
+                <h5>Summary of the Class</h5>
+                <p>
+                    Today session gave an overview of Network connectivity, NIC,UTP,MDIX ports
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footerbg">
+        Hariharan Dhanabal &copy; 2025 CCNA Class Notes. All rights reserved.
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
