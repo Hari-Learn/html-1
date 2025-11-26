@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ICMP Echo Across OSI Layers</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        body {
+            background-color: #f9f5f1;
+        }
+        .navbar {
+            background-color: #711a36 !important; /* Burgundy */
+        }
+        .layer-card {
+            border-left: 6px solid #b8860b; /* Gold accent */
+            margin-bottom: 22px;
+            background: #ffffff;
+            padding: 22px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        h4 i {
+            color: #711a36;
+            margin-right: 8px;
+        }
+        footer {
+            background-color: #711a36;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <span class="navbar-brand">
+                <i class="bi bi-diagram-3-fill"></i> ICMP Echo Through OSI Layers
+            </span>
+        </div>
+    </nav>
+
+    <div class="container mt-4 mb-5">
+        <h1 class="mb-4 text-center text-dark">
+            <i class="bi bi-wifi"></i> ICMP Echo (Ping) Across the OSI Model
+        </h1>
+        <p class="lead text-center">
+            This page explains exactly how a <strong>Ping (ICMP Echo Request)</strong> travels through 
+            all <strong>seven OSI layers</strong>, with proper encapsulation and networking logic.
+        </p>
+
+        <!-- Application Layer -->
+        <div class="layer-card">
+            <h4><i class="bi bi-gear-wide-connected"></i>7. Application Layer — Creating the ICMP Echo</h4>
+            <p>
+                The <code>ping</code> command triggers the system to generate an 
+                <strong>ICMP Echo Request (Type 8)</strong>.  
+                Although ICMP is technically a Network Layer protocol, the *request to send it* 
+                originates at the application level.
+            </p>
+            <ul>
+                <li>Identifier/Sequence number created</li>
+                <li>Optional text or timestamp as payload</li>
+            </ul>
+        </div>
+
+        <!-- Presentation Layer -->
+        <div class="layer-card">
+            <h4><i class="bi bi-layers"></i>6. Presentation Layer — Formatting the Data</h4>
+            <p>
+                This layer ensures correct data representation:
+            </p>
+            <ul>
+                <li>Byte-order formatting</li>
+                <li>ICMP structure alignment</li>
+                <li>No encryption/compression for ping</li>
+            </ul>
+        </div>
+
+        <!-- Session Layer -->
+        <div class="layer-card">
+            <h4><i class="bi bi-clock-history"></i>5. Session Layer — Time + Session Handling</h4>
+            <p>
+                Ping relies on session-layer concepts for:
+            </p>
+            <ul>
+                <li>Timestamping to calculate RTT</li>
+                <li>Tracking echo request/response pairs</li>
+                <li>Maintaining orderly ICMP exchanges</li>
+            </ul>
+        </div>
+
+        <!-- Transport Layer -->
+        <div class="layer-card">
+            <h4><i class="bi bi-intersect"></i>4. Transport Layer — No TCP/UDP, Direct Handling</h4>
+            <p>
+                ICMP bypasses TCP/UDP. The transport layer:
+            </p>
+            <ul>
+                <li>Does NOT assign ports</li>
+                <li>Does NOT use TCP handshake or UDP datagram</li>
+                <li>Hands ICMP directly to the Network Layer</li>
+            </ul>
+        </div>
+
+        <!-- Network Layer -->
+        <div class="layer-card">
+            <h4><i class="bi bi-router"></i>3. Network Layer — IP Packet Encapsulation + ARP</h4>
+            <p>
+                The ICMP message is encapsulated into an IPv4 packet.
+            </p>
+
+            <ul>
+                <li><strong>Source IP:</strong> Your system</li>
+                <li><strong>Destination IP:</strong> Target host</li>
+                <li>Protocol: ICMP</li>
+            </ul>
+
+            <p>
+                Your computer <strong>does not yet know the destination MAC</strong>, so it sends an:
+                <strong>ARP Request</strong> → broadcast → “Who has this IP?”
+            </p>
+
+            <p>When the ARP Reply arrives, the destination MAC is retrieved.</p>
+        </div>
+
+        <!-- Data Link Layer -->
+        <div class="layer-card">
+            <h4><i class="bi bi-hdd-network"></i>2. Data Link Layer — MAC Encapsulation</h4>
+            <p>
+                The final Ethernet frame is built:
+            </p>
+            <ul>
+                <li><strong>Source MAC:</strong> Your NIC</li>
+                <li><strong>Destination MAC:</strong> From ARP Reply</li>
+                <li>EtherType: IPv4</li>
+                <li>Payload: IP Packet (which contains ICMP)</li>
+            </ul>
+
+            <p>
+                Before the ARP Reply arrives, the system cannot build the frame fully because 
+                it lacks the destination MAC address.
+            </p>
+        </div>
+
+        <!-- Physical Layer -->
+        <div class="layer-card">
+            <h4><i class="bi bi-lightning-charge-fill"></i>1. Physical Layer — NIC + Electrical/Ethernet Signals</h4>
+            <p>
+                The NIC converts frames into:
+            </p>
+            <ul>
+                <li>Electrical signals (Ethernet copper)</li>
+                <li>Light pulses (fiber)</li>
+                <li>Radio waves (Wi-Fi)</li>
+            </ul>
+
+            <p>
+                Ethernet defines voltage, timing, encoding, and transmission rules.  
+                This is the final physical delivery of the ICMP Echo request.
+            </p>
+        </div>
+    </div>
+
+    <footer class="text-center py-3">
+        <p class="mb-0">© 2025 ICMP OSI Flow — Burgundy Themed Edition</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
