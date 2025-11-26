@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OSI Model Explained</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f7f9fc;
+        }
+        .layer-card {
+            border-left: 5px solid #0d6efd;
+            margin-bottom: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <span class="navbar-brand">OSI Model Explanation</span>
+        </div>
+    </nav>
+
+    <div class="container mt-4 mb-5">
+        <h1 class="mb-4 text-center">Understanding the OSI 7-Layer Model</h1>
+        <p class="lead text-center">
+            The OSI (Open Systems Interconnection) model is a conceptual framework used to understand and 
+            standardize network communications. It divides networking into seven distinct layers, each with 
+            specific functions.
+        </p>
+
+        <!-- OSI Layers -->
+        <div class="layer-card">
+            <h4>7. Application Layer</h4>
+            <p>Provides network services directly to end users. Examples include HTTP, FTP, DNS, and email protocols.</p>
+        </div>
+
+        <div class="layer-card">
+            <h4>6. Presentation Layer</h4>
+            <p>Formats and translates data, handles encryption/decryption, and manages compression (e.g., SSL/TLS).</p>
+        </div>
+
+        <div class="layer-card">
+            <h4>5. Session Layer</h4>
+            <p>Controls connections between devices, manages sessions, including opening, maintaining, and closing them.</p>
+        </div>
+
+        <div class="layer-card">
+            <h4>4. Transport Layer</h4>
+            <p>Ensures reliable data delivery using protocols like TCP and UDP. Handles flow control and error correction.</p>
+        </div>
+
+        <div class="layer-card">
+            <h4>3. Network Layer</h4>
+            <p>Responsible for logical addressing (IP addresses) and routing data across networks. Example: IP protocol.</p>
+        </div>
+
+        <div class="layer-card">
+            <h4>2. Data Link Layer</h4>
+            <p>Handles physical addressing (MAC addresses), error detection, and frames. Divided into MAC and LLC sublayers.</p>
+        </div>
+
+        <div class="layer-card">
+            <h4>1. Physical Layer</h4>
+            <p>Concerns the physical transmission of raw bitstreams over a medium (cables, electrical signals, wireless frequencies).</p>
+        </div>
+    </div>
+
+    <footer class="text-center py-3 bg-light">
+        <p class="mb-0">© 2025 OSI Model Learning Page</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
