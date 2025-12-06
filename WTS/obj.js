@@ -38,3 +38,22 @@ console.log(objFreeze.name)
 
 
 
+//object creation
+
+const objCreation = {greet(){console.log("Gotcha")}}
+
+const newPerson = Object.create(objCreation)
+newPerson.greet();
+
+//object define properties
+
+const obj3 = {}
+
+Object.defineProperty(obj3,'name',{value:"Bala"})
+
+console.log(obj3.name)
+
+obj3.age = 35
+
+console.log(obj3.name, obj3.age)
+
