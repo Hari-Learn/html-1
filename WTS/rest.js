@@ -73,3 +73,32 @@ let alpha = ['A','B']
 showData(...numbers,...alpha,3)
 
 //output as 1 and [2,A,B,3]
+
+function combine(a, b, ...rest) {
+    console.log(a);
+    console.log(b);
+    console.log(rest);
+}
+
+const arr = [1, 2, 3];
+combine(...arr, 4, 5);
+
+
+function show(first, ...rest) {
+    console.log(first);
+    console.log(rest);
+}
+
+show('X', ...'HELLO', 'Y');
+
+
+function data(first, ...rest) {
+    console.log(first);
+    console.log(rest);
+}
+
+const nums = [1, 2];
+const letters = ['A', 'B'];
+const obj = {x: 10};
+
+data(...nums, obj, ...letters);
