@@ -7,4 +7,13 @@ console.log(arr.indexOf(firstMax))
 let firstMaxPosition = arr.indexOf(firstMax);
 const arr1 = arr.filter((i,j)=> j!= firstMaxPosition);
 let secondMax = Math.max(...arr1)
-console.log("Product of 2 max numbers as "+firstMax*secondMax);
+console.log("Product of 2 max numbers in array as "+firstMax*secondMax);
+
+
+//using splice method
+
+arr.splice(arr.indexOf(firstMax),1)
+console.log(arr)
+let second = Math.max(...arr.splice(arr.indexOf(firstMax),1))
+console.log(second);
+console.log('Product of largest 2 element in array :'+firstMax*second);
