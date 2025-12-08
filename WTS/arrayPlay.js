@@ -33,3 +33,22 @@ let test = [5,23,6,4,2,1]
 //test = []
 test.splice(0)
 console.log(test);
+
+//Object merge - if merge two obj then if key are same in 2 obj then overwrites it otherwise merge it 
+const obj1 = {name:'Ajay',age:20}
+const obj2 = {name:'Bagu',age:52}
+
+const obj3 = {...obj1, ...obj2}
+console.log(obj3);
+
+const obj11 = { a: 1, info: { x: 10 } };
+const obj21 = { b: 2, info: { y: 20 } };
+
+const merged = {
+  ...obj11,
+  ...obj21,
+  info: { ...obj11.info, ...obj21.info }
+};
+
+console.log(merged);
+
