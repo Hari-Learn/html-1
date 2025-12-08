@@ -17,3 +17,19 @@ console.log(arr)
 let second = Math.max(...arr.splice(arr.indexOf(firstMax),1))
 console.log(second);
 console.log('Product of largest 2 element in array :'+firstMax*second);
+
+
+//Using Sort method
+
+const numb = [1,23,4,5,6,8]
+numb.sort((a,b)=>b-a) //desending
+console.log("Product of largest 2 number in array : "+numb[0] * numb[1]);
+
+
+//single statement to blank an array there are 3 ways to blank array
+
+let test = [5,23,6,4,2,1]
+//test.length = 0
+//test = []
+test.splice(0)
+console.log(test);
