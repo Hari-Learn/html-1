@@ -1,0 +1,10 @@
+// find the max number of products in a item of array
+
+const arr = [1,2,3,4,5,6]
+let firstMax = Math.max(...arr)
+console.log(firstMax);
+console.log(arr.indexOf(firstMax))
+let firstMaxPosition = arr.indexOf(firstMax);
+const arr1 = arr.filter((i,j)=> j!= firstMaxPosition);
+let secondMax = Math.max(...arr1)
+console.log("Product of 2 max numbers as "+firstMax*secondMax);
