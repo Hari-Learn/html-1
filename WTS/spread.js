@@ -38,3 +38,16 @@ console.log(fruits5.includes('grape'));  // false
 let fruits6 = ['apple', 'banana', 'orange'];
 console.log(fruits6.indexOf('banana')); // 1
 console.log(fruits6.indexOf('grape'));  // -1
+
+//splice() – Adds or removes elements at a specific index in the array.
+
+let fruits7 = ['apple', 'banana', 'orange'];
+fruits7.splice(1, 1, 'grape'); // remove 1 element at index 1, add 'grape'
+console.log(fruits7); // ['apple', 'grape', 'orange']
+
+//slice() – Returns a shallow copy of a portion of the array without modifying the original.
+
+let fruits8 = ['apple', 'banana', 'orange', 'grape'];
+let newFruits = fruits8.slice(1, 3); // from index 1 up to (not including) 3
+console.log(newFruits); // ['banana', 'orange']
+console.log(fruits8);    // ['apple', 'banana', 'orange', 'grape']
