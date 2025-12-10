@@ -27,3 +27,23 @@ let jsonStr = '{"name":"Dog","age":5}'//here is the string of json have to use p
 let objParse = JSON.parse(jsonStr)
 
 console.log(objParse)
+
+//1. Curly → Object Literal
+
+//Create an object using curly braces.
+
+//2. Function → Factory Function
+
+//Create objects by returning them from a normal function.
+
+//3. Capital → Constructor Function
+
+//Create objects using a function whose name starts with a capital letter and called with new.
+
+//4. Class → ES6 Class
+
+//Create objects using the modern class syntax.
+
+//5. Create → Object.create()
+
+//Create an object directly from a specified prototype.
