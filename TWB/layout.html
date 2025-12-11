@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tailwind Layout</title>
+</head>
+<body class="bg-gray-50">
+
+    <!-- NAVBAR -->
+    <nav class="bg-blue-600 text-white p-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold">My Website</h1>
+        <div class="space-x-4">
+            <a href="#" class="hover:text-gray-200">Home</a>
+            <a href="#" class="hover:text-gray-200">About</a>
+            <a href="#" class="hover:text-gray-200">Contact</a>
+        </div>
+    </nav>
+
+    <!-- FLEX SECTION -->
+    <section class="p-6 flex gap-6">
+        <div class="w-1/2 bg-white p-6 shadow rounded">
+            <h2 class="text-lg font-semibold">Flex Item 1</h2>
+            <p>Using flex layout with space between items.</p>
+        </div>
+
+        <div class="w-1/2 bg-white p-6 shadow rounded">
+            <h2 class="text-lg font-semibold">Flex Item 2</h2>
+            <p>Very easy using Tailwind classes.</p>
+        </div>
+    </section>
+
+    <!-- GRID SECTION -->
+    <section class="p-6 grid grid-cols-3 gap-4">
+        <div class="bg-white p-4 shadow rounded">Grid 1</div>
+        <div class="bg-white p-4 shadow rounded">Grid 2</div>
+        <div class="bg-white p-4 shadow rounded">Grid 3</div>
+    </section>
+
+</body>
+</html>
