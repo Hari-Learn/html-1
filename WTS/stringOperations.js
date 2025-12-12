@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 //Reverse a string
+=======
+>>>>>>> c2702793cf36903766760c6c6708bbdee23da0ff
 const str = "Hariharan"
 let s = str.split('');
 console.log(s.length);
@@ -14,6 +17,7 @@ console.log(reverse.toString());
 let res = reverse.reduce((s,v)=> s+v,'');
 console.log(res);
 
+<<<<<<< HEAD
 //using for of
 let result = "";
 
@@ -35,5 +39,7 @@ while (i >= 0) {
 }
 
 console.log(reversed); // "tpgtahc"
+=======
+>>>>>>> c2702793cf36903766760c6c6708bbdee23da0ff
 
 
