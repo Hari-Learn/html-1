@@ -25,3 +25,34 @@ const doubled = numss.reduce((stomach, num) => {
   return stomach;
 }, []);
 // [2, 4, 6]
+
+const names = ['Alice', 'Bob', 'Alice', 'Charlie', 'Bob', 'Alice'];
+
+const nameCounts = {};
+
+for (const person of names) {
+  nameCounts[person] = (nameCounts[person] || 0) + 1;
+}
+
+console.log(nameCounts);
+
+
+const arrItems = ['apple','orange','kiwi','apple','kiwi','pomo']
+const results = arrItems.reduce((result,item)=>{
+    result[item] = (result[item] || 0) + 1;
+    return result;
+},{})
+console.log(`Result is ${results}`);
+console.log(results);
+
+
+
+const count = {};
+for(const items of arrItems){
+    count[items] = (count[items] || 0)+1;}
+console.log(count);
+
+
+
+
+
