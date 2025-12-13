@@ -10,3 +10,18 @@ const iTake = arrayofedible.reduce((stomach,currentIteminEdibleArray)=>{
 })
 console.log(`Final result : ${iTake}`)
 
+const nums = [1, 2, 3, 4];
+
+const evens = nums.reduce((stomach, num) => {
+  if (num % 2 === 0) stomach.push(num);
+  return stomach;
+}, []);
+// [2, 4]
+
+const numss = [1, 2, 3];
+
+const doubled = numss.reduce((stomach, num) => {
+  stomach.push(num * 2);
+  return stomach;
+}, []);
+// [2, 4, 6]
