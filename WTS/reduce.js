@@ -52,6 +52,13 @@ for(const items of arrItems){
     count[items] = (count[items] || 0)+1;}
 console.log(count);
 
+const arms = ['pistol','double bearer gun','shotgun','revolver','pistol','shotgun']
+const inventoryArms = arms.reduce((gun,item)=>{
+    gun[item]  = (gun[item] || 0) + 1;
+    return gun;
+},{})
+console.log(inventoryArms);
+
 
 
 
