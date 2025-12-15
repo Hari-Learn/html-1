@@ -1,4 +1,4 @@
-//What is Object Destructuring?
+//1.What is Object Destructuring?
 //Object Destructuring lets you extract value from objects into variable in a clean and readable WebAssembly.
 
 //without obj des - older way
@@ -31,7 +31,7 @@ console.log(firstName,lastName);
 const{firstnames,lastnames} = person;
 console.log(firstnames,lastnames); //undefined undefined so key must match with variable name
 
-//Renaming variables
+//3.Renaming variables
 const person1 = {
      firstN : "Hari",
     lastN:"Haran 1"
@@ -41,7 +41,7 @@ const person1 = {
 const {firstN:fName,lastN:lName} = person1
 console.log(fName,lName);
 
-//default values
+//4.default values
 
 const setting = {
     theme:"vanilla"
@@ -52,3 +52,35 @@ const setting = {
 const{theme,defaultTheme="Dark"} = setting;
 console.log(theme,defaultTheme);
 
+//nested object destructuring
+const user2 = {
+    name:"Arun",
+    address:{
+        city:"Chennai",
+        zip:600119
+    }
+}
+
+console.log(user2);
+
+const {address:{city,zip}} = user2;
+console.log(city,zip);
+
+
+//Destructuring in rest parameters
+const employee = {
+    name:"Balu",
+    age:"40",
+    email:"b@b.com",
+    mobile:9898989898,
+    address:{
+        city:"Chennai",
+        zip:600119
+    }
+
+}
+
+function restParam({name,age,...rest}){
+    console.log(name,age,rest);    
+}
+restParam(employee)
