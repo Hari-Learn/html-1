@@ -84,3 +84,18 @@ function restParam({name,age,...rest}){
     console.log(name,age,rest);    
 }
 restParam(employee)
+
+//Destructring in loops
+const piyush = {
+    name:"Padayappa",
+    greet:function(){
+        console.log(this.name);        
+    }
+};
+const sayHi = piyush.greet;
+console.log(sayHi);
+
+console.log("x-x-".repeat(40));
+console.log("TestPad".padStart(10,'*'));
+console.log('Hari'.padEnd(10,'-'));
+
