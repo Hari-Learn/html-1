@@ -21,3 +21,24 @@ for (let key in freq) {
 }
 
 console.log(duplicates1);
+//Given an integer array nums, return true if any value appears at least twice, and false if every element is distinct.
+let nums = [1,2,3,1]
+var containsDuplicate = function(nums) {
+  return new Set(nums).size !== nums.length;
+};
+
+//Find the first element that appears only once.
+let numss = [4,1,2,1,2]
+var firstUnique = function(numss) {
+  const map = new Map();
+
+  for (let num of numss) {
+    map.set(num, (map.get(num) || 0) + 1);
+  }
+
+  for (let num of numss) {
+    if (map.get(num) === 1) return num;
+  }
+
+  return -1;
+};
