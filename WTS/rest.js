@@ -58,8 +58,8 @@ function combine(a,...b){
     console.log(b);   
 }
 
-let letters = ['A','B','C']
-combine(...letters,'D','E')
+let lettersa = ['A','B','C']
+combine(...lettersa,'D','E')
 
 //showData
 
@@ -80,8 +80,8 @@ function combine(a, b, ...rest) {
     console.log(rest);
 }
 
-const arr = [1, 2, 3];
-combine(...arr, 4, 5);
+const arr1 = [1, 2, 3];
+combine(...arr1, 4, 5);
 
 
 function show(first, ...rest) {
