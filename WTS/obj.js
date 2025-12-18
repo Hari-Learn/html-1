@@ -14,6 +14,12 @@ const target = {b:2,c:3}
 
 const result = Object.assign(source,target)
 
+console.log("------------------------")
+
+console.log(source)
+console.log("------------------------")
+
+
 console.log(result)
 
 
@@ -34,6 +40,8 @@ Object.freeze(objFreeze);
 objFreeze.name = "Thulasi" // This wont change the value, thulasi kuda vasam marum aana object freeze marathu 🤣🤣🤣
 
 console.log(objFreeze.name)
+
+console.log("Object is frozen :"+Object.isFrozen(objFreeze))
 
 
 
@@ -57,3 +65,16 @@ obj3.age = 35
 
 console.log(obj3.name, obj3.age)
 
+const objEx = {}
+
+console.log(Object.isExtensible(objEx))
+
+Object.preventExtensions(objEx)
+
+console.log(Object.isExtensible(objEx))
+
+// obj has own propery or not
+
+const obj5 = {name:"Arun",age:33}
+
+console.log("---> "+obj5.hasOwnProperty('name'))
