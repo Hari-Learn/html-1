@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DHCP Flow – Yellow Theme</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .flow-arrow {
+      animation: moveArrow 1.4s infinite;
+    }
+
+    @keyframes moveArrow {
+      0%   { opacity: 0.3; transform: translateX(0); }
+      50%  { opacity: 1; transform: translateX(8px); }
+      100% { opacity: 0.3; transform: translateX(0); }
+    }
+  </style>
+</head>
+
+<body class="bg-yellow-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-yellow-500 text-white">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">DHCP Flow</h1>
+      <ul class="flex space-x-6 text-sm">
+        <li class="hover:text-yellow-200 cursor-pointer">DORA</li>
+        <li class="hover:text-yellow-200 cursor-pointer">APIPA</li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="container mx-auto px-6 py-12 space-y-12">
+
+    <!-- DORA Section -->
+    <section class="bg-yellow-100 rounded-lg shadow-md p-6 border-t-4 border-yellow-400">
+      <h2 class="text-2xl font-semibold text-yellow-700 mb-6">
+        DHCP DORA Flow
+      </h2>
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+
+        <div class="bg-yellow-200 p-4 rounded shadow text-center w-full md:w-1/5">
+          <h3 class="font-bold text-yellow-800">Discover</h3>
+          <p>Client searches for server</p>
+        </div>
+
+        <div class="text-yellow-600 text-3xl flow-arrow">➜</div>
+
+        <div class="bg-yellow-300 p-4 rounded shadow text-center w-full md:w-1/5">
+          <h3 class="font-bold text-yellow-900">Offer</h3>
+          <p>Server offers IP address</p>
+        </div>
+
+        <div class="text-yellow-700 text-3xl flow-arrow">➜</div>
+
+        <div class="bg-yellow-200 p-4 rounded shadow text-center w-full md:w-1/5">
+          <h3 class="font-bold text-yellow-800">Request</h3>
+          <p>Client requests IP</p>
+        </div>
+
+        <div class="text-yellow-800 text-3xl flow-arrow">➜</div>
+
+        <div class="bg-yellow-300 p-4 rounded shadow text-center w-full md:w-1/5">
+          <h3 class="font-bold text-yellow-900">Acknowledge</h3>
+          <p>Server assigns IP</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- APIPA Section -->
+    <section class="bg-yellow-100 rounded-lg shadow-md p-6 border-t-4 border-yellow-300">
+      <h2 class="text-2xl font-semibold text-yellow-700 mb-6">
+        APIPA Flow (DHCP Unavailable)
+      </h2>
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+
+        <div class="bg-yellow-200 p-4 rounded shadow text-center w-full md:w-1/4">
+          <h3 class="font-bold text-yellow-800">No DHCP Response</h3>
+          <p>Discover fails</p>
+        </div>
+
+        <div class="text-yellow-600 text-3xl flow-arrow">➜</div>
+
+        <div class="bg-yellow-300 p-4 rounded shadow text-center w-full md:w-1/4">
+          <h3 class="font-bold text-yellow-900">Self Assign IP</h3>
+          <p>169.254.x.x range</p>
+        </div>
+
+        <div class="text-yellow-700 text-3xl flow-arrow">➜</div>
+
+        <div class="bg-yellow-200 p-4 rounded shadow text-center w-full md:w-1/4">
+          <h3 class="font-bold text-yellow-800">Limited Access</h3>
+          <p>Local network only</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-yellow-600 text-yellow-100 mt-12">
+    <div class="container mx-auto px-6 py-4 text-center text-sm">
+      © 2025 Networking Basics | DHCP Yellow Theme
+    </div>
+  </footer>
+
+</body>
+</html>
