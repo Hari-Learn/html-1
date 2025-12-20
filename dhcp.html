@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DHCP DORA Process</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 text-gray-800">
+
+  <!-- Header / Navbar -->
+  <header class="bg-blue-600 text-white">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Networking Basics</h1>
+      <ul class="flex space-x-6 text-sm">
+        <li class="hover:text-blue-200 cursor-pointer">Home</li>
+        <li class="hover:text-blue-200 cursor-pointer">DHCP</li>
+        <li class="hover:text-blue-200 cursor-pointer">About</li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-10">
+
+    <!-- DHCP Overview Card -->
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8 border-l-4 border-blue-500">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-3">What is DHCP?</h2>
+      <p class="text-sm leading-relaxed">
+        DHCP (Dynamic Host Configuration Protocol) is a network protocol that
+        automatically assigns IP addresses and other network settings to devices.
+        This removes the need for manual IP configuration.
+      </p>
+    </div>
+
+    <!-- DORA Process Card -->
+    <div class="bg-blue-100 rounded-lg shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">DHCP DORA Process</h2>
+
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="font-bold text-blue-600">1. Discover</h3>
+          <p>
+            The client broadcasts a DHCP Discover message to find available DHCP servers.
+          </p>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="font-bold text-blue-600">2. Offer</h3>
+          <p>
+            The DHCP server responds with an Offer, providing an available IP address.
+          </p>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="font-bold text-blue-600">3. Request</h3>
+          <p>
+            The client requests the offered IP address from the server.
+          </p>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="font-bold text-blue-600">4. Acknowledge</h3>
+          <p>
+            The server acknowledges and assigns the IP configuration to the client.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- APIPA Card -->
+    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-300">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-3">APIPA (When DHCP is Unavailable)</h2>
+      <p class="text-sm leading-relaxed mb-3">
+        If the DHCP server is unavailable or unreachable, the client assigns itself
+        an APIPA (Automatic Private IP Addressing) address.
+      </p>
+      <ul class="list-disc list-inside text-sm">
+        <li>IP range: <span class="font-medium">169.254.0.0 – 169.254.255.255</span></li>
+        <li>Allows limited communication within the local network</li>
+        <li>No internet or routed network access</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-700 text-blue-100 mt-10">
+    <div class="container mx-auto px-6 py-4 text-center text-sm">
+      © 2025 Networking Basics | DHCP & DORA Process
+    </div>
+  </footer>
+
+</body>
+</html>
