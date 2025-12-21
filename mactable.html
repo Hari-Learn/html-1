@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Detailed ARP Flow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-6">
+
+  <div class="max-w-5xl mx-auto">
+
+    <h1 class="text-3xl font-bold text-center mb-4">
+      Detailed ARP Packet Flow (With Table Checks)
+    </h1>
+
+    <p class="text-center text-gray-600 mb-8">
+      This page shows what happens <b>before</b>, <b>during</b>, and <b>after</b> an ARP request.
+    </p>
+
+    <!-- Devices -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+
+      <!-- Host A -->
+      <div class="bg-white p-5 rounded-xl shadow border">
+        <h2 class="font-semibold text-lg mb-2">Host A</h2>
+        <p class="text-sm text-gray-600">IP: 192.168.1.10</p>
+        <p class="text-sm text-gray-600 mb-3">MAC: AA:AA:AA:AA:AA:AA</p>
+
+        <div class="bg-blue-50 p-3 rounded">
+          <p class="font-medium text-sm mb-1">ARP Cache</p>
+          <p class="text-xs text-gray-500">
+            Checks if IP 192.168.1.20 exists
+          </p>
+        </div>
+      </div>
+
+      <!-- Switch -->
+      <div class="bg-white p-5 rounded-xl shadow border">
+        <h2 class="font-semibold text-lg mb-2">Switch</h2>
+
+        <div class="bg-green-50 p-3 rounded">
+          <p class="font-medium text-sm mb-1">MAC Address Table</p>
+          <p class="text-xs text-gray-500">
+            Stores MAC → Port mappings
+          </p>
+        </div>
+      </div>
+
+      <!-- Host B -->
+      <div class="bg-white p-5 rounded-xl shadow border">
+        <h2 class="font-semibold text-lg mb-2">Host B</h2>
+        <p class="text-sm text-gray-600">IP: 192.168.1.20</p>
+        <p class="text-sm text-gray-600 mb-3">MAC: BB:BB:BB:BB:BB:BB</p>
+      </div>
+
+    </div>
+
+    <!-- Flow Steps -->
+    <div class="bg-white p-6 rounded-xl shadow">
+
+      <h3 class="text-xl font-semibold mb-4">Step-by-Step Flow</h3>
+
+      <ol class="space-y-4 list-decimal list-inside text-gray-700">
+
+        <li>
+          <b>Application wants to send data</b><br>
+          Host A wants to send data to IP <b>192.168.1.20</b>.
+        </li>
+
+        <li>
+          <b>Host A checks ARP Cache</b><br>
+          If the IP–MAC entry already exists → ARP is skipped.<br>
+          <span class="text-red-600 font-medium">
+            Entry NOT found → ARP needed
+          </span>
+        </li>
+
+        <li>
+          <b>ARP Request is created (Broadcast)</b><br>
+          Destination MAC: <b>FF:FF:FF:FF:FF:FF</b><br>
+          Message: “Who has 192.168.1.20?”
+        </li>
+
+        <li>
+          <b>Switch receives ARP Request</b><br>
+          Switch checks its MAC table:
+          <ul class="list-disc list-inside ml-5">
+            <li>Learns Host A MAC on incoming port</li>
+            <li>No entry for destination → Broadcasts frame</li>
+          </ul>
+        </li>
+
+        <li>
+          <b>All hosts receive ARP Request</b><br>
+          Only Host B matches the IP address.
+        </li>
+
+        <li>
+          <b>Host B sends ARP Reply (Unicast)</b><br>
+          Message: “192.168.1.20 is at BB:BB:BB:BB:BB:BB”
+        </li>
+
+        <li>
+          <b>Switch updates MAC Table</b><br>
+          Learns Host B MAC → Port mapping.
+        </li>
+
+        <li>
+          <b>Host A updates ARP Cache</b><br>
+          IP 192.168.1.20 → BB:BB:BB:BB:BB:BB
+        </li>
+
+        <li>
+          <b>Normal data communication starts</b><br>
+          Frames are now sent as <b>unicast</b>.
+        </li>
+
+      </ol>
+
+    </div>
+
+    <!-- Summary -->
+    <div class="mt-8 bg-yellow-50 border border-yellow-300 p-4 rounded-lg">
+      <h4 class="font-semibold mb-2">Key Points to Remember</h4>
+      <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+        <li>ARP cache is checked before sending ARP request</li>
+        <li>Switch MAC table is different from ARP cache</li>
+        <li>ARP works only inside a local network (LAN)</li>
+        <li>ARP Request = Broadcast, ARP Reply = Unicast</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
