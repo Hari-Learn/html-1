@@ -2,52 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ARP Packet & Frame Flow</title>
+  <title>Colorful ARP Packet & Frame Flow</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
-<body class="bg-slate-100 min-h-screen p-6">
+<body class="bg-gradient-to-r from-purple-100 via-pink-100 to-yellow-100 min-h-screen p-6">
 
   <div class="max-w-6xl mx-auto">
 
     <!-- Title -->
-    <h1 class="text-3xl font-bold text-center mb-4">
-      Detailed Packet & Frame Flow with ARP
+    <h1 class="text-4xl font-bold text-center mb-6 text-purple-800">
+      ARP Packet & Frame Flow
     </h1>
-
-    <p class="text-center text-slate-600 mb-10">
-      This page explains what happens <b>before ARP is called</b>, what a <b>MAC (Learning) Table</b> is,
-      and how packet and frame flow occurs step by step.
+    <p class="text-center text-purple-700 mb-10 text-lg">
+      Learn what happens before ARP is called, how MAC tables and ARP caches are used, and the step-by-step packet & frame flow.
     </p>
 
     <!-- Tables Explanation -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
 
       <!-- MAC Table -->
-      <div class="bg-white p-5 rounded-xl shadow border">
-        <h2 class="text-xl font-semibold mb-2">MAC Table (Learning Table)</h2>
-        <p class="text-slate-700 text-sm mb-2">
-          A MAC table is maintained by a <b>switch</b>. It stores mappings of:
+      <div class="bg-purple-200 p-6 rounded-2xl shadow-lg border-l-4 border-purple-600">
+        <h2 class="text-2xl font-bold mb-3 text-purple-800">MAC Table (Switch)</h2>
+        <p class="text-purple-900 text-sm mb-3">
+          Stores mappings: <b>MAC Address → Switch Port</b>
         </p>
-        <p class="text-sm font-medium">MAC Address → Switch Port</p>
-        <ul class="list-disc list-inside text-sm text-slate-600 mt-3 space-y-1">
-          <li>Built by learning source MAC addresses</li>
+        <ul class="list-disc list-inside text-purple-800 space-y-1">
+          <li>Learns source MAC addresses automatically</li>
           <li>Used to forward frames efficiently</li>
-          <li>If destination MAC is unknown → broadcast</li>
+          <li>Destination MAC unknown → broadcast frame</li>
         </ul>
       </div>
 
       <!-- ARP Cache -->
-      <div class="bg-white p-5 rounded-xl shadow border">
-        <h2 class="text-xl font-semibold mb-2">ARP Cache</h2>
-        <p class="text-slate-700 text-sm mb-2">
-          ARP cache is maintained by a <b>host or router</b>. It stores:
+      <div class="bg-pink-200 p-6 rounded-2xl shadow-lg border-l-4 border-pink-600">
+        <h2 class="text-2xl font-bold mb-3 text-pink-800">ARP Cache (Host)</h2>
+        <p class="text-pink-900 text-sm mb-3">
+          Stores mappings: <b>IP Address → MAC Address</b>
         </p>
-        <p class="text-sm font-medium">IP Address → MAC Address</p>
-        <ul class="list-disc list-inside text-sm text-slate-600 mt-3 space-y-1">
+        <ul class="list-disc list-inside text-pink-800 space-y-1">
           <li>Checked before sending packets</li>
           <li>If entry exists → ARP not required</li>
-          <li>If entry missing → ARP is triggered</li>
+          <li>If missing → ARP Request is triggered</li>
         </ul>
       </div>
 
@@ -56,64 +51,57 @@
     <!-- Devices -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
 
-      <div class="bg-white p-4 rounded-xl shadow border text-center">
-        <h3 class="font-semibold">Host A</h3>
-        <p class="text-sm text-slate-600">IP: 192.168.1.10</p>
-        <p class="text-sm text-slate-600">MAC: AA:AA:AA:AA:AA:AA</p>
+      <div class="bg-indigo-300 p-5 rounded-2xl shadow-lg text-center border border-indigo-600">
+        <h3 class="font-bold text-indigo-900 text-lg">Host A</h3>
+        <p class="text-indigo-800">IP: 192.168.1.10</p>
+        <p class="text-indigo-800">MAC: AA:AA:AA:AA:AA:AA</p>
       </div>
 
-      <div class="bg-blue-100 p-4 rounded-xl shadow border text-center">
-        <h3 class="font-semibold">Switch</h3>
-        <p class="text-sm text-slate-600">Uses MAC Learning Table</p>
+      <div class="bg-blue-300 p-5 rounded-2xl shadow-lg text-center border border-blue-600">
+        <h3 class="font-bold text-blue-900 text-lg">Switch</h3>
+        <p class="text-blue-800">Uses MAC Learning Table</p>
       </div>
 
-      <div class="bg-white p-4 rounded-xl shadow border text-center">
-        <h3 class="font-semibold">Host B</h3>
-        <p class="text-sm text-slate-600">IP: 192.168.1.20</p>
-        <p class="text-sm text-slate-600">MAC: BB:BB:BB:BB:BB:BB</p>
+      <div class="bg-green-300 p-5 rounded-2xl shadow-lg text-center border border-green-600">
+        <h3 class="font-bold text-green-900 text-lg">Host B</h3>
+        <p class="text-green-800">IP: 192.168.1.20</p>
+        <p class="text-green-800">MAC: BB:BB:BB:BB:BB:BB</p>
       </div>
 
     </div>
 
     <!-- Flow -->
-    <div class="bg-white p-6 rounded-xl shadow">
+    <div class="bg-white p-8 rounded-2xl shadow-xl border-l-8 border-yellow-500">
 
-      <h2 class="text-2xl font-semibold mb-4">Step-by-Step Packet & Frame Flow</h2>
+      <h2 class="text-3xl font-bold mb-6 text-yellow-700">Step-by-Step Packet & Frame Flow</h2>
 
-      <ol class="list-decimal list-inside space-y-4 text-slate-700">
+      <ol class="list-decimal list-inside space-y-5 text-gray-700">
 
-        <li>
+        <li class="bg-purple-50 p-4 rounded-lg shadow">
           <b>Application generates data</b><br>
           Host A wants to send data to IP <b>192.168.1.20</b>.
         </li>
 
-        <li>
+        <li class="bg-pink-50 p-4 rounded-lg shadow">
           <b>Host checks ARP Cache (Before ARP)</b><br>
-          Host A checks if IP → MAC mapping exists.
-          <span class="text-red-600 font-medium">
-            Entry not found → ARP required
-          </span>
+          Entry missing → ARP Request is needed.
         </li>
 
-        <li>
+        <li class="bg-purple-50 p-4 rounded-lg shadow">
           <b>Packet creation (Layer 3)</b><br>
-          IP packet is created with:
-          <ul class="list-disc list-inside ml-5">
-            <li>Source IP: 192.168.1.10</li>
-            <li>Destination IP: 192.168.1.20</li>
-          </ul>
+          IP packet created with Source IP: 192.168.1.10 and Destination IP: 192.168.1.20
         </li>
 
-        <li>
-          <b>ARP Request is sent</b><br>
-          ARP request is encapsulated in an Ethernet frame:
+        <li class="bg-pink-50 p-4 rounded-lg shadow">
+          <b>ARP Request (Broadcast)</b><br>
+          Ethernet frame fields:
           <ul class="list-disc list-inside ml-5">
             <li>Source MAC: AA:AA:AA:AA:AA:AA</li>
-            <li>Destination MAC: FF:FF:FF:FF:FF:FF (Broadcast)</li>
+            <li>Destination MAC: FF:FF:FF:FF:FF:FF</li>
           </ul>
         </li>
 
-        <li>
+        <li class="bg-purple-50 p-4 rounded-lg shadow">
           <b>Switch receives frame</b><br>
           Switch performs MAC learning:
           <ul class="list-disc list-inside ml-5">
@@ -122,33 +110,33 @@
           </ul>
         </li>
 
-        <li>
+        <li class="bg-green-50 p-4 rounded-lg shadow">
           <b>Host B receives ARP Request</b><br>
-          Host B matches destination IP and prepares ARP Reply.
+          Matches target IP → prepares ARP Reply.
         </li>
 
-        <li>
+        <li class="bg-green-100 p-4 rounded-lg shadow">
           <b>ARP Reply (Unicast)</b><br>
-          Host B sends reply:
+          Ethernet frame:
           <ul class="list-disc list-inside ml-5">
             <li>Source MAC: BB:BB:BB:BB:BB:BB</li>
             <li>Destination MAC: AA:AA:AA:AA:AA:AA</li>
           </ul>
         </li>
 
-        <li>
+        <li class="bg-purple-50 p-4 rounded-lg shadow">
           <b>Switch updates MAC Table</b><br>
           Learns BB:BB:BB → Port of Host B.
         </li>
 
-        <li>
+        <li class="bg-pink-50 p-4 rounded-lg shadow">
           <b>Host A updates ARP Cache</b><br>
           IP 192.168.1.20 → BB:BB:BB:BB:BB:BB
         </li>
 
-        <li>
-          <b>Normal data transfer starts</b><br>
-          Frames are now sent as <b>unicast</b> using learned MAC addresses.
+        <li class="bg-yellow-50 p-4 rounded-lg shadow">
+          <b>Normal data transfer</b><br>
+          Frames now sent as <b>unicast</b> using learned MAC addresses.
         </li>
 
       </ol>
@@ -156,14 +144,13 @@
     </div>
 
     <!-- Summary -->
-    <div class="mt-8 bg-green-50 border border-green-300 p-4 rounded-xl">
-      <h3 class="font-semibold mb-2">Summary</h3>
-      <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
-        <li>ARP Cache is checked before ARP is sent</li>
-        <li>Switch MAC table is learned automatically</li>
-        <li>ARP Request = Broadcast</li>
-        <li>ARP Reply = Unicast</li>
-        <li>After learning, communication is efficient</li>
+    <div class="mt-10 bg-gradient-to-r from-green-200 to-blue-200 p-6 rounded-2xl shadow-lg border-l-8 border-green-600">
+      <h3 class="text-xl font-bold mb-3 text-green-900">Summary</h3>
+      <ul class="list-disc list-inside text-gray-800 space-y-1">
+        <li>ARP Cache is checked before sending ARP</li>
+        <li>Switch learns MAC addresses automatically</li>
+        <li>ARP Request = Broadcast, ARP Reply = Unicast</li>
+        <li>Once MACs are known, communication becomes efficient</li>
       </ul>
     </div>
 
