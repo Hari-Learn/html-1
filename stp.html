@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Spanning Tree Protocol Tutorial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6 shadow-md">
+    <div class="max-w-5xl mx-auto px-4">
+      <h1 class="text-3xl font-bold">Spanning Tree Protocol (STP)</h1>
+      <p class="mt-2 text-blue-100">
+        A simple tutorial to understand the problem before STP and how STP solves it
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 py-10 space-y-10">
+
+    <!-- Introduction -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">📘 Introduction</h2>
+      <p class="leading-relaxed">
+        In computer networks, switches are often connected with multiple links to provide
+        redundancy and reliability. While this sounds good, it can create serious problems.
+        This tutorial explains why those problems happen and how
+        <span class="font-semibold text-blue-600">Spanning Tree Protocol (STP)</span>
+        fixes them.
+      </p>
+    </section>
+
+    <!-- Problem Before STP -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">⚠️ The Problem Before STP</h2>
+
+      <div class="bg-white rounded-lg shadow p-6 space-y-4">
+        <p>
+          Imagine a network with multiple switches connected in a loop for backup paths.
+          Switches do not understand loops by default.
+        </p>
+
+        <h3 class="text-xl font-semibold text-red-600">Main Problems Caused by Loops:</h3>
+
+        <ul class="list-disc list-inside space-y-2">
+          <li>
+            <strong>Broadcast Storm:</strong> Broadcast frames keep circulating endlessly,
+            consuming all network bandwidth.
+          </li>
+          <li>
+            <strong>MAC Address Table Instability:</strong> Switches keep learning the same
+            MAC address from different ports.
+          </li>
+          <li>
+            <strong>Multiple Frame Copies:</strong> Devices receive duplicate frames,
+            confusing applications.
+          </li>
+        </ul>
+
+        <p class="mt-4">
+          Because Ethernet has no built-in loop detection, the network can completely fail
+          if loops exist.
+        </p>
+      </div>
+    </section>
+
+    <!-- Story Style Explanation -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">📖 A Simple Tech Story</h2>
+
+      <div class="bg-white rounded-lg shadow p-6 space-y-4">
+        <p>
+          Think of a network like a city with many roads. To avoid traffic jams, the city
+          planners add extra roads as backups.
+        </p>
+        <p>
+          But without traffic rules, cars keep driving in circles forever.
+          Soon, the city is completely blocked.
+        </p>
+        <p class="font-semibold">
+          This is exactly what happens in a network without STP.
+        </p>
+      </div>
+    </section>
+
+    <!-- Solution: STP -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">✅ The Solution: Spanning Tree Protocol (STP)</h2>
+
+      <div class="bg-white rounded-lg shadow p-6 space-y-4">
+        <p>
+          <strong>Spanning Tree Protocol (STP)</strong> is a Layer 2 protocol that prevents
+          loops in Ethernet networks.
+        </p>
+
+        <h3 class="text-xl font-semibold text-green-600">How STP Works:</h3>
+
+        <ol class="list-decimal list-inside space-y-2">
+          <li>STP elects a <strong>Root Bridge</strong> (main switch).</li>
+          <li>STP calculates the <strong>shortest path</strong> to the root bridge.</li>
+          <li>Extra links are put into a <strong>blocked state</strong>.</li>
+          <li>If a main link fails, a blocked link becomes active automatically.</li>
+        </ol>
+
+        <p class="mt-4">
+          This creates a loop-free logical topology while still keeping backup paths.
+        </p>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">🌟 Benefits of STP</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="font-semibold text-lg mb-2">Network Stability</h3>
+          <p>
+            Prevents broadcast storms and keeps the network running smoothly.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="font-semibold text-lg mb-2">Redundancy</h3>
+          <p>
+            Backup links are available if the main path fails.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">🎯 Conclusion</h2>
+      <p class="leading-relaxed">
+        Before STP, network loops could bring down entire LANs.
+        Spanning Tree Protocol intelligently blocks redundant paths,
+        allowing only one active path while keeping others as backup.
+        This makes Ethernet networks safe, reliable, and scalable.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-4 mt-10">
+    <div class="max-w-5xl mx-auto px-4 text-center text-sm">
+      © 2025 | Spanning Tree Protocol Tutorial
+    </div>
+  </footer>
+
+</body>
+</html>

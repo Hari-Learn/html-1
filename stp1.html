@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>STP Explained Like I'm 10</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white py-6">
+    <div class="max-w-4xl mx-auto px-4">
+      <h1 class="text-3xl font-bold">Spanning Tree Protocol (STP)</h1>
+      <p class="mt-2 text-indigo-100">
+        Explained with a simple story — like you're 10 years old
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10 space-y-12">
+
+    <!-- Intro -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">🧠 First, Imagine This...</h2>
+      <p>
+        Imagine a school with many classrooms. Each classroom is a <strong>computer</strong>,
+        and the hallways are <strong>network cables</strong>.
+      </p>
+      <p class="mt-3">
+        The teachers want students (data) to move fast, so they build
+        <strong>extra hallways</strong> in case one hallway is blocked.
+      </p>
+      <p class="mt-3 font-semibold">
+        Sounds smart, right?  
+        But something very bad happens…
+      </p>
+    </section>
+
+    <!-- Problem Story -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4 text-red-600">
+        🚨 The Big Problem (Before STP)
+      </h2>
+
+      <div class="bg-white rounded-lg shadow p-6 space-y-4">
+
+        <p>
+          In this school, there are <strong>no rules</strong> about which hallway to use.
+          Students just keep walking.
+        </p>
+
+        <p>
+          One day, a teacher makes an announcement:
+          <span class="italic">"Everyone listen!"</span>
+        </p>
+
+        <p class="font-semibold">
+          This announcement is like a <span class="text-blue-600">broadcast message</span>
+          in a network.
+        </p>
+
+        <p>
+          Every student repeats the message and sends it to every hallway.
+        </p>
+
+        <p class="text-red-500 font-semibold">
+          But the hallways are connected in a circle!
+        </p>
+
+        <p>
+          So the message goes:
+        </p>
+
+        <ul class="list-disc list-inside ml-4">
+          <li>Classroom A → Classroom B</li>
+          <li>Classroom B → Classroom C</li>
+          <li>Classroom C → Classroom A</li>
+        </ul>
+
+        <p class="font-bold text-red-600">
+          And it NEVER STOPS.
+        </p>
+      </div>
+    </section>
+
+    <!-- What Exactly Goes Wrong -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">💥 What Goes Wrong (Very Simply)</h2>
+
+      <div class="grid gap-6">
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-lg mb-2">1️⃣ Messages Go in Circles Forever</h3>
+          <p>
+            Switches are not smart like humans.
+            They don’t know the message already passed before.
+          </p>
+          <p class="mt-2">
+            So they keep sending the same message again and again.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-lg mb-2">2️⃣ The Network Gets Very Busy</h3>
+          <p>
+            Too many messages fill the cables.
+            Real messages cannot get through.
+          </p>
+          <p class="mt-2 font-semibold text-red-500">
+            This is called a Broadcast Storm.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-lg mb-2">3️⃣ Switches Get Confused</h3>
+          <p>
+            Switches try to remember where each computer lives.
+          </p>
+          <p class="mt-2">
+            But the same computer appears from different directions.
+          </p>
+          <p class="mt-2 font-semibold text-red-500">
+            So the switch keeps changing its mind.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Why Ethernet Is the Problem -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">🤔 Why Doesn’t Ethernet Stop This?</h2>
+      <div class="bg-white rounded-lg shadow p-6 space-y-3">
+        <p>
+          Ethernet is very fast, but it has one weakness:
+        </p>
+        <p class="font-semibold text-red-600">
+          Ethernet does NOT have a loop-stop button.
+        </p>
+        <p>
+          So if you create loops using cables,
+          Ethernet happily sends messages forever.
+        </p>
+      </div>
+    </section>
+
+    <!-- STP Solution -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4 text-green-600">
+        ✅ Enter the Hero: STP
+      </h2>
+
+      <div class="bg-white rounded-lg shadow p-6 space-y-4">
+        <p>
+          <strong>Spanning Tree Protocol (STP)</strong> is like a
+          <strong>strict school monitor</strong>.
+        </p>
+
+        <p>
+          STP looks at all hallways and says:
+        </p>
+
+        <ul class="list-disc list-inside ml-4 font-semibold">
+          <li>"You can stay open."</li>
+          <li>"You must be closed."</li>
+        </ul>
+
+        <p>
+          Even though some hallways are closed,
+          they are still there for emergencies.
+        </p>
+
+        <p class="font-semibold text-green-600">
+          No more circles. No more storms. No more confusion.
+        </p>
+      </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">🎯 Final Understanding</h2>
+      <p>
+        Before STP, networks with loops behave like kids running in circles forever.
+        STP creates rules so only one safe path is active.
+      </p>
+      <p class="mt-2 font-semibold">
+        That’s why STP is critical in switch networks.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="bg-gray-800 text-gray-300 text-center py-4 text-sm">
+    Spanning Tree Protocol — ELI10 Tutorial
+  </footer>
+
+</body>
+</html>
+
