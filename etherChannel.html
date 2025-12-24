@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EtherChannel and Interfaces</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-green-600 text-white py-6 shadow">
+    <div class="max-w-5xl mx-auto px-4">
+      <h1 class="text-3xl font-bold">EtherChannel & Network Interfaces</h1>
+      <p class="mt-2 text-sm">What, Why, and How – Explained Simply</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-8">
+
+    <!-- EtherChannel -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-green-600 mb-3">
+        What is EtherChannel?
+      </h2>
+      <p class="leading-relaxed">
+        <strong>EtherChannel</strong> is a technology that combines multiple
+        physical Ethernet links into a single logical link.
+      </p>
+      <p class="mt-3 leading-relaxed">
+        To network devices, the bundled links appear as one interface, increasing
+        bandwidth and providing redundancy.
+      </p>
+    </section>
+
+    <!-- Why Use EtherChannel -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-green-600 mb-3">
+        Why Do We Use EtherChannel?
+      </h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Increases bandwidth by combining multiple links</li>
+        <li>Provides redundancy if one link fails</li>
+        <li>Prevents Spanning Tree from blocking links</li>
+        <li>Improves network performance</li>
+      </ul>
+      <p class="mt-4 leading-relaxed">
+        EtherChannel is commonly used between switches or between a switch and a router.
+      </p>
+    </section>
+
+    <!-- PAgP -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-green-600 mb-3">
+        What is PAgP?
+      </h2>
+      <p class="leading-relaxed">
+        <strong>PAgP (Port Aggregation Protocol)</strong> is a Cisco proprietary
+        protocol used to automatically form an EtherChannel.
+      </p>
+      <ul class="list-disc list-inside mt-4 space-y-2">
+        <li>Ensures compatible ports are bundled</li>
+        <li>Prevents configuration errors</li>
+        <li>Works only on Cisco devices</li>
+      </ul>
+      <p class="mt-3">
+        Common PAgP modes are <strong>Auto</strong> and <strong>Desirable</strong>.
+      </p>
+    </section>
+
+    <!-- Subinterface -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-green-600 mb-3">
+        What is a Subinterface?
+      </h2>
+      <p class="leading-relaxed">
+        A <strong>Subinterface</strong> is a logical interface created from a
+        physical interface, mainly used for <strong>Inter-VLAN routing</strong>.
+      </p>
+      <p class="mt-3 leading-relaxed">
+        Each subinterface is assigned a VLAN ID and an IP address, allowing a
+        single physical interface to carry traffic for multiple VLANs.
+      </p>
+    </section>
+
+    <!-- Virtual Interface -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-green-600 mb-3">
+        What is a Virtual Interface?
+      </h2>
+      <p class="leading-relaxed">
+        A <strong>Virtual Interface</strong> is a software-based interface that
+        does not directly correspond to physical hardware.
+      </p>
+      <ul class="list-disc list-inside mt-4 space-y-2">
+        <li>Used for routing, management, or redundancy</li>
+        <li>Examples: VLAN Interface (SVI), Loopback Interface</li>
+        <li>Helps in logical network design</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-4">
+    <div class="max-w-5xl mx-auto px-4 text-center text-sm">
+      © 2025 Networking Concepts | EtherChannel & Interfaces
+    </div>
+  </footer>
+
+</body>
+</html>
