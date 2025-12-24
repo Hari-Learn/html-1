@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Layer 3 Switch Explained</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-purple-600 text-white py-6 shadow">
+    <div class="max-w-5xl mx-auto px-4">
+      <h1 class="text-3xl font-bold">Layer 3 Switch</h1>
+      <p class="mt-2 text-sm">Routing and Switching Combined</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-8">
+
+    <!-- What is Layer 3 Switch -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-3">
+        What is a Layer 3 Switch?
+      </h2>
+      <p class="leading-relaxed">
+        A <strong>Layer 3 Switch</strong> is a network device that performs both
+        <strong>switching (Layer 2)</strong> and <strong>routing (Layer 3)</strong>
+        functions.
+      </p>
+      <p class="mt-3 leading-relaxed">
+        Unlike a normal switch, it can make routing decisions using IP addresses,
+        similar to a router, but at much faster speeds.
+      </p>
+    </section>
+
+    <!-- Routing inside Layer 3 Switch -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-3">
+        Routing Inside a Layer 3 Switch
+      </h2>
+      <p class="leading-relaxed">
+        Routing inside a Layer 3 switch is done using
+        <strong>SVIs (Switched Virtual Interfaces)</strong>.
+      </p>
+      <p class="mt-3 leading-relaxed">
+        Each VLAN is assigned an IP address, and the switch routes traffic between
+        VLANs internally without sending it to an external router.
+      </p>
+    </section>
+
+    <!-- Why It Is Coming -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-3">
+        Why Did Layer 3 Switches Come?
+      </h2>
+      <p class="leading-relaxed">
+        Traditional networks used routers for inter-VLAN routing, which caused
+        performance bottlenecks.
+      </p>
+      <ul class="list-disc list-inside mt-4 space-y-2">
+        <li>Routers were slower compared to switches</li>
+        <li>Extra cabling and complexity</li>
+        <li>High traffic caused delays</li>
+      </ul>
+      <p class="mt-4 leading-relaxed">
+        Layer 3 switches were introduced to overcome these limitations.
+      </p>
+    </section>
+
+    <!-- Problem It Solves -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-3">
+        What Problems Does It Solve?
+      </h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Eliminates router-on-a-stick bottleneck</li>
+        <li>Faster inter-VLAN routing</li>
+        <li>Reduced network latency</li>
+        <li>Simpler network design</li>
+      </ul>
+    </section>
+
+    <!-- Why We Need Layer 3 Switch -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-3">
+        Why Do We Need a Layer 3 Switch?
+      </h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>High-speed routing within LAN</li>
+        <li>Supports large enterprise networks</li>
+        <li>Better scalability</li>
+        <li>Cost-effective compared to multiple routers</li>
+      </ul>
+    </section>
+
+    <!-- Configuration -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-3">
+        How to Configure a Layer 3 Switch (Basic Example)
+      </h2>
+
+      <p class="mb-3 leading-relaxed">
+        Example: Inter-VLAN routing using SVIs
+      </p>
+
+      <pre class="bg-gray-900 text-green-400 p-4 rounded text-sm overflow-x-auto">
+enable
+configure terminal
+
+! Enable routing
+ip routing
+
+! Create VLANs
+vlan 10
+vlan 20
+
+! Configure SVI for VLAN 10
+interface vlan 10
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+
+! Configure SVI for VLAN 20
+interface vlan 20
+ ip address 192.168.20.1 255.255.255.0
+ no shutdown
+      </pre>
+
+      <p class="mt-4 leading-relaxed">
+        After this, devices in VLAN 10 and VLAN 20 can communicate without a router.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-4">
+    <div class="max-w-5xl mx-auto px-4 text-center text-sm">
+      © 2025 Networking Concepts | Layer 3 Switch
+    </div>
+  </footer>
+
+</body>
+</html>
