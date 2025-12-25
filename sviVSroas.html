@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SVI vs ROAS Comparison</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <header class="bg-blue-700 text-white p-6 text-center">
+    <h1 class="text-3xl font-bold mb-1">Switch Virtual Interface (SVI) vs Router-on-a-Stick (ROAS)</h1>
+    <p class="text-blue-200 max-w-xl mx-auto">
+      Simple Comparison for Interview Explanation — What they can and cannot do
+    </p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-6">
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- SVI Card -->
+      <div class="bg-white p-6 rounded-lg shadow-lg border border-blue-300">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-4 flex items-center space-x-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 14h.01M16 10h.01M12 20h.01M4 6h16M4 10h16M4 14h16M4 18h16" />
+          </svg>
+          <span>Switch Virtual Interface (SVI)</span>
+        </h2>
+        <p class="mb-4 text-gray-700">
+          A virtual Layer-3 interface on a Layer-3 switch that routes between VLANs internally.
+        </p>
+
+        <ul class="space-y-3">
+          <li class="flex items-center text-green-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Routes between VLANs inside the switch (hardware-based, fast)
+          </li>
+          <li class="flex items-center text-green-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Allows remote switch management via IP (ping, SSH)
+          </li>
+          <li class="flex items-center text-green-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Scalable solution for large VLAN networks
+          </li>
+
+          <li class="flex items-center text-red-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            Requires Layer-3 capable switch (not available on pure Layer-2 switches)
+          </li>
+          <li class="flex items-center text-red-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            Cannot be used if switch does not support routing or SVIs
+          </li>
+        </ul>
+      </div>
+
+      <!-- ROAS Card -->
+      <div class="bg-white p-6 rounded-lg shadow-lg border border-teal-300">
+        <h2 class="text-2xl font-semibold text-teal-700 mb-4 flex items-center space-x-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h14l-7 7-7-7z" />
+          </svg>
+          <span>Router-on-a-Stick (ROAS)</span>
+        </h2>
+        <p class="mb-4 text-gray-700">
+          Using a single physical router interface with multiple subinterfaces to route between VLANs.
+        </p>
+
+        <ul class="space-y-3">
+          <li class="flex items-center text-green-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Works with Layer-2 switches to enable inter-VLAN routing
+          </li>
+          <li class="flex items-center text-green-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            One router interface supports many VLANs using subinterfaces (802.1Q trunking)
+          </li>
+          <li class="flex items-center text-green-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Simple and cost-effective for small to medium VLAN routing
+          </li>
+
+          <li class="flex items-center text-red-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            Routing traffic passes through the router interface → slower than hardware-based SVI routing
+          </li>
+          <li class="flex items-center text-red-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            Requires configuration of subinterfaces and trunking on router and switch
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section class="mt-12 bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded shadow max-w-3xl mx-auto">
+      <h3 class="text-xl font-semibold mb-2 text-yellow-700">Why do we need both?</h3>
+      <p class="text-yellow-800">
+        <strong>SVI</strong> is great when your switch supports routing, making inter-VLAN routing fast and easy inside the switch.<br/>
+        <strong>ROAS</strong> lets you use an external router to connect VLANs when your switches are Layer-2 only.<br/>
+        In many networks, both methods are used depending on hardware and design.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="text-center p-4 mt-12 text-gray-600 border-t border-gray-300">
+    CCNA Interview Concept • SVI vs ROAS Comparison
+  </footer>
+
+</body>
+</html>
