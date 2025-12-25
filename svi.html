@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Switch Virtual Interface (SVI) Explained</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white p-6">
+    <h1 class="text-3xl font-bold text-center">
+      Switch Virtual Interface (SVI)
+    </h1>
+    <p class="text-center mt-2">
+      Problem → Solution → Why We Need It (CCNA)
+    </p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-6 space-y-8">
+
+    <!-- Problem -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold text-red-600 mb-3">
+        ❌ The Problem
+      </h2>
+      <p>
+        Layer-2 switches forward frames using MAC addresses,
+        but they <strong>cannot use IP addresses</strong>.
+      </p>
+
+      <div class="mt-4 bg-red-50 p-4 rounded">
+        <ul class="list-disc list-inside space-y-2">
+          <li>Switch cannot be pinged</li>
+          <li>No remote management (SSH / Telnet)</li>
+          <li>No inter-VLAN routing</li>
+          <li>Each VLAN is isolated forever</li>
+        </ul>
+      </div>
+
+      <p class="mt-4">
+        So the question is: <strong>How can a switch participate in Layer-3 communication?</strong>
+      </p>
+    </section>
+
+    <!-- Why Physical Interface is Not Enough -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold text-yellow-600 mb-3">
+        ⚠️ Why Physical Interfaces Are Not Enough
+      </h2>
+      <p>
+        Switch physical ports are Layer-2 only.
+        You <strong>cannot assign IP addresses</strong> to switch ports like a router.
+      </p>
+
+      <pre class="bg-gray-900 text-green-400 p-4 rounded text-sm overflow-x-auto mt-4">
+Switch Port → MAC-based forwarding only
+No IP address
+No routing
+      </pre>
+    </section>
+
+    <!-- Solution -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold text-green-600 mb-3">
+        ✅ Solution: Switch Virtual Interface (SVI)
+      </h2>
+      <p>
+        An <strong>SVI</strong> is a <strong>virtual Layer-3 interface</strong>
+        created for a VLAN on a switch.
+      </p>
+
+      <div class="mt-4 bg-green-50 p-4 rounded">
+        <p class="font-semibold">What SVI does:</p>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Provides an IP address to a VLAN</li>
+          <li>Acts as the default gateway for devices</li>
+          <li>Enables inter-VLAN routing</li>
+          <li>Allows remote switch management</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Logical View -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold mb-3">
+        🧠 Logical View of SVI
+      </h2>
+
+      <pre class="bg-gray-900 text-green-400 p-4 rounded text-sm overflow-x-auto">
+VLAN 10 → SVI 10 (192.168.10.1)
+VLAN 20 → SVI 20 (192.168.20.1)
+
+PC → Switch → SVI → Routing → SVI → PC
+      </pre>
+
+      <p class="mt-2">
+        The switch itself performs routing using SVIs.
+      </p>
+    </section>
+
+    <!-- Why We Need SVI -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-3">
+        🔑 Why We Need SVI
+      </h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Eliminates the need for external routers</li>
+        <li>High-speed inter-VLAN routing</li>
+        <li>Simpler network design</li>
+        <li>Better scalability</li>
+      </ul>
+    </section>
+
+    <!-- Unique Features -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-3">
+        ⭐ Features NOT Available Without SVI
+      </h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Multiple IP gateways on one switch</li>
+        <li>Routing without physical router ports</li>
+        <li>VLAN-based IP interfaces</li>
+        <li>Fast hardware-based routing</li>
+        <li>Centralized control per VLAN</li>
+      </ul>
+    </section>
+
+    <!-- Comparison -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold mb-3">
+        📊 Quick Comparison
+      </h2>
+
+      <table class="w-full border border-gray-300 text-left">
+        <thead class="bg-gray-200">
+          <tr>
+            <th class="p-2 border">Feature</th>
+            <th class="p-2 border">Without SVI</th>
+            <th class="p-2 border">With SVI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-2 border">IP Address</td>
+            <td class="p-2 border">❌</td>
+            <td class="p-2 border">✅</td>
+          </tr>
+          <tr>
+            <td class="p-2 border">Inter-VLAN Routing</td>
+            <td class="p-2 border">❌</td>
+            <td class="p-2 border">✅</td>
+          </tr>
+          <tr>
+            <td class="p-2 border">Remote Management</td>
+            <td class="p-2 border">❌</td>
+            <td class="p-2 border">✅</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="bg-indigo-50 p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold mb-3">
+        🎯 Final Takeaway
+      </h2>
+      <p>
+        <strong>SVI turns a switch into a Layer-3 device.</strong>
+        It solves the problem of VLAN isolation by enabling
+        IP addressing, routing, and management — all without
+        adding a router.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="text-center p-4 text-gray-600">
+    CCNA Concept • Switch Virtual Interface (SVI)
+  </footer>
+
+</body>
+</html>
