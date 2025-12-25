@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Router-on-a-Stick Explained</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-teal-600 text-white p-6">
+    <h1 class="text-3xl font-bold text-center">
+      Router-on-a-Stick (ROAS)
+    </h1>
+    <p class="text-center mt-2">
+      Problem → Why VLANs Fail → Why ROAS Exists (CCNA Core Understanding)
+    </p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-6 space-y-8">
+
+    <!-- Problem -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold text-red-600 mb-3">
+        ❌ The Real Problem
+      </h2>
+      <p>
+        VLANs are created to <strong>separate networks</strong> and reduce broadcasts.
+        But once VLANs are created, devices in different VLANs
+        <strong>cannot communicate at all</strong>.
+      </p>
+
+      <div class="mt-4 bg-red-50 p-4 rounded">
+        <p class="font-semibold">Example:</p>
+        <ul class="list-disc list-inside">
+          <li>VLAN 10 – Sales (192.168.10.0/24)</li>
+          <li>VLAN 20 – IT (192.168.20.0/24)</li>
+        </ul>
+        <p class="mt-2">
+          Sales users cannot access IT servers, even though they are on the same switch.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why VLANs Are Not Enough -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold text-yellow-600 mb-3">
+        ⚠️ Why VLANs Alone Are Not Enough
+      </h2>
+
+      <ul class="list-disc list-inside space-y-2">
+        <li>VLANs work at <strong>Layer 2</strong></li>
+        <li>They separate broadcast domains</li>
+        <li>No IP-based decision making</li>
+        <li>No routing between different networks</li>
+      </ul>
+
+      <p class="mt-4 font-semibold">
+        Separation is good — but total isolation is not.
+      </p>
+    </section>
+
+    <!-- Core Networking Rule -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-3">
+        🧠 Core Networking Rule (Very Important)
+      </h2>
+
+      <div class="bg-blue-50 p-4 rounded font-semibold">
+        Devices in different IP networks need a ROUTER to communicate.
+      </div>
+
+      <p class="mt-3">
+        VLANs create <strong>different IP networks</strong>.
+        Therefore, a <strong>router is mandatory</strong>.
+      </p>
+    </section>
+
+    <!-- Why Not Multiple Router Ports -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold text-orange-600 mb-3">
+        ❓ Why Not Use Multiple Router Interfaces?
+      </h2>
+
+      <p>
+        Traditional routing would require:
+      </p>
+
+      <ul class="list-disc list-inside mt-2">
+        <li>One router interface per VLAN</li>
+        <li>More cables</li>
+        <li>Higher cost</li>
+        <li>Poor scalability</li>
+      </ul>
+
+      <p class="mt-3">
+        This becomes impractical as VLAN count increases.
+      </p>
+    </section>
+
+    <!-- Solution -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold text-green-600 mb-3">
+        ✅ Solution: Router-on-a-Stick (ROAS)
+      </h2>
+
+      <p>
+        <strong>Router-on-a-Stick</strong> allows a single router interface
+        to route traffic between multiple VLANs using
+        <strong>subinterfaces</strong>.
+      </p>
+
+      <div class="mt-4 bg-green-50 p-4 rounded">
+        <p class="font-semibold">How ROAS Works:</p>
+        <ul class="list-disc list-inside space-y-2">
+          <li>One physical router interface</li>
+          <li>Multiple logical subinterfaces</li>
+          <li>Each subinterface = one VLAN</li>
+          <li>802.1Q trunk carries all VLAN traffic</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Logical View -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold mb-3">
+        🧩 Logical View of ROAS
+      </h2>
+
+      <pre class="bg-gray-900 text-green-400 p-4 rounded text-sm overflow-x-auto">
+PC (VLAN 10) 
+   ↓
+Switch (Trunk)
+   ↓
+Router Subinterface 10 (192.168.10.1)
+   ↓
+Router Subinterface 20 (192.168.20.1)
+   ↓
+PC (VLAN 20)
+      </pre>
+
+      <p class="mt-2">
+        The router performs routing between VLANs.
+      </p>
+    </section>
+
+    <!-- Core Understanding -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-3">
+        🎯 Core Understanding You Must Remember
+      </h2>
+
+      <ul class="list-disc list-inside space-y-2">
+        <li>VLAN = separate network</li>
+        <li>Separate networks need a router</li>
+        <li>ROAS = efficient way to use one router</li>
+        <li>Trunk link carries multiple VLANs</li>
+        <li>Subinterfaces act as default gateways</li>
+      </ul>
+    </section>
+
+    <!-- Why ROAS Exists -->
+    <section class="bg-teal-50 p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold mb-3">
+        🚀 Why Router-on-a-Stick Exists
+      </h2>
+
+      <p>
+        Router-on-a-Stick exists because networks need:
+      </p>
+
+      <ul class="list-disc list-inside mt-2">
+        <li>Inter-VLAN communication</li>
+        <li>Low cost design</li>
+        <li>Scalability</li>
+        <li>Clear separation + controlled access</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="text-center p-4 text-gray-600">
+    CCNA Concept • Router-on-a-Stick (ROAS)
+  </footer>
+
+</body>
+</html>
