@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Inter-VLAN Routing is Needed</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-6">
+    <h1 class="text-3xl font-bold text-center">
+      Why Do We Need Inter-VLAN Routing?
+    </h1>
+    <p class="text-center mt-2">
+      CCNA Concept Explained Simply
+    </p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto p-6 space-y-8">
+
+    <!-- Problem Section -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold text-red-600 mb-3">
+        ❌ The Problem
+      </h2>
+      <p>
+        VLANs separate networks at Layer 2 to reduce broadcasts and improve security.
+        But devices in different VLANs <strong>cannot communicate</strong> by default.
+      </p>
+
+      <div class="mt-4 bg-red-50 p-4 rounded">
+        <p><strong>Example:</strong></p>
+        <ul class="list-disc list-inside">
+          <li>VLAN 10 – HR Department</li>
+          <li>VLAN 20 – Finance Department</li>
+        </ul>
+        <p class="mt-2">
+          HR cannot access Finance servers even if they are on the same switch.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why VLAN Alone is Not Enough -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold text-yellow-600 mb-3">
+        ⚠️ Why VLAN Alone Is Not Enough
+      </h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>VLANs work only at <strong>Layer 2</strong></li>
+        <li>No IP-based decision making</li>
+        <li>No routing between different networks</li>
+        <li>Good for separation, bad for communication</li>
+      </ul>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold text-green-600 mb-3">
+        ✅ Solution: Inter-VLAN Routing
+      </h2>
+      <p>
+        <strong>Inter-VLAN Routing</strong> allows communication between different VLANs
+        using a <strong>Router or Layer-3 Switch</strong>.
+      </p>
+
+      <div class="mt-4 bg-green-50 p-4 rounded">
+        <p><strong>How it works:</strong></p>
+        <ul class="list-disc list-inside">
+          <li>Each VLAN gets its own IP network</li>
+          <li>Router has an interface (or sub-interface) for each VLAN</li>
+          <li>Router forwards traffic between VLANs</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Diagram Explanation -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold mb-3">
+        🧠 Simple Logical View
+      </h2>
+      <pre class="bg-gray-900 text-green-400 p-4 rounded text-sm overflow-x-auto">
+PC (VLAN 10) → Switch → Router → Switch → PC (VLAN 20)
+      </pre>
+      <p class="mt-2">
+        The router is the <strong>only device</strong> that allows VLANs to talk.
+      </p>
+    </section>
+
+    <!-- Other Important Points -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-3">
+        ⭐ Other Important Points (CCNA)
+      </h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Inter-VLAN routing works at <strong>Layer 3</strong></li>
+        <li>Requires IP addressing</li>
+        <li>Can be done using:
+          <ul class="list-disc list-inside ml-5">
+            <li>Router-on-a-Stick</li>
+            <li>Layer-3 Switch (SVI)</li>
+          </ul>
+        </li>
+        <li>Allows security control using ACLs</li>
+        <li>Essential for enterprise networks</li>
+      </ul>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="bg-blue-50 p-6 rounded shadow">
+      <h2 class="text-2xl font-semibold mb-3">
+        🎯 Final Conclusion
+      </h2>
+      <p>
+        VLANs provide <strong>separation</strong>, but Inter-VLAN routing provides
+        <strong>controlled communication</strong>.  
+        Without Inter-VLAN routing, VLANs would be isolated forever.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center p-4 text-gray-600">
+    CCNA Concept • Inter-VLAN Routing • Tailwind CSS Demo
+  </footer>
+
+</body>
+</html>
