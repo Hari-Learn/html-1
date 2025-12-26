@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ACL Syntax Explained - Zero to Top</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white p-6 text-center">
+    <h1 class="text-3xl font-bold">ACL Syntax (Router)</h1>
+    <p class="mt-2 text-lg">Basic → Advanced | Explain Like I’m 10</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-6 space-y-8">
+
+    <!-- Why Syntax -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">1️⃣ Why Do We Need ACL Syntax?</h2>
+      <p>
+        A router is like a robot 🧠  
+        It does <strong>only what you tell it</strong>.
+      </p>
+      <p class="mt-3">
+        ACL syntax is the <strong>language</strong> we use to tell the router:
+      </p>
+      <ul class="list-disc ml-6 mt-2">
+        <li>Who is allowed</li>
+        <li>Who is blocked</li>
+        <li>What type of traffic is controlled</li>
+      </ul>
+      <p class="mt-3 font-semibold text-red-600">
+        ❌ Wrong syntax = Router gets confused
+      </p>
+    </section>
+
+    <!-- ACL Rule Structure -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">2️⃣ Basic Structure of an ACL Rule</h2>
+      <p>
+        Every ACL rule looks like this:
+      </p>
+      <div class="bg-gray-100 p-4 rounded mt-3 font-mono">
+        action + what traffic + from where + to where
+      </div>
+      <p class="mt-3">
+        Example in human language:
+      </p>
+      <blockquote class="border-l-4 border-indigo-500 pl-4 italic mt-2">
+        "Allow students from class A to go to the library"
+      </blockquote>
+    </section>
+
+    <!-- Standard ACL -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">3️⃣ Standard ACL Syntax (Beginner Level)</h2>
+
+      <p>
+        Standard ACL checks only <strong>Source IP</strong>.
+      </p>
+
+      <div class="bg-gray-100 p-4 rounded mt-3 font-mono text-sm">
+        access-list [number] permit|deny source-IP wildcard-mask
+      </div>
+
+      <p class="mt-3 font-semibold">ELI10 Breakdown:</p>
+      <ul class="list-disc ml-6 mt-2">
+        <li><strong>access-list</strong> → creating rule</li>
+        <li><strong>number</strong> → ACL ID (1–99)</li>
+        <li><strong>permit / deny</strong> → allow or block</li>
+        <li><strong>source-IP</strong> → who is sending</li>
+        <li><strong>wildcard-mask</strong> → how many allowed</li>
+      </ul>
+    </section>
+
+    <!-- Wildcard Mask -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">4️⃣ Wildcard Mask (Most Confusing Part 😵)</h2>
+
+      <p>
+        Wildcard mask tells the router:
+      </p>
+      <blockquote class="border-l-4 border-indigo-500 pl-4 italic mt-3">
+        "Which bits matter and which don’t"
+      </blockquote>
+
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-green-100 p-4 rounded">
+          <strong>0</strong> → Must match exactly
+        </div>
+        <div class="bg-red-100 p-4 rounded">
+          <strong>1</strong> → Ignore this part
+        </div>
+      </div>
+
+      <p class="mt-4">
+        Example:
+      </p>
+      <div class="bg-gray-100 p-4 rounded font-mono text-sm">
+        192.168.1.0 0.0.0.255
+      </div>
+      <p class="mt-2">
+        Means: Allow all IPs from <strong>192.168.1.0 to 192.168.1.255</strong>
+      </p>
+    </section>
+
+    <!-- Extended ACL -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">5️⃣ Extended ACL Syntax (Intermediate)</h2>
+
+      <p>
+        Extended ACL is more powerful 💪  
+        It checks:
+      </p>
+      <ul class="list-disc ml-6 mt-2">
+        <li>Source IP</li>
+        <li>Destination IP</li>
+        <li>Protocol</li>
+        <li>Port number</li>
+      </ul>
+
+      <div class="bg-gray-100 p-4 rounded mt-4 font-mono text-sm">
+        access-list [number] permit|deny protocol<br>
+        source-IP wildcard destination-IP wildcard [port]
+      </div>
+    </section>
+
+    <!-- Protocols -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">6️⃣ Protocols in ACL (Easy Way)</h2>
+      <ul class="list-disc ml-6 space-y-2">
+        <li><strong>ip</strong> → all traffic</li>
+        <li><strong>tcp</strong> → web, email, login</li>
+        <li><strong>udp</strong> → video, voice</li>
+        <li><strong>icmp</strong> → ping</li>
+      </ul>
+      <p class="mt-3 text-blue-600 font-semibold">
+        Tip: Use <code>ip</code> if you want everything
+      </p>
+    </section>
+
+    <!-- Port Numbers -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">7️⃣ Port Numbers (ELI10)</h2>
+      <p>
+        Port = Door 🚪 on a computer
+      </p>
+
+      <ul class="list-disc ml-6 mt-2">
+        <li>80 → Website (HTTP)</li>
+        <li>443 → Secure Website (HTTPS)</li>
+        <li>21 → FTP</li>
+        <li>22 → SSH</li>
+      </ul>
+
+      <p class="mt-3">
+        Example meaning:
+      </p>
+      <blockquote class="border-l-4 border-indigo-500 pl-4 italic">
+        "Allow only web traffic"
+      </blockquote>
+    </section>
+
+    <!-- Order of Rules -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">8️⃣ Rule Order (VERY IMPORTANT)</h2>
+      <p>
+        Router checks ACL rules like a list 📋
+      </p>
+      <ol class="list-decimal ml-6 mt-2 space-y-1">
+        <li>Start from top</li>
+        <li>Check rule</li>
+        <li>If matched → STOP</li>
+      </ol>
+
+      <p class="mt-3 font-semibold text-red-600">
+        ❌ At the end there is always: "deny all"
+      </p>
+    </section>
+
+    <!-- Top Level -->
+    <section class="bg-blue-50 p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">9️⃣ Top-Level Understanding</h2>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>ACL syntax is logical, not magical</li>
+        <li>Standard ACL = simple control</li>
+        <li>Extended ACL = full security</li>
+        <li>Order matters more than rules</li>
+        <li>Always think like the router</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="text-center p-4 text-gray-600">
+    ACL Syntax Guide • Zero to Top • ELI10
+  </footer>
+
+</body>
+</html>
