@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ACL in Router - ELI10 Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-6 text-center">
+    <h1 class="text-3xl font-bold">ACL (Access Control List) in Routers</h1>
+    <p class="mt-2 text-lg">Zero → Intermediate | Explain Like I’m 10</p>
+  </header>
+
+  <!-- Container -->
+  <main class="max-w-5xl mx-auto p-6 space-y-8">
+
+    <!-- Problem -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">1️⃣ The Problem (Start Here)</h2>
+      <p>
+        Imagine your home has <strong>no doors, no locks</strong>.
+        Anyone can walk in, go to your room, open your fridge, or break things.
+      </p>
+      <p class="mt-3">
+        A <strong>network without rules</strong> is the same.
+        Any computer can:
+      </p>
+      <ul class="list-disc ml-6 mt-2">
+        <li>Access private servers</li>
+        <li>Steal data</li>
+        <li>Send harmful traffic</li>
+      </ul>
+    </section>
+
+    <!-- Why it's bad -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">2️⃣ Why Is This a Big Problem?</h2>
+      <p>
+        Routers connect many networks together (like roads).
+        If there are <strong>no traffic rules</strong>:
+      </p>
+      <ul class="list-disc ml-6 mt-2">
+        <li>Hackers can enter easily</li>
+        <li>Employees can access forbidden sites</li>
+        <li>Servers can be attacked</li>
+      </ul>
+      <p class="mt-3 font-semibold text-red-600">
+        ❌ No control = No security
+      </p>
+    </section>
+
+    <!-- What is ACL -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">3️⃣ What Is ACL?</h2>
+      <p>
+        <strong>ACL (Access Control List)</strong> is a list of rules
+        that tells the router:
+      </p>
+      <blockquote class="border-l-4 border-blue-500 pl-4 mt-3 italic">
+        "Who is allowed and who is NOT allowed to pass."
+      </blockquote>
+      <p class="mt-3">
+        Think of ACL like a <strong>security guard</strong> checking:
+      </p>
+      <ul class="list-disc ml-6 mt-2">
+        <li>Who you are</li>
+        <li>Where you are going</li>
+        <li>What you are trying to do</li>
+      </ul>
+    </section>
+
+    <!-- How ACL solves -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">4️⃣ How ACL Solves the Problem</h2>
+      <p>
+        ACL works using two simple actions:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <div class="bg-green-100 p-4 rounded">
+          ✅ <strong>PERMIT</strong><br>
+          You are allowed to pass
+        </div>
+        <div class="bg-red-100 p-4 rounded">
+          ❌ <strong>DENY</strong><br>
+          You are blocked
+        </div>
+      </div>
+      <p class="mt-4">
+        Every packet (data) is checked against ACL rules
+        <strong>one by one</strong>.
+      </p>
+    </section>
+
+    <!-- Basic Concepts -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">5️⃣ Basic ACL Concepts (Very Important)</h2>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>ACL is applied on a <strong>router interface</strong></li>
+        <li>Rules are checked <strong>top to bottom</strong></li>
+        <li>First match = decision made</li>
+        <li>There is an invisible rule at the end:</li>
+      </ul>
+      <p class="mt-3 font-semibold text-red-600">
+        ❌ "Deny everything else"
+      </p>
+    </section>
+
+    <!-- Standard vs Extended -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">6️⃣ Types of ACL</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="border p-4 rounded">
+          <h3 class="text-xl font-bold mb-2">Standard ACL</h3>
+          <p>Checks only:</p>
+          <ul class="list-disc ml-6 mt-2">
+            <li>Source IP address</li>
+          </ul>
+          <p class="mt-2 text-sm text-gray-600">
+            Simple but less powerful
+          </p>
+        </div>
+
+        <div class="border p-4 rounded">
+          <h3 class="text-xl font-bold mb-2">Extended ACL</h3>
+          <p>Checks:</p>
+          <ul class="list-disc ml-6 mt-2">
+            <li>Source IP</li>
+            <li>Destination IP</li>
+            <li>Protocol (HTTP, FTP, etc.)</li>
+            <li>Port numbers</li>
+          </ul>
+          <p class="mt-2 text-sm text-gray-600">
+            More control, more secure
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Example -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">7️⃣ Real-Life Example (ELI10)</h2>
+      <p>
+        School rule:
+      </p>
+      <blockquote class="border-l-4 border-blue-500 pl-4 mt-3 italic">
+        "Students can enter classrooms, but NOT the staff room."
+      </blockquote>
+      <p class="mt-3">
+        ACL version:
+      </p>
+      <ul class="list-disc ml-6">
+        <li>Permit students → classroom</li>
+        <li>Deny students → staff room</li>
+      </ul>
+    </section>
+
+    <!-- Intermediate -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">8️⃣ Intermediate Understanding</h2>
+      <p>
+        ACLs can be applied in two directions:
+      </p>
+      <ul class="list-disc ml-6 mt-2">
+        <li><strong>Inbound</strong> – traffic entering router</li>
+        <li><strong>Outbound</strong> – traffic leaving router</li>
+      </ul>
+      <p class="mt-3">
+        Best practice:
+      </p>
+      <p class="font-semibold text-blue-600">
+        ✔ Place extended ACLs close to the source
+      </p>
+    </section>
+
+    <!-- Summary -->
+    <section class="bg-blue-50 p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">✅ Final Summary</h2>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>Networks need control</li>
+        <li>ACL is a rule list in routers</li>
+        <li>It permits or denies traffic</li>
+        <li>Standard = simple</li>
+        <li>Extended = powerful</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center p-4 text-gray-600">
+    Made for deep understanding • ACL ELI10 Guide
+  </footer>
+
+</body>
+</html>
