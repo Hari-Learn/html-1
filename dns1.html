@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DNS Tutorial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+<div class="max-w-4xl mx-auto p-6 space-y-8">
+
+  <h1 class="text-3xl font-bold text-center text-indigo-700">
+    DNS Server and DNS Client – Tutorial
+  </h1>
+
+  <!-- Section 1 -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-2">1. What is DNS?</h2>
+    <p>
+      DNS (Domain Name System) is a naming system used on the internet.
+      It converts domain names that humans understand into IP addresses
+      that computers use to communicate.
+    </p>
+    <p class="mt-2">
+      Example: <br>
+      <span class="font-mono bg-gray-200 px-2 py-1 rounded">
+        www.google.com → 142.250.190.14
+      </span>
+    </p>
+  </section>
+
+  <!-- Section 2 -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-2">2. DNS Server</h2>
+    <p>
+      A DNS server stores DNS records and responds to DNS queries.
+      When a DNS client requests an IP address for a domain,
+      the DNS server provides the correct response.
+    </p>
+    <ul class="list-disc list-inside mt-2">
+      <li>Stores domain-to-IP mappings</li>
+      <li>Resolves domain name queries</li>
+      <li>Works as part of a global DNS hierarchy</li>
+    </ul>
+  </section>
+
+  <!-- Section 3 -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-2">3. DNS Client</h2>
+    <p>
+      A DNS client is any device or application that requests DNS resolution.
+      Browsers, operating systems, and servers act as DNS clients.
+    </p>
+    <p class="mt-2">
+      When you type a website address in a browser,
+      your system becomes a DNS client and sends a query to a DNS server.
+    </p>
+  </section>
+
+  <!-- Section 4 -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-2">4. Why DNS is Required</h2>
+    <p>
+      Computers communicate using IP addresses, not names.
+      DNS allows users to access websites using easy-to-remember names.
+    </p>
+    <ul class="list-disc list-inside mt-2">
+      <li>Simplifies internet usage</li>
+      <li>Reduces dependency on fixed IP addresses</li>
+      <li>Supports scalability of the internet</li>
+    </ul>
+  </section>
+
+  <!-- Section 5 -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-2">5. Preferred DNS Server</h2>
+    <p>
+      The preferred DNS server is the primary DNS server configured on a system.
+      All DNS queries are sent to this server first.
+    </p>
+    <p class="mt-2 font-mono bg-gray-200 px-2 py-1 rounded inline-block">
+      Example: 8.8.8.8
+    </p>
+  </section>
+
+  <!-- Section 6 -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-2">6. Alternative DNS Server</h2>
+    <p>
+      The alternative DNS server acts as a backup.
+      If the preferred DNS server fails to respond,
+      the system automatically queries the alternative server.
+    </p>
+    <p class="mt-2 font-mono bg-gray-200 px-2 py-1 rounded inline-block">
+      Example: 8.8.4.4
+    </p>
+  </section>
+
+  <!-- Section 7 -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-2">
+      7. Registering an FQDN in a DNS Server
+    </h2>
+    <p>
+      An FQDN (Fully Qualified Domain Name) uniquely identifies a host on the internet.
+    </p>
+
+    <ol class="list-decimal list-inside mt-2 space-y-1">
+      <li>Register a domain name with a registrar</li>
+      <li>Access the DNS management console</li>
+      <li>Create an A record for the host name</li>
+      <li>Assign the IP address to the FQDN</li>
+      <li>Save the configuration</li>
+      <li>Wait for DNS propagation</li>
+    </ol>
+
+    <p class="mt-2 font-mono bg-gray-200 px-2 py-1 rounded">
+      Example: www.example.com → 192.168.1.10
+    </p>
+  </section>
+
+  <footer class="text-center text-sm text-gray-500 pt-6">
+    End of DNS Tutorial
+  </footer>
+
+</div>
+
+</body>
+</html>
