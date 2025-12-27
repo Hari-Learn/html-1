@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DNS Server and DNS Client</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-5xl mx-auto p-6">
+    <h1 class="text-3xl font-bold text-center mb-6 text-blue-700">
+      DNS Server and DNS Client
+    </h1>
+
+    <!-- DNS Overview -->
+    <section class="bg-white rounded-lg shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3 text-blue-600">What is DNS?</h2>
+      <p class="leading-relaxed">
+        DNS (Domain Name System) is a system that translates human-readable
+        domain names like <span class="font-medium">www.example.com</span>
+        into IP addresses like <span class="font-medium">192.168.1.1</span>,
+        which computers use to identify each other on a network.
+      </p>
+    </section>
+
+    <!-- DNS Server -->
+    <section class="bg-white rounded-lg shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3 text-blue-600">What is a DNS Server?</h2>
+      <p class="leading-relaxed">
+        A DNS Server is a server that stores DNS records and answers DNS queries.
+        When you type a website name in your browser, the DNS server provides the
+        corresponding IP address so your device can connect to the website.
+      </p>
+    </section>
+
+    <!-- DNS Client -->
+    <section class="bg-white rounded-lg shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3 text-blue-600">What is a DNS Client?</h2>
+      <p class="leading-relaxed">
+        A DNS Client is usually your computer, mobile phone, or any device that
+        requests information from a DNS server. It sends a query asking,
+        “What is the IP address for this domain name?”
+      </p>
+    </section>
+
+    <!-- Why DNS Needed -->
+    <section class="bg-white rounded-lg shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3 text-blue-600">Why Do We Need DNS?</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Humans can remember names better than numbers</li>
+        <li>DNS makes the internet user-friendly</li>
+        <li>It allows websites to change IP addresses without changing names</li>
+        <li>Improves network organization and management</li>
+      </ul>
+    </section>
+
+    <!-- Preferred DNS -->
+    <section class="bg-white rounded-lg shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3 text-blue-600">What is Preferred DNS?</h2>
+      <p class="leading-relaxed">
+        Preferred DNS is the primary DNS server that your device uses first to
+        resolve domain names. If this server is unavailable, the system will try
+        the alternative DNS server.
+      </p>
+      <p class="mt-3 font-medium">
+        Example: <br>
+        Preferred DNS: 8.8.8.8
+      </p>
+    </section>
+
+    <!-- Alternative DNS -->
+    <section class="bg-white rounded-lg shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3 text-blue-600">What is Alternative DNS?</h2>
+      <p class="leading-relaxed">
+        Alternative DNS is a backup DNS server used when the preferred DNS server
+        is not responding. It ensures uninterrupted internet access.
+      </p>
+      <p class="mt-3 font-medium">
+        Example: <br>
+        Alternative DNS: 8.8.4.4
+      </p>
+    </section>
+
+    <!-- Register FQDN -->
+    <section class="bg-white rounded-lg shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3 text-blue-600">
+        How to Register an FQDN in a DNS Server
+      </h2>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>Choose a domain name (example.com)</li>
+        <li>Register the domain through a domain registrar</li>
+        <li>Access the DNS management panel</li>
+        <li>Create DNS records (A, AAAA, CNAME, etc.)</li>
+        <li>Map the FQDN (like www.example.com) to an IP address</li>
+        <li>Save changes and wait for DNS propagation</li>
+      </ol>
+    </section>
+
+    <footer class="text-center text-sm text-gray-500 mt-6">
+      © 2025 DNS Learning Page
+    </footer>
+  </div>
+
+</body>
+</html>
