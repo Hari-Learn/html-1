@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cisco Firewall Technologies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600">
+
+  <!-- Wrapper -->
+  <div class="min-h-screen p-6 flex items-center justify-center">
+
+    <div class="w-full max-w-7xl bg-white rounded-xl shadow-2xl overflow-hidden">
+
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-yellow-500 to-red-500 text-white p-6">
+        <h1 class="text-3xl font-bold">Cisco Firewall Technologies</h1>
+        <p class="text-sm mt-2">
+          Detailed overview of PIX, ASA, Firepower, and FTD architectures
+        </p>
+      </div>
+
+      <!-- Split Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-3">
+
+        <!-- LEFT PANEL (Navigation / Concepts) -->
+        <div class="bg-gray-50 p-6 space-y-4 border-r">
+          <h2 class="text-xl font-semibold text-gray-800">Security Concepts</h2>
+
+          <div class="bg-white p-4 rounded-lg shadow">
+            <h3 class="font-semibold text-gray-700">Stateful Firewall</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Tracks connection states and permits traffic based on session
+              information rather than static rules only.
+            </p>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg shadow">
+            <h3 class="font-semibold text-gray-700">NAT & PAT</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Network Address Translation allows private networks to securely
+              access public networks.
+            </p>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg shadow">
+            <h3 class="font-semibold text-gray-700">VPN Technologies</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Supports Site-to-Site IPsec VPN, Remote Access VPN, and SSL VPN.
+            </p>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg shadow">
+            <h3 class="font-semibold text-gray-700">NGFW Features</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Application awareness, intrusion prevention, URL filtering,
+              and malware protection.
+            </p>
+          </div>
+        </div>
+
+        <!-- MIDDLE PANEL (ASA Focus) -->
+        <div class="p-6 space-y-5 border-r">
+          <h2 class="text-xl font-semibold text-gray-800">Cisco ASA Firewall</h2>
+
+          <div class="bg-gradient-to-br from-yellow-50 to-orange-100 p-5 rounded-lg shadow">
+            <h3 class="font-semibold text-gray-800">Overview</h3>
+            <p class="text-sm text-gray-700 mt-2">
+              Cisco ASA (Adaptive Security Appliance) is a stateful firewall
+              platform that evolved from Cisco PIX, offering enhanced performance,
+              modular services, and enterprise-grade security.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-br from-yellow-50 to-orange-100 p-5 rounded-lg shadow">
+            <h3 class="font-semibold text-gray-800">Key Capabilities</h3>
+            <ul class="list-disc list-inside text-sm text-gray-700 mt-2 space-y-1">
+              <li>Stateful packet inspection</li>
+              <li>Access Control Lists (ACLs)</li>
+              <li>NAT and PAT</li>
+              <li>High availability (Active/Standby)</li>
+              <li>IPsec & SSL VPN</li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-yellow-50 to-orange-100 p-5 rounded-lg shadow">
+            <h3 class="font-semibold text-gray-800">Limitations</h3>
+            <p class="text-sm text-gray-700 mt-2">
+              Traditional ASA lacks deep application visibility and advanced
+              threat analytics compared to modern NGFW solutions.
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL (Evolution & Comparison) -->
+        <div class="p-6 space-y-5">
+          <h2 class="text-xl font-semibold text-gray-800">Firewall Evolution</h2>
+
+          <div class="bg-gradient-to-br from-red-50 to-red-100 p-5 rounded-lg shadow">
+            <h3 class="font-semibold text-gray-800">Cisco PIX</h3>
+            <p class="text-sm text-gray-700 mt-2">
+              PIX was Cisco’s first dedicated firewall appliance. It introduced
+              stateful inspection but is now obsolete and unsupported.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-br from-red-50 to-red-100 p-5 rounded-lg shadow">
+            <h3 class="font-semibold text-gray-800">Firepower Services</h3>
+            <p class="text-sm text-gray-700 mt-2">
+              Firepower adds NGFW features including intrusion prevention (Snort),
+              application control, URL filtering, and advanced malware protection.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-br from-red-50 to-red-100 p-5 rounded-lg shadow">
+            <h3 class="font-semibold text-gray-800">FTD (Firepower Threat Defense)</h3>
+            <p class="text-sm text-gray-700 mt-2">
+              FTD merges ASA firewall functionality and Firepower services into
+              a single image managed centrally via FMC.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-br from-yellow-100 to-red-100 p-5 rounded-lg shadow">
+            <h3 class="font-semibold text-gray-800">ASA vs FTD</h3>
+            <ul class="text-sm text-gray-700 mt-2 space-y-1">
+              <li><strong>ASA:</strong> Traditional firewall + VPN</li>
+              <li><strong>FTD:</strong> Full NGFW with threat intelligence</li>
+              <li><strong>Management:</strong> ASDM vs FMC</li>
+            </ul>
+          </div>
+        </div>
+
+      </div> 
+    </div>
+  </div>
+
+</body>
+</html>
