@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAT Explanation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Simple animation for NAT translation */
+        .packet {
+            width: 50px;
+            height: 50px;
+            background-color: #3b82f6; /* blue */
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            animation: movePacket 6s infinite alternate;
+        }
+
+        @keyframes movePacket {
+            0% { left: 0; background-color: #3b82f6; }
+            50% { left: 45%; background-color: #f87171; } /* red represents NAT translation */
+            100% { left: 90%; background-color: #3b82f6; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <h1 class="text-4xl font-bold text-center mb-8">NAT (Network Address Translation)</h1>
+
+    <!-- NAT Explanation Card -->
+    <div class="max-w-3xl mx-auto mb-6">
+        <div class="bg-green-200 p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold mb-2">1. What is NAT?</h2>
+            <p>
+                NAT is a process where a network device (usually a router) translates **private IP addresses** within a local network to a **public IP address** for communication over the internet, and vice versa.  
+                This allows multiple devices in a private network to share a single public IP.
+            </p>
+        </div>
+    </div>
+
+    <!-- NAT Animation Card -->
+    <div class="max-w-3xl mx-auto mb-6 relative h-48 bg-blue-100 p-6 rounded-lg shadow-lg overflow-hidden">
+        <h2 class="text-2xl font-semibold mb-4">2. NAT Translation Animation</h2>
+        <p class="mb-4">
+            The blue circle represents a private IP packet. When it passes through NAT, it changes to a public IP (red) and goes to the internet.
+        </p>
+        <div class="packet"></div>
+    </div>
+
+    <!-- NAT Types Card -->
+    <div class="max-w-3xl mx-auto mb-6">
+        <div class="bg-yellow-200 p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold mb-2">3. Types of NAT</h2>
+            <ul class="list-disc ml-5">
+                <li><strong>Static NAT:</strong> One-to-one mapping of private to public IP.</li>
+                <li><strong>Dynamic NAT:</strong> Private IP mapped to a public IP from a pool.</li>
+                <li><strong>PAT (Port Address Translation):</strong> Many-to-one mapping using different ports (also called NAT overload).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- NAT ACL Condition Card -->
+    <div class="max-w-3xl mx-auto mb-6">
+        <div class="bg-red-200 p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold mb-2">4. NAT Conditions</h2>
+            <p>
+                When configuring NAT, at least **one ACL (Access Control List) or rule** is needed to define which source IP addresses can be translated.  
+                This ensures that only authorized traffic from the private network is allowed for NAT translation.
+            </p>
+        </div>
+    </div>
+
+    <!-- How NAT Works Card -->
+    <div class="max-w-3xl mx-auto mb-6">
+        <div class="bg-purple-200 p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold mb-2">5. How NAT Works</h2>
+            <p>
+                <strong>Private to Public:</strong> A device with IP 192.168.1.2 sends a packet to the internet. NAT router replaces the source IP with a public IP. <br>
+                <strong>Public to Private:</strong> Response from internet comes to the public IP. NAT router maps it back to 192.168.1.2 using the NAT table.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
