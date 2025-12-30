@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Network Times — PAT Explained</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-black font-serif">
+
+  <!-- Masthead -->
+  <header class="border-b-4 border-black px-10 py-6">
+    <div class="flex justify-between items-end">
+      <h1 class="text-5xl font-extrabold tracking-tight">
+        The Network Times
+      </h1>
+      <div class="text-right text-sm">
+        <p>CCNA Edition</p>
+        <p>Vol. 1 • Networking Fundamentals</p>
+      </div>
+    </div>
+    <p class="text-center text-sm mt-3 tracking-wide">
+      “All the packets fit to route”
+    </p>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="px-10 py-8">
+
+    <!-- Lead Story -->
+    <section class="border-b border-black pb-6 mb-6">
+      <h2 class="text-4xl font-bold leading-tight mb-3">
+        PAT Allows Thousands of Devices to Share One Public Address
+      </h2>
+      <p class="text-lg leading-relaxed max-w-5xl">
+        As IPv4 addresses continue to run short, networks have adopted a method
+        known as Port Address Translation, or PAT. The technique enables multiple
+        private hosts to communicate with the internet using a single public IP
+        address, relying on port numbers to keep conversations distinct.
+      </p>
+    </section>
+
+    <!-- Columns -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Column 1 -->
+      <article>
+        <h3 class="text-2xl font-bold mb-2 border-b border-black pb-1">
+          The Problem
+        </h3>
+        <p class="leading-relaxed text-sm">
+          The internet was not originally designed to support billions of devices.
+          IPv4 provides a limited number of public addresses, far fewer than the
+          number of computers, phones, and smart devices now in daily use.
+        </p>
+        <p class="leading-relaxed text-sm mt-3">
+          Assigning a public IP address to every device would quickly exhaust
+          the available address space.
+        </p>
+      </article>
+
+      <!-- Column 2 -->
+      <article>
+        <h3 class="text-2xl font-bold mb-2 border-b border-black pb-1">
+          Why PAT Exists
+        </h3>
+        <p class="leading-relaxed text-sm">
+          PAT was introduced to conserve public IP addresses while still allowing
+          widespread internet access. A router represents an entire private network
+          to the outside world using a single public identity.
+        </p>
+        <p class="leading-relaxed text-sm mt-3">
+          Each outgoing connection is marked with a unique source port, ensuring
+          that responses can be correctly identified.
+        </p>
+      </article>
+
+      <!-- Column 3 -->
+      <article>
+        <h3 class="text-2xl font-bold mb-2 border-b border-black pb-1">
+          How TCP Stays Organized
+        </h3>
+        <p class="leading-relaxed text-sm">
+          TCP connections begin with a three-way handshake: SYN, SYN-ACK, and ACK.
+          When many devices initiate connections simultaneously, PAT plays a
+          critical role in maintaining order.
+        </p>
+        <p class="leading-relaxed text-sm mt-3">
+          By translating both IP addresses and port numbers, the router ensures
+          that returning SYN-ACK packets reach the correct internal host.
+        </p>
+      </article>
+
+    </section>
+
+    <!-- Divider -->
+    <hr class="border-black my-8">
+
+    <!-- Bottom Feature -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <article>
+        <h3 class="text-2xl font-bold mb-2">
+          No Duplicate SYN-ACK Packets
+        </h3>
+        <p class="leading-relaxed text-sm">
+          Without PAT, multiple internal devices would appear identical to an
+          external server. PAT prevents confusion by assigning each session a
+          unique port number, recorded in a translation table.
+        </p>
+        <p class="leading-relaxed text-sm mt-3">
+          When a SYN-ACK packet returns, the router consults this table and forwards
+          the packet to the correct private IP address.
+        </p>
+      </article>
+
+      <article>
+        <h3 class="text-2xl font-bold mb-2">
+          A Simple Example
+        </h3>
+        <p class="leading-relaxed text-sm">
+          A laptop and a phone may both access the same website at the same time.
+          To the server, both connections appear to come from the same public IP.
+        </p>
+        <p class="leading-relaxed text-sm mt-3">
+          The distinction lies in the port numbers, which allow the router to
+          separate and safely deliver each response.
+        </p>
+      </article>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-black text-center text-xs py-4">
+    © The Network Times • Educational Use • CCNA Study
+  </footer>
+
+</body>
+</html>
