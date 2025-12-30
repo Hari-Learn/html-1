@@ -9,34 +9,38 @@
 <body class="bg-white text-slate-900 font-serif">
 
   <!-- Masthead -->
-  <header class="border-b-4 border-blue-700 px-10 py-6">
-    <div class="flex justify-between items-end">
+  <header class="border-b-4 border-blue-700 px-10 py-6 text-center">
+
+    <div class="flex items-center justify-center gap-6">
+      <span class="text-3xl text-blue-700">❖</span>
       <h1 class="text-5xl font-extrabold tracking-tight text-blue-800">
         The Network Times
       </h1>
-      <div class="text-right text-sm text-blue-700">
-        <p>CCNA Edition</p>
-        <p>Address Translation Series</p>
-      </div>
+      <span class="text-3xl text-blue-700">❖</span>
     </div>
-    <p class="text-center text-sm mt-3 tracking-wide text-blue-600">
-      “Explaining networks, one packet at a time”
-    </p>
+
+    <div class="mt-3 text-sm text-blue-700">
+      <p>CCNA Edition • Address Translation Series</p>
+      <p class="tracking-wide italic">
+        “Explaining networks, one packet at a time”
+      </p>
+    </div>
+
   </header>
 
   <!-- Main Content -->
   <main class="px-10 py-8">
 
     <!-- Lead Story -->
-    <section class="border-b-2 border-dotted border-blue-400 pb-6 mb-6">
+    <section class="border-b-2 border-dotted border-blue-400 pb-6 mb-6 text-center">
       <h2 class="text-4xl font-bold leading-tight mb-3 text-blue-800">
-        Dynamic NAT Shares a Pool of Public Addresses Across Many Devices
+        Dynamic NAT Shares a Pool of Public Addresses
       </h2>
-      <p class="text-lg leading-relaxed max-w-5xl">
-        Dynamic Network Address Translation, known as Dynamic NAT, allows
-        internal private hosts to temporarily use public IP addresses from
-        a shared pool. Unlike Static NAT, these mappings are created only
-        when needed and are removed when communication ends.
+      <p class="text-lg leading-relaxed max-w-5xl mx-auto">
+        Dynamic Network Address Translation allows private hosts to
+        temporarily borrow public IP addresses from a shared pool.
+        These mappings are created when needed and removed when
+        communication ends.
       </p>
     </section>
 
@@ -45,49 +49,45 @@
 
       <!-- Column 1 -->
       <article class="border-r-2 border-dotted border-blue-300 pr-6">
-        <h3 class="text-2xl font-bold mb-2 text-blue-700">
+        <h3 class="text-2xl font-bold mb-2 text-blue-700 text-center">
           What Is Dynamic NAT?
         </h3>
         <p class="leading-relaxed text-sm">
-          Dynamic NAT maps a private IP address to a public IP address
-          selected from a predefined pool. The mapping is not permanent
-          and exists only for the duration of the session.
+          Dynamic NAT creates a temporary one-to-one mapping between a
+          private IP address and a public IP address selected from a pool.
         </p>
         <p class="leading-relaxed text-sm mt-3">
-          Once the session ends, the public IP is returned to the pool
-          for reuse by another internal host.
+          The mapping exists only while the session is active.
         </p>
       </article>
 
       <!-- Column 2 -->
       <article class="border-r-2 border-dotted border-blue-300 pr-6">
-        <h3 class="text-2xl font-bold mb-2 text-blue-700">
-          Why Dynamic NAT Exists
+        <h3 class="text-2xl font-bold mb-2 text-blue-700 text-center">
+          Why It Exists
         </h3>
         <p class="leading-relaxed text-sm">
-          Organizations often have fewer public IP addresses than internal
-          devices. Dynamic NAT allows these public addresses to be reused
-          efficiently without assigning them permanently.
+          Not all internal devices need internet access at the same time.
+          Dynamic NAT allows organizations to reuse public IP addresses
+          efficiently.
         </p>
         <p class="leading-relaxed text-sm mt-3">
-          This approach balances accessibility with conservation of
-          public IP resources.
+          This reduces the number of public addresses required.
         </p>
       </article>
 
       <!-- Column 3 -->
       <article>
-        <h3 class="text-2xl font-bold mb-2 text-blue-700">
-          The Problem It Solves
+        <h3 class="text-2xl font-bold mb-2 text-blue-700 text-center">
+          Problem It Solves
         </h3>
         <p class="leading-relaxed text-sm">
-          Without translation, private IP addresses cannot communicate
-          on the public internet. Static NAT, while reliable, requires
-          one public IP per device.
+          Private IP addresses are not routable on the internet.
+          Static NAT requires one public IP per device.
         </p>
         <p class="leading-relaxed text-sm mt-3">
-          Dynamic NAT solves this by allowing multiple devices to share
-          a limited set of public IP addresses over time.
+          Dynamic NAT solves this by allowing limited public IPs
+          to serve many users over time.
         </p>
       </article>
 
@@ -100,31 +100,29 @@
     <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
       <article class="border-dotted border-blue-400 border-2 p-4">
-        <h3 class="text-2xl font-bold mb-2 text-blue-800">
+        <h3 class="text-2xl font-bold mb-2 text-blue-800 text-center">
           How Dynamic NAT Works
         </h3>
         <p class="leading-relaxed text-sm">
-          When an internal device initiates traffic, the router assigns
-          the first available public IP from the pool and records the
-          mapping in its NAT table.
+          When traffic begins, the router assigns the first available
+          public IP from the pool and records the translation.
         </p>
         <p class="leading-relaxed text-sm mt-3">
-          Incoming return traffic is matched to this entry and forwarded
-          to the correct internal host.
+          Return traffic is matched to this entry and forwarded
+          correctly.
         </p>
       </article>
 
       <article class="border-dotted border-blue-400 border-2 p-4">
-        <h3 class="text-2xl font-bold mb-2 text-blue-800">
-          A Practical Example
+        <h3 class="text-2xl font-bold mb-2 text-blue-800 text-center">
+          Example Scenario
         </h3>
         <p class="leading-relaxed text-sm">
-          A company owns five public IP addresses but has fifty employees.
-          Only active users are assigned public IPs at any given time.
+          A company owns ten public IP addresses but has fifty employees.
+          Only active sessions consume public IPs.
         </p>
         <p class="leading-relaxed text-sm mt-3">
-          When an employee disconnects, the public IP becomes available
-          for another user.
+          When a session ends, the IP is returned to the pool.
         </p>
       </article>
 
@@ -134,7 +132,7 @@
 
   <!-- Footer -->
   <footer class="border-t-2 border-dotted border-blue-500 text-center text-xs py-4 text-blue-700">
-    © The Network Times • Dynamic NAT Explained • CCNA Study Series
+    © The Network Times • Dynamic NAT • CCNA Study Series
   </footer>
 
 </body>
