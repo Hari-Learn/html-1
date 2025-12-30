@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PAT (NAT Overload) – CCNA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-4xl mx-auto p-6">
+    
+    <h1 class="text-3xl font-bold text-blue-700 mb-4">
+      PAT (Port Address Translation) – CCNA
+    </h1>
+
+    <!-- What is PAT -->
+    <section class="bg-white p-5 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-2">What is PAT?</h2>
+      <p class="leading-relaxed">
+        PAT (Port Address Translation), also called <strong>NAT Overload</strong>,
+        allows <strong>multiple private IP addresses</strong> inside a network
+        to share <strong>one public IP address</strong> by using
+        <strong>different port numbers</strong>.
+      </p>
+    </section>
+
+    <!-- Problem -->
+    <section class="bg-white p-5 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-2">What Problem Does PAT Solve?</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>IPv4 public IP addresses are limited</li>
+        <li>Organizations and homes have many devices</li>
+        <li>Each device needs internet access</li>
+        <li>Giving every device a public IP is not possible</li>
+      </ul>
+    </section>
+
+    <!-- Why PAT Exists -->
+    <section class="bg-white p-5 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-2">Why Does PAT Exist?</h2>
+      <p class="leading-relaxed mb-2">
+        PAT exists to allow <strong>many devices</strong> to use the internet
+        at the same time while using only <strong>one public IP address</strong>.
+      </p>
+      <p class="leading-relaxed">
+        The router keeps track of connections using
+        <strong>source port numbers</strong>.
+      </p>
+    </section>
+
+    <!-- TCP Handshake -->
+    <section class="bg-white p-5 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-2">
+        PAT and TCP 3-Way Handshake (No Duplicate SYN-ACK)
+      </h2>
+
+      <p class="leading-relaxed mb-3">
+        During the TCP 3-way handshake:
+      </p>
+
+      <ol class="list-decimal list-inside space-y-2 mb-4">
+        <li>Client sends <strong>SYN</strong></li>
+        <li>Server replies with <strong>SYN-ACK</strong></li>
+        <li>Client sends <strong>ACK</strong></li>
+      </ol>
+
+      <p class="leading-relaxed mb-3">
+        If multiple internal devices send SYN packets using the same public IP,
+        the router must ensure that the returning <strong>SYN-ACK</strong>
+        packets go to the correct device.
+      </p>
+
+      <div class="bg-blue-50 p-4 rounded">
+        <p class="font-semibold mb-2">
+          How PAT prevents duplicate return packets:
+        </p>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Each internal connection is assigned a <strong>unique source port</strong></li>
+          <li>The router stores this in a <strong>NAT table</strong></li>
+          <li>When SYN-ACK returns, the router checks the port number</li>
+          <li>The packet is sent to the correct private IP</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Example -->
+    <section class="bg-white p-5 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-2">Example</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border border-gray-300 text-sm">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="border p-2">Device</th>
+              <th class="border p-2">Private IP</th>
+              <th class="border p-2">Public IP</th>
+              <th class="border p-2">Port</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border p-2">Laptop</td>
+              <td class="border p-2">192.168.1.10</td>
+              <td class="border p-2">203.0.113.5</td>
+              <td class="border p-2">30001</td>
+            </tr>
+            <tr>
+              <td class="border p-2">Phone</td>
+              <td class="border p-2">192.168.1.11</td>
+              <td class="border p-2">203.0.113.5</td>
+              <td class="border p-2">30002</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="bg-green-100 p-5 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold mb-2">Summary</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>PAT allows many devices to share one public IP</li>
+        <li>It solves IPv4 address shortage</li>
+        <li>Uses port numbers to track connections</li>
+        <li>Ensures correct SYN-ACK delivery in TCP handshake</li>
+      </ul>
+    </section>
+
+  </div>
+
+</body>
+</html>
