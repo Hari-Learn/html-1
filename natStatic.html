@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Network Times — Static NAT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-black font-serif">
+
+  <!-- Masthead -->
+  <header class="border-b-4 border-black px-10 py-6">
+    <div class="flex justify-between items-end">
+      <h1 class="text-5xl font-extrabold tracking-tight">
+        The Network Times
+      </h1>
+      <div class="text-right text-sm">
+        <p>CCNA Edition</p>
+        <p>Routing & Addressing</p>
+      </div>
+    </div>
+    <p class="text-center text-sm mt-3 tracking-wide">
+      “Reliable translations for a connected world”
+    </p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="px-10 py-8">
+
+    <!-- Lead Story -->
+    <section class="border-b border-black pb-6 mb-6">
+      <h2 class="text-4xl font-bold leading-tight mb-3">
+        Static NAT Provides a Permanent Public Identity for Internal Hosts
+      </h2>
+      <p class="text-lg leading-relaxed max-w-5xl">
+        Static Network Address Translation, commonly known as Static NAT,
+        creates a fixed, one-to-one mapping between a private IP address and
+        a public IP address. Unlike dynamic methods, this translation does
+        not change and remains consistent at all times.
+      </p>
+    </section>
+
+    <!-- Columns -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Column 1 -->
+      <article>
+        <h3 class="text-2xl font-bold mb-2 border-b border-black pb-1">
+          What Is Static NAT?
+        </h3>
+        <p class="leading-relaxed text-sm">
+          Static NAT maps one private IP address to one public IP address.
+          Whenever traffic is sent or received, the same translation is used.
+        </p>
+        <p class="leading-relaxed text-sm mt-3">
+          This means an internal device always appears on the internet
+          with the same public IP address.
+        </p>
+      </article>
+
+      <!-- Column 2 -->
+      <article>
+        <h3 class="text-2xl font-bold mb-2 border-b border-black pb-1">
+          Why Static NAT Exists
+        </h3>
+        <p class="leading-relaxed text-sm">
+          Some network devices must be reachable from the internet at a
+          known and predictable address. Examples include web servers,
+          mail servers, and network management systems.
+        </p>
+        <p class="leading-relaxed text-sm mt-3">
+          Static NAT ensures that external users can reliably reach
+          these internal resources.
+        </p>
+      </article>
+
+      <!-- Column 3 -->
+      <article>
+        <h3 class="text-2xl font-bold mb-2 border-b border-black pb-1">
+          The Problem It Solves
+        </h3>
+        <p class="leading-relaxed text-sm">
+          Private IP addresses are not routable on the public internet.
+          Without translation, internal servers would be invisible
+          to external clients.
+        </p>
+        <p class="leading-relaxed text-sm mt-3">
+          Static NAT solves this by providing a valid public address
+          while keeping the internal addressing scheme unchanged.
+        </p>
+      </article>
+
+    </section>
+
+    <!-- Divider -->
+    <hr class="border-black my-8">
+
+    <!-- Bottom Feature -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <article>
+        <h3 class="text-2xl font-bold mb-2">
+          Consistency and Reliability
+        </h3>
+        <p class="leading-relaxed text-sm">
+          Because the mapping never changes, Static NAT is ideal for services
+          that depend on DNS records or firewall rules tied to a specific
+          public IP address.
+        </p>
+        <p class="leading-relaxed text-sm mt-3">
+          This consistency simplifies troubleshooting and improves
+          service availability.
+        </p>
+      </article>
+
+      <article>
+        <h3 class="text-2xl font-bold mb-2">
+          A Simple Example
+        </h3>
+        <p class="leading-relaxed text-sm">
+          An internal web server with a private address of 192.168.1.10
+          is permanently mapped to a public address such as 203.0.113.10.
+        </p>
+        <p class="leading-relaxed text-sm mt-3">
+          Any request sent to the public address is always delivered
+          to the same internal server.
+        </p>
+      </article>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-black text-center text-xs py-4">
+    © The Network Times • Static NAT Explained • CCNA Study Material
+  </footer>
+
+</body>
+</html>
