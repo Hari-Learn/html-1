@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VPN Explained</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-slate-900 text-white py-10">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-4xl font-bold mb-2">Virtual Private Network (VPN)</h1>
+      <p class="text-gray-300">
+        Understanding the problem, the solution, and how VPN tunnels work
+      </p>
+    </div>
+  </header>
+
+  <!-- Section 1 -->
+  <section class="w-full">
+    <div class="grid md:grid-cols-2">
+      <div class="bg-slate-800 p-10">
+        <h2 class="text-white text-2xl font-semibold mb-4">The Problem</h2>
+        <p class="text-gray-300 leading-relaxed">
+          When you connect to the internet without protection, your data can be
+          exposed. Internet Service Providers (ISPs), attackers on public Wi-Fi,
+          and other intermediaries can see or intercept your traffic.
+          <br /><br />
+          This is especially risky on public networks like cafés, airports,
+          or shared office Wi-Fi.
+        </p>
+      </div>
+      <div class="bg-white p-10">
+        <h2 class="text-xl font-semibold mb-4">Common Risks</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Data interception (man-in-the-middle attacks)</li>
+          <li>Tracking and logging of online activity</li>
+          <li>IP address exposure</li>
+          <li>Unsecured public Wi-Fi networks</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="w-full">
+    <div class="grid md:grid-cols-2">
+      <div class="bg-white p-10">
+        <h2 class="text-xl font-semibold mb-4">Why We Need a VPN</h2>
+        <p class="leading-relaxed">
+          A VPN protects your internet connection by encrypting your data and
+          hiding your real IP address. This makes your online activity private
+          and secure.
+        </p>
+      </div>
+      <div class="bg-slate-800 p-10">
+        <h2 class="text-white text-2xl font-semibold mb-4">What a VPN Solves</h2>
+        <ul class="text-gray-300 list-disc list-inside space-y-2">
+          <li>Encrypts data so others cannot read it</li>
+          <li>Protects users on public Wi-Fi</li>
+          <li>Hides real IP address</li>
+          <li>Creates a secure private connection over the internet</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="w-full">
+    <div class="grid md:grid-cols-2">
+      <div class="bg-slate-800 p-10">
+        <h2 class="text-white text-2xl font-semibold mb-4">What Is a Tunnel?</h2>
+        <p class="text-gray-300 leading-relaxed">
+          A VPN tunnel is an encrypted pathway between your device and the VPN
+          server. All data sent through this tunnel is protected from outsiders.
+          <br /><br />
+          Think of it like a secure pipe inside the public internet where only
+          you and the VPN server can see what’s inside.
+        </p>
+      </div>
+      <div class="bg-white p-10">
+        <h2 class="text-xl font-semibold mb-4">Tunnel Characteristics</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Uses encryption</li>
+          <li>Encapsulates network traffic</li>
+          <li>Protects data integrity and privacy</li>
+          <li>Connects client and server securely</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="w-full">
+    <div class="grid md:grid-cols-2">
+      <div class="bg-white p-10">
+        <h2 class="text-xl font-semibold mb-4">Example Tunnel Commands</h2>
+        <p class="mb-4">
+          Below are basic examples of how tunnels are created using common tools.
+        </p>
+        <pre class="bg-gray-900 text-green-400 p-4 rounded text-sm overflow-x-auto">
+# SSH Tunnel (Dynamic SOCKS Proxy)
+ssh -D 1080 user@server_ip
+
+# OpenVPN Client Command
+sudo openvpn --config client.ovpn
+        </pre>
+      </div>
+      <div class="bg-slate-800 p-10">
+        <h2 class="text-white text-2xl font-semibold mb-4">What These Do</h2>
+        <ul class="text-gray-300 list-disc list-inside space-y-2">
+          <li>SSH tunneling forwards traffic securely</li>
+          <li>OpenVPN creates an encrypted VPN tunnel</li>
+          <li>All data travels safely through the tunnel</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-gray-400 py-6 text-center">
+    <p>© 2025 VPN Basics – Educational Example</p>
+  </footer>
+
+</body>
+</html>
