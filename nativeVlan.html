@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Default VLAN vs Native VLAN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+  <div class="max-w-4xl mx-auto px-5 py-10">
+
+    <h1 class="text-3xl font-bold text-white text-center mb-10">
+      Default VLAN vs Native VLAN
+    </h1>
+
+    <!-- Default VLAN -->
+    <div class="bg-gray-800 p-6 rounded-lg mb-6">
+      <h2 class="text-white text-xl font-semibold mb-3">
+        What is Default VLAN?
+      </h2>
+      <p>
+        The Default VLAN is the VLAN that all switch ports belong to when a switch
+        is first configured. On most switches (like Cisco), this is VLAN 1.
+      </p>
+      <ul class="list-disc list-inside mt-3 space-y-1">
+        <li>All ports are assigned to it by default</li>
+        <li>Used for basic switch communication</li>
+        <li>Not recommended for user traffic</li>
+      </ul>
+    </div>
+
+    <!-- Native VLAN -->
+    <div class="bg-gray-800 p-6 rounded-lg mb-6">
+      <h2 class="text-white text-xl font-semibold mb-3">
+        What is Native VLAN?
+      </h2>
+      <p>
+        The Native VLAN is used on trunk ports. Any untagged traffic received on
+        a trunk port is placed into the native VLAN.
+      </p>
+      <ul class="list-disc list-inside mt-3 space-y-1">
+        <li>Used only on trunk links</li>
+        <li>Handles untagged frames</li>
+        <li>Default native VLAN is VLAN 1</li>
+      </ul>
+    </div>
+
+    <!-- Difference -->
+    <div class="bg-gray-800 p-6 rounded-lg mb-6">
+      <h2 class="text-white text-xl font-semibold mb-3">
+        Difference Between Default VLAN and Native VLAN
+      </h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border border-gray-700">
+          <thead class="bg-gray-700 text-white">
+            <tr>
+              <th class="p-2 border border-gray-700">Default VLAN</th>
+              <th class="p-2 border border-gray-700">Native VLAN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-2 border border-gray-700">Assigned to all ports initially</td>
+              <td class="p-2 border border-gray-700">Used only on trunk ports</td>
+            </tr>
+            <tr>
+              <td class="p-2 border border-gray-700">Handles normal access traffic</td>
+              <td class="p-2 border border-gray-700">Handles untagged trunk traffic</td>
+            </tr>
+            <tr>
+              <td class="p-2 border border-gray-700">Usually VLAN 1</td>
+              <td class="p-2 border border-gray-700">Usually VLAN 1 (can be changed)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Interview Answer -->
+    <div class="bg-gray-800 p-6 rounded-lg">
+      <h2 class="text-white text-xl font-semibold mb-3">
+        How to Explain This in an Interview
+      </h2>
+
+      <p class="mb-3">You can answer like this:</p>
+
+      <div class="bg-black text-green-400 p-4 rounded text-sm">
+        “The default VLAN is the VLAN where all switch ports belong initially,
+        usually VLAN 1. The native VLAN is used on trunk ports and carries
+        untagged traffic. By default, both are VLAN 1, but for security reasons,
+        we usually change the native VLAN and avoid using VLAN 1 for user traffic.”
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
