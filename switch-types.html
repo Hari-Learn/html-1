@@ -1,0 +1,127 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Managed vs Unmanaged Switch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-teal-600 text-white p-6 text-center">
+    <h1 class="text-3xl font-bold">Managed vs Unmanaged Switch</h1>
+    <p class="text-lg mt-2">Features and Differences</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto p-6 space-y-6">
+
+    <!-- What is a Switch -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold text-teal-600 mb-3">What is a Network Switch?</h2>
+      <p>
+        A <strong>network switch</strong> connects multiple devices in a LAN and forwards data
+        using <strong>MAC addresses</strong>. Switches can be classified as
+        <strong>Managed</strong> and <strong>Unmanaged</strong> based on control and configuration.
+      </p>
+    </section>
+
+    <!-- Managed Switch -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold text-green-600 mb-3">Managed Switch</h2>
+      <p class="mb-3">
+        A <strong>Managed Switch</strong> provides full control over the network and allows
+        administrators to configure, monitor, and manage traffic.
+      </p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Supports <strong>VLAN</strong> configuration.</li>
+        <li>Enables <strong>traffic monitoring</strong> (SNMP, Port Mirroring).</li>
+        <li>Provides <strong>QoS</strong> for traffic prioritization.</li>
+        <li>Offers <strong>security features</strong> (Port Security, ACLs).</li>
+        <li>Can be configured via <strong>CLI, Web GUI, or SNMP</strong>.</li>
+      </ul>
+    </section>
+
+    <!-- Unmanaged Switch -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-3">Unmanaged Switch</h2>
+      <p class="mb-3">
+        An <strong>Unmanaged Switch</strong> is a plug-and-play device with no configuration options.
+        It is mainly used in small or home networks.
+      </p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>No configuration required.</li>
+        <li>Automatically forwards traffic.</li>
+        <li>Does not support VLANs or QoS.</li>
+        <li>Limited or no security features.</li>
+        <li>Easy to use and low cost.</li>
+      </ul>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="bg-white rounded-lg shadow p-6 overflow-x-auto">
+      <h2 class="text-2xl font-semibold mb-4 text-center">Managed vs Unmanaged Switch</h2>
+      <table class="w-full border border-gray-300 text-center">
+        <thead class="bg-gray-200">
+          <tr>
+            <th class="border p-2">Feature</th>
+            <th class="border p-2">Managed Switch</th>
+            <th class="border p-2">Unmanaged Switch</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border p-2">Configuration</td>
+            <td class="border p-2">Yes</td>
+            <td class="border p-2">No</td>
+          </tr>
+          <tr>
+            <td class="border p-2">VLAN Support</td>
+            <td class="border p-2">Supported</td>
+            <td class="border p-2">Not Supported</td>
+          </tr>
+          <tr>
+            <td class="border p-2">Security</td>
+            <td class="border p-2">High</td>
+            <td class="border p-2">Low</td>
+          </tr>
+          <tr>
+            <td class="border p-2">Monitoring</td>
+            <td class="border p-2">Yes</td>
+            <td class="border p-2">No</td>
+          </tr>
+          <tr>
+            <td class="border p-2">Cost</td>
+            <td class="border p-2">Higher</td>
+            <td class="border p-2">Lower</td>
+          </tr>
+          <tr>
+            <td class="border p-2">Usage</td>
+            <td class="border p-2">Enterprise / Large Networks</td>
+            <td class="border p-2">Home / Small Networks</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- When to Use -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-3">When to Use Which?</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Use a <strong>Managed Switch</strong> for large, secure, and performance-critical networks.</li>
+        <li>Use an <strong>Unmanaged Switch</strong> for simple, low-cost, and small setups.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4 mt-6">
+    <p>Computer Networks | Switch Types</p>
+  </footer>
+
+</body>
+</html>
