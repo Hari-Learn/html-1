@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Behavior of Hub, Switch, and Router</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-6 text-center">
+    <h1 class="text-3xl font-bold">Behavior of Network Devices</h1>
+    <p class="text-lg mt-2">Hub, Switch, and Router</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto p-6 space-y-6">
+
+    <!-- Hub -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-3">Hub</h2>
+      <p class="mb-3">
+        A <strong>Hub</strong> is a basic networking device that connects multiple computers in a network.
+      </p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Works at the <strong>Physical Layer</strong> (Layer 1).</li>
+        <li>Sends data to <strong>all connected devices</strong>.</li>
+        <li>Does not identify destination devices.</li>
+        <li>Causes more network traffic and collisions.</li>
+        <li>Less secure and slower.</li>
+      </ul>
+    </section>
+
+    <!-- Switch -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold text-green-600 mb-3">Switch</h2>
+      <p class="mb-3">
+        A <strong>Switch</strong> is a smarter device used to connect devices within a local network.
+      </p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Works at the <strong>Data Link Layer</strong> (Layer 2).</li>
+        <li>Uses <strong>MAC addresses</strong> to send data.</li>
+        <li>Sends data only to the <strong>intended device</strong>.</li>
+        <li>Reduces collisions and improves speed.</li>
+        <li>More secure than a hub.</li>
+      </ul>
+    </section>
+
+    <!-- Router -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-3">Router</h2>
+      <p class="mb-3">
+        A <strong>Router</strong> connects different networks and directs data between them.
+      </p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Works at the <strong>Network Layer</strong> (Layer 3).</li>
+        <li>Uses <strong>IP addresses</strong> to route data.</li>
+        <li>Connects LAN to the <strong>Internet</strong>.</li>
+        <li>Selects the best path for data transmission.</li>
+        <li>Provides security features like firewalls.</li>
+      </ul>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="bg-white rounded-lg shadow p-6 overflow-x-auto">
+      <h2 class="text-2xl font-semibold mb-4 text-center">Comparison</h2>
+      <table class="w-full border border-gray-300 text-center">
+        <thead class="bg-gray-200">
+          <tr>
+            <th class="border p-2">Feature</th>
+            <th class="border p-2">Hub</th>
+            <th class="border p-2">Switch</th>
+            <th class="border p-2">Router</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border p-2">OSI Layer</td>
+            <td class="border p-2">Layer 1</td>
+            <td class="border p-2">Layer 2</td>
+            <td class="border p-2">Layer 3</td>
+          </tr>
+          <tr>
+            <td class="border p-2">Address Used</td>
+            <td class="border p-2">None</td>
+            <td class="border p-2">MAC</td>
+            <td class="border p-2">IP</td>
+          </tr>
+          <tr>
+            <td class="border p-2">Data Delivery</td>
+            <td class="border p-2">Broadcast</td>
+            <td class="border p-2">Unicast</td>
+            <td class="border p-2">Routing</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4 mt-6">
+    <p>Computer Networks | Hub, Switch & Router</p>
+  </footer>
+
+</body>
+</html>
