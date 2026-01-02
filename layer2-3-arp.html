@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ARP Behavior in Layer 2 and Layer 3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white p-6 text-center">
+    <h1 class="text-3xl font-bold">ARP Protocol Behavior</h1>
+    <p class="text-lg mt-2">Layer 2 and Layer 3 Interaction</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto p-6 space-y-6">
+
+    <!-- What is ARP -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold text-indigo-600 mb-3">What is ARP?</h2>
+      <p>
+        <strong>ARP (Address Resolution Protocol)</strong> is used to map an
+        <strong>IP address (Layer 3)</strong> to a
+        <strong>MAC address (Layer 2)</strong> so that data can be delivered within a local network.
+      </p>
+    </section>
+
+    <!-- ARP and Layer 2 -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold text-green-600 mb-3">ARP Behavior at Layer 2 (Data Link Layer)</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>ARP uses <strong>MAC addresses</strong> for communication.</li>
+        <li>ARP Request is sent as a <strong>broadcast frame</strong>.</li>
+        <li>Destination MAC for ARP Request: <strong>FF:FF:FF:FF:FF:FF</strong>.</li>
+        <li>ARP Reply is sent as a <strong>unicast frame</strong>.</li>
+        <li>Switches forward ARP frames using Layer 2 logic.</li>
+      </ul>
+    </section>
+
+    <!-- ARP and Layer 3 -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-3">ARP Behavior at Layer 3 (Network Layer)</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>ARP works with <strong>IP addresses</strong>.</li>
+        <li>Checks whether the destination IP is in the <strong>same network</strong>.</li>
+        <li>If destination is local, ARP finds the destination MAC.</li>
+        <li>If destination is remote, ARP resolves the <strong>default gateway's MAC</strong>.</li>
+        <li>Routers do not forward ARP broadcasts.</li>
+      </ul>
+    </section>
+
+    <!-- ARP Working Steps -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-3">Steps of ARP Working</h2>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>Host checks ARP cache for destination IP.</li>
+        <li>If not found, sends ARP Request (broadcast).</li>
+        <li>Target device sends ARP Reply (unicast).</li>
+        <li>MAC address is stored in ARP table.</li>
+        <li>Data transmission begins.</li>
+      </ol>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="bg-white rounded-lg shadow p-6 overflow-x-auto">
+      <h2 class="text-2xl font-semibold mb-4 text-center">Layer 2 vs Layer 3 in ARP</h2>
+      <table class="w-full border border-gray-300 text-center">
+        <thead class="bg-gray-200">
+          <tr>
+            <th class="border p-2">Aspect</th>
+            <th class="border p-2">Layer 2</th>
+            <th class="border p-2">Layer 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border p-2">Address Type</td>
+            <td class="border p-2">MAC Address</td>
+            <td class="border p-2">IP Address</td>
+          </tr>
+          <tr>
+            <td class="border p-2">Broadcast</td>
+            <td class="border p-2">Yes</td>
+            <td class="border p-2">No</td>
+          </tr>
+          <tr>
+            <td class="border p-2">Device Involved</td>
+            <td class="border p-2">Switch</td>
+            <td class="border p-2">Router</td>
+          </tr>
+          <tr>
+            <td class="border p-2">Purpose</td>
+            <td class="border p-2">Frame Delivery</td>
+            <td class="border p-2">Logical Address Resolution</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4 mt-6">
+    <p>Computer Networks | ARP Protocol</p>
+  </footer>
+
+</body>
+</html>
