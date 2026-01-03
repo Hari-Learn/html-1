@@ -5,26 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRID</title>
 <style>
-    .parent{
-        display:grid;
-        grid-template-columns: 25% 50% 25%;
-        
-    }
-    divs{
-        border:1px solid #000;
-        border-radius: 10px;
-    }
-    .container{
-       
+   
+    .container{       
         padding: 20px;
-        margin:20px;
-        
+        margin:20px;        
         border:5px rgb(24, 201, 24) solid;
         border-radius: 10px;
-        display: grid;       
-        gap: 20px 10px;
+        display: grid;              
         grid-template-columns: 100px 200px 300px;
         grid-template-rows: 100px 200px;
+        gap:  10px;
     }
     .item{
         background-color: orangered;
@@ -36,12 +26,7 @@
 </style>
 </head>
 <body>
-    <!-- <div class="parent">
-        <div>Left panel</div>
-        <div>Main panel</div>
-        <div>Right panel</div>
-
-    </div> -->
+ 
 
     <div class="container">
         <div class="item">1</div>
@@ -54,9 +39,6 @@
         <div class="item">8</div>
         <div class="item">9</div>
         <div class="item">10</div>
-    </div>
-
-   
-    
+    </div>    
 </body>
 </html>
