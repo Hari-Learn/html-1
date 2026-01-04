@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Routing with OSPF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-8 shadow">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold">Routing with OSPF</h1>
+      <p class="mt-2 text-blue-100">
+        Open Shortest Path First (OSPF) Routing Protocol
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 py-10 grid gap-8">
+
+    <!-- What is OSPF Card -->
+    <div class="bg-white rounded-xl shadow p-6 flex gap-4">
+      <!-- Icon -->
+      <svg class="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M12 3v18m9-9H3" />
+      </svg>
+
+      <!-- Content -->
+      <div>
+        <h2 class="text-2xl font-semibold mb-2">What is OSPF?</h2>
+        <p>
+          OSPF (Open Shortest Path First) is a <strong>link-state dynamic routing protocol</strong>
+          used to determine the shortest path between routers in an IP network.
+        </p>
+      </div>
+    </div>
+
+    <!-- Key Features Cards -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Key Features</h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow p-5 text-center">
+          <svg class="w-10 h-10 mx-auto text-green-500" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <h3 class="font-semibold mt-3">Fast Convergence</h3>
+          <p class="text-sm mt-1">Quickly adapts to network changes</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5 text-center">
+          <svg class="w-10 h-10 mx-auto text-purple-500" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9 20l-5.447-2.724A2 2 0 013 15.382V8.618a2 2 0 011.553-1.894L9 4m0 16l6-3m-6 3V4m6 13l5.447-2.724A2 2 0 0021 12.382V5.618a2 2 0 00-1.553-1.894L15 2m0 15V2" />
+          </svg>
+          <h3 class="font-semibold mt-3">Hierarchical Design</h3>
+          <p class="text-sm mt-1">Uses areas to improve scalability</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5 text-center">
+          <svg class="w-10 h-10 mx-auto text-orange-500" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8v8m0-8V4m0 12v4" />
+          </svg>
+          <h3 class="font-semibold mt-3">Cost Metric</h3>
+          <p class="text-sm mt-1">Chooses best path using bandwidth cost</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OSPF Areas -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">OSPF Areas</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl shadow p-6">
+          <h3 class="font-semibold text-lg mb-2">Area 0 (Backbone)</h3>
+          <p>
+            The core area of OSPF. All other areas must connect to Area 0
+            to exchange routing information.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-6">
+          <h3 class="font-semibold text-lg mb-2">Non-Backbone Areas</h3>
+          <p>
+            These areas reduce routing table size and limit SPF calculations,
+            improving overall network efficiency.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How OSPF Works -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">How OSPF Works</h2>
+
+      <div class="grid md:grid-cols-5 gap-4 text-center">
+        <div class="bg-white shadow rounded-lg p-4">Hello Packets</div>
+        <div class="bg-white shadow rounded-lg p-4">Neighbor Discovery</div>
+        <div class="bg-white shadow rounded-lg p-4">LSDB Creation</div>
+        <div class="bg-white shadow rounded-lg p-4">SPF Algorithm</div>
+        <div class="bg-white shadow rounded-lg p-4">Routing Table</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 py-4 mt-10">
+    <p class="text-center text-sm text-gray-600">
+      © 2026 | OSPF Routing – Networking Fundamentals
+    </p>
+  </footer>
+
+</body>
+</html>
