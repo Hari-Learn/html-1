@@ -1,25 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>RIP in Routing</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 40px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 20px 40px;
+      display: flex;
+      gap: 40px;
+    }
+
+    .column {
+      flex: 1;
+    }
+
+    .column h2 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+      margin-top: 0;
+      color: #222;
+    }
+
+    .icon {
+      font-size: 24px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    p, ul {
+      line-height: 1.6;
+      color: #444;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: #fff;
+      margin-top: 40px;
+    }
+
+    /* Newspaper style boxes */
+    .highlight {
+      background-color: #eee;
+      padding: 10px;
+      border-left: 5px solid #333;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
-<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+<body>
 
-  <div class="text-center bg-gray-800 p-10 rounded-2xl shadow-xl">
-    <h1 class="text-4xl font-bold text-red-500 mb-4">
-      RIP in Routing
-    </h1>
-    <p class="text-gray-300 text-lg">
-      Routing Information Protocol (RIP) —  
-      Remembered for its simplicity and legacy.
-    </p>
+  <header>
+    <h1>RIP in Routing</h1>
+    <p>Routing Information Protocol – Legacy Networking News</p>
+  </header>
 
-    <div class="mt-6 text-sm text-gray-400">
-      🕊️ Hop Count Limited • Periodic Updates • Legacy Protocol
+  <div class="container">
+    <!-- Column 1 -->
+    <div class="column">
+      <div class="highlight">
+        <h2>📰 Overview</h2>
+        <p>
+          RIP (Routing Information Protocol) is a classic distance-vector routing protocol.
+          It measures paths using <strong>hop count</strong> and is mostly used for small internal networks.
+        </p>
+      </div>
+
+      <div class="highlight">
+        <h2>📊 Metrics</h2>
+        <ul>
+          <li>Maximum hops: 15</li>
+          <li>Periodic updates every 30 seconds</li>
+          <li>Simple configuration, low resource usage</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="column">
+      <div class="highlight">
+        <h2>🏢 Internal vs External Use</h2>
+        <ul>
+          <li>✅ Internal networks (IGP) – supported</li>
+          <li>❌ Between organizations or Internet – not suitable</li>
+          <li>Best for small to medium-sized LANs</li>
+        </ul>
+      </div>
+
+      <div class="highlight">
+        <h2>⚠️ Limitations</h2>
+        <ul>
+          <li>Slow convergence in large networks</li>
+          <li>Not scalable for enterprise WANs</li>
+          <li>Superseded by OSPF and EIGRP in most cases</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="column">
+      <div class="highlight">
+        <h2>💡 Where RIP Shines</h2>
+        <ul>
+          <li>Small labs and test networks</li>
+          <li>Educational environments for learning routing basics</li>
+          <li>Simple LANs where advanced protocols are overkill</li>
+        </ul>
+      </div>
+
+      <div class="highlight">
+        <h2>📌 Summary</h2>
+        <p>
+          RIP is a legacy protocol today, remembered for its simplicity.
+          While mostly replaced by modern protocols, it still has educational value
+          and niche internal network use cases.
+        </p>
+      </div>
     </div>
   </div>
+
+  <footer>
+    Networking Daily • Legacy Protocol Section • 2026 Edition
+  </footer>
 
 </body>
 </html>
