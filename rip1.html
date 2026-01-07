@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RIP in Routing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 6px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    p {
+      line-height: 1.6;
+      color: #555;
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>RIP in Routing (Routing Information Protocol)</h1>
+
+    <p>
+      RIP (Routing Information Protocol) is one of the oldest dynamic routing
+      protocols used in computer networks. It works based on the
+      <strong>distance-vector routing algorithm</strong>.
+    </p>
+
+    <h2>How RIP Works</h2>
+    <p>
+      RIP uses <strong>hop count</strong> as its metric to determine the best
+      path to a destination. The maximum hop count allowed is <strong>15</strong>.
+      Any route with 16 hops is considered unreachable.
+    </p>
+
+    <h2>Internal or External Use?</h2>
+    <p>
+      RIP is mainly designed for <strong>internal routing within an organization</strong>.
+      It is used as an <strong>Interior Gateway Protocol (IGP)</strong>.
+    </p>
+
+    <ul>
+      <li><strong>Internal Networks:</strong> ✅ Yes, RIP can be used</li>
+      <li><strong>Between Organizations (Internet):</strong> ❌ Not suitable</li>
+    </ul>
+
+    <h2>Why RIP is NOT Used Externally</h2>
+    <ul>
+      <li>Limited to 15 hops</li>
+      <li>Slow convergence</li>
+      <li>Periodic updates every 30 seconds</li>
+      <li>Not scalable for large networks</li>
+    </ul>
+
+    <h2>Where RIP is Still Used</h2>
+    <ul>
+      <li>Small networks</li>
+      <li>Lab environments</li>
+      <li>Educational purposes</li>
+      <li>Simple internal routing setups</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+      RIP is considered a legacy routing protocol today. While it is simple
+      and easy to configure, modern networks prefer protocols like
+      <strong>OSPF</strong> or <strong>EIGRP</strong> due to better performance
+      and scalability.
+    </p>
+  </div>
+
+</body>
+</html>
