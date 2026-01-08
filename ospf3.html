@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OSPF Routing Protocol – Colorful Cards</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-r from-slate-900 via-gray-900 to-black text-gray-100">
+
+  <header class="py-10 text-center">
+    <h1 class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+      OSPF Routing Protocol
+    </h1>
+    <p class="mt-4 text-gray-300 text-lg">
+      Complete Concepts Explained Using Colorful Cards
+    </p>
+  </header>
+
+  <main class="w-full px-6 pb-16 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+    <!-- Card -->
+    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+      <div class="p-4 font-bold text-xl bg-gradient-to-r from-blue-500 to-indigo-600">
+        What is OSPF?
+      </div>
+      <div class="p-5">
+        OSPF (Open Shortest Path First) is a <strong>link-state interior gateway protocol</strong>
+        used to find the shortest path in large enterprise networks using the SPF algorithm.
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+      <div class="p-4 font-bold text-xl bg-gradient-to-r from-green-400 to-emerald-600">
+        Distance Vector Routing Protocol
+      </div>
+      <div class="p-5">
+        Distance Vector protocols share routes based on distance and direction.
+        <ul class="list-disc ml-5 mt-2">
+          <li>Example: RIP</li>
+          <li>Uses periodic updates</li>
+          <li>Slow convergence</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+      <div class="p-4 font-bold text-xl bg-gradient-to-r from-purple-500 to-fuchsia-600">
+        Link-State Routing Protocol
+      </div>
+      <div class="p-5">
+        Link-state protocols build a full network topology using LSAs and calculate
+        shortest paths using Dijkstra’s SPF algorithm.
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+      <div class="p-4 font-bold text-xl bg-gradient-to-r from-orange-400 to-red-500">
+        Router ID
+      </div>
+      <div class="p-5">
+        Router ID is a 32-bit unique identifier for OSPF routers.
+        <ol class="list-decimal ml-5 mt-2">
+          <li>Manual configuration</li>
+          <li>Highest loopback IP</li>
+          <li>Highest physical IP</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+      <div class="p-4 font-bold text-xl bg-gradient-to-r from-teal-400 to-cyan-600">
+        OSPF Identification
+      </div>
+      <div class="p-5">
+        OSPF identifies routers using:
+        <ul class="list-disc ml-5 mt-2">
+          <li>Router ID</li>
+          <li>Area ID</li>
+          <li>Process ID</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+      <div class="p-4 font-bold text-xl bg-gradient-to-r from-pink-500 to-rose-600">
+        LSDB (Link State Database)
+      </div>
+      <div class="p-5">
+        LSDB stores complete topology information of an OSPF area.
+        All routers in the same area have an identical LSDB.
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+      <div class="p-4 font-bold text-xl bg-gradient-to-r from-yellow-400 to-amber-600">
+        Neighbor Table
+      </div>
+      <div class="p-5">
+        Stores information about directly connected OSPF neighbors including
+        Router ID, state, and timers.
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+      <div class="p-4 font-bold text-xl bg-gradient-to-r from-indigo-500 to-violet-600">
+        OSPF Area
+      </div>
+      <div class="p-5">
+        OSPF areas divide the network to improve scalability.
+        <ul class="list-disc ml-5 mt-2">
+          <li>Area 0 = Backbone</li>
+          <li>All areas connect to Area 0</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+      <div class="p-4 font-bold text-xl bg-gradient-to-r from-lime-400 to-green-600">
+        OSPF Configuration
+      </div>
+      <div class="p-5 text-sm bg-black rounded">
+        <pre>
+router ospf 1
+network 192.168.1.0 0.0.0.255 area 0
+router-id 1.1.1.1
+        </pre>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+      <div class="p-4 font-bold text-xl bg-gradient-to-r from-red-400 to-pink-600">
+        What Happens When OSPF Starts?
+      </div>
+      <div class="p-5">
+        <ul class="list-disc ml-5">
+          <li>Hello packets sent</li>
+          <li>Neighbors discovered</li>
+          <li>LSDB synchronized</li>
+          <li>SPF calculation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+      <div class="p-4 font-bold text-xl bg-gradient-to-r from-sky-400 to-blue-600">
+        Multicast IP 224.0.0.5
+      </div>
+      <div class="p-5">
+        OSPF uses Class D multicast address <strong>224.0.0.5</strong>
+        to communicate with all OSPF routers on a network.
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+      <div class="p-4 font-bold text-xl bg-gradient-to-r from-emerald-400 to-teal-600">
+        Neighbor Adjacency Conditions
+      </div>
+      <div class="p-5">
+        <ul class="list-disc ml-5">
+          <li>Same Area ID</li>
+          <li>Same Hello & Dead time</li>
+          <li>Same network type</li>
+          <li>Unique Router ID</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+      <div class="p-4 font-bold text-xl bg-gradient-to-r from-cyan-400 to-sky-600">
+        Hello Time & Dead Time
+      </div>
+      <div class="p-5">
+        <p><strong>Hello Time:</strong> 10 seconds</p>
+        <p class="mt-2"><strong>Dead Time:</strong> 40 seconds</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="text-center text-gray-400 py-6">
+    © 2026 OSPF Learning • Colorful Tailwind Design
+  </footer>
+
+</body>
+</html>
