@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OSPF Routing Protocol – Complete Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-6xl mx-auto p-6">
+    <h1 class="text-4xl font-bold text-center text-blue-700 mb-8">
+      OSPF (Open Shortest Path First) – Routing Protocol Guide
+    </h1>
+
+    <!-- OSPF Overview -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">What is OSPF?</h2>
+      <p>
+        OSPF (Open Shortest Path First) is a <strong>link-state routing protocol</strong>
+        used in IP networks. It is an Interior Gateway Protocol (IGP) and is commonly
+        used in enterprise and service provider networks.
+      </p>
+    </section>
+
+    <!-- Distance Vector -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">What is a Distance Vector Routing Protocol?</h2>
+      <p>
+        Distance Vector routing protocols share routing information with neighbors
+        based on <strong>distance (metric)</strong> and <strong>direction (next hop)</strong>.
+      </p>
+      <ul class="list-disc ml-6 mt-2">
+        <li>Examples: RIP, IGRP</li>
+        <li>Uses periodic updates</li>
+        <li>Slower convergence</li>
+      </ul>
+    </section>
+
+    <!-- Link State -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">What is a Link-State Routing Protocol?</h2>
+      <p>
+        Link-state routing protocols maintain a complete map of the network topology.
+        Routers exchange link-state information and calculate the shortest path using
+        the <strong>SPF (Dijkstra) algorithm</strong>.
+      </p>
+      <ul class="list-disc ml-6 mt-2">
+        <li>Examples: OSPF, IS-IS</li>
+        <li>Fast convergence</li>
+        <li>Uses LSDB</li>
+      </ul>
+    </section>
+
+    <!-- Router ID -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">What is Router ID?</h2>
+      <p>
+        Router ID is a <strong>32-bit unique identifier</strong> used to identify a router
+        in an OSPF network.
+      </p>
+      <p class="mt-2 font-semibold">Router ID selection order:</p>
+      <ol class="list-decimal ml-6 mt-2">
+        <li>Manually configured Router ID</li>
+        <li>Highest IP address on Loopback interface</li>
+        <li>Highest IP address on physical interface</li>
+      </ol>
+    </section>
+
+    <!-- OSPF Identification -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">OSPF Identification</h2>
+      <p>
+        OSPF uses Router ID, Area ID, and Process ID to identify routers and routing
+        domains within the OSPF network.
+      </p>
+    </section>
+
+    <!-- LSDB -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">What is LSDB?</h2>
+      <p>
+        LSDB (Link State Database) contains complete topology information of the OSPF
+        area. All routers in the same area have an identical LSDB.
+      </p>
+    </section>
+
+    <!-- Neighbor Table -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">What is Neighbor Table?</h2>
+      <p>
+        Neighbor Table stores information about directly connected OSPF neighbors,
+        including their Router ID, state, and timers.
+      </p>
+    </section>
+
+    <!-- Area -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">What is an OSPF Area?</h2>
+      <p>
+        An OSPF area is a logical grouping of routers. Areas help reduce routing table
+        size and improve performance.
+      </p>
+      <ul class="list-disc ml-6 mt-2">
+        <li>Area 0 is Backbone Area</li>
+        <li>All areas must connect to Area 0</li>
+      </ul>
+    </section>
+
+    <!-- OSPF Configuration -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">How to Configure OSPF (Basic to Intermediate)</h2>
+      <p class="font-semibold">Basic Configuration:</p>
+      <pre class="bg-gray-900 text-green-400 p-4 rounded mt-2">
+router ospf 1
+network 192.168.1.0 0.0.0.255 area 0
+      </pre>
+
+      <p class="font-semibold mt-4">Intermediate Configuration:</p>
+      <pre class="bg-gray-900 text-green-400 p-4 rounded mt-2">
+router ospf 1
+router-id 1.1.1.1
+network 10.0.0.0 0.0.0.255 area 0
+network 20.0.0.0 0.0.0.255 area 1
+      </pre>
+    </section>
+
+    <!-- OSPF Enable -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">What Happens When OSPF is Enabled?</h2>
+      <ul class="list-disc ml-6">
+        <li>Hello packets are generated</li>
+        <li>Neighbor discovery starts</li>
+        <li>LSDB synchronization occurs</li>
+        <li>SPF algorithm calculates best path</li>
+      </ul>
+    </section>
+
+    <!-- Multicast -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">Why OSPF Uses Multicast IP 224.0.0.5?</h2>
+      <p>
+        OSPF uses Class D multicast address <strong>224.0.0.5</strong> to send Hello and
+        routing updates to all OSPF routers on the network.
+      </p>
+    </section>
+
+    <!-- Neighbor Conditions -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">OSPF Neighbor Relationship Conditions</h2>
+      <ul class="list-disc ml-6">
+        <li>Same Area ID</li>
+        <li>Same Hello and Dead timers</li>
+        <li>Same network type</li>
+        <li>Unique Router ID</li>
+      </ul>
+    </section>
+
+    <!-- Timers -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">Hello Time and Dead Time</h2>
+      <p>
+        <strong>Hello Time</strong>: Interval at which Hello packets are sent (default 10 seconds).
+      </p>
+      <p class="mt-2">
+        <strong>Dead Time</strong>: Time to wait before declaring a neighbor down
+        (default 40 seconds).
+      </p>
+    </section>
+
+    <footer class="text-center text-gray-600 mt-10">
+      © 2026 OSPF Learning Page
+    </footer>
+  </div>
+
+</body>
+</html>
