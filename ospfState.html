@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OSPF Neighbor States</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-6 shadow-md">
+        <div class="max-w-6xl mx-auto px-4">
+            <h1 class="text-3xl font-bold">OSPF Neighbor States</h1>
+            <p class="text-blue-100 mt-2">Understanding OSPF link and adjacency formation process</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-6">
+
+        <!-- Intro -->
+        <section class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-2xl font-semibold mb-3">What is OSPF?</h2>
+            <p>
+                Open Shortest Path First (OSPF) is a link-state routing protocol used in IP networks.
+                OSPF routers form neighbor relationships and progress through several states before
+                reaching full adjacency and exchanging routing information.
+            </p>
+        </section>
+
+        <!-- States -->
+        <section class="space-y-4">
+
+            <!-- Link Down / Up -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold text-blue-600">1. Link Down / Link Up</h3>
+                <p class="mt-2">
+                    <strong>Link Down:</strong> No OSPF Hello packets are received. The interface is
+                    down or not configured for OSPF.
+                </p>
+                <p class="mt-2">
+                    <strong>Link Up:</strong> The interface becomes active, and the router starts
+                    sending OSPF Hello packets to discover neighbors.
+                </p>
+            </div>
+
+            <!-- Init -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold text-blue-600">2. Init State</h3>
+                <p class="mt-2">
+                    The router receives a Hello packet from a neighbor, but the router’s own Router ID
+                    is not listed in the neighbor’s Hello packet.
+                </p>
+                <p class="mt-2">
+                    This indicates one-way communication.
+                </p>
+            </div>
+
+            <!-- 2-Way -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold text-blue-600">3. 2-Way State</h3>
+                <p class="mt-2">
+                    The router sees its own Router ID in the neighbor’s Hello packet, confirming
+                    two-way communication.
+                </p>
+                <p class="mt-2">
+                    On broadcast and NBMA networks, DR (Designated Router) and BDR elections occur
+                    at this stage.
+                </p>
+            </div>
+
+            <!-- ExStart -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold text-blue-600">4. ExStart State</h3>
+                <p class="mt-2">
+                    Routers decide which one will be the master and which will be the slave for
+                    database synchronization.
+                </p>
+                <p class="mt-2">
+                    The master controls the exchange process using sequence numbers.
+                </p>
+            </div>
+
+            <!-- Exchange -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold text-blue-600">5. Exchange State</h3>
+                <p class="mt-2">
+                    Routers exchange Database Description (DBD) packets.
+                </p>
+                <p class="mt-2">
+                    These packets describe the contents of the link-state database without sending
+                    the full LSAs.
+                </p>
+            </div>
+
+            <!-- Loading -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold text-blue-600">6. Loading State</h3>
+                <p class="mt-2">
+                    Routers request missing or outdated Link-State Advertisements (LSAs) using
+                    Link-State Request packets.
+                </p>
+                <p class="mt-2">
+                    The requested LSAs are sent in Link-State Update packets.
+                </p>
+            </div>
+
+            <!-- Full -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold text-blue-600">7. Full State</h3>
+                <p class="mt-2">
+                    The routers have fully synchronized link-state databases.
+                </p>
+                <p class="mt-2">
+                    This is the final and stable state where routers can calculate routes using
+                    the SPF (Dijkstra) algorithm.
+                </p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-4 mt-10">
+        <div class="max-w-6xl mx-auto px-4 text-center text-sm">
+            © 2026 OSPF Learning Page | Tailwind CSS
+        </div>
+    </footer>
+
+</body>
+</html>
