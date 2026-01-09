@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OSPF Neighbor States – Detailed Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 text-gray-800">
+
+  <!-- Title Section -->
+  <header class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-10 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-4xl font-bold">OSPF Neighbor States</h1>
+      <p class="mt-3 text-lg text-indigo-100">
+        Link Up / Down, Init, 2-Way, ExStart, Exchange, Loading, Full
+      </p>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- Intro Card -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold mb-3">What is OSPF?</h2>
+      <p>
+        OSPF (Open Shortest Path First) is a link-state routing protocol that builds a complete
+        topology of the network. Routers exchange LSAs and calculate the shortest path using
+        the SPF (Dijkstra) algorithm.  
+      </p>
+      <p class="mt-2">
+        Before routes are exchanged, OSPF routers must form a **neighbor adjacency**, which
+        happens through several well-defined states.
+      </p>
+    </div>
+
+    <!-- STATES GRID -->
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- Link Down / Up -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold text-indigo-600 mb-2">1. Link Down / Link Up</h3>
+        <p>
+          <strong>Link Down:</strong> No Hello packets are exchanged. The interface is down,
+          passive, or OSPF is not enabled.
+        </p>
+        <p class="mt-2">
+          <strong>Link Up:</strong> Interface becomes active and starts sending Hello packets
+          to multicast addresses (224.0.0.5 / 224.0.0.6).
+        </p>
+        <p class="mt-2 text-sm text-gray-600">
+          ⚠️ OSPF adjacency cannot start unless the link is up.
+        </p>
+      </div>
+
+      <!-- Init -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold text-indigo-600 mb-2">2. Init State</h3>
+        <p>
+          Router receives a Hello packet from a neighbor, but its own Router ID is NOT listed
+          in the received Hello packet.
+        </p>
+        <p class="mt-2">
+          This means communication is <strong>one-way</strong>.
+        </p>
+        <p class="mt-2 text-sm text-gray-600">
+          Common causes: mismatched Hello/Dead timers, authentication issues.
+        </p>
+      </div>
+
+      <!-- 2-Way -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold text-indigo-600 mb-2">3. 2-Way State</h3>
+        <p>
+          Router sees its own Router ID in the neighbor’s Hello packet.
+          Two-way communication is confirmed.
+        </p>
+        <p class="mt-2">
+          On broadcast networks, DR/BDR election happens here.
+        </p>
+        <p class="mt-2 text-sm text-gray-600">
+          ℹ️ Not all neighbors go beyond 2-Way (DROTHER routers).
+        </p>
+      </div>
+
+      <!-- ExStart -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold text-indigo-600 mb-2">4. ExStart State</h3>
+        <p>
+          Routers negotiate who will be <strong>Master</strong> and who will be <strong>Slave</strong>.
+        </p>
+        <p class="mt-2">
+          The router with the higher Router ID usually becomes the master.
+        </p>
+        <p class="mt-2 text-sm text-gray-600">
+          Used to start database synchronization safely.
+        </p>
+      </div>
+
+      <!-- Exchange -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold text-indigo-600 mb-2">5. Exchange State</h3>
+        <p>
+          Routers exchange Database Description (DBD) packets.
+        </p>
+        <p class="mt-2">
+          Only LSA headers are exchanged, not full routing information.
+        </p>
+        <p class="mt-2 text-sm text-gray-600">
+          Helps routers identify missing or outdated LSAs.
+        </p>
+      </div>
+
+      <!-- Loading -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold text-indigo-600 mb-2">6. Loading State</h3>
+        <p>
+          Routers request full LSAs using Link-State Request packets.
+        </p>
+        <p class="mt-2">
+          Missing LSAs are sent using Link-State Update packets.
+        </p>
+        <p class="mt-2 text-sm text-gray-600">
+          Database synchronization is almost complete.
+        </p>
+      </div>
+
+      <!-- Full -->
+      <div class="bg-white rounded-xl shadow p-6 md:col-span-2">
+        <h3 class="text-xl font-bold text-indigo-600 mb-2">7. Full State</h3>
+        <p>
+          Routers have identical LSDBs and full adjacency is established.
+        </p>
+        <p class="mt-2">
+          SPF algorithm runs and routing table is populated.
+        </p>
+        <p class="mt-2 text-sm text-gray-600">
+          ✅ This is the desired stable state.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- INTERVIEW QUESTIONS -->
+    <section class="space-y-6">
+
+      <h2 class="text-3xl font-bold text-center text-indigo-700">
+        OSPF Interview Questions (Problems & Solutions)
+      </h2>
+
+      <!-- Q1 -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-semibold">Q1: Why does OSPF get stuck in Init state?</h3>
+        <p class="mt-2"><strong>Why interviewer asks:</strong> To test understanding of Hello packets.</p>
+        <p class="mt-2"><strong>Problem:</strong> Router receives Hello but does not see its Router ID.</p>
+        <p class="mt-2"><strong>Solution:</strong> Check Hello/Dead timers, authentication, subnet mask, area ID.</p>
+      </div>
+
+      <!-- Q2 -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-semibold">Q2: Why is OSPF stuck in 2-Way state?</h3>
+        <p class="mt-2"><strong>Why:</strong> Tests DR/BDR concept.</p>
+        <p class="mt-2"><strong>Problem:</strong> Routers are DROTHER on broadcast network.</p>
+        <p class="mt-2"><strong>Solution:</strong> Normal behavior. Full adjacency forms only with DR/BDR.</p>
+      </div>
+
+      <!-- Q3 -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-semibold">Q3: Why does OSPF get stuck in ExStart or Exchange?</h3>
+        <p class="mt-2"><strong>Why:</strong> Tests MTU and database sync knowledge.</p>
+        <p class="mt-2"><strong>Problem:</strong> MTU mismatch or duplicate Router IDs.</p>
+        <p class="mt-2"><strong>Solution:</strong> Match MTU or configure <code>ip ospf mtu-ignore</code>.</p>
+      </div>
+
+      <!-- Q4 -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-semibold">Q4: Why does OSPF flap frequently?</h3>
+        <p class="mt-2"><strong>Why:</strong> Real-world troubleshooting scenario.</p>
+        <p class="mt-2"><strong>Problem:</strong> Unstable links, CPU spikes, timer mismatch.</p>
+        <p class="mt-2"><strong>Solution:</strong> Stabilize links, tune timers, check hardware performance.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-gray-500 text-sm">
+    OSPF Detailed Guide • Tailwind CSS • Interview Ready
+  </footer>
+
+</body>
+</html>
