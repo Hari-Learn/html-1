@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OSPF Router ID, DR, BDR Explained</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-700 text-white py-10 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-4xl font-bold">OSPF Router ID & DR / BDR Concepts</h1>
+      <p class="mt-3 text-lg text-cyan-100">
+        Router ID • DR • BDR • DROTHER • Multicast 224.0.0.6
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- Router ID -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-2xl font-bold text-blue-700 mb-3">What is Router ID (RID)?</h2>
+      <p>
+        Router ID is a <strong>32-bit unique identifier</strong> used by OSPF to identify each router
+        in the OSPF domain. It looks like an IP address but does not have to be routable.
+      </p>
+      <p class="mt-2">
+        OSPF uses Router ID during:
+      </p>
+      <ul class="list-disc ml-6 mt-2 text-gray-700">
+        <li>Neighbor formation</li>
+        <li>DR / BDR election</li>
+        <li>LSA identification</li>
+      </ul>
+    </div>
+
+    <!-- Router ID Conditions -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-2xl font-bold text-blue-700 mb-3">Conditions to Select Router ID</h2>
+      <p class="mb-2">OSPF selects Router ID in the following priority order:</p>
+
+      <ol class="list-decimal ml-6 space-y-2">
+        <li>
+          <strong>Manually configured Router ID</strong><br>
+          <span class="text-sm text-gray-600">
+            (<code>router-id x.x.x.x</code>) – highest priority
+          </span>
+        </li>
+        <li>
+          <strong>Highest IP address on Loopback interface</strong>
+        </li>
+        <li>
+          <strong>Highest IP address on active physical interface</strong>
+        </li>
+      </ol>
+
+      <p class="mt-3 text-sm text-red-600">
+        ⚠️ Router ID is selected only once at OSPF startup. Changes require OSPF reset.
+      </p>
+    </div>
+
+    <!-- DR -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-2xl font-bold text-blue-700 mb-3">What is DR (Designated Router)?</h2>
+      <p>
+        DR is the central router on broadcast and NBMA networks responsible for
+        reducing OSPF overhead.
+      </p>
+      <p class="mt-2">
+        All routers form full adjacency with the DR instead of each other.
+      </p>
+      <p class="mt-2">
+        DR sends updates using multicast <strong>224.0.0.5</strong>.
+      </p>
+    </div>
+
+    <!-- BDR -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-2xl font-bold text-blue-700 mb-3">What is BDR (Backup Designated Router)?</h2>
+      <p>
+        BDR is the standby router that takes over when the DR fails.
+      </p>
+      <p class="mt-2">
+        BDR maintains full adjacency and stays synchronized with the DR.
+      </p>
+      <p class="mt-2 text-sm text-gray-600">
+        ✅ Ensures high availability and fast convergence.
+      </p>
+    </div>
+
+    <!-- DROTHER -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-2xl font-bold text-blue-700 mb-3">What is DROTHER?</h2>
+      <p>
+        DROTHER refers to routers that are neither DR nor BDR.
+      </p>
+      <p class="mt-2">
+        DROTHER routers:
+      </p>
+      <ul class="list-disc ml-6 mt-2">
+        <li>Form full adjacency only with DR and BDR</li>
+        <li>Stay in 2-Way state with other DROTHER routers</li>
+      </ul>
+    </div>
+
+    <!-- Self Election -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-2xl font-bold text-blue-700 mb-3">What is Self Election in OSPF?</h2>
+      <p>
+        OSPF uses <strong>self-election</strong> for DR/BDR selection.
+      </p>
+      <p class="mt-2">
+        Each router advertises its:
+      </p>
+      <ul class="list-disc ml-6 mt-2">
+        <li>OSPF Priority (default = 1)</li>
+        <li>Router ID</li>
+      </ul>
+      <p class="mt-2">
+        The router with highest priority becomes DR.
+        If priorities tie, highest Router ID wins.
+      </p>
+    </div>
+
+    <!-- One Time Election -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-2xl font-bold text-blue-700 mb-3">What is One-Time Election?</h2>
+      <p>
+        DR/BDR election happens <strong>only once</strong> when OSPF neighbors come up.
+      </p>
+      <p class="mt-2">
+        If a new router with higher priority joins later,
+        it <strong>will NOT</strong> replace the existing DR.
+      </p>
+      <p class="mt-2 text-sm text-red-600">
+        ⚠️ DR change occurs only if DR fails or OSPF process restarts.
+      </p>
+    </div>
+
+    <!-- 224.0.0.6 -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-2xl font-bold text-blue-700 mb-3">What is 224.0.0.6 and Why Is It Used?</h2>
+      <p>
+        <strong>224.0.0.6</strong> is the multicast address for
+        <strong>All OSPF Designated Routers</strong>.
+      </p>
+      <p class="mt-2">
+        DROTHER routers send LSAs to 224.0.0.6 so that:
+      </p>
+      <ul class="list-disc ml-6 mt-2">
+        <li>Only DR and BDR process the update</li>
+        <li>Network flooding is reduced</li>
+      </ul>
+
+      <p class="mt-2">
+        DR then floods updates to all routers using <strong>224.0.0.5</strong>.
+      </p>
+    </div>
+
+    <!-- Interview Tip -->
+    <div class="bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-xl p-6 shadow">
+      <h2 class="text-2xl font-bold mb-2">Interview Tip</h2>
+      <p>
+        If interviewer asks about <strong>224.0.0.6</strong>, always mention:
+        <em>traffic optimization + DR/BDR role</em>.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-gray-500 text-sm">
+    OSPF DR & Router ID Explained • Tailwind CSS • Interview Ready
+  </footer>
+
+</body>
+</html>
