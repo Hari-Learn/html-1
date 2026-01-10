@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Subnetting Explained Like I'm 10</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-4xl mx-auto p-6">
+    
+    <!-- Header -->
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-blue-600">What is Subnetting?</h1>
+      <p class="mt-3 text-lg text-gray-600">
+        Explained like you're 10 years old (ELI10)
+      </p>
+    </header>
+
+    <!-- What is Subnet -->
+    <section class="bg-white p-6 rounded-xl shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">🧠 What is a Subnet?</h2>
+      <p class="mb-2">
+        Imagine your house address is part of a big apartment building.
+      </p>
+      <p class="mb-2">
+        The <strong>building address</strong> is the <strong>IP address</strong>,  
+        and the <strong>flat numbers</strong> are the <strong>devices</strong>.
+      </p>
+      <p class="mb-2">
+        A <strong>subnet</strong> is like dividing the building into <strong>floors</strong> so it’s easier to manage.
+      </p>
+      <p class="font-semibold text-blue-600">
+        👉 Subnet = Smaller network inside a big network
+      </p>
+    </section>
+
+    <!-- Why Subnet -->
+    <section class="bg-white p-6 rounded-xl shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">❓ Why Do We Need Subnetting?</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>To reduce network traffic 🚗</li>
+        <li>To improve security 🔐</li>
+        <li>To organize devices better 📦</li>
+        <li>To avoid wasting IP addresses ❌</li>
+      </ul>
+    </section>
+
+    <!-- IP Address Basics -->
+    <section class="bg-white p-6 rounded-xl shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">📌 IP Address Basics</h2>
+      <p class="mb-2">An IP address looks like this:</p>
+      <div class="bg-gray-200 p-3 rounded text-center font-mono text-lg">
+        192.168.1.10
+      </div>
+      <p class="mt-3">
+        It has <strong>4 parts (octets)</strong>, each from 0–255.
+      </p>
+    </section>
+
+    <!-- Subnet Mask -->
+    <section class="bg-white p-6 rounded-xl shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">🎭 What is a Subnet Mask?</h2>
+      <p class="mb-2">
+        A subnet mask tells:
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Which part is <strong>Network</strong></li>
+        <li>Which part is <strong>Host</strong></li>
+      </ul>
+      <div class="bg-gray-200 p-3 rounded mt-3 font-mono text-center">
+        255.255.255.0  =  /24
+      </div>
+    </section>
+
+    <!-- How to Calculate -->
+    <section class="bg-white p-6 rounded-xl shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">🧮 How to Calculate Subnet (Easy Way)</h2>
+
+      <p class="mb-3 font-semibold">Example:</p>
+      <div class="bg-gray-100 p-4 rounded mb-4 font-mono">
+        IP: 192.168.1.10/24
+      </div>
+
+      <ol class="list-decimal pl-6 space-y-2">
+        <li><strong>/24</strong> means first 24 bits are network</li>
+        <li>Subnet mask = <strong>255.255.255.0</strong></li>
+        <li>Network address = <strong>192.168.1.0</strong></li>
+        <li>Broadcast address = <strong>192.168.1.255</strong></li>
+        <li>Usable hosts = <strong>254</strong></li>
+      </ol>
+    </section>
+
+    <!-- Subnet Tricks -->
+    <section class="bg-white p-6 rounded-xl shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">🎯 Subnetting Tricks to Remember</h2>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li>
+          <strong>Power of 2 rule:</strong><br/>
+          Hosts = <code>2ⁿ - 2</code>
+        </li>
+        <li>
+          <strong>/24</strong> → 256 addresses → 254 usable
+        </li>
+        <li>
+          <strong>Block size trick:</strong><br/>
+          Block size = <code>256 - subnet mask value</code>
+        </li>
+        <li>
+          Always remember:
+          <ul class="list-disc pl-6">
+            <li>First IP → Network</li>
+            <li>Last IP → Broadcast</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- When Asked -->
+    <section class="bg-white p-6 rounded-xl shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3">💬 When Someone Asks You Subnet Questions</h2>
+
+      <p class="mb-3">Ask yourself these in order:</p>
+
+      <ol class="list-decimal pl-6 space-y-2">
+        <li>What is the <strong>IP address</strong>?</li>
+        <li>What is the <strong>subnet mask or CIDR</strong>?</li>
+        <li>How many <strong>hosts are needed</strong>?</li>
+        <li>What is the <strong>network & broadcast</strong>?</li>
+      </ol>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center mt-10 text-gray-500">
+      <p>Subnetting made simple 🚀</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
