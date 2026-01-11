@@ -2,113 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>EIGRP Visual Guide</title>
+  <title>EIGRP Visual Poster</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="w-screen h-screen overflow-hidden bg-gradient-to-br from-slate-100 to-gray-200 text-gray-800">
 
-  <!-- Top Quote Bar -->
-  <div class="h-[15%] bg-gradient-to-r from-blue-900 to-blue-700 text-white flex flex-col justify-center items-center px-6">
+  <!-- Top Quote -->
+  <div class="h-[15%] bg-gradient-to-r from-blue-900 to-blue-700 text-white flex items-center justify-center px-10">
     <p class="text-xl italic text-center max-w-5xl">
-      “Good routing is not about choosing any path — it’s about choosing the best path and caring about failure.”
+      “Good routing is about choosing the best path — and switching instantly when it fails.”
     </p>
-    <span class="text-sm mt-2 opacity-80">EIGRP — explained simply</span>
   </div>
 
   <!-- Main Content -->
-  <div class="h-[70%] grid grid-cols-12 gap-4 px-6 py-4">
+  <div class="h-[calc(85%-40px)] px-12 py-6">
 
-    <!-- Acronym Column -->
-    <div class="col-span-2 flex flex-col justify-between items-center">
+    <div class="grid grid-cols-12 gap-8 h-full">
 
-      <!-- Reusable Circle -->
-      <div class="flex flex-col gap-3">
-        <div class="w-12 h-12 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold">E</div>
-        <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">G</div>
-        <div class="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold">R</div>
-        <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">I</div>
-        <div class="w-12 h-12 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold">P</div>
-      </div>
+      <!-- BIG Letter Column -->
+      <div class="col-span-3 flex flex-col justify-between items-center">
 
-    </div>
-
-    <!-- Meaning Column -->
-    <div class="col-span-4 space-y-4">
-
-      <div class="bg-white/80 rounded-lg p-4 shadow-sm">
-        <h3 class="font-semibold">Enhanced</h3>
-        <p class="text-sm">Improved and smarter than older routing protocols.</p>
-      </div>
-
-      <div class="bg-white/80 rounded-lg p-4 shadow-sm">
-        <h3 class="font-semibold">Gateway</h3>
-        <p class="text-sm">Routers act as gateways deciding where data goes.</p>
-      </div>
-
-      <div class="bg-white/80 rounded-lg p-4 shadow-sm">
-        <h3 class="font-semibold">Routing</h3>
-        <p class="text-sm">Chooses the best path using real network conditions.</p>
-      </div>
-
-      <div class="bg-white/80 rounded-lg p-4 shadow-sm">
-        <h3 class="font-semibold">Interior</h3>
-        <p class="text-sm">Used inside one organization or network.</p>
-      </div>
-
-      <div class="bg-white/80 rounded-lg p-4 shadow-sm">
-        <h3 class="font-semibold">Protocol</h3>
-        <p class="text-sm">A shared rulebook routers follow.</p>
-      </div>
-
-    </div>
-
-    <!-- Explanation / Tips Column -->
-    <div class="col-span-6 bg-gradient-to-br from-white to-blue-50 rounded-xl p-6 shadow-md">
-
-      <h2 class="text-xl font-semibold mb-4">Why EIGRP Feels “Smart”</h2>
-
-      <ul class="list-disc list-inside text-sm space-y-2">
-        <li>Looks at bandwidth and delay — not just hop count</li>
-        <li>Keeps backup routes ready (DUAL algorithm)</li>
-        <li>Very fast convergence when links fail</li>
-        <li>Minimal network traffic for updates</li>
-      </ul>
-
-      <div class="mt-6 grid grid-cols-2 gap-4">
-
-        <div class="bg-blue-100 rounded-lg p-4">
-          <h4 class="font-semibold text-sm mb-2">Why RIP is Avoided</h4>
-          <ul class="text-xs list-disc list-inside">
-            <li>Slow convergence</li>
-            <li>Max 15 hops</li>
-            <li>Outdated logic</li>
-          </ul>
+        <div class="w-28 h-28 rounded-full bg-blue-900 text-white text-6xl font-extrabold flex items-center justify-center tracking-wide">
+          E
         </div>
 
-        <div class="bg-indigo-100 rounded-lg p-4">
-          <h4 class="font-semibold text-sm mb-2">Why CCNA Avoids EIGRP</h4>
-          <ul class="text-xs list-disc list-inside">
-            <li>Cisco-centric</li>
-            <li>Not fully vendor-neutral</li>
-            <li>OSPF preferred</li>
-          </ul>
+        <div class="w-28 h-28 rounded-full bg-blue-800 text-white text-6xl font-extrabold flex items-center justify-center tracking-wide">
+          G
+        </div>
+
+        <div class="w-28 h-28 rounded-full bg-blue-700 text-white text-6xl font-extrabold flex items-center justify-center tracking-wide">
+          R
+        </div>
+
+        <div class="w-28 h-28 rounded-full bg-blue-800 text-white text-6xl font-extrabold flex items-center justify-center tracking-wide">
+          I
+        </div>
+
+        <div class="w-28 h-28 rounded-full bg-blue-900 text-white text-6xl font-extrabold flex items-center justify-center tracking-wide">
+          P
         </div>
 
       </div>
 
-    </div>
+      <!-- Meaning Column -->
+      <div class="col-span-4 flex flex-col justify-between">
 
+        <div class="h-28 bg-white/95 rounded-lg px-5 py-4 shadow-sm flex flex-col justify-center">
+          <h3 class="font-semibold text-lg">Enhanced</h3>
+          <p class="text-sm">Smarter and improved routing behavior.</p>
+        </div>
+
+        <div class="h-28 bg-white/95 rounded-lg px-5 py-4 shadow-sm flex flex-col justify-center">
+          <h3 class="font-semibold text-lg">Gateway</h3>
+          <p class="text-sm">Routers act as traffic decision points.</p>
+        </div>
+
+        <div class="h-28 bg-white/95 rounded-lg px-5 py-4 shadow-sm flex flex-col justify-center">
+          <h3 class="font-semibold text-lg">Routing</h3>
+          <p class="text-sm">Chooses paths based on real conditions.</p>
+        </div>
+
+        <div class="h-28 bg-white/95 rounded-lg px-5 py-4 shadow-sm flex flex-col justify-center">
+          <h3 class="font-semibold text-lg">Interior</h3>
+          <p class="text-sm">Used inside one organization.</p>
+        </div>
+
+        <div class="h-28 bg-white/95 rounded-lg px-5 py-4 shadow-sm flex flex-col justify-center">
+          <h3 class="font-semibold text-lg">Protocol</h3>
+          <p class="text-sm">Shared routing rules.</p>
+        </div>
+
+      </div>
+
+      <!-- Explanation Column -->
+      <div class="col-span-5 bg-gradient-to-br from-white to-blue-50 rounded-xl px-8 py-6 shadow-md flex flex-col justify-between">
+
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">Why EIGRP Is Powerful</h2>
+          <ul class="list-disc list-inside text-sm space-y-2">
+            <li>Uses bandwidth and delay instead of hop count</li>
+            <li>Keeps instant backup routes (DUAL)</li>
+            <li>Very fast convergence</li>
+            <li>Low update overhead</li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-2 gap-5 mt-6">
+
+          <div class="bg-blue-100 rounded-lg px-4 py-3">
+            <h4 class="font-semibold text-sm mb-1">Why RIP Is Avoided</h4>
+            <ul class="text-xs list-disc list-inside">
+              <li>Slow</li>
+              <li>15-hop limit</li>
+              <li>Outdated</li>
+            </ul>
+          </div>
+
+          <div class="bg-indigo-100 rounded-lg px-4 py-3">
+            <h4 class="font-semibold text-sm mb-1">Why CCNA Avoids EIGRP</h4>
+            <ul class="text-xs list-disc list-inside">
+              <li>Cisco-only focus</li>
+              <li>Not vendor-neutral</li>
+              <li>OSPF preferred</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
   </div>
 
-  <!-- Footer (Two Color) -->
-  <div class="h-[15%] grid grid-cols-2 text-white text-sm">
-    <div class="bg-blue-800 flex items-center justify-center">
-      Designed for clear understanding
+  <!-- Footer (40px, 30/70) -->
+  <div class="h-[40px] grid grid-cols-[30%_70%] text-white text-xs">
+
+    <div class="bg-blue-900 flex items-center px-4">
+      Visual Learning
     </div>
-    <div class="bg-blue-600 flex items-center justify-center">
-      CCNA-oriented • Office-friendly
+
+    <div class="bg-blue-600 flex items-center px-6">
+      CCNA Concepts • Clean Office Design • EIGRP Poster
     </div>
+
   </div>
 
 </body>
