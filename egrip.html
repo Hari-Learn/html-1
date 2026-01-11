@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EIGRP Explained Like You're 10 (ELI10)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-6">
+    <h1 class="text-3xl font-bold text-center">EIGRP – Explained Like You’re 10 👶📡</h1>
+    <p class="text-center mt-2">Simple, intuitive networking for beginners</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto p-6 space-y-8">
+
+    <!-- What is Routing -->
+    <section class="bg-white p-6 rounded-xl shadow">
+      <h2 class="text-2xl font-semibold mb-3">First: What is Routing? 🚦</h2>
+      <p>
+        Imagine the internet is a <strong>city</strong> 🏙️ and data packets are <strong>delivery trucks</strong> 🚚.
+        Routers are like <strong>traffic police</strong> who tell trucks which road to take to reach their destination.
+      </p>
+      <p class="mt-2">
+        A <strong>routing protocol</strong> is the rulebook routers use to decide:
+        <span class="italic">“Which road is the best and fastest?”</span>
+      </p>
+    </section>
+
+    <!-- EIGRP Explanation -->
+    <section class="bg-white p-6 rounded-xl shadow">
+      <h2 class="text-2xl font-semibold mb-3">So… What is EIGRP? 🤔</h2>
+      <p>
+        <strong>EIGRP</strong> stands for:
+      </p>
+      <ul class="list-disc list-inside mt-2">
+        <li><strong>Enhanced</strong> – improved version</li>
+        <li><strong>Interior</strong> – used inside one network</li>
+        <li><strong>Gateway</strong> – routers</li>
+        <li><strong>Routing Protocol</strong> – rules for choosing paths</li>
+      </ul>
+
+      <p class="mt-3">
+        EIGRP is like a <strong>very smart GPS</strong> 🗺️ that quickly finds the best route
+        and changes instantly if a road breaks.
+      </p>
+    </section>
+
+    <!-- How EIGRP Thinks -->
+    <section class="bg-white p-6 rounded-xl shadow">
+      <h2 class="text-2xl font-semibold mb-3">How Does EIGRP Think? 🧠</h2>
+      <p>
+        EIGRP doesn’t just count roads.
+        It looks at:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <div class="bg-blue-50 p-4 rounded">
+          🚀 <strong>Bandwidth</strong><br>
+          How wide the road is
+        </div>
+        <div class="bg-blue-50 p-4 rounded">
+          ⏱️ <strong>Delay</strong><br>
+          How fast the road is
+        </div>
+        <div class="bg-blue-50 p-4 rounded">
+          ❤️ <strong>Reliability</strong><br>
+          How often the road breaks
+        </div>
+        <div class="bg-blue-50 p-4 rounded">
+          📦 <strong>Load</strong><br>
+          How crowded the road is
+        </div>
+      </div>
+
+      <p class="mt-4">
+        Because of this, EIGRP usually chooses <strong>smarter paths</strong> than older protocols.
+      </p>
+    </section>
+
+    <!-- Why EIGRP is Fast -->
+    <section class="bg-white p-6 rounded-xl shadow">
+      <h2 class="text-2xl font-semibold mb-3">Why Is EIGRP So Fast? ⚡</h2>
+      <p>
+        EIGRP uses a special brain called <strong>DUAL</strong> 🧠.
+      </p>
+      <p class="mt-2">
+        DUAL always keeps a <strong>backup route ready</strong>.
+        So if the main path fails:
+      </p>
+      <p class="mt-2 font-semibold text-green-600">
+        ✔ No waiting<br>
+        ✔ No confusion<br>
+        ✔ Instant switching
+      </p>
+    </section>
+
+    <!-- RIP vs EIGRP -->
+    <section class="bg-white p-6 rounded-xl shadow">
+      <h2 class="text-2xl font-semibold mb-3">Why CCNA Avoids RIP 😴</h2>
+      <p>
+        <strong>RIP</strong> is like asking:
+        <span class="italic">“How many streets do I pass?”</span>
+      </p>
+
+      <ul class="list-disc list-inside mt-3">
+        <li>Counts only hops (not speed)</li>
+        <li>Maximum 15 hops 😬</li>
+        <li>Very slow updates</li>
+        <li>Outdated and rarely used</li>
+      </ul>
+
+      <p class="mt-3 text-red-600 font-semibold">
+        RIP is too simple for modern networks.
+      </p>
+    </section>
+
+    <!-- Why CCNA Avoids EIGRP -->
+    <section class="bg-white p-6 rounded-xl shadow">
+      <h2 class="text-2xl font-semibold mb-3">Why CCNA Avoids EIGRP 🚫</h2>
+      <p>
+        Even though EIGRP is powerful, CCNA focuses on:
+      </p>
+
+      <ul class="list-disc list-inside mt-3">
+        <li><strong>Vendor-neutral skills</strong></li>
+        <li><strong>Real-world standards</strong></li>
+      </ul>
+
+      <p class="mt-3">
+        EIGRP is mainly <strong>Cisco-specific</strong>.
+        CCNA prefers <strong>OSPF</strong> because:
+      </p>
+
+      <ul class="list-disc list-inside mt-2">
+        <li>Works with all vendors</li>
+        <li>Used everywhere</li>
+        <li>Industry standard</li>
+      </ul>
+    </section>
+
+    <!-- Summary -->
+    <section class="bg-green-100 p-6 rounded-xl">
+      <h2 class="text-2xl font-semibold mb-3">Quick Summary 🧾</h2>
+      <ul class="list-disc list-inside">
+        <li>EIGRP = Smart, fast, Cisco-based routing</li>
+        <li>RIP = Old, slow, outdated</li>
+        <li>CCNA = Focuses on OSPF, not vendor lock-in</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4 mt-10">
+    <p>Networking made simple 💡 | ELI10 Guide</p>
+  </footer>
+
+</body>
+</html>
