@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Networking Concepts Overview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-8">
+    <div class="max-w-full px-6">
+      <h1 class="text-3xl font-bold">Networking Concepts Explained</h1>
+      <p class="mt-2 text-blue-100">
+        HSRP, ISP Failover, Floating Static Routes, Floating IP, and Administrative Distance
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-full px-6 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- HSRP Card -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold text-blue-600 mb-3">What is HSRP?</h2>
+        <p class="text-gray-700">
+          HSRP (Hot Standby Router Protocol) is a Cisco proprietary redundancy protocol
+          used to provide high availability for the default gateway.
+        </p>
+        <p class="text-gray-700 mt-3">
+          Multiple routers form a group and share a virtual IP address.
+          One router is active, and another is standby. If the active router fails,
+          the standby router takes over automatically.
+        </p>
+      </div>
+
+      <!-- ISP Failover Card -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold text-blue-600 mb-3">What is ISP Failover?</h2>
+        <p class="text-gray-700">
+          ISP Failover ensures continuous internet connectivity by switching traffic
+          from a primary ISP to a backup ISP when the primary link fails.
+        </p>
+        <p class="text-gray-700 mt-3">
+          This is commonly implemented using tracking, SLA monitoring,
+          floating static routes, or dynamic routing protocols.
+        </p>
+      </div>
+
+      <!-- Floating Static Route Card -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold text-blue-600 mb-3">What is a Floating Static Route?</h2>
+        <p class="text-gray-700">
+          A floating static route is a static route configured with a higher
+          administrative distance than the primary route.
+        </p>
+        <p class="text-gray-700 mt-3">
+          It remains inactive (floats) until the primary route fails,
+          then it becomes active automatically.
+        </p>
+      </div>
+
+      <!-- Floating IP Card -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold text-blue-600 mb-3">What is a Floating IP?</h2>
+        <p class="text-gray-700">
+          A Floating IP is a virtual IP address that can move between devices
+          or servers automatically.
+        </p>
+        <p class="text-gray-700 mt-3">
+          It is commonly used in high-availability setups so services remain
+          reachable even if one device fails.
+        </p>
+      </div>
+
+      <!-- Administrative Distance Card -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold text-blue-600 mb-3">Administrative Distance (AD)</h2>
+        <p class="text-gray-700">
+          Administrative Distance is a value that represents the trustworthiness
+          of a routing source. Lower values are preferred.
+        </p>
+        <p class="text-gray-700 mt-3">
+          Routers use AD to choose the best route when multiple routing protocols
+          advertise the same destination.
+        </p>
+      </div>
+
+      <!-- AD Values Card -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold text-blue-600 mb-3">Administrative Distance Values</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Connected Interface – <strong>0</strong></li>
+          <li>Static Route – <strong>1</strong></li>
+          <li>EIGRP (Internal) – <strong>90</strong></li>
+          <li>OSPF – <strong>110</strong></li>
+          <li>IS-IS – <strong>115</strong></li>
+          <li>RIP – <strong>120</strong></li>
+          <li>EIGRP (External) – <strong>170</strong></li>
+          <li>iBGP – <strong>200</strong></li>
+          <li>Unknown – <strong>255 (Not Used)</strong></li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-6 mt-10">
+    <div class="max-w-full px-6 text-center">
+      <p>© 2026 Networking Concepts | Tailwind CSS</p>
+    </div>
+  </footer>
+
+</body>
+</html>
