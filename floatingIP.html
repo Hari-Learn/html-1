@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>High Availability & Routing – Learn by Problems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+
+<body class="bg-slate-950 text-white">
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 py-16">
+    <div class="max-w-full px-6 text-center">
+      <h1 class="text-4xl font-bold mb-4">
+        High Availability & Routing Made Simple
+      </h1>
+      <p class="text-lg text-indigo-100">
+        Learn networking concepts by understanding real-world problems and solutions
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="max-w-full px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- HSRP -->
+      <div class="rounded-xl shadow-lg bg-gradient-to-br from-blue-500 to-cyan-500 p-6">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-network-wired text-3xl mr-4"></i>
+          <h2 class="text-2xl font-semibold">HSRP</h2>
+        </div>
+
+        <p class="font-semibold text-yellow-200">Problem:</p>
+        <p class="mb-3">
+          If the default gateway router fails, all users lose network connectivity.
+        </p>
+
+        <p class="font-semibold text-green-200">Solution:</p>
+        <p>
+          HSRP creates a virtual gateway shared by two routers. One is active and the
+          other is standby. If the active router fails, the standby router takes over
+          instantly without user impact.
+        </p>
+      </div>
+
+      <!-- ISP Failover -->
+      <div class="rounded-xl shadow-lg bg-gradient-to-br from-emerald-500 to-lime-500 p-6">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-globe text-3xl mr-4"></i>
+          <h2 class="text-2xl font-semibold">ISP Failover</h2>
+        </div>
+
+        <p class="font-semibold text-yellow-100">Problem:</p>
+        <p class="mb-3">
+          When the primary ISP link goes down, the entire organization loses internet
+          access.
+        </p>
+
+        <p class="font-semibold text-green-100">Solution:</p>
+        <p>
+          ISP Failover automatically switches traffic to a backup ISP using tracking,
+          SLA monitoring, or floating static routes to maintain uninterrupted connectivity.
+        </p>
+      </div>
+
+      <!-- Floating Static Route -->
+      <div class="rounded-xl shadow-lg bg-gradient-to-br from-orange-500 to-red-500 p-6">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-route text-3xl mr-4"></i>
+          <h2 class="text-2xl font-semibold">Floating Static Route</h2>
+        </div>
+
+        <p class="font-semibold text-yellow-200">Problem:</p>
+        <p class="mb-3">
+          Static routes are always preferred and do not automatically act as backups.
+        </p>
+
+        <p class="font-semibold text-green-200">Solution:</p>
+        <p>
+          A floating static route is configured with a higher administrative distance
+          so it only activates when the primary route fails.
+        </p>
+      </div>
+
+      <!-- Floating IP -->
+      <div class="rounded-xl shadow-lg bg-gradient-to-br from-pink-500 to-rose-500 p-6">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-server text-3xl mr-4"></i>
+          <h2 class="text-2xl font-semibold">Floating IP</h2>
+        </div>
+
+        <p class="font-semibold text-yellow-200">Problem:</p>
+        <p class="mb-3">
+          If a server fails, applications become unreachable because the IP address
+          is tied to that server.
+        </p>
+
+        <p class="font-semibold text-green-200">Solution:</p>
+        <p>
+          A Floating IP moves automatically to a healthy server or device, ensuring
+          continuous access to services.
+        </p>
+      </div>
+
+      <!-- Administrative Distance -->
+      <div class="rounded-xl shadow-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 p-6 md:col-span-2 lg:col-span-2">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-scale-balanced text-3xl mr-4"></i>
+          <h2 class="text-2xl font-semibold">Administrative Distance</h2>
+        </div>
+
+        <p class="font-semibold text-yellow-200">Problem:</p>
+        <p class="mb-3">
+          Multiple routing protocols may advertise the same destination. Which route
+          should the router trust?
+        </p>
+
+        <p class="font-semibold text-green-200">Solution:</p>
+        <p class="mb-4">
+          Administrative Distance assigns trust levels to routing sources. The route
+          with the lowest AD is selected.
+        </p>
+
+        <div class="bg-white/20 rounded-lg p-4">
+          <h3 class="font-semibold mb-2">Common AD Values:</h3>
+          <ul class="grid grid-cols-2 gap-2 text-sm">
+            <li>Connected – 0</li>
+            <li>Static – 1</li>
+            <li>EIGRP – 90</li>
+            <li>OSPF – 110</li>
+            <li>RIP – 120</li>
+            <li>iBGP – 200</li>
+            <li>Unknown – 255</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black/40 text-center py-6">
+    <p class="text-gray-400">
+      © 2026 | Learn Networking Visually with Tailwind CSS
+    </p>
+  </footer>
+
+</body>
+</html>
