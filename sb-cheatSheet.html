@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Subnetting Cheat Sheet – CCNA Exam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #f0fdf4, #eff6ff);
+    }
+  </style>
+</head>
+<body class="min-h-screen text-gray-800">
+
+  <!-- Header -->
+  <header class="w-full bg-gradient-to-r from-emerald-400 to-blue-400 text-white py-10 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="text-4xl font-bold mb-2">Subnetting Cheat Sheet</h1>
+      <p class="text-lg opacity-90">
+        Must-memorize subnetting tables & concepts for CCNA exam
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-6 py-12 space-y-12">
+
+    <!-- Why Subnetting Matters -->
+    <section>
+      <div class="bg-white rounded-xl shadow-md p-8 border-l-8 border-emerald-400">
+        <h2 class="text-2xl font-semibold mb-4">Why Subnetting is Critical for CCNA</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Almost every CCNA exam includes subnetting questions</li>
+          <li>Required for routing, VLANs, ACLs, and IP planning</li>
+          <li>Tests speed, accuracy, and concept clarity</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Classful Addressing -->
+    <section>
+      <div class="bg-white rounded-xl shadow-md p-8 border-l-8 border-sky-400">
+        <h2 class="text-2xl font-semibold mb-6">Classful IPv4 Address Ranges (Memorize)</h2>
+
+        <div class="overflow-x-auto">
+          <table class="min-w-full border border-gray-200">
+            <thead class="bg-sky-50">
+              <tr>
+                <th class="border px-4 py-2">Class</th>
+                <th class="border px-4 py-2">Range</th>
+                <th class="border px-4 py-2">Default Mask</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border px-4 py-2">A</td>
+                <td class="border px-4 py-2">1.0.0.0 – 126.0.0.0</td>
+                <td class="border px-4 py-2">255.0.0.0 (/8)</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">B</td>
+                <td class="border px-4 py-2">128.0.0.0 – 191.255.0.0</td>
+                <td class="border px-4 py-2">255.255.0.0 (/16)</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">C</td>
+                <td class="border px-4 py-2">192.0.0.0 – 223.255.255.0</td>
+                <td class="border px-4 py-2">255.255.255.0 (/24)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CIDR Table -->
+    <section>
+      <div class="bg-white rounded-xl shadow-md p-8 border-l-8 border-indigo-400">
+        <h2 class="text-2xl font-semibold mb-6">CIDR Subnet Mask Table (HIGH YIELD)</h2>
+
+        <div class="overflow-x-auto">
+          <table class="min-w-full border border-gray-200 text-sm">
+            <thead class="bg-indigo-50">
+              <tr>
+                <th class="border px-3 py-2">/Prefix</th>
+                <th class="border px-3 py-2">Subnet Mask</th>
+                <th class="border px-3 py-2">Total IPs</th>
+                <th class="border px-3 py-2">Usable Hosts</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="border px-3 py-2">/24</td><td class="border px-3 py-2">255.255.255.0</td><td class="border px-3 py-2">256</td><td class="border px-3 py-2">254</td></tr>
+              <tr><td class="border px-3 py-2">/25</td><td class="border px-3 py-2">255.255.255.128</td><td class="border px-3 py-2">128</td><td class="border px-3 py-2">126</td></tr>
+              <tr><td class="border px-3 py-2">/26</td><td class="border px-3 py-2">255.255.255.192</td><td class="border px-3 py-2">64</td><td class="border px-3 py-2">62</td></tr>
+              <tr><td class="border px-3 py-2">/27</td><td class="border px-3 py-2">255.255.255.224</td><td class="border px-3 py-2">32</td><td class="border px-3 py-2">30</td></tr>
+              <tr><td class="border px-3 py-2">/28</td><td class="border px-3 py-2">255.255.255.240</td><td class="border px-3 py-2">16</td><td class="border px-3 py-2">14</td></tr>
+              <tr><td class="border px-3 py-2">/29</td><td class="border px-3 py-2">255.255.255.248</td><td class="border px-3 py-2">8</td><td class="border px-3 py-2">6</td></tr>
+              <tr><td class="border px-3 py-2">/30</td><td class="border px-3 py-2">255.255.255.252</td><td class="border px-3 py-2">4</td><td class="border px-3 py-2">2</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Magic Number -->
+    <section>
+      <div class="bg-white rounded-xl shadow-md p-8 border-l-8 border-rose-400">
+        <h2 class="text-2xl font-semibold mb-4">Magic Number (Fast Subnetting Trick)</h2>
+        <p class="mb-4">
+          Magic Number = <strong>256 − subnet mask value</strong> (in the interesting octet)
+        </p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-rose-50 p-5 rounded-lg">
+            <h3 class="font-semibold mb-2">Example</h3>
+            <p>Mask: 255.255.255.192</p>
+            <p>Magic Number: 256 − 192 = <strong>64</strong></p>
+          </div>
+          <div class="bg-rose-50 p-5 rounded-lg">
+            <h3 class="font-semibold mb-2">Subnets</h3>
+            <p>0, 64, 128, 192</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Must Know Concepts -->
+    <section>
+      <div class="bg-white rounded-xl shadow-md p-8 border-l-8 border-violet-400">
+        <h2 class="text-2xl font-semibold mb-4">Must-Know Subnetting Concepts</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Network Address = first IP in subnet</li>
+          <li>Broadcast Address = last IP in subnet</li>
+          <li>Usable hosts = Total − 2</li>
+          <li>/30 used for point-to-point links</li>
+          <li>Private IP ranges must be memorized</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Private IPs -->
+    <section>
+      <div class="bg-white rounded-xl shadow-md p-8 border-l-8 border-amber-400">
+        <h2 class="text-2xl font-semibold mb-4">Private IP Address Ranges (EXAM FAVORITE)</h2>
+        <ul class="space-y-2">
+          <li><strong>Class A:</strong> 10.0.0.0 – 10.255.255.255</li>
+          <li><strong>Class B:</strong> 172.16.0.0 – 172.31.255.255</li>
+          <li><strong>Class C:</strong> 192.168.0.0 – 192.168.255.255</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Exam Tips -->
+    <section>
+      <div class="bg-white rounded-xl shadow-md p-8 border-l-8 border-green-500">
+        <h2 class="text-2xl font-semibold mb-4">CCNA Subnetting Exam Tips</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Memorize /24 to /30 table perfectly</li>
+          <li>Practice speed – CCNA is time-based</li>
+          <li>Always find the interesting octet first</li>
+          <li>Draw subnet table during exam</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full bg-gray-100 py-6 mt-10">
+    <div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-600">
+      © 2026 | Subnetting Cheat Sheet | CCNA Exam Prep
+    </div>
+  </footer>
+
+</body>
+</html>
