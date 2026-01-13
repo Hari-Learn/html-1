@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IPv6 Overview – CCNA Perspective</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0f2fe, #fefce8);
+    }
+  </style>
+</head>
+<body class="min-h-screen text-gray-800">
+
+  <!-- Header -->
+  <header class="w-full bg-gradient-to-r from-sky-400 to-indigo-400 text-white py-10 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="text-4xl font-bold mb-2">IPv6 (Internet Protocol Version 6)</h1>
+      <p class="text-lg opacity-90">
+        Understanding IPv6, its purpose, problems solved, and CCNA exam concepts
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-6 py-12 space-y-10">
+
+    <!-- Section: What is IPv6 -->
+    <section class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-xl shadow-md p-8 border-l-8 border-sky-400">
+        <h2 class="text-2xl font-semibold mb-4">What is IPv6?</h2>
+        <p class="leading-relaxed">
+          IPv6 (Internet Protocol Version 6) is the latest version of the Internet Protocol
+          designed to replace IPv4. It uses a <strong>128-bit address</strong> instead of
+          IPv4’s 32-bit address, allowing an extremely large number of unique IP addresses.
+        </p>
+        <p class="mt-4">
+          Example IPv6 address:
+          <span class="font-mono bg-sky-50 px-2 py-1 rounded">
+            2001:0db8:85a3:0000:0000:8a2e:0370:7334
+          </span>
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-8 border-l-8 border-indigo-400">
+        <h2 class="text-2xl font-semibold mb-4">Why IPv6 is Needed?</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li>IPv4 address exhaustion</li>
+          <li>Rapid growth of internet-connected devices</li>
+          <li>IoT, mobile devices, and cloud computing demand</li>
+          <li>Better network efficiency and scalability</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section: Problems with IPv4 -->
+    <section>
+      <div class="bg-white rounded-xl shadow-md p-8 border-l-8 border-rose-400">
+        <h2 class="text-2xl font-semibold mb-4">Problems with IPv4</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <ul class="space-y-2">
+            <li>❌ Limited address space (≈ 4.3 billion)</li>
+            <li>❌ Heavy reliance on NAT</li>
+            <li>❌ Complex network configurations</li>
+          </ul>
+          <ul class="space-y-2">
+            <li>❌ Inefficient routing</li>
+            <li>❌ Security not built-in</li>
+            <li>❌ Difficult to scale for future needs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Solutions Offered by IPv6 -->
+    <section>
+      <div class="bg-white rounded-xl shadow-md p-8 border-l-8 border-emerald-400">
+        <h2 class="text-2xl font-semibold mb-4">How IPv6 Solves These Problems</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-emerald-50 p-5 rounded-lg">
+            <h3 class="font-semibold mb-2">Huge Address Space</h3>
+            <p>Provides 3.4 × 10³⁸ addresses, eliminating address exhaustion.</p>
+          </div>
+          <div class="bg-emerald-50 p-5 rounded-lg">
+            <h3 class="font-semibold mb-2">No NAT Required</h3>
+            <p>Every device can have a globally unique IP address.</p>
+          </div>
+          <div class="bg-emerald-50 p-5 rounded-lg">
+            <h3 class="font-semibold mb-2">Built-in Security</h3>
+            <p>IPsec support is mandatory in IPv6 implementations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: CCNA Exam Perspective -->
+    <section>
+      <div class="bg-white rounded-xl shadow-md p-8 border-l-8 border-violet-400">
+        <h2 class="text-2xl font-semibold mb-6">
+          IPv6 Concepts for CCNA Exam
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-violet-50 p-5 rounded-lg">
+            <h3 class="font-semibold mb-2">IPv6 Address Structure</h3>
+            <p>128-bit address, hexadecimal format, prefix length (e.g. /64).</p>
+          </div>
+
+          <div class="bg-violet-50 p-5 rounded-lg">
+            <h3 class="font-semibold mb-2">Address Types</h3>
+            <p>Unicast, Multicast, Anycast (No Broadcast).</p>
+          </div>
+
+          <div class="bg-violet-50 p-5 rounded-lg">
+            <h3 class="font-semibold mb-2">IPv6 Compression</h3>
+            <p>Leading zeros removed and consecutive zeros replaced by ::</p>
+          </div>
+
+          <div class="bg-violet-50 p-5 rounded-lg">
+            <h3 class="font-semibold mb-2">Link-Local Addresses</h3>
+            <p>FE80::/10 – used for local communication.</p>
+          </div>
+
+          <div class="bg-violet-50 p-5 rounded-lg">
+            <h3 class="font-semibold mb-2">SLAAC</h3>
+            <p>Stateless Address Autoconfiguration.</p>
+          </div>
+
+          <div class="bg-violet-50 p-5 rounded-lg">
+            <h3 class="font-semibold mb-2">ICMPv6 & NDP</h3>
+            <p>Neighbor Discovery Protocol replaces ARP.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full bg-gray-100 py-6 mt-10">
+    <div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-600">
+      © 2026 | IPv6 Overview | Designed for CCNA Learning
+    </div>
+  </footer>
+
+</body>
+</html>
