@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>STP Root Bridge Election</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-5xl mx-auto p-6">
+    <h1 class="text-3xl font-bold text-center text-blue-700 mb-6">
+      Spanning Tree Protocol (STP) – Root Bridge Election
+    </h1>
+
+    <!-- Introduction -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-xl font-semibold mb-3">What is STP?</h2>
+      <p>
+        Spanning Tree Protocol (STP) is a Layer 2 network protocol used in switches
+        to prevent network loops. It works by logically blocking redundant paths
+        while keeping one active path between switches.
+      </p>
+    </section>
+
+    <!-- Root Bridge Election -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-xl font-semibold mb-3">Root Bridge Election</h2>
+      <p class="mb-2">
+        The <strong>Root Bridge</strong> is the central reference point in an STP
+        topology. All switches exchange BPDU (Bridge Protocol Data Unit) messages
+        to elect the Root Bridge.
+      </p>
+      <p>
+        The switch with the <strong>lowest Bridge ID</strong> becomes the Root Bridge.
+      </p>
+    </section>
+
+    <!-- Bridge ID -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-xl font-semibold mb-3">What is Bridge ID?</h2>
+      <p class="mb-2">
+        Bridge ID is a unique identifier for each switch and is made of:
+      </p>
+      <ul class="list-disc list-inside mb-3">
+        <li><strong>Bridge Priority</strong></li>
+        <li><strong>MAC Address</strong></li>
+      </ul>
+
+      <div class="bg-gray-100 p-4 rounded font-mono text-sm">
+        Bridge ID = Priority + MAC Address
+      </div>
+    </section>
+
+    <!-- Priority -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-xl font-semibold mb-3">What is Priority (32768)?</h2>
+      <p class="mb-2">
+        The <strong>priority</strong> is a configurable value used to influence
+        the Root Bridge election.
+      </p>
+      <ul class="list-disc list-inside mb-3">
+        <li>Default priority value is <strong>32768</strong></li>
+        <li>Valid values are in increments of <strong>4096</strong></li>
+        <li>Lower priority = higher chance to become Root Bridge</li>
+      </ul>
+      <p>
+        If two switches have the same priority, the switch with the
+        <strong>lowest MAC address</strong> wins.
+      </p>
+    </section>
+
+    <!-- Ports -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-xl font-semibold mb-3">STP Port Roles</h2>
+
+      <div class="mb-4">
+        <h3 class="font-semibold text-lg text-green-700">Root Port (RP)</h3>
+        <p>
+          The Root Port is the port on a non-root switch that has the
+          <strong>lowest cost path to the Root Bridge</strong>.
+          Each non-root switch has only one Root Port.
+        </p>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="font-semibold text-lg text-blue-700">Designated Port (DP)</h3>
+        <p>
+          A Designated Port is the port that forwards traffic for a network segment.
+          On the Root Bridge, <strong>all ports are Designated Ports</strong>.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-lg text-red-700">Blocked Port</h3>
+        <p>
+          A Blocked Port does not forward traffic. It is used to
+          <strong>prevent loops</strong> in the network while still listening for BPDUs.
+        </p>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="bg-blue-50 p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-3">Quick Summary</h2>
+      <ul class="list-disc list-inside">
+        <li>Root Bridge = Switch with lowest Bridge ID</li>
+        <li>Bridge ID = Priority + MAC Address</li>
+        <li>Default Priority = 32768</li>
+        <li>Root Port = Best path to Root Bridge</li>
+        <li>Designated Port = Forwarding port for a segment</li>
+        <li>Blocked Port = Prevents loops</li>
+      </ul>
+    </section>
+
+    <footer class="text-center mt-6 text-sm text-gray-500">
+      STP Explanation using Tailwind CSS
+    </footer>
+  </div>
+</body>
+</html>
