@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STP Port States</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-5xl mx-auto p-6">
+    <h1 class="text-3xl font-bold text-center text-purple-700 mb-6">
+      Spanning Tree Protocol (STP) – Port States
+    </h1>
+
+    <!-- Introduction -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-xl font-semibold mb-3">What are STP Port States?</h2>
+      <p>
+        STP port states define how switch ports behave while preventing Layer 2
+        loops. Each port moves through different states before it can forward
+        traffic.
+      </p>
+    </section>
+
+    <!-- Disabled -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6 border-l-4 border-gray-500">
+      <h2 class="text-xl font-semibold text-gray-700 mb-2">1. Disabled</h2>
+      <p class="mb-2">
+        The <strong>Disabled</strong> state means the port is administratively
+        shut down or not operational.
+      </p>
+      <ul class="list-disc list-inside">
+        <li>No traffic is sent or received</li>
+        <li>No MAC addresses are learned</li>
+        <li>No BPDUs are processed</li>
+      </ul>
+    </section>
+
+    <!-- Blocking -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6 border-l-4 border-red-500">
+      <h2 class="text-xl font-semibold text-red-600 mb-2">2. Blocking</h2>
+      <p class="mb-2">
+        The <strong>Blocking</strong> state prevents loops in the network.
+      </p>
+      <ul class="list-disc list-inside">
+        <li>Does NOT forward data frames</li>
+        <li>Does NOT learn MAC addresses</li>
+        <li>Receives and processes BPDUs</li>
+      </ul>
+    </section>
+
+    <!-- Listening -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6 border-l-4 border-yellow-500">
+      <h2 class="text-xl font-semibold text-yellow-600 mb-2">3. Listening</h2>
+      <p class="mb-2">
+        In the <strong>Listening</strong> state, the port prepares to forward traffic.
+      </p>
+      <ul class="list-disc list-inside">
+        <li>Does NOT forward data frames</li>
+        <li>Does NOT learn MAC addresses</li>
+        <li>Sends and receives BPDUs</li>
+      </ul>
+    </section>
+
+    <!-- Learning -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6 border-l-4 border-blue-500">
+      <h2 class="text-xl font-semibold text-blue-600 mb-2">4. Learning</h2>
+      <p class="mb-2">
+        The <strong>Learning</strong> state allows the switch to build its MAC table.
+      </p>
+      <ul class="list-disc list-inside">
+        <li>Does NOT forward data frames</li>
+        <li>LEARNS MAC addresses</li>
+        <li>Sends and receives BPDUs</li>
+      </ul>
+    </section>
+
+    <!-- Forwarding -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6 border-l-4 border-green-500">
+      <h2 class="text-xl font-semibold text-green-600 mb-2">5. Forwarding</h2>
+      <p class="mb-2">
+        The <strong>Forwarding</strong> state is the normal operating state.
+      </p>
+      <ul class="list-disc list-inside">
+        <li>Forwards data frames</li>
+        <li>Learns MAC addresses</li>
+        <li>Sends and receives BPDUs</li>
+      </ul>
+    </section>
+
+    <!-- State Flow -->
+    <section class="bg-purple-50 p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-3">STP State Transition Flow</h2>
+      <div class="text-center font-mono bg-white p-4 rounded">
+        Blocking → Listening → Learning → Forwarding
+      </div>
+      <p class="mt-3 text-sm text-gray-600">
+        Note: Disabled and Blocking ports do not forward traffic.
+      </p>
+    </section>
+
+    <footer class="text-center mt-6 text-sm text-gray-500">
+      STP Port States Explained using Tailwind CSS
+    </footer>
+  </div>
+</body>
+</html>
