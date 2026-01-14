@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STP Tricky Interview Questions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-gray-800">
+  <div class="max-w-6xl mx-auto p-6">
+    <h1 class="text-3xl font-bold text-center text-indigo-700 mb-8">
+      🔥 STP Tricky & Critical Interview Questions (CCNA Level)
+    </h1>
+
+    <!-- Card Grid -->
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- Card 1 -->
+      <div class="bg-white rounded-xl shadow-lg border-t-4 border-indigo-500 p-5">
+        <h2 class="text-lg font-semibold text-indigo-600 mb-2">
+          ❓ Q1. Can a switch have more than one Root Port?
+        </h2>
+        <p class="italic text-green-700">
+          ✔️ No. Each non-root switch can have only <strong>one Root Port</strong>,
+          which represents the best path to the Root Bridge.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-xl shadow-lg border-t-4 border-rose-500 p-5">
+        <h2 class="text-lg font-semibold text-rose-600 mb-2">
+          ❓ Q2. How is the Root Bridge elected if all switches have the same priority?
+        </h2>
+        <p class="italic text-blue-700">
+          🧠 The switch with the <strong>lowest MAC address</strong> becomes the Root Bridge.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-xl shadow-lg border-t-4 border-amber-500 p-5">
+        <h2 class="text-lg font-semibold text-amber-600 mb-2">
+          ❓ Q3. Why is the default STP priority value 32768?
+        </h2>
+        <p class="italic text-purple-700">
+          ⚙️ Because the priority field is <strong>4 bits</strong> and must be
+          configured in increments of <strong>4096</strong>.  
+          32768 is the default midpoint value.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white rounded-xl shadow-lg border-t-4 border-emerald-500 p-5">
+        <h2 class="text-lg font-semibold text-emerald-600 mb-2">
+          ❓ Q4. Do Root Bridge ports ever go into Blocking state?
+        </h2>
+        <p class="italic text-red-700">
+          🚫 No. All ports on the Root Bridge are always
+          <strong>Designated Ports</strong> and remain in the Forwarding state.
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-white rounded-xl shadow-lg border-t-4 border-cyan-500 p-5">
+        <h2 class="text-lg font-semibold text-cyan-600 mb-2">
+          ❓ Q5. Can a port be in Blocking state and still receive traffic?
+        </h2>
+        <p class="italic text-indigo-700">
+          📡 Yes, it receives <strong>BPDUs only</strong> but does NOT forward
+          user data traffic.
+        </p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-white rounded-xl shadow-lg border-t-4 border-fuchsia-500 p-5">
+        <h2 class="text-lg font-semibold text-fuchsia-600 mb-2">
+          ❓ Q6. What happens if the Root Bridge fails?
+        </h2>
+        <p class="italic text-green-700">
+          🔁 STP automatically triggers a <strong>new Root Bridge election</strong>
+          based on the lowest Bridge ID.
+        </p>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="bg-white rounded-xl shadow-lg border-t-4 border-orange-500 p-5">
+        <h2 class="text-lg font-semibold text-orange-600 mb-2">
+          ❓ Q7. Which STP state takes the longest time and why?
+        </h2>
+        <p class="italic text-blue-700">
+          ⏳ <strong>Listening</strong> and <strong>Learning</strong> states,
+          each taking 15 seconds by default, to ensure loop-free topology.
+        </p>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="bg-white rounded-xl shadow-lg border-t-4 border-lime-500 p-5">
+        <h2 class="text-lg font-semibold text-lime-600 mb-2">
+          ❓ Q8. Can two switches both think they are the Root Bridge?
+        </h2>
+        <p class="italic text-red-700">
+          ⚠️ Temporarily yes, but once BPDUs are exchanged,
+          the switch with the <strong>higher Bridge ID</strong> gives up Root status.
+        </p>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="bg-white rounded-xl shadow-lg border-t-4 border-sky-500 p-5">
+        <h2 class="text-lg font-semibold text-sky-600 mb-2">
+          ❓ Q9. What is the most common STP interview mistake?
+        </h2>
+        <p class="italic text-purple-700">
+          ❌ Confusing <strong>Blocking state</strong> with
+          <strong>Disabled state</strong>.  
+          Blocking ports are ACTIVE for STP, Disabled ports are not.
+        </p>
+      </div>
+
+      <!-- Card 10 -->
+      <div class="bg-white rounded-xl shadow-lg border-t-4 border-red-600 p-5">
+        <h2 class="text-lg font-semibold text-red-600 mb-2">
+          ❓ Q10. How can you force a switch to become Root Bridge?
+        </h2>
+        <p class="italic text-green-700">
+          🏆 By configuring the <strong>lowest priority value</strong>
+          (for example, 4096) on that switch.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-10 text-sm text-gray-500">
+      💡 Hariharan D designed for learning purpose
+    </footer>
+  </div>
+</body>
+</html>
