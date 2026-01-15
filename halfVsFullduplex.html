@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Half-Duplex vs Full-Duplex Behavior</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+  <div class="container mx-auto px-6 py-10">
+    <h1 class="text-3xl font-bold text-center mb-10">
+      Half-Duplex vs Full-Duplex Behavior
+    </h1>
+
+    <!-- Two Equal Main Sections -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Half-Duplex Section -->
+      <div class="space-y-6">
+
+        <!-- Half-Duplex Card -->
+        <div class="bg-white rounded-lg shadow-md p-6 w-full">
+          <h2 class="text-xl font-semibold mb-3 text-blue-600">
+            Half-Duplex
+          </h2>
+          <p class="text-gray-700 mb-2">
+            In half-duplex communication, data can be transmitted in both
+            directions, but not at the same time.
+          </p>
+          <ul class="list-disc list-inside text-gray-600">
+            <li>Only one device can transmit at a time</li>
+            <li>Collisions can occur</li>
+            <li>Uses CSMA/CD for collision detection</li>
+            <li>Common in hub-based networks</li>
+          </ul>
+        </div>
+
+        <!-- Half-Duplex Example Card -->
+        <div class="bg-white rounded-lg shadow-md p-6 w-full">
+          <h2 class="text-xl font-semibold mb-3 text-indigo-600">
+            Half-Duplex Example
+          </h2>
+          <p class="text-gray-700">
+            Walkie-talkies are a classic example of half-duplex communication —
+            only one person can talk at a time while others listen.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Full-Duplex Section -->
+      <div class="space-y-6">
+
+        <!-- Full-Duplex Card -->
+        <div class="bg-white rounded-lg shadow-md p-6 w-full">
+          <h2 class="text-xl font-semibold mb-3 text-green-600">
+            Full-Duplex
+          </h2>
+          <p class="text-gray-700 mb-2">
+            In full-duplex communication, data can be transmitted and received
+            simultaneously between devices.
+          </p>
+          <ul class="list-disc list-inside text-gray-600">
+            <li>Both devices transmit at the same time</li>
+            <li>No collisions occur</li>
+            <li>CSMA/CD is not required</li>
+            <li>Used by modern Ethernet switches</li>
+          </ul>
+        </div>
+
+        <!-- Full-Duplex Example Card -->
+        <div class="bg-white rounded-lg shadow-md p-6 w-full">
+          <h2 class="text-xl font-semibold mb-3 text-emerald-600">
+            Full-Duplex Example
+          </h2>
+          <p class="text-gray-700">
+            Phone calls represent full-duplex communication — both people can
+            speak and listen at the same time.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Comparison Summary -->
+    <div class="mt-10 bg-white rounded-lg shadow-md p-6 w-full">
+      <h2 class="text-xl font-semibold mb-4 text-purple-600 text-center">
+        Key Comparison
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
+        <div>
+          <p><strong>Half-Duplex:</strong> One direction at a time, collisions possible.</p>
+        </div>
+        <div>
+          <p><strong>Full-Duplex:</strong> Simultaneous two-way communication, no collisions.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
