@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collision vs Broadcast vs Failure Domains</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+  <div class="container mx-auto px-6 py-10">
+    <h1 class="text-3xl font-bold text-center mb-10">
+      Network Domains Comparison
+    </h1>
+
+    <!-- Two Equal Main Sections -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Left Section -->
+      <div class="space-y-6">
+
+        <!-- Collision Domain Card -->
+        <div class="bg-white rounded-lg shadow-md p-6 w-full">
+          <h2 class="text-xl font-semibold mb-3 text-blue-600">
+            Collision Domain
+          </h2>
+          <p class="text-gray-700 mb-2">
+            A collision domain is a network segment where data packets can collide
+            with one another when sent simultaneously.
+          </p>
+          <ul class="list-disc list-inside text-gray-600">
+            <li>Occurs mainly in shared Ethernet networks</li>
+            <li>Hubs create a single collision domain</li>
+            <li>Switches reduce collision domains</li>
+          </ul>
+        </div>
+
+        <!-- Broadcast Domain Card -->
+        <div class="bg-white rounded-lg shadow-md p-6 w-full">
+          <h2 class="text-xl font-semibold mb-3 text-green-600">
+            Broadcast Domain
+          </h2>
+          <p class="text-gray-700 mb-2">
+            A broadcast domain is a network area where a broadcast packet is
+            forwarded to all devices.
+          </p>
+          <ul class="list-disc list-inside text-gray-600">
+            <li>All devices receive broadcast traffic</li>
+            <li>Switches forward broadcasts</li>
+            <li>Routers break broadcast domains</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Right Section -->
+      <div class="space-y-6">
+
+        <!-- Failure Domain Card -->
+        <div class="bg-white rounded-lg shadow-md p-6 w-full">
+          <h2 class="text-xl font-semibold mb-3 text-red-600">
+            Failure Domain
+          </h2>
+          <p class="text-gray-700 mb-2">
+            A failure domain is the portion of a network affected when a device or
+            component fails.
+          </p>
+          <ul class="list-disc list-inside text-gray-600">
+            <li>Smaller failure domains improve reliability</li>
+            <li>Switch or link failure impacts connected devices</li>
+            <li>Redundancy helps reduce failure impact</li>
+          </ul>
+        </div>
+
+        <!-- Summary Card -->
+        <div class="bg-white rounded-lg shadow-md p-6 w-full">
+          <h2 class="text-xl font-semibold mb-3 text-purple-600">
+            Key Differences
+          </h2>
+          <ul class="list-disc list-inside text-gray-600">
+            <li><strong>Collision:</strong> Packet interference</li>
+            <li><strong>Broadcast:</strong> Message distribution</li>
+            <li><strong>Failure:</strong> Impact of outages</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
+
