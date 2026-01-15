@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CCNA Complete Important Values Reference</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+<div class="container mx-auto px-6 py-10">
+  <h1 class="text-3xl font-bold text-center mb-10">
+    CCNA 200-301 – Complete Important Values & Defaults
+  </h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- STP -->
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-blue-600 mb-3">STP (802.1D)</h2>
+      <ul class="list-disc list-inside">
+        <li>Default Priority: <strong>32768</strong></li>
+        <li>Priority Increment: <strong>4096</strong></li>
+        <li>Bridge ID = Priority + MAC</li>
+        <li>Hello Time: <strong>2 sec</strong></li>
+        <li>Forward Delay: <strong>15 sec</strong></li>
+        <li>Max Age: <strong>20 sec</strong></li>
+        <li>Port States: Blocking → Listening → Learning → Forwarding</li>
+        <li>Cost Method: Short & Long</li>
+      </ul>
+    </div>
+
+    <!-- RSTP -->
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-indigo-600 mb-3">RSTP (802.1w)</h2>
+      <ul class="list-disc list-inside">
+        <li>Port States: Discarding, Learning, Forwarding</li>
+        <li>Edge Port = PortFast</li>
+        <li>Convergence: ~1–2 seconds</li>
+        <li>Backup & Alternate ports</li>
+      </ul>
+    </div>
+
+    <!-- Ethernet -->
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-green-600 mb-3">Ethernet Frames</h2>
+      <ul class="list-disc list-inside">
+        <li>Preamble: <strong>7 bytes</strong></li>
+        <li>SFD: <strong>1 byte</strong></li>
+        <li>Min Frame Size: <strong>64 bytes</strong></li>
+        <li>Max Frame Size: <strong>1518 bytes</strong></li>
+        <li>FCS: <strong>4 bytes</strong></li>
+        <li>Jumbo Frames: ~<strong>9000 bytes</strong></li>
+      </ul>
+    </div>
+
+    <!-- MTU / MSS -->
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-emerald-600 mb-3">MTU / MSS</h2>
+      <ul class="list-disc list-inside">
+        <li>Ethernet MTU: <strong>1500 bytes</strong></li>
+        <li>IP Header: <strong>20 bytes</strong></li>
+        <li>TCP Header: <strong>20 bytes</strong></li>
+        <li>UDP Header: <strong>8 bytes</strong></li>
+        <li>Default MSS: <strong>1460 bytes</strong></li>
+        <li>MSS Formula: MTU − IP − TCP</li>
+      </ul>
+    </div>
+
+    <!-- Duplex -->
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-purple-600 mb-3">Duplex & CSMA</h2>
+      <ul class="list-disc list-inside">
+        <li>Half-Duplex: CSMA/CD</li>
+        <li>Full-Duplex: No collisions</li>
+        <li>Hubs: Half-duplex only</li>
+        <li>Switches: Full-duplex default</li>
+      </ul>
+    </div>
+
+    <!-- VLAN -->
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-cyan-600 mb-3">VLAN & Trunking</h2>
+      <ul class="list-disc list-inside">
+        <li>VLAN Range: <strong>1–4094</strong></li>
+        <li>Normal VLANs: <strong>1–1005</strong></li>
+        <li>Extended VLANs: <strong>1006–4094</strong></li>
+        <li>Default VLAN: <strong>1</strong></li>
+        <li>802.1Q Tag: <strong>4 bytes</strong></li>
+        <li>Native VLAN: Untagged</li>
+      </ul>
+    </div>
+
+    <!-- IP -->
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-orange-600 mb-3">IP Addressing</h2>
+      <ul class="list-disc list-inside">
+        <li>IPv4: <strong>32 bits</strong></li>
+        <li>IPv6: <strong>128 bits</strong></li>
+        <li>APIPA: <strong>169.254.0.0/16</strong></li>
+        <li>Loopback: <strong>127.0.0.1</strong></li>
+        <li>Multicast: <strong>224.0.0.0–239.255.255.255</strong></li>
+      </ul>
+    </div>
+
+    <!-- TCP / UDP -->
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-red-600 mb-3">TCP vs UDP</h2>
+      <ul class="list-disc list-inside">
+        <li>TCP Header: <strong>20 bytes</strong></li>
+        <li>UDP Header: <strong>8 bytes</strong></li>
+        <li>TCP Flags: SYN, ACK, FIN, RST, PSH, URG</li>
+        <li>3-Way Handshake: SYN → SYN/ACK → ACK</li>
+      </ul>
+    </div>
+
+    <!-- Ports -->
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-pink-600 mb-3">Well-Known Ports</h2>
+      <ul class="list-disc list-inside">
+        <li>FTP: 21</li>
+        <li>SSH: 22</li>
+        <li>Telnet: 23</li>
+        <li>SMTP: 25</li>
+        <li>DNS: 53</li>
+        <li>HTTP: 80</li>
+        <li>HTTPS: 443</li>
+        <li>POP3: 110</li>
+        <li>IMAP: 143</li>
+        <li>SNMP: 161</li>
+      </ul>
+    </div>
+
+    <!-- Routing -->
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-teal-600 mb-3">Routing Protocols</h2>
+      <ul class="list-disc list-inside">
+        <li>RIP Metric: Hop Count</li>
+        <li>RIP Max Hops: <strong>15</strong></li>
+        <li>OSPF AD: <strong>110</strong></li>
+        <li>EIGRP AD: <strong>90</strong></li>
+        <li>Static Route AD: <strong>1</strong></li>
+        <li>Connected AD: <strong>0</strong></li>
+      </ul>
+    </div>
+
+    <!-- Wireless -->
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-lime-600 mb-3">Wireless</h2>
+      <ul class="list-disc list-inside">
+        <li>2.4 GHz Channels: 1–14</li>
+        <li>Non-Overlapping: 1, 6, 11</li>
+        <li>CSMA/CA (Wireless)</li>
+        <li>WPA2: AES</li>
+        <li>WPA3: SAE</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="mt-10 text-center text-gray-600">
+    Memorize this = pass CCNA 💯
+  </div>
+
+</div>
+</body>
+</html>
