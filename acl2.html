@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ACL Essentials - What Matters Most</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white p-6 text-center">
+    <h1 class="text-3xl font-bold">ACL Essentials 📌</h1>
+    <p class="text-lg mt-2">What to Understand, Memorize & Focus On (ELI10)</p>
+  </header>
+
+  <main class="max-w-4xl mx-auto p-6 space-y-6">
+
+    <!-- Must Understand -->
+    <section class="bg-white p-6 rounded-xl shadow">
+      <h2 class="text-2xl font-semibold mb-4">🧠 What You MUST Understand</h2>
+
+      <ul class="list-disc ml-6 space-y-3">
+        <li>
+          <b>ACLs are rule lists</b><br>
+          Router checks rules <span class="text-indigo-600 font-semibold">top to bottom</span>
+        </li>
+        <li>
+          <b>First match wins</b><br>
+          Once a rule matches, router stops checking
+        </li>
+        <li>
+          <b>Implicit Deny</b><br>
+          If nothing matches → traffic is blocked ❌
+        </li>
+        <li>
+          <b>Direction matters</b><br>
+          <span class="font-semibold">IN</span> = traffic coming in  
+          <br><span class="font-semibold">OUT</span> = traffic going out
+        </li>
+      </ul>
+    </section>
+
+    <!-- Must Memorize -->
+    <section class="bg-blue-50 p-6 rounded-xl border border-blue-300">
+      <h2 class="text-2xl font-semibold mb-4">📝 What You Should MEMORIZE</h2>
+
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-bold">Standard vs Extended ACL</h3>
+          <p>Standard → Source IP only</p>
+          <p>Extended → Source, Destination, Protocol, Port</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold">ACL Placement Rule (Very Important!)</h3>
+          <p>Standard ACL → Place near <b>destination</b></p>
+          <p>Extended ACL → Place near <b>source</b></p>
+        </div>
+
+        <div>
+          <h3 class="font-bold">Implicit Deny</h3>
+          <p>Every ACL ends with:</p>
+          <p class="font-mono bg-slate-900 text-red-400 p-2 rounded inline-block">
+            deny any
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Most Important -->
+    <section class="bg-white p-6 rounded-xl shadow">
+      <h2 class="text-2xl font-semibold mb-4">⭐ What Is MOST IMPORTANT in ACL</h2>
+
+      <ol class="list-decimal ml-6 space-y-3">
+        <li>
+          <b>Order of rules</b><br>
+          Wrong order = broken network 😱
+        </li>
+        <li>
+          <b>Direction (IN / OUT)</b><br>
+          Same ACL, different direction → different result
+        </li>
+        <li>
+          <b>Extended ACL logic</b><br>
+          Think: WHO → WHO → WHAT → HOW
+        </li>
+        <li>
+          <b>Implicit deny awareness</b><br>
+          Forgetting <code>permit any</code> blocks everything
+        </li>
+      </ol>
+    </section>
+
+    <!-- Exam Tips -->
+    <section class="bg-green-50 p-6 rounded-xl border border-green-300">
+      <h2 class="text-2xl font-semibold mb-4">🎯 CCNA Exam Tips</h2>
+
+      <ul class="list-disc ml-6 space-y-2">
+        <li>Read ACL questions <b>slowly</b></li>
+        <li>Visualize traffic direction 🚦</li>
+        <li>Watch for <b>implicit deny</b> traps</li>
+        <li>Extended ACLs are tested more than Standard</li>
+      </ul>
+    </section>
+
+    <!-- ELI10 Summary -->
+    <section class="bg-indigo-600 text-white p-6 rounded-xl">
+      <h2 class="text-2xl font-semibold mb-3">👶 ELI10 Summary</h2>
+      <p>
+        ACLs are like a list of rules for a guard.<br>
+        The guard reads rules from top to bottom.<br>
+        First match decides.<br>
+        If no rule matches → NO ENTRY 🚫
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="text-center p-4 text-slate-600">
+    CCNA ACL Essentials • Tailwind CSS • ELI10
+  </footer>
+
+</body>
+</html>
