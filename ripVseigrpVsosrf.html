@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RIP vs EIGRP vs OSPF | CCNA & Interview Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="text-center py-10">
+    <h1 class="text-4xl font-bold text-indigo-700">RIP vs EIGRP vs OSPF</h1>
+    <p class="mt-3 text-lg text-gray-600">CCNA Concepts & Interview Preparation</p>
+  </header>
+
+  <!-- Introduction -->
+  <section class="max-w-6xl mx-auto px-6 mb-12">
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-indigo-600 mb-3">Introduction</h2>
+      <p>
+        Routing protocols are used by routers to dynamically discover networks and determine
+        the best path to forward data. In CCNA, the most important Interior Gateway Protocols (IGPs)
+        are <strong>RIP</strong>, <strong>EIGRP</strong>, and <strong>OSPF</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="max-w-6xl mx-auto px-6 mb-12">
+    <div class="bg-white rounded-xl shadow-md p-6 overflow-x-auto">
+      <h2 class="text-2xl font-semibold text-indigo-600 mb-4">Comparison Table</h2>
+      <table class="w-full border border-gray-200 text-sm text-left">
+        <thead class="bg-indigo-100">
+          <tr>
+            <th class="p-3 border">Feature</th>
+            <th class="p-3 border">RIP</th>
+            <th class="p-3 border">EIGRP</th>
+            <th class="p-3 border">OSPF</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border font-medium">Type</td>
+            <td class="p-3 border">Distance Vector</td>
+            <td class="p-3 border">Advanced Distance Vector</td>
+            <td class="p-3 border">Link State</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border font-medium">Metric</td>
+            <td class="p-3 border">Hop Count</td>
+            <td class="p-3 border">Bandwidth, Delay</td>
+            <td class="p-3 border">Cost</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border font-medium">Max Hop Count</td>
+            <td class="p-3 border">15</td>
+            <td class="p-3 border">255 (100 default)</td>
+            <td class="p-3 border">Unlimited</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border font-medium">Convergence</td>
+            <td class="p-3 border">Slow</td>
+            <td class="p-3 border">Very Fast</td>
+            <td class="p-3 border">Fast</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border font-medium">Algorithm</td>
+            <td class="p-3 border">Bellman-Ford</td>
+            <td class="p-3 border">DUAL</td>
+            <td class="p-3 border">Dijkstra (SPF)</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border font-medium">Vendor</td>
+            <td class="p-3 border">Open Standard</td>
+            <td class="p-3 border">Cisco (Mostly)</td>
+            <td class="p-3 border">Open Standard</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CCNA Focus -->
+  <section class="max-w-6xl mx-auto px-6 mb-12">
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-indigo-600 mb-4">CCNA Exam Focus</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>RIP:</strong> Easy to configure, used only in small networks.</li>
+        <li><strong>EIGRP:</strong> Cisco proprietary, uses DUAL for loop-free routing.</li>
+        <li><strong>OSPF:</strong> Uses areas (Area 0 backbone), best for large networks.</li>
+        <li>OSPF uses <strong>Hello packets</strong> to form neighbor relationships.</li>
+        <li>EIGRP uses <strong>Feasible Successor</strong> for backup routes.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Interview Questions -->
+  <section class="max-w-6xl mx-auto px-6 mb-16">
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-indigo-600 mb-4">Interview Questions & Answers</h2>
+
+      <div class="space-y-4">
+        <div>
+          <p class="font-semibold">Q1. Which routing protocol is fastest to converge?</p>
+          <p class="text-gray-700">👉 EIGRP converges the fastest due to the DUAL algorithm.</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Q2. Why is RIP not used in large networks?</p>
+          <p class="text-gray-700">
+            👉 RIP has a maximum hop count of 15 and slow convergence, making it unsuitable for large networks.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Q3. What is Area 0 in OSPF?</p>
+          <p class="text-gray-700">
+            👉 Area 0 is the backbone area. All other OSPF areas must connect to Area 0.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Q4. Is EIGRP an open standard?</p>
+          <p class="text-gray-700">
+            👉 EIGRP was Cisco proprietary, but now it is partially open and mainly used on Cisco devices.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Q5. Which protocol uses cost as a metric?</p>
+          <p class="text-gray-700">👉 OSPF uses cost, based mainly on bandwidth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-gray-500">
+    © 2026 | Networking CCNA Study Page
+  </footer>
+
+</body>
+</html>
