@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Administrative Distance (AD) | CCNA & Interview Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="text-center py-10">
+    <h1 class="text-4xl font-bold text-emerald-700">Administrative Distance (AD)</h1>
+    <p class="mt-3 text-lg text-gray-600">Routing Protocol Preference Explained (CCNA)</p>
+  </header>
+
+  <!-- What is AD -->
+  <section class="max-w-6xl mx-auto px-6 mb-12">
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-emerald-600 mb-3">What is Administrative Distance?</h2>
+      <p class="mb-3">
+        <strong>Administrative Distance (AD)</strong> is a value used by routers to determine
+        which routing protocol is more trustworthy when multiple protocols provide routes
+        to the same destination.
+      </p>
+      <p class="font-medium text-indigo-600">
+        👉 Lower Administrative Distance = Higher Priority
+      </p>
+    </div>
+  </section>
+
+  <!-- Why AD is Needed -->
+  <section class="max-w-6xl mx-auto px-6 mb-12">
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-emerald-600 mb-3">Why Administrative Distance is Needed?</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>A router may learn the same network from multiple routing protocols.</li>
+        <li>Metrics are compared only <strong>within the same protocol</strong>.</li>
+        <li>AD helps the router decide <strong>which protocol’s route to install</strong> in the routing table.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- AD Values Table -->
+  <section class="max-w-6xl mx-auto px-6 mb-12">
+    <div class="bg-white rounded-xl shadow-md p-6 overflow-x-auto">
+      <h2 class="text-2xl font-semibold text-emerald-600 mb-4">Default Administrative Distance Values</h2>
+
+      <table class="w-full border border-gray-200 text-sm">
+        <thead class="bg-emerald-100">
+          <tr>
+            <th class="p-3 border text-left">Route Source</th>
+            <th class="p-3 border text-left">Administrative Distance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border">Connected Interface</td>
+            <td class="p-3 border font-semibold">0</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border">Static Route</td>
+            <td class="p-3 border font-semibold">1</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border">EIGRP (Internal)</td>
+            <td class="p-3 border font-semibold">90</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border">OSPF</td>
+            <td class="p-3 border font-semibold">110</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border">RIP</td>
+            <td class="p-3 border font-semibold">120</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border">EIGRP (External)</td>
+            <td class="p-3 border font-semibold">170</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border">Unknown</td>
+            <td class="p-3 border font-semibold">255 (Never used)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Example -->
+  <section class="max-w-6xl mx-auto px-6 mb-12">
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-emerald-600 mb-3">Example Scenario</h2>
+      <p class="mb-2">
+        A router learns network <strong>10.1.1.0/24</strong> from:
+      </p>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>OSPF (AD 110)</li>
+        <li>EIGRP (AD 90)</li>
+      </ul>
+      <p class="mt-3 font-medium text-indigo-600">
+        👉 The router will choose the EIGRP route because it has a lower AD.
+      </p>
+    </div>
+  </section>
+
+  <!-- CCNA Focus -->
+  <section class="max-w-6xl mx-auto px-6 mb-12">
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-emerald-600 mb-3">CCNA Key Points</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>AD is checked <strong>before</strong> the routing metric.</li>
+        <li>Lower AD routes are always preferred.</li>
+        <li>Static routes can be configured with higher AD to act as <strong>floating static routes</strong>.</li>
+        <li>AD is a local value and is not advertised to other routers.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Interview Questions -->
+  <section class="max-w-6xl mx-auto px-6 mb-16">
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-emerald-600 mb-4">Interview Questions & Answers</h2>
+
+      <div class="space-y-4">
+        <div>
+          <p class="font-semibold">Q1. What is Administrative Distance?</p>
+          <p>👉 It is the trust value used by a router to select the best routing protocol.</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Q2. Which route is preferred: AD 90 or AD 110?</p>
+          <p>👉 AD 90 is preferred because lower AD means higher priority.</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Q3. What is the AD of OSPF?</p>
+          <p>👉 The default Administrative Distance of OSPF is 110.</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Q4. Can AD be changed?</p>
+          <p>👉 Yes, Administrative Distance can be manually modified by the administrator.</p>
+        </div>
+
+        <div>
+          <p class="font-semibold">Q5. What is a floating static route?</p>
+          <p>
+            👉 A static route with a higher AD, used only when the primary route fails.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-gray-500">
+    © 2026 | CCNA Routing Concepts
+  </footer>
+
+</body>
+</html>
