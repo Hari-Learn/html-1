@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DHCP Packets and Their Functionality</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <header class="bg-blue-600 text-white py-6 shadow">
+    <div class="max-w-5xl mx-auto px-4">
+      <h1 class="text-3xl font-bold">DHCP Packets</h1>
+      <p class="text-lg mt-2">Explanation of 8 DHCP packets and their functionality</p>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
+
+    <!-- Packet Card -->
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-blue-600">1. DHCP Discover</h2>
+      <p class="mt-2">
+        The client broadcasts a DHCP Discover message to locate available DHCP servers
+        on the network. This is the first step when a device wants to obtain an IP address.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-blue-600">2. DHCP Offer</h2>
+      <p class="mt-2">
+        The DHCP server responds with a DHCP Offer message, offering an IP address
+        and other network configuration details such as subnet mask and lease time.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-blue-600">3. DHCP Request</h2>
+      <p class="mt-2">
+        The client sends a DHCP Request message to request the offered IP address.
+        This message is usually broadcast to inform all servers which offer was accepted.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-blue-600">4. DHCP Acknowledge (ACK)</h2>
+      <p class="mt-2">
+        The DHCP server sends a DHCP ACK message confirming the IP address lease.
+        The client can now use the assigned IP configuration.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-blue-600">5. DHCP Negative Acknowledge (NAK)</h2>
+      <p class="mt-2">
+        The DHCP server sends a DHCP NAK message if the requested IP address is invalid
+        or no longer available. The client must restart the DHCP process.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-blue-600">6. DHCP Release</h2>
+      <p class="mt-2">
+        The client sends a DHCP Release message to inform the server that it no longer
+        needs the assigned IP address, allowing it to be reused.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-blue-600">7. DHCP Decline</h2>
+      <p class="mt-2">
+        The client sends a DHCP Decline message when it detects that the offered IP
+        address is already in use on the network.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold text-blue-600">8. DHCP Inform</h2>
+      <p class="mt-2">
+        The DHCP Inform message is sent by a client that already has an IP address
+        but wants additional configuration information such as DNS server details.
+      </p>
+    </div>
+
+  </main>
+
+  <footer class="bg-gray-800 text-gray-200 py-4 mt-8">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <p>&copy; 2026 DHCP Packet Explanation | Tailwind CSS</p>
+    </div>
+  </footer>
+
+</body>
+</html>
