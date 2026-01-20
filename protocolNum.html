@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Port Number vs Protocol Number</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white py-6 shadow">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-3xl font-bold">Port Number vs Protocol Number</h1>
+      <p class="text-lg mt-2">Comparison and common list</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 py-8 space-y-8">
+
+    <!-- Explanation Section -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-indigo-600">Basic Difference</h2>
+      <p class="mt-3">
+        <strong>Port Numbers</strong> identify specific applications or services running
+        on a device, while <strong>Protocol Numbers</strong> identify the type of protocol
+        used at the network layer.
+      </p>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-indigo-600 mb-4">Port Number vs Protocol Number</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full border border-gray-300">
+          <thead class="bg-indigo-100">
+            <tr>
+              <th class="border px-4 py-2 text-left">Feature</th>
+              <th class="border px-4 py-2 text-left">Port Number</th>
+              <th class="border px-4 py-2 text-left">Protocol Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border px-4 py-2">OSI Layer</td>
+              <td class="border px-4 py-2">Transport Layer</td>
+              <td class="border px-4 py-2">Network Layer</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2">Purpose</td>
+              <td class="border px-4 py-2">Identifies application/service</td>
+              <td class="border px-4 py-2">Identifies protocol type</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">Used By</td>
+              <td class="border px-4 py-2">TCP / UDP</td>
+              <td class="border px-4 py-2">IP</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2">Example</td>
+              <td class="border px-4 py-2">80 (HTTP)</td>
+              <td class="border px-4 py-2">6 (TCP)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Port Number List -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-indigo-600 mb-4">Common Port Numbers</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full border border-gray-300">
+          <thead class="bg-indigo-100">
+            <tr>
+              <th class="border px-4 py-2">Port Number</th>
+              <th class="border px-4 py-2">Protocol</th>
+              <th class="border px-4 py-2">Service</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border px-4 py-2">20 / 21</td>
+              <td class="border px-4 py-2">TCP</td>
+              <td class="border px-4 py-2">FTP</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2">22</td>
+              <td class="border px-4 py-2">TCP</td>
+              <td class="border px-4 py-2">SSH</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">23</td>
+              <td class="border px-4 py-2">TCP</td>
+              <td class="border px-4 py-2">Telnet</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2">25</td>
+              <td class="border px-4 py-2">TCP</td>
+              <td class="border px-4 py-2">SMTP</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">53</td>
+              <td class="border px-4 py-2">TCP / UDP</td>
+              <td class="border px-4 py-2">DNS</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2">80</td>
+              <td class="border px-4 py-2">TCP</td>
+              <td class="border px-4 py-2">HTTP</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">443</td>
+              <td class="border px-4 py-2">TCP</td>
+              <td class="border px-4 py-2">HTTPS</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Protocol Number List -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-indigo-600 mb-4">Common Protocol Numbers</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full border border-gray-300">
+          <thead class="bg-indigo-100">
+            <tr>
+              <th class="border px-4 py-2">Protocol Number</th>
+              <th class="border px-4 py-2">Protocol Name</th>
+              <th class="border px-4 py-2">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border px-4 py-2">1</td>
+              <td class="border px-4 py-2">ICMP</td>
+              <td class="border px-4 py-2">Error reporting and diagnostics</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2">2</td>
+              <td class="border px-4 py-2">IGMP</td>
+              <td class="border px-4 py-2">Multicast management</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">6</td>
+              <td class="border px-4 py-2">TCP</td>
+              <td class="border px-4 py-2">Reliable transport protocol</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2">17</td>
+              <td class="border px-4 py-2">UDP</td>
+              <td class="border px-4 py-2">Connectionless transport protocol</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">89</td>
+              <td class="border px-4 py-2">OSPF</td>
+              <td class="border px-4 py-2">Routing protocol</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-200 py-4 mt-8">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p>&copy; 2026 Networking Basics | Port vs Protocol Numbers</p>
+    </div>
+  </footer>
+
+</body>
+</html>
