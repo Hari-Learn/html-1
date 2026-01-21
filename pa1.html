@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CCNA ACL Concepts with Palo Alto Firewall</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-indigo-700 text-white py-6">
+        <div class="max-w-5xl mx-auto px-4">
+            <h1 class="text-3xl font-bold">ACL Concepts (CCNA) using Palo Alto Firewall</h1>
+            <p class="mt-2 text-lg">Learn Firewall Rules the CCNA Way</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-4 py-8 space-y-8">
+
+        <!-- ACL Basics -->
+        <section class="bg-white p-6 rounded shadow">
+            <h2 class="text-2xl font-semibold mb-3">What is an ACL? (CCNA)</h2>
+            <p>
+                An <strong>Access Control List (ACL)</strong> is a set of rules used to
+                <strong>permit or deny traffic</strong> based on conditions.
+            </p>
+            <p class="mt-2">
+                In CCNA, ACLs answer this question:
+                <strong>"Should this traffic be allowed or blocked?"</strong>
+            </p>
+        </section>
+
+        <!-- ACL Logic -->
+        <section class="bg-white p-6 rounded shadow">
+            <h2 class="text-2xl font-semibold mb-3">Basic ACL Logic</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li>ACLs are checked <strong>top to bottom</strong></li>
+                <li>First matching rule is applied</li>
+                <li>If no rule matches → <strong>implicit deny</strong></li>
+            </ul>
+        </section>
+
+        <!-- ACL Parameters -->
+        <section class="bg-white p-6 rounded shadow">
+            <h2 class="text-2xl font-semibold mb-3">What Does an ACL Check?</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-gray-50 p-4 rounded">
+                    <p><strong>Source IP</strong></p>
+                    <p>Who is sending traffic</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded">
+                    <p><strong>Destination IP</strong></p>
+                    <p>Where traffic is going</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded">
+                    <p><strong>Protocol</strong></p>
+                    <p>TCP, UDP, ICMP</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded">
+                    <p><strong>Port Number</strong></p>
+                    <p>HTTP (80), HTTPS (443), FTP (21)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Palo Alto Mapping -->
+        <section class="bg-white p-6 rounded shadow">
+            <h2 class="text-2xl font-semibold mb-3">
+                How Palo Alto Firewall Uses ACL Concepts
+            </h2>
+            <p>
+                Palo Alto does not use the word <strong>ACL</strong>.
+                Instead, it uses <strong>Security Policies</strong>.
+            </p>
+
+            <div class="overflow-x-auto mt-4">
+                <table class="w-full border border-gray-300 text-sm">
+                    <thead class="bg-gray-200">
+                        <tr>
+                            <th class="border px-3 py-2 text-left">CCNA ACL</th>
+                            <th class="border px-3 py-2 text-left">Palo Alto Firewall</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border px-3 py-2">Permit / Deny</td>
+                            <td class="border px-3 py-2">Allow / Deny</td>
+                        </tr>
+                        <tr>
+                            <td class="border px-3 py-2">Source IP</td>
+                            <td class="border px-3 py-2">Source Address</td>
+                        </tr>
+                        <tr>
+                            <td class="border px-3 py-2">Destination IP</td>
+                            <td class="border px-3 py-2">Destination Address</td>
+                        </tr>
+                        <tr>
+                            <td class="border px-3 py-2">Protocol & Port</td>
+                            <td class="border px-3 py-2">Application / Service</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Example -->
+        <section class="bg-white p-6 rounded shadow">
+            <h2 class="text-2xl font-semibold mb-3">CCNA ACL Example</h2>
+            <p class="mb-2"><strong>Requirement:</strong></p>
+            <p>
+                Allow PC1 (192.168.1.10) to access Web Server (192.168.1.100) using HTTP.
+            </p>
+
+            <div class="mt-4 bg-gray-900 text-green-400 p-4 rounded font-mono text-sm">
+                access-list 100 permit tcp host 192.168.1.10 host 192.168.1.100 eq 80
+            </div>
+
+            <p class="mt-4">
+                In Palo Alto, the same rule is created as a
+                <strong>Security Policy</strong>.
+            </p>
+        </section>
+
+        <!-- Key Exam Points -->
+        <section class="bg-white p-6 rounded shadow">
+            <h2 class="text-2xl font-semibold mb-3">Important CCNA Exam Points</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li>ACLs work on permit / deny logic</li>
+                <li>Rules are read top to bottom</li>
+                <li>Implicit deny always exists</li>
+                <li>Palo Alto policies follow same logic but are more advanced</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-4">
+        <div class="max-w-5xl mx-auto px-4 text-center text-sm">
+            CCNA ACL Concepts explained using Palo Alto Firewall
+        </div>
+    </footer>
+
+</body>
+</html>
