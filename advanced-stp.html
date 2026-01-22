@@ -2,131 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Advanced STP Features</title>
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
+
+<body class="min-h-screen bg-gradient-to-br from-sky-50 via-indigo-50 to-purple-50 text-gray-700">
 
   <!-- Header -->
-  <header class="bg-blue-600 text-white py-6 shadow">
-    <div class="max-w-5xl mx-auto px-4">
-      <h1 class="text-3xl font-bold">Advanced STP Features</h1>
-      <p class="mt-2 text-blue-100">
-        Deep dive into Spanning Tree Protocol protection mechanisms
+  <header class="py-12">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h1 class="text-4xl font-bold text-indigo-700">
+        Advanced STP Features
+      </h1>
+      <p class="mt-4 text-lg text-gray-600">
+        Spanning Tree protection mechanisms beyond basic STP
       </p>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="max-w-5xl mx-auto px-4 py-10 space-y-8">
+  <!-- Cards Section -->
+  <main class="max-w-6xl mx-auto px-6 pb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-    <!-- Intro -->
-    <section class="bg-white p-6 rounded-lg shadow">
-      <h2 class="text-2xl font-semibold mb-3">Overview</h2>
-      <p class="leading-relaxed">
-        Advanced Spanning Tree Protocol (STP) features are designed to
-        protect the network from misconfigurations, loops, and malicious
-        behavior. These features go beyond basic STP operation and are
-        commonly tested as <span class="font-semibold">rare but important CCNA topics</span>.
-      </p>
-    </section>
-
-    <!-- Root Guard -->
-    <section class="bg-white p-6 rounded-lg shadow">
-      <h3 class="text-xl font-semibold text-blue-600 mb-2">Root Guard</h3>
-      <p>
-        Root Guard prevents a switch from becoming the root bridge on
-        specific ports.
-      </p>
-      <ul class="list-disc list-inside mt-3 space-y-1">
-        <li>Used on designated ports</li>
-        <li>Blocks the port if superior BPDUs are received</li>
-        <li>Protects the existing root bridge</li>
-      </ul>
-    </section>
-
-    <!-- Loop Guard -->
-    <section class="bg-white p-6 rounded-lg shadow">
-      <h3 class="text-xl font-semibold text-blue-600 mb-2">Loop Guard</h3>
-      <p>
-        Loop Guard prevents loops caused by unidirectional link failures
-        when BPDUs stop arriving.
-      </p>
-      <ul class="list-disc list-inside mt-3 space-y-1">
-        <li>Keeps ports from moving to forwarding state</li>
-        <li>Works on non-designated ports</li>
-        <li>Useful in fiber and long-distance links</li>
-      </ul>
-    </section>
-
-    <!-- BPDU Guard -->
-    <section class="bg-white p-6 rounded-lg shadow">
-      <h3 class="text-xl font-semibold text-blue-600 mb-2">BPDU Guard</h3>
-      <p>
-        BPDU Guard immediately disables a port if a BPDU is received.
-      </p>
-      <ul class="list-disc list-inside mt-3 space-y-1">
-        <li>Used with PortFast</li>
-        <li>Protects against rogue switches</li>
-        <li>Port is placed into err-disabled state</li>
-      </ul>
-    </section>
-
-    <!-- BPDU Filter -->
-    <section class="bg-white p-6 rounded-lg shadow">
-      <h3 class="text-xl font-semibold text-blue-600 mb-2">BPDU Filter</h3>
-      <p>
-        BPDU Filter stops BPDUs from being sent or received on a port.
-      </p>
-      <ul class="list-disc list-inside mt-3 space-y-1">
-        <li>Can be applied globally or per interface</li>
-        <li>Use with caution — can cause loops</li>
-        <li>Not recommended in most production networks</li>
-      </ul>
-    </section>
-
-    <!-- Summary Table -->
-    <section class="bg-white p-6 rounded-lg shadow">
-      <h3 class="text-xl font-semibold mb-4">Quick Comparison</h3>
-      <div class="overflow-x-auto">
-        <table class="min-w-full border border-gray-300">
-          <thead class="bg-gray-200">
-            <tr>
-              <th class="border px-4 py-2 text-left">Feature</th>
-              <th class="border px-4 py-2 text-left">Purpose</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="border px-4 py-2">Root Guard</td>
-              <td class="border px-4 py-2">Prevents root bridge takeover</td>
-            </tr>
-            <tr>
-              <td class="border px-4 py-2">Loop Guard</td>
-              <td class="border px-4 py-2">Prevents loops from BPDU loss</td>
-            </tr>
-            <tr>
-              <td class="border px-4 py-2">BPDU Guard</td>
-              <td class="border px-4 py-2">Disables port on BPDU receipt</td>
-            </tr>
-            <tr>
-              <td class="border px-4 py-2">BPDU Filter</td>
-              <td class="border px-4 py-2">Suppresses BPDU traffic</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Root Guard Card -->
+      <div class="bg-white/80 backdrop-blur rounded-xl shadow-md p-6 hover:shadow-lg transition">
+        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-100 mb-4">
+          <!-- Icon -->
+          <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 3v18M5 12h14"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-indigo-700 mb-2">Root Guard</h3>
+        <p class="text-sm leading-relaxed">
+          Prevents an access or distribution switch from becoming the
+          root bridge by blocking ports that receive superior BPDUs.
+        </p>
       </div>
-    </section>
 
+      <!-- Loop Guard Card -->
+      <div class="bg-white/80 backdrop-blur rounded-xl shadow-md p-6 hover:shadow-lg transition">
+        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-sky-100 mb-4">
+          <!-- Icon -->
+          <svg class="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 4v6h6M20 20v-6h-6"/>
+            <path d="M9 15l-5 5M15 9l5-5"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-sky-700 mb-2">Loop Guard</h3>
+        <p class="text-sm leading-relaxed">
+          Protects the network from loops caused by unidirectional link
+          failures when BPDUs stop arriving.
+        </p>
+      </div>
+
+      <!-- BPDU Guard Card -->
+      <div class="bg-white/80 backdrop-blur rounded-xl shadow-md p-6 hover:shadow-lg transition">
+        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-100 mb-4">
+          <!-- Icon -->
+          <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-emerald-700 mb-2">BPDU Guard</h3>
+        <p class="text-sm leading-relaxed">
+          Immediately places a PortFast-enabled port into
+          <span class="font-medium">err-disabled</span> state when a BPDU is received.
+        </p>
+      </div>
+
+      <!-- BPDU Filter Card -->
+      <div class="bg-white/80 backdrop-blur rounded-xl shadow-md p-6 hover:shadow-lg transition">
+        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-100 mb-4">
+          <!-- Icon -->
+          <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M3 12h18M6 6l12 12M6 18L18 6"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-rose-700 mb-2">BPDU Filter</h3>
+        <p class="text-sm leading-relaxed">
+          Stops BPDUs from being sent or received on a port.
+          Should be used carefully as it can introduce loops.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Info Box -->
+    <div class="mt-12 bg-gradient-to-r from-indigo-100 to-sky-100 rounded-xl p-6 shadow-sm">
+      <h4 class="text-lg font-semibold text-indigo-700 mb-2">Why These Matter (CCNA)</h4>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        These advanced STP features are considered <strong>rare but high-value CCNA topics</strong>.
+        They focus on protecting the network from misconfigurations, rogue switches,
+        and Layer 2 loops.
+      </p>
+    </div>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-200 py-4">
-    <div class="max-w-5xl mx-auto px-4 text-center text-sm">
-      © 2026 | CCNA Advanced STP Features | Tailwind CSS Demo
-    </div>
+  <footer class="py-6 text-center text-sm text-gray-500">
+    © 2026 • Advanced STP Features • Tailwind CSS
   </footer>
 
 </body>
