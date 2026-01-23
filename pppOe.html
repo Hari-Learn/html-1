@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WAN Protocols – PPP, PPPoE, GRE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-6 shadow-lg">
+    <div class="max-w-5xl mx-auto px-4">
+      <h1 class="text-3xl font-bold">WAN Protocols</h1>
+      <p class="mt-2 text-blue-200">
+        Understanding PPP, PPPoE, and GRE – A Core Network Engineer Perspective
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-10">
+
+    <!-- WAN Overview -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-3">What are WAN Protocols?</h2>
+      <p class="leading-relaxed">
+        WAN (Wide Area Network) protocols are used to connect networks across
+        long distances. Unlike LAN technologies, WAN protocols handle
+        authentication, encapsulation, tunneling, and transmission over
+        service-provider or public networks.
+      </p>
+      <p class="mt-3 leading-relaxed">
+        Common WAN protocols include <strong>PPP</strong>, <strong>PPPoE</strong>,
+        and <strong>GRE</strong>, each solving different connectivity problems.
+      </p>
+    </section>
+
+    <!-- PPP -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-2">PPP (Point-to-Point Protocol)</h2>
+      <p class="mb-3">
+        PPP is a Layer 2 protocol used to establish a direct connection between
+        two routers over serial links.
+      </p>
+
+      <h3 class="font-semibold">Why PPP is Used</h3>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>Supports authentication (PAP, CHAP)</li>
+        <li>Encapsulates multiple Layer 3 protocols</li>
+        <li>Detects link errors</li>
+        <li>Standardized and vendor-independent</li>
+      </ul>
+
+      <h3 class="font-semibold mt-4">What a Core Engineer Must Understand</h3>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>PPP encapsulation process</li>
+        <li>CHAP vs PAP authentication</li>
+        <li>PPP negotiation phases (LCP, NCP)</li>
+        <li>Troubleshooting PPP link failures</li>
+      </ul>
+    </section>
+
+    <!-- PPPoE -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-2">PPPoE (PPP over Ethernet)</h2>
+      <p class="mb-3">
+        PPPoE allows PPP sessions to run over Ethernet networks. It is commonly
+        used by ISPs to deliver internet access to customers.
+      </p>
+
+      <h3 class="font-semibold">Why PPPoE is Used</h3>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>Provides user authentication for internet access</li>
+        <li>Allows per-user billing and control</li>
+        <li>Works over standard Ethernet infrastructure</li>
+      </ul>
+
+      <h3 class="font-semibold mt-4">What a Core Engineer Must Understand</h3>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>PPPoE discovery and session stages</li>
+        <li>MTU and fragmentation issues</li>
+        <li>PPPoE client vs server roles</li>
+        <li>ISP-grade troubleshooting concepts</li>
+      </ul>
+    </section>
+
+    <!-- GRE -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-2">GRE (Generic Routing Encapsulation)</h2>
+      <p class="mb-3">
+        GRE is a tunneling protocol that encapsulates packets inside another IP
+        packet. It allows routing protocols and private traffic to pass over
+        public networks.
+      </p>
+
+      <h3 class="font-semibold">Why GRE is Used</h3>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>Creates virtual point-to-point links</li>
+        <li>Supports multicast and routing protocols</li>
+        <li>Connects private networks over the internet</li>
+      </ul>
+
+      <h3 class="font-semibold mt-4">What a Core Engineer Must Understand</h3>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>GRE encapsulation and overhead</li>
+        <li>Difference between GRE and VPNs</li>
+        <li>GRE with IPsec for security</li>
+        <li>Routing over GRE tunnels</li>
+      </ul>
+    </section>
+
+    <!-- Core Engineer Summary -->
+    <section class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+      <h2 class="text-2xl font-semibold mb-3">Core Network Engineer Takeaway</h2>
+      <p class="leading-relaxed">
+        As a core network engineer, you must understand <strong>why</strong> WAN
+        protocols exist, <strong>how</strong> they work internally, and
+        <strong>when</strong> to use each one. PPP and PPPoE focus on access and
+        authentication, while GRE focuses on tunneling and network design.
+      </p>
+      <p class="mt-3">
+        Mastering these concepts helps you design scalable, secure, and
+        troubleshootable WAN architectures.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-4">
+    <div class="max-w-5xl mx-auto px-4 text-center text-sm">
+      © 2026 Networking Fundamentals | WAN Protocols Overview
+    </div>
+  </footer>
+
+</body>
+</html>
