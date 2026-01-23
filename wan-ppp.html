@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WAN Protocols Made Easy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="text-center py-10">
+    <h1 class="text-4xl font-bold text-blue-900">WAN Protocols (ELI10)</h1>
+    <p class="mt-3 text-lg text-gray-600">
+      PPP • PPPoE • GRE — explained so even a beginner gets it
+    </p>
+  </header>
+
+  <!-- What is WAN -->
+  <section class="max-w-6xl mx-auto px-6 mb-12">
+    <div class="bg-white rounded-2xl shadow-md p-6 text-center">
+      <h2 class="text-2xl font-semibold mb-3">First… What is a WAN?</h2>
+      <p class="text-lg">
+        A <strong>WAN (Wide Area Network)</strong> is how networks talk to each other
+        over long distances — like cities, countries, or the internet.
+      </p>
+      <p class="mt-3 text-gray-600">
+        WAN protocols are the <strong>rules</strong> that decide how data travels safely
+        and correctly between far-away networks.
+      </p>
+    </div>
+  </section>
+
+  <!-- Cards -->
+  <section class="max-w-6xl mx-auto px-6 grid gap-8 md:grid-cols-3">
+
+    <!-- PPP Card -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 hover:scale-105 transition">
+      <h3 class="text-xl font-bold text-blue-800 mb-2">PPP</h3>
+      <p class="text-sm text-gray-500 mb-4">Point-to-Point Protocol</p>
+
+      <p class="mb-3">
+        <strong>ELI10:</strong> PPP is like a private phone call between
+        <strong>two routers</strong>.
+      </p>
+
+      <p class="mb-3">
+        It checks who you are, then lets you talk.
+      </p>
+
+      <div class="mt-4">
+        <p class="font-semibold">Why we need it:</p>
+        <ul class="list-disc list-inside text-sm text-gray-700">
+          <li>Secure router-to-router links</li>
+          <li>User authentication</li>
+          <li>Reliable WAN connections</li>
+        </ul>
+      </div>
+
+      <div class="mt-4 bg-blue-50 p-3 rounded-lg text-sm">
+        <strong>Engineer takeaway:</strong><br />
+        Know authentication (PAP vs CHAP) and how PPP brings a link up.
+      </div>
+    </div>
+
+    <!-- PPPoE Card -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 hover:scale-105 transition">
+      <h3 class="text-xl font-bold text-indigo-800 mb-2">PPPoE</h3>
+      <p class="text-sm text-gray-500 mb-4">PPP over Ethernet</p>
+
+      <p class="mb-3">
+        <strong>ELI10:</strong> PPPoE is how your ISP says:
+        “Who are you? Okay, here’s the internet.”
+      </p>
+
+      <p class="mb-3">
+        It runs PPP <strong>inside Ethernet</strong>.
+      </p>
+
+      <div class="mt-4">
+        <p class="font-semibold">Why we need it:</p>
+        <ul class="list-disc list-inside text-sm text-gray-700">
+          <li>Internet login for users</li>
+          <li>Billing & control by ISP</li>
+          <li>Works on normal Ethernet cables</li>
+        </ul>
+      </div>
+
+      <div class="mt-4 bg-indigo-50 p-3 rounded-lg text-sm">
+        <strong>Engineer takeaway:</strong><br />
+        Understand discovery, sessions, and MTU problems.
+      </div>
+    </div>
+
+    <!-- GRE Card -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 hover:scale-105 transition">
+      <h3 class="text-xl font-bold text-purple-800 mb-2">GRE</h3>
+      <p class="text-sm text-gray-500 mb-4">Generic Routing Encapsulation</p>
+
+      <p class="mb-3">
+        <strong>ELI10:</strong> GRE is a tunnel.
+        You put one packet inside another packet.
+      </p>
+
+      <p class="mb-3">
+        Like putting a letter inside an envelope.
+      </p>
+
+      <div class="mt-4">
+        <p class="font-semibold">Why we need it:</p>
+        <ul class="list-disc list-inside text-sm text-gray-700">
+          <li>Connect private networks</li>
+          <li>Run routing over the internet</li>
+          <li>Create virtual links</li>
+        </ul>
+      </div>
+
+      <div class="mt-4 bg-purple-50 p-3 rounded-lg text-sm">
+        <strong>Engineer takeaway:</strong><br />
+        GRE is NOT secure by itself — combine with IPsec.
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Final Summary -->
+  <section class="max-w-4xl mx-auto px-6 mt-14 mb-10">
+    <div class="bg-gradient-to-r from-blue-100 to-indigo-100 rounded-2xl p-6 text-center">
+      <h2 class="text-2xl font-semibold mb-3">Big Picture (Remember This)</h2>
+      <p class="text-lg">
+        PPP = private link<br />
+        PPPoE = internet login<br />
+        GRE = tunnel between networks
+      </p>
+      <p class="mt-3 text-gray-700">
+        A core network engineer chooses the right tool based on
+        <strong>distance, security, and purpose</strong>.
+      </p>
+    </div>
+  </section>
+
+</body>
+</html>
