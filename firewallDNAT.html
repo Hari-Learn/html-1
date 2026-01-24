@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DNAT Explained - Firewall Diagram</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-sky-50 text-gray-800">
+
+  <div class="max-w-6xl mx-auto p-6">
+
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-center mb-2">
+      DNAT Explained (Like You're 10 👶)
+    </h1>
+    <p class="text-center text-gray-600 mb-10">
+      Firewall + DNAT with simple visuals and interview points
+    </p>
+
+    <!-- DNAT Explanation Cards -->
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- What is DNAT -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-xl font-semibold text-red-600 mb-3">
+          What is DNAT?
+        </h2>
+        <p class="mb-3">
+          <strong>DNAT</strong> means <strong>Destination Network Address Translation</strong>.
+        </p>
+        <p class="mb-3">
+          Think of an apartment building 🏢 with <strong>one main gate</strong>.
+          Visitors come to the gate, and the security guard sends them to the
+          <strong>correct flat inside</strong>.
+        </p>
+        <p class="text-sm text-gray-600">
+          DNAT changes the <strong>destination IP</strong> of incoming traffic.
+        </p>
+      </div>
+
+      <!-- Why DNAT -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-xl font-semibold text-purple-600 mb-3">
+          Why Do We Need DNAT?
+        </h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li>To allow internet users to reach internal servers</li>
+          <li>To publish websites behind a firewall</li>
+          <li>To hide real internal IP addresses</li>
+          <li>To use one public IP for many services</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Kid Friendly Visual Diagram -->
+    <div class="mt-10 bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-6 text-center">
+        Kid-Friendly Firewall Diagram 🎨
+      </h2>
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center">
+
+        <!-- Internet -->
+        <div class="bg-blue-100 rounded-lg p-4 w-40">
+          🌍 Internet<br/>
+          <span class="text-sm">User</span>
+        </div>
+
+        <!-- Arrow -->
+        <div class="text-2xl">➡️</div>
+
+        <!-- Firewall -->
+        <div class="bg-orange-100 rounded-lg p-4 w-56">
+          🔥 Firewall<br/>
+          <span class="text-sm">
+            Public IP<br/>203.0.113.5
+          </span>
+        </div>
+
+        <!-- Arrow -->
+        <div class="text-2xl">➡️</div>
+
+        <!-- Server -->
+        <div class="bg-green-100 rounded-lg p-4 w-56">
+          🖥️ Web Server<br/>
+          <span class="text-sm">
+            Private IP<br/>192.168.1.20
+          </span>
+        </div>
+
+      </div>
+
+      <p class="mt-6 bg-gray-100 p-4 rounded text-center">
+        DNAT changes destination from <strong>203.0.113.5</strong> ➝
+        <strong>192.168.1.20</strong>
+      </p>
+    </div>
+
+    <!-- Simple Example -->
+    <div class="mt-10 bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-green-600 mb-4">
+        Simple DNAT Example
+      </h2>
+
+      <p class="mb-3">
+        Someone types your website IP in a browser:
+      </p>
+
+      <p class="bg-gray-100 p-3 rounded mb-3">
+        🌍 User ➝ <strong>203.0.113.5</strong>
+      </p>
+
+      <p class="mb-3">
+        Firewall forwards request to:
+      </p>
+
+      <p class="bg-gray-100 p-3 rounded">
+        🔥 Firewall ➝ <strong>192.168.1.20</strong> (Web Server)
+      </p>
+
+      <p class="mt-3 text-sm text-gray-600">
+        This forwarding is DNAT.
+      </p>
+    </div>
+
+    <!-- Interview Ready Section -->
+    <div class="mt-10 bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-indigo-600 mb-4">
+        Interview-Ready Answers 🎯
+      </h2>
+
+      <ul class="space-y-3">
+        <li>
+          <strong>Q: What is DNAT?</strong><br/>
+          A: DNAT translates the destination IP of incoming traffic to an internal private IP.
+        </li>
+
+        <li>
+          <strong>Q: Where is DNAT used?</strong><br/>
+          A: Publishing internal services like web or mail servers to the internet.
+        </li>
+
+        <li>
+          <strong>Q: Difference between SNAT and DNAT?</strong><br/>
+          A: SNAT changes source IP (outgoing), DNAT changes destination IP (incoming).
+        </li>
+
+        <li>
+          <strong>Q: Can SNAT and DNAT work together?</strong><br/>
+          A: Yes, very commonly in firewall configurations.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <p class="text-center text-sm text-gray-500 mt-10">
+      DNAT = Destination change | Firewall = Smart traffic manager
+    </p>
+
+  </div>
+
+</body>
+</html>
