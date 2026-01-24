@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NAT vs SNAT - Simple Explanation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-6xl mx-auto p-6">
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-center mb-4">
+      NAT vs SNAT (Explained Like You're 10)
+    </h1>
+    <p class="text-center text-gray-600 mb-10">
+      Simple firewall concepts using easy words and examples
+    </p>
+
+    <!-- Cards Grid -->
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- NAT Card -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-xl font-semibold mb-3 text-blue-600">What is NAT?</h2>
+        <p class="mb-3">
+          <strong>NAT</strong> means <strong>Network Address Translation</strong>.
+        </p>
+        <p class="mb-3">
+          Imagine your house has many people, but only <strong>one main phone number</strong>.
+          When someone outside calls, the house decides <strong>who should receive the call</strong>.
+        </p>
+        <p class="text-sm text-gray-600">
+          NAT changes IP addresses so private computers can talk to the internet.
+        </p>
+      </div>
+
+      <!-- SNAT Card -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-xl font-semibold mb-3 text-green-600">What is SNAT?</h2>
+        <p class="mb-3">
+          <strong>SNAT</strong> means <strong>Source NAT</strong>.
+        </p>
+        <p class="mb-3">
+          When your computer goes out to the internet, the firewall
+          <strong>changes your private IP</strong> to a public IP.
+        </p>
+        <p class="mb-3">
+          So websites see <strong>one public IP</strong> instead of many private ones.
+        </p>
+        <p class="text-sm text-gray-600">
+          SNAT = changing the <strong>source</strong> address.
+        </p>
+      </div>
+
+      <!-- Why Needed Card -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-xl font-semibold mb-3 text-purple-600">Why Do We Need This?</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Private IPs cannot go directly to the internet</li>
+          <li>Saves public IP addresses</li>
+          <li>Adds basic security</li>
+          <li>Makes networks easier to manage</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Example Section -->
+    <div class="mt-10 bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold mb-4 text-orange-600">
+        Simple Example
+      </h2>
+      <p class="mb-3">
+        Your laptop IP: <code class="bg-gray-200 px-2 py-1 rounded">192.168.1.10</code>
+      </p>
+      <p class="mb-3">
+        Firewall public IP: <code class="bg-gray-200 px-2 py-1 rounded">203.0.113.5</code>
+      </p>
+      <p class="mb-3">
+        When you open Google:
+      </p>
+      <p class="bg-gray-100 p-4 rounded">
+        Firewall changes <strong>192.168.1.10</strong> ➝ <strong>203.0.113.5</strong><br />
+        This is <strong>SNAT</strong>.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <p class="text-center text-sm text-gray-500 mt-10">
+      NAT = Address translation | SNAT = Source address change
+    </p>
+  </div>
+
+</body>
+</html>
