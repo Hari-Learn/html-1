@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AD Troubleshooting for Network Engineers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-6xl mx-auto p-6">
+
+    <!-- Header -->
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-red-600">
+        AD Troubleshooting (Network Perspective)
+      </h1>
+      <p class="mt-3 text-lg text-gray-600">
+        What a New Network Engineer MUST Know
+      </p>
+    </header>
+
+    <!-- Section: Why Network Engineers Troubleshoot AD -->
+    <section class="bg-white rounded-xl shadow p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">
+        1. Why Network Engineers Troubleshoot AD
+      </h2>
+
+      <p class="mb-4">
+        Most AD issues are not “AD is broken” — they are
+        <strong>network, DNS, firewall, or time issues</strong>.
+      </p>
+
+      <div class="bg-red-50 p-4 rounded-lg">
+        <p class="font-semibold">
+          💡 Interview Line:
+        </p>
+        <p>
+          “Authentication problems are usually network problems in disguise.”
+        </p>
+      </div>
+    </section>
+
+    <!-- Section: Common Symptoms -->
+    <section class="bg-white rounded-xl shadow p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">
+        2. Common AD Symptoms Seen by Network Engineers
+      </h2>
+
+      <ul class="list-disc list-inside space-y-2">
+        <li>Users can connect to network but cannot log in</li>
+        <li>VPN connects but domain resources are inaccessible</li>
+        <li>Slow logins across WAN links</li>
+        <li>Group Policy not applying</li>
+        <li>Intermittent authentication failures</li>
+      </ul>
+    </section>
+
+    <!-- Section: AD Depends on Networking -->
+    <section class="bg-white rounded-xl shadow p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">
+        3. What AD Depends On (Network View)
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <h3 class="font-semibold mb-2">DNS (MOST IMPORTANT)</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Clients must use AD DNS servers</li>
+            <li>SRV records must be reachable</li>
+            <li>No public DNS for domain joins</li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <h3 class="font-semibold mb-2">IP Connectivity</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Client ↔ DC reachability</li>
+            <li>Routing between sites</li>
+            <li>No asymmetric paths</li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <h3 class="font-semibold mb-2">Time Synchronization</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Kerberos requires accurate time</li>
+            <li>Max 5-minute skew</li>
+            <li>NTP must be consistent</li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <h3 class="font-semibold mb-2">Firewall Rules</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>LDAP / Kerberos ports open</li>
+            <li>RPC dynamic ports allowed</li>
+            <li>No DC-to-DC blocking</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: Ports Network Engineers Must Know -->
+    <section class="bg-white rounded-xl shadow p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">
+        4. AD Ports Every Network Engineer Must Know
+      </h2>
+
+      <div class="overflow-x-auto">
+        <table class="min-w-full border border-gray-300 text-sm">
+          <thead class="bg-red-100">
+            <tr>
+              <th class="border px-4 py-2 text-left">Service</th>
+              <th class="border px-4 py-2 text-left">Port</th>
+              <th class="border px-4 py-2 text-left">Why it matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border px-4 py-2">DNS</td>
+              <td class="border px-4 py-2">53 (TCP/UDP)</td>
+              <td class="border px-4 py-2">DC discovery</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2">Kerberos</td>
+              <td class="border px-4 py-2">88</td>
+              <td class="border px-4 py-2">Authentication</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">LDAP</td>
+              <td class="border px-4 py-2">389</td>
+              <td class="border px-4 py-2">Directory queries</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2">LDAPS</td>
+              <td class="border px-4 py-2">636</td>
+              <td class="border px-4 py-2">Secure LDAP</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">RPC</td>
+              <td class="border px-4 py-2">135 + Dynamic</td>
+              <td class="border px-4 py-2">DC communication</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section: Basic Troubleshooting Flow -->
+    <section class="bg-white rounded-xl shadow p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">
+        5. AD Troubleshooting Flow (Network Engineer Style)
+      </h2>
+
+      <ol class="list-decimal list-inside space-y-3">
+        <li>
+          <strong>Check IP & Routing</strong><br />
+          Can client reach DC?
+        </li>
+        <li>
+          <strong>Check DNS</strong><br />
+          Is client using AD DNS? Can it resolve DC?
+        </li>
+        <li>
+          <strong>Check Time Sync</strong><br />
+          Is time within 5 minutes?
+        </li>
+        <li>
+          <strong>Check Firewall</strong><br />
+          Are required ports allowed?
+        </li>
+        <li>
+          <strong>Check Site & Subnet</strong><br />
+          Is client talking to nearest DC?
+        </li>
+      </ol>
+    </section>
+
+    <!-- Section: Common Mistakes -->
+    <section class="bg-white rounded-xl shadow p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">
+        6. Common Mistakes New Network Engineers Make
+      </h2>
+
+      <ul class="list-disc list-inside space-y-2 text-red-600">
+        <li>Using Google DNS instead of AD DNS</li>
+        <li>Blocking RPC dynamic ports</li>
+        <li>Ignoring time synchronization</li>
+        <li>Assuming VPN = full AD connectivity</li>
+        <li>Forgetting site-to-site latency</li>
+      </ul>
+    </section>
+
+    <!-- Section: Interview Gold -->
+    <section class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-2xl font-semibold mb-4">
+        7. Interview Gold Answers 🥇
+      </h2>
+
+      <div class="space-y-3">
+        <p>
+          <strong>Q: User cannot log in — where do you start?</strong><br />
+          A: DNS, connectivity to Domain Controller, and time sync.
+        </p>
+
+        <p>
+          <strong>Q: Why does AD break when DNS breaks?</strong><br />
+          A: AD uses DNS to locate all services.
+        </p>
+
+        <p>
+          <strong>Q: Why does Kerberos fail?</strong><br />
+          A: Time skew, blocked ports, or unreachable DC.
+        </p>
+
+        <p>
+          <strong>Q: What is the #1 AD mistake by network teams?</strong><br />
+          A: Incorrect DNS configuration.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-gray-500 mt-10">
+      AD Troubleshooting • Network Engineer Starter Guide
+    </footer>
+
+  </div>
+
+</body>
+</html>
