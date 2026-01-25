@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Active Directory for Network Engineers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-5xl mx-auto p-6">
+
+    <!-- Header -->
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-indigo-600">
+        Active Directory for Network Engineers
+      </h1>
+      <p class="mt-3 text-lg text-gray-600">
+        AD vs Authentication vs Authorization • Interview Focus
+      </p>
+    </header>
+
+    <!-- Section: AD vs Authentication vs Authorization -->
+    <section class="bg-white rounded-xl shadow p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">
+        1. AD vs Authentication vs Authorization (ELI10)
+      </h2>
+
+      <p class="mb-4">
+        Think of a <strong>secured office building</strong>:
+      </p>
+
+      <div class="overflow-x-auto">
+        <table class="min-w-full border border-gray-300 text-sm">
+          <thead class="bg-indigo-100">
+            <tr>
+              <th class="border px-4 py-2 text-left">Concept</th>
+              <th class="border px-4 py-2 text-left">Simple Meaning</th>
+              <th class="border px-4 py-2 text-left">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white">
+              <td class="border px-4 py-2 font-medium">Authentication</td>
+              <td class="border px-4 py-2">
+                Proving who you are
+              </td>
+              <td class="border px-4 py-2">
+                Showing ID card at the entrance
+              </td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2 font-medium">Authorization</td>
+              <td class="border px-4 py-2">
+                Deciding what you are allowed to do
+              </td>
+              <td class="border px-4 py-2">
+                Which floors you can access
+              </td>
+            </tr>
+            <tr class="bg-white">
+              <td class="border px-4 py-2 font-medium">Active Directory</td>
+              <td class="border px-4 py-2">
+                System that manages both
+              </td>
+              <td class="border px-4 py-2">
+                Security office + employee database
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-4 font-semibold text-indigo-600">
+        👉 AD does authentication AND authorization using one central directory.
+      </p>
+    </section>
+
+    <!-- Section: Why Network Engineers need AD -->
+    <section class="bg-white rounded-xl shadow p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">
+        2. Why should a Network Engineer know Active Directory?
+      </h2>
+
+      <p class="mb-4">
+        In real networks, <strong>AD and networking are deeply connected</strong>.
+      </p>
+
+      <ul class="list-disc list-inside space-y-3">
+        <li>
+          Most enterprises use <strong>AD-based authentication</strong> for network access
+        </li>
+        <li>
+          AD relies heavily on <strong>DNS, IP, routing, and time sync</strong>
+        </li>
+        <li>
+          Network issues often appear as <strong>AD login failures</strong>
+        </li>
+        <li>
+          Technologies like <strong>802.1X, VPN, NAC, Wi-Fi</strong> integrate with AD
+        </li>
+      </ul>
+
+      <div class="mt-4 bg-indigo-50 p-4 rounded-lg">
+        <p class="font-semibold">
+          💡 Interview Line:
+        </p>
+        <p>
+          “If AD is broken, authentication across the network is broken.”
+        </p>
+      </div>
+    </section>
+
+    <!-- Section: What problems Network Engineers face -->
+    <section class="bg-white rounded-xl shadow p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">
+        3. Network Problems That Are Actually AD Problems
+      </h2>
+
+      <ul class="list-disc list-inside space-y-2">
+        <li>Users cannot log in after VPN connection</li>
+        <li>Wi-Fi works but domain login fails</li>
+        <li>Slow logins across sites</li>
+        <li>Group Policy not applying</li>
+        <li>Kerberos authentication errors</li>
+      </ul>
+
+      <p class="mt-4">
+        👉 Many of these issues come from <strong>DNS misconfiguration, firewall blocks, or latency</strong>.
+      </p>
+    </section>
+
+    <!-- Section: What Network Engineers must know -->
+    <section class="bg-white rounded-xl shadow p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">
+        4. What must a Network Engineer know about AD?
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="bg-green-50 p-4 rounded-lg">
+          <h3 class="font-semibold mb-2">Core AD Concepts</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Domain, Forest, Tree</li>
+            <li>Domain Controllers (DC)</li>
+            <li>Users, Groups, Computers</li>
+          </ul>
+        </div>
+
+        <div class="bg-green-50 p-4 rounded-lg">
+          <h3 class="font-semibold mb-2">DNS & AD</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>AD is DNS-dependent</li>
+            <li>SRV records</li>
+            <li>Client → DC resolution</li>
+          </ul>
+        </div>
+
+        <div class="bg-green-50 p-4 rounded-lg">
+          <h3 class="font-semibold mb-2">Authentication Protocols</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Kerberos (primary)</li>
+            <li>NTLM (legacy)</li>
+            <li>LDAP / LDAPS</li>
+          </ul>
+        </div>
+
+        <div class="bg-green-50 p-4 rounded-lg">
+          <h3 class="font-semibold mb-2">Network Services</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Time sync (NTP)</li>
+            <li>DHCP integration</li>
+            <li>Site & Subnet mapping</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: AD & Network Integration -->
+    <section class="bg-white rounded-xl shadow p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">
+        5. Where AD Touches Networking (Very Important)
+      </h2>
+
+      <ul class="list-disc list-inside space-y-2">
+        <li>VPN authentication (AD / RADIUS)</li>
+        <li>802.1X wired & wireless access</li>
+        <li>Firewall user-based policies</li>
+        <li>Proxy authentication</li>
+        <li>Network Access Control (NAC)</li>
+      </ul>
+    </section>
+
+    <!-- Section: Interview Rapid Fire -->
+    <section class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-2xl font-semibold mb-4">
+        6. Interview Rapid-Fire Answers ⚡
+      </h2>
+
+      <div class="space-y-3">
+        <p>
+          <strong>Q: Is Active Directory authentication or authorization?</strong><br />
+          A: Both. AD authenticates users and authorizes access using policies and groups.
+        </p>
+
+        <p>
+          <strong>Q: Why is DNS critical for AD?</strong><br />
+          A: AD uses DNS to locate Domain Controllers and services.
+        </p>
+
+        <p>
+          <strong>Q: Why should a network engineer care about AD?</strong><br />
+          A: Because most network access depends on AD-based authentication.
+        </p>
+
+        <p>
+          <strong>Q: What happens if time is out of sync in AD?</strong><br />
+          A: Kerberos authentication fails.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-gray-500 mt-10">
+      Active Directory • Network Engineering Interview Prep
+    </footer>
+
+  </div>
+
+</body>
+</html>
