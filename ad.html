@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Active Directory Explained (ELI10)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-4xl mx-auto p-6">
+    
+    <!-- Header -->
+    <header class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-blue-600">Active Directory (AD)</h1>
+      <p class="mt-2 text-lg text-gray-600">ELI10 explanation for interview preparation</p>
+    </header>
+
+    <!-- Section: What is Active Directory -->
+    <section class="bg-white rounded-xl shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3">1. What is Active Directory?</h2>
+      <p class="mb-3">
+        Imagine a <strong>school</strong>.
+      </p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Students = users</li>
+        <li>Classrooms = computers</li>
+        <li>Principal’s office = Active Directory</li>
+      </ul>
+      <p class="mt-3">
+        <strong>Active Directory (AD)</strong> is a Microsoft service that keeps track of
+        <strong>users, computers, and resources</strong> in one central place.
+      </p>
+      <p class="mt-2">
+        In simple words: <br />
+        <span class="font-semibold text-blue-600">
+          Active Directory is a system that manages who you are and what you’re allowed to use in a network.
+        </span>
+      </p>
+    </section>
+
+    <!-- Section: Why Active Directory is needed -->
+    <section class="bg-white rounded-xl shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3">2. Why do we need Active Directory?</h2>
+      <p class="mb-3">
+        Without Active Directory:
+      </p>
+      <ul class="list-disc list-inside space-y-2 text-red-600">
+        <li>Every computer needs its own username and password</li>
+        <li>IT team must configure each system manually</li>
+        <li>No central control</li>
+        <li>More mistakes and security issues</li>
+      </ul>
+      <p class="mt-4">
+        With Active Directory:
+      </p>
+      <ul class="list-disc list-inside space-y-2 text-green-600">
+        <li>One username & password works everywhere</li>
+        <li>Central control for IT admins</li>
+        <li>Better security</li>
+        <li>Easy management</li>
+      </ul>
+    </section>
+
+    <!-- Section: What problem exists -->
+    <section class="bg-white rounded-xl shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3">3. What problem does Active Directory solve?</h2>
+      <p class="mb-3">
+        Let’s say a company has <strong>500 employees</strong> and <strong>500 computers</strong>.
+      </p>
+      <p class="mb-3 font-medium">
+        Problems without AD:
+      </p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>500 separate logins to manage</li>
+        <li>No idea who accessed what</li>
+        <li>If someone leaves, access is hard to remove</li>
+        <li>Policies (like password rules) are inconsistent</li>
+      </ul>
+    </section>
+
+    <!-- Section: How AD solves the problem -->
+    <section class="bg-white rounded-xl shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3">4. How does Active Directory solve this?</h2>
+      <p class="mb-3">
+        Active Directory works like a <strong>central brain</strong>.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <h3 class="font-semibold mb-2">Central Authentication</h3>
+          <p>
+            Log in once → access allowed systems.
+          </p>
+        </div>
+
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <h3 class="font-semibold mb-2">Authorization</h3>
+          <p>
+            Decides what you can or cannot access.
+          </p>
+        </div>
+
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <h3 class="font-semibold mb-2">Group Policy</h3>
+          <p>
+            Set rules (password length, USB access, desktop wallpaper) for everyone.
+          </p>
+        </div>
+
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <h3 class="font-semibold mb-2">Easy User Management</h3>
+          <p>
+            Add, remove, or disable users from one place.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Interview Quick Answers -->
+    <section class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-2xl font-semibold mb-3">5. Interview Quick Answers 🚀</h2>
+
+      <div class="space-y-3">
+        <p>
+          <strong>Q: What is Active Directory?</strong><br />
+          A: A Microsoft directory service that manages users, computers, and permissions in a network.
+        </p>
+
+        <p>
+          <strong>Q: Why is Active Directory important?</strong><br />
+          A: It provides centralized authentication, authorization, and management.
+        </p>
+
+        <p>
+          <strong>Q: What problem does AD solve?</strong><br />
+          A: It removes the need to manage users and security individually on each computer.
+        </p>
+
+        <p>
+          <strong>Q: Explain AD in simple words.</strong><br />
+          A: AD is like a central control system that decides who you are and what you can access.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-gray-500 mt-8">
+      Made for interview prep • ELI10 explanation
+    </footer>
+
+  </div>
+</body>
+</html>
