@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Authentication vs Authorization – Active Directory (ELI10)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-emerald-100 via-sky-100 to-indigo-100 p-6">
+
+  <!-- Header -->
+  <header class="text-center mb-10">
+    <h1 class="text-4xl font-bold text-emerald-700 mb-2">
+      Authentication vs Authorization
+    </h1>
+    <p class="text-gray-700">
+      Active Directory view • ELI10 • Interview Friendly
+    </p>
+  </header>
+
+  <!-- Cards -->
+  <div class="max-w-6xl mx-auto grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+    <!-- Authentication -->
+    <div class="bg-gradient-to-br from-white to-emerald-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-emerald-700 mb-3">
+        What is Authentication?
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        <strong>Authentication</strong> means proving who you are.
+        <br><br>
+        🧒 ELI10:  
+        Showing your school ID card to enter the school.
+        <br><br>
+        📌 In Active Directory, authentication checks your
+        <strong>username and password</strong>.
+      </p>
+    </div>
+
+    <!-- Authorization -->
+    <div class="bg-gradient-to-br from-white to-sky-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-sky-700 mb-3">
+        What is Authorization?
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        <strong>Authorization</strong> means deciding what you are allowed to do
+        after you log in.
+        <br><br>
+        🧒 ELI10:  
+        You can enter the school, but only teachers can enter the staff room.
+        <br><br>
+        📌 Based on <strong>groups, roles, and permissions</strong>.
+      </p>
+    </div>
+
+    <!-- SAM & Local Database -->
+    <div class="bg-gradient-to-br from-white to-indigo-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-indigo-700 mb-3">
+        SAM & Local Database
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        In a standalone computer or workgroup, user details are stored in
+        the <strong>SAM (Security Accounts Manager)</strong>.
+        <br><br>
+        🧒 ELI10:  
+        Each house keeps its own guest list.
+        <br><br>
+        📌 Authentication happens locally using the
+        <strong>local database (SAM)</strong>.
+      </p>
+    </div>
+
+    <!-- Workgroup Authentication -->
+    <div class="bg-gradient-to-br from-white to-purple-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-purple-700 mb-3">
+        Authentication in a Workgroup
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        In a <strong>Workgroup</strong>, each computer checks login details
+        using its own SAM database.
+        <br><br>
+        🧒 ELI10:  
+        Every house has its own lock — one key won’t open another house.
+        <br><br>
+        📌 No central authentication or authorization.
+      </p>
+    </div>
+
+    <!-- Domain Controller & NTDS -->
+    <div class="bg-gradient-to-br from-white to-amber-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-amber-700 mb-3">
+        Domain Controller & NTDS
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        In a domain, authentication is handled by the
+        <strong>Domain Controller</strong>.
+        <br><br>
+        🧒 ELI10:  
+        One main security gate for the whole campus.
+        <br><br>
+        📌 User info is stored in <strong>NTDS.dit</strong>,
+        not on individual computers.
+      </p>
+    </div>
+
+    <!-- Authorization in Active Directory -->
+    <div class="bg-gradient-to-br from-white to-rose-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-rose-700 mb-3">
+        Authorization in Active Directory
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        After authentication, Active Directory checks
+        <strong>group membership</strong>.
+        <br><br>
+        🧒 ELI10:  
+        You are allowed into the building, but your badge decides which rooms
+        you can enter.
+        <br><br>
+        📌 Controlled using <strong>Groups, GPOs, and ACLs</strong>.
+      </p>
+    </div>
+
+    <!-- Authentication vs Authorization -->
+    <div class="bg-gradient-to-br from-white to-cyan-50 rounded-xl shadow-lg p-6 md:col-span-2 lg:col-span-3">
+      <h2 class="text-xl font-semibold text-cyan-700 mb-3">
+        Authentication vs Authorization (Quick Interview View)
+      </h2>
+      <ul class="text-gray-700 space-y-2">
+        <li>🔐 <strong>Authentication:</strong> Who are you?</li>
+        <li>🎯 <strong>Authorization:</strong> What can you do?</li>
+        <li>🗄️ <strong>SAM:</strong> Local authentication (workgroup)</li>
+        <li>🏢 <strong>NTDS:</strong> Central authentication (domain)</li>
+        <li>🧠 <strong>Domain Controller:</strong> Handles login for everyone</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-10 text-gray-600">
+    Interview tip: Always say “Authentication first, Authorization second” 😉
+  </footer>
+
+</body>
+</html>
