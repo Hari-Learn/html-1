@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IP Services – NTP, Syslog, SNMP (ELI10)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-cyan-100 via-sky-100 to-indigo-100 p-6">
+
+  <!-- Header -->
+  <header class="text-center mb-10">
+    <h1 class="text-4xl font-bold text-cyan-700 mb-2">
+      IP Services (ELI10)
+    </h1>
+    <p class="text-gray-700">
+      NTP • Syslog • SNMP — Exam & Interview Ready
+    </p>
+  </header>
+
+  <!-- Cards -->
+  <div class="max-w-6xl mx-auto grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+    <!-- NTP -->
+    <div class="bg-gradient-to-br from-white to-cyan-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-cyan-700 mb-3">
+        NTP (Network Time Protocol)
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        <strong>NTP</strong> keeps time the same on all network devices.
+        <br><br>
+        🧒 ELI10:  
+        Everyone sets their watch using the same clock.
+        <br><br>
+        📌 Important for logs, security, and troubleshooting.
+        <br><br>
+        🎯 Uses <strong>UDP port 123</strong>.
+      </p>
+    </div>
+
+    <!-- Syslog -->
+    <div class="bg-gradient-to-br from-white to-indigo-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-indigo-700 mb-3">
+        Syslog
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        <strong>Syslog</strong> collects and stores log messages from devices.
+        <br><br>
+        🧒 ELI10:  
+        A diary where devices write what they are doing.
+        <br><br>
+        📌 Helps find errors, warnings, and security events.
+        <br><br>
+        🎯 Uses <strong>UDP port 514</strong>.
+      </p>
+    </div>
+
+    <!-- SNMP -->
+    <div class="bg-gradient-to-br from-white to-sky-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-sky-700 mb-3">
+        SNMP (Simple Network Management Protocol)
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        <strong>SNMP</strong> is used to monitor and manage network devices.
+        <br><br>
+        🧒 ELI10:  
+        A health check system for routers and switches.
+        <br><br>
+        📌 Can read info or change settings.
+        <br><br>
+        🎯 Uses <strong>UDP ports 161 & 162</strong>.
+      </p>
+    </div>
+
+    <!-- SNMP Components -->
+    <div class="bg-gradient-to-br from-white to-emerald-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-emerald-700 mb-3">
+        SNMP Components
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        🔹 <strong>Manager:</strong> The monitoring system  
+        🔹 <strong>Agent:</strong> Software on device  
+        🔹 <strong>MIB:</strong> Database of information
+        <br><br>
+        🧒 ELI10:  
+        Doctor (Manager) checks patient (Device) report (MIB).
+      </p>
+    </div>
+
+    <!-- SNMP Versions -->
+    <div class="bg-gradient-to-br from-white to-amber-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-amber-700 mb-3">
+        SNMP Versions (Exam Tip)
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        🔸 <strong>SNMPv1:</strong> No security  
+        🔸 <strong>SNMPv2c:</strong> Community strings  
+        🔸 <strong>SNMPv3:</strong> Authentication + Encryption
+        <br><br>
+        🧠 Always recommend <strong>SNMPv3</strong> in interviews.
+      </p>
+    </div>
+
+    <!-- Quick Comparison -->
+    <div class="bg-gradient-to-br from-white to-rose-50 rounded-xl shadow-lg p-6 md:col-span-2 lg:col-span-3">
+      <h2 class="text-xl font-semibold text-rose-700 mb-3">
+        Quick Comparison (One-Glance Revision)
+      </h2>
+      <ul class="text-gray-700 space-y-2">
+        <li>⏰ <strong>NTP:</strong> Time synchronization</li>
+        <li>📝 <strong>Syslog:</strong> Logging and events</li>
+        <li>📊 <strong>SNMP:</strong> Monitoring and management</li>
+        <li>🔐 <strong>Security tip:</strong> Use SNMPv3</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-10 text-gray-600">
+    Interview tip: “No time sync, no trust in logs” 😉
+  </footer>
+
+</body>
+</html>
