@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>STP Protection Features – ELI10</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-sky-100 via-indigo-100 to-purple-100 p-6">
+
+  <!-- Header -->
+  <header class="text-center mb-10">
+    <h1 class="text-4xl font-bold text-indigo-700 mb-2">
+      STP Protection Features (ELI10)
+    </h1>
+    <p class="text-gray-700">
+      Root Guard • Loop Guard • BPDU Guard • BPDU Filter
+    </p>
+  </header>
+
+  <!-- Cards -->
+  <div class="max-w-6xl mx-auto grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+    <!-- Root Guard -->
+    <div class="bg-gradient-to-br from-white to-sky-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-sky-700 mb-3">
+        Root Guard
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        <strong>Root Guard</strong> prevents a switch from becoming the
+        <strong>Root Bridge</strong>.
+        <br><br>
+        🧒 ELI10:  
+        “You are NOT allowed to be the class monitor.”
+        <br><br>
+        📌 If a better BPDU is received → port goes to
+        <strong>Root-Inconsistent</strong> state.
+        <br><br>
+        🎯 Used on ports where root should never change.
+      </p>
+    </div>
+
+    <!-- Loop Guard -->
+    <div class="bg-gradient-to-br from-white to-indigo-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-indigo-700 mb-3">
+        Loop Guard
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        <strong>Loop Guard</strong> prevents loops when BPDUs suddenly stop.
+        <br><br>
+        🧒 ELI10:  
+        “If I stop hearing from you, I assume something is wrong.”
+        <br><br>
+        📌 If BPDU stops → port goes to
+        <strong>Loop-Inconsistent</strong> state.
+        <br><br>
+        🎯 Protects against unidirectional link failures.
+      </p>
+    </div>
+
+    <!-- BPDU Guard -->
+    <div class="bg-gradient-to-br from-white to-purple-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-purple-700 mb-3">
+        BPDU Guard
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        <strong>BPDU Guard</strong> shuts down a port if any BPDU is received.
+        <br><br>
+        🧒 ELI10:  
+        “If you act like a switch, you’re kicked out!”
+        <br><br>
+        📌 Port goes to <strong>Err-Disabled</strong>.
+        <br><br>
+        🎯 Used on <strong>access ports</strong> (PC ports).
+      </p>
+    </div>
+
+    <!-- BPDU Filter -->
+    <div class="bg-gradient-to-br from-white to-emerald-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-emerald-700 mb-3">
+        BPDU Filter
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        <strong>BPDU Filter</strong> stops sending or receiving BPDUs.
+        <br><br>
+        🧒 ELI10:  
+        “I don’t talk STP at all.”
+        <br><br>
+        📌 Can silently disable STP on a port.
+        <br><br>
+        ⚠️ Dangerous if misused (can cause loops).
+      </p>
+    </div>
+
+    <!-- New Behavior / Changes -->
+    <div class="bg-gradient-to-br from-white to-amber-50 rounded-xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-amber-700 mb-3">
+        New / Important Behavior (Exam Tip)
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        🔹 BPDU Guard can be enabled globally with PortFast  
+        🔹 BPDU Filter behaves differently when global vs interface level  
+        🔹 Loop Guard works only on <strong>non-edge</strong> ports  
+        🔹 Root Guard does NOT shut the port, it blocks it
+        <br><br>
+        🧠 Know the <strong>port state</strong> change!
+      </p>
+    </div>
+
+    <!-- Interview Summary -->
+    <div class="bg-gradient-to-br from-white to-rose-50 rounded-xl shadow-lg p-6 md:col-span-2 lg:col-span-3">
+      <h2 class="text-xl font-semibold text-rose-700 mb-3">
+        Quick Interview Comparison (Must Remember)
+      </h2>
+      <ul class="text-gray-700 space-y-2">
+        <li>🌳 <strong>Root Guard:</strong> Stops root change</li>
+        <li>🔁 <strong>Loop Guard:</strong> Stops loops when BPDU missing</li>
+        <li>🚫 <strong>BPDU Guard:</strong> Shuts port on BPDU</li>
+        <li>🔕 <strong>BPDU Filter:</strong> Ignores BPDUs</li>
+        <li>❗ <strong>Golden rule:</strong> BPDU Guard on access ports</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-10 text-gray-600">
+    Exam tip: “Guard protects, Filter ignores” 😉
+  </footer>
+
+</body>
+</html>
