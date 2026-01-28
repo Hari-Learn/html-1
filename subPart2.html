@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Subnetting Tutorial - Part 2</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+<div class="bg-white p-8 rounded-lg shadow-lg max-w-3xl w-full">
+
+  <h1 class="text-3xl font-bold text-blue-600 mb-4">
+    Subnetting Tutorial – Part 2
+  </h1>
+
+  <p class="text-gray-700 mb-4">
+    Computers understand IP addresses in <strong>binary</strong> (0s and 1s).
+  </p>
+
+  <h2 class="text-xl font-semibold mb-2">Binary Basics</h2>
+  <p class="mb-4 text-gray-700">
+    Each octet has 8 bits:
+  </p>
+
+  <div class="bg-gray-200 p-4 rounded mb-4 text-center font-mono">
+    128 64 32 16 8 4 2 1
+  </div>
+
+  <p class="mb-4 text-gray-700">
+    Example:  
+    <strong>192</strong> = 128 + 64
+  </p>
+
+  <h2 class="text-xl font-semibold mb-2">Subnet Mask</h2>
+  <p class="mb-4 text-gray-700">
+    Subnet mask tells which part is <strong>network</strong> and which part is <strong>host</strong>.
+  </p>
+
+  <div class="bg-gray-50 p-4 rounded border mb-4">
+    <p><strong>/24</strong> = 255.255.255.0</p>
+    <p><strong>/26</strong> = 255.255.255.192</p>
+  </div>
+
+  <!-- Quiz -->
+  <div class="bg-gray-50 p-6 rounded-lg border">
+    <h3 class="text-lg font-semibold mb-4">Quick Check ✅</h3>
+
+    <p class="mb-2">1️⃣ How many bits are in one octet?</p>
+    <select id="q1" class="w-full p-2 border rounded mb-4">
+      <option value="">-- Select --</option>
+      <option value="wrong">4</option>
+      <option value="correct">8</option>
+      <option value="wrong">16</option>
+    </select>
+
+    <p class="mb-2">2️⃣ What is the subnet mask for /24?</p>
+    <select id="q2" class="w-full p-2 border rounded mb-4">
+      <option value="">-- Select --</option>
+      <option value="correct">255.255.255.0</option>
+      <option value="wrong">255.255.0.0</option>
+      <option value="wrong">255.255.255.128</option>
+    </select>
+
+    <p id="result" class="text-red-500 hidden mb-4">
+      ❌ Answer correctly to continue.
+    </p>
+
+    <button
+      id="nextBtn"
+      disabled
+      class="bg-blue-600 text-white px-6 py-2 rounded opacity-50 cursor-not-allowed">
+      Go to Part 3 →
+    </button>
+  </div>
+
+</div>
+
+<script>
+  const q1 = document.getElementById("q1");
+  const q2 = document.getElementById("q2");
+  const nextBtn = document.getElementById("nextBtn");
+  const result = document.getElementById("result");
+
+  function check() {
+    if (q1.value === "correct" && q2.value === "correct") {
+      nextBtn.disabled = false;
+      nextBtn.classList.remove("opacity-50", "cursor-not-allowed");
+      result.classList.add("hidden");
+    } else {
+      nextBtn.disabled = true;
+      result.classList.remove("hidden");
+    }
+  }
+
+  q1.addEventListener("change", check);
+  q2.addEventListener("change", check);
+</script>
+
+</body>
+</html>
