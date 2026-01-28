@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Subnetting Tutorial - Part 3</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+<div class="bg-white p-8 rounded-lg shadow-lg max-w-3xl w-full">
+
+  <h1 class="text-3xl font-bold text-blue-600 mb-4">
+    Subnetting Tutorial – Part 3
+  </h1>
+
+  <p class="text-gray-700 mb-4">
+    Now let’s calculate subnets like CCNA questions.
+  </p>
+
+  <h2 class="text-xl font-semibold mb-2">Hosts Formula</h2>
+  <div class="bg-gray-200 p-4 rounded mb-4 font-mono">
+    Hosts = 2ⁿ − 2
+  </div>
+
+  <p class="mb-4 text-gray-700">
+    Where <strong>n</strong> = number of host bits.
+  </p>
+
+  <h2 class="text-xl font-semibold mb-2">Example</h2>
+  <p class="mb-4 text-gray-700">
+    Network: <strong>192.168.1.0/26</strong><br>
+    Host bits = 6 → 2⁶ − 2 = <strong>62 hosts</strong>
+  </p>
+
+  <!-- Final Quiz -->
+  <div class="bg-gray-50 p-6 rounded-lg border">
+    <h3 class="text-lg font-semibold mb-4">Final Check 🎯</h3>
+
+    <p class="mb-2">1️⃣ How many hosts in a /26 subnet?</p>
+    <select id="q1" class="w-full p-2 border rounded mb-4">
+      <option value="">-- Select --</option>
+      <option value="wrong">64</option>
+      <option value="correct">62</option>
+      <option value="wrong">30</option>
+    </select>
+
+    <p class="mb-2">2️⃣ Which formula calculates hosts?</p>
+    <select id="q2" class="w-full p-2 border rounded mb-4">
+      <option value="">-- Select --</option>
+      <option value="correct">2ⁿ − 2</option>
+      <option value="wrong">2ⁿ + 2</option>
+      <option value="wrong">n² − 2</option>
+    </select>
+
+    <p id="result" class="text-red-500 hidden mb-4">
+      ❌ Try again.
+    </p>
+
+    <button
+      id="finishBtn"
+      disabled
+      class="bg-green-600 text-white px-6 py-2 rounded opacity-50 cursor-not-allowed">
+      🎉 Finish Tutorial
+    </button>
+  </div>
+
+</div>
+
+<script>
+  const q1 = document.getElementById("q1");
+  const q2 = document.getElementById("q2");
+  const btn = document.getElementById("finishBtn");
+  const result = document.getElementById("result");
+
+  function check() {
+    if (q1.value === "correct" && q2.value === "correct") {
+      btn.disabled = false;
+      btn.classList.remove("opacity-50", "cursor-not-allowed");
+      result.classList.add("hidden");
+    } else {
+      btn.disabled = true;
+      result.classList.remove("hidden");
+    }
+  }
+
+  q1.addEventListener("change", check);
+  q2.addEventListener("change", check);
+</script>
+
+</body>
+</html>
