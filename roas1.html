@@ -2,88 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Router on a Stick (ROAS)</title>
+  <title>ROAS Quick Revision</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
+
+<body class="min-h-screen bg-gradient-to-br from-sky-50 to-indigo-100 text-gray-800">
 
   <!-- Header -->
-  <header class="bg-blue-600 text-white py-8">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-3xl font-bold">Router on a Stick (ROAS)</h1>
-      <p class="mt-2 text-lg">Simple Inter-VLAN Routing Explained</p>
-    </div>
+  <header class="text-center py-8">
+    <h1 class="text-3xl font-bold text-indigo-700">Router on a Stick (ROAS)</h1>
+    <p class="text-gray-600 mt-2">One-page visual revision</p>
   </header>
 
-  <!-- Main Content -->
-  <main class="max-w-6xl mx-auto px-4 py-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+  <!-- Content -->
+  <main class="max-w-6xl mx-auto px-4 grid gap-6 md:grid-cols-2">
 
-    <!-- Card 1: What is ROAS -->
-    <div class="bg-white rounded-xl shadow-md p-6">
-      <h2 class="text-xl font-semibold mb-3">What is ROAS?</h2>
+    <!-- What is ROAS -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="text-2xl">📌</span>
+        <h2 class="text-xl font-semibold">What is ROAS?</h2>
+      </div>
       <p>
-        Router on a Stick (ROAS) is a network configuration where a
-        <strong>single physical router interface</strong> is used to route
-        traffic between multiple VLANs using <strong>subinterfaces</strong>.
+        <strong>Router on a Stick</strong> is a method where
+        <span class="text-indigo-600 font-medium">one router interface</span>
+        handles routing for
+        <span class="font-medium">multiple VLANs</span>
+        using subinterfaces.
       </p>
     </div>
 
-    <!-- Card 2: How ROAS Works -->
-    <div class="bg-white rounded-xl shadow-md p-6">
-      <h2 class="text-xl font-semibold mb-3">How It Works</h2>
-      <p>
-        The router connects to a switch using a <strong>trunk link</strong>.
-        Each VLAN is assigned a subinterface on the router with its own IP
-        address. The router then routes traffic between VLANs.
-      </p>
-    </div>
-
-    <!-- Card 3: Why ROAS is Used -->
-    <div class="bg-white rounded-xl shadow-md p-6">
-      <h2 class="text-xl font-semibold mb-3">Why Use ROAS?</h2>
-      <p>
-        ROAS allows devices in different VLANs to communicate without
-        needing an expensive Layer 3 switch, making it ideal for
-        <strong>small to medium networks</strong>.
-      </p>
-    </div>
-
-    <!-- Card 4: Importance of ROAS -->
-    <div class="bg-white rounded-xl shadow-md p-6">
-      <h2 class="text-xl font-semibold mb-3">Importance</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li>Enables inter-VLAN communication</li>
-        <li>Cost-effective routing solution</li>
-        <li>Centralized traffic control</li>
-        <li>Easy to configure and manage</li>
+    <!-- Why Needed -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="text-2xl">❓</span>
+        <h2 class="text-xl font-semibold">Why Do We Need It?</h2>
+      </div>
+      <ul class="space-y-2">
+        <li>• VLANs <strong>cannot talk</strong> to each other by default</li>
+        <li>• ROAS allows <strong>Inter-VLAN communication</strong></li>
+        <li>• Cheaper than Layer-3 switch</li>
       </ul>
     </div>
 
-    <!-- Card 5: Advantages -->
-    <div class="bg-white rounded-xl shadow-md p-6">
-      <h2 class="text-xl font-semibold mb-3">Advantages</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li>Low hardware cost</li>
-        <li>Simple network design</li>
-        <li>Works with Layer 2 switches</li>
+    <!-- Diagram -->
+    <div class="bg-white rounded-xl shadow p-6 md:col-span-2">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-2xl">🧠</span>
+        <h2 class="text-xl font-semibold">How ROAS Works (Visual)</h2>
+      </div>
+
+      <div class="flex flex-col items-center space-y-4">
+
+        <!-- Router -->
+        <div class="bg-indigo-100 px-6 py-3 rounded-lg shadow">
+          <strong>Router</strong><br>
+          G0/0.10 → VLAN 10<br>
+          G0/0.20 → VLAN 20
+        </div>
+
+        <!-- Link -->
+        <div class="text-gray-500">⬇ Trunk Link ⬇</div>
+
+        <!-- Switch -->
+        <div class="bg-sky-100 px-6 py-3 rounded-lg shadow">
+          <strong>Switch</strong><br>
+          VLAN 10 | VLAN 20
+        </div>
+
+        <!-- PCs -->
+        <div class="flex gap-6 mt-2">
+          <div class="bg-green-100 px-4 py-2 rounded shadow">
+            PC (VLAN 10)
+          </div>
+          <div class="bg-yellow-100 px-4 py-2 rounded shadow">
+            PC (VLAN 20)
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Key Exam Points -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="text-2xl">⭐</span>
+        <h2 class="text-xl font-semibold">Exam / Interview Points</h2>
+      </div>
+      <ul class="space-y-2">
+        <li>• Uses <strong>subinterfaces</strong></li>
+        <li>• Requires <strong>802.1Q trunk</strong></li>
+        <li>• Each VLAN gets its own IP</li>
+        <li>• Router acts as default gateway</li>
       </ul>
     </div>
 
-    <!-- Card 6: Limitations -->
-    <div class="bg-white rounded-xl shadow-md p-6">
-      <h2 class="text-xl font-semibold mb-3">Limitations</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li>Single link can become a bottleneck</li>
-        <li>Lower performance than Layer 3 switches</li>
-        <li>Not ideal for large networks</li>
-      </ul>
+    <!-- Pros & Cons -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="text-2xl">⚖️</span>
+        <h2 class="text-xl font-semibold">Pros vs Cons</h2>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <h3 class="font-medium text-green-600 mb-2">Pros</h3>
+          <ul class="text-sm space-y-1">
+            <li>• Low cost</li>
+            <li>• Simple setup</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-medium text-red-600 mb-2">Cons</h3>
+          <ul class="text-sm space-y-1">
+            <li>• Bottleneck risk</li>
+            <li>• Not for large networks</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-300 py-4 text-center">
-    <p>© 2026 Networking Concepts | Router on a Stick</p>
+  <footer class="text-center py-6 text-sm text-gray-500">
+    Quick ROAS Visual Sheet — revise & relax 🙂
   </footer>
 
 </body>
