@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Router on a Stick (ROAS)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-8">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-3xl font-bold">Router on a Stick (ROAS)</h1>
+      <p class="mt-2 text-lg">Simple Inter-VLAN Routing Explained</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 py-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+    <!-- Card 1: What is ROAS -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-xl font-semibold mb-3">What is ROAS?</h2>
+      <p>
+        Router on a Stick (ROAS) is a network configuration where a
+        <strong>single physical router interface</strong> is used to route
+        traffic between multiple VLANs using <strong>subinterfaces</strong>.
+      </p>
+    </div>
+
+    <!-- Card 2: How ROAS Works -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-xl font-semibold mb-3">How It Works</h2>
+      <p>
+        The router connects to a switch using a <strong>trunk link</strong>.
+        Each VLAN is assigned a subinterface on the router with its own IP
+        address. The router then routes traffic between VLANs.
+      </p>
+    </div>
+
+    <!-- Card 3: Why ROAS is Used -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-xl font-semibold mb-3">Why Use ROAS?</h2>
+      <p>
+        ROAS allows devices in different VLANs to communicate without
+        needing an expensive Layer 3 switch, making it ideal for
+        <strong>small to medium networks</strong>.
+      </p>
+    </div>
+
+    <!-- Card 4: Importance of ROAS -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-xl font-semibold mb-3">Importance</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Enables inter-VLAN communication</li>
+        <li>Cost-effective routing solution</li>
+        <li>Centralized traffic control</li>
+        <li>Easy to configure and manage</li>
+      </ul>
+    </div>
+
+    <!-- Card 5: Advantages -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-xl font-semibold mb-3">Advantages</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Low hardware cost</li>
+        <li>Simple network design</li>
+        <li>Works with Layer 2 switches</li>
+      </ul>
+    </div>
+
+    <!-- Card 6: Limitations -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-xl font-semibold mb-3">Limitations</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Single link can become a bottleneck</li>
+        <li>Lower performance than Layer 3 switches</li>
+        <li>Not ideal for large networks</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-4 text-center">
+    <p>© 2026 Networking Concepts | Router on a Stick</p>
+  </footer>
+
+</body>
+</html>
