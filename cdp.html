@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Switching Basics - PortFast, CDP, LLDP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6 shadow">
+    <div class="max-w-5xl mx-auto px-4">
+      <h1 class="text-3xl font-bold">Switching Basics</h1>
+      <p class="text-blue-100 mt-1">PortFast, CDP, and LLDP Explained</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-8">
+
+    <!-- PortFast -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-2">1. PortFast</h2>
+      <p class="mb-4">
+        <strong>PortFast</strong> is a Cisco Spanning Tree feature that allows a switch port
+        to move immediately into the <span class="font-medium">forwarding</span> state.
+      </p>
+
+      <h3 class="font-semibold mt-4">Why PortFast is used</h3>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>Speeds up device connectivity (PCs, printers, IP phones)</li>
+        <li>Avoids 30–50 seconds of STP delay</li>
+        <li>Improves user experience</li>
+      </ul>
+
+      <h3 class="font-semibold mt-4">What a Network Engineer should know</h3>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>Use only on <strong>access ports</strong>, not switch-to-switch links</li>
+        <li>Misuse can cause loops</li>
+        <li>Often combined with <strong>BPDU Guard</strong> for safety</li>
+      </ul>
+    </section>
+
+    <!-- CDP -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-2">2. CDP (Cisco Discovery Protocol)</h2>
+      <p class="mb-4">
+        <strong>CDP</strong> is a Cisco proprietary Layer 2 protocol used to discover
+        directly connected Cisco devices.
+      </p>
+
+      <h3 class="font-semibold mt-4">Why CDP is used</h3>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>Identifies neighboring Cisco devices</li>
+        <li>Shows device type, IP, interface, and OS</li>
+        <li>Helps with troubleshooting and documentation</li>
+      </ul>
+
+      <h3 class="font-semibold mt-4">What a Network Engineer should know</h3>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>Works only with Cisco devices</li>
+        <li>Enabled by default on Cisco switches</li>
+        <li>Should be disabled on untrusted or public-facing ports</li>
+      </ul>
+    </section>
+
+    <!-- LLDP -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-2">3. LLDP (Link Layer Discovery Protocol)</h2>
+      <p class="mb-4">
+        <strong>LLDP</strong> is an open-standard Layer 2 discovery protocol
+        defined by IEEE 802.1AB.
+      </p>
+
+      <h3 class="font-semibold mt-4">Why LLDP is used</h3>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>Works across multi-vendor environments</li>
+        <li>Helps identify neighbors and topology</li>
+        <li>Commonly used with IP phones and wireless APs</li>
+      </ul>
+
+      <h3 class="font-semibold mt-4">What a Network Engineer should know</h3>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>Vendor-neutral (unlike CDP)</li>
+        <li>Often disabled by default</li>
+        <li>LLDP-MED provides voice and QoS info</li>
+      </ul>
+    </section>
+
+    <!-- Comparison -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">Quick Comparison</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border border-gray-300">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="border px-4 py-2 text-left">Feature</th>
+              <th class="border px-4 py-2 text-left">PortFast</th>
+              <th class="border px-4 py-2 text-left">CDP</th>
+              <th class="border px-4 py-2 text-left">LLDP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border px-4 py-2">Purpose</td>
+              <td class="border px-4 py-2">STP speed</td>
+              <td class="border px-4 py-2">Neighbor discovery</td>
+              <td class="border px-4 py-2">Neighbor discovery</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2">Vendor</td>
+              <td class="border px-4 py-2">Cisco</td>
+              <td class="border px-4 py-2">Cisco only</td>
+              <td class="border px-4 py-2">Multi-vendor</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">Layer</td>
+              <td class="border px-4 py-2">Layer 2</td>
+              <td class="border px-4 py-2">Layer 2</td>
+              <td class="border px-4 py-2">Layer 2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 text-center py-4">
+    <p>Designed for Network Engineers | Tailwind CSS Demo</p>
+  </footer>
+
+</body>
+</html>
