@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BGP Cheat Sheet - CCNA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 p-6">
+
+  <!-- Header -->
+  <div class="max-w-7xl mx-auto mb-6 text-center">
+    <h1 class="text-4xl font-bold text-blue-700">
+      BGP Cheat Sheet (CCNA)
+    </h1>
+    <p class="text-gray-600 mt-1">
+      One-page quick revision for the CCNA exam
+    </p>
+  </div>
+
+  <!-- Grid -->
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
+
+    <!-- Definition -->
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h2 class="font-semibold text-blue-600 mb-2">BGP Basics</h2>
+      <ul class="text-sm text-gray-700 space-y-1">
+        <li><strong>Full form:</strong> Border Gateway Protocol</li>
+        <li><strong>Type:</strong> Path Vector</li>
+        <li><strong>Used for:</strong> Inter-AS routing</li>
+        <li><strong>Internet routing protocol</strong></li>
+      </ul>
+    </div>
+
+    <!-- Transport -->
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h2 class="font-semibold text-green-600 mb-2">Transport</h2>
+      <ul class="text-sm text-gray-700 space-y-1">
+        <li><strong>Protocol:</strong> TCP</li>
+        <li><strong>Port:</strong> 179</li>
+        <li><strong>Reliable:</strong> Yes</li>
+        <li><strong>No periodic updates</strong></li>
+      </ul>
+    </div>
+
+    <!-- Autonomous System -->
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h2 class="font-semibold text-purple-600 mb-2">Autonomous System</h2>
+      <ul class="text-sm text-gray-700 space-y-1">
+        <li>Collection of networks</li>
+        <li>Single admin control</li>
+        <li>Identified by <strong>ASN</strong></li>
+        <li>Public & Private ASNs</li>
+      </ul>
+    </div>
+
+    <!-- eBGP vs iBGP -->
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h2 class="font-semibold text-orange-600 mb-2">eBGP vs iBGP</h2>
+      <ul class="text-sm text-gray-700 space-y-1">
+        <li><strong>eBGP:</strong> Between different AS</li>
+        <li><strong>iBGP:</strong> Same AS</li>
+        <li>iBGP needs full mesh</li>
+        <li>TTL: eBGP 1 hop (default)</li>
+      </ul>
+    </div>
+
+    <!-- BGP Attributes -->
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h2 class="font-semibold text-red-600 mb-2">BGP Attributes</h2>
+      <ul class="text-sm text-gray-700 space-y-1">
+        <li>Weight (Cisco only)</li>
+        <li>Local Preference</li>
+        <li>AS Path</li>
+        <li>Origin</li>
+        <li>Next Hop</li>
+      </ul>
+    </div>
+
+    <!-- Path Selection -->
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h2 class="font-semibold text-teal-600 mb-2">Path Selection (Top)</h2>
+      <ol class="text-sm text-gray-700 space-y-1 list-decimal list-inside">
+        <li>Highest Weight</li>
+        <li>Highest Local Preference</li>
+        <li>Shortest AS Path</li>
+        <li>Lowest Origin Type</li>
+      </ol>
+    </div>
+
+    <!-- Updates -->
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h2 class="font-semibold text-indigo-600 mb-2">Updates</h2>
+      <ul class="text-sm text-gray-700 space-y-1">
+        <li>Incremental updates</li>
+        <li>No periodic full updates</li>
+        <li>Uses keepalives</li>
+        <li>Slower convergence</li>
+      </ul>
+    </div>
+
+    <!-- Characteristics -->
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h2 class="font-semibold text-pink-600 mb-2">Characteristics</h2>
+      <ul class="text-sm text-gray-700 space-y-1">
+        <li>Classless protocol</li>
+        <li>Highly scalable</li>
+        <li>Policy-based routing</li>
+        <li>Not an IGP</li>
+      </ul>
+    </div>
+
+    <!-- Common Exam Facts -->
+    <div class="bg-white p-4 rounded-lg shadow border-2 border-blue-600 md:col-span-4">
+      <h2 class="font-semibold text-blue-700 mb-2">CCNA Must-Remember</h2>
+      <ul class="text-sm text-gray-700 grid grid-cols-1 md:grid-cols-4 gap-2">
+        <li>✔ BGP ≠ OSPF</li>
+        <li>✔ TCP Port 179</li>
+        <li>✔ Path Vector protocol</li>
+        <li>✔ Uses attributes, not metrics</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="text-center mt-6 text-xs text-gray-500">
+    BGP CCNA Cheat Sheet – Quick Revision
+  </div>
+
+</body>
+</html>
