@@ -1,95 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>BGP in Router - ELI10</title>
+  <meta charset="UTF-8">
+  <title>BGP for CCNA</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-100 min-h-screen p-6">
 
-  <!-- Header -->
-  <div class="text-center mb-10">
-    <h1 class="text-4xl font-bold text-indigo-600">BGP in Router</h1>
-    <p class="text-gray-600 mt-2">Explain Like I'm 10 👶</p>
+<body class="bg-gray-100 p-6">
+
+  <!-- Page Title -->
+  <div class="max-w-7xl mx-auto mb-8">
+    <h1 class="text-4xl font-bold text-blue-700 text-center">
+      BGP (Border Gateway Protocol) – CCNA Quick Review
+    </h1>
+    <p class="text-center text-gray-600 mt-2">
+      Important concepts you must know for the CCNA exam
+    </p>
   </div>
 
-  <!-- Cards -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+  <!-- Cards Grid -->
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
 
-    <!-- Card 1 -->
-    <div class="bg-white rounded-xl shadow-lg p-6">
-      <h2 class="text-xl font-semibold text-indigo-500 mb-3">
+    <!-- Card 1: What is BGP -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold text-blue-600 mb-3">
         What is BGP?
       </h2>
       <p class="text-gray-700">
-        BGP stands for <strong>Border Gateway Protocol</strong>.
-        It helps big routers talk to each other and decide the
-        <strong>best path</strong> for data on the internet 🌍.
+        BGP (Border Gateway Protocol) is a <strong>path-vector routing protocol</strong>
+        used to exchange routing information <strong>between different Autonomous Systems (AS)</strong>.
       </p>
     </div>
 
-    <!-- Card 2 -->
-    <div class="bg-white rounded-xl shadow-lg p-6">
-      <h2 class="text-xl font-semibold text-green-500 mb-3">
-        Simple Idea
-      </h2>
-      <p class="text-gray-700">
-        Think of the internet like a huge map 🗺️.
-        BGP is like a <strong>GPS</strong> that tells routers
-        which road is best to reach a website.
-      </p>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="bg-white rounded-xl shadow-lg p-6">
-      <h2 class="text-xl font-semibold text-purple-500 mb-3">
-        Where is BGP Used?
-      </h2>
-      <p class="text-gray-700">
-        BGP is used between <strong>different networks</strong>
-        (called Autonomous Systems), not inside your home Wi-Fi 🏠.
-      </p>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="bg-white rounded-xl shadow-lg p-6">
-      <h2 class="text-xl font-semibold text-orange-500 mb-3">
-        What Does BGP Decide?
+    <!-- Card 2: Why BGP is Used -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold text-green-600 mb-3">
+        Why BGP is Used
       </h2>
       <ul class="list-disc list-inside text-gray-700 space-y-1">
-        <li>Shortest or safest path 🛣️</li>
-        <li>Which network to use next 🔀</li>
-        <li>Avoids broken paths ❌</li>
+        <li>Used on the Internet</li>
+        <li>Handles very large networks</li>
+        <li>Provides better control over routing</li>
       </ul>
     </div>
 
-    <!-- Card 5 -->
-    <div class="bg-white rounded-xl shadow-lg p-6">
-      <h2 class="text-xl font-semibold text-red-500 mb-3">
-        Easy Example
+    <!-- Card 3: Autonomous System -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold text-purple-600 mb-3">
+        Autonomous System (AS)
       </h2>
       <p class="text-gray-700">
-        If data wants to go from <strong>India to USA</strong> ✈️,
-        BGP helps routers choose the best countries and networks
-        to pass through.
+        An Autonomous System is a group of networks controlled by a single organization.
+        Each AS is identified by a unique <strong>AS Number (ASN)</strong>.
       </p>
     </div>
 
-    <!-- Card 6 -->
-    <div class="bg-white rounded-xl shadow-lg p-6">
-      <h2 class="text-xl font-semibold text-teal-500 mb-3">
-        In One Line
+    <!-- Card 4: eBGP vs iBGP -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold text-orange-600 mb-3">
+        eBGP vs iBGP
       </h2>
-      <p class="text-gray-700 font-medium">
-        BGP helps routers choose the best path across the internet 🌐
+      <table class="w-full text-sm text-gray-700">
+        <tr class="border-b">
+          <td class="font-semibold">eBGP</td>
+          <td>Between different AS</td>
+        </tr>
+        <tr>
+          <td class="font-semibold">iBGP</td>
+          <td>Within the same AS</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Card 5: BGP Path Selection -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold text-red-600 mb-3">
+        BGP Path Selection (Important)
+      </h2>
+      <p class="text-gray-700 mb-2">
+        BGP does NOT choose shortest path. It chooses the <strong>best path</strong>
+        based on attributes.
       </p>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>Highest Weight (Cisco only)</li>
+        <li>Highest Local Preference</li>
+        <li>Shortest AS Path</li>
+        <li>Lowest Origin Type</li>
+      </ul>
+    </div>
+
+    <!-- Card 6: BGP Attributes -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold text-teal-600 mb-3">
+        Important BGP Attributes
+      </h2>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>Weight</li>
+        <li>Local Preference</li>
+        <li>AS Path</li>
+        <li>Origin</li>
+        <li>Next Hop</li>
+      </ul>
+    </div>
+
+    <!-- Card 7: Transport Protocol -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold text-indigo-600 mb-3">
+        Transport & Port
+      </h2>
+      <p class="text-gray-700">
+        BGP uses <strong>TCP</strong> as its transport protocol and operates on
+        <strong>Port 179</strong>.
+      </p>
+    </div>
+
+    <!-- Card 8: BGP Characteristics -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold text-pink-600 mb-3">
+        BGP Characteristics
+      </h2>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>Classless protocol</li>
+        <li>Incremental updates</li>
+        <li>Highly scalable</li>
+        <li>Policy-based routing</li>
+      </ul>
+    </div>
+
+    <!-- Card 9: CCNA Exam Tips -->
+    <div class="bg-white p-6 rounded-lg shadow border-2 border-blue-500">
+      <h2 class="text-xl font-semibold text-blue-700 mb-3">
+        CCNA Exam Tips
+      </h2>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>Know eBGP vs iBGP difference</li>
+        <li>Remember TCP port 179</li>
+        <li>Understand AS Path concept</li>
+        <li>BGP ≠ IGP (OSPF, RIP)</li>
+      </ul>
     </div>
 
   </div>
 
   <!-- Footer -->
   <div class="text-center mt-10 text-gray-500 text-sm">
-    Made with Tailwind CSS 💙
+    BGP – CCNA Focused Summary
   </div>
 
 </body>
