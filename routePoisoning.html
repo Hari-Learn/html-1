@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Route Poisoning & Split Horizon | CCNA Routing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans">
+
+  <div class="max-w-5xl mx-auto p-8">
+
+    <!-- Header -->
+    <header class="mb-10">
+      <h1 class="text-4xl font-bold text-purple-400 mb-3">
+        Route Poisoning & Split Horizon
+      </h1>
+      <p class="text-slate-300 text-lg">
+        Loop prevention mechanisms in Distance Vector routing protocols (RIP)
+      </p>
+    </header>
+
+    <!-- Distance Vector Overview -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-purple-300 mb-3">
+        Distance Vector Routing (Quick Context)
+      </h2>
+      <p class="text-slate-300 leading-relaxed">
+        Distance Vector protocols (like <span class="text-white font-semibold">RIP</span>) make routing
+        decisions based on:
+      </p>
+      <ul class="list-disc list-inside text-slate-300 mt-3 space-y-1">
+        <li><span class="font-semibold text-white">Distance</span> – metric (hop count in RIP)</li>
+        <li><span class="font-semibold text-white">Vector</span> – direction (next-hop router)</li>
+      </ul>
+      <p class="text-slate-300 mt-3">
+        Routers periodically share their <span class="text-purple-400">entire routing table</span>
+        with neighbors — which makes loops possible.
+      </p>
+    </section>
+
+    <!-- The Problem -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-purple-300 mb-3">
+        The Problem: Routing Loops
+      </h2>
+      <p class="text-slate-300 leading-relaxed">
+        If a network goes down and routers don’t learn about it correctly,
+        they may keep advertising bad routes to each other.
+      </p>
+      <p class="mt-3 text-slate-300">
+        This causes the classic issue:
+        <span class="text-red-400 font-semibold">Count-to-Infinity</span>.
+      </p>
+    </section>
+
+    <!-- Split Horizon -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-purple-300 mb-3">
+        Split Horizon
+      </h2>
+      <p class="text-slate-300 leading-relaxed">
+        <span class="text-white font-semibold">Split Horizon</span> is a simple rule:
+      </p>
+      <div class="bg-slate-800 p-5 rounded-xl mt-3">
+        <p class="text-purple-400 font-semibold text-lg">
+          ❝ A router does NOT advertise a route back out the interface it was learned on ❞
+        </p>
+      </div>
+
+      <p class="text-slate-300 mt-4">
+        This prevents a router from telling a neighbor:
+        “Hey, I can reach this network through you.”
+      </p>
+    </section>
+
+    <!-- Route Poisoning -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-purple-300 mb-3">
+        Route Poisoning
+      </h2>
+      <p class="text-slate-300 leading-relaxed">
+        <span class="text-white font-semibold">Route Poisoning</span> is used when a route becomes unreachable.
+      </p>
+
+      <p class="mt-3 text-slate-300">
+        Instead of silently removing the route, the router:
+      </p>
+      <ul class="list-disc list-inside text-slate-300 mt-2 space-y-1">
+        <li>Advertises the route with an <span class="text-red-400 font-semibold">infinite metric</span></li>
+        <li>In RIP, infinity = <span class="font-semibold text-white">16 hops</span></li>
+      </ul>
+
+      <div class="bg-black text-green-400 p-4 rounded-lg mt-4 overflow-x-auto">
+        Network: 10.1.1.0 → Metric 16 (Unreachable)
+      </div>
+    </section>
+
+    <!-- How they work together -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-purple-300 mb-3">
+        How Split Horizon & Route Poisoning Work Together
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-slate-800 p-5 rounded-xl">
+          <h3 class="text-lg font-semibold text-white mb-2">Split Horizon</h3>
+          <p class="text-slate-300">
+            Prevents bad information from being advertised in the first place.
+          </p>
+        </div>
+        <div class="bg-slate-800 p-5 rounded-xl">
+          <h3 class="text-lg font-semibold text-white mb-2">Route Poisoning</h3>
+          <p class="text-slate-300">
+            Quickly tells all routers that a route is dead.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineer Perspective -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-purple-300 mb-3">
+        What You Must Understand as a Network Engineer
+      </h2>
+      <ul class="list-disc list-inside text-slate-300 space-y-2">
+        <li>Distance Vector protocols are simple but slow to converge</li>
+        <li>Routing loops are a real risk without prevention mechanisms</li>
+        <li>Split Horizon is enabled by default on most interfaces</li>
+        <li>Route Poisoning speeds up failure awareness</li>
+        <li>Modern networks prefer link-state protocols, but concepts still matter</li>
+      </ul>
+    </section>
+
+    <!-- Summary -->
+    <footer class="border-t border-slate-700 pt-6">
+      <p class="text-slate-400 text-center">
+        Split Horizon prevents lies. Route Poisoning kills bad routes fast.  
+        <span class="text-purple-400 font-semibold">
+          Understand both to master Distance Vector routing
+        </span>
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
