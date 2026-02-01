@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Floating Static Routes | CCNA Routing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans">
+
+  <div class="max-w-5xl mx-auto p-8">
+    
+    <!-- Header -->
+    <header class="mb-10">
+      <h1 class="text-4xl font-bold text-cyan-400 mb-3">
+        Floating Static Routes
+      </h1>
+      <p class="text-slate-300 text-lg">
+        A backup routing mechanism every network engineer must understand
+      </p>
+    </header>
+
+    <!-- What is it -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-cyan-300 mb-3">
+        What is a Floating Static Route?
+      </h2>
+      <p class="text-slate-300 leading-relaxed">
+        A <span class="font-semibold text-white">Floating Static Route</span> is a static route
+        configured with a <span class="text-cyan-400">higher Administrative Distance (AD)</span>
+        than a dynamic routing protocol.
+      </p>
+      <p class="text-slate-300 mt-3 leading-relaxed">
+        Because its AD is higher, the router does <span class="font-semibold">not</span> use this route
+        unless the preferred (dynamic) route disappears.
+      </p>
+    </section>
+
+    <!-- Why we need it -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-cyan-300 mb-3">
+        Why Do We Need Floating Static Routes?
+      </h2>
+      <ul class="list-disc list-inside text-slate-300 space-y-2">
+        <li>To provide <span class="text-white font-semibold">automatic backup routing</span></li>
+        <li>To avoid manual intervention during link failures</li>
+        <li>To keep traffic flowing if a dynamic protocol fails</li>
+        <li>To create simple redundancy without complex protocols</li>
+      </ul>
+      <p class="mt-4 text-slate-300">
+        Think of it as a <span class="text-cyan-400">standby route</span> that waits quietly in the
+        background.
+      </p>
+    </section>
+
+    <!-- When to use -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-cyan-300 mb-3">
+        When Should You Use It?
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-slate-800 p-5 rounded-xl">
+          <h3 class="text-lg font-semibold text-white mb-2">Primary Link</h3>
+          <p class="text-slate-300">
+            Using OSPF, EIGRP, or RIP as the main routing method.
+          </p>
+        </div>
+        <div class="bg-slate-800 p-5 rounded-xl">
+          <h3 class="text-lg font-semibold text-white mb-2">Backup Link</h3>
+          <p class="text-slate-300">
+            A slower or cheaper link (LTE, DSL, secondary ISP).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLI Example -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-cyan-300 mb-3">
+        Example Configuration
+      </h2>
+      <p class="text-slate-300 mb-3">
+        OSPF default route has AD = 110  
+        We configure a static route with AD = 200
+      </p>
+      <pre class="bg-black text-green-400 p-4 rounded-lg overflow-x-auto">
+ip route 0.0.0.0 0.0.0.0 192.168.1.1 200
+      </pre>
+      <p class="text-slate-300 mt-3">
+        The static route is ignored until OSPF fails.
+      </p>
+    </section>
+
+    <!-- What engineers must understand -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-cyan-300 mb-3">
+        What You Must Understand as a Network Engineer
+      </h2>
+      <ul class="list-disc list-inside text-slate-300 space-y-2">
+        <li>Administrative Distance controls route preference</li>
+        <li>Floating static routes rely on <span class="text-white">failure detection</span></li>
+        <li>They do NOT track link health unless combined with IP SLA</li>
+        <li>They are simple but not always scalable</li>
+      </ul>
+    </section>
+
+    <!-- Summary -->
+    <footer class="border-t border-slate-700 pt-6">
+      <p class="text-slate-400 text-center">
+        Floating Static Routes = Simple, reliable backup routing  
+        <span class="text-cyan-400 font-semibold">Know this for CCNA and real networks</span>
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
