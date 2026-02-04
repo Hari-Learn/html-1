@@ -2,98 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>VRFs Explained Like I'm 10 (CCNA)</title>
+  <title>VRFs Explained Simply (CCNA)</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-br from-blue-100 to-purple-200 min-h-screen">
+<body class="bg-gradient-to-br from-sky-100 to-fuchsia-200 min-h-screen">
 
   <!-- Header -->
   <header class="text-center py-10">
-    <h1 class="text-4xl font-extrabold text-purple-700">
+    <h1 class="text-4xl font-extrabold text-purple-800">
       VRFs (Virtual Routing and Forwarding)
     </h1>
     <p class="mt-4 text-lg text-gray-700">
-      Explained like you’re 10 🧠✨ (Perfect for CCNA)
+      Simple diagrams + icons 🧠✨ | CCNA friendly
     </p>
   </header>
 
-  <!-- Cards Container -->
-  <main class="max-w-6xl mx-auto px-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+  <!-- Cards -->
+  <main class="max-w-7xl mx-auto px-6 grid gap-8 lg:grid-cols-3 md:grid-cols-2">
 
     <!-- Card 1 -->
     <div class="bg-yellow-300 rounded-2xl shadow-xl p-6">
       <h2 class="text-2xl font-bold mb-3">🤔 What is a VRF?</h2>
-      <p class="text-gray-800">
-        Imagine one router is like a big school building 🏫.<br><br>
-        A <strong>VRF</strong> is like giving each class its own map of the school.
-        Even though they’re in the same building, they don’t get confused.
+      <p>
+        A VRF lets <strong>one router</strong> act like
+        <strong>many routers</strong>.
+        <br><br>
+        Each VRF has its <strong>own routing table</strong>.
       </p>
+
+      <!-- Diagram -->
+      <div class="mt-4 bg-white rounded-xl p-4">
+        <p class="text-center font-bold mb-2">🧩 One Router</p>
+        <div class="flex justify-center gap-3">
+          <div class="bg-blue-200 px-3 py-2 rounded">VRF A</div>
+          <div class="bg-green-200 px-3 py-2 rounded">VRF B</div>
+          <div class="bg-pink-200 px-3 py-2 rounded">VRF C</div>
+        </div>
+      </div>
     </div>
 
     <!-- Card 2 -->
     <div class="bg-pink-300 rounded-2xl shadow-xl p-6">
-      <h2 class="text-2xl font-bold mb-3">📦 Why Do We Need VRFs?</h2>
-      <p class="text-gray-800">
-        Without VRFs, all networks share one routing table 😵‍💫.<br><br>
-        VRFs let us keep networks <strong>separate</strong> so:
-        <ul class="list-disc ml-5 mt-2">
-          <li>No IP address conflicts</li>
-          <li>More security 🔐</li>
-          <li>Cleaner network design</li>
-        </ul>
-      </p>
+      <h2 class="text-2xl font-bold mb-3">📦 Why VRFs?</h2>
+      <ul class="list-disc ml-5">
+        <li>Same IPs allowed ✅</li>
+        <li>No traffic mixing 🚫</li>
+        <li>Better security 🔐</li>
+      </ul>
+
+      <!-- Diagram -->
+      <div class="mt-4 bg-white rounded-xl p-4">
+        <p class="text-center font-bold mb-2">IP Conflict Solved</p>
+        <div class="flex justify-between">
+          <div class="bg-blue-200 p-2 rounded text-sm">
+            VRF A<br>10.0.0.1
+          </div>
+          <div class="bg-green-200 p-2 rounded text-sm">
+            VRF B<br>10.0.0.1
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Card 3 -->
     <div class="bg-green-300 rounded-2xl shadow-xl p-6">
-      <h2 class="text-2xl font-bold mb-3">🗺️ Routing Tables (Easy Way)</h2>
-      <p class="text-gray-800">
-        A routing table is like Google Maps 🗺️ for the router.<br><br>
-        With VRFs:
-        <ul class="list-disc ml-5 mt-2">
-          <li>Each VRF gets its <strong>own map</strong></li>
-          <li>Same IPs can exist in different VRFs</li>
-          <li>No mixing of traffic 🚦</li>
-        </ul>
+      <h2 class="text-2xl font-bold mb-3">🗺️ Routing Tables</h2>
+      <p>
+        Think of routing tables like
+        <strong>GPS maps</strong> 🗺️
       </p>
+
+      <!-- Diagram -->
+      <div class="mt-4 bg-white rounded-xl p-4 space-y-2">
+        <div class="bg-blue-200 p-2 rounded">
+          📘 VRF A → Routes for A only
+        </div>
+        <div class="bg-green-200 p-2 rounded">
+          📗 VRF B → Routes for B only
+        </div>
+        <div class="bg-purple-200 p-2 rounded">
+          📕 Global Table
+        </div>
+      </div>
     </div>
 
     <!-- Card 4 -->
     <div class="bg-blue-300 rounded-2xl shadow-xl p-6">
-      <h2 class="text-2xl font-bold mb-3">🏢 Real-Life Example</h2>
-      <p class="text-gray-800">
-        Think of a mall 🛍️:
-        <ul class="list-disc ml-5 mt-2">
-          <li>One mall (router)</li>
-          <li>Different shops (VRFs)</li>
-          <li>Each shop has its own doors & rules</li>
-        </ul>
-        Even if two shops use the same room number, no problem!
+      <h2 class="text-2xl font-bold mb-3">🏢 Real Life Example</h2>
+      <p>
+        Router = Apartment Building 🏢<br>
+        VRFs = Apartments 🚪
       </p>
+
+      <!-- Diagram -->
+      <div class="mt-4 bg-white rounded-xl p-4 grid grid-cols-2 gap-2 text-center">
+        <div class="bg-orange-200 p-3 rounded">🏠 VRF A</div>
+        <div class="bg-teal-200 p-3 rounded">🏠 VRF B</div>
+        <div class="bg-purple-200 p-3 rounded">🏠 VRF C</div>
+        <div class="bg-pink-200 p-3 rounded">🏠 VRF D</div>
+      </div>
     </div>
 
     <!-- Card 5 -->
     <div class="bg-red-300 rounded-2xl shadow-xl p-6">
-      <h2 class="text-2xl font-bold mb-3">🔌 Interfaces & VRFs</h2>
-      <p class="text-gray-800">
-        When you assign an interface to a VRF:
-        <ul class="list-disc ml-5 mt-2">
-          <li>That interface lives in that VRF only</li>
-          <li>Traffic stays inside its VRF 🚧</li>
-          <li>No talking to other VRFs unless allowed</li>
-        </ul>
+      <h2 class="text-2xl font-bold mb-3">🔌 Interfaces</h2>
+      <p>
+        Interfaces belong to
+        <strong>only ONE VRF</strong>.
       </p>
+
+      <!-- Diagram -->
+      <div class="mt-4 bg-white rounded-xl p-4">
+        <div class="space-y-2">
+          <div class="bg-blue-200 p-2 rounded">
+            🌐 G0/0 → VRF A
+          </div>
+          <div class="bg-green-200 p-2 rounded">
+            🌐 G0/1 → VRF B
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Card 6 -->
     <div class="bg-purple-300 rounded-2xl shadow-xl p-6">
-      <h2 class="text-2xl font-bold mb-3">📚 CCNA Exam Tip</h2>
-      <p class="text-gray-800">
-        For CCNA, remember this sentence ⭐:<br><br>
-        <strong>
-          “VRFs allow multiple routing tables on one router.”
-        </strong><br><br>
-        If you remember that, you’re already winning 🏆
+      <h2 class="text-2xl font-bold mb-3">🎓 CCNA EXAM GOLD</h2>
+      <p class="font-semibold">
+        Remember this 👇
+      </p>
+
+      <div class="mt-4 bg-white rounded-xl p-4 text-center text-lg font-bold">
+        ⭐ VRF = Multiple routing tables on one router ⭐
+      </div>
+
+      <p class="mt-3">
+        If you see this idea in a question → pick it 😎
       </p>
     </div>
 
@@ -101,7 +144,7 @@
 
   <!-- Footer -->
   <footer class="text-center py-10 mt-10 text-gray-700">
-    Made for CCNA learning 🚀 Keep practicing!
+    You’ve got this 💪 CCNA loading...
   </footer>
 
 </body>
