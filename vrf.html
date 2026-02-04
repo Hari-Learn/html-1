@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VRFs Explained Like I'm 10 (CCNA)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-purple-200 min-h-screen">
+
+  <!-- Header -->
+  <header class="text-center py-10">
+    <h1 class="text-4xl font-extrabold text-purple-700">
+      VRFs (Virtual Routing and Forwarding)
+    </h1>
+    <p class="mt-4 text-lg text-gray-700">
+      Explained like you’re 10 🧠✨ (Perfect for CCNA)
+    </p>
+  </header>
+
+  <!-- Cards Container -->
+  <main class="max-w-6xl mx-auto px-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+    <!-- Card 1 -->
+    <div class="bg-yellow-300 rounded-2xl shadow-xl p-6">
+      <h2 class="text-2xl font-bold mb-3">🤔 What is a VRF?</h2>
+      <p class="text-gray-800">
+        Imagine one router is like a big school building 🏫.<br><br>
+        A <strong>VRF</strong> is like giving each class its own map of the school.
+        Even though they’re in the same building, they don’t get confused.
+      </p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-pink-300 rounded-2xl shadow-xl p-6">
+      <h2 class="text-2xl font-bold mb-3">📦 Why Do We Need VRFs?</h2>
+      <p class="text-gray-800">
+        Without VRFs, all networks share one routing table 😵‍💫.<br><br>
+        VRFs let us keep networks <strong>separate</strong> so:
+        <ul class="list-disc ml-5 mt-2">
+          <li>No IP address conflicts</li>
+          <li>More security 🔐</li>
+          <li>Cleaner network design</li>
+        </ul>
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-green-300 rounded-2xl shadow-xl p-6">
+      <h2 class="text-2xl font-bold mb-3">🗺️ Routing Tables (Easy Way)</h2>
+      <p class="text-gray-800">
+        A routing table is like Google Maps 🗺️ for the router.<br><br>
+        With VRFs:
+        <ul class="list-disc ml-5 mt-2">
+          <li>Each VRF gets its <strong>own map</strong></li>
+          <li>Same IPs can exist in different VRFs</li>
+          <li>No mixing of traffic 🚦</li>
+        </ul>
+      </p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bg-blue-300 rounded-2xl shadow-xl p-6">
+      <h2 class="text-2xl font-bold mb-3">🏢 Real-Life Example</h2>
+      <p class="text-gray-800">
+        Think of a mall 🛍️:
+        <ul class="list-disc ml-5 mt-2">
+          <li>One mall (router)</li>
+          <li>Different shops (VRFs)</li>
+          <li>Each shop has its own doors & rules</li>
+        </ul>
+        Even if two shops use the same room number, no problem!
+      </p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="bg-red-300 rounded-2xl shadow-xl p-6">
+      <h2 class="text-2xl font-bold mb-3">🔌 Interfaces & VRFs</h2>
+      <p class="text-gray-800">
+        When you assign an interface to a VRF:
+        <ul class="list-disc ml-5 mt-2">
+          <li>That interface lives in that VRF only</li>
+          <li>Traffic stays inside its VRF 🚧</li>
+          <li>No talking to other VRFs unless allowed</li>
+        </ul>
+      </p>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="bg-purple-300 rounded-2xl shadow-xl p-6">
+      <h2 class="text-2xl font-bold mb-3">📚 CCNA Exam Tip</h2>
+      <p class="text-gray-800">
+        For CCNA, remember this sentence ⭐:<br><br>
+        <strong>
+          “VRFs allow multiple routing tables on one router.”
+        </strong><br><br>
+        If you remember that, you’re already winning 🏆
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-10 mt-10 text-gray-700">
+    Made for CCNA learning 🚀 Keep practicing!
+  </footer>
+
+</body>
+</html>
