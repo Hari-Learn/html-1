@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Half vs Full Duplex (ELI10)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-5xl mx-auto p-6">
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-center mb-4">
+      Half-Duplex vs Full-Duplex 🚦
+    </h1>
+    <p class="text-center text-gray-600 mb-10">
+      Explained like you're 10 years old (CCNA-friendly!)
+    </p>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-2 gap-6">
+      
+      <!-- Half Duplex Card -->
+      <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-yellow-400">
+        <h2 class="text-2xl font-semibold mb-3">🟡 Half-Duplex</h2>
+        
+        <p class="mb-3">
+          Imagine a <strong>walkie-talkie</strong> 📻
+        </p>
+
+        <ul class="list-disc list-inside space-y-2 mb-4">
+          <li>You can <strong>talk OR listen</strong>, not both at the same time</li>
+          <li>If two people talk together → 💥 <strong>collision</strong></li>
+          <li>Devices must take turns</li>
+        </ul>
+
+        <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+          <p class="font-semibold">Collision Logic:</p>
+          <p>
+            Uses <strong>CSMA/CD</strong><br/>
+            (Listen → Send → If crash happens, stop and retry)
+          </p>
+        </div>
+
+        <p class="text-sm text-gray-600">
+          📌 Example: Old hubs, old Ethernet
+        </p>
+      </div>
+
+      <!-- Full Duplex Card -->
+      <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-green-500">
+        <h2 class="text-2xl font-semibold mb-3">🟢 Full-Duplex</h2>
+        
+        <p class="mb-3">
+          Imagine a <strong>phone call</strong> 📱
+        </p>
+
+        <ul class="list-disc list-inside space-y-2 mb-4">
+          <li>You can <strong>talk AND listen</strong> at the same time</li>
+          <li>No fighting for turns</li>
+          <li><strong>No collisions at all</strong> 🎉</li>
+        </ul>
+
+        <div class="bg-green-50 p-4 rounded-lg mb-3">
+          <p class="font-semibold">Collision Logic:</p>
+          <p>
+            ❌ <strong>No CSMA/CD needed</strong><br/>
+            Because collisions cannot happen
+          </p>
+        </div>
+
+        <p class="text-sm text-gray-600">
+          📌 Example: Switch ports, modern Ethernet
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bottom Summary -->
+    <div class="mt-10 bg-blue-50 p-6 rounded-xl shadow-sm">
+      <h3 class="text-xl font-semibold mb-2">🧠 Easy Exam Memory Trick</h3>
+      <p class="mb-2">
+        If collisions exist → <strong>Half-Duplex</strong>
+      </p>
+      <p>
+        If collisions do NOT exist → <strong>Full-Duplex</strong>
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
