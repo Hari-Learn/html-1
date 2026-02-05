@@ -3,87 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Half vs Full Duplex (ELI10)</title>
+  <title>Half vs Full Duplex – Visual</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
 
-  <div class="max-w-5xl mx-auto p-6">
-    <!-- Header -->
-    <h1 class="text-3xl font-bold text-center mb-4">
-      Half-Duplex vs Full-Duplex 🚦
+<body class="bg-slate-900 text-white">
+
+  <div class="max-w-6xl mx-auto p-8">
+    <!-- Title -->
+    <h1 class="text-4xl font-bold text-center mb-2">
+      Half-Duplex vs Full-Duplex
     </h1>
-    <p class="text-center text-gray-600 mb-10">
-      Explained like you're 10 years old (CCNA-friendly!)
+    <p class="text-center text-slate-400 mb-10">
+      Understand it by just looking 👀
     </p>
 
     <!-- Cards -->
-    <div class="grid md:grid-cols-2 gap-6">
-      
-      <!-- Half Duplex Card -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-yellow-400">
-        <h2 class="text-2xl font-semibold mb-3">🟡 Half-Duplex</h2>
-        
-        <p class="mb-3">
-          Imagine a <strong>walkie-talkie</strong> 📻
-        </p>
+    <div class="grid md:grid-cols-2 gap-10">
 
-        <ul class="list-disc list-inside space-y-2 mb-4">
-          <li>You can <strong>talk OR listen</strong>, not both at the same time</li>
-          <li>If two people talk together → 💥 <strong>collision</strong></li>
-          <li>Devices must take turns</li>
-        </ul>
+      <!-- HALF DUPLEX -->
+      <div class="bg-slate-800 rounded-2xl p-6 border border-yellow-400">
+        <h2 class="text-2xl font-bold text-yellow-400 mb-4 text-center">
+          🟡 Half-Duplex
+        </h2>
 
-        <div class="bg-yellow-50 p-4 rounded-lg mb-3">
-          <p class="font-semibold">Collision Logic:</p>
-          <p>
-            Uses <strong>CSMA/CD</strong><br/>
-            (Listen → Send → If crash happens, stop and retry)
+        <!-- Animation -->
+        <div class="flex justify-between items-center mb-6">
+          <div class="text-5xl animate-pulse">📢</div>
+          <div class="text-4xl">⚡💥⚡</div>
+          <div class="text-5xl animate-pulse">📢</div>
+        </div>
+
+        <!-- Visual Meaning -->
+        <div class="space-y-3 text-center">
+          <p class="text-lg">🚶 One talks at a time</p>
+          <p class="text-lg">💥 Talking together = crash</p>
+          <p class="text-lg text-red-400 font-bold">
+            Collisions happen
           </p>
         </div>
 
-        <p class="text-sm text-gray-600">
-          📌 Example: Old hubs, old Ethernet
-        </p>
+        <!-- Logic -->
+        <div class="mt-6 bg-yellow-400/10 p-4 rounded-xl text-center">
+          <p class="text-sm text-yellow-300">
+            Uses CSMA/CD  
+            <br/>👂 Listen → 🗣 Talk → 💥 Retry
+          </p>
+        </div>
       </div>
 
-      <!-- Full Duplex Card -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-green-500">
-        <h2 class="text-2xl font-semibold mb-3">🟢 Full-Duplex</h2>
-        
-        <p class="mb-3">
-          Imagine a <strong>phone call</strong> 📱
-        </p>
+      <!-- FULL DUPLEX -->
+      <div class="bg-slate-800 rounded-2xl p-6 border border-green-400">
+        <h2 class="text-2xl font-bold text-green-400 mb-4 text-center">
+          🟢 Full-Duplex
+        </h2>
 
-        <ul class="list-disc list-inside space-y-2 mb-4">
-          <li>You can <strong>talk AND listen</strong> at the same time</li>
-          <li>No fighting for turns</li>
-          <li><strong>No collisions at all</strong> 🎉</li>
-        </ul>
+        <!-- Animation -->
+        <div class="flex justify-between items-center mb-6">
+          <div class="text-5xl animate-bounce">🗣</div>
+          <div class="text-4xl">↔️</div>
+          <div class="text-5xl animate-bounce">👂</div>
+        </div>
 
-        <div class="bg-green-50 p-4 rounded-lg mb-3">
-          <p class="font-semibold">Collision Logic:</p>
-          <p>
-            ❌ <strong>No CSMA/CD needed</strong><br/>
-            Because collisions cannot happen
+        <!-- Visual Meaning -->
+        <div class="space-y-3 text-center">
+          <p class="text-lg">🏃 Talk & Listen together</p>
+          <p class="text-lg">🚦 No waiting</p>
+          <p class="text-lg text-green-400 font-bold">
+            No collisions
           </p>
         </div>
 
-        <p class="text-sm text-gray-600">
-          📌 Example: Switch ports, modern Ethernet
-        </p>
+        <!-- Logic -->
+        <div class="mt-6 bg-green-400/10 p-4 rounded-xl text-center">
+          <p class="text-sm text-green-300">
+            ❌ No CSMA/CD  
+            <br/>Why? Nothing can crash
+          </p>
+        </div>
       </div>
 
     </div>
 
-    <!-- Bottom Summary -->
-    <div class="mt-10 bg-blue-50 p-6 rounded-xl shadow-sm">
-      <h3 class="text-xl font-semibold mb-2">🧠 Easy Exam Memory Trick</h3>
-      <p class="mb-2">
-        If collisions exist → <strong>Half-Duplex</strong>
+    <!-- Bottom Visual Rule -->
+    <div class="mt-12 bg-slate-800 p-6 rounded-2xl text-center border border-blue-400">
+      <p class="text-2xl mb-2">🧠 Exam Rule</p>
+      <p class="text-lg text-blue-300">
+        💥 Collisions → Half-Duplex  
       </p>
-      <p>
-        If collisions do NOT exist → <strong>Full-Duplex</strong>
+      <p class="text-lg text-blue-300">
+        🚫💥 No Collisions → Full-Duplex
       </p>
     </div>
 
