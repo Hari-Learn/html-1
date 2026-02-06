@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WAN Technologies Overview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-sky-100 via-indigo-100 to-purple-100 flex items-center justify-center p-6">
+
+  <div class="max-w-6xl w-full">
+    <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">
+      WAN Technologies Moved Beyond CCNA
+    </h1>
+
+    <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+      In newer CCNA versions, some WAN-focused technologies are no longer covered in detail.
+      These topics are now part of higher-level certifications like CCNP or specialized paths.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- PPP Card -->
+      <div class="rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 shadow-lg p-6 hover:scale-105 transition">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-4">
+          PPP (Point-to-Point Protocol)
+        </h2>
+        <p class="text-gray-700 mb-3">
+          PPP is a WAN protocol used to create a direct connection between two network devices,
+          commonly over serial links.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Used in older WAN links</li>
+          <li>Supports authentication (PAP, CHAP)</li>
+          <li>Encapsulates network layer protocols</li>
+        </ul>
+        <p class="mt-4 text-sm text-gray-600">
+          ➜ Detailed configuration is now covered in CCNP.
+        </p>
+      </div>
+
+      <!-- GRE Card -->
+      <div class="rounded-2xl bg-gradient-to-br from-green-50 to-green-100 shadow-lg p-6 hover:scale-105 transition">
+        <h2 class="text-2xl font-semibold text-green-700 mb-4">
+          GRE (Generic Routing Encapsulation)
+        </h2>
+        <p class="text-gray-700 mb-3">
+          GRE is a tunneling protocol that allows you to encapsulate one network protocol
+          inside another.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Creates virtual point-to-point links</li>
+          <li>Commonly used with VPNs</li>
+          <li>Does NOT provide encryption by itself</li>
+        </ul>
+        <p class="mt-4 text-sm text-gray-600">
+          ➜ Mostly studied with advanced VPN designs.
+        </p>
+      </div>
+
+      <!-- BGP Card -->
+      <div class="rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 shadow-lg p-6 hover:scale-105 transition">
+        <h2 class="text-2xl font-semibold text-purple-700 mb-4">
+          BGP (Border Gateway Protocol)
+        </h2>
+        <p class="text-gray-700 mb-3">
+          BGP is the routing protocol that controls how data is routed between different
+          organizations on the Internet.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Used by ISPs and large enterprises</li>
+          <li>Path-vector routing protocol</li>
+          <li>Highly scalable and complex</li>
+        </ul>
+        <p class="mt-4 text-sm text-gray-600">
+          ➜ Full BGP configuration is taught in CCNP/CCIE.
+        </p>
+      </div>
+
+    </div>
+
+    <footer class="text-center text-gray-500 text-sm mt-14">
+      Designed with Tailwind CSS • CCNA Concept Overview
+    </footer>
+  </div>
+
+</body>
+</html>
