@@ -5,108 +5,123 @@
   <title>LACP Explained - CCNA</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 min-h-screen p-6">
 
   <div class="max-w-6xl mx-auto">
-    <!-- Page Title -->
-    <h1 class="text-4xl font-bold text-center mb-10 text-gray-800">
-      LACP (Link Aggregation Control Protocol) – CCNA Explained
-    </h1>
 
-    <!-- Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Page Header -->
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-800 mb-3">
+        LACP (Link Aggregation Control Protocol)
+      </h1>
+      <p class="text-gray-600">
+        CCNA Networking • Explained Like You’re 10
+      </p>
+    </header>
+
+    <!-- Main Cards -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
       <!-- What is LACP -->
-      <div class="bg-blue-500 rounded-xl shadow-lg p-6">
-        <h2 class="text-2xl font-bold mb-3 text-white">
+      <div class="bg-blue-500 rounded-2xl p-6 shadow-lg">
+        <h2 class="text-2xl font-bold text-white mb-3">
           What is LACP?
         </h2>
         <p class="text-white/90 leading-relaxed">
-          Imagine you have <strong>multiple network cables</strong> between two switches.
-          LACP is a rule that lets those cables <strong>act like one big cable</strong>.
-          <br><br>
-          Instead of using just one wire, LACP bundles many wires together
-          to make the connection <strong>faster</strong> and <strong>safer</strong>.
+          LACP lets multiple Ethernet cables work together like
+          one big cable. Instead of using only one link,
+          devices can share traffic across many links.
         </p>
       </div>
 
       <!-- Why LACP Exists -->
-      <div class="bg-green-500 rounded-xl shadow-lg p-6">
-        <h2 class="text-2xl font-bold mb-3 text-white">
+      <div class="bg-green-500 rounded-2xl p-6 shadow-lg">
+        <h2 class="text-2xl font-bold text-white mb-3">
           Why does LACP exist?
         </h2>
         <p class="text-white/90 leading-relaxed">
-          Without LACP, switches might get confused and create
-          <strong>network loops</strong> (bad things 🚨).
-          <br><br>
-          LACP makes sure both sides agree on:
-          <ul class="list-disc list-inside mt-2">
-            <li>Which links are bundled</li>
-            <li>How traffic is shared</li>
-            <li>Which links are safe to use</li>
-          </ul>
+          Without LACP, switches might create network loops.
+          LACP makes sure both devices agree on which links
+          can safely be bundled together.
         </p>
       </div>
 
-      <!-- Why We Need LACP -->
-      <div class="bg-purple-500 rounded-xl shadow-lg p-6">
-        <h2 class="text-2xl font-bold mb-3 text-white">
+      <!-- Why We Need It -->
+      <div class="bg-purple-500 rounded-2xl p-6 shadow-lg">
+        <h2 class="text-2xl font-bold text-white mb-3">
           Why do we need LACP?
         </h2>
         <p class="text-white/90 leading-relaxed">
-          Think of a highway 🚗:
-          one road gets crowded, but <strong>four roads together</strong> move traffic better.
-          <br><br>
-          We need LACP to:
-          <ul class="list-disc list-inside mt-2">
-            <li>Increase bandwidth</li>
-            <li>Share traffic across links</li>
-            <li>Provide backup if a cable fails</li>
-          </ul>
+          We need LACP for more bandwidth and backup.
+          If one cable fails, traffic keeps flowing
+          through the remaining cables.
         </p>
       </div>
 
-      <!-- When LACP is Used -->
-      <div class="bg-red-500 rounded-xl shadow-lg p-6">
-        <h2 class="text-2xl font-bold mb-3 text-white">
-          When do we actually use LACP?
+      <!-- When It’s Used -->
+      <div class="bg-red-500 rounded-2xl p-6 shadow-lg">
+        <h2 class="text-2xl font-bold text-white mb-3">
+          When is LACP used?
         </h2>
         <p class="text-white/90 leading-relaxed">
-          LACP is used when:
-          <ul class="list-disc list-inside mt-2">
-            <li>Connecting switch to switch</li>
-            <li>Connecting switch to server</li>
-            <li>You need high speed + redundancy</li>
-          </ul>
-          <br>
-          If one cable breaks, <strong>traffic keeps flowing</strong> on the others
-          without users noticing.
+          LACP is commonly used between switches,
+          between switches and servers,
+          and anywhere high-speed and reliability are required.
         </p>
       </div>
 
-      <!-- How LACP Works -->
-      <div class="bg-yellow-500 rounded-xl shadow-lg p-6 md:col-span-2">
-        <h2 class="text-2xl font-bold mb-3 text-white">
-          How does LACP work? (ELI10)
-        </h2>
-        <p class="text-white/90 leading-relaxed">
-          Two switches talk and say:
-          <br><br>
-          “Hey, do you want to team up these cables?”  
-          “Yes, but only if we follow the same rules.”
-          <br><br>
-          If the rules match, LACP bundles the links into
-          <strong>one logical connection</strong> called an
-          <strong>EtherChannel</strong>.
-        </p>
+    </section>
+
+    <!-- Highlight Card (Reference Style) -->
+    <section class="mt-14">
+
+      <div class="bg-gradient-to-br from-sky-100 via-indigo-100 to-purple-100
+                  rounded-3xl p-6 shadow-lg">
+
+        <div class="relative bg-white rounded-2xl p-6 pt-10 shadow-md">
+
+          <!-- Floating Icon -->
+          <div class="absolute -top-6 left-6 bg-white rounded-full p-4 shadow-md">
+            <!-- Chain / Link Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="h-6 w-6 text-indigo-600"
+                 fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13.828 10.172a4 4 0 010 5.656l-1.414 1.414a4 4 0 01-5.656-5.656l1.414-1.414
+                       M10.172 13.828a4 4 0 010-5.656l1.414-1.414a4 4 0 115.656 5.656l-1.414 1.414" />
+            </svg>
+          </div>
+
+          <!-- Highlight Content -->
+          <p class="text-gray-800 text-sm leading-relaxed mb-4">
+            LACP automatically checks if both devices support
+            link aggregation and safely bundles links into
+            a single logical connection called an EtherChannel.
+          </p>
+
+          <div class="grid grid-cols-2 gap-3 text-sm text-gray-700 mb-4">
+            <div>• Higher Bandwidth</div>
+            <div>• Redundancy</div>
+            <div>• Loop Prevention</div>
+            <div>• Auto Negotiation</div>
+          </div>
+
+          <span class="text-indigo-600 font-semibold">
+            CCNA Exam Tip: LACP = IEEE 802.3ad (Active / Passive)
+          </span>
+
+        </div>
       </div>
 
-    </div>
+    </section>
 
     <!-- Footer -->
-    <p class="text-center text-gray-600 mt-10">
-      CCNA Networking • LACP • EtherChannel • Tailwind CSS
-    </p>
+    <footer class="text-center text-gray-500 mt-12 text-sm">
+      CCNA Networking • LACP • EtherChannel
+    </footer>
+
   </div>
 
 </body>
