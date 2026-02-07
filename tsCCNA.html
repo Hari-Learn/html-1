@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CCNA Troubleshooting Essentials</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-b from-gray-50 to-slate-100 p-8">
+
+  <div class="max-w-5xl mx-auto">
+
+    <h1 class="text-3xl font-semibold text-gray-800 mb-4">
+      Troubleshooting in CCNA
+    </h1>
+
+    <p class="text-gray-600 max-w-3xl mb-12">
+      Troubleshooting is a key skill tested in the CCNA exam.
+      You are expected to identify common network issues, understand symptoms,
+      and choose the correct fix — not perform advanced configurations.
+    </p>
+
+    <!-- Section 1 -->
+    <h2 class="text-xl font-medium text-gray-800 mb-6">
+      Must-Know Troubleshooting Topics for CCNA Exam
+    </h2>
+
+    <div class="space-y-6 mb-12">
+
+      <!-- Connectivity -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-6 shadow-sm">
+        <div class="text-gray-500">
+          <!-- Network Icon -->
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-medium text-gray-800 mb-2">Basic Connectivity Issues</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
+            <li>Incorrect IP address, subnet mask, or gateway</li>
+            <li>Interface shutdown or wrong cable</li>
+            <li>Ping and traceroute failures</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- VLAN -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-6 shadow-sm">
+        <div class="text-gray-500">
+          <!-- Switch Icon -->
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M3 12h18M3 17h18" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-medium text-gray-800 mb-2">VLAN & Trunking Problems</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
+            <li>Wrong VLAN assignment on access ports</li>
+            <li>Trunk not forming or native VLAN mismatch</li>
+            <li>Devices in same VLAN cannot communicate</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Routing -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-6 shadow-sm">
+        <div class="text-gray-500">
+          <!-- Route Icon -->
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-medium text-gray-800 mb-2">Routing & OSPF Issues</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
+            <li>Missing or incorrect static routes</li>
+            <li>OSPF neighbors not forming</li>
+            <li>Routing table missing networks</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Wireless -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-6 shadow-sm">
+        <div class="text-gray-500">
+          <!-- WiFi Icon -->
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12.55a11 11 0 0114.08 0M8.5 15.5a6 6 0 017 0M12 20h.01" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-medium text-gray-800 mb-2">Wireless Issues</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
+            <li>Wrong SSID or security settings</li>
+            <li>Authentication or encryption mismatch</li>
+            <li>Weak signal or interference</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Security -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 flex gap-6 shadow-sm">
+        <div class="text-gray-500">
+          <!-- Shield Icon -->
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-medium text-gray-800 mb-2">Security & ACL Issues</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
+            <li>ACL blocking required traffic</li>
+            <li>Wrong ACL order or direction</li>
+            <li>Port security violations</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Section 2 -->
+    <h2 class="text-xl font-medium text-gray-800 mb-6">
+      What a Network Engineer Aspirant Should Practice
+    </h2>
+
+    <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+      <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li>OSI model troubleshooting approach (Layer-by-Layer)</li>
+        <li>Using show commands to isolate problems</li>
+        <li>Understanding error messages and link status</li>
+        <li>Identifying misconfigurations vs physical failures</li>
+        <li>Thinking logically under time pressure</li>
+      </ul>
+    </div>
+
+    <p class="text-sm text-gray-500 mt-12">
+      CCNA tests your ability to recognize problems and choose the correct solution — not deep debugging.
+    </p>
+
+  </div>
+
+</body>
+</html>
