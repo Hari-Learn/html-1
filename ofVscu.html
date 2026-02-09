@@ -2,113 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Transmission Media Comparison</title>
+  <title>LACP – CCNA Networking</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
 
-  <!-- Header -->
-  <header class="text-center py-10 bg-gradient-to-r from-indigo-400 to-purple-400 text-white">
-    <h1 class="text-4xl font-bold">Optical Fibre vs Copper vs Wireless vs Radio Waves</h1>
-    <p class="mt-3 text-lg">Comparison of Transmission Media</p>
-  </header>
+<body class="bg-gray-100 min-h-screen p-6">
 
-  <!-- Cards Section -->
-  <main class="max-w-7xl mx-auto px-6 py-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+  <div class="max-w-6xl mx-auto">
 
-    <!-- Optical Fibre -->
-    <div class="rounded-xl shadow-lg p-6 bg-gradient-to-br from-blue-50 to-blue-100">
-      <h2 class="text-2xl font-bold mb-3 text-blue-700">Optical Fibre</h2>
-      <p><strong>Includes:</strong> Glass or plastic fibers transmitting light</p>
-      <p class="mt-2"><strong>Features:</strong> Very high bandwidth, low signal loss</p>
-      <p class="mt-2"><strong>Advantages:</strong></p>
-      <ul class="list-disc list-inside text-sm">
-        <li>Extremely fast data transfer</li>
-        <li>Immune to electromagnetic interference</li>
-        <li>Long-distance communication</li>
-      </ul>
-      <p class="mt-2"><strong>Disadvantages:</strong></p>
-      <ul class="list-disc list-inside text-sm">
-        <li>High installation cost</li>
-        <li>Fragile compared to copper</li>
-      </ul>
-      <p class="mt-2"><strong>Examples:</strong> Internet backbone, FTTH</p>
-    </div>
-
-    <!-- Copper -->
-    <div class="rounded-xl shadow-lg p-6 bg-gradient-to-br from-yellow-50 to-yellow-100">
-      <h2 class="text-2xl font-bold mb-3 text-yellow-700">Copper</h2>
-      <p><strong>Includes:</strong> Twisted pair, coaxial cables</p>
-      <p class="mt-2"><strong>Features:</strong> Electrical signal transmission</p>
-      <p class="mt-2"><strong>Advantages:</strong></p>
-      <ul class="list-disc list-inside text-sm">
-        <li>Low cost</li>
-        <li>Easy to install and maintain</li>
-      </ul>
-      <p class="mt-2"><strong>Disadvantages:</strong></p>
-      <ul class="list-disc list-inside text-sm">
-        <li>Limited bandwidth</li>
-        <li>Susceptible to interference</li>
-      </ul>
-      <p class="mt-2"><strong>Examples:</strong> Ethernet cables, telephone lines</p>
-    </div>
-
-    <!-- Wireless -->
-    <div class="rounded-xl shadow-lg p-6 bg-gradient-to-br from-green-50 to-green-100">
-      <h2 class="text-2xl font-bold mb-3 text-green-700">Wireless</h2>
-      <p><strong>Includes:</strong> Wi-Fi, Bluetooth, Infrared</p>
-      <p class="mt-2"><strong>Features:</strong> No physical cables</p>
-      <p class="mt-2"><strong>Advantages:</strong></p>
-      <ul class="list-disc list-inside text-sm">
-        <li>Mobility and flexibility</li>
-        <li>Quick deployment</li>
-      </ul>
-      <p class="mt-2"><strong>Disadvantages:</strong></p>
-      <ul class="list-disc list-inside text-sm">
-        <li>Security concerns</li>
-        <li>Limited range and speed</li>
-      </ul>
-      <p class="mt-2"><strong>Examples:</strong> Wi-Fi networks, wireless keyboards</p>
-    </div>
-
-    <!-- Radio Waves -->
-    <div class="rounded-xl shadow-lg p-6 bg-gradient-to-br from-pink-50 to-pink-100">
-      <h2 class="text-2xl font-bold mb-3 text-pink-700">Radio Waves</h2>
-      <p><strong>Includes:</strong> AM/FM, cellular, satellite</p>
-      <p class="mt-2"><strong>Features:</strong> Long-range electromagnetic waves</p>
-      <p class="mt-2"><strong>Advantages:</strong></p>
-      <ul class="list-disc list-inside text-sm">
-        <li>Wide coverage area</li>
-        <li>Supports mobility</li>
-      </ul>
-      <p class="mt-2"><strong>Disadvantages:</strong></p>
-      <ul class="list-disc list-inside text-sm">
-        <li>Prone to noise and interference</li>
-        <li>Lower data rates</li>
-      </ul>
-      <p class="mt-2"><strong>Examples:</strong> Mobile networks, radio broadcasting</p>
-    </div>
-
-  </main>
-
-  <!-- Conclusion -->
-  <section class="max-w-5xl mx-auto px-6 py-10">
-    <div class="bg-white rounded-xl shadow-md p-8">
-      <h2 class="text-2xl font-bold mb-4 text-center">Conclusion</h2>
-      <p class="text-gray-700 text-center">
-        Each transmission medium has its own strengths and weaknesses.
-        Optical fibre offers the highest speed and reliability, copper is cost-effective,
-        wireless provides flexibility, and radio waves enable long-distance communication.
-        The best choice depends on application requirements such as speed, cost, distance, and mobility.
+    <!-- Header -->
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-800 mb-2">
+        LACP (Link Aggregation Control Protocol)
+      </h1>
+      <p class="text-gray-600">
+        CCNA • Explained Like You’re 10
       </p>
-    </div>
-  </section>
+    </header>
 
-  <!-- Footer -->
-  <footer class="text-center py-6 text-sm text-gray-500">
-   Hariharan D Designed for learning purpose © 2026 Transmission Media Comparison
-  </footer>
+    <!-- Cards Grid -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- Card 1 -->
+      <div class="rounded-2xl shadow-xl overflow-hidden bg-white">
+        <div class="bg-blue-500 px-6 py-4">
+          <h2 class="text-xl font-bold text-white">
+            What is LACP?
+          </h2>
+        </div>
+        <div class="p-6 text-gray-700 text-sm leading-relaxed">
+          LACP allows multiple Ethernet cables to work together as one.
+          This gives more speed and makes the connection more reliable.
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="rounded-2xl shadow-xl overflow-hidden bg-white">
+        <div class="bg-green-500 px-6 py-4">
+          <h2 class="text-xl font-bold text-white">
+            Why does LACP exist?
+          </h2>
+        </div>
+        <div class="p-6 text-gray-700 text-sm leading-relaxed">
+          LACP prevents network loops and makes sure both devices
+          agree before bundling multiple links together.
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="rounded-2xl shadow-xl overflow-hidden bg-white">
+        <div class="bg-purple-500 px-6 py-4">
+          <h2 class="text-xl font-bold text-white">
+            Why do we need LACP?
+          </h2>
+        </div>
+        <div class="p-6 text-gray-700 text-sm leading-relaxed">
+          LACP increases bandwidth and provides backup.
+          If one cable fails, traffic continues on the others.
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="rounded-2xl shadow-xl overflow-hidden bg-white">
+        <div class="bg-red-500 px-6 py-4">
+          <h2 class="text-xl font-bold text-white">
+            When is LACP used?
+          </h2>
+        </div>
+        <div class="p-6 text-gray-700 text-sm leading-relaxed">
+          LACP is used between switches, servers, and data centers
+          where high speed and reliability are needed.
+        </div>
+      </div>
+
+      <!-- Card 5 (Full Width) -->
+      <div class="md:col-span-2 rounded-2xl shadow-xl overflow-hidden bg-white">
+        <div class="bg-indigo-500 px-6 py-4">
+          <h2 class="text-xl font-bold text-white">
+            How does LACP work? (ELI10)
+          </h2>
+        </div>
+        <div class="p-6 text-gray-700 text-sm leading-relaxed space-y-3">
+          <p>
+            Two devices talk to each other and check if both support LACP.
+          </p>
+          <p>
+            If the rules match, they bundle the links into one logical
+            connection called an <strong>EtherChannel</strong>.
+          </p>
+          <p>
+            If one link fails, LACP automatically removes it and keeps
+            the connection running.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-500 mt-12 text-sm">
+      CCNA Networking • LACP • IEEE 802.3ad
+    </footer>
+
+  </div>
 
 </body>
 </html>
