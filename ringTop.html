@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ring Topology</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-5xl mx-auto p-6">
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-blue-600">Ring Topology</h1>
+      <p class="mt-2 text-lg text-gray-600">
+        Computer Networks – Ring Topology Explanation
+      </p>
+    </header>
+
+    <!-- What is Ring Topology -->
+    <section class="bg-white p-6 rounded-xl shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3 text-blue-500">
+        What is Ring Topology?
+      </h2>
+      <p>
+        Ring Topology is a type of network topology where all devices (nodes) are
+        connected in a circular structure. Each device is connected to exactly
+        two other devices — one on each side — forming a ring. Data travels in
+        one direction (or sometimes both directions) around the ring.
+      </p>
+    </section>
+
+    <!-- Why Ring Topology -->
+    <section class="bg-white p-6 rounded-xl shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3 text-blue-500">
+        Why Ring Topology is Used?
+      </h2>
+      <p>
+        Ring topology is used to provide an orderly and systematic way of data
+        transmission. Since each device gets a turn to transmit data, the
+        chances of data collision are very low compared to other topologies.
+      </p>
+    </section>
+
+    <!-- When to Use -->
+    <section class="bg-white p-6 rounded-xl shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3 text-blue-500">
+        When Do We Need Ring Topology?
+      </h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>When equal access to all nodes is required</li>
+        <li>In small to medium-sized networks</li>
+        <li>When predictable network performance is needed</li>
+        <li>In token-based network systems</li>
+      </ul>
+    </section>
+
+    <!-- Token Passing -->
+    <section class="bg-white p-6 rounded-xl shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3 text-blue-500">
+        How Token Passing Works?
+      </h2>
+      <p class="mb-3">
+        Ring topology often uses a method called <strong>Token Passing</strong>.
+        A token is a small data packet that circulates around the ring.
+      </p>
+      <ul class="list-decimal list-inside space-y-2">
+        <li>The token moves from one device to the next in the ring.</li>
+        <li>Only the device holding the token can send data.</li>
+        <li>After sending data, the device releases the token.</li>
+        <li>The token continues circulating to the next device.</li>
+      </ul>
+    </section>
+
+    <!-- Advantages -->
+    <section class="bg-white p-6 rounded-xl shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3 text-green-600">
+        Advantages of Ring Topology
+      </h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>No data collision due to token passing</li>
+        <li>Equal access to all nodes</li>
+        <li>Better performance under heavy network load</li>
+        <li>Easy to identify faults</li>
+      </ul>
+    </section>
+
+    <!-- Disadvantages -->
+    <section class="bg-white p-6 rounded-xl shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-3 text-red-600">
+        Disadvantages of Ring Topology
+      </h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Failure of one node can break the entire network</li>
+        <li>Adding or removing devices is difficult</li>
+        <li>Network speed depends on number of nodes</li>
+        <li>Maintenance can be complex</li>
+      </ul>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="bg-white p-6 rounded-xl shadow">
+      <h2 class="text-2xl font-semibold mb-3 text-blue-500">
+        Conclusion
+      </h2>
+      <p>
+        Ring topology provides a structured and collision-free method of data
+        transmission using token passing. While it offers fairness and
+        predictable performance, it is less flexible and more vulnerable to
+        failures. It is best suited for controlled environments where stability
+        is more important than scalability.
+      </p>
+    </section>
+
+    <footer class="text-center mt-10 text-gray-500">
+      © 2026 Ring Topology | Tailwind CSS Demo
+    </footer>
+  </div>
+
+</body>
+</html>
