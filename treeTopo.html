@@ -1,132 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tree Topology</title>
-
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-slate-100 text-gray-800">
 
-  <div class="max-w-6xl mx-auto p-6">
-    
+  <div class="max-w-6xl mx-auto px-6 py-12">
+
     <!-- Header -->
-    <header class="text-center mb-10">
-      <h1 class="text-4xl font-bold text-green-600">Tree Topology</h1>
-      <p class="text-lg text-gray-600 mt-2">
-        Computer Networks – Tree Topology Explanation
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-emerald-600">🌳 Tree Topology</h1>
+      <p class="mt-3 text-gray-600 text-lg">
+        Hierarchical Network Structure Explained
       </p>
-    </header>
+    </div>
 
-    <!-- Grid Layout -->
-    <div class="grid md:grid-cols-2 gap-6">
+    <!-- Main Cards -->
+    <div class="grid md:grid-cols-3 gap-8">
 
-      <!-- What is Tree Topology -->
-      <div class="border-[0.5px] border-green-200 rounded-xl bg-gradient-to-br from-green-300/70 to-green-500/70 p-5">
-        <h2 class="text-2xl font-semibold text-white mb-4">
-          What is Tree Topology?
-        </h2>
-        <div class="bg-white p-4 rounded-lg shadow-sm">
-          <p>
-            Tree topology is a hierarchical network structure that combines 
-            characteristics of both star and bus topologies. It forms a 
-            tree-like structure where nodes are arranged in levels, 
-            starting from a central root node and extending into branches.
+      <!-- What is Tree -->
+      <div class="bg-white rounded-2xl shadow-md border border-gray-200 p-6 hover:shadow-lg transition">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="bg-emerald-100 p-3 rounded-lg">
+            <!-- Icon -->
+            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m-6-6h12M5 8h14"></path>
+            </svg>
+          </div>
+          <h2 class="text-xl font-semibold text-emerald-600">What is Tree Topology?</h2>
+        </div>
+        <p>
+          Tree topology is a hierarchical network design that combines star and bus topology.
+          Devices are arranged in levels forming a tree-like structure.
+        </p>
+      </div>
+
+      <!-- Why Used -->
+      <div class="bg-white rounded-2xl shadow-md border border-gray-200 p-6 hover:shadow-lg transition">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="bg-blue-100 p-3 rounded-lg">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5l5 5v11a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h2 class="text-xl font-semibold text-blue-600">Why is it Used?</h2>
+        </div>
+        <p>
+          It allows structured management and easy network expansion.
+          Large organizations prefer this topology for organized communication.
+        </p>
+      </div>
+
+      <!-- When Needed -->
+      <div class="bg-white rounded-2xl shadow-md border border-gray-200 p-6 hover:shadow-lg transition">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="bg-purple-100 p-3 rounded-lg">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M3 12h18M3 17h18"/>
+            </svg>
+          </div>
+          <h2 class="text-xl font-semibold text-purple-600">When Do We Need It?</h2>
+        </div>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Large companies</li>
+          <li>Schools & universities</li>
+          <li>Multi-department offices</li>
+          <li>Expandable network systems</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Structure Section -->
+    <div class="mt-16">
+      <h2 class="text-3xl font-bold text-center text-emerald-600 mb-8">
+        Structure of Tree Topology
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Root Node -->
+        <div class="bg-gradient-to-br from-emerald-400 to-emerald-600 text-white rounded-2xl p-6 shadow-md">
+          <h3 class="text-xl font-semibold mb-3">Root Node 🌟</h3>
+          <p class="text-sm">
+            The root node is the main controller of the network.
+            It manages communication and controls all branches below it.
           </p>
         </div>
-      </div>
 
-      <!-- Why Tree Topology -->
-      <div class="border-[0.5px] border-emerald-200 rounded-xl bg-gradient-to-br from-emerald-300/70 to-emerald-500/70 p-5">
-        <h2 class="text-2xl font-semibold text-white mb-4">
-          Why Tree Topology is Used?
-        </h2>
-        <div class="bg-white p-4 rounded-lg shadow-sm">
-          <p>
-            Tree topology is used because it allows easy expansion and 
-            structured network management. It supports large networks 
-            while maintaining organized communication between devices.
+        <!-- Branch -->
+        <div class="bg-gradient-to-br from-blue-400 to-blue-600 text-white rounded-2xl p-6 shadow-md">
+          <h3 class="text-xl font-semibold mb-3">Branches 🌿</h3>
+          <p class="text-sm">
+            Branches act as sub-networks connected to the root.
+            They distribute data to lower-level nodes.
           </p>
         </div>
-      </div>
 
-      <!-- When to Use -->
-      <div class="border-[0.5px] border-lime-200 rounded-xl bg-gradient-to-br from-lime-300/70 to-lime-500/70 p-5">
-        <h2 class="text-2xl font-semibold text-white mb-4">
-          When Do We Need Tree Topology?
-        </h2>
-        <div class="bg-white p-4 rounded-lg shadow-sm">
-          <ul class="list-disc list-inside space-y-2">
-            <li>In large organizations with multiple departments</li>
-            <li>When network expansion is required</li>
-            <li>For hierarchical data management systems</li>
-            <li>In schools, universities, and office buildings</li>
-          </ul>
+        <!-- Leaf -->
+        <div class="bg-gradient-to-br from-purple-400 to-purple-600 text-white rounded-2xl p-6 shadow-md">
+          <h3 class="text-xl font-semibold mb-3">Leaf Nodes 🍃</h3>
+          <p class="text-sm">
+            Leaf nodes are end devices like computers and printers.
+            They do not connect to any further nodes.
+          </p>
         </div>
+
       </div>
-
-      <!-- Structure Explanation -->
-      <div class="border-[0.5px] border-teal-200 rounded-xl bg-gradient-to-br from-teal-300/70 to-teal-500/70 p-5">
-        <h2 class="text-2xl font-semibold text-white mb-4">
-          Structure of Tree Topology
-        </h2>
-        <div class="bg-white p-4 rounded-lg shadow-sm space-y-3">
-          
-          <div>
-            <h3 class="font-semibold text-green-600">Root Node – Main Controller</h3>
-            <p>
-              The root node is the top-level device in the hierarchy. 
-              It controls and manages communication between all branches 
-              of the network.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="font-semibold text-green-600">Branches – Sub Networks</h3>
-            <p>
-              Branches are intermediate nodes connected to the root. 
-              They act as sub-networks, distributing data to lower-level nodes.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="font-semibold text-green-600">Leaf Nodes – End Devices</h3>
-            <p>
-              Leaf nodes are the final devices in the hierarchy, such as 
-              computers, printers, or workstations. They do not have 
-              further child nodes.
-            </p>
-          </div>
-
-        </div>
-      </div>
-
     </div>
 
     <!-- Conclusion -->
-    <div class="mt-10 border-[0.5px] border-gray-300 rounded-xl bg-gradient-to-br from-gray-500/80 to-gray-700/80 p-5">
-      <h2 class="text-2xl font-semibold text-white mb-4 text-center">
-        Conclusion
-      </h2>
-      <div class="bg-white p-4 rounded-lg shadow-sm">
-        <p>
-          Tree topology provides a structured and scalable network design. 
-          It is ideal for large organizations that require hierarchical 
-          control and easy expansion. However, if the root node fails, 
-          the entire network may be affected.
-        </p>
-      </div>
+    <div class="mt-16 bg-white border border-gray-200 rounded-2xl p-8 shadow-md text-center">
+      <h2 class="text-2xl font-bold text-gray-700 mb-4">Conclusion</h2>
+      <p class="text-gray-600">
+        Tree topology provides a scalable and structured network design.
+        It is best suited for large organizations requiring hierarchical control.
+        However, failure of the root node may affect the entire network.
+      </p>
     </div>
 
     <!-- Footer -->
-    <footer class="text-center mt-10 text-gray-500">
-      © 2026 Tree Topology | Tailwind CSS Demo
+    <footer class="text-center mt-12 text-gray-500">
+      © 2026 Tree Topology | Tailwind CSS Design
     </footer>
 
   </div>
 
 </body>
 </html>
-
