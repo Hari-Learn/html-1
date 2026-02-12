@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layer 2 Switch Isolation Without VLAN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 min-h-screen">
+
+    <div class="max-w-6xl mx-auto py-12 px-6">
+        
+        <!-- Title -->
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-10">
+            How to Isolate One System in Layer 2 Switch (Without VLAN)
+        </h1>
+
+        <!-- Cards Container -->
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <!-- Card 1 -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+                <h2 class="text-xl font-semibold text-indigo-600 mb-4">
+                    1. Port Isolation / Protected Port
+                </h2>
+                <p class="text-gray-600 mb-4">
+                    Port Isolation allows devices connected to specific switch ports 
+                    to be blocked from communicating with each other while still 
+                    allowing access to the uplink or router port.
+                </p>
+                <div class="bg-gray-100 p-3 rounded-lg text-sm text-gray-700">
+                    <p class="font-medium mb-2">Cisco Example:</p>
+                    <code>
+Switch(config)# interface fa0/2<br>
+Switch(config-if)# switchport protected
+                    </code>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+                <h2 class="text-xl font-semibold text-indigo-600 mb-4">
+                    2. MAC Access Control List (MAC ACL)
+                </h2>
+                <p class="text-gray-600 mb-4">
+                    If supported, you can block communication using MAC-based 
+                    Access Control Lists. This allows denying traffic from a 
+                    specific device’s MAC address.
+                </p>
+                <div class="bg-gray-100 p-3 rounded-lg text-sm text-gray-700">
+                    <p class="font-medium mb-2">Example:</p>
+                    <code>
+Switch(config)# mac access-list extended BLOCK_PC1<br>
+Switch(config-ext-macl)# deny any host 0001.aaaa.bbbb<br>
+Switch(config-ext-macl)# permit any any
+                    </code>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+                <h2 class="text-xl font-semibold text-indigo-600 mb-4">
+                    3. Port Security (Device Restriction)
+                </h2>
+                <p class="text-gray-600 mb-4">
+                    Port Security limits which devices can connect to a switch port. 
+                    It prevents unauthorized devices but does not fully isolate ports 
+                    from each other.
+                </p>
+                <div class="bg-gray-100 p-3 rounded-lg text-sm text-gray-700">
+                    <p class="font-medium mb-2">Example:</p>
+                    <code>
+Switch(config)# interface fa0/2<br>
+Switch(config-if)# switchport port-security<br>
+Switch(config-if)# switchport port-security maximum 1
+                    </code>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Note -->
+        <div class="mt-12 text-center text-gray-600">
+            <p class="text-lg font-medium">
+                ✔ Best Recommended Method Without VLAN: Port Isolation / Protected Port
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
