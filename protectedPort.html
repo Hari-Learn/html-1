@@ -4,66 +4,68 @@
 <meta charset="UTF-8">
 <title>Layer 2 Switch Communication & Protection</title>
 <script src="https://cdn.tailwindcss.com"></script>
+
 <style>
-    .glass {
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
+  .glass-light {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.4);
+  }
 </style>
+
 </head>
 
-<body class="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 min-h-screen text-white">
+<body class="bg-gradient-to-br from-sky-50 via-indigo-50 to-purple-50 min-h-screen text-gray-800">
 
-<div class="max-w-7xl mx-auto py-16 px-6">
+<div class="max-w-6xl mx-auto py-16 px-6">
 
     <!-- Title -->
-    <h1 class="text-4xl md:text-5xl font-bold text-center mb-16 drop-shadow-lg">
+    <h1 class="text-4xl font-bold text-center mb-14">
         Layer 2 Switch Communication & Protection
-        <p class="text-lg font-normal mt-4 text-indigo-100">
+        <p class="text-lg font-normal text-gray-500 mt-3">
             Without Using VLAN
         </p>
     </h1>
 
-    <!-- OPEN COMMUNICATION SECTION -->
-    <div class="glass rounded-3xl p-10 mb-16 shadow-2xl transition duration-500 hover:scale-[1.02]">
+    <!-- SECTION 1 : OPEN COMMUNICATION -->
+    <div class="glass-light rounded-3xl p-10 shadow-lg mb-16 transition hover:shadow-2xl hover:-translate-y-1 duration-300">
+        
         <div class="flex items-center mb-8">
             <!-- Icon -->
-            <svg class="w-8 h-8 mr-3 text-green-300" fill="none" stroke="currentColor" stroke-width="2"
+            <svg class="w-7 h-7 text-sky-500 mr-3" fill="none" stroke="currentColor" stroke-width="2"
                 viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            <h2 class="text-2xl font-semibold">Default Setup – All Systems Communicate</h2>
+            <h2 class="text-2xl font-semibold text-sky-600">
+                Default Setup – All Systems Communicate
+            </h2>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
 
-            <!-- Card 1 -->
-            <div class="bg-white/20 rounded-2xl p-6 hover:bg-white/30 transition duration-300">
-                <h3 class="font-semibold text-green-200 mb-3">How It Works</h3>
-                <p class="text-indigo-100 text-sm">
-                    All devices connected to a Layer 2 switch belong to the same
-                    broadcast domain. Every PC can directly communicate with others.
+            <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <h3 class="font-semibold text-sky-600 mb-3">How It Works</h3>
+                <p class="text-sm text-gray-600">
+                    All connected PCs belong to the same broadcast domain. 
+                    Every system can directly communicate with others.
                 </p>
             </div>
 
-            <!-- Card 2 -->
-            <div class="bg-white/20 rounded-2xl p-6 hover:bg-white/30 transition duration-300">
-                <h3 class="font-semibold text-green-200 mb-3">Example</h3>
-                <ul class="text-indigo-100 text-sm space-y-1">
+            <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <h3 class="font-semibold text-sky-600 mb-3">Example</h3>
+                <ul class="text-sm text-gray-600 space-y-1">
                     <li>PC1 → Fa0/1</li>
                     <li>PC2 → Fa0/2</li>
                     <li>PC3 → Fa0/3</li>
-                    <li class="text-green-300">✔ All can ping each other</li>
+                    <li class="text-green-600 font-medium">✔ All can ping each other</li>
                 </ul>
             </div>
 
-            <!-- Card 3 -->
-            <div class="bg-white/20 rounded-2xl p-6 hover:bg-white/30 transition duration-300">
-                <h3 class="font-semibold text-green-200 mb-3">Configuration</h3>
-                <div class="bg-black/30 p-3 rounded text-xs">
+            <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <h3 class="font-semibold text-sky-600 mb-3">Configuration</h3>
+                <div class="bg-gray-100 p-3 rounded text-xs text-gray-700">
 <code>
 Switch(config)# interface range fa0/1 - 3<br>
 Switch(config-if)# switchport mode access
@@ -74,73 +76,79 @@ Switch(config-if)# switchport mode access
         </div>
     </div>
 
-    <!-- PROTECTED PORT SECTION -->
-    <div class="glass rounded-3xl p-10 mb-16 shadow-2xl transition duration-500 hover:scale-[1.02]">
+    <!-- SECTION 2 : PROTECTED PORT -->
+    <div class="glass-light rounded-3xl p-10 shadow-lg mb-16 transition hover:shadow-2xl hover:-translate-y-1 duration-300">
+
         <div class="flex items-center mb-8">
             <!-- Lock Icon -->
-            <svg class="w-8 h-8 mr-3 text-yellow-300" fill="none" stroke="currentColor" stroke-width="2"
+            <svg class="w-7 h-7 text-purple-500 mr-3" fill="none" stroke="currentColor" stroke-width="2"
                 viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M12 11c1.657 0 3 1.343 3 3v2H9v-2c0-1.657 1.343-3 3-3z" />
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M17 11V7a5 5 0 10-10 0v4" />
             </svg>
-            <h2 class="text-2xl font-semibold">Protected Port – Isolation Method</h2>
+            <h2 class="text-2xl font-semibold text-purple-600">
+                Protected Port – Isolation Method
+            </h2>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
 
-            <div class="bg-white/20 rounded-2xl p-6 hover:bg-white/30 transition duration-300">
-                <h3 class="font-semibold text-yellow-200 mb-3">How It Works</h3>
-                <ul class="text-indigo-100 text-sm space-y-1">
+            <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <h3 class="font-semibold text-purple-600 mb-3">How It Works</h3>
+                <ul class="text-sm text-gray-600 space-y-1">
                     <li>PC1 ❌ PC2</li>
                     <li>PC2 ❌ PC3</li>
-                    <li class="text-green-300">✔ All PCs → Router</li>
+                    <li class="text-green-600 font-medium">✔ PCs can access Router</li>
                 </ul>
             </div>
 
-            <div class="bg-white/20 rounded-2xl p-6 hover:bg-white/30 transition duration-300">
-                <h3 class="font-semibold text-yellow-200 mb-3">Configuration</h3>
-                <div class="bg-black/30 p-3 rounded text-xs">
+            <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                <h3 class="font-semibold text-purple-600 mb-3">Configuration</h3>
+                <div class="bg-gray-100 p-3 rounded text-xs text-gray-700">
 <code>
 Switch(config)# interface range fa0/1 - 3<br>
 Switch(config-if)# switchport protected
 </code>
                 </div>
-                <p class="text-xs text-indigo-200 mt-3">
-                    Ensure router/uplink port is NOT protected.
+                <p class="text-xs text-gray-500 mt-3">
+                    Do not configure the uplink/router port as protected.
                 </p>
             </div>
 
         </div>
     </div>
 
-    <!-- NETWORK DIAGRAM SECTION -->
-    <div class="glass rounded-3xl p-10 shadow-2xl">
-        <div class="flex items-center mb-8">
-            <!-- Network Icon -->
-            <svg class="w-8 h-8 mr-3 text-cyan-300" fill="none" stroke="currentColor" stroke-width="2"
+    <!-- NETWORK DIAGRAM -->
+    <div class="glass-light rounded-3xl p-10 shadow-lg transition hover:shadow-2xl hover:-translate-y-1 duration-300">
+
+        <div class="flex items-center mb-6">
+            <svg class="w-7 h-7 text-indigo-500 mr-3" fill="none" stroke="currentColor" stroke-width="2"
                 viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M9 17v-2a4 4 0 014-4h4M9 17H5m4 0h4" />
             </svg>
-            <h2 class="text-2xl font-semibold">Simple Network Diagram</h2>
+            <h2 class="text-2xl font-semibold text-indigo-600">
+                Simple Network Diagram
+            </h2>
         </div>
 
-        <div class="bg-white/20 rounded-2xl p-8 text-center text-indigo-100 text-sm">
+        <div class="bg-white rounded-xl p-8 shadow-sm text-sm text-gray-700 text-center">
 <pre>
-        PC1      PC2      PC3
-          |        |        |
-          --------------------
-                 SWITCH
-                   |
-                 ROUTER
+      PC1      PC2      PC3
+        |        |        |
+        --------------------
+               SWITCH
+                 |
+               ROUTER
 </pre>
         </div>
 
-        <p class="text-center mt-6 text-indigo-200">
-            🔐 In Protected Mode: PCs cannot communicate with each other.
+        <p class="text-center text-gray-500 mt-6 text-sm">
+            In Protected Mode: PCs cannot communicate with each other but can reach the router.
         </p>
+
     </div>
 
 </div>
