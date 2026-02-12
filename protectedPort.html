@@ -2,87 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Layer 2 Switch Isolation Without VLAN</title>
+    <title>Layer 2 Switch Communication & Protection</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 min-h-screen">
+<body class="bg-gradient-to-br from-sky-50 via-indigo-50 to-purple-100 min-h-screen">
 
     <div class="max-w-6xl mx-auto py-12 px-6">
         
         <!-- Title -->
-        <h1 class="text-4xl font-bold text-center text-gray-800 mb-10">
-            How to Isolate One System in Layer 2 Switch (Without VLAN)
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">
+            Layer 2 Switch Communication & Protection (Without VLAN)
         </h1>
 
-        <!-- Cards Container -->
-        <div class="grid md:grid-cols-3 gap-8">
+        <!-- Section 1: Normal Communication -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-6 text-center">
+                1️⃣ Default Setup – All Systems Can Communicate
+            </h2>
 
-            <!-- Card 1 -->
-            <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
-                <h2 class="text-xl font-semibold text-indigo-600 mb-4">
-                    1. Port Isolation / Protected Port
-                </h2>
-                <p class="text-gray-600 mb-4">
-                    Port Isolation allows devices connected to specific switch ports 
-                    to be blocked from communicating with each other while still 
-                    allowing access to the uplink or router port.
-                </p>
-                <div class="bg-gray-100 p-3 rounded-lg text-sm text-gray-700">
-                    <p class="font-medium mb-2">Cisco Example:</p>
-                    <code>
-Switch(config)# interface fa0/2<br>
-Switch(config-if)# switchport protected
-                    </code>
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold text-indigo-600 mb-3">How It Works</h3>
+                    <p class="text-gray-600">
+                        In a normal Layer 2 switch setup, all connected devices 
+                        belong to the same broadcast domain. This means every 
+                        system can communicate directly with every other system.
+                    </p>
                 </div>
-            </div>
 
-            <!-- Card 2 -->
-            <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
-                <h2 class="text-xl font-semibold text-indigo-600 mb-4">
-                    2. MAC Access Control List (MAC ACL)
-                </h2>
-                <p class="text-gray-600 mb-4">
-                    If supported, you can block communication using MAC-based 
-                    Access Control Lists. This allows denying traffic from a 
-                    specific device’s MAC address.
-                </p>
-                <div class="bg-gray-100 p-3 rounded-lg text-sm text-gray-700">
-                    <p class="font-medium mb-2">Example:</p>
-                    <code>
-Switch(config)# mac access-list extended BLOCK_PC1<br>
-Switch(config-ext-macl)# deny any host 0001.aaaa.bbbb<br>
-Switch(config-ext-macl)# permit any any
-                    </code>
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold text-indigo-600 mb-3">Example Scenario</h3>
+                    <ul class="text-gray-600 list-disc list-inside">
+                        <li>PC1 connected to Fa0/1</li>
+                        <li>PC2 connected to Fa0/2</li>
+                        <li>PC3 connected to Fa0/3</li>
+                        <li>All PCs can ping each other</li>
+                    </ul>
                 </div>
-            </div>
 
-            <!-- Card 3 -->
-            <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
-                <h2 class="text-xl font-semibold text-indigo-600 mb-4">
-                    3. Port Security (Device Restriction)
-                </h2>
-                <p class="text-gray-600 mb-4">
-                    Port Security limits which devices can connect to a switch port. 
-                    It prevents unauthorized devices but does not fully isolate ports 
-                    from each other.
-                </p>
-                <div class="bg-gray-100 p-3 rounded-lg text-sm text-gray-700">
-                    <p class="font-medium mb-2">Example:</p>
-                    <code>
-Switch(config)# interface fa0/2<br>
-Switch(config-if)# switchport port-security<br>
-Switch(config-if)# switchport port-security maximum 1
-                    </code>
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold text-indigo-600 mb-3">Configuration</h3>
+                    <div class="bg-gray-100 p-3 rounded-lg text-sm text-gray-700">
+                        <code>
+Switch(config)# interface range fa0/1 - 3<br>
+Switch(config-if)# switchport mode access
+                        </code>
+                    </div>
+                    <p class="text-gray-500 mt-3 text-sm">
+                        No additional configuration required. Communication is open.
+                    </p>
                 </div>
-            </div>
 
+            </div>
         </div>
 
-        <!-- Footer Note -->
-        <div class="mt-12 text-center text-gray-600">
-            <p class="text-lg font-medium">
-                ✔ Best Recommended Method Without VLAN: Port Isolation / Protected Port
-            </p>
+        <!-- Section 2: Protected Port Isolation -->
+        <div>
+            <h2 class="text-2xl font-semibold text-gray-700 mb-6 text-center">
+                2️⃣ Protected Port – Block Communication Between Systems
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold text-purple-600 mb-3">What Protected Port Does</h3>
+                    <p class="text-gray-600 mb-4">
+                        Protected ports prevent devices connected to those ports 
+                        from communicating with each other. However, they can still 
+                        communicate with the uplink or router port.
+                    </p>
+                    <ul class="text-gray-600 list-disc list-inside">
+                        <li>PC1 cannot talk to PC2</li>
+                        <li>PC2 cannot talk to PC3</li>
+                        <li>All PCs can still access router/internet</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold text-purple-600 mb-3">Configuration Example</h3>
+                    <div class="bg-gray-100 p-3 rounded-lg text-sm text-gray-700">
+                        <code>
+Switch(config)# interface range fa0/1 - 3<br>
+Switch(config-if)# switchport protected
+                        </code>
+                    </div>
+                    <p class="text-gray-500 mt-3 text-sm">
+                        Ensure uplink/router port is NOT configured as protected.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="mt-10 text-center">
+                <p class="text-lg font-medium text-gray-700">
+                    ✔ Recommended Method Without VLAN: Use Protected Port
+                </p>
+            </div>
         </div>
 
     </div>
