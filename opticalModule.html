@@ -13,8 +13,8 @@
             <h1 class="text-2xl font-bold">Optical Module Guide</h1>
             <nav class="space-x-6 text-sm md:text-base">
                 <a href="#" class="hover:text-yellow-300">Home</a>
-                <a href="#" class="hover:text-yellow-300">About</a>
                 <a href="#" class="hover:text-yellow-300">CCNA Topics</a>
+                <a href="#" class="hover:text-yellow-300">Fiber</a>
                 <a href="#" class="hover:text-yellow-300">Contact</a>
             </nav>
         </div>
@@ -22,13 +22,16 @@
 
     <!-- Main Content -->
     <main class="flex-grow p-6">
-        <div class="max-w-6xl mx-auto">
+        <div class="max-w-7xl mx-auto">
 
             <h2 class="text-4xl font-bold text-center text-blue-700 mb-10">
                 Optical Module – Complete Guide (CCNA Level)
             </h2>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Existing Cards -->
+                <!-- (Keeping previous 6 cards same) -->
 
                 <!-- Card 1 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
@@ -38,16 +41,8 @@
                         </h3>
                     </div>
                     <div class="p-6 text-gray-700">
-                        <p>
-                            An optical module (SFP, SFP+, QSFP) is a pluggable transceiver 
-                            used to convert electrical signals into light signals 
-                            for fiber optic communication.
-                        </p>
-                        <ul class="list-disc mt-4 ml-5 space-y-2">
-                            <li>Used for fiber networking</li>
-                            <li>Supports high speed transmission</li>
-                            <li>Pluggable & replaceable</li>
-                        </ul>
+                        Converts electrical signals into light signals for fiber communication.
+                        Used in SFP, SFP+, QSFP slots.
                     </div>
                 </div>
 
@@ -59,12 +54,8 @@
                         </h3>
                     </div>
                     <div class="p-6 text-gray-700">
-                        <ul class="list-disc ml-5 space-y-2">
-                            <li>Copper cable distance limitation (100m)</li>
-                            <li>Need higher bandwidth</li>
-                            <li>Reduce interference</li>
-                            <li>Long-distance connectivity</li>
-                        </ul>
+                        Overcomes copper limitations (100m distance, interference).
+                        Provides high-speed long-distance communication.
                     </div>
                 </div>
 
@@ -76,12 +67,7 @@
                         </h3>
                     </div>
                     <div class="p-6 text-gray-700">
-                        <ul class="list-disc ml-5 space-y-2">
-                            <li>Connecting buildings</li>
-                            <li>Data center connections</li>
-                            <li>ISP backbone links</li>
-                            <li>Distance greater than 100m</li>
-                        </ul>
+                        Needed when distance >100m, campus networks, data centers, ISP backbone.
                     </div>
                 </div>
 
@@ -93,50 +79,101 @@
                         </h3>
                     </div>
                     <div class="p-6 text-gray-700">
-                        <p>Optical modules work in:</p>
-                        <ul class="list-disc mt-4 ml-5 space-y-2">
-                            <li>Layer 2 Switch</li>
-                            <li>Layer 3 Switch</li>
-                            <li>Router</li>
-                        </ul>
-                        <p class="mt-4">
-                            The device must have an SFP/SFP+ slot.
-                        </p>
+                        Works in switches and routers that have SFP/SFP+ ports.
                     </div>
                 </div>
 
+                <!-- NEW EXPLANATION CARDS -->
+
                 <!-- Card 5 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="bg-yellow-600 p-4">
+                    <div class="bg-indigo-600 p-4">
                         <h3 class="text-xl font-semibold text-white">
-                            CCNA Exam Questions
+                            What Does SFP Stand For?
                         </h3>
                     </div>
                     <div class="p-6 text-gray-700">
-                        <ul class="list-decimal ml-5 space-y-3">
-                            <li>What does SFP stand for?</li>
-                            <li>Single-mode vs Multi-mode difference?</li>
-                            <li>Maximum distance of fiber?</li>
-                            <li>When to use fiber instead of copper?</li>
-                            <li>Which device supports SFP?</li>
+                        <strong>SFP</strong> stands for <b>Small Form-factor Pluggable</b>.
+                        <ul class="list-disc ml-5 mt-3 space-y-2">
+                            <li>Compact, hot-swappable transceiver</li>
+                            <li>Supports 1 Gbps typically</li>
+                            <li>Used for fiber or copper uplinks</li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Card 6 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="bg-indigo-600 p-4">
+                    <div class="bg-pink-600 p-4">
                         <h3 class="text-xl font-semibold text-white">
-                            Types of Optical Modules
+                            Single-mode vs Multi-mode
+                        </h3>
+                    </div>
+                    <div class="p-6 text-gray-700">
+                        <strong>Single-mode (SMF):</strong>
+                        <ul class="list-disc ml-5 mt-2 space-y-1">
+                            <li>Long distance (up to 40km+)</li>
+                            <li>Thin core (9µm)</li>
+                            <li>Uses laser</li>
+                        </ul>
+                        <strong class="block mt-4">Multi-mode (MMF):</strong>
+                        <ul class="list-disc ml-5 mt-2 space-y-1">
+                            <li>Short distance (300m–550m)</li>
+                            <li>Thicker core (50/62.5µm)</li>
+                            <li>Uses LED</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-yellow-600 p-4">
+                        <h3 class="text-xl font-semibold text-white">
+                            Maximum Distance of Fiber
                         </h3>
                     </div>
                     <div class="p-6 text-gray-700">
                         <ul class="list-disc ml-5 space-y-2">
-                            <li>SFP – 1 Gbps</li>
-                            <li>SFP+ – 10 Gbps</li>
-                            <li>QSFP – 40 Gbps</li>
-                            <li>QSFP28 – 100 Gbps</li>
+                            <li>Multi-mode: Up to 550 meters</li>
+                            <li>Single-mode: 10km, 20km, 40km or more</li>
                         </ul>
+                        Depends on SFP type and fiber quality.
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-teal-600 p-4">
+                        <h3 class="text-xl font-semibold text-white">
+                            When to Use Fiber Instead of Copper?
+                        </h3>
+                    </div>
+                    <div class="p-6 text-gray-700">
+                        <ul class="list-disc ml-5 space-y-2">
+                            <li>Distance greater than 100 meters</li>
+                            <li>High bandwidth requirement</li>
+                            <li>High EMI (electromagnetic interference)</li>
+                            <li>Backbone connections</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gray-700 p-4">
+                        <h3 class="text-xl font-semibold text-white">
+                            Which Device Supports SFP?
+                        </h3>
+                    </div>
+                    <div class="p-6 text-gray-700">
+                        Devices that support SFP:
+                        <ul class="list-disc ml-5 mt-3 space-y-2">
+                            <li>Managed Switches</li>
+                            <li>Layer 3 Switches</li>
+                            <li>Routers</li>
+                            <li>Firewalls (some models)</li>
+                        </ul>
+                        Must have SFP/SFP+ slot.
                     </div>
                 </div>
 
@@ -148,12 +185,8 @@
     <footer class="bg-gray-800 text-gray-300 mt-10">
         <div class="max-w-7xl mx-auto px-6 py-6 text-center">
             <p class="text-lg font-semibold text-white">CCNA Networking Notes</p>
-            <p class="mt-2 text-sm">
-                Learn Networking | Optical Modules | Fiber Concepts
-            </p>
-            <p class="mt-4 text-xs text-gray-400">
-                © 2026 All Rights Reserved
-            </p>
+            <p class="mt-2 text-sm">Optical Modules | Fiber Concepts | Exam Guide</p>
+            <p class="mt-4 text-xs text-gray-400">© 2026 All Rights Reserved</p>
         </div>
     </footer>
 
