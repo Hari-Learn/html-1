@@ -2,143 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>OSI Model vs Real Internet (TCP/IP)</title>
+  <title>OSI vs TCP/IP</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-slate-900 text-gray-200 min-h-screen flex flex-col">
 
-  <div class="max-w-6xl mx-auto px-6 py-12">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-indigo-600 to-purple-600 py-6 shadow-lg">
+    <h1 class="text-center text-3xl font-bold text-white">
+      OSI Model vs Real Internet (TCP/IP)
+    </h1>
+    <p class="text-center text-indigo-100 mt-2">
+      Explained Like You're 10 🚀
+    </p>
+  </header>
 
-    <!-- Header -->
-    <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-blue-600 mb-4">
-        OSI Model vs Real Internet (TCP/IP)
-      </h1>
-      <p class="text-lg text-gray-600">
-        Explained Like You're 10 Years Old 🚀
-      </p>
-    </div>
+  <!-- Main Content -->
+  <main class="flex-grow max-w-6xl mx-auto px-6 py-12">
 
-    <!-- Cards Grid -->
     <div class="grid md:grid-cols-2 gap-8">
 
-      <!-- OSI Model Card -->
-      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
-        <h2 class="text-2xl font-semibold text-indigo-600 mb-4">
-          📦 What is the OSI Model?
-        </h2>
-        <p class="mb-4">
-          Think of the OSI model like a 7-step pizza delivery system.
-          Each step has a specific job before the pizza reaches you.
-        </p>
-        <ul class="list-disc pl-6 space-y-2 text-sm">
-          <li><b>7 Layers</b> (From Physical wire to Application)</li>
-          <li>Each layer has a clear role</li>
-          <li>It’s a teaching and design model</li>
-        </ul>
-        <div class="mt-4 bg-indigo-50 p-3 rounded-lg text-sm">
-          💡 OSI helps us understand HOW networking works step-by-step.
+      <!-- OSI Card -->
+      <div class="bg-slate-800 rounded-2xl shadow-xl overflow-hidden">
+        <div class="bg-indigo-600 p-4">
+          <h2 class="text-xl font-semibold text-white">
+            📦 What is the OSI Model?
+          </h2>
+        </div>
+        <div class="p-6 space-y-4">
+          <p>
+            Think of OSI like a 7-step pizza delivery system. Each step has a specific job.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-sm">
+            <li>7 layers</li>
+            <li>Each layer has one responsibility</li>
+            <li>Mainly used for learning</li>
+          </ul>
+          <div class="bg-indigo-900 p-3 rounded-lg text-sm">
+            💡 OSI = Learning blueprint of networking.
+          </div>
         </div>
       </div>
 
       <!-- TCP/IP Card -->
-      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
-        <h2 class="text-2xl font-semibold text-green-600 mb-4">
-          🌍 What is TCP/IP (Real Internet)?
-        </h2>
-        <p class="mb-4">
-          This is how the real internet actually works.
-          Instead of 7 layers, it uses only 4 main layers.
-        </p>
-        <ul class="list-disc pl-6 space-y-2 text-sm">
-          <li><b>Application</b></li>
-          <li><b>Transport (TCP/UDP)</b></li>
-          <li><b>Internet (IP)</b></li>
-          <li><b>Network Access</b></li>
-        </ul>
-        <div class="mt-4 bg-green-50 p-3 rounded-lg text-sm">
-          💡 TCP/IP is practical and actually implemented worldwide.
+      <div class="bg-slate-800 rounded-2xl shadow-xl overflow-hidden">
+        <div class="bg-emerald-600 p-4">
+          <h2 class="text-xl font-semibold text-white">
+            🌍 What is TCP/IP?
+          </h2>
+        </div>
+        <div class="p-6 space-y-4">
+          <p>
+            TCP/IP is how the real internet works. It’s simpler and practical.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-sm">
+            <li>4 layers</li>
+            <li>Actually implemented worldwide</li>
+            <li>Runs the real internet</li>
+          </ul>
+          <div class="bg-emerald-900 p-3 rounded-lg text-sm">
+            💡 TCP/IP = Real-world working system.
+          </div>
         </div>
       </div>
 
-      <!-- Real Internet Flow -->
-      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
-        <h2 class="text-2xl font-semibold text-purple-600 mb-4">
-          🔄 How Data Travels (Real Flow)
-        </h2>
-        <p class="mb-4">
-          Imagine sending a WhatsApp message:
-        </p>
-        <ol class="list-decimal pl-6 space-y-2 text-sm">
-          <li>Your app creates the message (Application)</li>
-          <li>TCP adds reliability (Transport)</li>
-          <li>IP adds address (Internet)</li>
-          <li>Data moves through cables/WiFi (Network)</li>
-        </ol>
-        <div class="mt-4 bg-purple-50 p-3 rounded-lg text-sm">
-          💡 It’s like putting a letter in an envelope with an address and mailing it.
+      <!-- Real Flow Card -->
+      <div class="bg-slate-800 rounded-2xl shadow-xl overflow-hidden">
+        <div class="bg-purple-600 p-4">
+          <h2 class="text-xl font-semibold text-white">
+            🔄 How Data Travels
+          </h2>
+        </div>
+        <div class="p-6 space-y-4">
+          <p>Example: Sending a WhatsApp message:</p>
+          <ol class="list-decimal pl-6 space-y-2 text-sm">
+            <li>App creates message</li>
+            <li>TCP makes sure it arrives</li>
+            <li>IP adds address</li>
+            <li>Data travels via WiFi/cable</li>
+          </ol>
+          <div class="bg-purple-900 p-3 rounded-lg text-sm">
+            💡 Like sending a letter with an address.
+          </div>
         </div>
       </div>
 
-      <!-- Why OSI Not Used Directly -->
-      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
-        <h2 class="text-2xl font-semibold text-red-600 mb-4">
-          ❓ Why Isn’t OSI Used Directly?
-        </h2>
-        <p class="mb-4">
-          OSI is like a detailed school textbook.
-          TCP/IP is like real-world street experience.
-        </p>
-        <ul class="list-disc pl-6 space-y-2 text-sm">
-          <li>OSI was theoretical</li>
-          <li>TCP/IP was already working</li>
-          <li>Internet grew using TCP/IP</li>
-        </ul>
-        <div class="mt-4 bg-red-50 p-3 rounded-lg text-sm">
-          💡 We use OSI to learn, but TCP/IP to actually build networks.
+      <!-- Why OSI Not Used -->
+      <div class="bg-slate-800 rounded-2xl shadow-xl overflow-hidden">
+        <div class="bg-rose-600 p-4">
+          <h2 class="text-xl font-semibold text-white">
+            ❓ Why OSI Isn’t Used Directly
+          </h2>
+        </div>
+        <div class="p-6 space-y-4">
+          <p>
+            OSI was more theoretical. TCP/IP was already working in real networks.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-sm">
+            <li>OSI came later</li>
+            <li>TCP/IP was already adopted</li>
+            <li>Internet grew with TCP/IP</li>
+          </ul>
+          <div class="bg-rose-900 p-3 rounded-lg text-sm">
+            💡 We study OSI, but we use TCP/IP.
+          </div>
         </div>
       </div>
 
     </div>
 
-    <!-- When Do We Need It -->
-    <div class="mt-12 bg-white p-8 rounded-2xl shadow-lg">
-      <h2 class="text-2xl font-bold text-blue-700 mb-6 text-center">
-        🧠 When Do We Need to Know This?
-      </h2>
-
-      <div class="grid md:grid-cols-3 gap-6 text-sm">
-
-        <div class="bg-gray-50 p-4 rounded-xl">
-          <h3 class="font-semibold mb-2">🎓 Learning Networking</h3>
-          <p>
-            OSI helps students understand how networking pieces fit together.
-          </p>
+    <!-- When We Need It -->
+    <section class="mt-12">
+      <div class="bg-slate-800 rounded-2xl shadow-xl overflow-hidden">
+        <div class="bg-blue-600 p-4">
+          <h2 class="text-xl font-semibold text-white text-center">
+            🧠 When Do We Need This?
+          </h2>
         </div>
-
-        <div class="bg-gray-50 p-4 rounded-xl">
-          <h3 class="font-semibold mb-2">🛠 Troubleshooting</h3>
-          <p>
-            If internet breaks, we check which layer has the problem.
-          </p>
+        <div class="p-8 grid md:grid-cols-3 gap-6 text-sm">
+          <div class="bg-slate-700 p-4 rounded-xl">
+            🎓 Learning networking basics
+          </div>
+          <div class="bg-slate-700 p-4 rounded-xl">
+            🛠 Troubleshooting network issues
+          </div>
+          <div class="bg-slate-700 p-4 rounded-xl">
+            🌐 Building web apps & APIs
+          </div>
         </div>
-
-        <div class="bg-gray-50 p-4 rounded-xl">
-          <h3 class="font-semibold mb-2">🌐 Building Apps</h3>
-          <p>
-            Developers use TCP/IP concepts when building websites and APIs.
-          </p>
-        </div>
-
       </div>
-    </div>
+    </section>
 
-    <!-- Footer -->
-    <div class="text-center mt-12 text-gray-500 text-sm">
-      Hariharan D| CCNA Enthusiast | 2026
-    </div>
+  </main>
 
-  </div>
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-purple-600 to-indigo-600 py-4 mt-8">
+    <p class="text-center text-white text-sm">
+      Hariharan D © 2026 | CCNA Concepts Explained Simply
+    </p>
+  </footer>
 
 </body>
 </html>
