@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Router Default Commands - CCNA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <div class="max-w-6xl mx-auto p-6">
+
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-blue-600 mb-4">Basic Router Commands (CCNA)</h1>
+      <p class="text-lg text-gray-700">Important Default Commands Every Beginner Must Know 🚀</p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- enable -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <h2 class="text-xl font-bold text-blue-500 mb-3">1️⃣ enable</h2>
+        <p class="text-gray-700"><strong>What it does:</strong></p>
+        <p class="text-gray-600 mb-3">Moves from user mode to privileged mode.</p>
+        <p class="text-gray-700"><strong>Why:</strong></p>
+        <p class="text-gray-600">To access advanced configuration commands.</p>
+        <div class="mt-3 bg-gray-100 p-2 rounded text-sm font-mono">
+          Router&gt; enable  
+          Router#
+        </div>
+      </div>
+
+      <!-- configure terminal -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <h2 class="text-xl font-bold text-green-500 mb-3">2️⃣ configure terminal</h2>
+        <p class="text-gray-600 mb-3">Enters global configuration mode.</p>
+        <p class="text-gray-600">Used to configure router settings.</p>
+        <div class="mt-3 bg-gray-100 p-2 rounded text-sm font-mono">
+          Router# configure terminal  
+          Router(config)#
+        </div>
+      </div>
+
+      <!-- hostname -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <h2 class="text-xl font-bold text-purple-500 mb-3">3️⃣ hostname</h2>
+        <p class="text-gray-600 mb-3">Changes the router name.</p>
+        <p class="text-gray-600">Helps identify the device in network.</p>
+        <div class="mt-3 bg-gray-100 p-2 rounded text-sm font-mono">
+          Router(config)# hostname R1
+        </div>
+      </div>
+
+      <!-- interface -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <h2 class="text-xl font-bold text-red-500 mb-3">4️⃣ interface</h2>
+        <p class="text-gray-600 mb-3">Enters interface configuration mode.</p>
+        <p class="text-gray-600">Used to configure specific port.</p>
+        <div class="mt-3 bg-gray-100 p-2 rounded text-sm font-mono">
+          R1(config)# interface g0/0
+        </div>
+      </div>
+
+      <!-- ip address -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <h2 class="text-xl font-bold text-yellow-500 mb-3">5️⃣ ip address</h2>
+        <p class="text-gray-600 mb-3">Assigns IP address to interface.</p>
+        <p class="text-gray-600">Required for network communication.</p>
+        <div class="mt-3 bg-gray-100 p-2 rounded text-sm font-mono">
+          R1(config-if)# ip address 192.168.1.1 255.255.255.0
+        </div>
+      </div>
+
+      <!-- no shutdown -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <h2 class="text-xl font-bold text-indigo-500 mb-3">6️⃣ no shutdown</h2>
+        <p class="text-gray-600 mb-3">Activates the interface.</p>
+        <p class="text-gray-600">Without this, interface stays OFF.</p>
+        <div class="mt-3 bg-gray-100 p-2 rounded text-sm font-mono">
+          R1(config-if)# no shutdown
+        </div>
+      </div>
+
+      <!-- show ip interface brief -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <h2 class="text-xl font-bold text-pink-500 mb-3">7️⃣ show ip interface brief</h2>
+        <p class="text-gray-600 mb-3">Shows all interfaces summary.</p>
+        <p class="text-gray-600">Used to quickly check status & IP.</p>
+        <div class="mt-3 bg-gray-100 p-2 rounded text-sm font-mono">
+          R1# show ip interface brief
+        </div>
+      </div>
+
+      <!-- copy running-config startup-config -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <h2 class="text-xl font-bold text-teal-500 mb-3">8️⃣ copy running-config startup-config</h2>
+        <p class="text-gray-600 mb-3">Saves configuration permanently.</p>
+        <p class="text-gray-600">Without this, config is lost after restart.</p>
+        <div class="mt-3 bg-gray-100 p-2 rounded text-sm font-mono">
+          R1# copy running-config startup-config
+        </div>
+      </div>
+
+      <!-- reload -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <h2 class="text-xl font-bold text-orange-500 mb-3">9️⃣ reload</h2>
+        <p class="text-gray-600 mb-3">Restarts the router.</p>
+        <p class="text-gray-600">Used after major configuration changes.</p>
+        <div class="mt-3 bg-gray-100 p-2 rounded text-sm font-mono">
+          R1# reload
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center mt-12 text-gray-600">
+      <p>Practice these commands in Packet Tracer 💻</p>
+      <p class="text-sm mt-2">CCNA Success Starts with Basics 🔥</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
