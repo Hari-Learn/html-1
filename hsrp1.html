@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HSRP in CCNA - Explained Like I'm 10</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <div class="max-w-6xl mx-auto p-6">
+
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-blue-600 mb-4">HSRP in CCNA</h1>
+      <p class="text-lg text-gray-700">Explained Like You're 10 Years Old 👶</p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- What is HSRP -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <h2 class="text-2xl font-bold text-blue-500 mb-4">📘 What is HSRP?</h2>
+        <p class="text-gray-700">
+          HSRP stands for <strong>Hot Standby Router Protocol</strong>.
+        </p>
+        <p class="mt-3 text-gray-600">
+          Imagine two routers acting like twin superheroes 🦸‍♂️🦸‍♀️.
+          Only one works at a time (Active Router).
+          The other waits quietly (Standby Router).
+        </p>
+        <p class="mt-3 text-gray-600">
+          If the active router gets tired (fails), the standby router
+          instantly takes over. Users never notice!
+        </p>
+      </div>
+
+      <!-- Why HSRP -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <h2 class="text-2xl font-bold text-green-500 mb-4">🤔 Why Do We Need HSRP?</h2>
+        <p class="text-gray-700">
+          Imagine your school has only ONE gate.
+          If that gate breaks, nobody can enter or leave.
+        </p>
+        <p class="mt-3 text-gray-600">
+          Same in networking. If one router fails,
+          the whole network can stop working.
+        </p>
+        <p class="mt-3 text-gray-600">
+          HSRP gives us a <strong>backup gate</strong> 🚪
+          so the network never stops.
+        </p>
+      </div>
+
+      <!-- When to Use -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <h2 class="text-2xl font-bold text-purple-500 mb-4">⏰ When Do We Use It?</h2>
+        <ul class="list-disc ml-5 text-gray-700 space-y-2">
+          <li>In offices with many users</li>
+          <li>In companies where downtime is NOT allowed</li>
+          <li>When you have 2 or more routers</li>
+          <li>For high availability networks</li>
+        </ul>
+      </div>
+
+      <!-- How It Works -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <h2 class="text-2xl font-bold text-red-500 mb-4">⚙️ How Does It Work?</h2>
+        <p class="text-gray-700">
+          Both routers share one <strong>Virtual IP Address</strong>.
+        </p>
+        <p class="mt-3 text-gray-600">
+          Computers use this virtual IP as their default gateway.
+        </p>
+        <p class="mt-3 text-gray-600">
+          Only the Active router answers.
+          If it dies, the Standby router becomes Active automatically.
+        </p>
+      </div>
+
+      <!-- Simple Example -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <h2 class="text-2xl font-bold text-yellow-500 mb-4">🏫 Simple Example</h2>
+        <p class="text-gray-700">
+          Router 1 = Active (Working)
+        </p>
+        <p class="text-gray-700">
+          Router 2 = Standby (Waiting)
+        </p>
+        <p class="mt-3 text-gray-600">
+          If Router 1 fails ❌
+        </p>
+        <p class="text-gray-600">
+          Router 2 takes over ✅
+        </p>
+      </div>
+
+      <!-- Key Terms -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <h2 class="text-2xl font-bold text-indigo-500 mb-4">🔑 Important Terms</h2>
+        <ul class="list-disc ml-5 text-gray-700 space-y-2">
+          <li><strong>Active Router</strong> – Currently forwarding traffic</li>
+          <li><strong>Standby Router</strong> – Backup router</li>
+          <li><strong>Virtual IP</strong> – Shared gateway IP</li>
+          <li><strong>Priority</strong> – Decides which router becomes Active</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center mt-12 text-gray-600">
+      <p>CCNA Concept Made Simple 💡</p>
+      <p class="text-sm mt-2">High Availability = Network Always Running 🚀</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
