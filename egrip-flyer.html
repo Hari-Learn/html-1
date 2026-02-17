@@ -2,25 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>EIGRP Visual Poster</title>
+  <title>EIGRP Visual Poster Aligned</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="w-screen h-screen overflow-hidden bg-gradient-to-br from-slate-100 to-gray-200 text-gray-800">
 
   <!-- Top Quote -->
-  <div class="h-[15%] bg-gradient-to-r from-blue-900 to-blue-700 text-white flex items-center justify-center px-10">
-    <p class="text-xl italic text-center max-w-5xl">
+  <div class="h-[15%] bg-gradient-to-r from-blue-900 to-blue-700 text-white flex items-center justify-center px-12">
+    <p class="text-xl italic text-center max-w-6xl">
       “Good routing is about choosing the best path — and switching instantly when it fails.”
     </p>
   </div>
 
   <!-- Main Content -->
-  <div class="h-[calc(85%-40px)] px-12 py-6">
+  <div class="h-[calc(85%-40px)] px-16 py-8">
 
-    <div class="grid grid-cols-12 gap-8 h-full">
+    <div class="grid grid-cols-12 gap-10 h-full">
 
-      <!-- BIG Letter Column -->
+      <!-- Left: BIG Letter Circles -->
       <div class="col-span-3 flex flex-col justify-between items-center">
 
         <div class="w-28 h-28 rounded-full bg-blue-900 text-white text-6xl font-extrabold flex items-center justify-center tracking-wide">
@@ -45,42 +45,42 @@
 
       </div>
 
-      <!-- Meaning Column -->
-      <div class="col-span-4 flex flex-col justify-between">
+      <!-- Middle: Meaning Boxes aligned with circles -->
+      <div class="col-span-4 flex flex-col justify-between pl-8">
 
-        <div class="h-28 bg-white/95 rounded-lg px-5 py-4 shadow-sm flex flex-col justify-center">
+        <div class="h-28 bg-white/95 rounded-lg px-6 py-5 shadow-sm flex flex-col justify-center">
           <h3 class="font-semibold text-lg">Enhanced</h3>
           <p class="text-sm">Smarter and improved routing behavior.</p>
         </div>
 
-        <div class="h-28 bg-white/95 rounded-lg px-5 py-4 shadow-sm flex flex-col justify-center">
+        <div class="h-28 bg-white/95 rounded-lg px-6 py-5 shadow-sm flex flex-col justify-center">
           <h3 class="font-semibold text-lg">Gateway</h3>
           <p class="text-sm">Routers act as traffic decision points.</p>
         </div>
 
-        <div class="h-28 bg-white/95 rounded-lg px-5 py-4 shadow-sm flex flex-col justify-center">
+        <div class="h-28 bg-white/95 rounded-lg px-6 py-5 shadow-sm flex flex-col justify-center">
           <h3 class="font-semibold text-lg">Routing</h3>
           <p class="text-sm">Chooses paths based on real conditions.</p>
         </div>
 
-        <div class="h-28 bg-white/95 rounded-lg px-5 py-4 shadow-sm flex flex-col justify-center">
+        <div class="h-28 bg-white/95 rounded-lg px-6 py-5 shadow-sm flex flex-col justify-center">
           <h3 class="font-semibold text-lg">Interior</h3>
           <p class="text-sm">Used inside one organization.</p>
         </div>
 
-        <div class="h-28 bg-white/95 rounded-lg px-5 py-4 shadow-sm flex flex-col justify-center">
+        <div class="h-28 bg-white/95 rounded-lg px-6 py-5 shadow-sm flex flex-col justify-center">
           <h3 class="font-semibold text-lg">Protocol</h3>
           <p class="text-sm">Shared routing rules.</p>
         </div>
 
       </div>
 
-      <!-- Explanation Column -->
-      <div class="col-span-5 bg-gradient-to-br from-white to-blue-50 rounded-xl px-8 py-6 shadow-md flex flex-col justify-between">
+      <!-- Right: Explanation panel -->
+      <div class="col-span-5 bg-gradient-to-br from-white to-blue-50 rounded-xl px-10 py-8 shadow-md flex flex-col justify-between">
 
         <div>
-          <h2 class="text-2xl font-semibold mb-4">Why EIGRP Is Powerful</h2>
-          <ul class="list-disc list-inside text-sm space-y-2">
+          <h2 class="text-2xl font-semibold mb-6">Why EIGRP Is Powerful</h2>
+          <ul class="list-disc list-inside text-sm space-y-3">
             <li>Uses bandwidth and delay instead of hop count</li>
             <li>Keeps instant backup routes (DUAL)</li>
             <li>Very fast convergence</li>
@@ -88,20 +88,20 @@
           </ul>
         </div>
 
-        <div class="grid grid-cols-2 gap-5 mt-6">
+        <div class="grid grid-cols-2 gap-6 mt-8">
 
-          <div class="bg-blue-100 rounded-lg px-4 py-3">
-            <h4 class="font-semibold text-sm mb-1">Why RIP Is Avoided</h4>
-            <ul class="text-xs list-disc list-inside">
+          <div class="bg-blue-100 rounded-lg px-6 py-5">
+            <h4 class="font-semibold text-sm mb-2">Why RIP Is Avoided</h4>
+            <ul class="text-xs list-disc list-inside space-y-1">
               <li>Slow</li>
               <li>15-hop limit</li>
               <li>Outdated</li>
             </ul>
           </div>
 
-          <div class="bg-indigo-100 rounded-lg px-4 py-3">
-            <h4 class="font-semibold text-sm mb-1">Why CCNA Avoids EIGRP</h4>
-            <ul class="text-xs list-disc list-inside">
+          <div class="bg-indigo-100 rounded-lg px-6 py-5">
+            <h4 class="font-semibold text-sm mb-2">Why CCNA Avoids EIGRP</h4>
+            <ul class="text-xs list-disc list-inside space-y-1">
               <li>Cisco-only focus</li>
               <li>Not vendor-neutral</li>
               <li>OSPF preferred</li>
@@ -118,11 +118,11 @@
   <!-- Footer (40px, 30/70) -->
   <div class="h-[40px] grid grid-cols-[30%_70%] text-white text-xs">
 
-    <div class="bg-blue-900 flex items-center px-4">
+    <div class="bg-blue-900 flex items-center px-6">
       Visual Learning
     </div>
 
-    <div class="bg-blue-600 flex items-center px-6">
+    <div class="bg-blue-600 flex items-center px-8">
       CCNA Concepts • Clean Office Design • EIGRP Poster
     </div>
 
