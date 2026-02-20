@@ -5,80 +5,95 @@
   <title>Controller-Based Networking - ELI10</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-blue-50 min-h-screen flex items-center justify-center p-6">
 
-  <div class="max-w-3xl bg-white shadow-2xl rounded-2xl p-8">
-    
-    <h1 class="text-3xl font-bold text-blue-700 mb-4">
-      Controller-Based Tools (Like Cisco DNA Center) – ELI10 🧠
-    </h1>
+<body class="bg-slate-100 flex flex-col min-h-screen">
 
-    <p class="text-gray-700 mb-4 text-lg">
-      Imagine you are the principal of a big school 🏫.
-    </p>
+  <!-- HEADER -->
+  <header class="bg-blue-700 text-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-6 py-5">
+      <h1 class="text-3xl font-bold">Controller-Based Tools (ELI10)</h1>
+      <p class="text-blue-100 mt-1">Understanding Cisco DNA Center the simple way 🧠</p>
+    </div>
+  </header>
 
-    <p class="text-gray-700 mb-4">
-      In your school, there are:
-    </p>
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow max-w-6xl mx-auto px-6 py-10">
 
-    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
-      <li>Many classrooms (like network switches)</li>
-      <li>Many teachers (like routers)</li>
-      <li>Many students (like computers and phones)</li>
-    </ul>
-
-    <p class="text-gray-700 mb-4">
-      Now imagine if you had to walk into every classroom to give the same instruction. That would take forever! 😓
-    </p>
-
-    <div class="bg-blue-100 p-4 rounded-xl mb-6">
-      <p class="text-blue-900 font-semibold">
-        Instead, you use a loudspeaker system 🎤
-      </p>
-      <p class="text-blue-800 mt-2">
-        You say the rule once, and every classroom hears it at the same time!
+    <!-- Intro Card -->
+    <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold text-blue-600 mb-3">🏫 Imagine a Big School</h2>
+      <p class="text-gray-700">
+        Think of a network like a big school. There are many classrooms (switches),
+        teachers (routers), and students (computers and phones).
       </p>
     </div>
 
-    <h2 class="text-2xl font-semibold text-blue-600 mb-3">
-      So What Is Cisco DNA Center?
-    </h2>
-
-    <p class="text-gray-700 mb-4">
-      Cisco DNA Center is like that loudspeaker system for networks.
-    </p>
-
-    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
-      <li>It controls many devices from one place 🖥️</li>
-      <li>You don’t configure each router or switch one by one</li>
-      <li>You set rules once, and it sends them everywhere automatically</li>
-    </ul>
-
-    <h2 class="text-2xl font-semibold text-blue-600 mb-3">
-      Why Is This Cool? 😎
-    </h2>
-
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>It saves time ⏳</li>
-      <li>It reduces mistakes ❌</li>
-      <li>It makes big networks easier to manage 🌍</li>
-      <li>It helps fix problems faster 🚑</li>
-    </ul>
-
-    <div class="mt-8 p-4 bg-green-100 rounded-xl">
-      <p class="text-green-900 font-semibold">
-        Simple Definition:
-      </p>
-      <p class="text-green-800 mt-2">
-        A controller-based tool like Cisco DNA Center is a smart "boss" that manages all network devices from one central place instead of configuring them one by one.
+    <!-- Problem Card -->
+    <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold text-red-500 mb-3">😓 The Problem</h2>
+      <p class="text-gray-700">
+        If the principal had to walk into every classroom to give the same rule,
+        it would take forever and mistakes could happen.
       </p>
     </div>
 
-    <p class="mt-6 text-sm text-gray-500 text-center">
-      Made for CCNA 2026 Study – ELI10 Style
-    </p>
+    <!-- Solution Card -->
+    <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold text-green-600 mb-3">🎤 The Smart Solution</h2>
+      <p class="text-gray-700">
+        Instead, the principal uses a loudspeaker system. One message goes to all classrooms at once.
+      </p>
+    </div>
 
-  </div>
+    <!-- What is DNA Center Card -->
+    <div class="bg-blue-600 text-white rounded-2xl shadow-lg p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-3">🖥️ What is Cisco DNA Center?</h2>
+      <p>
+        Cisco DNA Center is like that loudspeaker system for networks.
+        It controls many devices from one central place instead of configuring them one by one.
+      </p>
+    </div>
+
+    <!-- Benefits Cards Grid -->
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <div class="bg-white rounded-2xl shadow-md p-6">
+        <h3 class="font-semibold text-blue-600 mb-2">⏳ Saves Time</h3>
+        <p class="text-gray-700">You configure once, and it applies everywhere.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-6">
+        <h3 class="font-semibold text-blue-600 mb-2">❌ Fewer Mistakes</h3>
+        <p class="text-gray-700">Automation reduces human errors.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-6">
+        <h3 class="font-semibold text-blue-600 mb-2">🌍 Manages Big Networks</h3>
+        <p class="text-gray-700">Perfect for companies with many devices.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-6">
+        <h3 class="font-semibold text-blue-600 mb-2">🚑 Faster Troubleshooting</h3>
+        <p class="text-gray-700">It helps detect and fix problems quickly.</p>
+      </div>
+
+    </div>
+
+    <!-- Summary Card -->
+    <div class="bg-green-100 border-l-4 border-green-500 rounded-xl p-6 mt-8">
+      <h2 class="text-lg font-semibold text-green-700 mb-2">📌 Simple Definition</h2>
+      <p class="text-green-800">
+        A controller-based tool like Cisco DNA Center is a smart central boss
+        that manages all network devices from one dashboard.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-800 text-gray-300 text-center py-4">
+    <p>CCNA 2026 Study | Controller-Based Networking Explained Simply</p>
+  </footer>
 
 </body>
 </html>
