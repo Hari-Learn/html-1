@@ -1,112 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Virtualization & VRFs Overview</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <title>Virtualization & VRFs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
 
-    <!-- Header -->
-    <header class="bg-blue-900 text-white py-8 shadow-lg">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <h1 class="text-4xl font-bold mb-2">Modern Networking Concepts</h1>
-            <p class="text-lg text-blue-200">
-                Server Virtualization, Containers, and VRFs — Beyond Basic Subnetting
-            </p>
-        </div>
-    </header>
+  <!-- Header -->
+  <header class="bg-indigo-700 text-white shadow-md">
+    <div class="max-w-6xl mx-auto px-6 py-6">
+      <h1 class="text-3xl font-bold">Modern Networking Technologies</h1>
+      <p class="text-indigo-200 mt-1">
+        Server Virtualization, Containers, and VRFs — Beyond Basic Subnetting
+      </p>
+    </div>
+  </header>
 
-    <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+  <!-- Main Content -->
+  <main class="flex-grow max-w-6xl mx-auto px-6 py-12">
 
-        <!-- Server Virtualization -->
-        <section class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition">
-            <h2 class="text-2xl font-bold text-blue-800 mb-4">1️⃣ Server Virtualization</h2>
-            <p class="mb-4">
-                Server virtualization allows multiple virtual machines (VMs) to run on a single physical server 
-                using a hypervisor. Each VM operates independently with its own OS and resources.
-            </p>
-            <ul class="list-disc list-inside space-y-2 text-gray-700">
-                <li>Efficient hardware utilization</li>
-                <li>Isolation between virtual machines</li>
-                <li>Scalability and resource flexibility</li>
-                <li>Common hypervisors: VMware ESXi, Hyper-V, KVM</li>
-            </ul>
-        </section>
+    <div class="grid md:grid-cols-3 gap-8">
 
-        <!-- Containers -->
-        <section class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition">
-            <h2 class="text-2xl font-bold text-green-700 mb-4">2️⃣ Containers</h2>
-            <p class="mb-4">
-                Containers package applications and their dependencies together, sharing the host OS kernel.
-                Unlike VMs, containers are lightweight and start quickly.
-            </p>
-            <ul class="list-disc list-inside space-y-2 text-gray-700">
-                <li>Lightweight and fast deployment</li>
-                <li>Efficient resource consumption</li>
-                <li>Popular tools: Docker, Kubernetes</li>
-                <li>Ideal for microservices architecture</li>
-            </ul>
-        </section>
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+        <h2 class="text-xl font-semibold text-indigo-700 mb-4">
+          Server Virtualization
+        </h2>
+        <p class="text-gray-600 mb-4">
+          Server virtualization allows multiple virtual machines (VMs) to run on a 
+          single physical server using a hypervisor.
+        </p>
+        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+          <li>Efficient hardware usage</li>
+          <li>Independent operating systems</li>
+          <li>Improved scalability</li>
+          <li>Resource isolation</li>
+        </ul>
+      </div>
 
-        <!-- VRFs -->
-        <section class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition">
-            <h2 class="text-2xl font-bold text-purple-700 mb-4">
-                3️⃣ VRFs (Virtual Routing and Forwarding)
-            </h2>
-            <p class="mb-4">
-                VRF allows multiple separate routing tables to exist on the same router. 
-                This enables network segmentation without requiring multiple physical routers.
-            </p>
-            <ul class="list-disc list-inside space-y-2 text-gray-700">
-                <li>Logical separation of networks</li>
-                <li>Improved security and traffic isolation</li>
-                <li>Commonly used in MPLS environments</li>
-                <li>Useful for multi-tenant architectures</li>
-            </ul>
-        </section>
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+        <h2 class="text-xl font-semibold text-green-600 mb-4">
+          Containers
+        </h2>
+        <p class="text-gray-600 mb-4">
+          Containers package applications with their dependencies and share the host OS kernel,
+          making them lightweight and fast.
+        </p>
+        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+          <li>Lightweight deployment</li>
+          <li>Fast startup time</li>
+          <li>Ideal for microservices</li>
+          <li>Efficient resource usage</li>
+        </ul>
+      </div>
 
-        <!-- Comparison Section -->
-        <section class="bg-blue-50 rounded-2xl p-8 border border-blue-200">
-            <h2 class="text-2xl font-bold text-blue-900 mb-6 text-center">
-                🔎 Why These Topics Matter in Modern Networking
-            </h2>
+      <!-- Card 3 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+        <h2 class="text-xl font-semibold text-purple-600 mb-4">
+          VRFs (Virtual Routing & Forwarding)
+        </h2>
+        <p class="text-gray-600 mb-4">
+          VRFs allow multiple routing tables to exist on the same router, enabling
+          logical network segmentation.
+        </p>
+        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+          <li>Traffic isolation</li>
+          <li>Multi-tenant support</li>
+          <li>Enhanced security</li>
+          <li>No need for multiple physical routers</li>
+        </ul>
+      </div>
 
-            <div class="grid md:grid-cols-3 gap-6 text-center">
-                <div class="bg-white p-6 rounded-xl shadow">
-                    <h3 class="font-semibold text-lg mb-2">Beyond Subnetting</h3>
-                    <p class="text-sm text-gray-600">
-                        Modern networks require virtualization and segmentation 
-                        far beyond traditional IP subnetting.
-                    </p>
-                </div>
+    </div>
 
-                <div class="bg-white p-6 rounded-xl shadow">
-                    <h3 class="font-semibold text-lg mb-2">Cloud & Data Centers</h3>
-                    <p class="text-sm text-gray-600">
-                        Virtual machines, containers, and VRFs are core 
-                        components in cloud and enterprise data centers.
-                    </p>
-                </div>
+  </main>
 
-                <div class="bg-white p-6 rounded-xl shadow">
-                    <h3 class="font-semibold text-lg mb-2">Network Isolation</h3>
-                    <p class="text-sm text-gray-600">
-                        Secure segmentation ensures multi-tenant and enterprise 
-                        networks operate efficiently and safely.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-6 text-center text-sm">
-        © 2026 Networking Concepts | Designed with Tailwind CSS
-    </footer>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-8">
+    <p class="text-sm">
+      © 2026 Networking Concepts | Built with Tailwind CSS
+    </p>
+  </footer>
 
 </body>
 </html>
