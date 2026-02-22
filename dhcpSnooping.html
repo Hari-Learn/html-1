@@ -2,140 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>DHCP Snooping - CCNA Security Fundamentals</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DHCP Snooping Explained</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-100 min-h-screen">
 
   <!-- Header -->
-  <header class="bg-gradient-to-r from-gray-200 to-gray-100 py-8 text-center">
-    <h1 class="text-3xl font-bold">DHCP Snooping</h1>
-    <p class="text-gray-600 mt-2">CCNA Security Fundamentals</p>
+  <header class="bg-blue-600 text-white py-6 shadow-lg">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">DHCP Snooping</h1>
+      <p class="mt-2 text-blue-100">Network Security Feature for Layer 2 Protection</p>
+    </div>
   </header>
 
-  <!-- Introduction -->
-  <section class="max-w-5xl mx-auto px-4 py-8">
-    <div class="bg-white p-6 rounded-lg shadow-sm">
-      <h2 class="text-2xl font-semibold mb-4">What is DHCP Snooping?</h2>
-      <p class="text-gray-700">
-        DHCP Snooping is a <strong>Layer 2 security feature</strong> implemented on switches to protect
-        networks from <strong>rogue (unauthorized) DHCP servers</strong>.
-        It allows the switch to monitor DHCP messages and permit only trusted devices
-        to respond with IP address assignments.
-      </p>
-    </div>
-  </section>
+  <!-- Main Content -->
+  <main class="container mx-auto py-12 px-6">
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-  <!-- Why DHCP Snooping -->
-  <section class="max-w-5xl mx-auto px-4 py-6">
-    <div class="bg-gray-100 p-6 rounded-lg shadow-sm">
-      <h2 class="text-xl font-semibold mb-3">Why is DHCP Snooping Needed?</h2>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>Prevents attackers from assigning fake IP addresses</li>
-        <li>Stops Man-in-the-Middle (MITM) attacks</li>
-        <li>Protects default gateway and DNS information</li>
-        <li>Ensures only legitimate DHCP servers operate</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="max-w-5xl mx-auto px-4 py-8">
-    <h2 class="text-2xl font-semibold mb-6 text-center">How DHCP Snooping Works</h2>
-
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="text-xl font-bold mb-2">Trusted Ports</h3>
-        <p class="text-gray-700">
-          Ports connected to legitimate DHCP servers are marked as
-          <strong>trusted</strong>. These ports are allowed to send DHCP
-          Offer and Acknowledgment messages.
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h2 class="text-xl font-semibold text-blue-600 mb-3">What is DHCP Snooping?</h2>
+        <p class="text-gray-600">
+          DHCP Snooping is a Layer 2 security feature that prevents unauthorized DHCP servers 
+          from distributing incorrect IP addresses to clients. It monitors DHCP traffic and 
+          filters out untrusted messages.
         </p>
       </div>
 
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="text-xl font-bold mb-2">Untrusted Ports</h3>
-        <p class="text-gray-700">
-          All other ports are <strong>untrusted by default</strong>.
-          DHCP Offer and ACK messages from these ports are blocked.
-          This prevents rogue DHCP servers.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- DHCP Snooping Binding Table -->
-  <section class="max-w-5xl mx-auto px-4 py-6">
-    <div class="bg-gray-100 p-6 rounded-lg shadow-sm">
-      <h2 class="text-xl font-semibold mb-3">DHCP Snooping Binding Table</h2>
-      <p class="text-gray-700 mb-3">
-        DHCP Snooping builds a database called the <strong>binding table</strong>.
-        This table records:
-      </p>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>MAC address</li>
-        <li>Assigned IP address</li>
-        <li>VLAN ID</li>
-        <li>Port number</li>
-      </ul>
-      <p class="text-gray-600 mt-3 text-sm">
-        This table is used by other security features like
-        <strong>Dynamic ARP Inspection (DAI)</strong> and
-        <strong>IP Source Guard</strong>.
-      </p>
-    </div>
-  </section>
-
-  <!-- Attacks Prevented -->
-  <section class="max-w-5xl mx-auto px-4 py-8">
-    <h2 class="text-2xl font-semibold mb-6 text-center">Attacks Prevented by DHCP Snooping</h2>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="text-lg font-bold mb-2">Rogue DHCP Server</h3>
-        <p class="text-gray-700">
-          Prevents attackers from distributing fake IP configurations.
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h2 class="text-xl font-semibold text-blue-600 mb-3">Why is it Important?</h2>
+        <p class="text-gray-600">
+          Without DHCP Snooping, rogue DHCP servers can assign malicious IP configurations, 
+          leading to Man-in-the-Middle attacks, traffic interception, or denial of service.
         </p>
       </div>
 
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="text-lg font-bold mb-2">Man-in-the-Middle</h3>
-        <p class="text-gray-700">
-          Stops attackers from redirecting traffic through themselves.
+      <!-- Card 3 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h2 class="text-xl font-semibold text-blue-600 mb-3">How It Works</h2>
+        <ul class="list-disc list-inside text-gray-600 space-y-2">
+          <li>Switch ports are classified as trusted or untrusted.</li>
+          <li>Trusted ports allow DHCP server responses.</li>
+          <li>Untrusted ports block DHCP offer/ack packets.</li>
+          <li>A DHCP binding table is maintained.</li>
+        </ul>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h2 class="text-xl font-semibold text-blue-600 mb-3">Key Features</h2>
+        <ul class="list-disc list-inside text-gray-600 space-y-2">
+          <li>Prevents rogue DHCP servers</li>
+          <li>Builds DHCP binding database</li>
+          <li>Supports Dynamic ARP Inspection</li>
+          <li>Enhances Layer 2 network security</li>
+        </ul>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h2 class="text-xl font-semibold text-blue-600 mb-3">Trusted vs Untrusted Ports</h2>
+        <p class="text-gray-600">
+          Trusted ports typically connect to legitimate DHCP servers. 
+          All other ports are untrusted by default and cannot send DHCP server messages.
         </p>
       </div>
 
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="text-lg font-bold mb-2">IP Spoofing</h3>
-        <p class="text-gray-700">
-          Prevents devices from using unauthorized IP addresses.
-        </p>
+      <!-- Card 6 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h2 class="text-xl font-semibold text-blue-600 mb-3">Benefits</h2>
+        <ul class="list-disc list-inside text-gray-600 space-y-2">
+          <li>Improves network reliability</li>
+          <li>Prevents IP spoofing</li>
+          <li>Reduces security risks</li>
+          <li>Ensures correct IP allocation</li>
+        </ul>
       </div>
-    </div>
-  </section>
 
-  <!-- CCNA Relevance -->
-  <section class="max-w-5xl mx-auto px-4 py-6">
-    <div class="bg-gray-100 p-6 rounded-lg shadow-sm">
-      <h2 class="text-xl font-semibold mb-3">Why DHCP Snooping is Important for CCNA</h2>
-      <p class="text-gray-700 mb-2">
-        DHCP Snooping is part of <strong>CCNA security fundamentals</strong>
-        because it demonstrates how switches enforce security at Layer 2.
-      </p>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>Understanding trusted vs untrusted ports</li>
-        <li>Identifying DHCP-based attacks</li>
-        <li>Knowing how switches protect IP addressing</li>
-        <li>Foundation for DAI and IP Source Guard topics</li>
-      </ul>
     </div>
-  </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-100 text-gray-600 text-center py-6">
-    <p>Hariharan D for learning purpose &copy; 2026 CCNA Security Study Notes</p>
+  <footer class="bg-gray-800 text-gray-300 text-center py-4">
+    <p>© 2026 Network Security Guide | DHCP Snooping Overview</p>
   </footer>
 
 </body>
