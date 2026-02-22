@@ -2,91 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>DHCP Snooping Explained</title>
+  <title>DHCP Snooping - Learning Page</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 min-h-screen">
+<body class="bg-gray-100 text-gray-800">
 
-  <!-- Header -->
-  <header class="bg-blue-600 text-white py-6 shadow-lg">
-    <div class="container mx-auto text-center">
+  <!-- HEADER -->
+  <header class="bg-blue-600 text-white py-6 shadow-md">
+    <div class="container mx-auto px-6">
       <h1 class="text-3xl font-bold">DHCP Snooping</h1>
-      <p class="mt-2 text-blue-100">Network Security Feature for Layer 2 Protection</p>
+      <p class="text-blue-100 mt-1">A Beginner-Friendly Guide to Layer 2 Security</p>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="container mx-auto py-12 px-6">
-    
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <!-- MAIN CONTENT -->
+  <main class="container mx-auto px-6 py-10">
 
-      <!-- Card 1 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
-        <h2 class="text-xl font-semibold text-blue-600 mb-3">What is DHCP Snooping?</h2>
-        <p class="text-gray-600">
-          DHCP Snooping is a Layer 2 security feature that prevents unauthorized DHCP servers 
-          from distributing incorrect IP addresses to clients. It monitors DHCP traffic and 
-          filters out untrusted messages.
-        </p>
-      </div>
+    <!-- Intro Card -->
+    <div class="bg-white p-6 rounded-xl shadow mb-8">
+      <h2 class="text-xl font-semibold text-blue-600 mb-3">📘 What is DHCP Snooping?</h2>
+      <p>
+        DHCP Snooping is a network security feature that protects your network from
+        unauthorized (rogue) DHCP servers. It works at Layer 2 (Switch level) and
+        monitors DHCP traffic.
+      </p>
+    </div>
 
-      <!-- Card 2 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
-        <h2 class="text-xl font-semibold text-blue-600 mb-3">Why is it Important?</h2>
-        <p class="text-gray-600">
-          Without DHCP Snooping, rogue DHCP servers can assign malicious IP configurations, 
-          leading to Man-in-the-Middle attacks, traffic interception, or denial of service.
-        </p>
-      </div>
+    <!-- Cards Grid -->
+    <div class="grid md:grid-cols-2 gap-6">
 
-      <!-- Card 3 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
-        <h2 class="text-xl font-semibold text-blue-600 mb-3">How It Works</h2>
-        <ul class="list-disc list-inside text-gray-600 space-y-2">
-          <li>Switch ports are classified as trusted or untrusted.</li>
-          <li>Trusted ports allow DHCP server responses.</li>
-          <li>Untrusted ports block DHCP offer/ack packets.</li>
-          <li>A DHCP binding table is maintained.</li>
-        </ul>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
-        <h2 class="text-xl font-semibold text-blue-600 mb-3">Key Features</h2>
-        <ul class="list-disc list-inside text-gray-600 space-y-2">
+      <!-- Why Needed -->
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h2 class="text-lg font-semibold text-blue-600 mb-3">❓ Why Do We Need It?</h2>
+        <ul class="list-disc list-inside space-y-2">
           <li>Prevents rogue DHCP servers</li>
-          <li>Builds DHCP binding database</li>
-          <li>Supports Dynamic ARP Inspection</li>
-          <li>Enhances Layer 2 network security</li>
+          <li>Stops wrong IP address assignment</li>
+          <li>Prevents Man-in-the-Middle attacks</li>
+          <li>Improves network security</li>
         </ul>
       </div>
 
-      <!-- Card 5 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
-        <h2 class="text-xl font-semibold text-blue-600 mb-3">Trusted vs Untrusted Ports</h2>
-        <p class="text-gray-600">
-          Trusted ports typically connect to legitimate DHCP servers. 
-          All other ports are untrusted by default and cannot send DHCP server messages.
-        </p>
+      <!-- How It Works -->
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h2 class="text-lg font-semibold text-blue-600 mb-3">⚙️ How It Works</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Switch ports are marked as Trusted or Untrusted</li>
+          <li>Trusted ports allow DHCP server responses</li>
+          <li>Untrusted ports block fake DHCP offers</li>
+          <li>Switch builds a DHCP Binding Table</li>
+        </ul>
       </div>
 
-      <!-- Card 6 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
-        <h2 class="text-xl font-semibold text-blue-600 mb-3">Benefits</h2>
-        <ul class="list-disc list-inside text-gray-600 space-y-2">
-          <li>Improves network reliability</li>
-          <li>Prevents IP spoofing</li>
-          <li>Reduces security risks</li>
-          <li>Ensures correct IP allocation</li>
+      <!-- Trusted vs Untrusted -->
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h2 class="text-lg font-semibold text-blue-600 mb-3">🔐 Trusted vs Untrusted Ports</h2>
+        <p class="mb-2"><strong>Trusted Port:</strong> Connected to real DHCP Server.</p>
+        <p><strong>Untrusted Port:</strong> Connected to users. Blocks DHCP server messages.</p>
+      </div>
+
+      <!-- Binding Table -->
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h2 class="text-lg font-semibold text-blue-600 mb-3">📋 DHCP Binding Table</h2>
+        <p>
+          The switch stores:
+        </p>
+        <ul class="list-disc list-inside mt-2">
+          <li>IP Address</li>
+          <li>MAC Address</li>
+          <li>VLAN</li>
+          <li>Interface</li>
         </ul>
       </div>
 
     </div>
+
+    <!-- Example Configuration -->
+    <div class="bg-white p-6 rounded-xl shadow mt-8">
+      <h2 class="text-xl font-semibold text-blue-600 mb-3">💻 Basic Configuration Example (Cisco)</h2>
+      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+Switch(config)# ip dhcp snooping
+Switch(config)# ip dhcp snooping vlan 10
+Switch(config)# interface g0/1
+Switch(config-if)# ip dhcp snooping trust
+      </pre>
+    </div>
+
+    <!-- Summary -->
+    <div class="bg-blue-50 border-l-4 border-blue-600 p-6 mt-8 rounded">
+      <h2 class="text-lg font-semibold text-blue-700 mb-2">✅ Summary</h2>
+      <p>
+        DHCP Snooping protects your network by allowing DHCP replies only from trusted ports
+        and blocking unauthorized DHCP servers. It is an important Layer 2 security feature
+        in modern networks.
+      </p>
+    </div>
+
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-300 text-center py-4">
-    <p>Hariharan D designed for learning purpose © 2026 Network Security Guide | DHCP Snooping Overview</p>
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-gray-300 py-4 mt-10">
+    <div class="container mx-auto px-6 text-center">
+      <p>Hariharan D designed for learning purpose © 2026 Network Learning | DHCP Snooping Guide</p>
+    </div>
   </footer>
 
 </body>
