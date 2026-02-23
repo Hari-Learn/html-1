@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IPsec VPN – How Secure Tunnels Work</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-10">
+        <div class="max-w-5xl mx-auto px-6">
+            <h1 class="text-4xl font-bold mb-4">IPsec VPN</h1>
+            <p class="text-lg text-blue-200">
+                How Secure Tunnels Work Over the Internet
+            </p>
+        </div>
+    </header>
+
+    <!-- What is IPsec VPN -->
+    <section class="py-12">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-4">What is IPsec VPN?</h2>
+            <p class="mb-4">
+                IPsec (Internet Protocol Security) is a set of protocols used to secure communication over an IP network.
+                An IPsec VPN creates an encrypted tunnel between two endpoints (such as offices, data centers, or remote users),
+                allowing secure data transmission over the public internet.
+            </p>
+            <p>
+                It works at the Network Layer (Layer 3) of the OSI model, which means it protects all IP-based traffic
+                regardless of the application being used.
+            </p>
+        </div>
+    </section>
+
+    <!-- Why We Need IPsec -->
+    <section class="bg-white py-12 shadow-inner">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-4">Why Do We Need IPsec?</h2>
+            <ul class="list-disc ml-6 space-y-3">
+                <li>To protect sensitive data from hackers and eavesdroppers.</li>
+                <li>To securely connect branch offices (Site-to-Site VPN).</li>
+                <li>To allow remote employees secure access to company resources.</li>
+                <li>To ensure data confidentiality, integrity, and authentication.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- When We Use IPsec -->
+    <section class="py-12">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-4">When Do We Use IPsec?</h2>
+            <p class="mb-4">
+                IPsec is commonly used when:
+            </p>
+            <ul class="list-disc ml-6 space-y-3">
+                <li>Connecting multiple office locations securely over the internet.</li>
+                <li>Providing secure remote access to employees.</li>
+                <li>Protecting communication between cloud and on-premise networks.</li>
+                <li>Securing sensitive business transactions.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- How IP Works -->
+    <section class="bg-white py-12 shadow-inner">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-4">How IP Works</h2>
+            <p class="mb-4">
+                IP (Internet Protocol) is responsible for addressing and routing packets across networks.
+                Every device on a network has an IP address.
+            </p>
+            <p class="mb-4">
+                When data is sent:
+            </p>
+            <ol class="list-decimal ml-6 space-y-3">
+                <li>Data is broken into packets.</li>
+                <li>Each packet gets a source and destination IP address.</li>
+                <li>Routers forward packets toward the destination.</li>
+                <li>The receiving device reassembles the packets.</li>
+            </ol>
+            <p class="mt-4">
+                However, standard IP does not encrypt data — this is where IPsec adds security.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Components -->
+    <section class="py-12">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-6">Main Components of IPsec VPN Security</h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-2">1. AH (Authentication Header)</h3>
+                    <p>
+                        Provides data integrity and authentication.
+                        Ensures that data has not been modified in transit.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-2">2. ESP (Encapsulating Security Payload)</h3>
+                    <p>
+                        Provides encryption, authentication, and integrity.
+                        Most commonly used component in IPsec VPN.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-2">3. IKE (Internet Key Exchange)</h3>
+                    <p>
+                        Automatically negotiates encryption keys between VPN peers.
+                        IKEv2 is the modern and more secure version.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-2">4. Security Associations (SA)</h3>
+                    <p>
+                        Defines security parameters such as encryption type,
+                        hashing algorithm, and key lifetime.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- How Secure Tunnel Works -->
+    <section class="bg-blue-900 text-white py-12">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-4">How Secure Tunnels Work</h2>
+            <ol class="list-decimal ml-6 space-y-3 text-blue-100">
+                <li>Two VPN devices authenticate each other using IKE.</li>
+                <li>Encryption keys are exchanged securely.</li>
+                <li>A secure tunnel is created between both endpoints.</li>
+                <li>All data passing through the tunnel is encrypted using ESP.</li>
+                <li>The receiving device decrypts the data and forwards it internally.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-6">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <p>© 2026 IPsec VPN Educational Page | Built with Tailwind CSS</p>
+        </div>
+    </footer>
+
+</body>
+</html>
