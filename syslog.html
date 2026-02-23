@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Syslog Severity Levels - ELI10</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="max-w-4xl mx-auto p-6">
+
+        <!-- Header -->
+        <div class="bg-blue-600 text-white p-6 rounded-2xl shadow-lg mb-6">
+            <h1 class="text-3xl font-bold">Syslog Severity Levels</h1>
+            <p class="mt-2 text-lg">Memorize the Order! (Often tested in drag-and-drop)</p>
+        </div>
+
+        <!-- ELI10 Explanation -->
+        <div class="bg-white p-6 rounded-2xl shadow mb-6">
+            <h2 class="text-2xl font-bold mb-4">Explain Like I'm 10 👶</h2>
+            <p class="mb-3">
+                Imagine your network devices (like routers and switches) are kids in a classroom.
+                When something happens, they raise their hand and tell the teacher.
+            </p>
+            <p class="mb-3">
+                But not all problems are the same. Some are VERY serious 🚨 and some are just small updates 🙂
+            </p>
+            <p class="font-semibold">
+                Syslog severity levels tell us how serious the message is.
+            </p>
+        </div>
+
+        <!-- Table -->
+        <div class="bg-white p-6 rounded-2xl shadow mb-6">
+            <h2 class="text-2xl font-bold mb-4">Severity Levels (0 = Most Serious)</h2>
+
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="border p-3 text-left">Level</th>
+                            <th class="border p-3 text-left">Name</th>
+                            <th class="border p-3 text-left">ELI10 Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-red-100">
+                            <td class="border p-3 font-bold">0</td>
+                            <td class="border p-3">Emergency</td>
+                            <td class="border p-3">Everything is broken! 🔥 The whole network is down!</td>
+                        </tr>
+                        <tr class="bg-red-50">
+                            <td class="border p-3 font-bold">1</td>
+                            <td class="border p-3">Alert</td>
+                            <td class="border p-3">Fix this NOW! 🚨 Serious problem happening.</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3 font-bold">2</td>
+                            <td class="border p-3">Critical</td>
+                            <td class="border p-3">Big problem. Important service stopped.</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3 font-bold">3</td>
+                            <td class="border p-3">Error</td>
+                            <td class="border p-3">Something failed, but not everything.</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3 font-bold">4</td>
+                            <td class="border p-3">Warning</td>
+                            <td class="border p-3">Be careful! ⚠ Something might become a problem.</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3 font-bold">5</td>
+                            <td class="border p-3">Notification</td>
+                            <td class="border p-3">Just letting you know something changed.</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3 font-bold">6</td>
+                            <td class="border p-3">Informational</td>
+                            <td class="border p-3">Normal updates. Everything is okay 🙂</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3 font-bold">7</td>
+                            <td class="border p-3">Debug</td>
+                            <td class="border p-3">Super detailed technical messages for engineers.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Why It Is Important -->
+        <div class="bg-white p-6 rounded-2xl shadow mb-6">
+            <h2 class="text-2xl font-bold mb-4">Why Is This Important? 🤔</h2>
+            <ul class="list-disc pl-6 space-y-2">
+                <li>Helps network engineers know how serious a problem is.</li>
+                <li>Prevents small issues from becoming big disasters.</li>
+                <li>Used in monitoring systems and SIEM tools.</li>
+                <li>Very common in CCNA exam questions.</li>
+            </ul>
+        </div>
+
+        <!-- When It Is Used -->
+        <div class="bg-white p-6 rounded-2xl shadow mb-6">
+            <h2 class="text-2xl font-bold mb-4">When Is It Used? 📅</h2>
+            <p class="mb-3">
+                Every time a router, switch, or firewall sends a message to a Syslog server.
+            </p>
+            <p>
+                Example:
+                If an interface goes down, you might see Level 3 (Error).
+                If the whole system crashes, you might see Level 0 (Emergency).
+            </p>
+        </div>
+
+        <!-- Memory Trick -->
+        <div class="bg-yellow-100 p-6 rounded-2xl shadow">
+            <h2 class="text-2xl font-bold mb-4">Memory Trick 🧠</h2>
+            <p class="font-semibold text-lg">
+                Every Awesome Cisco Engineer Will Need Icecream Daily
+            </p>
+            <p class="mt-2">
+                Emergency → Alert → Critical → Error → Warning → Notification → Informational → Debug
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
