@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Types of IPsec VPN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-indigo-900 text-white py-10">
+        <div class="max-w-5xl mx-auto px-6">
+            <h1 class="text-4xl font-bold mb-4">Types of IPsec VPN</h1>
+            <p class="text-lg text-indigo-200">
+                Site-to-Site, Remote Access, and Host-to-Host VPN Explained
+            </p>
+        </div>
+    </header>
+
+    <!-- Introduction -->
+    <section class="py-12">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-4">Overview</h2>
+            <p>
+                IPsec VPN can be deployed in different ways depending on business needs.
+                The main types are:
+            </p>
+            <ul class="list-disc ml-6 mt-4 space-y-2">
+                <li>Site-to-Site VPN</li>
+                <li>Remote Access VPN</li>
+                <li>Host-to-Host VPN</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Site to Site -->
+    <section class="bg-white py-12 shadow-inner">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-6">1. Site-to-Site VPN</h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">What It Is</h3>
+                    <p>
+                        Site-to-Site VPN connects two or more networks securely over the internet.
+                        Usually used between branch offices and headquarters.
+                        VPN gateways (routers or firewalls) handle encryption.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">When to Use It</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Connecting branch offices.</li>
+                        <li>Linking company to data center or cloud.</li>
+                        <li>Secure communication between different business locations.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-gray-100 p-4 rounded">
+                <p class="font-medium">Example:</p>
+                <p>
+                    Company HQ in New York securely connects to its branch office in London using an IPsec tunnel.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Remote Access -->
+    <section class="py-12">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-6">2. Remote Access VPN</h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">What It Is</h3>
+                    <p>
+                        Remote Access VPN allows individual users to connect securely
+                        to a private network from anywhere using the internet.
+                        A VPN client is usually installed on the user’s device.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">When to Use It</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Employees working from home.</li>
+                        <li>IT administrators managing systems remotely.</li>
+                        <li>Secure access while traveling.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-gray-100 p-4 rounded">
+                <p class="font-medium">Example:</p>
+                <p>
+                    An employee connects from home laptop to company internal servers securely using IPsec VPN client.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Host to Host -->
+    <section class="bg-white py-12 shadow-inner">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-6">3. Host-to-Host VPN</h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">What It Is</h3>
+                    <p>
+                        Host-to-Host VPN secures communication directly between two individual devices.
+                        Encryption is handled by the devices themselves instead of a gateway.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">When to Use It</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Secure communication between two servers.</li>
+                        <li>Protecting specific application traffic.</li>
+                        <li>High-security environments requiring end-to-end encryption.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-gray-100 p-4 rounded">
+                <p class="font-medium">Example:</p>
+                <p>
+                    Two database servers encrypt traffic directly between them using IPsec policies.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-12">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-6">Quick Comparison</h2>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white shadow rounded">
+                    <thead class="bg-indigo-900 text-white">
+                        <tr>
+                            <th class="py-3 px-4 text-left">Type</th>
+                            <th class="py-3 px-4 text-left">Connects</th>
+                            <th class="py-3 px-4 text-left">Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t">
+                            <td class="py-3 px-4">Site-to-Site</td>
+                            <td class="py-3 px-4">Network ↔ Network</td>
+                            <td class="py-3 px-4">Branch offices</td>
+                        </tr>
+                        <tr class="border-t bg-gray-50">
+                            <td class="py-3 px-4">Remote Access</td>
+                            <td class="py-3 px-4">User ↔ Network</td>
+                            <td class="py-3 px-4">Remote employees</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="py-3 px-4">Host-to-Host</td>
+                            <td class="py-3 px-4">Device ↔ Device</td>
+                            <td class="py-3 px-4">Server-to-server security</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-6">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <p>© 2026 IPsec VPN Types | Built with Tailwind CSS</p>
+        </div>
+    </footer>
+
+</body>
+</html>
