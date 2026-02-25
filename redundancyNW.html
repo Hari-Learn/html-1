@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redundancy in Networking - Beginner Friendly Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Hero Section -->
+    <section class="bg-blue-900 text-white py-16">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                Redundancy in Networking
+            </h1>
+            <p class="text-xl text-blue-200">
+                Ensuring Continuous Availability – A Beginner-Friendly, Enterprise-Grade Explanation
+            </p>
+        </div>
+    </section>
+
+    <!-- What is Redundancy -->
+    <section class="py-16">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-6 text-blue-900">
+                What is Redundancy in Networking?
+            </h2>
+            <p class="mb-4 text-lg leading-relaxed">
+                Redundancy in networking means having <strong>backup systems, devices, or paths</strong> 
+                so that if one component fails, another automatically takes over.
+            </p>
+
+            <div class="bg-white shadow-md rounded-lg p-6 border-l-4 border-blue-600">
+                <p class="text-lg">
+                    The goal is simple: <strong>No Single Point of Failure (SPOF).</strong>
+                </p>
+            </div>
+
+            <p class="mt-6 text-lg leading-relaxed">
+                A single point of failure is any component (like a router, switch, cable, or server) 
+                that, if it fails, will bring down the entire system.
+            </p>
+        </div>
+    </section>
+
+    <!-- Example: Primary & Backup Path -->
+    <section class="bg-gray-100 py-16">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-6 text-blue-900">
+                Example: Primary Path & Backup Path
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-3 text-green-600">
+                        Primary Path
+                    </h3>
+                    <p>
+                        The main network route used during normal operations. 
+                        For example, a company’s main fiber internet connection.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-3 text-orange-600">
+                        Backup Path
+                    </h3>
+                    <p>
+                        A secondary connection that automatically activates 
+                        if the primary path fails — like a secondary ISP or 5G backup link.
+                    </p>
+                </div>
+            </div>
+
+            <p class="mt-6 text-lg">
+                If the primary link fails, traffic automatically switches to the backup path 
+                without users noticing downtime.
+            </p>
+        </div>
+    </section>
+
+    <!-- Why Redundancy is Needed -->
+    <section class="py-16">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 text-blue-900">
+                Why is Redundancy Needed?
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <h3 class="font-semibold text-xl mb-3">1. High Availability</h3>
+                    <p>
+                        Enterprises require 99.9% or higher uptime. 
+                        Redundancy ensures systems stay online even during failures.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <h3 class="font-semibold text-xl mb-3">2. Business Continuity</h3>
+                    <p>
+                        Prevents revenue loss, operational downtime, 
+                        and service interruption for customers.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <h3 class="font-semibold text-xl mb-3">3. Fault Tolerance</h3>
+                    <p>
+                        Systems continue operating even when hardware, 
+                        software, or network components fail.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Life Example -->
+    <section class="bg-blue-50 py-16">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-6 text-blue-900">
+                Real-Life Example
+            </h2>
+
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <p class="text-lg leading-relaxed mb-4">
+                    Think about a hospital network system.
+                </p>
+
+                <ul class="list-disc pl-6 space-y-3 text-lg">
+                    <li>If the main server fails, a secondary server immediately takes over.</li>
+                    <li>If the main internet connection drops, a backup ISP connection activates.</li>
+                    <li>If one switch fails, traffic reroutes through another switch.</li>
+                </ul>
+
+                <p class="mt-6 text-lg font-semibold text-blue-800">
+                    This ensures doctors can access patient records 24/7 without interruption.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise Level Explanation -->
+    <section class="py-16">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-6 text-blue-900">
+                Enterprise-Grade Perspective
+            </h2>
+
+            <p class="text-lg leading-relaxed mb-4">
+                Large enterprises implement redundancy at multiple layers:
+            </p>
+
+            <ul class="list-disc pl-6 space-y-3 text-lg">
+                <li>Dual routers and firewalls</li>
+                <li>Redundant power supplies</li>
+                <li>Multiple data centers (geo-redundancy)</li>
+                <li>Load balancing across servers</li>
+                <li>Automatic failover protocols (like HSRP, VRRP)</li>
+            </ul>
+
+            <p class="mt-6 text-lg">
+                This layered redundancy ensures continuous service delivery, 
+                even during hardware failure, cyberattacks, or natural disasters.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-6">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <p>
+                © 2026 Networking Fundamentals | Designed with Tailwind CSS
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
