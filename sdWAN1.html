@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <title>SD-WAN Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Enable Dark Mode -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition duration-300">
+
+  <!-- Navbar -->
+  <header class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">
+        SD-WAN Tech
+      </h1>
+
+      <div class="flex items-center space-x-6">
+        <a href="#features" class="hidden md:block hover:text-blue-500">Features</a>
+        <a href="#about" class="hidden md:block hover:text-blue-500">About</a>
+
+        <!-- Dark Mode Toggle -->
+        <button onclick="toggleDark()" 
+                class="bg-gray-200 dark:bg-gray-700 p-2 rounded-full hover:scale-110 transition">
+          🌙
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-28 pb-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">
+        Software-Defined WAN
+      </h2>
+      <p class="text-lg md:text-xl mb-8">
+        Modern WAN architecture that separates control & data plane 
+        and brings automation to enterprise networking.
+      </p>
+      <a href="#features" 
+         class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
+         Explore Features
+      </a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="max-w-7xl mx-auto px-6 py-20">
+    <h3 class="text-3xl font-bold text-center mb-12">Core Concepts</h3>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Card 1 -->
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
+        <div class="text-blue-600 dark:text-blue-400 mb-4">
+          <!-- Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" 
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M9 17v-2a4 4 0 014-4h4"/>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-3">
+          Control & Data Plane
+        </h4>
+        <p class="text-sm">
+          SD-WAN separates the control plane (decision-making) from the data plane 
+          (traffic forwarding) for centralized and scalable management.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
+        <div class="text-blue-600 dark:text-blue-400 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" 
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M3 10h18M3 14h18"/>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-3">
+          Overlay vs Underlay
+        </h4>
+        <p class="text-sm">
+          Underlay is the physical network (Internet, MPLS, LTE). 
+          Overlay is the secure virtual network built on top for intelligent routing.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
+        <div class="text-blue-600 dark:text-blue-400 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" 
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M12 8c-3 0-6 2-6 4s3 4 6 4 6-2 6-4-3-4-6-4z"/>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-3">
+          Cisco Components
+        </h4>
+        <p class="text-sm">
+          vManage (management), vBond (authentication), 
+          and vSmart (control plane) work together to automate WAN.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
+        <div class="text-blue-600 dark:text-blue-400 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" 
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-3">
+          Why Replace MPLS?
+        </h4>
+        <p class="text-sm">
+          Lower cost, better cloud access, centralized automation, 
+          improved redundancy, and flexible transport options.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-blue-600 dark:bg-blue-800 text-white py-20 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h3 class="text-3xl font-bold mb-6">
+        The Future of WAN
+      </h3>
+      <p class="text-lg">
+        Many students ignore SD-WAN, but automation-based WAN is growing fast.
+        Enterprises are rapidly shifting from traditional MPLS to intelligent,
+        software-defined architectures.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-8 text-center">
+    <p>© 2026 SD-WAN Tech | CCNA Modern Topics</p>
+  </footer>
+
+  <!-- Dark Mode Script -->
+  <script>
+    function toggleDark() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+
+</body>
+</html>
