@@ -6,96 +6,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-gray-100 font-sans">
+
+<body class="bg-gray-100 font-sans text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-blue-700 text-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Networking Academy</h1>
+            <nav class="space-x-6 hidden md:block">
+                <a href="#" class="hover:text-blue-200">Home</a>
+                <a href="#" class="hover:text-blue-200">Topics</a>
+                <a href="#" class="hover:text-blue-200">Contact</a>
+            </nav>
+        </div>
+    </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-600 to-indigo-700 py-16 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">
-            SD-WAN Basics
-        </h1>
-        <p class="text-lg md:text-xl text-blue-100">
-            Software-Defined Wide Area Networking
+    <section class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16 text-center">
+        <h2 class="text-4xl font-bold mb-4">SD-WAN Basics</h2>
+        <p class="text-lg max-w-2xl mx-auto">
+            Software-Defined WAN (SD-WAN) is a modern networking technology that simplifies
+            wide-area network management using centralized control and automation.
         </p>
     </section>
 
-    <!-- Content Section -->
-    <section class="max-w-4xl mx-auto px-6 py-12">
+    <!-- Content Cards -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+        <div class="grid gap-8 md:grid-cols-2">
 
-        <div class="bg-gray-800 rounded-2xl shadow-lg p-8 mb-8">
-            <h2 class="text-2xl font-semibold text-blue-400 mb-4">
-                What is SD-WAN?
-            </h2>
-            <p class="text-gray-300 leading-relaxed">
-                SD-WAN (Software-Defined WAN) is a modern approach to managing wide-area networks
-                using centralized control and automation. It separates networking hardware from
-                its control mechanism to improve flexibility and efficiency.
-            </p>
-        </div>
-
-        <!-- Key Concepts -->
-        <div class="grid md:grid-cols-2 gap-8">
-
-            <div class="bg-gray-800 p-6 rounded-xl shadow-md">
-                <h3 class="text-xl font-semibold text-indigo-400 mb-3">
-                    1️⃣ Separation of Control & Data Plane
+            <!-- Card 1 -->
+            <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition">
+                <h3 class="text-xl font-semibold text-blue-600 mb-4">
+                    Separation of Control & Data Plane
                 </h3>
-                <p class="text-gray-300">
-                    The control plane makes decisions about where traffic is sent,
-                    while the data plane actually forwards the traffic.
-                    SD-WAN separates these functions for better scalability and management.
+                <p class="text-gray-600 leading-relaxed">
+                    In traditional networking, the control plane and data plane operate together 
+                    inside a router. SD-WAN separates these functions. The control plane decides 
+                    how traffic should move, while the data plane forwards the traffic. 
+                    This separation allows centralized management and better scalability.
                 </p>
             </div>
 
-            <div class="bg-gray-800 p-6 rounded-xl shadow-md">
-                <h3 class="text-xl font-semibold text-indigo-400 mb-3">
-                    2️⃣ Overlay vs Underlay Networks
+            <!-- Card 2 -->
+            <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition">
+                <h3 class="text-xl font-semibold text-blue-600 mb-4">
+                    Overlay vs Underlay Networks
                 </h3>
-                <p class="text-gray-300">
-                    The underlay is the physical network (Internet, MPLS, LTE).
-                    The overlay is the virtual network built on top, used to securely
-                    route traffic across multiple transport types.
+                <p class="text-gray-600 leading-relaxed">
+                    The underlay network is the physical connection such as MPLS, broadband, 
+                    or LTE. The overlay network is a virtual layer built on top of the underlay. 
+                    SD-WAN uses overlays to securely route traffic across multiple transport 
+                    technologies.
                 </p>
             </div>
 
-            <div class="bg-gray-800 p-6 rounded-xl shadow-md">
-                <h3 class="text-xl font-semibold text-indigo-400 mb-3">
-                    3️⃣ Cisco SD-WAN Components
+            <!-- Card 3 -->
+            <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition">
+                <h3 class="text-xl font-semibold text-blue-600 mb-4">
+                    Cisco SD-WAN Components
                 </h3>
-                <ul class="list-disc list-inside text-gray-300 space-y-2">
-                    <li><span class="font-semibold text-blue-300">vManage:</span> Centralized management dashboard</li>
-                    <li><span class="font-semibold text-blue-300">vBond:</span> Orchestrates device authentication</li>
-                    <li><span class="font-semibold text-blue-300">vSmart:</span> Central control plane</li>
+                <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <li><strong>vManage:</strong> Centralized management dashboard</li>
+                    <li><strong>vBond:</strong> Authenticates and orchestrates devices</li>
+                    <li><strong>vSmart:</strong> Handles the centralized control plane</li>
                 </ul>
             </div>
 
-            <div class="bg-gray-800 p-6 rounded-xl shadow-md">
-                <h3 class="text-xl font-semibold text-indigo-400 mb-3">
-                    4️⃣ Why Enterprises Replace MPLS
+            <!-- Card 4 -->
+            <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition">
+                <h3 class="text-xl font-semibold text-blue-600 mb-4">
+                    Why Enterprises Replace MPLS
                 </h3>
-                <ul class="list-disc list-inside text-gray-300 space-y-2">
-                    <li>Lower cost compared to MPLS</li>
-                    <li>Better cloud connectivity</li>
-                    <li>Centralized automation</li>
-                    <li>Improved performance & redundancy</li>
-                </ul>
+                <p class="text-gray-600 leading-relaxed">
+                    Enterprises are replacing MPLS with SD-WAN because it reduces cost, 
+                    improves cloud connectivity, enables centralized automation, and 
+                    provides better performance and redundancy across multiple links.
+                </p>
             </div>
 
         </div>
 
-        <!-- Highlight Box -->
-        <div class="mt-12 bg-blue-700/20 border border-blue-500 p-6 rounded-xl text-center">
-            <p class="text-blue-300 text-lg font-medium">
-                💡 Many students ignore this, but automation-based WAN is growing fast.
+        <!-- Highlight Message -->
+        <div class="mt-12 bg-yellow-100 border-l-4 border-yellow-500 p-6 rounded-lg">
+            <p class="text-yellow-800 font-medium">
+                💡 Many students ignore this topic, but automation-based WAN is growing fast 
+                and is highly relevant for modern networking careers.
             </p>
         </div>
-
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-center py-6 mt-12">
-        <p class="text-gray-400">
-            © 2026 Networking Study Page | SD-WAN Overview
-        </p>
+    <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="mb-2">© 2026 Networking Academy</p>
+            <p class="text-sm text-gray-400">
+                Learn Modern Networking | CCNA Preparation | SD-WAN Fundamentals
+            </p>
+        </div>
     </footer>
 
 </body>
