@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SD-WAN Basics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-indigo-700 py-16 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            SD-WAN Basics
+        </h1>
+        <p class="text-lg md:text-xl text-blue-100">
+            Software-Defined Wide Area Networking
+        </p>
+    </section>
+
+    <!-- Content Section -->
+    <section class="max-w-4xl mx-auto px-6 py-12">
+
+        <div class="bg-gray-800 rounded-2xl shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-semibold text-blue-400 mb-4">
+                What is SD-WAN?
+            </h2>
+            <p class="text-gray-300 leading-relaxed">
+                SD-WAN (Software-Defined WAN) is a modern approach to managing wide-area networks
+                using centralized control and automation. It separates networking hardware from
+                its control mechanism to improve flexibility and efficiency.
+            </p>
+        </div>
+
+        <!-- Key Concepts -->
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <div class="bg-gray-800 p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold text-indigo-400 mb-3">
+                    1️⃣ Separation of Control & Data Plane
+                </h3>
+                <p class="text-gray-300">
+                    The control plane makes decisions about where traffic is sent,
+                    while the data plane actually forwards the traffic.
+                    SD-WAN separates these functions for better scalability and management.
+                </p>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold text-indigo-400 mb-3">
+                    2️⃣ Overlay vs Underlay Networks
+                </h3>
+                <p class="text-gray-300">
+                    The underlay is the physical network (Internet, MPLS, LTE).
+                    The overlay is the virtual network built on top, used to securely
+                    route traffic across multiple transport types.
+                </p>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold text-indigo-400 mb-3">
+                    3️⃣ Cisco SD-WAN Components
+                </h3>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li><span class="font-semibold text-blue-300">vManage:</span> Centralized management dashboard</li>
+                    <li><span class="font-semibold text-blue-300">vBond:</span> Orchestrates device authentication</li>
+                    <li><span class="font-semibold text-blue-300">vSmart:</span> Central control plane</li>
+                </ul>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold text-indigo-400 mb-3">
+                    4️⃣ Why Enterprises Replace MPLS
+                </h3>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li>Lower cost compared to MPLS</li>
+                    <li>Better cloud connectivity</li>
+                    <li>Centralized automation</li>
+                    <li>Improved performance & redundancy</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Highlight Box -->
+        <div class="mt-12 bg-blue-700/20 border border-blue-500 p-6 rounded-xl text-center">
+            <p class="text-blue-300 text-lg font-medium">
+                💡 Many students ignore this, but automation-based WAN is growing fast.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-center py-6 mt-12">
+        <p class="text-gray-400">
+            © 2026 Networking Study Page | SD-WAN Overview
+        </p>
+    </footer>
+
+</body>
+</html>
