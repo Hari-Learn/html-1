@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redundancy Protocols - ELI10</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-indigo-50 via-sky-50 to-purple-50 min-h-screen text-gray-800">
+
+  <!-- Header -->
+  <header class="text-center py-12 px-6">
+    <h1 class="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+      Redundancy Protocols (Explained Like You're 10)
+    </h1>
+    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+      These are special rules that help networks stay working even if something breaks.
+      Think of them as teamwork rules for computers!
+    </p>
+  </header>
+
+  <!-- Cards Section -->
+  <main class="max-w-6xl mx-auto px-6 pb-16">
+    <div class="grid gap-8 md:grid-cols-2">
+
+      <!-- Layer 2 Loop Protection -->
+      <div class="bg-gradient-to-br from-red-100 to-red-50 rounded-2xl shadow-lg p-8 hover:scale-105 transition-transform duration-300">
+        <h2 class="text-2xl font-semibold text-red-700 mb-4">🔄 Layer 2 Loop (STP)</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Imagine kids passing a ball in a circle forever — it never stops!
+        </p>
+        <p class="mt-4 text-gray-600">
+          In networks, this can happen if cables form a loop.
+          Spanning Tree Protocol (STP) blocks one path so data doesn’t go in circles.
+          If a cable breaks, it quickly opens the backup path.
+        </p>
+      </div>
+
+      <!-- LACP -->
+      <div class="bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl shadow-lg p-8 hover:scale-105 transition-transform duration-300">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-4">🔗 LACP</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Imagine using four small ropes instead of one big rope to pull something heavy.
+        </p>
+        <p class="mt-4 text-gray-600">
+          LACP (Link Aggregation Control Protocol) bundles multiple cables together.
+          If one cable fails, the others still carry traffic.
+          It also makes the connection faster by sharing the load.
+        </p>
+      </div>
+
+      <!-- HSRP / VRRP -->
+      <div class="bg-gradient-to-br from-green-100 to-green-50 rounded-2xl shadow-lg p-8 hover:scale-105 transition-transform duration-300">
+        <h2 class="text-2xl font-semibold text-green-700 mb-4">🛡️ HSRP / VRRP</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Imagine two lifeguards watching a pool.
+          One is active, the other is ready to jump in if needed.
+        </p>
+        <p class="mt-4 text-gray-600">
+          HSRP and VRRP let two routers share one virtual address.
+          If the main router stops working, the backup takes over instantly.
+        </p>
+      </div>
+
+      <!-- OSPF -->
+      <div class="bg-gradient-to-br from-purple-100 to-purple-50 rounded-2xl shadow-lg p-8 hover:scale-105 transition-transform duration-300">
+        <h2 class="text-2xl font-semibold text-purple-700 mb-4">🗺️ OSPF</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Imagine Google Maps finding the fastest route to school.
+        </p>
+        <p class="mt-4 text-gray-600">
+          OSPF (Open Shortest Path First) finds the best path for data.
+          If a road (link) breaks, it quickly finds another way.
+          This keeps traffic flowing smoothly.
+        </p>
+      </div>
+
+      <!-- NIC Teaming -->
+      <div class="bg-gradient-to-br from-pink-100 to-pink-50 rounded-2xl shadow-lg p-8 hover:scale-105 transition-transform duration-300 md:col-span-2">
+        <h2 class="text-2xl font-semibold text-pink-700 mb-4">🖥️ NIC Teaming</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Imagine your computer having two internet plugs instead of one.
+        </p>
+        <p class="mt-4 text-gray-600">
+          NIC Teaming combines multiple network cards in one computer.
+          If one network port fails, the other keeps working.
+          It can also increase speed by sharing traffic.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 bg-gradient-to-r from-indigo-100 to-purple-100 text-gray-600">
+    <p>🚀 Redundancy Protocols = Smart Rules for Backup & Teamwork!</p>
+  </footer>
+
+</body>
+</html>
