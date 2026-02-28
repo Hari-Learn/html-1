@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IPv6 Special Addresses - CCNA Quick Review</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-indigo-50 to-blue-100 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-indigo-700 text-white py-6 shadow-md">
+    <div class="max-w-6xl mx-auto px-6">
+      <h1 class="text-3xl font-bold">IPv6 Special Addresses</h1>
+      <p class="text-indigo-200 mt-1">Quick Revision Cards for CCNA Aspirants</p>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-6xl mx-auto px-6 py-10">
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Loopback -->
+      <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-indigo-600 hover:scale-105 transition">
+        <h2 class="text-xl font-bold text-indigo-700">::1</h2>
+        <p class="text-gray-600 font-semibold mt-1">Loopback Address</p>
+        <p class="text-gray-500 mt-3 text-sm">
+          Used by a device to refer to itself. Equivalent to IPv4 127.0.0.1.
+        </p>
+        <div class="mt-4 text-xs bg-indigo-100 text-indigo-700 px-3 py-2 rounded">
+          📝 Exam Tip: Used for local testing.
+        </div>
+      </div>
+
+      <!-- Unspecified -->
+      <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-gray-600 hover:scale-105 transition">
+        <h2 class="text-xl font-bold text-gray-800">::</h2>
+        <p class="text-gray-600 font-semibold mt-1">Unspecified Address</p>
+        <p class="text-gray-500 mt-3 text-sm">
+          Represents the absence of an address. Used during device boot before IP is assigned.
+        </p>
+        <div class="mt-4 text-xs bg-gray-100 text-gray-700 px-3 py-2 rounded">
+          📝 Exam Tip: Means "no address yet".
+        </div>
+      </div>
+
+      <!-- Link-local -->
+      <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-600 hover:scale-105 transition">
+        <h2 class="text-xl font-bold text-green-700">FE80::/10</h2>
+        <p class="text-gray-600 font-semibold mt-1">Link-Local</p>
+        <p class="text-gray-500 mt-3 text-sm">
+          Automatically assigned. Used for communication within the same local network.
+        </p>
+        <div class="mt-4 text-xs bg-green-100 text-green-700 px-3 py-2 rounded">
+          📝 Exam Tip: Routers do NOT forward these.
+        </div>
+      </div>
+
+      <!-- Multicast -->
+      <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-600 hover:scale-105 transition">
+        <h2 class="text-xl font-bold text-purple-700">FF00::/8</h2>
+        <p class="text-gray-600 font-semibold mt-1">Multicast</p>
+        <p class="text-gray-500 mt-3 text-sm">
+          Used to send packets to multiple destinations at once.
+        </p>
+        <div class="mt-4 text-xs bg-purple-100 text-purple-700 px-3 py-2 rounded">
+          📝 Exam Tip: Replaces broadcast in IPv6.
+        </div>
+      </div>
+
+      <!-- Global Unicast -->
+      <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-600 hover:scale-105 transition">
+        <h2 class="text-xl font-bold text-blue-700">2000::/3</h2>
+        <p class="text-gray-600 font-semibold mt-1">Global Unicast</p>
+        <p class="text-gray-500 mt-3 text-sm">
+          Publicly routable IPv6 addresses on the internet. Equivalent to public IPv4.
+        </p>
+        <div class="mt-4 text-xs bg-blue-100 text-blue-700 px-3 py-2 rounded">
+          📝 Exam Tip: Most common type in production networks.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Quick Memory Section -->
+    <div class="mt-12 bg-white rounded-xl shadow-lg p-8">
+      <h3 class="text-2xl font-bold text-indigo-700 mb-4">Quick Memory Trick</h3>
+      <ul class="space-y-2 text-gray-600">
+        <li><strong>::1</strong> → 1 device (yourself)</li>
+        <li><strong>::</strong> → Empty / Nothing</li>
+        <li><strong>FE80</strong> → "FEels local"</li>
+        <li><strong>FF</strong> → "Friends Forever" (group)</li>
+        <li><strong>2000</strong> → Internet Public Range</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-indigo-700 text-white py-6 mt-10">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p class="text-indigo-200">
+        CCNA IPv6 Special Address Quick Review | Built with Tailwind CSS
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
