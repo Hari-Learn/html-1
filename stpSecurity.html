@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
 
-<div class="min-h-screen flex">
+<div class="flex flex-1">
 
   <!-- Sidebar -->
   <aside class="w-64 bg-slate-900 text-white p-6 hidden md:block">
@@ -24,7 +24,6 @@
   <!-- Main Content -->
   <main class="flex-1 p-8">
 
-    <!-- Header -->
     <header class="mb-12">
       <h1 class="text-4xl font-bold mb-3">Spanning Tree Protection Mechanisms</h1>
       <p class="text-slate-600 max-w-2xl">
@@ -38,14 +37,10 @@
       <h2 class="text-2xl font-semibold text-cyan-600 mb-4">Loop Guard</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div>
-          <p class="mb-4">
-            Prevents alternate or root ports from transitioning to forwarding
-            when BPDUs are no longer received due to unidirectional link failure.
-          </p>
           <ul class="list-disc list-inside space-y-2 text-sm">
-            <li>Protects against unidirectional link issues</li>
+            <li>Prevents loops caused by lost BPDUs</li>
             <li>Works on non-designated ports</li>
-            <li>Places port in <strong>loop-inconsistent</strong> state</li>
+            <li>Loop-inconsistent state if BPDUs stop</li>
           </ul>
         </div>
         <div class="bg-slate-900 text-green-400 p-4 rounded-lg text-sm font-mono">
@@ -59,14 +54,10 @@ switch(config)# spanning-tree guard loop
       <h2 class="text-2xl font-semibold text-emerald-600 mb-4">Root Guard</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div>
-          <p class="mb-4">
-            Prevents an access switch from becoming the root bridge by blocking
-            superior BPDUs.
-          </p>
           <ul class="list-disc list-inside space-y-2 text-sm">
+            <li>Prevents unauthorized root bridge changes</li>
             <li>Applied to designated ports</li>
-            <li>Stops unauthorized root bridge changes</li>
-            <li>Places port in <strong>root-inconsistent</strong> state</li>
+            <li>Root-inconsistent state if superior BPDU received</li>
           </ul>
         </div>
         <div class="bg-slate-900 text-green-400 p-4 rounded-lg text-sm font-mono">
@@ -75,18 +66,14 @@ switch(config-if)# spanning-tree guard root
       </div>
     </section>
 
-    <!-- BPDU Protection -->
+    <!-- BPDU Guard -->
     <section id="bpdu" class="mb-12">
       <h2 class="text-2xl font-semibold text-rose-600 mb-4">BPDU Protection</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div>
-          <p class="mb-4">
-            Secures PortFast-enabled access ports by shutting them down if
-            BPDUs are received.
-          </p>
           <ul class="list-disc list-inside space-y-2 text-sm">
-            <li>Used on edge/access ports</li>
-            <li>Disables port upon BPDU reception</li>
+            <li>Used on PortFast / access ports</li>
+            <li>Disables port when BPDU is received</li>
             <li>Protects against rogue switches</li>
           </ul>
         </div>
@@ -96,45 +83,25 @@ switch(config-if)# spanning-tree bpduguard enable
       </div>
     </section>
 
-    <!-- Comparison Table -->
-    <section id="compare">
-      <h2 class="text-2xl font-semibold mb-6">Quick Comparison</h2>
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm border border-slate-200">
-          <thead class="bg-slate-200">
-            <tr>
-              <th class="p-3 text-left">Feature</th>
-              <th class="p-3 text-left">Used On</th>
-              <th class="p-3 text-left">Purpose</th>
-              <th class="p-3 text-left">Port State</th>
-            </tr>
-          </thead>
-          <tbody class="bg-white">
-            <tr class="border-t">
-              <td class="p-3 font-medium">Loop Guard</td>
-              <td class="p-3">Non-designated ports</td>
-              <td class="p-3">Prevent loops from lost BPDUs</td>
-              <td class="p-3">Loop-inconsistent</td>
-            </tr>
-            <tr class="border-t">
-              <td class="p-3 font-medium">Root Guard</td>
-              <td class="p-3">Designated ports</td>
-              <td class="p-3">Prevent root bridge change</td>
-              <td class="p-3">Root-inconsistent</td>
-            </tr>
-            <tr class="border-t">
-              <td class="p-3 font-medium">BPDU Guard</td>
-              <td class="p-3">Access / Edge ports</td>
-              <td class="p-3">Block rogue switches</td>
-              <td class="p-3">Err-disabled</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
   </main>
 </div>
+
+<!-- Footer -->
+<footer class="bg-slate-900 text-slate-300 mt-auto">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-sm">
+    
+    <div class="mb-3 md:mb-0">
+      © 2026 CCNA Study | STP Protection Guide
+    </div>
+
+    <div class="flex space-x-6">
+      <a href="#" class="hover:text-cyan-400 transition">Documentation</a>
+      <a href="#" class="hover:text-cyan-400 transition">About</a>
+      <a href="#" class="hover:text-cyan-400 transition">Contact</a>
+    </div>
+
+  </div>
+</footer>
 
 </body>
 </html>
