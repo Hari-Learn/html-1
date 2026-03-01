@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>STP Protection Mechanisms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-700 text-white py-6 shadow-lg">
+    <div class="max-w-5xl mx-auto px-6">
+      <h1 class="text-3xl font-bold">Spanning Tree Protection Mechanisms</h1>
+      <p class="mt-2 text-blue-100">Loop Guard, Root Guard, and BPDU Protection Explained</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- Loop Guard -->
+    <section class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">🔁 Loop Guard</h2>
+      <p class="mb-4">
+        Loop Guard prevents switching loops caused by unidirectional link failures. 
+        It ensures that a port does not incorrectly transition to the forwarding state 
+        when BPDUs are no longer received.
+      </p>
+
+      <h3 class="font-semibold mb-2">Key Points:</h3>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Works on non-designated ports.</li>
+        <li>Prevents alternate/backup ports from becoming forwarding unexpectedly.</li>
+        <li>Places the port into <span class="font-semibold">loop-inconsistent</span> state if BPDUs stop.</li>
+      </ul>
+
+      <div class="mt-4 bg-gray-100 p-4 rounded-lg text-sm font-mono">
+        switch(config)# spanning-tree guard loop
+      </div>
+    </section>
+
+    <!-- Root Guard -->
+    <section class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+      <h2 class="text-2xl font-semibold text-green-700 mb-4">🌳 Root Guard</h2>
+      <p class="mb-4">
+        Root Guard prevents a port from becoming the root port. 
+        It protects the network from unauthorized switches attempting 
+        to become the root bridge.
+      </p>
+
+      <h3 class="font-semibold mb-2">Key Points:</h3>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Applied to designated ports.</li>
+        <li>Prevents superior BPDUs from changing the root bridge.</li>
+        <li>Puts the port into <span class="font-semibold">root-inconsistent</span> state.</li>
+      </ul>
+
+      <div class="mt-4 bg-gray-100 p-4 rounded-lg text-sm font-mono">
+        switch(config-if)# spanning-tree guard root
+      </div>
+    </section>
+
+    <!-- BPDU Protection -->
+    <section class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+      <h2 class="text-2xl font-semibold text-red-700 mb-4">🛡 BPDU Protection</h2>
+      <p class="mb-4">
+        BPDU Protection secures edge ports by shutting them down if BPDUs are received. 
+        This prevents accidental or malicious switch connections on access ports.
+      </p>
+
+      <h3 class="font-semibold mb-2">Key Points:</h3>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Typically used with PortFast-enabled ports.</li>
+        <li>Automatically disables the port upon receiving BPDUs.</li>
+        <li>Helps protect against rogue switches.</li>
+      </ul>
+
+      <div class="mt-4 bg-gray-100 p-4 rounded-lg text-sm font-mono">
+        switch(config-if)# spanning-tree bpduguard enable
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-6 mt-10">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <p>© 2026 Network Fundamentals | STP Security Mechanisms</p>
+    </div>
+  </footer>
+
+</body>
+</html>
