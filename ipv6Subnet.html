@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IPv6 vs IPv4 Subnetting (ELI10)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-indigo-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white py-10 shadow-lg">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h1 class="text-4xl font-bold mb-3">IPv6 vs IPv4 Subnetting</h1>
+      <p class="text-indigo-100 text-lg">Explained Like You're 10 👦📦</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 max-w-5xl mx-auto px-6 py-12 space-y-12">
+
+    <!-- Big Idea -->
+    <section class="bg-white rounded-2xl shadow-md p-8">
+      <h2 class="text-2xl font-bold mb-4 text-indigo-600">🌍 Imagine IP Addresses Like Houses</h2>
+      <p class="text-lg leading-relaxed">
+        Think of IP addresses like house addresses so computers can find each other.
+        Subnetting is like dividing a big city into smaller neighborhoods.
+      </p>
+    </section>
+
+    <!-- IPv4 -->
+    <section class="bg-white rounded-2xl shadow-md p-8 border-l-8 border-blue-500">
+      <h2 class="text-2xl font-bold mb-4 text-blue-600">🏠 IPv4 (The Small City)</h2>
+      <ul class="space-y-3 text-lg">
+        <li>• Uses 32 bits (about 4 billion addresses).</li>
+        <li>• Looks like: <span class="font-mono bg-gray-100 px-2 py-1 rounded">192.168.1.1</span></li>
+        <li>• Subnetting means borrowing bits from the host part.</li>
+        <li>• You must calculate usable hosts carefully.</li>
+        <li>• Small networks can waste addresses.</li>
+      </ul>
+
+      <div class="mt-6 bg-blue-50 p-4 rounded-lg text-sm">
+        Example: A /24 network gives you 256 addresses, but only 254 usable.
+      </div>
+    </section>
+
+    <!-- IPv6 -->
+    <section class="bg-white rounded-2xl shadow-md p-8 border-l-8 border-purple-500">
+      <h2 class="text-2xl font-bold mb-4 text-purple-600">🏙 IPv6 (The Giant Planet)</h2>
+      <ul class="space-y-3 text-lg">
+        <li>• Uses 128 bits (almost unlimited addresses 🤯).</li>
+        <li>• Looks like: 
+          <span class="font-mono bg-gray-100 px-2 py-1 rounded">
+            2001:0db8:85a3::8a2e:0370:7334
+          </span>
+        </li>
+        <li>• Standard subnet size is usually <strong>/64</strong>.</li>
+        <li>• You don’t worry about running out of hosts.</li>
+        <li>• No broadcast address needed.</li>
+      </ul>
+
+      <div class="mt-6 bg-purple-50 p-4 rounded-lg text-sm">
+        A single /64 IPv6 network has more addresses than the entire IPv4 internet.
+      </div>
+    </section>
+
+    <!-- Key Differences -->
+    <section class="bg-white rounded-2xl shadow-md p-8">
+      <h2 class="text-2xl font-bold mb-6 text-indigo-600">⚡ Key Differences (Super Simple)</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-lg border border-gray-200 rounded-lg overflow-hidden">
+          <thead class="bg-indigo-100">
+            <tr>
+              <th class="p-4 text-left">Feature</th>
+              <th class="p-4 text-left">IPv4</th>
+              <th class="p-4 text-left">IPv6</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
+            <tr class="border-t">
+              <td class="p-4 font-medium">Size</td>
+              <td class="p-4">32 bits</td>
+              <td class="p-4">128 bits</td>
+            </tr>
+            <tr class="border-t">
+              <td class="p-4 font-medium">Address Supply</td>
+              <td class="p-4">Limited</td>
+              <td class="p-4">Almost unlimited</td>
+            </tr>
+            <tr class="border-t">
+              <td class="p-4 font-medium">Subnetting Style</td>
+              <td class="p-4">Flexible but math-heavy</td>
+              <td class="p-4">Mostly fixed /64 networks</td>
+            </tr>
+            <tr class="border-t">
+              <td class="p-4 font-medium">Broadcast</td>
+              <td class="p-4">Yes</td>
+              <td class="p-4">No (uses multicast)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Final Explanation -->
+    <section class="bg-indigo-100 rounded-2xl p-8 text-lg">
+      <h2 class="text-2xl font-bold mb-4 text-indigo-700">🧠 ELI10 Summary</h2>
+      <p>
+        IPv4 is like trying to fit everyone into a small town — you must carefully divide space.
+        IPv6 is like having an entire planet — you don’t stress about space anymore.
+        Subnetting in IPv6 is simpler because you usually use /64 and move on.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-indigo-700 text-indigo-100 py-6 mt-auto">
+    <div class="max-w-5xl mx-auto px-6 text-center text-sm">
+      © 2026 Networking Basics | IPv6 Made Simple 🚀
+    </div>
+  </footer>
+
+</body>
+</html>
