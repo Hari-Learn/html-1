@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tracert / Traceroute Explained</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    body { overflow: hidden; }
+</style>
+</head>
+
+<body class="bg-gray-950 text-gray-100 h-screen flex flex-col">
+
+<!-- HEADER -->
+<header class="text-center py-4 bg-gray-900 border-b border-gray-700">
+    <h1 class="text-3xl font-bold text-blue-400">How Tracert / Traceroute Works</h1>
+</header>
+
+<!-- MAIN GRID (FULL HEIGHT) -->
+<main class="flex-1 grid grid-cols-3 grid-rows-3 gap-4 p-4 text-sm">
+
+    <!-- WHAT IS TRACERT -->
+    <section class="bg-gray-900 rounded-xl p-4 shadow-lg">
+        <h2 class="text-blue-300 font-semibold mb-2">1️⃣ What is Tracert?</h2>
+        <p class="text-gray-300">
+            A network diagnostic tool that traces the path packets take
+            from source to destination, showing each router (hop) and delay.
+        </p>
+        <div class="mt-2 text-green-400 font-mono text-xs">
+            tracert google.com
+        </div>
+    </section>
+
+    <!-- CORE CONCEPT -->
+    <section class="bg-gray-900 rounded-xl p-4 shadow-lg">
+        <h2 class="text-blue-300 font-semibold mb-2">2️⃣ Core Concept</h2>
+        <p class="text-gray-300">
+            Uses <span class="text-yellow-400 font-semibold">TTL (Time To Live)</span>.
+            Each router decreases TTL by 1.
+            When TTL = 0 → Router sends ICMP Time Exceeded.
+        </p>
+    </section>
+
+    <!-- PROTOCOLS -->
+    <section class="bg-gray-900 rounded-xl p-4 shadow-lg">
+        <h2 class="text-blue-300 font-semibold mb-2">3️⃣ Protocols Used</h2>
+        <ul class="text-gray-300 space-y-1">
+            <li><span class="text-yellow-400">ICMP</span> → Windows default</li>
+            <li><span class="text-yellow-400">UDP</span> → Linux default</li>
+            <li><span class="text-yellow-400">TCP</span> → Optional method</li>
+        </ul>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="bg-gray-900 rounded-xl p-4 shadow-lg col-span-2">
+        <h2 class="text-blue-300 font-semibold mb-3">4️⃣ Step-by-Step Timeline</h2>
+        <div class="flex justify-between items-center text-center text-xs">
+
+            <div>
+                <div class="bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center mx-auto">1</div>
+                <p class="mt-1">TTL=1<br>Router 1 replies</p>
+            </div>
+
+            <div class="h-1 flex-1 bg-blue-500 mx-2"></div>
+
+            <div>
+                <div class="bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center mx-auto">2</div>
+                <p class="mt-1">TTL=2<br>Router 2 replies</p>
+            </div>
+
+            <div class="h-1 flex-1 bg-blue-500 mx-2"></div>
+
+            <div>
+                <div class="bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center mx-auto">3</div>
+                <p class="mt-1">Continue</p>
+            </div>
+
+            <div class="h-1 flex-1 bg-green-500 mx-2"></div>
+
+            <div>
+                <div class="bg-green-600 w-10 h-10 rounded-full flex items-center justify-center mx-auto">✔</div>
+                <p class="mt-1">Destination reached</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RTT -->
+    <section class="bg-gray-900 rounded-xl p-4 shadow-lg">
+        <h2 class="text-blue-300 font-semibold mb-2">5️⃣ RTT Measurement</h2>
+        <p class="text-gray-300">
+            RTT = Time Reply Received − Time Sent.
+            3 probes per hop measure latency.
+        </p>
+        <div class="text-green-400 font-mono text-xs mt-1">
+            1 ms | 2 ms | 1 ms
+        </div>
+    </section>
+
+    <!-- ASTERISK -->
+    <section class="bg-gray-900 rounded-xl p-4 shadow-lg">
+        <h2 class="text-blue-300 font-semibold mb-2">6️⃣ * Meaning</h2>
+        <p class="text-gray-300">
+            "*" means request timed out:
+        </p>
+        <ul class="text-gray-400 text-xs mt-1">
+            <li>• ICMP blocked</li>
+            <li>• Firewall filtering</li>
+            <li>• Packet loss</li>
+        </ul>
+    </section>
+
+    <!-- WINDOWS VS LINUX -->
+    <section class="bg-gray-900 rounded-xl p-4 shadow-lg col-span-3">
+        <h2 class="text-blue-300 font-semibold mb-2">7️⃣ Windows vs Linux</h2>
+
+        <div class="grid grid-cols-3 text-center text-xs text-gray-300">
+
+            <div class="font-semibold text-blue-400">Feature</div>
+            <div class="font-semibold text-blue-400">Windows</div>
+            <div class="font-semibold text-blue-400">Linux</div>
+
+            <div>Command</div>
+            <div>tracert</div>
+            <div>traceroute</div>
+
+            <div>Default Protocol</div>
+            <div>ICMP</div>
+            <div>UDP</div>
+
+            <div>TCP Option</div>
+            <div>Limited</div>
+            <div>-T supported</div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="text-center text-gray-500 text-xs py-2 bg-gray-900 border-t border-gray-700">
+    Fullscreen Layout – No Vertical Scrolling
+</footer>
+
+</body>
+</html>
