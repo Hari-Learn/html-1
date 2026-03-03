@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How Tracert / Traceroute Works</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+<div class="max-w-6xl mx-auto px-6 py-12">
+
+    <!-- Header -->
+    <header class="text-center mb-16">
+        <h1 class="text-4xl font-bold text-blue-400 mb-4">How Tracert / Traceroute Works</h1>
+        <p class="text-gray-400 text-lg">Understanding network path discovery step by step</p>
+    </header>
+
+    <!-- 1. What is tracert -->
+    <section class="mb-16">
+        <h2 class="text-2xl font-semibold text-blue-300 mb-4">1. What is Tracert?</h2>
+        <p class="text-gray-300 leading-relaxed">
+            Tracert (Windows) or Traceroute (Linux/macOS) is a network diagnostic tool used to
+            track the path that packets take from your computer to a destination host.
+            It shows each hop (router) along the route and measures the delay between hops.
+        </p>
+
+        <div class="bg-gray-800 p-6 rounded-lg mt-6">
+            <p class="text-green-400 font-mono">Example:</p>
+            <pre class="text-sm mt-2 text-gray-300">
+C:\> tracert google.com
+1   1 ms   1 ms   2 ms   192.168.1.1
+2   10 ms  11 ms  9 ms   10.0.0.1
+3   30 ms  29 ms  31 ms  142.250.190.78
+            </pre>
+        </div>
+    </section>
+
+    <!-- 2. Core Concept -->
+    <section class="mb-16">
+        <h2 class="text-2xl font-semibold text-blue-300 mb-4">2. Core Concept</h2>
+        <p class="text-gray-300 leading-relaxed">
+            The core concept behind tracert/traceroute is the <span class="text-yellow-400 font-semibold">TTL (Time To Live)</span> field in the IP header.
+        </p>
+
+        <ul class="list-disc ml-8 mt-4 text-gray-300 space-y-2">
+            <li>Each packet has a TTL value.</li>
+            <li>Every router decreases TTL by 1.</li>
+            <li>When TTL reaches 0, the router drops the packet.</li>
+            <li>The router sends back an ICMP "Time Exceeded" message.</li>
+        </ul>
+    </section>
+
+    <!-- 3. Protocols Used -->
+    <section class="mb-16">
+        <h2 class="text-2xl font-semibold text-blue-300 mb-4">3. Protocols Used</h2>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-6">
+
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-yellow-400 mb-2">ICMP</h3>
+                <p class="text-gray-300 text-sm">
+                    Used by Windows tracert. Sends ICMP Echo Requests and receives ICMP Time Exceeded replies.
+                </p>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-yellow-400 mb-2">UDP</h3>
+                <p class="text-gray-300 text-sm">
+                    Default protocol for Linux traceroute. Sends UDP packets to high-numbered ports.
+                </p>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-yellow-400 mb-2">TCP</h3>
+                <p class="text-gray-300 text-sm">
+                    Optional method. Sends TCP SYN packets (useful when ICMP is blocked).
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. Step by Step Visual Timeline -->
+    <section class="mb-16">
+        <h2 class="text-2xl font-semibold text-blue-300 mb-8">4. Step-by-Step Process (Visual Timeline)</h2>
+
+        <div class="relative border-l-2 border-blue-500 ml-4">
+
+            <div class="mb-10 ml-6">
+                <span class="absolute -left-3 w-6 h-6 bg-blue-500 rounded-full"></span>
+                <h3 class="text-lg font-semibold text-blue-400">Step 1: TTL = 1</h3>
+                <p class="text-gray-300 text-sm">First router drops packet → sends ICMP Time Exceeded.</p>
+            </div>
+
+            <div class="mb-10 ml-6">
+                <span class="absolute -left-3 w-6 h-6 bg-blue-500 rounded-full"></span>
+                <h3 class="text-lg font-semibold text-blue-400">Step 2: TTL = 2</h3>
+                <p class="text-gray-300 text-sm">Second router drops packet → sends ICMP reply.</p>
+            </div>
+
+            <div class="mb-10 ml-6">
+                <span class="absolute -left-3 w-6 h-6 bg-blue-500 rounded-full"></span>
+                <h3 class="text-lg font-semibold text-blue-400">Continue Increasing TTL</h3>
+                <p class="text-gray-300 text-sm">Process continues until destination responds.</p>
+            </div>
+
+            <div class="ml-6">
+                <span class="absolute -left-3 w-6 h-6 bg-green-500 rounded-full"></span>
+                <h3 class="text-lg font-semibold text-green-400">Final Step: Destination Reached</h3>
+                <p class="text-gray-300 text-sm">Destination sends ICMP Echo Reply or Port Unreachable.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. RTT Measurement -->
+    <section class="mb-16">
+        <h2 class="text-2xl font-semibold text-blue-300 mb-4">5. RTT (Round Trip Time) Measurement</h2>
+        <p class="text-gray-300 leading-relaxed">
+            RTT is the time it takes for a packet to travel to a router and back.
+            Tracert typically sends 3 probes per hop and displays three RTT values.
+        </p>
+
+        <div class="bg-gray-800 p-6 rounded-lg mt-6">
+            <p class="text-gray-400 text-sm">
+                RTT = (Time Reply Received) - (Time Packet Sent)
+            </p>
+        </div>
+    </section>
+
+    <!-- 6. Asterisk Meaning -->
+    <section class="mb-16">
+        <h2 class="text-2xl font-semibold text-blue-300 mb-4">6. What Does * (Asterisk) Mean?</h2>
+        <ul class="list-disc ml-8 text-gray-300 space-y-2">
+            <li>Request timed out.</li>
+            <li>Router blocked ICMP responses.</li>
+            <li>Firewall filtering.</li>
+            <li>High latency or packet loss.</li>
+        </ul>
+
+        <div class="bg-gray-800 p-6 rounded-lg mt-6">
+            <pre class="text-sm text-gray-300">
+4   *   *   *   Request timed out.
+            </pre>
+        </div>
+    </section>
+
+    <!-- 7. Windows vs Linux Comparison -->
+    <section>
+        <h2 class="text-2xl font-semibold text-blue-300 mb-6">7. Windows vs Linux Comparison</h2>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-gray-800 rounded-lg overflow-hidden">
+                <thead class="bg-gray-700">
+                    <tr>
+                        <th class="py-3 px-4 text-left text-blue-300">Feature</th>
+                        <th class="py-3 px-4 text-left text-blue-300">Windows (tracert)</th>
+                        <th class="py-3 px-4 text-left text-blue-300">Linux (traceroute)</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-300">
+                    <tr class="border-t border-gray-700">
+                        <td class="py-3 px-4">Default Protocol</td>
+                        <td class="py-3 px-4">ICMP</td>
+                        <td class="py-3 px-4">UDP</td>
+                    </tr>
+                    <tr class="border-t border-gray-700">
+                        <td class="py-3 px-4">Command</td>
+                        <td class="py-3 px-4">tracert</td>
+                        <td class="py-3 px-4">traceroute</td>
+                    </tr>
+                    <tr class="border-t border-gray-700">
+                        <td class="py-3 px-4">TCP Option</td>
+                        <td class="py-3 px-4">Limited</td>
+                        <td class="py-3 px-4">Supported (-T)</td>
+                    </tr>
+                    <tr class="border-t border-gray-700">
+                        <td class="py-3 px-4">Install Required</td>
+                        <td class="py-3 px-4">No</td>
+                        <td class="py-3 px-4">Sometimes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-20 text-center text-gray-500 text-sm">
+        Educational page explaining how tracert / traceroute works.
+    </footer>
+
+</div>
+
+</body>
+</html>
