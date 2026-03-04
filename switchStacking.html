@@ -2,103 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Switch Stacking in CCNA</title>
+    <title>Switch Stacking - CCNA</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
 
-    <!-- Header -->
-    <header class="bg-indigo-600 text-white p-6 shadow-lg">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-3xl font-bold">Switch Stacking - CCNA</h1>
-            <p class="mt-2 text-indigo-100">Understanding Switch Stacking Concepts</p>
-        </div>
-    </header>
+<body class="h-screen overflow-hidden bg-gradient-to-br from-indigo-600 to-blue-700 text-white">
 
-    <!-- Main Content -->
-    <main class="max-w-5xl mx-auto p-6">
+    <div class="h-full flex flex-col">
 
-        <!-- Introduction -->
-        <section class="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h2 class="text-2xl font-semibold mb-3">What is Switch Stacking?</h2>
-            <p>
-                Switch stacking is a technology that allows multiple physical switches to operate
-                as a single logical switch. This simplifies management, improves redundancy,
-                and increases scalability in enterprise networks.
-            </p>
-        </section>
+        <!-- Header -->
+        <header class="text-center py-6">
+            <h1 class="text-4xl font-bold">Switch Stacking</h1>
+            <p class="text-indigo-200 mt-2">CCNA Networking Concept</p>
+        </header>
 
-        <!-- How It Works -->
-        <section class="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h2 class="text-2xl font-semibold mb-3">How Switch Stacking Works</h2>
-            <ul class="list-disc pl-6 space-y-2">
-                <li>Switches are connected using special stacking cables or stack ports.</li>
-                <li>One switch becomes the <strong>Master</strong>, others act as <strong>Members</strong>.</li>
-                <li>The stack shares a single control plane and management IP address.</li>
-                <li>Configuration is done on the master switch and applied to the entire stack.</li>
-            </ul>
-        </section>
+        <!-- Main Content -->
+        <main class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 px-8 pb-8">
 
-        <!-- Advantages -->
-        <section class="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h2 class="text-2xl font-semibold mb-3">Advantages of Switch Stacking</h2>
-            <ul class="list-disc pl-6 space-y-2">
-                <li>Simplified management (single IP address)</li>
-                <li>High availability and redundancy</li>
-                <li>Increased port density</li>
-                <li>Better scalability</li>
-            </ul>
-        </section>
-
-        <!-- Comparison -->
-        <section class="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h2 class="text-2xl font-semibold mb-3">Switch Stacking vs Standalone Switches</h2>
-            <div class="overflow-x-auto">
-                <table class="min-w-full border border-gray-200">
-                    <thead class="bg-gray-200">
-                        <tr>
-                            <th class="border px-4 py-2 text-left">Feature</th>
-                            <th class="border px-4 py-2 text-left">Switch Stacking</th>
-                            <th class="border px-4 py-2 text-left">Standalone Switch</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border px-4 py-2">Management</td>
-                            <td class="border px-4 py-2">Single IP</td>
-                            <td class="border px-4 py-2">Multiple IPs</td>
-                        </tr>
-                        <tr class="bg-gray-50">
-                            <td class="border px-4 py-2">Redundancy</td>
-                            <td class="border px-4 py-2">High</td>
-                            <td class="border px-4 py-2">Limited</td>
-                        </tr>
-                        <tr>
-                            <td class="border px-4 py-2">Scalability</td>
-                            <td class="border px-4 py-2">Easy expansion</td>
-                            <td class="border px-4 py-2">Manual configuration</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- What is Switch Stacking -->
+            <div class="bg-white text-gray-800 rounded-xl p-6 shadow-xl flex flex-col justify-center">
+                <h2 class="text-xl font-semibold mb-3 text-indigo-600">What is Switch Stacking?</h2>
+                <p class="text-sm leading-relaxed">
+                    Switch stacking allows multiple physical switches to operate as a 
+                    single logical switch. It simplifies management and increases 
+                    redundancy by using one control plane and one management IP address.
+                </p>
             </div>
-        </section>
 
-        <!-- Basic Configuration Example -->
-        <section class="bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold mb-3">Basic Verification Commands</h2>
-            <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
+            <!-- How It Works -->
+            <div class="bg-white text-gray-800 rounded-xl p-6 shadow-xl flex flex-col justify-center">
+                <h2 class="text-xl font-semibold mb-3 text-indigo-600">How It Works</h2>
+                <ul class="text-sm space-y-2 list-disc pl-5">
+                    <li>Connected using stacking cables</li>
+                    <li>One Master switch controls the stack</li>
+                    <li>Members share configuration</li>
+                    <li>Single management IP address</li>
+                </ul>
+            </div>
+
+            <!-- Advantages -->
+            <div class="bg-white text-gray-800 rounded-xl p-6 shadow-xl flex flex-col justify-center">
+                <h2 class="text-xl font-semibold mb-3 text-indigo-600">Advantages</h2>
+                <ul class="text-sm space-y-2 list-disc pl-5">
+                    <li>Simplified management</li>
+                    <li>High availability</li>
+                    <li>Increased port density</li>
+                    <li>Easy scalability</li>
+                </ul>
+            </div>
+
+            <!-- Commands -->
+            <div class="bg-gray-900 rounded-xl p-6 shadow-xl flex flex-col justify-center">
+                <h2 class="text-xl font-semibold mb-3 text-indigo-400">Verification Commands</h2>
+                <pre class="text-green-400 text-sm">
 show switch
 show switch stack-ports
 show version
-            </pre>
-        </section>
+                </pre>
+            </div>
 
-    </main>
+        </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center p-4 mt-6">
-        <p>CCNA Study Notes | Switch Stacking</p>
-    </footer>
+        <!-- Footer -->
+        <footer class="text-center py-3 text-indigo-200 text-sm">
+            CCNA Study Notes | Switch Stacking
+        </footer>
+
+    </div>
 
 </body>
 </html>
