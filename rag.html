@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG in LLM - Explained Like You're 10</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-4xl mx-auto p-8">
+
+    <h1 class="text-4xl font-bold text-center mb-6 text-blue-600">
+      What is RAG in LLM?
+    </h1>
+
+    <p class="text-center text-lg mb-10">
+      Explained Like You're 10 🧠
+    </p>
+
+    <div class="bg-white shadow-lg rounded-xl p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3">First: What is an LLM?</h2>
+      <p>
+        An <span class="font-semibold">LLM (Large Language Model)</span> is like a very smart robot
+        that has read a lot of books and websites. When you ask it a question, it tries to answer
+        using what it learned.
+      </p>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-xl p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3">The Problem 🤔</h2>
+      <p>
+        Sometimes the robot doesn't know the newest information.  
+        Or maybe the answer is in a special document it never read.
+      </p>
+      <p class="mt-2">
+        So it might guess... and guesses are not always correct.
+      </p>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-xl p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3">Enter RAG 🚀</h2>
+      <p>
+        <span class="font-semibold">RAG</span> stands for
+        <span class="text-blue-600 font-semibold">
+          Retrieval Augmented Generation
+        </span>.
+      </p>
+
+      <p class="mt-3">
+        Think of RAG like giving the robot a **search engine + notebook**
+        before it answers your question.
+      </p>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-xl p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3">How RAG Works (Simple Steps)</h2>
+
+      <ol class="list-decimal ml-6 space-y-2">
+        <li>You ask a question.</li>
+        <li>The system searches documents or a knowledge base.</li>
+        <li>It finds the most relevant information.</li>
+        <li>The LLM reads that information.</li>
+        <li>Then it generates a better answer.</li>
+      </ol>
+
+    </div>
+
+    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+      <h2 class="text-2xl font-semibold mb-3">Example 📚</h2>
+
+      <p>
+        Imagine asking:
+      </p>
+
+      <p class="italic mt-2">
+        "What are the rules of my school's science fair?"
+      </p>
+
+      <p class="mt-3">
+        A normal AI might not know.
+      </p>
+
+      <p class="mt-2">
+        But with <span class="font-semibold">RAG</span>, the system first
+        looks inside the **school handbook**, then answers using that information.
+      </p>
+    </div>
+
+    <div class="text-center mt-10 text-gray-500">
+      <p>
+        Simple idea:  
+        <span class="font-semibold text-gray-700">
+          Search first → then answer.
+        </span>
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
