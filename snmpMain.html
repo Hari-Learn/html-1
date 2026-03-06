@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNMP Main Components</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <div class="max-w-5xl mx-auto p-8">
+
+    <!-- Header -->
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-blue-600 mb-2">
+        SNMP Main Components
+      </h1>
+      <p class="text-gray-600">
+        Understanding the three main elements used in Simple Network Management Protocol.
+      </p>
+    </header>
+
+    <!-- Components Grid -->
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- SNMP Manager -->
+      <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
+        <div class="text-blue-500 text-3xl mb-4">🖥️</div>
+        <h2 class="text-xl font-semibold mb-2">SNMP Manager</h2>
+        <p class="text-gray-600">
+          The SNMP Manager is the central system responsible for monitoring
+          network devices. It sends requests to agents and collects device data
+          for analysis and management.
+        </p>
+      </div>
+
+      <!-- SNMP Agent -->
+      <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
+        <div class="text-green-500 text-3xl mb-4">📡</div>
+        <h2 class="text-xl font-semibold mb-2">SNMP Agent</h2>
+        <p class="text-gray-600">
+          The SNMP Agent is software installed on network devices like routers,
+          switches, and servers. It collects local device information and sends
+          it to the SNMP Manager when requested.
+        </p>
+      </div>
+
+      <!-- MIB -->
+      <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
+        <div class="text-purple-500 text-3xl mb-4">🗄️</div>
+        <h2 class="text-xl font-semibold mb-2">MIB</h2>
+        <p class="text-gray-600">
+          MIB stands for <strong>Management Information Base</strong>. It is a
+          structured database that stores information about network device
+          performance, configuration, and status.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Footer Note -->
+    <div class="mt-12 text-center text-gray-500">
+      CCNA Study Topic – SNMP Architecture
+    </div>
+
+  </div>
+
+</body>
+</html>
