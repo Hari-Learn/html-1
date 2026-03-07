@@ -1,94 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SDN Architecture - CCNA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDN Architecture - CCNA</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body class="bg-gray-100 font-sans">
 
-  <div class="max-w-6xl mx-auto px-6 py-10">
+<!-- Header -->
+<header class="bg-blue-600 text-white py-10">
+<div class="w-full px-8 text-center">
+<h1 class="text-4xl font-bold mb-2">
+Software-Defined Networking (SDN)
+</h1>
+<p class="text-lg opacity-90">
+Understanding the SDN architecture and its core networking layers
+</p>
+</div>
+</header>
 
-    <!-- Header -->
-    <header class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-blue-600 mb-3">
-        Software-Defined Networking (SDN)
-      </h1>
-      <p class="text-gray-600 text-lg">
-        SDN separates network control from hardware to allow centralized and programmable network management.
-      </p>
-    </header>
 
-    <!-- Intro Section -->
-    <div class="bg-white shadow-md rounded-xl p-6 mb-10">
-      <p class="text-gray-700 text-lg">
-        In <strong>SDN architecture</strong>, the network is controlled by a centralized controller instead of individual devices.
-        Network administrators can manage and automate the network more easily using software and APIs.
-      </p>
-    </div>
+<!-- Intro Section -->
+<section class="w-full px-8 py-10">
+<div class="bg-white rounded-xl shadow-lg p-8 text-center">
 
-    <!-- SDN Concepts -->
-    <h2 class="text-2xl font-semibold text-gray-800 mb-6">
-      Important SDN Concepts
-    </h2>
+<p class="text-lg text-gray-700 max-w-4xl mx-auto">
+Software-Defined Networking separates the network control logic from hardware devices.
+A centralized controller manages the network and communicates with devices using APIs.
+</p>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+</div>
+</section>
 
-      <!-- Control Plane -->
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold text-blue-500 mb-2">Control Plane</h3>
-        <p class="text-gray-600">
-          The control plane makes network decisions. In SDN, it is centralized
-          in the SDN controller instead of being inside each network device.
-        </p>
-      </div>
 
-      <!-- Data Plane -->
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold text-blue-500 mb-2">Data Plane</h3>
-        <p class="text-gray-600">
-          The data plane forwards packets through the network.
-          It follows instructions from the SDN controller.
-        </p>
-      </div>
+<!-- Layered Cards Section -->
+<section class="w-full px-8 pb-14">
 
-      <!-- Overlay / Underlay -->
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold text-blue-500 mb-2">Overlay / Underlay Networks</h3>
-        <p class="text-gray-600">
-          The underlay network is the physical infrastructure.
-          The overlay network is a virtual network built on top of the underlay.
-        </p>
-      </div>
+<h2 class="text-2xl font-bold mb-8 text-center">
+Important SDN Concepts
+</h2>
 
-      <!-- Northbound APIs -->
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold text-blue-500 mb-2">Northbound APIs</h3>
-        <p class="text-gray-600">
-          Northbound APIs allow communication between applications
-          and the SDN controller.
-        </p>
-      </div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- Southbound APIs -->
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold text-blue-500 mb-2">Southbound APIs</h3>
-        <p class="text-gray-600">
-          Southbound APIs connect the SDN controller to network devices
-          such as switches and routers.
-        </p>
-      </div>
+<!-- Control Plane -->
+<div class="bg-white rounded-xl shadow-lg p-7 hover:shadow-xl transition">
 
-    </div>
+<div class="text-blue-500 text-4xl mb-4">
+<i class="fa-solid fa-brain"></i>
+</div>
 
-    <!-- Footer -->
-    <footer class="text-center text-gray-500 mt-12">
-      CCNA Study Topic — SDN Architecture
-    </footer>
+<h3 class="text-xl font-semibold mb-2">
+Control Plane
+</h3>
 
-  </div>
+<p class="text-gray-600">
+The control plane decides how packets move through the network.
+In SDN this logic is centralized in the SDN controller.
+</p>
+
+</div>
+
+
+<!-- Data Plane -->
+<div class="bg-white rounded-xl shadow-lg p-7 hover:shadow-xl transition">
+
+<div class="text-green-500 text-4xl mb-4">
+<i class="fa-solid fa-network-wired"></i>
+</div>
+
+<h3 class="text-xl font-semibold mb-2">
+Data Plane
+</h3>
+
+<p class="text-gray-600">
+The data plane is responsible for forwarding packets between devices
+based on rules from the controller.
+</p>
+
+</div>
+
+
+<!-- Overlay / Underlay -->
+<div class="bg-white rounded-xl shadow-lg p-7 hover:shadow-xl transition">
+
+<div class="text-purple-500 text-4xl mb-4">
+<i class="fa-solid fa-layer-group"></i>
+</div>
+
+<h3 class="text-xl font-semibold mb-2">
+Overlay / Underlay Networks
+</h3>
+
+<p class="text-gray-600">
+The underlay network is the physical infrastructure.
+The overlay network is a virtual network running on top of the physical network.
+</p>
+
+</div>
+
+
+<!-- Northbound APIs -->
+<div class="bg-white rounded-xl shadow-lg p-7 hover:shadow-xl transition">
+
+<div class="text-orange-500 text-4xl mb-4">
+<i class="fa-solid fa-arrow-up"></i>
+</div>
+
+<h3 class="text-xl font-semibold mb-2">
+Northbound APIs
+</h3>
+
+<p class="text-gray-600">
+Northbound APIs allow applications and management systems
+to communicate with the SDN controller.
+</p>
+
+</div>
+
+
+<!-- Southbound APIs -->
+<div class="bg-white rounded-xl shadow-lg p-7 hover:shadow-xl transition">
+
+<div class="text-red-500 text-4xl mb-4">
+<i class="fa-solid fa-arrow-down"></i>
+</div>
+
+<h3 class="text-xl font-semibold mb-2">
+Southbound APIs
+</h3>
+
+<p class="text-gray-600">
+Southbound APIs connect the SDN controller with
+network devices like routers and switches.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white text-center py-6">
+<p class="opacity-80">
+CCNA Networking Study — SDN Architecture
+</p>
+</footer>
+
 
 </body>
 </html>
