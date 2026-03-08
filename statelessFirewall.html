@@ -1,127 +1,191 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stateful vs Stateless Firewall</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stateful vs Stateless Firewall</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Icons -->
+<script src="https://unpkg.com/heroicons@2.0.18/dist/heroicons.min.js"></script>
+
 </head>
-<body class="bg-gray-100 text-gray-800">
 
-  <!-- Header -->
-  <header class="bg-blue-600 text-white py-6 shadow">
-    <div class="max-w-6xl mx-auto px-4">
-      <h1 class="text-3xl font-bold">Stateful Firewall vs Stateless Firewall</h1>
-      <p class="mt-2 text-blue-100">Understanding the key differences in network security</p>
-    </div>
-  </header>
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- Intro -->
-  <section class="max-w-6xl mx-auto px-4 py-8">
-    <div class="bg-white p-6 rounded-lg shadow">
-      <h2 class="text-2xl font-semibold mb-3">Introduction</h2>
-      <p>
-        Firewalls are essential components in network security. They monitor and control incoming and outgoing
-        traffic based on predefined security rules. Two major types of firewalls are
-        <strong>Stateful Firewalls</strong> and <strong>Stateless Firewalls</strong>.
-      </p>
-    </div>
-  </section>
+<!-- HERO -->
+<section class="w-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-10 items-center">
 
-  <!-- Comparison -->
-  <section class="max-w-6xl mx-auto px-4 pb-10">
-    <div class="grid md:grid-cols-2 gap-6">
+<div>
+<h1 class="text-5xl font-bold leading-tight mb-6">
+Stateful vs Stateless Firewall
+</h1>
+<p class="text-lg text-blue-100 mb-6">
+Understand how modern firewalls protect networks by analyzing traffic,
+connections, and packet rules. Learn the differences between stateful
+and stateless firewall architectures.
+</p>
 
-      <!-- Stateful -->
-      <div class="bg-white p-6 rounded-lg shadow border-t-4 border-green-500">
-        <h2 class="text-xl font-bold mb-3 text-green-600">Stateful Firewall</h2>
-        <p class="mb-4">
-          A stateful firewall monitors the state of active connections and makes decisions
-          based on the context of the traffic.
-        </p>
+<div class="flex gap-4">
+<span class="bg-white/20 px-4 py-2 rounded-lg">Network Security</span>
+<span class="bg-white/20 px-4 py-2 rounded-lg">Firewall Types</span>
+<span class="bg-white/20 px-4 py-2 rounded-lg">Cyber Defense</span>
+</div>
+</div>
 
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Tracks active network connections</li>
-          <li>Analyzes packet context and session information</li>
-          <li>More secure due to connection tracking</li>
-          <li>Higher resource usage</li>
-          <li>Common in modern enterprise networks</li>
-        </ul>
+<div class="flex justify-center">
+<div class="bg-white/10 backdrop-blur-md p-10 rounded-2xl text-center">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 mx-auto text-white"
+fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+d="M12 11c0-1.657 1.343-3 3-3h3v6h-3c-1.657 0-3-1.343-3-3zM12 11V7m0 4v4m0 0c0 1.657-1.343 3-3 3H6v-6h3c1.657 0 3 1.343 3 3z"/>
+</svg>
+<p class="mt-4 text-lg font-semibold">Firewall Protection</p>
+</div>
+</div>
 
-        <div class="mt-4 p-3 bg-green-50 rounded">
-          <p><strong>Example:</strong> If a user sends a request to a web server, the firewall remembers the session and allows the response automatically.</p>
-        </div>
-      </div>
+</div>
+</section>
 
-      <!-- Stateless -->
-      <div class="bg-white p-6 rounded-lg shadow border-t-4 border-red-500">
-        <h2 class="text-xl font-bold mb-3 text-red-600">Stateless Firewall</h2>
-        <p class="mb-4">
-          A stateless firewall filters packets individually based only on predefined rules
-          such as source IP, destination IP, and port numbers.
-        </p>
 
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Does not track connection state</li>
-          <li>Examines each packet independently</li>
-          <li>Faster and uses fewer resources</li>
-          <li>Less secure compared to stateful firewalls</li>
-          <li>Used in simple or high-speed filtering environments</li>
-        </ul>
+<!-- FIREWALL TYPES -->
+<section class="w-full py-20 bg-white">
+<div class="max-w-7xl mx-auto px-8">
 
-        <div class="mt-4 p-3 bg-red-50 rounded">
-          <p><strong>Example:</strong> Each packet is checked against rules even if it belongs to an existing connection.</p>
-        </div>
-      </div>
+<h2 class="text-4xl font-bold text-center mb-14">
+Firewall Types
+</h2>
 
-    </div>
-  </section>
+<div class="grid md:grid-cols-2 gap-10">
 
-  <!-- Table -->
-  <section class="max-w-6xl mx-auto px-4 pb-12">
-    <div class="bg-white p-6 rounded-lg shadow">
-      <h2 class="text-2xl font-semibold mb-4">Key Differences</h2>
+<!-- STATEFUL -->
+<div class="bg-green-50 border border-green-200 rounded-2xl p-8 hover:shadow-xl transition">
 
-      <div class="overflow-x-auto">
-        <table class="w-full border border-gray-200">
-          <thead class="bg-gray-200">
-            <tr>
-              <th class="p-3 text-left">Feature</th>
-              <th class="p-3 text-left">Stateful Firewall</th>
-              <th class="p-3 text-left">Stateless Firewall</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-t">
-              <td class="p-3">Connection Tracking</td>
-              <td class="p-3">Yes</td>
-              <td class="p-3">No</td>
-            </tr>
-            <tr class="border-t">
-              <td class="p-3">Security Level</td>
-              <td class="p-3">Higher</td>
-              <td class="p-3">Lower</td>
-            </tr>
-            <tr class="border-t">
-              <td class="p-3">Performance</td>
-              <td class="p-3">Moderate</td>
-              <td class="p-3">High</td>
-            </tr>
-            <tr class="border-t">
-              <td class="p-3">Packet Inspection</td>
-              <td class="p-3">Context-aware</td>
-              <td class="p-3">Rule-based only</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
+<div class="flex items-center gap-4 mb-6">
+<div class="bg-green-500 p-3 rounded-xl text-white">
+🔐
+</div>
+<h3 class="text-2xl font-bold text-green-700">
+Stateful Firewall
+</h3>
+</div>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-300 text-center py-4">
-    <p>Network Security Basics | Stateful vs Stateless Firewall</p>
-  </footer>
+<p class="mb-6 text-gray-700">
+A stateful firewall tracks active connections and makes filtering
+decisions based on the state of the network traffic and sessions.
+</p>
+
+<ul class="space-y-3 text-gray-700">
+<li>✔ Tracks active network sessions</li>
+<li>✔ Remembers connection state</li>
+<li>✔ Provides stronger security</li>
+<li>✔ Used in enterprise networks</li>
+<li>✔ Analyzes packet context</li>
+</ul>
+
+</div>
+
+<!-- STATELESS -->
+<div class="bg-red-50 border border-red-200 rounded-2xl p-8 hover:shadow-xl transition">
+
+<div class="flex items-center gap-4 mb-6">
+<div class="bg-red-500 p-3 rounded-xl text-white">
+⚡
+</div>
+<h3 class="text-2xl font-bold text-red-700">
+Stateless Firewall
+</h3>
+</div>
+
+<p class="mb-6 text-gray-700">
+A stateless firewall filters packets individually using rules such as
+IP address, port number, and protocol without tracking connections.
+</p>
+
+<ul class="space-y-3 text-gray-700">
+<li>✔ No session tracking</li>
+<li>✔ Each packet checked independently</li>
+<li>✔ Faster performance</li>
+<li>✔ Lower resource usage</li>
+<li>✔ Used in simple filtering systems</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- COMPARISON -->
+<section class="w-full py-20 bg-gray-100">
+<div class="max-w-7xl mx-auto px-8">
+
+<h2 class="text-4xl font-bold text-center mb-12">
+Firewall Comparison
+</h2>
+
+<div class="overflow-x-auto">
+
+<table class="w-full bg-white rounded-xl overflow-hidden shadow">
+
+<thead class="bg-indigo-600 text-white">
+<tr>
+<th class="p-4 text-left">Feature</th>
+<th class="p-4 text-left">Stateful Firewall</th>
+<th class="p-4 text-left">Stateless Firewall</th>
+</tr>
+</thead>
+
+<tbody class="text-gray-700">
+
+<tr class="border-b">
+<td class="p-4 font-semibold">Connection Tracking</td>
+<td class="p-4 text-green-600">Yes</td>
+<td class="p-4 text-red-600">No</td>
+</tr>
+
+<tr class="border-b">
+<td class="p-4 font-semibold">Security Level</td>
+<td class="p-4">High</td>
+<td class="p-4">Lower</td>
+</tr>
+
+<tr class="border-b">
+<td class="p-4 font-semibold">Performance</td>
+<td class="p-4">Moderate</td>
+<td class="p-4">Very Fast</td>
+</tr>
+
+<tr class="border-b">
+<td class="p-4 font-semibold">Packet Inspection</td>
+<td class="p-4">Context-aware</td>
+<td class="p-4">Rule-based only</td>
+</tr>
+
+<tr>
+<td class="p-4 font-semibold">Use Case</td>
+<td class="p-4">Enterprise networks</td>
+<td class="p-4">High-speed filtering</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-400 py-8 text-center">
+<p>Network Security Concepts • Stateful vs Stateless Firewall</p>
+</footer>
 
 </body>
 </html>
+```
