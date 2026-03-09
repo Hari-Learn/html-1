@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overlay vs Underlay Network Virtualization</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-6 shadow">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-3xl font-bold">Overlay vs Underlay Network Virtualization</h1>
+      <p class="text-sm mt-1">Understanding Virtual Topology and Physical Connectivity</p>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto p-6 space-y-10">
+
+    <!-- Network Virtualization -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-3">Network Virtualization</h2>
+      <p>
+        Network virtualization is the process of creating multiple virtual networks
+        on top of a shared physical network infrastructure. It allows organizations
+        to logically divide a network so that multiple users or applications can run
+        independently without affecting each other.
+      </p>
+      <p class="mt-3">
+        Technologies such as VXLAN, GRE, and SDN controllers are commonly used
+        to implement network virtualization in modern data centers and cloud environments.
+      </p>
+    </section>
+
+    <!-- Underlay Network -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-green-600 mb-3">Underlay Network</h2>
+      <p>
+        The underlay network refers to the physical network infrastructure that
+        connects devices. It includes routers, switches, cables, and IP routing
+        that provide the basic connectivity between all devices in the network.
+      </p>
+      <ul class="list-disc ml-6 mt-3">
+        <li>Consists of physical routers and switches</li>
+        <li>Provides IP connectivity</li>
+        <li>Handles packet forwarding between devices</li>
+        <li>Usually built using traditional routing protocols</li>
+      </ul>
+    </section>
+
+    <!-- Overlay Network -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-3">Overlay Network</h2>
+      <p>
+        The overlay network is a virtual network created on top of the underlay
+        network. It uses tunneling protocols to connect virtual machines or
+        containers across the physical network.
+      </p>
+      <ul class="list-disc ml-6 mt-3">
+        <li>Built on top of the underlay network</li>
+        <li>Creates logical connections between endpoints</li>
+        <li>Uses tunneling protocols such as VXLAN</li>
+        <li>Provides network isolation and flexibility</li>
+      </ul>
+    </section>
+
+    <!-- Virtual Topology -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-indigo-600 mb-3">Virtual Topology</h2>
+      <p>
+        Virtual topology refers to the logical layout of devices within the
+        overlay network. It defines how virtual machines, containers, or
+        applications communicate with each other regardless of their
+        physical location in the data center.
+      </p>
+      <p class="mt-3">
+        For example, two virtual machines located in different physical servers
+        may appear directly connected in a virtual network.
+      </p>
+    </section>
+
+    <!-- Physical Connectivity -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-red-600 mb-3">Physical Connectivity</h2>
+      <p>
+        Physical connectivity represents the real-world connections between
+        networking devices using cables, switches, and routers. This is part
+        of the underlay network and ensures that data packets can travel
+        across the infrastructure.
+      </p>
+      <ul class="list-disc ml-6 mt-3">
+        <li>Uses Ethernet cables and fiber links</li>
+        <li>Connects switches, routers, and servers</li>
+        <li>Provides the foundation for overlay networks</li>
+      </ul>
+    </section>
+
+    <!-- Comparison -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">Overlay vs Underlay</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border border-gray-300">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="p-3 border">Feature</th>
+              <th class="p-3 border">Underlay Network</th>
+              <th class="p-3 border">Overlay Network</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-3 border">Type</td>
+              <td class="p-3 border">Physical infrastructure</td>
+              <td class="p-3 border">Virtual network</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="p-3 border">Components</td>
+              <td class="p-3 border">Routers, switches, cables</td>
+              <td class="p-3 border">Tunnels, virtual switches</td>
+            </tr>
+            <tr>
+              <td class="p-3 border">Purpose</td>
+              <td class="p-3 border">Provide connectivity</td>
+              <td class="p-3 border">Create logical networks</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="p-3 border">Example Technology</td>
+              <td class="p-3 border">IP Routing</td>
+              <td class="p-3 border">VXLAN, GRE</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4 mt-10">
+    <p>Network Virtualization Concepts | Tailwind CSS Demo Page</p>
+  </footer>
+
+</body>
+</html>
