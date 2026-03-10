@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VMware ESXi vs Hyper-V</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-700 text-white py-6 shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-3xl font-bold">VMware ESXi vs Microsoft Hyper-V</h1>
+      <p class="text-blue-100 mt-2">A quick comparison of two popular hypervisors used in virtualization.</p>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <h2 class="text-2xl font-semibold mb-4">Overview</h2>
+    <p class="text-gray-600 leading-relaxed">
+      Virtualization allows multiple operating systems to run on a single physical machine.
+      Two of the most widely used hypervisors are <strong>VMware ESXi</strong> and
+      <strong>Microsoft Hyper-V</strong>. Both provide enterprise-grade virtualization but differ
+      in architecture, ecosystem, licensing, and management tools.
+    </p>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="max-w-6xl mx-auto px-4 pb-10">
+    <h2 class="text-2xl font-semibold mb-6">Feature Comparison</h2>
+
+    <div class="overflow-x-auto">
+      <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
+        <thead class="bg-gray-200">
+          <tr>
+            <th class="text-left p-4 font-semibold">Feature</th>
+            <th class="text-left p-4 font-semibold">VMware ESXi</th>
+            <th class="text-left p-4 font-semibold">Microsoft Hyper-V</th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y">
+          <tr>
+            <td class="p-4 font-medium">Type</td>
+            <td class="p-4">Type-1 Bare Metal Hypervisor</td>
+            <td class="p-4">Type-1 Hypervisor (runs on Windows Server)</td>
+          </tr>
+
+          <tr>
+            <td class="p-4 font-medium">Vendor</td>
+            <td class="p-4">VMware</td>
+            <td class="p-4">Microsoft</td>
+          </tr>
+
+          <tr>
+            <td class="p-4 font-medium">Management Tool</td>
+            <td class="p-4">vCenter Server</td>
+            <td class="p-4">Hyper-V Manager / System Center</td>
+          </tr>
+
+          <tr>
+            <td class="p-4 font-medium">Operating System Dependency</td>
+            <td class="p-4">Independent OS (bare metal)</td>
+            <td class="p-4">Integrated with Windows Server</td>
+          </tr>
+
+          <tr>
+            <td class="p-4 font-medium">Live Migration</td>
+            <td class="p-4">vMotion</td>
+            <td class="p-4">Live Migration</td>
+          </tr>
+
+          <tr>
+            <td class="p-4 font-medium">Storage Features</td>
+            <td class="p-4">VMFS, vSAN</td>
+            <td class="p-4">Storage Spaces Direct</td>
+          </tr>
+
+          <tr>
+            <td class="p-4 font-medium">Ecosystem</td>
+            <td class="p-4">Large enterprise ecosystem</td>
+            <td class="p-4">Strong integration with Microsoft tools</td>
+          </tr>
+
+          <tr>
+            <td class="p-4 font-medium">Licensing</td>
+            <td class="p-4">Commercial licensing</td>
+            <td class="p-4">Included with Windows Server</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Pros Section -->
+  <section class="max-w-6xl mx-auto px-4 pb-12 grid md:grid-cols-2 gap-6">
+
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <h3 class="text-xl font-semibold mb-4 text-blue-700">Advantages of VMware ESXi</h3>
+      <ul class="list-disc pl-5 text-gray-600 space-y-2">
+        <li>Highly mature and stable virtualization platform</li>
+        <li>Advanced features like DRS, HA, and vMotion</li>
+        <li>Strong enterprise ecosystem and third-party integrations</li>
+        <li>Excellent performance and scalability</li>
+      </ul>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <h3 class="text-xl font-semibold mb-4 text-green-700">Advantages of Hyper-V</h3>
+      <ul class="list-disc pl-5 text-gray-600 space-y-2">
+        <li>Tight integration with Windows Server</li>
+        <li>Cost-effective for Microsoft environments</li>
+        <li>Easy management with familiar Windows tools</li>
+        <li>Strong integration with Azure cloud services</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-6">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p>Virtualization Comparison Page • VMware ESXi vs Hyper-V</p>
+    </div>
+  </footer>
+
+</body>
+</html>
