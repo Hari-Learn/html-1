@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KVM Virtualization Guide</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+<header class="bg-blue-700 text-white py-10">
+<div class="max-w-6xl mx-auto px-6 text-center">
+<h1 class="text-4xl font-bold">KVM Virtualization</h1>
+<p class="mt-3 text-lg">Understanding Kernel-based Virtual Machine</p>
+</div>
+</header>
+
+<main class="max-w-6xl mx-auto px-6 py-10 space-y-12">
+
+<!-- What is KVM -->
+<section>
+<h2 class="text-2xl font-semibold mb-4">What is KVM?</h2>
+<p class="leading-relaxed text-gray-700">
+KVM (Kernel-based Virtual Machine) is a virtualization technology built directly
+into the Linux kernel. It turns Linux into a hypervisor, allowing the system to
+run multiple virtual machines (VMs). Each VM behaves like a real computer with
+its own CPU, memory, storage, and network.
+</p>
+
+<p class="mt-4 leading-relaxed text-gray-700">
+KVM is widely used in cloud platforms, enterprise infrastructure, and
+virtualization environments because of its high performance and integration
+with the Linux ecosystem.
+</p>
+</section>
+
+<!-- How KVM Works -->
+<section>
+<h2 class="text-2xl font-semibold mb-4">How KVM Works</h2>
+
+<div class="bg-white p-6 rounded-lg shadow-md">
+<ul class="list-disc ml-6 space-y-3">
+<li>The Linux kernel includes the KVM module.</li>
+<li>Hardware virtualization features like Intel VT-x or AMD-V are used.</li>
+<li>Each virtual machine runs as a regular Linux process.</li>
+<li>QEMU is typically used alongside KVM to provide hardware emulation.</li>
+<li>Resource allocation (CPU, RAM, disk) is handled by the host OS.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- Architecture -->
+<section>
+<h2 class="text-2xl font-semibold mb-4">KVM Architecture</h2>
+
+<div class="bg-white border rounded-lg p-6">
+<p class="mb-4">The virtualization stack typically looks like this:</p>
+
+<div class="space-y-3 text-center">
+<div class="bg-gray-200 py-3 rounded">Guest Operating Systems</div>
+<div class="bg-gray-300 py-3 rounded">Virtual Machines</div>
+<div class="bg-blue-200 py-3 rounded">QEMU (Hardware Emulator)</div>
+<div class="bg-blue-300 py-3 rounded">KVM Kernel Module</div>
+<div class="bg-gray-400 py-3 rounded">Linux Host Operating System</div>
+<div class="bg-gray-500 text-white py-3 rounded">Physical Hardware</div>
+</div>
+
+</div>
+</section>
+
+<!-- Features -->
+<section>
+<h2 class="text-2xl font-semibold mb-4">Key Features of KVM</h2>
+
+<div class="grid md:grid-cols-2 gap-6">
+
+<div class="bg-white p-6 rounded-lg shadow">
+<h3 class="font-semibold text-lg mb-2">High Performance</h3>
+<p>KVM uses hardware virtualization features from modern CPUs to achieve near-native performance.</p>
+</div>
+
+<div class="bg-white p-6 rounded-lg shadow">
+<h3 class="font-semibold text-lg mb-2">Security</h3>
+<p>Each virtual machine is isolated like a separate Linux process, improving security and stability.</p>
+</div>
+
+<div class="bg-white p-6 rounded-lg shadow">
+<h3 class="font-semibold text-lg mb-2">Scalability</h3>
+<p>KVM can scale to large data centers and cloud environments.</p>
+</div>
+
+<div class="bg-white p-6 rounded-lg shadow">
+<h3 class="font-semibold text-lg mb-2">Open Source</h3>
+<p>KVM is completely open source and part of the Linux kernel.</p>
+</div>
+
+</div>
+</section>
+
+<!-- Pros and Cons -->
+<section>
+<h2 class="text-2xl font-semibold mb-6">Pros and Cons</h2>
+
+<div class="grid md:grid-cols-2 gap-6">
+
+<div class="bg-green-50 border p-6 rounded-lg">
+<h3 class="text-lg font-semibold mb-3">Advantages</h3>
+<ul class="list-disc ml-5 space-y-2">
+<li>Near-native performance</li>
+<li>Open-source and free</li>
+<li>Highly customizable</li>
+<li>Strong security isolation</li>
+<li>Used by major cloud providers</li>
+</ul>
+</div>
+
+<div class="bg-red-50 border p-6 rounded-lg">
+<h3 class="text-lg font-semibold mb-3">Disadvantages</h3>
+<ul class="list-disc ml-5 space-y-2">
+<li>Requires Linux knowledge</li>
+<li>No built-in graphical interface</li>
+<li>Manual configuration may be needed</li>
+<li>Management tools must be installed separately</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<!-- When KVM is Used -->
+<section>
+<h2 class="text-2xl font-semibold mb-4">When is KVM Used?</h2>
+
+<div class="grid md:grid-cols-2 gap-6">
+
+<div class="bg-white p-6 rounded-lg shadow">
+<h3 class="font-semibold text-lg mb-2">Cloud Infrastructure</h3>
+<p>Many cloud platforms use KVM as the base virtualization technology.</p>
+</div>
+
+<div class="bg-white p-6 rounded-lg shadow">
+<h3 class="font-semibold text-lg mb-2">Enterprise Servers</h3>
+<p>Organizations run multiple workloads efficiently on a single physical server.</p>
+</div>
+
+<div class="bg-white p-6 rounded-lg shadow">
+<h3 class="font-semibold text-lg mb-2">Development & Testing</h3>
+<p>Developers can create isolated virtual environments.</p>
+</div>
+
+<div class="bg-white p-6 rounded-lg shadow">
+<h3 class="font-semibold text-lg mb-2">Virtualized Data Centers</h3>
+<p>KVM enables efficient hardware utilization in data centers.</p>
+</div>
+
+</div>
+</section>
+
+</main>
+
+<footer class="bg-gray-900 text-gray-400 text-center py-6">
+<p>KVM Virtualization Guide</p>
+</footer>
+
+</body>
+</html>
