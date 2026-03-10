@@ -3,105 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>VMware ESXi vs Hyper-V</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/feather-icons"></script>
 
+<script>
+tailwind.config = {
+  darkMode: 'class'
+}
+</script>
+
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition duration-300">
 
 <!-- Header -->
-<header class="bg-gradient-to-r from-blue-700 to-indigo-700 text-white py-10">
-<div class="max-w-6xl mx-auto px-6 text-center">
+<header class="bg-gradient-to-r from-blue-700 to-indigo-700 text-white py-8">
+<div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
 
-<h1 class="text-4xl font-bold mb-3">
-VMware ESXi vs Microsoft Hyper-V
-</h1>
+<div>
+<h1 class="text-3xl font-bold">VMware ESXi vs Hyper-V</h1>
+<p class="text-blue-100">Virtualization Platform Comparison</p>
+</div>
 
-<p class="text-blue-100 text-lg">
-A Modern Virtualization Platform Comparison
-</p>
+<!-- Dark Mode Button -->
+<button onclick="toggleDark()" class="bg-white/20 px-4 py-2 rounded-lg hover:bg-white/30 flex items-center">
+<i data-feather="moon" class="w-5 h-5 mr-2"></i>
+Dark Mode
+</button>
 
 </div>
 </header>
 
 
-<!-- Platform Cards -->
-<section class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-8">
+<!-- Toggle Section -->
+<section class="max-w-5xl mx-auto px-6 py-12 text-center">
 
-<!-- ESXi Card -->
-<div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition">
+<h2 class="text-2xl font-bold mb-6">Compare Platforms</h2>
+
+<div class="inline-flex bg-gray-200 dark:bg-gray-700 rounded-lg p-1">
+
+<button id="btn-esxi"
+onclick="showPlatform('esxi')"
+class="px-6 py-2 rounded-lg bg-white dark:bg-gray-800 shadow font-medium">
+VMware ESXi
+</button>
+
+<button id="btn-hyperv"
+onclick="showPlatform('hyperv')"
+class="px-6 py-2 rounded-lg font-medium">
+Hyper-V
+</button>
+
+</div>
+
+</section>
+
+
+<!-- Comparison Content -->
+<section class="max-w-5xl mx-auto px-6 pb-14">
+
+<!-- ESXi -->
+<div id="esxi" class="platform bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg transition-all duration-500">
 
 <div class="flex items-center mb-4">
 <i data-feather="server" class="text-blue-600 w-8 h-8"></i>
 <h2 class="text-2xl font-semibold ml-3">VMware ESXi</h2>
 </div>
 
-<p class="text-gray-600 mb-4">
-VMware ESXi is a bare-metal hypervisor installed directly on hardware,
-delivering enterprise-grade virtualization and advanced management tools.
+<p class="mb-4 text-gray-600 dark:text-gray-300">
+VMware ESXi is a bare-metal hypervisor installed directly on physical hardware.
+It provides enterprise-level virtualization with powerful management through vCenter.
 </p>
 
-<ul class="space-y-2 text-gray-700">
+<ul class="space-y-3">
+
 <li class="flex items-center">
-<i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>
-Bare-metal architecture
+<i data-feather="check-circle" class="text-green-500 mr-2"></i>
+Type-1 Bare Metal Hypervisor
 </li>
 
 <li class="flex items-center">
-<i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>
+<i data-feather="check-circle" class="text-green-500 mr-2"></i>
 vMotion live migration
 </li>
 
 <li class="flex items-center">
-<i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>
+<i data-feather="check-circle" class="text-green-500 mr-2"></i>
 vCenter centralized management
 </li>
 
 <li class="flex items-center">
-<i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>
-Large enterprise ecosystem
+<i data-feather="check-circle" class="text-green-500 mr-2"></i>
+Advanced enterprise ecosystem
 </li>
+
 </ul>
 
 </div>
 
 
-<!-- Hyper-V Card -->
-<div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition">
+<!-- Hyper-V -->
+<div id="hyperv" class="platform hidden bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg transition-all duration-500">
 
 <div class="flex items-center mb-4">
 <i data-feather="cpu" class="text-green-600 w-8 h-8"></i>
 <h2 class="text-2xl font-semibold ml-3">Microsoft Hyper-V</h2>
 </div>
 
-<p class="text-gray-600 mb-4">
+<p class="mb-4 text-gray-600 dark:text-gray-300">
 Hyper-V is Microsoft's virtualization platform built into Windows Server
-and tightly integrated with Microsoft ecosystem tools.
+and designed for seamless integration with the Microsoft ecosystem.
 </p>
 
-<ul class="space-y-2 text-gray-700">
+<ul class="space-y-3">
+
 <li class="flex items-center">
-<i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>
+<i data-feather="check-circle" class="text-green-500 mr-2"></i>
 Integrated with Windows Server
 </li>
 
 <li class="flex items-center">
-<i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>
-Live migration capability
+<i data-feather="check-circle" class="text-green-500 mr-2"></i>
+Live Migration support
 </li>
 
 <li class="flex items-center">
-<i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>
-Hyper-V Manager
+<i data-feather="check-circle" class="text-green-500 mr-2"></i>
+Hyper-V Manager & System Center
 </li>
 
 <li class="flex items-center">
-<i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>
+<i data-feather="check-circle" class="text-green-500 mr-2"></i>
 Azure cloud integration
 </li>
+
 </ul>
 
 </div>
@@ -110,103 +148,35 @@ Azure cloud integration
 
 
 <!-- Feature Highlights -->
-<section class="bg-white py-14">
+<section class="max-w-6xl mx-auto px-6 pb-16">
 
-<div class="max-w-6xl mx-auto px-6">
-
-<h2 class="text-3xl font-bold text-center mb-10">
-Key Virtualization Features
-</h2>
+<h2 class="text-3xl font-bold text-center mb-10">Key Features</h2>
 
 <div class="grid md:grid-cols-3 gap-8">
 
-<!-- Feature -->
-<div class="bg-gray-50 p-6 rounded-lg text-center">
-<i data-feather="zap" class="mx-auto text-blue-600 w-10 h-10 mb-4"></i>
-<h3 class="font-semibold text-lg mb-2">Performance</h3>
-<p class="text-gray-600">
-Both platforms provide high-performance virtualization optimized for enterprise workloads.
+<div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow text-center">
+<i data-feather="zap" class="mx-auto text-blue-600 w-10 h-10 mb-3"></i>
+<h3 class="font-semibold mb-2">Performance</h3>
+<p class="text-gray-600 dark:text-gray-300">
+Optimized virtualization performance for enterprise workloads.
 </p>
 </div>
 
-<!-- Feature -->
-<div class="bg-gray-50 p-6 rounded-lg text-center">
-<i data-feather="shield" class="mx-auto text-blue-600 w-10 h-10 mb-4"></i>
-<h3 class="font-semibold text-lg mb-2">Security</h3>
-<p class="text-gray-600">
-Advanced VM isolation, encryption, and security features protect workloads.
+<div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow text-center">
+<i data-feather="shield" class="mx-auto text-blue-600 w-10 h-10 mb-3"></i>
+<h3 class="font-semibold mb-2">Security</h3>
+<p class="text-gray-600 dark:text-gray-300">
+VM isolation, encryption, and enterprise security features.
 </p>
 </div>
 
-<!-- Feature -->
-<div class="bg-gray-50 p-6 rounded-lg text-center">
-<i data-feather="cloud" class="mx-auto text-blue-600 w-10 h-10 mb-4"></i>
-<h3 class="font-semibold text-lg mb-2">Cloud Integration</h3>
-<p class="text-gray-600">
-Hyper-V integrates with Azure while VMware integrates with VMware Cloud.
+<div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow text-center">
+<i data-feather="cloud" class="mx-auto text-blue-600 w-10 h-10 mb-3"></i>
+<h3 class="font-semibold mb-2">Cloud</h3>
+<p class="text-gray-600 dark:text-gray-300">
+VMware Cloud vs Microsoft Azure integration.
 </p>
 </div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- Comparison Table -->
-<section class="max-w-6xl mx-auto px-6 py-14">
-
-<h2 class="text-3xl font-bold text-center mb-10">
-Detailed Comparison
-</h2>
-
-<div class="overflow-x-auto">
-
-<table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
-
-<thead class="bg-gray-200">
-<tr>
-<th class="p-4 text-left">Feature</th>
-<th class="p-4 text-left">VMware ESXi</th>
-<th class="p-4 text-left">Hyper-V</th>
-</tr>
-</thead>
-
-<tbody class="divide-y">
-
-<tr>
-<td class="p-4 font-medium">Hypervisor Type</td>
-<td class="p-4">Type-1 Bare Metal</td>
-<td class="p-4">Type-1 on Windows Server</td>
-</tr>
-
-<tr>
-<td class="p-4 font-medium">Management</td>
-<td class="p-4">vCenter Server</td>
-<td class="p-4">Hyper-V Manager</td>
-</tr>
-
-<tr>
-<td class="p-4 font-medium">Live Migration</td>
-<td class="p-4">vMotion</td>
-<td class="p-4">Live Migration</td>
-</tr>
-
-<tr>
-<td class="p-4 font-medium">Storage</td>
-<td class="p-4">VMFS, vSAN</td>
-<td class="p-4">Storage Spaces Direct</td>
-</tr>
-
-<tr>
-<td class="p-4 font-medium">Licensing</td>
-<td class="p-4">Commercial VMware License</td>
-<td class="p-4">Included with Windows Server</td>
-</tr>
-
-</tbody>
-
-</table>
 
 </div>
 
@@ -215,11 +185,39 @@ Detailed Comparison
 
 <!-- Footer -->
 <footer class="bg-gray-900 text-gray-400 text-center py-6">
-<p>Virtualization Technology Comparison • VMware ESXi vs Hyper-V</p>
+<p>Virtualization Technology Comparison • ESXi vs Hyper-V</p>
 </footer>
 
+
+
 <script>
+
 feather.replace()
+
+function showPlatform(platform){
+
+document.querySelectorAll('.platform').forEach(el=>{
+el.classList.add('hidden')
+})
+
+document.getElementById(platform).classList.remove('hidden')
+
+document.getElementById("btn-esxi").classList.remove("bg-white","dark:bg-gray-800","shadow")
+document.getElementById("btn-hyperv").classList.remove("bg-white","dark:bg-gray-800","shadow")
+
+if(platform==="esxi"){
+document.getElementById("btn-esxi").classList.add("bg-white","dark:bg-gray-800","shadow")
+}else{
+document.getElementById("btn-hyperv").classList.add("bg-white","dark:bg-gray-800","shadow")
+}
+
+}
+
+
+function toggleDark(){
+document.documentElement.classList.toggle('dark')
+}
+
 </script>
 
 </body>
