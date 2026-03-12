@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM vs RAG</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white py-10">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h1 class="text-4xl font-bold mb-2">LLM vs RAG</h1>
+      <p class="text-lg opacity-90">Understanding the difference between Large Language Models and Retrieval-Augmented Generation</p>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="max-w-5xl mx-auto px-6 py-10">
+    <p class="text-lg text-gray-600">
+      Modern AI applications often use either <span class="font-semibold text-indigo-600">Large Language Models (LLMs)</span> 
+      or <span class="font-semibold text-indigo-600">Retrieval-Augmented Generation (RAG)</span>. 
+      While both generate text responses, they differ in how they obtain knowledge.
+    </p>
+  </section>
+
+  <!-- Comparison -->
+  <section class="max-w-5xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-8">
+
+    <!-- LLM Card -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 border">
+      <h2 class="text-2xl font-bold text-indigo-600 mb-4">Large Language Model (LLM)</h2>
+      <p class="text-gray-600 mb-4">
+        An LLM is a neural network trained on massive datasets to understand and generate human-like text.
+      </p>
+
+      <h3 class="font-semibold mb-2">Key Characteristics</h3>
+      <ul class="list-disc pl-5 text-gray-600 space-y-1">
+        <li>Knowledge comes from training data</li>
+        <li>No real-time access to external data</li>
+        <li>Fast text generation</li>
+        <li>May produce outdated or hallucinated answers</li>
+      </ul>
+
+      <h3 class="font-semibold mt-4 mb-2">Example Use Cases</h3>
+      <ul class="list-disc pl-5 text-gray-600 space-y-1">
+        <li>Content writing</li>
+        <li>Chatbots</li>
+        <li>Code generation</li>
+      </ul>
+    </div>
+
+    <!-- RAG Card -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 border">
+      <h2 class="text-2xl font-bold text-green-600 mb-4">Retrieval-Augmented Generation (RAG)</h2>
+      <p class="text-gray-600 mb-4">
+        RAG combines an LLM with a retrieval system that fetches relevant documents before generating an answer.
+      </p>
+
+      <h3 class="font-semibold mb-2">Key Characteristics</h3>
+      <ul class="list-disc pl-5 text-gray-600 space-y-1">
+        <li>Uses external knowledge sources</li>
+        <li>Retrieves documents before answering</li>
+        <li>More accurate for domain-specific data</li>
+        <li>Answers can be grounded in real documents</li>
+      </ul>
+
+      <h3 class="font-semibold mt-4 mb-2">Example Use Cases</h3>
+      <ul class="list-disc pl-5 text-gray-600 space-y-1">
+        <li>Company knowledge assistants</li>
+        <li>Document Q&A systems</li>
+        <li>Customer support bots</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- Table -->
+  <section class="max-w-5xl mx-auto px-6 py-10">
+    <h2 class="text-2xl font-bold mb-6 text-center">LLM vs RAG Comparison</h2>
+
+    <div class="overflow-x-auto">
+      <table class="w-full bg-white shadow rounded-xl overflow-hidden">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="text-left p-4">Feature</th>
+            <th class="text-left p-4">LLM</th>
+            <th class="text-left p-4">RAG</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y">
+          <tr>
+            <td class="p-4 font-medium">Knowledge Source</td>
+            <td class="p-4">Training Data</td>
+            <td class="p-4">External Documents + LLM</td>
+          </tr>
+          <tr>
+            <td class="p-4 font-medium">Real-Time Data</td>
+            <td class="p-4">No</td>
+            <td class="p-4">Yes</td>
+          </tr>
+          <tr>
+            <td class="p-4 font-medium">Accuracy</td>
+            <td class="p-4">May hallucinate</td>
+            <td class="p-4">Grounded in retrieved data</td>
+          </tr>
+          <tr>
+            <td class="p-4 font-medium">Best For</td>
+            <td class="p-4">General language tasks</td>
+            <td class="p-4">Knowledge-based applications</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-10">
+    <p>AI Concepts • LLM vs RAG</p>
+  </footer>
+
+</body>
+</html>
