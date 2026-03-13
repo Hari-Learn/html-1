@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Publish Subscribe</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+<nav class="bg-teal-600 text-white p-4">
+  <div class="container mx-auto flex gap-6">
+    <a href="message-queue.html">Message Queue</a>
+    <a href="publish-subscribe.html" class="font-bold">Publish-Subscribe</a>
+    <a href="api-gateway.html">API Gateway</a>
+  </div>
+</nav>
+
+<div class="container mx-auto p-10">
+  <h1 class="text-4xl font-bold mb-6">Publish–Subscribe</h1>
+
+  <p class="text-lg mb-4">
+    Publish–Subscribe (Pub/Sub) is a messaging pattern where publishers send messages
+    without knowing the receivers, and subscribers receive messages based on topics.
+  </p>
+
+  <div class="bg-white p-6 rounded-lg shadow">
+    <h2 class="text-2xl font-semibold mb-3">How It Works</h2>
+
+    <ul class="list-disc pl-6 space-y-2">
+      <li>Publisher sends a message to a topic</li>
+      <li>Message broker distributes it</li>
+      <li>Subscribers listening to the topic receive the message</li>
+      <li>Multiple subscribers can receive the same message</li>
+    </ul>
+  </div>
+
+  <div class="bg-white p-6 rounded-lg shadow mt-6">
+    <h2 class="text-2xl font-semibold mb-3">Advantages</h2>
+
+    <ul class="list-disc pl-6 space-y-2">
+      <li>Loose coupling between systems</li>
+      <li>Scalable event-driven architecture</li>
+      <li>Real-time data updates</li>
+      <li>Supports multiple consumers</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
