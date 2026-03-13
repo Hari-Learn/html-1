@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Message Queue</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+<nav class="bg-indigo-600 text-white p-4">
+  <div class="container mx-auto flex gap-6">
+    <a href="message-queue.html" class="font-bold">Message Queue</a>
+    <a href="publish-subscribe.html">Publish-Subscribe</a>
+    <a href="api-gateway.html">API Gateway</a>
+  </div>
+</nav>
+
+<div class="container mx-auto p-10">
+  <h1 class="text-4xl font-bold mb-6">Message Queue</h1>
+
+  <p class="text-lg mb-4">
+    A message queue is a communication method where messages are stored in a queue
+    until they are processed by another service or application.
+  </p>
+
+  <div class="bg-white p-6 rounded-lg shadow">
+    <h2 class="text-2xl font-semibold mb-3">How It Works</h2>
+    <ul class="list-disc pl-6 space-y-2">
+      <li>Producer sends a message to the queue</li>
+      <li>The message waits in the queue</li>
+      <li>Consumer processes the message when ready</li>
+      <li>This allows asynchronous communication</li>
+    </ul>
+  </div>
+
+  <div class="bg-white p-6 rounded-lg shadow mt-6">
+    <h2 class="text-2xl font-semibold mb-3">Benefits</h2>
+    <ul class="list-disc pl-6 space-y-2">
+      <li>Decouples services</li>
+      <li>Improves reliability</li>
+      <li>Handles high traffic loads</li>
+      <li>Supports asynchronous processing</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
