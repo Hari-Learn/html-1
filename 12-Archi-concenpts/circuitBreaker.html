@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Circuit Breaker Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+<header class="bg-blue-600 text-white p-6 text-center">
+  <h1 class="text-3xl font-bold">Circuit Breaker Pattern</h1>
+  <p class="text-lg">Improving reliability in distributed systems</p>
+</header>
+
+<section class="max-w-4xl mx-auto p-6">
+
+  <div class="bg-white shadow-lg rounded-lg p-6 mb-6">
+    <h2 class="text-2xl font-semibold mb-3">What is Circuit Breaker?</h2>
+    <p class="text-gray-700">
+      The Circuit Breaker pattern prevents an application from repeatedly trying to execute an operation
+      that is likely to fail. It works like an electrical circuit breaker that stops the flow of current
+      when a fault occurs.
+    </p>
+  </div>
+
+  <div class="bg-white shadow-lg rounded-lg p-6 mb-6">
+    <h2 class="text-2xl font-semibold mb-3">How It Works</h2>
+    <ul class="list-disc ml-6 text-gray-700">
+      <li>Closed State – Requests flow normally</li>
+      <li>Open State – Requests are blocked after repeated failures</li>
+      <li>Half-Open State – Allows limited requests to test recovery</li>
+    </ul>
+  </div>
+
+  <div class="bg-white shadow-lg rounded-lg p-6">
+    <h2 class="text-2xl font-semibold mb-3">Benefits</h2>
+    <ul class="list-disc ml-6 text-gray-700">
+      <li>Prevents cascading failures</li>
+      <li>Improves system stability</li>
+      <li>Allows failing services time to recover</li>
+    </ul>
+  </div>
+
+</section>
+
+</body>
+</html>
