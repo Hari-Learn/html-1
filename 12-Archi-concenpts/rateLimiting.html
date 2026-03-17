@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rate Limiting</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+<header class="bg-blue-600 text-white p-6 shadow">
+  <h1 class="text-3xl font-bold">Rate Limiting</h1>
+  <p class="text-sm opacity-90">Controlling request traffic to protect systems</p>
+</header>
+
+<main class="max-w-5xl mx-auto mt-8 p-6 bg-white rounded-xl shadow">
+
+  <section class="mb-6">
+    <h2 class="text-2xl font-semibold text-blue-600 mb-2">What is Rate Limiting?</h2>
+    <p class="text-gray-700">
+      Rate limiting is a technique used in APIs and distributed systems to limit
+      the number of requests a client can make within a specific time window.
+    </p>
+  </section>
+
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">Why It Is Important</h2>
+    <ul class="list-disc pl-6 text-gray-700 space-y-1">
+      <li>Prevents server overload</li>
+      <li>Protects against abuse or DDoS attacks</li>
+      <li>Ensures fair usage among clients</li>
+      <li>Improves system stability</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold mb-2">Common Algorithms</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="p-4 bg-gray-100 rounded-lg">
+        <h3 class="font-bold">Token Bucket</h3>
+        <p class="text-sm text-gray-600">Allows bursts while controlling long-term rate.</p>
+      </div>
+
+      <div class="p-4 bg-gray-100 rounded-lg">
+        <h3 class="font-bold">Leaky Bucket</h3>
+        <p class="text-sm text-gray-600">Processes requests at a constant rate.</p>
+      </div>
+
+      <div class="p-4 bg-gray-100 rounded-lg">
+        <h3 class="font-bold">Fixed Window</h3>
+        <p class="text-sm text-gray-600">Counts requests in fixed time intervals.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
