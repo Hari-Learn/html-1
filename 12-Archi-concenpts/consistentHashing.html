@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Consistent Hashing</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+<header class="bg-green-600 text-white p-6 shadow">
+<h1 class="text-3xl font-bold">Consistent Hashing</h1>
+<p class="text-sm opacity-90">Efficient data distribution in distributed systems</p>
+</header>
+
+<main class="max-w-5xl mx-auto mt-8 p-6 bg-white rounded-xl shadow">
+
+<section class="mb-6">
+<h2 class="text-2xl font-semibold text-green-600 mb-2">What is Consistent Hashing?</h2>
+<p class="text-gray-700">
+Consistent hashing distributes data across multiple servers such that
+minimal data is moved when servers are added or removed.
+</p>
+</section>
+
+<section class="mb-6">
+<h2 class="text-xl font-semibold mb-2">How It Works</h2>
+<ul class="list-disc pl-6 text-gray-700 space-y-1">
+<li>Both servers and keys are hashed</li>
+<li>Placed on a circular hash ring</li>
+<li>Each key is stored on the next server clockwise</li>
+</ul>
+</section>
+
+<section>
+<h2 class="text-xl font-semibold mb-2">Benefits</h2>
+
+<div class="grid md:grid-cols-3 gap-4">
+
+<div class="bg-gray-100 p-4 rounded-lg">
+<h3 class="font-bold">Scalable</h3>
+<p class="text-sm text-gray-600">Easy to add or remove servers.</p>
+</div>
+
+<div class="bg-gray-100 p-4 rounded-lg">
+<h3 class="font-bold">Minimal Rehashing</h3>
+<p class="text-sm text-gray-600">Only small amount of data moves.</p>
+</div>
+
+<div class="bg-gray-100 p-4 rounded-lg">
+<h3 class="font-bold">Load Distribution</h3>
+<p class="text-sm text-gray-600">Helps balance data across nodes.</p>
+</div>
+
+</div>
+</section>
+
+</main>
+
+</body>
+</html>
