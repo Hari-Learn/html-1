@@ -2,38 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pipeline Pattern</title>
+  <title>Publish-Subscribe Architecture</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
 <div class="max-w-4xl mx-auto p-6">
-  <h1 class="text-3xl font-bold mb-4 text-blue-600">Pipeline Design Pattern</h1>
+  <h1 class="text-3xl font-bold mb-4 text-purple-600">Publish-Subscribe Architecture</h1>
 
   <p class="mb-4">
-    The Pipeline Pattern divides a process into a sequence of stages where each stage processes data and passes it to the next.
+    Publish-Subscribe (Pub/Sub) is a messaging pattern where publishers send messages without knowing subscribers, and subscribers receive messages based on topics.
   </p>
 
   <div class="bg-white shadow rounded p-4 mb-4">
     <h2 class="text-xl font-semibold mb-2">Key Concepts</h2>
     <ul class="list-disc pl-6 space-y-2">
-      <li>Data flows through multiple stages</li>
-      <li>Each stage performs a specific transformation</li>
-      <li>Stages are loosely coupled</li>
+      <li>Decoupled communication</li>
+      <li>Message broker handles delivery</li>
+      <li>Topics or channels for routing</li>
     </ul>
   </div>
 
   <div class="bg-white shadow rounded p-4 mb-4">
-    <h2 class="text-xl font-semibold mb-2">Example Flow</h2>
-    <p>Input → Validation → Processing → Output</p>
+    <h2 class="text-xl font-semibold mb-2">Components</h2>
+    <ul class="list-disc pl-6">
+      <li>Publisher</li>
+      <li>Subscriber</li>
+      <li>Broker (e.g., Kafka, RabbitMQ)</li>
+    </ul>
   </div>
 
-  <div class="bg-blue-100 p-4 rounded">
+  <div class="bg-purple-100 p-4 rounded">
     <h2 class="font-semibold mb-2">Use Cases</h2>
     <ul class="list-disc pl-6">
-      <li>Data processing pipelines</li>
-      <li>ETL systems</li>
-      <li>Streaming applications</li>
+      <li>Event-driven systems</li>
+      <li>Real-time notifications</li>
+      <li>Microservices communication</li>
     </ul>
   </div>
 </div>
