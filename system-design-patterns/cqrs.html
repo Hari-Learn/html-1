@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CQRS Explained</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 p-10 font-sans">
+  <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
+    <h1 class="text-3xl font-bold text-blue-600 mb-4">CQRS (ELI10)</h1>
+
+    <h2 class="text-xl font-semibold mt-4">🧠 What is it?</h2>
+    <p class="mt-2">CQRS means splitting how you <b>read data</b> and how you <b>write data</b> into two separate parts.</p>
+
+    <h2 class="text-xl font-semibold mt-4">❓ Why use it?</h2>
+    <p class="mt-2">
+      Imagine a library:
+      <br>📖 Reading books = very common
+      <br>✍️ Writing books = rare
+      <br><br>
+      If both happen in the same place, things get slow!
+      So we separate them to make everything faster.
+    </p>
+
+    <h2 class="text-xl font-semibold mt-4">⚙️ How does it work?</h2>
+    <p class="mt-2">
+      👉 One system handles <b>Commands (write)</b><br>
+      👉 Another system handles <b>Queries (read)</b>
+    </p>
+
+    <div class="mt-4 p-4 bg-blue-100 rounded-lg">
+      🧸 Think of it like:
+      <br>🍳 Kitchen (write food)
+      <br>🍽️ Dining table (read/eat food)
+    </div>
+  </div>
+</body>
+</html>
