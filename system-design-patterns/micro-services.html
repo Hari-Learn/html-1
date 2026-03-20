@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,25 +6,128 @@
   <title>Microservices Architecture</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-8">
 
-  <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-2xl p-6">
-    <h1 class="text-3xl font-bold mb-4 text-purple-600">Microservices Architecture</h1>
+<body class="bg-gray-100">
 
-    <p class="mb-6 text-gray-700">
-      An approach where applications are built as small, independent services.
+  <!-- NAVBAR -->
+  <nav class="bg-purple-600 text-white p-4 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between">
+      <h1 class="font-bold text-lg">System Design</h1>
+      <div class="space-x-4">
+        <a href="#" class="hover:underline">Client-Server</a>
+        <a href="#" class="hover:underline">P2P</a>
+        <a href="#" class="underline font-semibold">Microservices</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <div class="max-w-5xl mx-auto p-6">
+
+    <h2 class="text-3xl font-bold text-purple-600 mb-4">
+      Microservices Architecture Flow
+    </h2>
+
+    <p class="text-gray-700 mb-6">
+      Step-by-step flow of how a request moves through a microservices system.
     </p>
 
-    <div class="space-y-4">
-      <div class="p-4 bg-purple-50 rounded-lg">1️⃣ Receive request</div>
-      <div class="p-4 bg-purple-50 rounded-lg">2️⃣ API Gateway routes request</div>
-      <div class="p-4 bg-purple-50 rounded-lg">3️⃣ Service handles feature</div>
-      <div class="p-4 bg-purple-50 rounded-lg">4️⃣ Call dependencies</div>
-      <div class="p-4 bg-purple-50 rounded-lg">5️⃣ Publish events</div>
-      <div class="p-4 bg-purple-50 rounded-lg">6️⃣ Return response</div>
+    <!-- DIAGRAM -->
+    <div class="bg-white p-6 rounded-xl shadow-md overflow-x-auto">
+
+      <svg viewBox="0 0 900 200" class="w-full">
+
+        <!-- Boxes -->
+        <g id="step1" class="opacity-30">
+          <rect x="10" y="60" width="120" height="60" rx="10" class="fill-purple-200"/>
+          <text x="70" y="95" text-anchor="middle" class="text-sm fill-black">Client Request</text>
+        </g>
+
+        <g id="step2" class="opacity-30">
+          <rect x="150" y="60" width="120" height="60" rx="10" class="fill-purple-200"/>
+          <text x="210" y="95" text-anchor="middle">API Gateway</text>
+        </g>
+
+        <g id="step3" class="opacity-30">
+          <rect x="290" y="60" width="140" height="60" rx="10" class="fill-purple-200"/>
+          <text x="360" y="95" text-anchor="middle">Service</text>
+        </g>
+
+        <g id="step4" class="opacity-30">
+          <rect x="450" y="60" width="140" height="60" rx="10" class="fill-purple-200"/>
+          <text x="520" y="95" text-anchor="middle">Dependencies</text>
+        </g>
+
+        <g id="step5" class="opacity-30">
+          <rect x="610" y="60" width="140" height="60" rx="10" class="fill-purple-200"/>
+          <text x="680" y="95" text-anchor="middle">Events</text>
+        </g>
+
+        <g id="step6" class="opacity-30">
+          <rect x="770" y="60" width="120" height="60" rx="10" class="fill-purple-200"/>
+          <text x="830" y="95" text-anchor="middle">Response</text>
+        </g>
+
+        <!-- Arrows -->
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="black" />
+          </marker>
+        </defs>
+
+        <line x1="130" y1="90" x2="150" y2="90" stroke="black" marker-end="url(#arrow)" />
+        <line x1="270" y1="90" x2="290" y2="90" stroke="black" marker-end="url(#arrow)" />
+        <line x1="430" y1="90" x2="450" y2="90" stroke="black" marker-end="url(#arrow)" />
+        <line x1="590" y1="90" x2="610" y2="90" stroke="black" marker-end="url(#arrow)" />
+        <line x1="750" y1="90" x2="770" y2="90" stroke="black" marker-end="url(#arrow)" />
+
+      </svg>
     </div>
+
+    <!-- STEPS -->
+    <div class="mt-8 space-y-3">
+      <div class="step p-4 bg-purple-50 rounded-lg">1️⃣ Receive request</div>
+      <div class="step p-4 bg-purple-50 rounded-lg">2️⃣ API Gateway routes request</div>
+      <div class="step p-4 bg-purple-50 rounded-lg">3️⃣ Service handles feature</div>
+      <div class="step p-4 bg-purple-50 rounded-lg">4️⃣ Call dependencies</div>
+      <div class="step p-4 bg-purple-50 rounded-lg">5️⃣ Publish events</div>
+      <div class="step p-4 bg-purple-50 rounded-lg">6️⃣ Return response</div>
+    </div>
+
+    <!-- BUTTON -->
+    <button onclick="startFlow()" 
+      class="mt-6 bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700">
+      ▶ Start Animation
+    </button>
 
   </div>
 
+  <!-- SCRIPT -->
+  <script>
+    const steps = ["step1","step2","step3","step4","step5","step6"];
+
+    function reset() {
+      steps.forEach(id => {
+        document.getElementById(id).style.opacity = "0.3";
+      });
+    }
+
+    function highlight(step) {
+      document.getElementById(step).style.opacity = "1";
+    }
+
+    async function startFlow() {
+      reset();
+      for (let i = 0; i < steps.length; i++) {
+        highlight(steps[i]);
+        await new Promise(r => setTimeout(r, 800));
+      }
+    }
+
+    // Auto run on load
+    window.onload = startFlow;
+  </script>
+
 </body>
 </html>
+```
