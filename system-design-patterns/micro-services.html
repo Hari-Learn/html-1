@@ -21,26 +21,20 @@
     </div>
   </nav>
 
-  <!-- MAIN -->
   <div class="max-w-5xl mx-auto p-6">
 
     <h2 class="text-3xl font-bold text-purple-600 mb-4">
       Microservices Architecture Flow
     </h2>
 
-    <p class="text-gray-700 mb-6">
-      Step-by-step flow of how a request moves through a microservices system.
-    </p>
-
     <!-- DIAGRAM -->
     <div class="bg-white p-6 rounded-xl shadow-md overflow-x-auto">
-
       <svg viewBox="0 0 900 200" class="w-full">
 
-        <!-- Boxes -->
+        <!-- BOXES -->
         <g id="step1" class="opacity-30">
           <rect x="10" y="60" width="120" height="60" rx="10" class="fill-purple-200"/>
-          <text x="70" y="95" text-anchor="middle" class="text-sm fill-black">Client Request</text>
+          <text x="70" y="95" text-anchor="middle">Client</text>
         </g>
 
         <g id="step2" class="opacity-30">
@@ -68,7 +62,7 @@
           <text x="830" y="95" text-anchor="middle">Response</text>
         </g>
 
-        <!-- Arrows -->
+        <!-- ARROWS -->
         <defs>
           <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
             <path d="M0,0 L10,5 L0,10 Z" fill="black" />
@@ -84,30 +78,28 @@
       </svg>
     </div>
 
-    <!-- STEPS -->
-    <div class="mt-8 space-y-3">
-      <div class="step p-4 bg-purple-50 rounded-lg">1️⃣ Receive request</div>
-      <div class="step p-4 bg-purple-50 rounded-lg">2️⃣ API Gateway routes request</div>
-      <div class="step p-4 bg-purple-50 rounded-lg">3️⃣ Service handles feature</div>
-      <div class="step p-4 bg-purple-50 rounded-lg">4️⃣ Call dependencies</div>
-      <div class="step p-4 bg-purple-50 rounded-lg">5️⃣ Publish events</div>
-      <div class="step p-4 bg-purple-50 rounded-lg">6️⃣ Return response</div>
-    </div>
+    <!-- BUTTONS -->
+    <div class="mt-6 flex gap-4">
+      <button onclick="startForward()" 
+        class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700">
+        ▶ Forward Flow
+      </button>
 
-    <!-- BUTTON -->
-    <button onclick="startFlow()" 
-      class="mt-6 bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700">
-      ▶ Start Animation
-    </button>
+      <button onclick="startReverse()" 
+        class="bg-gray-700 text-white px-6 py-2 rounded-lg hover:bg-gray-800">
+        🔄 Reverse Flow
+      </button>
+    </div>
 
   </div>
 
   <!-- SCRIPT -->
   <script>
-    const steps = ["step1","step2","step3","step4","step5","step6"];
+    const forward = ["step1","step2","step3","step4","step5","step6"];
+    const reverse = [...forward].reverse();
 
     function reset() {
-      steps.forEach(id => {
+      forward.forEach(id => {
         document.getElementById(id).style.opacity = "0.3";
       });
     }
@@ -116,16 +108,24 @@
       document.getElementById(step).style.opacity = "1";
     }
 
-    async function startFlow() {
+    async function startForward() {
       reset();
-      for (let i = 0; i < steps.length; i++) {
-        highlight(steps[i]);
-        await new Promise(r => setTimeout(r, 800));
+      for (let i = 0; i < forward.length; i++) {
+        highlight(forward[i]);
+        await new Promise(r => setTimeout(r, 700));
       }
     }
 
-    // Auto run on load
-    window.onload = startFlow;
+    async function startReverse() {
+      reset();
+      for (let i = 0; i < reverse.length; i++) {
+        highlight(reverse[i]);
+        await new Promise(r => setTimeout(r, 700));
+      }
+    }
+
+    // Auto run forward on load
+    window.onload = startForward;
   </script>
 
 </body>
