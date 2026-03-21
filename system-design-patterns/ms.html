@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microservices Architecture</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white p-6 shadow-md">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-3xl font-bold">Microservices Architecture</h1>
+      <p class="mt-2 text-lg">Understanding Modern System Design</p>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto p-6 space-y-10">
+
+    <!-- What is Microservices -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-3">What is Microservices?</h2>
+      <p class="leading-relaxed">
+        Microservices is an architectural style where an application is built as a collection 
+        of small, independent services. Each service focuses on a specific business function 
+        and communicates with others via APIs.
+      </p>
+    </section>
+
+    <!-- ELI10 -->
+    <section class="bg-yellow-100 p-5 rounded-xl shadow">
+      <h2 class="text-2xl font-semibold mb-3">ELI10 (Explain Like I'm 10)</h2>
+      <p>
+        Imagine a big restaurant kitchen 🍳:
+      </p>
+      <ul class="list-disc pl-6 mt-2 space-y-2">
+        <li><strong>Monolithic:</strong> One chef does everything — cooking, billing, cleaning.</li>
+        <li><strong>Microservices:</strong> Many chefs — one cooks, one serves, one handles billing.</li>
+      </ul>
+      <p class="mt-2">
+        If one chef is slow, the whole system slows down. But with many chefs, work happens faster and independently.
+      </p>
+    </section>
+
+    <!-- Why Microservices -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-3">Why Microservices?</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Applications grow large and complex</li>
+        <li>Need for faster development and deployment</li>
+        <li>Different teams working independently</li>
+        <li>Better scalability and fault isolation</li>
+      </ul>
+    </section>
+
+    <!-- How it Works -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-3">How Microservices Work</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Application is split into small services</li>
+        <li>Each service has its own database (optional)</li>
+        <li>Services communicate via APIs (REST, messaging)</li>
+        <li>Deployed independently</li>
+      </ul>
+    </section>
+
+    <!-- Monolith vs Microservices -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Monolithic vs Microservices</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        
+        <div class="bg-white p-5 rounded-xl shadow">
+          <h3 class="text-xl font-bold mb-2 text-red-600">Monolithic</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Single large codebase</li>
+            <li>Tightly coupled components</li>
+            <li>Hard to scale specific parts</li>
+            <li>One failure can affect entire system</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl shadow">
+          <h3 class="text-xl font-bold mb-2 text-green-600">Microservices</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Multiple small services</li>
+            <li>Loosely coupled</li>
+            <li>Scale services independently</li>
+            <li>Failures are isolated</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Migration -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-3">How It Solves Monolithic Problems</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Breaks large systems into manageable pieces</li>
+        <li>Allows independent deployments</li>
+        <li>Improves scalability by scaling only needed parts</li>
+        <li>Reduces risk of total system failure</li>
+      </ul>
+    </section>
+
+    <!-- Advantages -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-3 text-green-700">Advantages</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>High scalability</li>
+        <li>Faster development cycles</li>
+        <li>Technology flexibility</li>
+        <li>Better fault isolation</li>
+      </ul>
+    </section>
+
+    <!-- Disadvantages -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-3 text-red-700">Disadvantages</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Complex system management</li>
+        <li>Network latency issues</li>
+        <li>Harder debugging</li>
+        <li>Data consistency challenges</li>
+        <li>Requires DevOps maturity</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4">
+    <p>© 2026 Microservices Guide</p>
+  </footer>
+
+</body>
+</html>
