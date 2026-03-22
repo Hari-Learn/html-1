@@ -2,37 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CQRS Explained</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-blue-50 p-10 font-sans">
-  <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
-    <h1 class="text-3xl font-bold text-blue-600 mb-4">CQRS (ELI10)</h1>
+<body class="bg-gray-100 text-gray-800">
 
-    <h2 class="text-xl font-semibold mt-4">🧠 What is it?</h2>
-    <p class="mt-2">CQRS means splitting how you <b>read data</b> and how you <b>write data</b> into two separate parts.</p>
-
-    <h2 class="text-xl font-semibold mt-4">❓ Why use it?</h2>
-    <p class="mt-2">
-      Imagine a library:
-      <br>📖 Reading books = very common
-      <br>✍️ Writing books = rare
-      <br><br>
-      If both happen in the same place, things get slow!
-      So we separate them to make everything faster.
-    </p>
-
-    <h2 class="text-xl font-semibold mt-4">⚙️ How does it work?</h2>
-    <p class="mt-2">
-      👉 One system handles <b>Commands (write)</b><br>
-      👉 Another system handles <b>Queries (read)</b>
-    </p>
-
-    <div class="mt-4 p-4 bg-blue-100 rounded-lg">
-      🧸 Think of it like:
-      <br>🍳 Kitchen (write food)
-      <br>🍽️ Dining table (read/eat food)
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white py-6 shadow-md">
+    <div class="max-w-5xl mx-auto px-4">
+      <h1 class="text-3xl font-bold">CQRS Architecture</h1>
+      <p class="mt-2 text-indigo-100">Command Query Responsibility Segregation</p>
     </div>
-  </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 py-10">
+
+    <!-- Intro -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4">What is CQRS?</h2>
+      <p class="text-lg leading-relaxed">
+        CQRS (Command Query Responsibility Segregation) is a design pattern that separates 
+        read operations (queries) from write operations (commands). This separation allows 
+        systems to scale, optimize, and evolve independently for reading and writing data.
+      </p>
+    </section>
+
+    <!-- Cards -->
+    <section class="grid md:grid-cols-2 gap-6 mb-10">
+
+      <!-- Command -->
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-bold text-indigo-600 mb-3">Command Side</h3>
+        <p class="mb-3">
+          Handles all write operations like creating, updating, or deleting data.
+        </p>
+        <ul class="list-disc pl-5 space-y-1 text-sm">
+          <li>Changes system state</li>
+          <li>Validates business rules</li>
+          <li>No data returned (or minimal)</li>
+        </ul>
+      </div>
+
+      <!-- Query -->
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-bold text-green-600 mb-3">Query Side</h3>
+        <p class="mb-3">
+          Responsible for retrieving data without modifying it.
+        </p>
+        <ul class="list-disc pl-5 space-y-1 text-sm">
+          <li>Read-only operations</li>
+          <li>Optimized for performance</li>
+          <li>Returns DTOs or view models</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Diagram Style Section -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4">How CQRS Works</h2>
+      <div class="bg-white p-6 rounded-2xl shadow text-center">
+        <p class="mb-4">User Interaction Flow:</p>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-sm">
+          <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full">Client</span>
+          <span>→</span>
+          <span class="bg-red-100 text-red-700 px-4 py-2 rounded-full">Command API</span>
+          <span>→</span>
+          <span class="bg-gray-200 px-4 py-2 rounded-full">Database</span>
+          <span>←</span>
+          <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full">Query API</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4">Benefits</h2>
+      <ul class="grid md:grid-cols-2 gap-4 text-lg">
+        <li class="bg-white p-4 rounded-xl shadow">✔ Scalability</li>
+        <li class="bg-white p-4 rounded-xl shadow">✔ Separation of concerns</li>
+        <li class="bg-white p-4 rounded-xl shadow">✔ Performance optimization</li>
+        <li class="bg-white p-4 rounded-xl shadow">✔ Flexible data models</li>
+      </ul>
+    </section>
+
+    <!-- Drawbacks -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Drawbacks</h2>
+      <ul class="space-y-2 text-lg">
+        <li>❌ Increased complexity</li>
+        <li>❌ Eventual consistency challenges</li>
+        <li>❌ Requires more infrastructure</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-6 mt-10">
+    <div class="max-w-5xl mx-auto px-4 text-center text-sm">
+      © 2026 CQRS Guide. Built with Tailwind CSS.
+    </div>
+  </footer>
+
 </body>
 </html>
