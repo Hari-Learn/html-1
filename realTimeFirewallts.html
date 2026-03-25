@@ -65,7 +65,7 @@
     </div>
 
     <!-- Section 5 -->
-    <div class="bg-white p-5 rounded-2xl shadow">
+    <div class="bg-white p-5 rounded-2xl shadow mb-6">
       <h2 class="text-xl font-semibold mb-3">5. Interface Issue vs Policy Issue – How to Verify?</h2>
       <ul class="list-disc pl-6 space-y-2">
         <li><strong>Interface Issue:</strong>
@@ -82,6 +82,47 @@
           </ul>
         </li>
         <li>Use ping, traceroute, and logs to differentiate.</li>
+      </ul>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="bg-white p-5 rounded-2xl shadow mb-6">
+      <h2 class="text-xl font-semibold mb-3">6. Real-Time Troubleshooting Tools</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Ping – test reachability.</li>
+        <li>Traceroute – identify path and hops.</li>
+        <li>Packet Capture – analyze live traffic.</li>
+        <li>Session Table – check active sessions.</li>
+        <li>Debug Flow / CLI Debug – trace packet processing.</li>
+        <li>Real-time logs / monitoring dashboard.</li>
+      </ul>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="bg-white p-5 rounded-2xl shadow mb-6">
+      <h2 class="text-xl font-semibold mb-3">7. VPN Not Connecting – Troubleshooting Steps</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Check internet connectivity on both ends.</li>
+        <li>Verify VPN configuration (IP, pre-shared key, certificates).</li>
+        <li>Ensure Phase 1 (IKE) and Phase 2 settings match.</li>
+        <li>Check firewall policies allowing VPN traffic.</li>
+        <li>Verify NAT traversal settings.</li>
+        <li>Review VPN logs for errors.</li>
+        <li>Check routing for remote network.</li>
+      </ul>
+    </div>
+
+    <!-- Section 8 -->
+    <div class="bg-white p-5 rounded-2xl shadow mb-6 border-l-4 border-red-500">
+      <h2 class="text-xl font-semibold mb-3">8. Why Policy Order Matters</h2>
+      <p class="mb-3">
+        Firewalls process rules <strong>top-down</strong>. The <strong>first matching rule</strong> is applied.
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>If a deny rule is placed above an allow rule, traffic will be blocked.</li>
+        <li>Incorrect ordering can block valid traffic.</li>
+        <li>Always place specific rules above general rules.</li>
+        <li>Review rule hit counts to optimize order.</li>
       </ul>
     </div>
 
