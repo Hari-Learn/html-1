@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firewall Troubleshooting Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-5xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-6 text-center text-blue-600">
+      🔥 Real-Time Firewall Troubleshooting Guide
+    </h1>
+
+    <!-- Section 1 -->
+    <div class="bg-white p-5 rounded-2xl shadow mb-6">
+      <h2 class="text-xl font-semibold mb-3">1. Internet Not Working Behind Firewall – What to Check?</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Check physical connectivity (interface status, link up/down).</li>
+        <li>Verify IP address, subnet mask, and default gateway on client.</li>
+        <li>Ping firewall interface from client.</li>
+        <li>Check DNS configuration.</li>
+        <li>Verify outbound policy allows traffic.</li>
+        <li>Check NAT configuration.</li>
+        <li>Test connectivity from firewall (ping/traceroute).</li>
+      </ul>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="bg-white p-5 rounded-2xl shadow mb-6">
+      <h2 class="text-xl font-semibold mb-3">2. How to Identify NAT, Policy, or Routing Issue?</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>NAT Issue:</strong> Traffic leaving but no response. Check SNAT/DNAT rules.</li>
+        <li><strong>Policy Issue:</strong> Traffic blocked immediately. Check firewall rules and hit counts.</li>
+        <li><strong>Routing Issue:</strong> Traffic not reaching destination. Verify routing table and next hop.</li>
+        <li>Use packet capture or debug tools.</li>
+      </ul>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="bg-white p-5 rounded-2xl shadow mb-6">
+      <h2 class="text-xl font-semibold mb-3">3. Policy Configured but Traffic Blocked – Why?</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Rule order – another rule may be overriding.</li>
+        <li>Incorrect source/destination zones or IPs.</li>
+        <li>Service/port mismatch.</li>
+        <li>Application control or security profiles blocking traffic.</li>
+        <li>Schedule restriction on policy.</li>
+        <li>Implicit deny rule at bottom.</li>
+      </ul>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="bg-white p-5 rounded-2xl shadow mb-6">
+      <h2 class="text-xl font-semibold mb-3">4. How to Use Logs for Troubleshooting?</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Filter logs by source/destination IP.</li>
+        <li>Check action (allow/deny).</li>
+        <li>Identify which policy is matched.</li>
+        <li>Verify NAT translation details.</li>
+        <li>Check timestamps and session states.</li>
+        <li>Use real-time logs or CLI debug.</li>
+      </ul>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="bg-white p-5 rounded-2xl shadow">
+      <h2 class="text-xl font-semibold mb-3">5. Interface Issue vs Policy Issue – How to Verify?</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Interface Issue:</strong>
+          <ul class="list-disc pl-6">
+            <li>Interface down or no link.</li>
+            <li>No IP assigned.</li>
+            <li>No ARP resolution.</li>
+          </ul>
+        </li>
+        <li><strong>Policy Issue:</strong>
+          <ul class="list-disc pl-6">
+            <li>Traffic hits firewall but gets denied.</li>
+            <li>No matching rule or wrong rule.</li>
+          </ul>
+        </li>
+        <li>Use ping, traceroute, and logs to differentiate.</li>
+      </ul>
+    </div>
+
+    <footer class="text-center mt-8 text-sm text-gray-500">
+      © 2026 Firewall Troubleshooting Quick Guide
+    </footer>
+  </div>
+
+</body>
+</html>
