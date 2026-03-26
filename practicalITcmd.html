@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technician Command Cheat Sheet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-4xl mx-auto p-6">
+    
+    <h1 class="text-3xl font-bold text-center mb-8">
+      Technician Command Cheat Sheet
+    </h1>
+
+    <!-- Slow PC Section -->
+    <div class="bg-white shadow-md rounded-xl p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-4 text-blue-600">
+        🖥️ When PC is Slow or Freezing
+      </h2>
+      <ul class="space-y-2">
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">%temp%</span> → Clear temporary files</li>
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">temp</span> → Delete temp files</li>
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">prefetch</span> → Clean prefetch files</li>
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">cleanmgr</span> → Disk cleanup tool</li>
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">taskmgr</span> → Open Task Manager</li>
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">services.msc</span> → Manage services</li>
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">sfc /scannow</span> → Scan system files</li>
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">chkdsk /f</span> → Fix disk errors</li>
+      </ul>
+    </div>
+
+    <!-- Internet Issues Section -->
+    <div class="bg-white shadow-md rounded-xl p-6">
+      <h2 class="text-xl font-semibold mb-4 text-green-600">
+        🌐 When Internet is Not Working
+      </h2>
+      <ul class="space-y-2">
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">ping</span> → Test connectivity</li>
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">ipconfig</span> → Show IP info</li>
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">ipconfig /release</span> → Release IP</li>
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">ipconfig /renew</span> → Renew IP</li>
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">ipconfig /flushdns</span> → Flush DNS cache</li>
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">nslookup</span> → Check DNS resolution</li>
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">tracert</span> → Trace network route</li>
+        <li><span class="font-mono bg-gray-200 px-2 py-1 rounded">netsh int ip reset</span> → Reset network stack</li>
+      </ul>
+    </div>
+
+    <footer class="text-center mt-8 text-sm text-gray-500">
+      Quick reference for IT technicians 🚀
+    </footer>
+
+  </div>
+</body>
+</html>
