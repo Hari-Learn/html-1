@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Delegation - ELI10</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <div class="max-w-3xl mx-auto p-6">
+    
+    <h1 class="text-3xl font-bold text-blue-600 mb-4">
+      Event Delegation (ELI10)
+    </h1>
+
+    <p class="text-gray-700 mb-4">
+      Imagine you are a teacher 👩‍🏫 in a classroom. Instead of telling each student
+      individually what to do, you just give one instruction to the whole class.
+    </p>
+
+    <p class="text-gray-700 mb-4">
+      In JavaScript, <span class="font-semibold text-blue-500">event delegation</span>
+      works the same way. Instead of adding a click event to every single button,
+      you add one event to their parent, and it listens for all of them.
+    </p>
+
+    <div class="bg-white shadow rounded p-4 mb-6">
+      <h2 class="text-xl font-semibold mb-2">Try it 👇</h2>
+      <ul id="list" class="space-y-2">
+        <li class="bg-blue-100 p-2 rounded cursor-pointer">Item 1</li>
+        <li class="bg-blue-100 p-2 rounded cursor-pointer">Item 2</li>
+        <li class="bg-blue-100 p-2 rounded cursor-pointer">Item 3</li>
+      </ul>
+    </div>
+
+    <p class="text-gray-700 mb-4">
+      We did NOT add click events to each item. Instead, we added ONE event to the
+      parent list. When you click an item, the parent figures out which one you clicked.
+    </p>
+
+    <div class="bg-gray-800 text-white p-4 rounded text-sm overflow-x-auto">
+<pre>
+// One parent event instead of many
+document.getElementById("list").addEventListener("click", function(e) {
+  if (e.target.tagName === "LI") {
+    alert("You clicked " + e.target.innerText);
+  }
+});
+</pre>
+    </div>
+
+    <p class="text-gray-700 mt-4">
+      ✅ Less code <br>
+      ✅ Faster <br>
+      ✅ Works even for new items added later!
+    </p>
+
+  </div>
+
+  <script>
+    // Event Delegation Example
+    document.getElementById("list").addEventListener("click", function(e) {
+      if (e.target.tagName === "LI") {
+        alert("You clicked " + e.target.innerText);
+      }
+    });
+  </script>
+
+</body>
+</html>
