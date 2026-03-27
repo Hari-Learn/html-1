@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Interview Prep - Closures & Key Questions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white py-12">
+    <div class="max-w-5xl mx-auto text-center px-4">
+      <h1 class="text-4xl font-bold mb-2">JavaScript Interview Prep</h1>
+      <p class="text-lg">Closures & Important Questions You Must Know</p>
+    </div>
+  </header>
+
+  <!-- Closures Section -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4">What is a Closure?</h2>
+      <p class="text-gray-600 mb-4">
+        A closure is a function that remembers variables from its outer scope even after the outer function has finished executing.
+      </p>
+
+      <div class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
+<pre>
+function outer() {
+  let count = 0;
+
+  return function inner() {
+    count++;
+    console.log(count);
+  }
+}
+
+const counter = outer();
+counter(); // 1
+counter(); // 2
+</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Closures -->
+  <section class="bg-white py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4">Why Closures are Important?</h2>
+      <ul class="list-disc pl-6 text-gray-600 space-y-2">
+        <li>Data encapsulation</li>
+        <li>Function factories</li>
+        <li>Maintaining state in async operations</li>
+        <li>Used in callbacks and event handlers</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Interview Questions -->
+  <section class="py-12">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Top JavaScript Interview Questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-xl mb-2">1. What is hoisting?</h3>
+          <p class="text-gray-600">Hoisting is JavaScript's default behavior of moving declarations to the top of the scope.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-xl mb-2">2. Difference between var, let, const?</h3>
+          <p class="text-gray-600">
+            var is function-scoped, let and const are block-scoped. const cannot be reassigned.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-xl mb-2">3. What is event delegation?</h3>
+          <p class="text-gray-600">
+            A technique where a parent element handles events for its children using event bubbling.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-xl mb-2">4. What is the difference between == and ===?</h3>
+          <p class="text-gray-600">
+            == compares values with type coercion, === compares both value and type.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-xl mb-2">5. What is a promise?</h3>
+          <p class="text-gray-600">
+            A promise represents a value that may be available now, later, or never.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Practice Section -->
+  <section class="bg-indigo-600 text-white py-12">
+    <div class="max-w-4xl mx-auto text-center px-4">
+      <h2 class="text-3xl font-bold mb-4">Practice Daily 🚀</h2>
+      <p class="mb-6">Master JavaScript by solving problems and building projects regularly.</p>
+      <button class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">
+        Start Practicing
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-6 text-center">
+    <p>&copy; 2026 JS Interview Prep Guide</p>
+  </footer>
+
+</body>
+</html>
