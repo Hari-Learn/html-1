@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Stack in JavaScript - ELI10</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-8 text-center">
+    <h1 class="text-4xl font-bold">JavaScript Call Stack</h1>
+    <p class="mt-2 text-lg">Explain Like You're 10 👶</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="w-full px-6 py-10 space-y-8">
+
+    <!-- Card 1 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6">
+      <h2 class="text-2xl font-bold mb-3">📦 What is a Call Stack?</h2>
+      <p>
+        Imagine a stack of plates 🍽️. You can only add or remove plates from the top.
+        The <strong>Call Stack</strong> works the same way!
+      </p>
+      <p class="mt-2">
+        It keeps track of which function is running right now in JavaScript.
+      </p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6">
+      <h2 class="text-2xl font-bold mb-3">⚡ How does it work?</h2>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>When a function starts → it gets <strong>pushed</strong> onto the stack</li>
+        <li>When a function finishes → it gets <strong>popped</strong> off the stack</li>
+        <li>The last function added is the first one to finish (LIFO)</li>
+      </ul>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6">
+      <h2 class="text-2xl font-bold mb-3">🧠 Example</h2>
+      <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm">
+function one() {
+  two();
+}
+
+function two() {
+  three();
+}
+
+function three() {
+  console.log("Hello!");
+}
+
+one();
+      </pre>
+      <p class="mt-4">
+        The stack will go like this:
+      </p>
+      <ul class="list-decimal ml-6 mt-2 space-y-1">
+        <li>one() goes in</li>
+        <li>two() goes on top</li>
+        <li>three() goes on top</li>
+        <li>three() finishes → removed</li>
+        <li>two() finishes → removed</li>
+        <li>one() finishes → removed</li>
+      </ul>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6">
+      <h2 class="text-2xl font-bold mb-3">🚨 What is Stack Overflow?</h2>
+      <p>
+        If you keep adding too many functions and never remove them, the stack gets full 😵.
+      </p>
+      <p class="mt-2">
+        This causes an error called <strong>"Stack Overflow"</strong>.
+      </p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6">
+      <h2 class="text-2xl font-bold mb-3">🎯 Simple Summary</h2>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>It’s like a stack of plates</li>
+        <li>Add = Push 📥</li>
+        <li>Remove = Pop 📤</li>
+        <li>Last in → First out</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>Made with ❤️ using Tailwind CSS</p>
+  </footer>
+
+</body>
+</html>
