@@ -1,47 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="transition duration-300">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Call Stack in JavaScript - ELI10</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    // Enable dark mode from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    }
+  </script>
 </head>
-<body class="bg-gray-100 text-gray-800">
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition duration-300">
 
   <!-- Header -->
-  <header class="bg-blue-600 text-white py-8 text-center">
+  <header class="bg-blue-600 dark:bg-gray-800 text-white py-8 text-center relative">
     <h1 class="text-4xl font-bold">JavaScript Call Stack</h1>
     <p class="mt-2 text-lg">Explain Like You're 10 👶</p>
+
+    <!-- Dark Mode Toggle -->
+    <button onclick="toggleDarkMode()" 
+      class="absolute top-4 right-4 bg-white dark:bg-gray-700 p-2 rounded-full shadow">
+      
+      <!-- Sun Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="h-6 w-6 text-yellow-500 dark:hidden" 
+           fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+          d="M12 3v1m0 16v1m8-9h1M3 12H2m15.364 6.364l.707.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+      </svg>
+
+      <!-- Moon Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="h-6 w-6 text-gray-200 hidden dark:block" 
+           fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+          d="M21 12.79A9 9 0 1111.21 3 
+             7 7 0 0021 12.79z"/>
+      </svg>
+    </button>
   </header>
 
   <!-- Main Content -->
   <main class="w-full px-6 py-10 space-y-8">
 
-    <!-- Card 1 -->
-    <div class="bg-white rounded-2xl shadow-lg p-6">
-      <h2 class="text-2xl font-bold mb-3">📦 What is a Call Stack?</h2>
+    <!-- Card -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
+      <h2 class="text-2xl font-bold mb-3 flex items-center gap-2">
+        📦 What is a Call Stack?
+      </h2>
       <p>
         Imagine a stack of plates 🍽️. You can only add or remove plates from the top.
         The <strong>Call Stack</strong> works the same way!
       </p>
-      <p class="mt-2">
-        It keeps track of which function is running right now in JavaScript.
-      </p>
     </div>
 
-    <!-- Card 2 -->
-    <div class="bg-white rounded-2xl shadow-lg p-6">
-      <h2 class="text-2xl font-bold mb-3">⚡ How does it work?</h2>
+    <!-- Card -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
+      <h2 class="text-2xl font-bold mb-3 flex items-center gap-2">
+        ⚡ How does it work?
+      </h2>
       <ul class="list-disc ml-6 space-y-2">
-        <li>When a function starts → it gets <strong>pushed</strong> onto the stack</li>
-        <li>When a function finishes → it gets <strong>popped</strong> off the stack</li>
-        <li>The last function added is the first one to finish (LIFO)</li>
+        <li>Push 📥 → Function starts</li>
+        <li>Pop 📤 → Function ends</li>
+        <li>Last in, First out (LIFO)</li>
       </ul>
     </div>
 
-    <!-- Card 3 -->
-    <div class="bg-white rounded-2xl shadow-lg p-6">
-      <h2 class="text-2xl font-bold mb-3">🧠 Example</h2>
+    <!-- Card -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
+      <h2 class="text-2xl font-bold mb-3 flex items-center gap-2">
+        🧠 Example
+      </h2>
+
       <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm">
 function one() {
   two();
@@ -57,47 +102,50 @@ function three() {
 
 one();
       </pre>
-      <p class="mt-4">
-        The stack will go like this:
-      </p>
+
+      <p class="mt-4">Stack order:</p>
       <ul class="list-decimal ml-6 mt-2 space-y-1">
-        <li>one() goes in</li>
-        <li>two() goes on top</li>
-        <li>three() goes on top</li>
-        <li>three() finishes → removed</li>
-        <li>two() finishes → removed</li>
-        <li>one() finishes → removed</li>
+        <li>one()</li>
+        <li>two()</li>
+        <li>three()</li>
+        <li>Pop → three()</li>
+        <li>Pop → two()</li>
+        <li>Pop → one()</li>
       </ul>
     </div>
 
-    <!-- Card 4 -->
-    <div class="bg-white rounded-2xl shadow-lg p-6">
-      <h2 class="text-2xl font-bold mb-3">🚨 What is Stack Overflow?</h2>
+    <!-- Card -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
+      <h2 class="text-2xl font-bold mb-3 flex items-center gap-2">
+        🚨 Stack Overflow
+      </h2>
       <p>
-        If you keep adding too many functions and never remove them, the stack gets full 😵.
+        Too many functions = stack gets full 😵
       </p>
-      <p class="mt-2">
-        This causes an error called <strong>"Stack Overflow"</strong>.
+      <p class="mt-2 font-semibold text-red-500">
+        💥 Error: Stack Overflow
       </p>
     </div>
 
-    <!-- Card 5 -->
-    <div class="bg-white rounded-2xl shadow-lg p-6">
-      <h2 class="text-2xl font-bold mb-3">🎯 Simple Summary</h2>
+    <!-- Summary -->
+    <div class="bg-blue-600 dark:bg-blue-700 text-white rounded-2xl shadow-lg p-6">
+      <h2 class="text-2xl font-bold mb-3 flex items-center gap-2">
+        🎯 Quick Summary
+      </h2>
       <ul class="list-disc ml-6 space-y-2">
-        <li>It’s like a stack of plates</li>
-        <li>Add = Push 📥</li>
-        <li>Remove = Pop 📤</li>
-        <li>Last in → First out</li>
+        <li>Stack of plates 🍽️</li>
+        <li>Push = Add</li>
+        <li>Pop = Remove</li>
+        <li>LIFO rule</li>
       </ul>
     </div>
 
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white text-center py-4">
+  <footer class="bg-gray-800 dark:bg-black text-white text-center py-4">
     <p>Hariaharan D - Designed for Learning Purpose © 2026 - Made with ❤️ using Tailwind CSS</p>
   </footer>
 
 </body>
-</html>
+</html>  
