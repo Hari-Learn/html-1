@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saga Microservice Design Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-5xl mx-auto p-6">
+    
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-center mb-6">
+      Saga Microservice Design Pattern
+    </h1>
+
+    <!-- Description -->
+    <div class="bg-white shadow rounded-xl p-6 mb-8">
+      <p class="text-lg leading-relaxed">
+        The <strong>Saga Pattern</strong> is a design pattern used in microservices architecture 
+        to manage <strong>distributed transactions</strong>. Instead of a single transaction 
+        across services, it breaks the process into a series of smaller, independent steps.
+      </p>
+
+      <p class="mt-4 text-lg">
+        Each step is handled by a different service and has a corresponding 
+        <strong>compensating action</strong> to undo changes if something fails. 
+        This ensures <strong>eventual consistency</strong> across the system.
+      </p>
+    </div>
+
+    <!-- Key Points -->
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-semibold mb-2">✔ Benefits</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Improves scalability</li>
+          <li>Avoids distributed locks</li>
+          <li>Supports eventual consistency</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-semibold mb-2">⚠ Challenges</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Complex error handling</li>
+          <li>Requires compensating transactions</li>
+          <li>Debugging can be harder</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Diagram -->
+    <div class="bg-white shadow rounded-xl p-6">
+      <h2 class="text-xl font-semibold mb-4 text-center">
+        Saga Flow Diagram
+      </h2>
+
+      <div class="flex justify-center overflow-x-auto">
+        <svg width="900" height="250" class="border rounded-lg bg-gray-50">
+
+          <!-- Boxes -->
+          <rect x="20" y="80" width="140" height="60" fill="#3b82f6" rx="10"/>
+          <text x="90" y="115" fill="white" text-anchor="middle">Order Service</text>
+
+          <rect x="200" y="80" width="140" height="60" fill="#10b981" rx="10"/>
+          <text x="270" y="115" fill="white" text-anchor="middle">Payment Service</text>
+
+          <rect x="380" y="80" width="140" height="60" fill="#f59e0b" rx="10"/>
+          <text x="450" y="115" fill="white" text-anchor="middle">Inventory</text>
+
+          <rect x="560" y="80" width="140" height="60" fill="#8b5cf6" rx="10"/>
+          <text x="630" y="115" fill="white" text-anchor="middle">Shipping</text>
+
+          <!-- Arrows -->
+          <line x1="160" y1="110" x2="200" y2="110" stroke="black" marker-end="url(#arrow)"/>
+          <line x1="340" y1="110" x2="380" y2="110" stroke="black" marker-end="url(#arrow)"/>
+          <line x1="520" y1="110" x2="560" y2="110" stroke="black" marker-end="url(#arrow)"/>
+
+          <!-- Compensating Arrow -->
+          <line x1="560" y1="160" x2="200" y2="160" stroke="red" stroke-dasharray="5,5" marker-end="url(#arrowRed)"/>
+          <text x="380" y="180" fill="red" text-anchor="middle">Compensating Actions</text>
+
+          <!-- Arrow markers -->
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L9,3 z" fill="black" />
+            </marker>
+
+            <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L9,3 z" fill="red" />
+            </marker>
+          </defs>
+
+        </svg>
+      </div>
+
+      <p class="text-center mt-4 text-sm text-gray-600">
+        If a step fails, compensating actions are triggered in reverse order.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
