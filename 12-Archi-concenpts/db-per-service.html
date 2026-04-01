@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Database per Service Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-6xl mx-auto p-6">
+
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-center mb-6">
+      Database per Service Pattern
+    </h1>
+
+    <!-- Description -->
+    <div class="bg-white shadow rounded-xl p-6 mb-8">
+      <p class="text-lg leading-relaxed">
+        The <strong>Database per Service Pattern</strong> ensures that each microservice 
+        owns and manages its own database. This prevents tight coupling between services 
+        and allows each service to evolve independently.
+      </p>
+
+      <p class="mt-4 text-lg">
+        Instead of sharing a single database, every service has its own private data store. 
+        Other services can only access this data through APIs, not direct database queries.
+      </p>
+    </div>
+
+    <!-- ELI10 Section -->
+    <div class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded mb-8">
+      <h2 class="text-xl font-semibold mb-2">🧒 Explain Like I'm 10</h2>
+      <p>
+        Imagine a school where each teacher keeps their own notebook:
+      </p>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li>Math teacher has a math notebook 📘</li>
+        <li>Science teacher has a science notebook 📗</li>
+        <li>English teacher has an English notebook 📙</li>
+      </ul>
+      <p class="mt-3">
+        If you want math marks, you ask the math teacher — you don’t peek into their notebook.
+        This way, everyone can work independently without messing up each other's notes!
+      </p>
+    </div>
+
+    <!-- Key Points -->
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-semibold mb-2">✔ Benefits</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Loose coupling between services</li>
+          <li>Independent scaling and deployment</li>
+          <li>Better performance (optimized per service)</li>
+          <li>Freedom to choose different database types</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-semibold mb-2">⚠ Challenges</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Data duplication across services</li>
+          <li>Complex distributed queries</li>
+          <li>Requires eventual consistency</li>
+          <li>Cross-service transactions are harder</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Flow Explanation -->
+    <div class="bg-white shadow rounded-xl p-6 mb-8">
+      <h2 class="text-xl font-semibold mb-4">How It Works</h2>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li>User sends request (e.g., place order)</li>
+        <li>Order Service saves data in its own database</li>
+        <li>Order Service calls Payment Service via API</li>
+        <li>Payment Service stores data in its database</li>
+        <li>Services communicate via APIs/events — not direct DB access</li>
+      </ol>
+    </div>
+
+    <!-- Diagram -->
+    <div class="bg-white shadow rounded-xl p-6">
+      <h2 class="text-xl font-semibold mb-4 text-center">
+        Service & Database Flow Diagram
+      </h2>
+
+      <div class="flex justify-center overflow-x-auto">
+        <svg width="1000" height="320" class="border rounded-lg bg-gray-50">
+
+          <!-- User -->
+          <circle cx="60" cy="160" r="30" fill="#3b82f6"/>
+          <text x="60" y="165" text-anchor="middle" fill="white" font-size="12">User</text>
+
+          <!-- Order Service -->
+          <rect x="180" y="80" width="160" height="70" rx="10" fill="#10b981"/>
+          <text x="260" y="115" text-anchor="middle" fill="white">Order Service</text>
+
+          <!-- Order DB -->
+          <rect x="180" y="170" width="160" height="60" rx="10" fill="#6ee7b7"/>
+          <text x="260" y="205" text-anchor="middle">Order DB</text>
+
+          <!-- Payment Service -->
+          <rect x="420" y="80" width="160" height="70" rx="10" fill="#f59e0b"/>
+          <text x="500" y="115" text-anchor="middle" fill="white">Payment Service</text>
+
+          <!-- Payment DB -->
+          <rect x="420" y="170" width="160" height="60" rx="10" fill="#fde68a"/>
+          <text x="500" y="205" text-anchor="middle">Payment DB</text>
+
+          <!-- Inventory Service -->
+          <rect x="660" y="80" width="160" height="70" rx="10" fill="#8b5cf6"/>
+          <text x="740" y="115" text-anchor="middle" fill="white">Inventory Service</text>
+
+          <!-- Inventory DB -->
+          <rect x="660" y="170" width="160" height="60" rx="10" fill="#c4b5fd"/>
+          <text x="740" y="205" text-anchor="middle">Inventory DB</text>
+
+          <!-- Arrows -->
+          <line x1="90" y1="160" x2="180" y2="115" stroke="black" marker-end="url(#arrow)"/>
+          <line x1="340" y1="115" x2="420" y2="115" stroke="black" marker-end="url(#arrow)"/>
+          <line x1="580" y1="115" x2="660" y2="115" stroke="black" marker-end="url(#arrow)"/>
+
+          <!-- DB connections -->
+          <line x1="260" y1="150" x2="260" y2="170" stroke="black"/>
+          <line x1="500" y1="150" x2="500" y2="170" stroke="black"/>
+          <line x1="740" y1="150" x2="740" y2="170" stroke="black"/>
+
+          <!-- Isolation note -->
+          <text x="500" y="260" text-anchor="middle" fill="#6b7280">
+            Each service has its own isolated database
+          </text>
+
+          <!-- Arrow marker -->
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L9,3 z" fill="black" />
+            </marker>
+          </defs>
+
+        </svg>
+      </div>
+
+      <p class="text-center mt-4 text-sm text-gray-600">
+        Services communicate via APIs while keeping their databases completely separate.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
