@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retry Design Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-6xl mx-auto p-6">
+
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-center mb-6">
+      Retry Design Pattern
+    </h1>
+
+    <!-- Description -->
+    <div class="bg-white shadow rounded-xl p-6 mb-8">
+      <p class="text-lg leading-relaxed">
+        The <strong>Retry Pattern</strong> automatically retries a failed operation 
+        a few times before giving up or triggering a fallback mechanism.
+      </p>
+
+      <p class="mt-4 text-lg">
+        It is commonly used in distributed systems where failures are often temporary 
+        (e.g., network glitches, timeouts, or service overload). Instead of failing 
+        immediately, the system retries the request after a short delay.
+      </p>
+    </div>
+
+    <!-- ELI10 -->
+    <div class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded mb-8">
+      <h2 class="text-xl font-semibold mb-2">🧒 Explain Like I'm 10</h2>
+      <p>
+        Imagine you're calling your friend, but they don't pick up:
+      </p>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li>You try again after a few seconds 📞</li>
+        <li>Maybe try 2–3 times</li>
+        <li>If they still don’t answer, you stop or send a message 💬</li>
+      </ul>
+      <p class="mt-3">
+        That’s exactly how the Retry Pattern works — try again before giving up!
+      </p>
+    </div>
+
+    <!-- Key Points -->
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-semibold mb-2">✔ Benefits</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Handles temporary failures automatically</li>
+          <li>Improves system reliability</li>
+          <li>Reduces manual intervention</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-semibold mb-2">⚠ Challenges</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Can overload a failing service</li>
+          <li>Needs proper retry limits</li>
+          <li>May increase latency</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Types -->
+    <div class="bg-white shadow rounded-xl p-6 mb-8">
+      <h2 class="text-xl font-semibold mb-4">Common Retry Strategies</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Immediate Retry:</strong> Retry instantly</li>
+        <li><strong>Fixed Delay:</strong> Wait a fixed time between retries</li>
+        <li><strong>Exponential Backoff:</strong> Increase delay after each retry</li>
+      </ul>
+    </div>
+
+    <!-- Flow Steps -->
+    <div class="bg-white shadow rounded-xl p-6 mb-8">
+      <h2 class="text-xl font-semibold mb-4">How It Works</h2>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li>Client sends request to a service</li>
+        <li>If request succeeds → return response</li>
+        <li>If request fails → retry after delay</li>
+        <li>Repeat until max retries reached</li>
+        <li>If still failing → trigger fallback or return error</li>
+      </ol>
+    </div>
+
+    <!-- Diagram -->
+    <div class="bg-white shadow rounded-xl p-6">
+      <h2 class="text-xl font-semibold mb-4 text-center">
+        Retry Flow Diagram
+      </h2>
+
+      <div class="flex justify-center overflow-x-auto">
+        <svg width="1000" height="350" class="border rounded-lg bg-gray-50">
+
+          <!-- Client -->
+          <circle cx="80" cy="170" r="30" fill="#3b82f6"/>
+          <text x="80" y="175" text-anchor="middle" fill="white" font-size="12">Client</text>
+
+          <!-- Service -->
+          <rect x="250" y="130" width="160" height="80" rx="10" fill="#10b981"/>
+          <text x="330" y="175" text-anchor="middle" fill="white">Service</text>
+
+          <!-- Success -->
+          <rect x="500" y="60" width="160" height="60" rx="10" fill="#22c55e"/>
+          <text x="580" y="95" text-anchor="middle" fill="white">Success</text>
+
+          <!-- Failure -->
+          <rect x="500" y="200" width="160" height="60" rx="10" fill="#ef4444"/>
+          <text x="580" y="235" text-anchor="middle" fill="white">Failure</text>
+
+          <!-- Fallback -->
+          <rect x="750" y="200" width="160" height="60" rx="10" fill="#f59e0b"/>
+          <text x="830" y="235" text-anchor="middle" fill="white">Fallback</text>
+
+          <!-- Arrows -->
+          <line x1="110" y1="170" x2="250" y2="170" stroke="black" marker-end="url(#arrow)"/>
+          <line x1="410" y1="150" x2="500" y2="90" stroke="black" marker-end="url(#arrow)"/>
+          <line x1="410" y1="190" x2="500" y2="230" stroke="black" marker-end="url(#arrow)"/>
+
+          <!-- Retry loop -->
+          <path d="M580 260 C 400 320, 250 300, 250 210" stroke="#f97316" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+          <text x="420" y="320" fill="#f97316">Retry (with delay)</text>
+
+          <!-- To fallback -->
+          <line x1="660" y1="230" x2="750" y2="230" stroke="black" marker-end="url(#arrow)"/>
+
+          <!-- Retry count -->
+          <text x="300" y="260" fill="#6b7280">Max retries reached</text>
+
+          <!-- Arrow marker -->
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L9,3 z" fill="black" />
+            </marker>
+          </defs>
+
+        </svg>
+      </div>
+
+      <p class="text-center mt-4 text-sm text-gray-600">
+        Failed requests are retried multiple times before triggering a fallback.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
