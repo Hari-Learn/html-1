@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strangler Fig Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-5xl mx-auto p-6">
+
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-center mb-6">
+      Strangler Fig Pattern
+    </h1>
+
+    <!-- Description -->
+    <div class="bg-white shadow rounded-xl p-6 mb-8">
+      <p class="text-lg leading-relaxed">
+        The <strong>Strangler Fig Pattern</strong> is a migration strategy used to 
+        transform a legacy <strong>monolithic application</strong> into a modern 
+        <strong>microservices architecture</strong> gradually.
+      </p>
+
+      <p class="mt-4 text-lg">
+        Instead of replacing the system all at once, new functionality is built 
+        as independent services. Over time, these services "strangle" the monolith 
+        by replacing its features step by step until the old system can be retired.
+      </p>
+    </div>
+
+    <!-- Key Points -->
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-semibold mb-2">✔ Benefits</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Low-risk migration strategy</li>
+          <li>No need for full system rewrite</li>
+          <li>Continuous delivery of new features</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-semibold mb-2">⚠ Challenges</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Complex routing logic</li>
+          <li>Temporary duplication of functionality</li>
+          <li>Requires careful monitoring</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Diagram -->
+    <div class="bg-white shadow rounded-xl p-6">
+      <h2 class="text-xl font-semibold mb-4 text-center">
+        Migration Flow Diagram
+      </h2>
+
+      <div class="flex justify-center overflow-x-auto">
+        <svg width="900" height="300" class="border rounded-lg bg-gray-50">
+
+          <!-- Monolith -->
+          <rect x="50" y="100" width="180" height="100" fill="#ef4444" rx="12"/>
+          <text x="140" y="155" fill="white" text-anchor="middle">Monolith</text>
+
+          <!-- Gateway -->
+          <rect x="300" y="40" width="160" height="60" fill="#3b82f6" rx="10"/>
+          <text x="380" y="75" fill="white" text-anchor="middle">API Gateway</text>
+
+          <!-- Microservices -->
+          <rect x="550" y="20" width="140" height="50" fill="#10b981" rx="10"/>
+          <text x="620" y="50" fill="white" text-anchor="middle">Service A</text>
+
+          <rect x="550" y="90" width="140" height="50" fill="#10b981" rx="10"/>
+          <text x="620" y="120" fill="white" text-anchor="middle">Service B</text>
+
+          <rect x="550" y="160" width="140" height="50" fill="#10b981" rx="10"/>
+          <text x="620" y="190" fill="white" text-anchor="middle">Service C</text>
+
+          <!-- Arrows -->
+          <line x1="230" y1="150" x2="300" y2="70" stroke="black" marker-end="url(#arrow)"/>
+          <line x1="460" y1="70" x2="550" y2="45" stroke="black" marker-end="url(#arrow)"/>
+          <line x1="460" y1="70" x2="550" y2="115" stroke="black" marker-end="url(#arrow)"/>
+          <line x1="460" y1="70" x2="550" y2="185" stroke="black" marker-end="url(#arrow)"/>
+
+          <!-- Old route -->
+          <line x1="460" y1="90" x2="230" y2="150" stroke="gray" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+          <text x="320" y="170" fill="gray" text-anchor="middle">Legacy calls</text>
+
+          <!-- Arrow marker -->
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L9,3 z" fill="black" />
+            </marker>
+          </defs>
+
+        </svg>
+      </div>
+
+      <p class="text-center mt-4 text-sm text-gray-600">
+        Requests are gradually routed from the monolith to new microservices via an API gateway.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
