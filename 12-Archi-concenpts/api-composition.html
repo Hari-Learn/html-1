@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Composition Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-6xl mx-auto p-6">
+
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-center mb-8">
+      API Composition Pattern
+    </h1>
+
+    <!-- Cards Section -->
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+
+      <!-- What is it -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold mb-3">📌 What is it?</h2>
+        <p>
+          API Composition combines data from multiple microservices into a 
+          <strong>single response</strong>, reducing the number of calls a client must make.
+        </p>
+      </div>
+
+      <!-- Why use it -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold mb-3">🚀 Why use it?</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Faster responses</li>
+          <li>Less network calls</li>
+          <li>Simpler client logic</li>
+        </ul>
+      </div>
+
+      <!-- Challenge -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold mb-3">⚠ Challenges</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Aggregator complexity</li>
+          <li>Handling partial failures</li>
+          <li>Latency from multiple services</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ELI10 -->
+    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded mb-10">
+      <h2 class="text-xl font-semibold mb-2">🧒 Explain Like I'm 10</h2>
+      <p>
+        Imagine ordering food from a restaurant:
+      </p>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li>One kitchen makes pizza 🍕</li>
+        <li>Another makes drinks 🥤</li>
+        <li>Another makes dessert 🍰</li>
+      </ul>
+      <p class="mt-3">
+        Instead of you going to each kitchen, a waiter collects everything 
+        and brings it to you in one tray.  
+        👉 That waiter is <strong>API Composition</strong>!
+      </p>
+    </div>
+
+    <!-- Flow Steps Cards -->
+    <div class="grid md:grid-cols-4 gap-6 mb-10">
+
+      <div class="bg-white p-5 rounded-xl shadow text-center">
+        <div class="text-2xl mb-2">👤</div>
+        <p class="font-semibold">Client Request</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow text-center">
+        <div class="text-2xl mb-2">🧠</div>
+        <p class="font-semibold">API Composer</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow text-center">
+        <div class="text-2xl mb-2">🔗</div>
+        <p class="font-semibold">Call Services</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow text-center">
+        <div class="text-2xl mb-2">📦</div>
+        <p class="font-semibold">Combined Response</p>
+      </div>
+
+    </div>
+
+    <!-- Diagram -->
+    <div class="bg-white shadow rounded-xl p-6">
+      <h2 class="text-xl font-semibold mb-4 text-center">
+        API Composition Flow Diagram
+      </h2>
+
+      <div class="flex justify-center overflow-x-auto">
+        <svg width="1000" height="320" class="border rounded-lg bg-gray-50">
+
+          <!-- Client -->
+          <circle cx="80" cy="160" r="30" fill="#3b82f6"/>
+          <text x="80" y="165" text-anchor="middle" fill="white" font-size="12">Client</text>
+
+          <!-- Composer -->
+          <rect x="220" y="120" width="180" height="80" rx="12" fill="#6366f1"/>
+          <text x="310" y="165" text-anchor="middle" fill="white">API Composer</text>
+
+          <!-- Services -->
+          <rect x="480" y="40" width="140" height="60" rx="10" fill="#10b981"/>
+          <text x="550" y="75" text-anchor="middle" fill="white">User Service</text>
+
+          <rect x="480" y="130" width="140" height="60" rx="10" fill="#f59e0b"/>
+          <text x="550" y="165" text-anchor="middle" fill="white">Order Service</text>
+
+          <rect x="480" y="220" width="140" height="60" rx="10" fill="#8b5cf6"/>
+          <text x="550" y="255" text-anchor="middle" fill="white">Payment Service</text>
+
+          <!-- Response -->
+          <rect x="720" y="120" width="160" height="80" rx="12" fill="#22c55e"/>
+          <text x="800" y="165" text-anchor="middle" fill="white">Combined Response</text>
+
+          <!-- Arrows -->
+          <line x1="110" y1="160" x2="220" y2="160" stroke="black" marker-end="url(#arrow)"/>
+
+          <line x1="400" y1="140" x2="480" y2="70" stroke="black" marker-end="url(#arrow)"/>
+          <line x1="400" y1="160" x2="480" y2="160" stroke="black" marker-end="url(#arrow)"/>
+          <line x1="400" y1="180" x2="480" y2="250" stroke="black" marker-end="url(#arrow)"/>
+
+          <line x1="620" y1="160" x2="720" y2="160" stroke="black" marker-end="url(#arrow)"/>
+
+          <!-- Arrow marker -->
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L9,3 z" fill="black" />
+            </marker>
+          </defs>
+
+        </svg>
+      </div>
+
+      <p class="text-center mt-4 text-sm text-gray-600">
+        API Composer gathers data from multiple services and returns a unified response.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
