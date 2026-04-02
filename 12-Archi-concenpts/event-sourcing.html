@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Sourcing Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-6xl mx-auto p-6">
+
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-center mb-8">
+      Event Sourcing Pattern
+    </h1>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h2 class="text-xl font-semibold mb-3">📌 What is it?</h2>
+        <p>
+          Event Sourcing stores the system state as a 
+          <strong>sequence of events</strong> instead of just saving the latest state.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h2 class="text-xl font-semibold mb-3">🚀 Why use it?</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Full history of changes</li>
+          <li>Easy debugging & auditing</li>
+          <li>Rebuild state anytime</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h2 class="text-xl font-semibold mb-3">⚠ Challenges</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>More complex design</li>
+          <li>Event versioning issues</li>
+          <li>Storage can grow large</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ELI10 -->
+    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded mb-10">
+      <h2 class="text-xl font-semibold mb-2">🧒 Explain Like I'm 10</h2>
+      <p>
+        Imagine your bank account:
+      </p>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li>You don’t just store your current balance 💰</li>
+        <li>You keep a list of all transactions 🧾</li>
+        <li>Deposit → Withdraw → Transfer</li>
+      </ul>
+      <p class="mt-3">
+        If needed, you can replay all transactions to calculate your balance again.  
+        👉 That’s exactly how <strong>Event Sourcing</strong> works!
+      </p>
+    </div>
+
+    <!-- Flow Steps -->
+    <div class="grid md:grid-cols-4 gap-6 mb-10">
+
+      <div class="bg-white p-5 rounded-xl shadow text-center">
+        <div class="text-2xl mb-2">👤</div>
+        <p class="font-semibold">User Action</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow text-center">
+        <div class="text-2xl mb-2">📝</div>
+        <p class="font-semibold">Event Created</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow text-center">
+        <div class="text-2xl mb-2">📚</div>
+        <p class="font-semibold">Store Events</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow text-center">
+        <div class="text-2xl mb-2">🔄</div>
+        <p class="font-semibold">Rebuild State</p>
+      </div>
+
+    </div>
+
+    <!-- Details -->
+    <div class="bg-white shadow rounded-xl p-6 mb-10">
+      <h2 class="text-xl font-semibold mb-4">How It Works</h2>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li>User performs an action (e.g., place order)</li>
+        <li>System creates an event (OrderCreated)</li>
+        <li>Event is stored in an event store</li>
+        <li>State is rebuilt by replaying all events</li>
+        <li>Read models can be generated for fast queries</li>
+      </ol>
+    </div>
+
+    <!-- Diagram -->
+    <div class="bg-white shadow rounded-xl p-6">
+      <h2 class="text-xl font-semibold mb-4 text-center">
+        Event Sourcing Flow Diagram
+      </h2>
+
+      <div class="flex justify-center overflow-x-auto">
+        <svg width="1000" height="340" class="border rounded-lg bg-gray-50">
+
+          <!-- User -->
+          <circle cx="80" cy="170" r="30" fill="#3b82f6"/>
+          <text x="80" y="175" text-anchor="middle" fill="white" font-size="12">User</text>
+
+          <!-- Service -->
+          <rect x="220" y="130" width="160" height="80" rx="12" fill="#6366f1"/>
+          <text x="300" y="175" text-anchor="middle" fill="white">Service</text>
+
+          <!-- Event Store -->
+          <rect x="450" y="80" width="180" height="180" rx="12" fill="#10b981"/>
+          <text x="540" y="110" text-anchor="middle" fill="white">Event Store</text>
+
+          <!-- Events -->
+          <rect x="470" y="130" width="140" height="30" fill="#34d399" rx="6"/>
+          <text x="540" y="150" text-anchor="middle" font-size="12">OrderCreated</text>
+
+          <rect x="470" y="170" width="140" height="30" fill="#34d399" rx="6"/>
+          <text x="540" y="190" text-anchor="middle" font-size="12">PaymentProcessed</text>
+
+          <rect x="470" y="210" width="140" height="30" fill="#34d399" rx="6"/>
+          <text x="540" y="230" text-anchor="middle" font-size="12">Shipped</text>
+
+          <!-- Read Model -->
+          <rect x="700" y="130" width="180" height="80" rx="12" fill="#f59e0b"/>
+          <text x="790" y="175" text-anchor="middle" fill="white">Read Model</text>
+
+          <!-- Arrows -->
+          <line x1="110" y1="170" x2="220" y2="170" stroke="black" marker-end="url(#arrow)"/>
+          <line x1="380" y1="170" x2="450" y2="170" stroke="black" marker-end="url(#arrow)"/>
+          <line x1="630" y1="170" x2="700" y2="170" stroke="black" marker-end="url(#arrow)"/>
+
+          <!-- Replay arrow -->
+          <path d="M700 210 C 600 300, 400 300, 300 210" stroke="#ef4444" fill="none" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+          <text x="500" y="310" fill="#ef4444">Replay Events to Rebuild State</text>
+
+          <!-- Arrow marker -->
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L9,3 z" fill="black" />
+            </marker>
+          </defs>
+
+        </svg>
+      </div>
+
+      <p class="text-center mt-4 text-sm text-gray-600">
+        System state is derived by replaying stored events instead of storing only the latest data.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
