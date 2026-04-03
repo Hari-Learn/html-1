@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sidecar Pattern</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
 
-  <div class="max-w-6xl mx-auto p-6">
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen dark:bg-gray-900 dark:text-gray-200">
+
+  <!-- Page Content Wrapper -->
+  <div class="flex-grow max-w-6xl mx-auto p-6">
+
+    <!-- Dark Mode Toggle -->
+    <div class="flex justify-end mb-4">
+      <button onclick="toggleDarkMode()" 
+        class="px-4 py-2 bg-gray-800 text-white rounded-lg dark:bg-yellow-400 dark:text-black">
+        🌙 Toggle Dark Mode
+      </button>
+    </div>
 
     <!-- Header -->
     <h1 class="text-3xl font-bold text-center mb-8">
@@ -18,124 +28,73 @@
     <!-- Cards -->
     <div class="grid md:grid-cols-3 gap-6 mb-10">
 
-      <div class="bg-white p-6 rounded-xl shadow">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
         <h2 class="text-xl font-semibold mb-3">📌 What is it?</h2>
         <p>
           The <strong>Sidecar Pattern</strong> attaches auxiliary services 
-          (like logging, monitoring, or security) alongside a main microservice 
-          to extend its functionality without modifying it.
+          (logging, monitoring, security) alongside a main microservice 
+          without modifying it.
         </p>
       </div>
 
-      <div class="bg-white p-6 rounded-xl shadow">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
         <h2 class="text-xl font-semibold mb-3">🚀 Why use it?</h2>
         <ul class="list-disc pl-5 space-y-2">
           <li>Separation of concerns</li>
-          <li>Reusable supporting services</li>
+          <li>Reusable helpers</li>
           <li>Easier maintenance</li>
         </ul>
       </div>
 
-      <div class="bg-white p-6 rounded-xl shadow">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
         <h2 class="text-xl font-semibold mb-3">⚠ Challenges</h2>
         <ul class="list-disc pl-5 space-y-2">
-          <li>Increased resource usage</li>
+          <li>More resource usage</li>
           <li>Deployment complexity</li>
-          <li>Communication overhead</li>
+          <li>Extra communication layer</li>
         </ul>
       </div>
 
     </div>
 
     <!-- ELI10 -->
-    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded mb-10">
+    <div class="bg-blue-50 dark:bg-gray-800 border-l-4 border-blue-500 p-6 rounded mb-10">
       <h2 class="text-xl font-semibold mb-2">🧒 Explain Like I'm 10</h2>
       <p>
-        Imagine riding a bike 🚲 with a sidecar:
+        Think of a bike 🚲 with a sidecar:
       </p>
       <ul class="list-disc pl-5 mt-2 space-y-1">
-        <li>The bike is your main service</li>
-        <li>The sidecar carries extra stuff (tools, luggage) 🧳</li>
-        <li>The bike doesn’t change — but gains extra capabilities</li>
+        <li>Bike = main service</li>
+        <li>Sidecar = extra helper</li>
+        <li>It adds features without changing the bike</li>
       </ul>
-      <p class="mt-3">
-        👉 That extra helper attached to the service is called a <strong>Sidecar</strong>.
-      </p>
-    </div>
-
-    <!-- Use Cases Cards -->
-    <div class="grid md:grid-cols-4 gap-6 mb-10">
-
-      <div class="bg-white p-5 rounded-xl shadow text-center">
-        <div class="text-2xl mb-2">📜</div>
-        <p class="font-semibold">Logging</p>
-      </div>
-
-      <div class="bg-white p-5 rounded-xl shadow text-center">
-        <div class="text-2xl mb-2">📊</div>
-        <p class="font-semibold">Monitoring</p>
-      </div>
-
-      <div class="bg-white p-5 rounded-xl shadow text-center">
-        <div class="text-2xl mb-2">🔐</div>
-        <p class="font-semibold">Security</p>
-      </div>
-
-      <div class="bg-white p-5 rounded-xl shadow text-center">
-        <div class="text-2xl mb-2">🌐</div>
-        <p class="font-semibold">Networking</p>
-      </div>
-
-    </div>
-
-    <!-- Flow Explanation -->
-    <div class="bg-white shadow rounded-xl p-6 mb-10">
-      <h2 class="text-xl font-semibold mb-4">How It Works</h2>
-      <ol class="list-decimal pl-6 space-y-2">
-        <li>Main service handles business logic</li>
-        <li>Sidecar runs alongside in the same environment</li>
-        <li>Sidecar intercepts or enhances communication</li>
-        <li>Provides features like logging, monitoring, or retries</li>
-      </ol>
     </div>
 
     <!-- Diagram -->
-    <div class="bg-white shadow rounded-xl p-6">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-xl p-6">
       <h2 class="text-xl font-semibold mb-4 text-center">
         Sidecar Pattern Diagram
       </h2>
 
       <div class="flex justify-center overflow-x-auto">
-        <svg width="1000" height="320" class="border rounded-lg bg-gray-50">
+        <svg width="900" height="300" class="border rounded-lg bg-gray-50">
 
           <!-- Client -->
-          <circle cx="80" cy="160" r="30" fill="#3b82f6"/>
-          <text x="80" y="165" text-anchor="middle" fill="white" font-size="12">Client</text>
+          <circle cx="80" cy="150" r="30" fill="#3b82f6"/>
+          <text x="80" y="155" text-anchor="middle" fill="white">Client</text>
 
           <!-- Main Service -->
-          <rect x="300" y="100" width="180" height="100" rx="12" fill="#10b981"/>
-          <text x="390" y="145" text-anchor="middle" fill="white">Main Service</text>
-          <text x="390" y="165" text-anchor="middle" fill="white" font-size="12">Business Logic</text>
+          <rect x="250" y="100" width="160" height="100" rx="12" fill="#10b981"/>
+          <text x="330" y="145" text-anchor="middle" fill="white">Main Service</text>
 
           <!-- Sidecar -->
-          <rect x="500" y="100" width="160" height="100" rx="12" fill="#6366f1"/>
-          <text x="580" y="145" text-anchor="middle" fill="white">Sidecar</text>
-          <text x="580" y="165" text-anchor="middle" fill="white" font-size="12">Logging / Metrics</text>
-
-          <!-- External Service -->
-          <rect x="750" y="120" width="160" height="80" rx="12" fill="#f59e0b"/>
-          <text x="830" y="165" text-anchor="middle" fill="white">External API</text>
+          <rect x="430" y="100" width="140" height="100" rx="12" fill="#6366f1"/>
+          <text x="500" y="145" text-anchor="middle" fill="white">Sidecar</text>
 
           <!-- Arrows -->
-          <line x1="110" y1="160" x2="300" y2="150" stroke="black" marker-end="url(#arrow)"/>
-          <line x1="480" y1="150" x2="500" y2="150" stroke="black" marker-end="url(#arrow)"/>
-          <line x1="660" y1="150" x2="750" y2="150" stroke="black" marker-end="url(#arrow)"/>
+          <line x1="110" y1="150" x2="250" y2="150" stroke="black" marker-end="url(#arrow)"/>
+          <line x1="410" y1="150" x2="430" y2="150" stroke="black" marker-end="url(#arrow)"/>
 
-          <!-- Sidecar loop -->
-          <path d="M500 200 C 450 260, 350 260, 300 200" stroke="#ef4444" fill="none" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
-          <text x="400" y="280" fill="#ef4444">Intercept / Enhance</text>
-
-          <!-- Arrow marker -->
           <defs>
             <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto">
               <path d="M0,0 L0,6 L9,3 z" fill="black" />
@@ -145,69 +104,85 @@
         </svg>
       </div>
 
-      <p class="text-center mt-4 text-sm text-gray-600">
-        Sidecar runs alongside the main service to provide additional capabilities without modifying it.
-      </p>
     </div>
 
   </div>
 
   <!-- Footer -->
-<footer class="bg-gray-900 text-gray-300 mt-12">
-  <div class="max-w-6xl mx-auto px-6 py-10">
+  <footer class="bg-gray-900 text-gray-300 mt-12">
+    <div class="max-w-6xl mx-auto px-6 py-10">
 
-    <div class="grid md:grid-cols-4 gap-8">
+      <div class="grid md:grid-cols-4 gap-8">
 
-      <!-- Brand -->
-      <div>
-        <h3 class="text-lg font-semibold text-white mb-3">Microservices Guide</h3>
-        <p class="text-sm">
-          Learn modern microservice patterns with simple explanations, diagrams, and examples.
-        </p>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">Microservices Guide</h3>
+          <p class="text-sm">Simple explanations of patterns.</p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">Patterns</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="saga.html" class="hover:text-white">Saga</a></li>
+            <li><a href="strangler.html" class="hover:text-white">Strangler</a></li>
+            <li><a href="bulkhead.html" class="hover:text-white">Bulkhead</a></li>
+            <li><a href="retry.html" class="hover:text-white">Retry</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">More</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="event-sourcing.html" class="hover:text-white">Event Sourcing</a></li>
+            <li><a href="api-composition.html" class="hover:text-white">API Composition</a></li>
+            <li><a href="database-per-service.html" class="hover:text-white">Database</a></li>
+            <li><a href="sidecar.html" class="hover:text-white">Sidecar</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-3">Connect</h3>
+          <div class="flex space-x-4">
+
+            <!-- GitHub -->
+            <a href="https://github.com/your-username" target="_blank">
+              <svg class="w-6 h-6 fill-current hover:text-white" viewBox="0 0 24 24">
+                <path d="M12 .5C5.7.5.8 5.4.8 11.7c0 5 3.2 9.3 7.7 10.8.6.1.8-.3.8-.6v-2.2c-3.1.7-3.8-1.3-3.8-1.3-.5-1.2-1.1-1.6-1.1-1.6-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.5 2.3 1.1 2.9.9.1-.6.3-1.1.6-1.3-2.5-.3-5.2-1.3-5.2-5.6 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 .1.9-.2 1.8-.3 2.7-.3s1.8.1 2.7.3c2.1-.4 3-.1 3-.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.8 1.1 3 0 4.3-2.7 5.3-5.2 5.6.4.3.7 1 .7 2v3c0 .3.2.7.8.6 4.5-1.5 7.7-5.8 7.7-10.8C23.2 5.4 18.3.5 12 .5z"/>
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/your-profile" target="_blank">
+              <svg class="w-6 h-6 fill-current hover:text-white" viewBox="0 0 24 24">
+                <path d="M20.5 2h-17C2.7 2 2 2.7 2 3.5v17C2 21.3 2.7 22 3.5 22h17c.8 0 1.5-.7 1.5-1.5v-17C22 2.7 21.3 2 20.5 2zM8.1 19H5.2V9h2.9v10zM6.7 7.7c-.9 0-1.5-.6-1.5-1.5S5.8 4.7 6.7 4.7s1.5.6 1.5 1.5-.6 1.5-1.5 1.5zM19 19h-2.9v-5.4c0-1.3-.5-2.1-1.6-2.1-.9 0-1.4.6-1.6 1.1-.1.2-.1.5-.1.8V19h-2.9V9h2.9v1.4c.4-.6 1.2-1.4 2.8-1.4 2 0 3.5 1.3 3.5 4.1V19z"/>
+              </svg>
+            </a>
+
+          </div>
+        </div>
+
       </div>
 
-      <!-- Patterns -->
-      <div>
-        <h3 class="text-lg font-semibold text-white mb-3">Patterns</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-white">Saga</a></li>
-          <li><a href="#" class="hover:text-white">Strangler Fig</a></li>
-          <li><a href="#" class="hover:text-white">Bulkhead</a></li>
-          <li><a href="#" class="hover:text-white">Retry</a></li>
-        </ul>
-      </div>
-
-      <!-- More -->
-      <div>
-        <h3 class="text-lg font-semibold text-white mb-3">More Patterns</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-white">Event Sourcing</a></li>
-          <li><a href="#" class="hover:text-white">API Composition</a></li>
-          <li><a href="#" class="hover:text-white">Database per Service</a></li>
-          <li><a href="#" class="hover:text-white">Sidecar</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact / Info -->
-      <div>
-        <h3 class="text-lg font-semibold text-white mb-3">About</h3>
-        <p class="text-sm mb-2">
-          Built using Tailwind CSS for learning and quick reference.
-        </p>
-        <p class="text-sm">
-          © 2026 All rights reserved
-        </p>
+      <div class="border-t border-gray-700 mt-8 pt-4 text-center text-sm">
+        © 2026 Microservices Guide 🚀
       </div>
 
     </div>
+  </footer>
 
-    <!-- Bottom -->
-    <div class="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-400">
-      Designed for developers • Microservices Patterns Handbook 🚀
-    </div>
+  <!-- Dark Mode Script -->
+  <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem(
+        'theme',
+        document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+      );
+    }
 
-  </div>
-</footer>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
 
 </body>
 </html>
