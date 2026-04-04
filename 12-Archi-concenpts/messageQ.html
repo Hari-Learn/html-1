@@ -2,53 +2,129 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Message Queue</title>
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 font-sans text-gray-800">
 
-<nav class="bg-indigo-600 text-white p-4">
-  <div class="container mx-auto flex gap-6">
-    <a href="message-queue.html" class="font-bold">Message Queue</a>
-    <a href="publish-subscribe.html">Publish-Subscribe</a>
-    <a href="api-gateway.html">API Gateway</a>
+<!-- Navbar -->
+<nav class="bg-indigo-600 text-white shadow-md">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <h1 class="text-xl font-bold">System Design</h1>
+    <div class="flex gap-6">
+      <a href="message-queue.html" class="font-semibold hover:text-gray-200">Message Queue</a>
+      <a href="publish-subscribe.html" class="hover:text-gray-200">Publish-Subscribe</a>
+      <a href="api-gateway.html" class="hover:text-gray-200">API Gateway</a>
+    </div>
   </div>
 </nav>
 
-<div class="container mx-auto p-10">
-  <h1 class="text-4xl font-bold mb-6">Message Queue</h1>
-
-  <p class="text-lg mb-4">
-    A message queue is a communication method where messages are stored in a queue
-    until they are processed by another service or application.
+<!-- Hero Section -->
+<section class="text-center py-12 bg-white shadow">
+  <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-700 mb-4">
+    Message Queue
+  </h1>
+  <p class="text-lg max-w-2xl mx-auto text-gray-600">
+    A system design pattern that enables asynchronous communication between services
+    using a queue-based messaging system.
   </p>
+</section>
 
-  <div class="bg-white p-6 rounded-lg shadow">
-    <h2 class="text-2xl font-semibold mb-3">How It Works</h2>
+<!-- Content -->
+<div class="container mx-auto px-6 py-10">
+
+  <!-- Diagram -->
+  <div class="bg-white rounded-xl shadow p-6 mb-10">
+    <h2 class="text-2xl font-semibold mb-6 text-indigo-600 text-center">
+      Message Flow
+    </h2>
+
+    <div class="flex flex-col md:flex-row items-center justify-between text-center gap-6">
+
+      <div class="flex flex-col items-center">
+        <div class="bg-indigo-100 text-indigo-700 px-6 py-3 rounded-lg font-semibold">
+          Producer
+        </div>
+        <p class="text-sm mt-2 text-gray-500">Sends Messages</p>
+      </div>
+
+      <div class="text-3xl">➡️</div>
+
+      <div class="flex flex-col items-center">
+        <div class="bg-yellow-100 text-yellow-700 px-6 py-3 rounded-lg font-semibold">
+          Queue
+        </div>
+        <p class="text-sm mt-2 text-gray-500">Stores Messages</p>
+      </div>
+
+      <div class="text-3xl">➡️</div>
+
+      <div class="flex flex-col items-center">
+        <div class="bg-green-100 text-green-700 px-6 py-3 rounded-lg font-semibold">
+          Consumer
+        </div>
+        <p class="text-sm mt-2 text-gray-500">Processes Messages</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="grid md:grid-cols-2 gap-6">
+
+    <!-- How it works -->
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h2 class="text-2xl font-semibold mb-4 text-indigo-600">How It Works</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Producer sends a message to the queue</li>
+        <li>Messages are stored temporarily</li>
+        <li>Consumer retrieves messages when ready</li>
+        <li>Processing happens asynchronously</li>
+      </ul>
+    </div>
+
+    <!-- Benefits -->
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h2 class="text-2xl font-semibold mb-4 text-indigo-600">Benefits</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Decouples services</li>
+        <li>Improves reliability</li>
+        <li>Handles traffic spikes</li>
+        <li>Scales easily</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Real World Examples -->
+  <div class="bg-white p-6 rounded-xl shadow mt-10">
+    <h2 class="text-2xl font-semibold mb-4 text-indigo-600">Real-World Examples</h2>
     <ul class="list-disc pl-6 space-y-2">
-      <li>Producer sends a message to the queue</li>
-      <li>The message waits in the queue</li>
-      <li>Consumer processes the message when ready</li>
-      <li>This allows asynchronous communication</li>
+      <li>Email sending systems</li>
+      <li>Order processing in e-commerce</li>
+      <li>Background job processing</li>
+      <li>Notification systems</li>
     </ul>
   </div>
 
-  <div class="bg-white p-6 rounded-lg shadow mt-6">
-    <h2 class="text-2xl font-semibold mb-3">Benefits</h2>
+  <!-- Key Tools -->
+  <div class="bg-white p-6 rounded-xl shadow mt-6">
+    <h2 class="text-2xl font-semibold mb-4 text-indigo-600">Popular Tools</h2>
     <ul class="list-disc pl-6 space-y-2">
-      <li>Decouples services</li>
-      <li>Improves reliability</li>
-      <li>Handles high traffic loads</li>
-      <li>Supports asynchronous processing</li>
+      <li>RabbitMQ</li>
+      <li>Apache Kafka</li>
+      <li>Amazon SQS</li>
+      <li>Redis Queue</li>
     </ul>
   </div>
 
-</div/
-<footer>
-Hariharan D designed for learning purpose
+</div>
 
-
+<!-- Footer -->
+<footer class="bg-gray-800 text-gray-300 text-center py-4 mt-10">
+  <p>Designed by Hariharan D • Learning Project</p>
 </footer>
 
 </body>
