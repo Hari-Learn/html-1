@@ -2,41 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Load Balancing</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 font-sans text-gray-800">
 
 <!-- Navbar -->
-<nav class="bg-blue-600 text-white p-4">
-  <div class="container mx-auto flex gap-6">
-    <a href="loadbalancing.html" class="font-bold">Load Balancing</a>
-    <a href="caching.html">Caching</a>
-    <a href="cdn.html">CDN</a>
+<nav class="bg-blue-600 text-white shadow-md">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <h1 class="text-xl font-bold">System Design</h1>
+    <div class="flex gap-6">
+      <a href="loadbalancing.html" class="font-semibold hover:text-gray-200">Load Balancing</a>
+      <a href="caching.html" class="hover:text-gray-200">Caching</a>
+      <a href="cdn.html" class="hover:text-gray-200">CDN</a>
+    </div>
   </div>
 </nav>
 
 <!-- Content -->
-<div class="container mx-auto p-10">
-  <h1 class="text-4xl font-bold mb-6">Load Balancing</h1>
+<div class="container mx-auto px-6 py-10">
 
-  <p class="text-lg mb-4">
-    Load balancing distributes incoming network traffic across multiple servers.
-    This ensures no single server becomes overwhelmed.
+  <!-- Title -->
+  <h1 class="text-4xl font-extrabold mb-4 text-blue-700">
+    Load Balancing
+  </h1>
+
+  <!-- Intro -->
+  <p class="text-lg mb-8 max-w-2xl">
+    Load balancing distributes incoming network traffic across multiple servers,
+    ensuring that no single server becomes overwhelmed and improving overall
+    system performance and availability.
   </p>
 
-  <div class="bg-white p-6 rounded-lg shadow">
-    <h2 class="text-2xl font-semibold mb-3">Benefits</h2>
-    <ul class="list-disc pl-6 space-y-2">
-      <li>Improves application availability</li>
-      <li>Prevents server overload</li>
-      <li>Enhances reliability</li>
-      <li>Allows horizontal scaling</li>
-    </ul>
+  <!-- Cards -->
+  <div class="grid md:grid-cols-2 gap-6">
+
+    <!-- How it works -->
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-600">How It Works</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>User requests reach the load balancer</li>
+        <li>The load balancer selects a server</li>
+        <li>Requests are distributed across servers</li>
+        <li>Responses are sent back to users</li>
+      </ul>
+    </div>
+
+    <!-- Benefits -->
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-600">Benefits</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Improves application availability</li>
+        <li>Prevents server overload</li>
+        <li>Enhances reliability</li>
+        <li>Supports horizontal scaling</li>
+      </ul>
+    </div>
+
   </div>
 
 </div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-gray-300 text-center py-4 mt-10">
+  <p>Designed by Hariharan D • Learning Project</p>
+</footer>
 
 </body>
 </html>
