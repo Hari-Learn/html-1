@@ -1,59 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlRoot">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Auto Scaling</title>
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Dark mode config -->
+<script>
+  tailwind.config = {
+    darkMode: 'class'
+  }
+</script>
+
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-200 transition">
 
-<header class="bg-purple-600 text-white p-6 shadow">
-<h1 class="text-3xl font-bold">Auto Scaling</h1>
-<p class="text-sm opacity-90">Automatically adjusting resources based on demand</p>
-</header>
+<!-- Navbar -->
+<nav class="bg-purple-600 text-white shadow-md">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <h1 class="text-xl font-bold">System Design</h1>
 
-<main class="max-w-5xl mx-auto mt-8 p-6 bg-white rounded-xl shadow">
+    <div class="flex items-center gap-6">
+      <a href="loadbalancing.html" class="hover:text-gray-200">Load Balancing</a>
+      <a href="caching.html" class="hover:text-gray-200">Caching</a>
+      <a href="cdn.html" class="hover:text-gray-200">CDN</a>
 
-<section class="mb-6">
-<h2 class="text-2xl font-semibold text-purple-600 mb-2">What is Auto Scaling?</h2>
-<p class="text-gray-700">
-Auto scaling automatically increases or decreases the number of servers
-or computing resources based on traffic or system load.
-</p>
-</section>
+      <!-- Dark Mode Toggle -->
+      <button onclick="toggleDark()" class="bg-white text-purple-600 px-3 py-1 rounded-lg text-sm font-semibold">
+        🌙 Toggle
+      </button>
+    </div>
+  </div>
+</nav>
 
-<section class="mb-6">
-<h2 class="text-xl font-semibold mb-2">Types of Scaling</h2>
+<!-- Content -->
+<div class="container mx-auto px-6 py-10">
 
-<div class="grid md:grid-cols-2 gap-4">
+  <!-- Title -->
+  <h1 class="text-4xl font-extrabold mb-4 text-purple-700 dark:text-purple-400">
+    ⚡ Auto Scaling
+  </h1>
 
-<div class="bg-gray-100 p-4 rounded-lg">
-<h3 class="font-bold">Vertical Scaling</h3>
-<p class="text-sm text-gray-600">Increase CPU, RAM, or storage of an existing server.</p>
+  <!-- Intro -->
+  <p class="text-lg mb-8 max-w-2xl">
+    Auto scaling automatically increases or decreases computing resources
+    based on system load or traffic, ensuring optimal performance and cost efficiency.
+  </p>
+
+  <!-- Cards -->
+  <div class="grid md:grid-cols-2 gap-6">
+
+    <!-- How it works -->
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h2 class="text-2xl font-semibold mb-4 text-purple-600">⚙️ How It Works</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>System monitors traffic/load</li>
+        <li>High demand → adds more servers</li>
+        <li>Low demand → removes extra servers</li>
+        <li>Maintains performance automatically</li>
+      </ul>
+    </div>
+
+    <!-- Types -->
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h2 class="text-2xl font-semibold mb-4 text-purple-600">📦 Types of Scaling</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Vertical Scaling:</strong> Increase CPU, RAM of one server</li>
+        <li><strong>Horizontal Scaling:</strong> Add/remove multiple servers</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Advantages -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow mt-6 hover:shadow-lg transition">
+    <h2 class="text-2xl font-semibold mb-4 text-purple-600">🚀 Advantages</h2>
+    <ul class="list-disc pl-6 space-y-2">
+      <li>Cost optimization 💰</li>
+      <li>Handles traffic spikes 📈</li>
+      <li>Improves reliability 🔒</li>
+      <li>Automatic resource management 🤖</li>
+    </ul>
+  </div>
+
 </div>
 
-<div class="bg-gray-100 p-4 rounded-lg">
-<h3 class="font-bold">Horizontal Scaling</h3>
-<p class="text-sm text-gray-600">Add more servers to distribute the load.</p>
-</div>
+<!-- Footer -->
+<footer class="bg-gray-800 text-gray-300 text-center py-4 mt-10">
+  <p>Designed by Hariharan D • Learning Project</p>
+</footer>
 
-</div>
-</section>
-
-<section>
-<h2 class="text-xl font-semibold mb-2">Advantages</h2>
-
-<ul class="list-disc pl-6 text-gray-700 space-y-1">
-<li>Cost optimization</li>
-<li>Better performance during traffic spikes</li>
-<li>Improved system reliability</li>
-<li>Automatic resource management</li>
-</ul>
-
-</section>
-
-</main>
+<!-- Dark Mode Script -->
+<script>
+function toggleDark() {
+  document.getElementById('htmlRoot').classList.toggle('dark');
+}
+</script>
 
 </body>
 </html>
