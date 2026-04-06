@@ -6,84 +6,127 @@
 <title>Message Queue</title>
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Dark mode config -->
 <script>
-  tailwind.config = {
-    darkMode: 'class'
-  }
+  tailwind.config = { darkMode: 'class' }
 </script>
 
 </head>
 
-<body class="bg-gray-100 text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-200 transition">
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition">
 
 <!-- Navbar -->
 <nav class="bg-indigo-600 text-white shadow-md">
-  <div class="container mx-auto flex justify-between items-center p-4">
-    <h1 class="text-xl font-bold">System Design</h1>
+  <div class="w-full px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">⚙️ System Design</h1>
 
     <div class="flex items-center gap-6">
-      <a href="message-queue.html" class="font-semibold hover:text-gray-200">Message Queue</a>
-      <a href="publish-subscribe.html" class="hover:text-gray-200">Publish-Subscribe</a>
-      <a href="api-gateway.html" class="hover:text-gray-200">API Gateway</a>
+      <a href="#" class="font-semibold">Message Queue</a>
+      <a href="#">Publish-Subscribe</a>
+      <a href="#">API Gateway</a>
 
-      <!-- Dark Mode Toggle -->
       <button onclick="toggleDark()" class="bg-white text-indigo-600 px-3 py-1 rounded-lg text-sm font-semibold">
-        🌙 Toggle
+        🌙
       </button>
     </div>
   </div>
 </nav>
 
-<!-- Content -->
-<div class="container mx-auto px-6 py-10">
-
-  <!-- Title -->
-  <h1 class="text-4xl font-extrabold mb-4 text-indigo-700 dark:text-indigo-400">
-    📩 Message Queue
+<!-- Hero -->
+<section class="w-full px-6 py-12 bg-indigo-50 dark:bg-gray-800">
+  <h1 class="text-4xl font-extrabold text-indigo-700 dark:text-indigo-400 mb-4">
+    📩 Message Queue (Explained Like You're 10)
   </h1>
-
-  <!-- Intro -->
-  <p class="text-lg mb-8 max-w-2xl">
-    A message queue is a communication method where messages are stored in a queue
-    until they are processed by another service or application, enabling asynchronous communication.
+  <p class="text-lg max-w-3xl">
+    Imagine you write a letter and drop it in a mailbox 📮.  
+    You don’t wait there until it’s delivered.  
+    The post office takes it and delivers it later.  
+    👉 That’s exactly how a message queue works in software!
   </p>
+</section>
 
-  <!-- Cards -->
-  <div class="grid md:grid-cols-2 gap-6">
+<!-- Cards Section -->
+<section class="w-full px-6 py-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-    <!-- How it works -->
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow hover:shadow-lg transition">
-      <h2 class="text-2xl font-semibold mb-4 text-indigo-600">⚙️ How It Works</h2>
-      <ul class="list-disc pl-6 space-y-2">
-        <li>Producer sends a message</li>
-        <li>Message is stored in the queue</li>
-        <li>Consumer reads the message later</li>
-        <li>Processing happens asynchronously</li>
-      </ul>
-    </div>
-
-    <!-- Benefits -->
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow hover:shadow-lg transition">
-      <h2 class="text-2xl font-semibold mb-4 text-indigo-600">🚀 Benefits</h2>
-      <ul class="list-disc pl-6 space-y-2">
-        <li>Decouples services</li>
-        <li>Improves reliability</li>
-        <li>Handles high traffic loads</li>
-        <li>Supports background processing</li>
-      </ul>
-    </div>
-
+  <!-- What is MQ -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
+    <h2 class="text-xl font-bold mb-3 text-indigo-600">💡 What is it?</h2>
+    <p>
+      A message queue is like a waiting line for messages.  
+      Apps send messages and other apps pick them up later.
+    </p>
   </div>
 
-</div>
+  <!-- Producer -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
+    <h2 class="text-xl font-bold mb-3 text-indigo-600">📤 Producer</h2>
+    <p>
+      The producer is the sender.  
+      It creates a message and drops it into the queue.
+    </p>
+  </div>
+
+  <!-- Queue -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
+    <h2 class="text-xl font-bold mb-3 text-indigo-600">📦 Queue</h2>
+    <p>
+      This is like a storage box where messages wait safely  
+      until someone is ready to read them.
+    </p>
+  </div>
+
+  <!-- Consumer -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
+    <h2 class="text-xl font-bold mb-3 text-indigo-600">📥 Consumer</h2>
+    <p>
+      The consumer is the receiver.  
+      It picks up messages and processes them.
+    </p>
+  </div>
+
+  <!-- How it works -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
+    <h2 class="text-xl font-bold mb-3 text-indigo-600">⚙️ How it works</h2>
+    <ul class="space-y-2">
+      <li>1️⃣ App sends a message</li>
+      <li>2️⃣ Message waits in queue</li>
+      <li>3️⃣ Another app picks it</li>
+      <li>4️⃣ Work happens later ⏳</li>
+    </ul>
+  </div>
+
+  <!-- Benefits -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
+    <h2 class="text-xl font-bold mb-3 text-indigo-600">🚀 Why it's useful</h2>
+    <ul class="space-y-2">
+      <li>✅ Apps don’t need to wait</li>
+      <li>✅ Works even if one app is slow</li>
+      <li>✅ Handles lots of messages</li>
+      <li>✅ Makes systems reliable</li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- Real Life Example -->
+<section class="w-full px-6 py-10 bg-gray-50 dark:bg-gray-800">
+  <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
+    <h2 class="text-2xl font-bold mb-4 text-indigo-600">🎯 Real Life Example</h2>
+    <p>
+      When you order food online 🍔:
+    </p>
+    <ul class="mt-3 space-y-2">
+      <li>👉 You place an order (Producer)</li>
+      <li>👉 Order goes to system (Queue)</li>
+      <li>👉 Restaurant accepts it later (Consumer)</li>
+    </ul>
+  </div>
+</section>
 
 <!-- Footer -->
-<footer class="bg-gray-800 text-gray-300 text-center py-4 mt-10">
+<footer class="bg-gray-800 text-gray-300 text-center py-4">
   <p>Designed by Hariharan D • Learning Project</p>
 </footer>
 
-<!-- Dark Mode Script -->
 <script>
 function toggleDark() {
   document.getElementById('htmlRoot').classList.toggle('dark');
