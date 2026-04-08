@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Communication Patterns</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-4xl mx-auto p-8">
+    <h1 class="text-4xl font-bold mb-6 text-blue-600">Communication Patterns</h1>
+    
+    <p class="mb-6 text-lg">
+      In microservices architecture, communication patterns define how services interact with each other.
+    </p>
+
+    <div class="grid gap-4">
+      <a href="sync.html" class="block p-6 bg-white rounded-2xl shadow hover:bg-blue-50">
+        <h2 class="text-2xl font-semibold">Synchronous Communication</h2>
+        <p>REST or gRPC calls between services.</p>
+      </a>
+
+      <a href="async.html" class="block p-6 bg-white rounded-2xl shadow hover:bg-blue-50">
+        <h2 class="text-2xl font-semibold">Asynchronous Messaging</h2>
+        <p>Use message brokers for decoupled communication.</p>
+      </a>
+
+      <a href="patterns.html" class="block p-6 bg-white rounded-2xl shadow hover:bg-blue-50">
+        <h2 class="text-2xl font-semibold">Gateway & BFF</h2>
+        <p>API Gateway and Backend for Frontend patterns.</p>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
