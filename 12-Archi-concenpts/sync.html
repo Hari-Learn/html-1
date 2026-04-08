@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Synchronous vs Asynchronous</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <div class="max-w-5xl mx-auto p-8">
+    <h1 class="text-3xl font-bold mb-6 text-green-600">
+      Synchronous & Asynchronous Communication
+    </h1>
+
+    <!-- Synchronous -->
+    <div class="mb-8 p-6 bg-white rounded-2xl shadow">
+      <h2 class="text-2xl font-semibold mb-2">Synchronous Communication</h2>
+      <p class="mb-2">
+        Services communicate directly and wait for a response.
+      </p>
+      <ul class="list-disc pl-5">
+        <li>REST APIs</li>
+        <li>gRPC calls</li>
+      </ul>
+    </div>
+
+    <!-- Asynchronous -->
+    <div class="p-6 bg-white rounded-2xl shadow">
+      <h2 class="text-2xl font-semibold mb-2">Asynchronous Messaging</h2>
+      <p class="mb-2">
+        Services communicate via message brokers without waiting.
+      </p>
+      <ul class="list-disc pl-5">
+        <li>Kafka</li>
+        <li>RabbitMQ</li>
+        <li>Event-driven communication</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="inline-block mt-6 text-blue-600 underline">
+      ← Back
+    </a>
+  </div>
+
+</body>
+</html>
