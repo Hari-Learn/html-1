@@ -9,23 +9,91 @@
 
   <h1 class="text-3xl font-bold text-center mb-8">Fallback Pattern</h1>
 
-  <div class="max-w-xl mx-auto bg-white rounded-2xl shadow-lg p-6">
+  <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+
+    <!-- What is it -->
     <h2 class="text-xl font-semibold mb-4">What is it?</h2>
     <p class="text-gray-700">
-      Imagine your favorite app stops working 😢. Instead of showing an error,
-      it shows something helpful like “Try again later” or gives backup data.
+      The <strong>Fallback Pattern</strong> is a resilience design pattern used in microservices 
+      to provide an alternative response when a service fails or becomes unavailable.
+      Instead of showing an error, the system gracefully returns backup data, a default response,
+      or a cached value.
     </p>
 
+    <!-- ELI10 -->
     <h2 class="text-xl font-semibold mt-6 mb-2">ELI10 Explanation</h2>
     <p class="text-gray-700">
-      It’s like carrying an umbrella ☔ when it might rain.
-      If something fails, you already have a backup plan!
+      It’s like carrying an umbrella ☔. If it rains (failure happens), you don’t get wet — 
+      you already have a backup plan ready!
     </p>
 
-    <h2 class="text-xl font-semibold mt-6 mb-2">Example</h2>
-    <p class="text-gray-700">
-      If a weather app can't load new data, it shows yesterday’s weather instead.
-    </p>
+    <!-- Why needed -->
+    <h2 class="text-xl font-semibold mt-6 mb-2">Why is it Important?</h2>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>Prevents bad user experience (no ugly error pages)</li>
+      <li>Keeps applications partially functional</li>
+      <li>Improves system reliability and availability</li>
+      <li>Handles temporary failures gracefully</li>
+    </ul>
+
+    <!-- Types -->
+    <h2 class="text-xl font-semibold mt-6 mb-2">Types of Fallbacks</h2>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li><strong>Static Fallback:</strong> Show a fixed message (e.g., "Service unavailable")</li>
+      <li><strong>Cached Data:</strong> Return last known data</li>
+      <li><strong>Default Value:</strong> Return safe default (e.g., empty list)</li>
+      <li><strong>Alternative Service:</strong> Call another service as backup</li>
+    </ul>
+
+    <!-- Example -->
+    <h2 class="text-xl font-semibold mt-6 mb-2">Real-World Examples</h2>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>Weather app shows yesterday’s data if API fails 🌦️</li>
+      <li>E-commerce site shows "popular products" if recommendations fail 🛒</li>
+      <li>Video platform shows thumbnails even if video fails to load 🎥</li>
+    </ul>
+
+    <!-- Flow -->
+    <h2 class="text-xl font-semibold mt-6 mb-2">Simple Flow</h2>
+    <div class="bg-gray-100 rounded-lg p-4 text-gray-700 text-sm">
+      Request → Service Call → ❌ Failure → Fallback Triggered → ✅ Backup Response
+    </div>
+
+    <!-- Code Example -->
+    <h2 class="text-xl font-semibold mt-6 mb-2">Code Example (Pseudo)</h2>
+    <pre class="bg-gray-900 text-green-400 p-4 rounded-lg text-sm overflow-x-auto">
+function getWeather() {
+  try {
+    return callWeatherAPI();
+  } catch (error) {
+    return "Showing cached weather data 🌤️";
+  }
+}
+    </pre>
+
+    <!-- When to use -->
+    <h2 class="text-xl font-semibold mt-6 mb-2">When to Use?</h2>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>When services depend on external APIs</li>
+      <li>In distributed systems with network failures</li>
+      <li>For non-critical features (recommendations, analytics)</li>
+    </ul>
+
+    <!-- When NOT to use -->
+    <h2 class="text-xl font-semibold mt-6 mb-2">When NOT to Use?</h2>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>Critical systems like payments 💳 (wrong data is dangerous)</li>
+      <li>When fallback may mislead users</li>
+    </ul>
+
+    <!-- Related Patterns -->
+    <h2 class="text-xl font-semibold mt-6 mb-2">Related Patterns</h2>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>Circuit Breaker</li>
+      <li>Retry Pattern</li>
+      <li>Timeout Pattern</li>
+    </ul>
+
   </div>
 
 </body>
