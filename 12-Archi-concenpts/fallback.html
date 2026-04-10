@@ -4,97 +4,123 @@
   <meta charset="UTF-8">
   <title>Fallback Pattern</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Heroicons CDN -->
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
-<body class="bg-gray-100 p-10">
+<body class="bg-gray-100 p-10 flex flex-col min-h-screen">
 
-  <h1 class="text-3xl font-bold text-center mb-8">Fallback Pattern</h1>
+  <h1 class="text-3xl font-bold text-center mb-8 flex items-center justify-center gap-2">
+    <i data-feather="shield"></i> Fallback Pattern
+  </h1>
 
-  <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+  <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8 flex-grow">
 
     <!-- What is it -->
-    <h2 class="text-xl font-semibold mb-4">What is it?</h2>
+    <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+      <i data-feather="info"></i> What is it?
+    </h2>
     <p class="text-gray-700">
       The <strong>Fallback Pattern</strong> is a resilience design pattern used in microservices 
-      to provide an alternative response when a service fails or becomes unavailable.
-      Instead of showing an error, the system gracefully returns backup data, a default response,
-      or a cached value.
+      to provide an alternative response when a service fails. Instead of breaking the application, 
+      it gracefully returns backup data, default responses, or cached values.
     </p>
 
     <!-- ELI10 -->
-    <h2 class="text-xl font-semibold mt-6 mb-2">ELI10 Explanation</h2>
+    <h2 class="text-xl font-semibold mt-6 mb-2 flex items-center gap-2">
+      <i data-feather="smile"></i> ELI10 Explanation
+    </h2>
     <p class="text-gray-700">
-      It’s like carrying an umbrella ☔. If it rains (failure happens), you don’t get wet — 
+      It’s like carrying an umbrella ☔. If it rains (failure happens), you don’t panic — 
       you already have a backup plan ready!
     </p>
 
     <!-- Why needed -->
-    <h2 class="text-xl font-semibold mt-6 mb-2">Why is it Important?</h2>
+    <h2 class="text-xl font-semibold mt-6 mb-2 flex items-center gap-2">
+      <i data-feather="alert-circle"></i> Why is it Important?
+    </h2>
     <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Prevents bad user experience (no ugly error pages)</li>
-      <li>Keeps applications partially functional</li>
-      <li>Improves system reliability and availability</li>
-      <li>Handles temporary failures gracefully</li>
+      <li>Prevents poor user experience</li>
+      <li>Keeps apps partially functional</li>
+      <li>Improves reliability and availability</li>
+      <li>Handles temporary failures smoothly</li>
     </ul>
 
     <!-- Types -->
-    <h2 class="text-xl font-semibold mt-6 mb-2">Types of Fallbacks</h2>
+    <h2 class="text-xl font-semibold mt-6 mb-2 flex items-center gap-2">
+      <i data-feather="layers"></i> Types of Fallbacks
+    </h2>
     <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li><strong>Static Fallback:</strong> Show a fixed message (e.g., "Service unavailable")</li>
-      <li><strong>Cached Data:</strong> Return last known data</li>
-      <li><strong>Default Value:</strong> Return safe default (e.g., empty list)</li>
-      <li><strong>Alternative Service:</strong> Call another service as backup</li>
+      <li><strong>Static:</strong> Fixed message</li>
+      <li><strong>Cached:</strong> Last known data</li>
+      <li><strong>Default:</strong> Safe values</li>
+      <li><strong>Alternative Service:</strong> Backup API</li>
     </ul>
 
     <!-- Example -->
-    <h2 class="text-xl font-semibold mt-6 mb-2">Real-World Examples</h2>
+    <h2 class="text-xl font-semibold mt-6 mb-2 flex items-center gap-2">
+      <i data-feather="box"></i> Real-World Examples
+    </h2>
     <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Weather app shows yesterday’s data if API fails 🌦️</li>
-      <li>E-commerce site shows "popular products" if recommendations fail 🛒</li>
-      <li>Video platform shows thumbnails even if video fails to load 🎥</li>
+      <li>Weather app shows cached data 🌦️</li>
+      <li>E-commerce shows popular products 🛒</li>
+      <li>Video apps show thumbnails 🎥</li>
     </ul>
 
     <!-- Flow -->
-    <h2 class="text-xl font-semibold mt-6 mb-2">Simple Flow</h2>
+    <h2 class="text-xl font-semibold mt-6 mb-2 flex items-center gap-2">
+      <i data-feather="shuffle"></i> Simple Flow
+    </h2>
     <div class="bg-gray-100 rounded-lg p-4 text-gray-700 text-sm">
-      Request → Service Call → ❌ Failure → Fallback Triggered → ✅ Backup Response
+      Request → Service Call → ❌ Failure → Fallback → ✅ Response
     </div>
 
-    <!-- Code Example -->
-    <h2 class="text-xl font-semibold mt-6 mb-2">Code Example (Pseudo)</h2>
+    <!-- Code -->
+    <h2 class="text-xl font-semibold mt-6 mb-2 flex items-center gap-2">
+      <i data-feather="code"></i> Code Example
+    </h2>
     <pre class="bg-gray-900 text-green-400 p-4 rounded-lg text-sm overflow-x-auto">
-function getWeather() {
+function getData() {
   try {
-    return callWeatherAPI();
-  } catch (error) {
-    return "Showing cached weather data 🌤️";
+    return callService();
+  } catch (e) {
+    return "Fallback response";
   }
 }
     </pre>
 
     <!-- When to use -->
-    <h2 class="text-xl font-semibold mt-6 mb-2">When to Use?</h2>
+    <h2 class="text-xl font-semibold mt-6 mb-2 flex items-center gap-2">
+      <i data-feather="check-circle"></i> When to Use
+    </h2>
     <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>When services depend on external APIs</li>
-      <li>In distributed systems with network failures</li>
-      <li>For non-critical features (recommendations, analytics)</li>
+      <li>External API calls</li>
+      <li>Distributed systems</li>
+      <li>Non-critical features</li>
     </ul>
 
-    <!-- When NOT to use -->
-    <h2 class="text-xl font-semibold mt-6 mb-2">When NOT to Use?</h2>
+    <!-- Avoid -->
+    <h2 class="text-xl font-semibold mt-6 mb-2 flex items-center gap-2">
+      <i data-feather="x-circle"></i> When NOT to Use
+    </h2>
     <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Critical systems like payments 💳 (wrong data is dangerous)</li>
-      <li>When fallback may mislead users</li>
-    </ul>
-
-    <!-- Related Patterns -->
-    <h2 class="text-xl font-semibold mt-6 mb-2">Related Patterns</h2>
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Circuit Breaker</li>
-      <li>Retry Pattern</li>
-      <li>Timeout Pattern</li>
+      <li>Critical operations (payments 💳)</li>
+      <li>When incorrect data is risky</li>
     </ul>
 
   </div>
+
+  <!-- Footer -->
+  <footer class="mt-10 text-center text-gray-600 text-sm">
+    <div class="flex justify-center items-center gap-2 mb-2">
+      <i data-feather="cpu"></i>
+      <span>Microservices Design Patterns Guide</span>
+    </div>
+    <p>Built for learning • Fallback Pattern • 2026</p>
+  </footer>
+
+  <script>
+    feather.replace();
+  </script>
 
 </body>
 </html>
