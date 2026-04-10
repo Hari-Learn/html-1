@@ -9,7 +9,7 @@
 <body class="bg-gray-100 min-h-screen flex flex-col">
 
   <!-- Header -->
-  <header class="bg-white shadow-md p-6 flex justify-center items-center gap-3">
+  <header class="bg-gray-900 text-white shadow-md p-6 flex justify-center items-center gap-3">
     <i data-feather="shield"></i>
     <h1 class="text-3xl font-bold">Fallback Pattern</h1>
   </header>
@@ -18,80 +18,95 @@
   <main class="flex-grow p-6">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
+      <!-- Card Template -->
       <!-- What is it -->
-      <div class="bg-white p-5 rounded-xl shadow">
-        <h2 class="font-semibold text-lg flex items-center gap-2 mb-2">
-          <i data-feather="info"></i> What is it?
-        </h2>
-        <p class="text-gray-700 text-sm">
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <div class="bg-blue-500 text-white p-3 flex items-center gap-2">
+          <i data-feather="info"></i>
+          <h2 class="font-semibold">What is it?</h2>
+        </div>
+        <div class="p-4 text-gray-700 text-sm">
           A resilience pattern that provides a backup response when a service fails,
-          ensuring the system continues to function gracefully.
-        </p>
+          ensuring smooth user experience.
+        </div>
       </div>
 
       <!-- ELI10 -->
-      <div class="bg-white p-5 rounded-xl shadow">
-        <h2 class="font-semibold text-lg flex items-center gap-2 mb-2">
-          <i data-feather="smile"></i> ELI10
-        </h2>
-        <p class="text-gray-700 text-sm">
-          Like carrying an umbrella ☔ — if something goes wrong, you already have a backup.
-        </p>
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <div class="bg-green-500 text-white p-3 flex items-center gap-2">
+          <i data-feather="smile"></i>
+          <h2 class="font-semibold">ELI10</h2>
+        </div>
+        <div class="p-4 text-gray-700 text-sm">
+          Like carrying an umbrella ☔ — you’re ready when something goes wrong.
+        </div>
       </div>
 
       <!-- Importance -->
-      <div class="bg-white p-5 rounded-xl shadow">
-        <h2 class="font-semibold text-lg flex items-center gap-2 mb-2">
-          <i data-feather="alert-circle"></i> Why Important?
-        </h2>
-        <ul class="text-gray-700 text-sm list-disc list-inside">
-          <li>Better user experience</li>
-          <li>High availability</li>
-          <li>Graceful failure handling</li>
-        </ul>
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <div class="bg-red-500 text-white p-3 flex items-center gap-2">
+          <i data-feather="alert-circle"></i>
+          <h2 class="font-semibold">Why Important?</h2>
+        </div>
+        <div class="p-4 text-gray-700 text-sm">
+          <ul class="list-disc list-inside">
+            <li>Better UX</li>
+            <li>High availability</li>
+            <li>Graceful failures</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Types -->
-      <div class="bg-white p-5 rounded-xl shadow">
-        <h2 class="font-semibold text-lg flex items-center gap-2 mb-2">
-          <i data-feather="layers"></i> Types
-        </h2>
-        <ul class="text-gray-700 text-sm list-disc list-inside">
-          <li>Static response</li>
-          <li>Cached data</li>
-          <li>Default values</li>
-          <li>Backup service</li>
-        </ul>
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <div class="bg-purple-500 text-white p-3 flex items-center gap-2">
+          <i data-feather="layers"></i>
+          <h2 class="font-semibold">Types</h2>
+        </div>
+        <div class="p-4 text-gray-700 text-sm">
+          <ul class="list-disc list-inside">
+            <li>Static</li>
+            <li>Cached</li>
+            <li>Default</li>
+            <li>Backup service</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Examples -->
-      <div class="bg-white p-5 rounded-xl shadow">
-        <h2 class="font-semibold text-lg flex items-center gap-2 mb-2">
-          <i data-feather="box"></i> Examples
-        </h2>
-        <ul class="text-gray-700 text-sm list-disc list-inside">
-          <li>Weather app shows old data 🌦️</li>
-          <li>Shopping shows popular items 🛒</li>
-          <li>Video app shows thumbnails 🎥</li>
-        </ul>
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <div class="bg-yellow-500 text-white p-3 flex items-center gap-2">
+          <i data-feather="box"></i>
+          <h2 class="font-semibold">Examples</h2>
+        </div>
+        <div class="p-4 text-gray-700 text-sm">
+          <ul class="list-disc list-inside">
+            <li>Weather app 🌦️</li>
+            <li>E-commerce 🛒</li>
+            <li>Video apps 🎥</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Flow -->
-      <div class="bg-white p-5 rounded-xl shadow">
-        <h2 class="font-semibold text-lg flex items-center gap-2 mb-2">
-          <i data-feather="shuffle"></i> Flow
-        </h2>
-        <p class="text-gray-700 text-sm">
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <div class="bg-indigo-500 text-white p-3 flex items-center gap-2">
+          <i data-feather="shuffle"></i>
+          <h2 class="font-semibold">Flow</h2>
+        </div>
+        <div class="p-4 text-gray-700 text-sm">
           Request → Service → ❌ Fail → Fallback → ✅ Response
-        </p>
+        </div>
       </div>
 
       <!-- Code -->
-      <div class="bg-white p-5 rounded-xl shadow md:col-span-2">
-        <h2 class="font-semibold text-lg flex items-center gap-2 mb-2">
-          <i data-feather="code"></i> Code Example
-        </h2>
-        <pre class="bg-gray-900 text-green-400 p-3 rounded text-xs overflow-x-auto">
+      <div class="bg-white rounded-xl shadow overflow-hidden md:col-span-2">
+        <div class="bg-gray-800 text-white p-3 flex items-center gap-2">
+          <i data-feather="code"></i>
+          <h2 class="font-semibold">Code Example</h2>
+        </div>
+        <div class="p-4">
+          <pre class="bg-gray-900 text-green-400 p-3 rounded text-xs overflow-x-auto">
 function getData() {
   try {
     return callService();
@@ -99,37 +114,44 @@ function getData() {
     return "Fallback response";
   }
 }
-        </pre>
+          </pre>
+        </div>
       </div>
 
-      <!-- When to use -->
-      <div class="bg-white p-5 rounded-xl shadow">
-        <h2 class="font-semibold text-lg flex items-center gap-2 mb-2">
-          <i data-feather="check-circle"></i> Use When
-        </h2>
-        <ul class="text-gray-700 text-sm list-disc list-inside">
-          <li>External APIs</li>
-          <li>Distributed systems</li>
-          <li>Non-critical features</li>
-        </ul>
+      <!-- Use -->
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <div class="bg-teal-500 text-white p-3 flex items-center gap-2">
+          <i data-feather="check-circle"></i>
+          <h2 class="font-semibold">Use When</h2>
+        </div>
+        <div class="p-4 text-gray-700 text-sm">
+          <ul class="list-disc list-inside">
+            <li>External APIs</li>
+            <li>Distributed systems</li>
+            <li>Non-critical features</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Avoid -->
-      <div class="bg-white p-5 rounded-xl shadow">
-        <h2 class="font-semibold text-lg flex items-center gap-2 mb-2">
-          <i data-feather="x-circle"></i> Avoid When
-        </h2>
-        <ul class="text-gray-700 text-sm list-disc list-inside">
-          <li>Payments 💳</li>
-          <li>Critical data flows</li>
-        </ul>
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <div class="bg-pink-500 text-white p-3 flex items-center gap-2">
+          <i data-feather="x-circle"></i>
+          <h2 class="font-semibold">Avoid When</h2>
+        </div>
+        <div class="p-4 text-gray-700 text-sm">
+          <ul class="list-disc list-inside">
+            <li>Payments 💳</li>
+            <li>Critical flows</li>
+          </ul>
+        </div>
       </div>
 
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-white text-center p-4 text-gray-600 text-sm shadow-inner">
+  <footer class="bg-gray-900 text-white text-center p-4 text-sm">
     <div class="flex justify-center items-center gap-2">
       <i data-feather="cpu"></i>
       Microservices Patterns • Fallback • 2026
