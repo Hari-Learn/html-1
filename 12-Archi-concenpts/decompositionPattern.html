@@ -4,32 +4,110 @@
   <meta charset="UTF-8">
   <title>Decomposition Patterns</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
-<body class="bg-gray-100 p-6">
+<body class="bg-gray-100 min-h-screen flex flex-col">
 
-  <h1 class="text-3xl font-bold text-center mb-8">Decomposition Patterns</h1>
+  <!-- Navbar -->
+  <nav class="bg-gray-900 text-white px-8 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-2 font-bold text-lg">
+      <i data-feather="cpu"></i> Microservices UI
+    </div>
+    <div class="flex gap-6 text-sm">
+      <a href="#" class="hover:text-gray-300">Home</a>
+      <a href="#" class="hover:text-gray-300">Patterns</a>
+      <a href="#" class="hover:text-gray-300">About</a>
+    </div>
+  </nav>
 
-  <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+  <!-- Hero Section -->
+  <section class="bg-white shadow p-8 text-center">
+    <h1 class="text-4xl font-bold mb-3">Decomposition Patterns</h1>
+    <p class="text-gray-600 max-w-2xl mx-auto">
+      Decomposition patterns help break down a monolithic system into smaller, 
+      manageable microservices. Choosing the right strategy improves scalability, 
+      maintainability, and team productivity.
+    </p>
 
-    <!-- Card 1 -->
-    <div class="bg-white rounded-2xl shadow p-6">
-      <h2 class="text-xl font-semibold mb-3">Business Capability</h2>
-      <p class="text-gray-600 mb-4">
-        Break your app into parts based on what the business does.
-      </p>
-      <a href="business.html" class="text-blue-500 font-medium">Learn More →</a>
+    <div class="flex justify-center gap-3 mt-4 flex-wrap">
+      <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs">Microservices</span>
+      <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs">Architecture</span>
+      <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-xs">System Design</span>
+    </div>
+  </section>
+
+  <!-- Cards Section -->
+  <main class="flex-grow p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+
+      <!-- Business Capability -->
+      <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+        <div class="bg-blue-500 text-white p-4 flex items-center gap-2">
+          <i data-feather="briefcase"></i>
+          <h2 class="text-lg font-semibold">Business Capability</h2>
+        </div>
+        <div class="p-5 text-gray-700 text-sm">
+          <p class="mb-4">
+            Break your system based on core business functions such as Orders, Payments, 
+            and Users. Each service represents a real-world business capability.
+          </p>
+          <a href="business.html" class="text-blue-600 font-medium hover:underline">
+            Learn More →
+          </a>
+        </div>
+      </div>
+
+      <!-- Subdomain DDD -->
+      <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+        <div class="bg-purple-500 text-white p-4 flex items-center gap-2">
+          <i data-feather="layers"></i>
+          <h2 class="text-lg font-semibold">Subdomain (DDD)</h2>
+        </div>
+        <div class="p-5 text-gray-700 text-sm">
+          <p class="mb-4">
+            Based on Domain-Driven Design, divide the system into bounded contexts 
+            where each subdomain has its own logic and data model.
+          </p>
+          <a href="ddd.html" class="text-purple-600 font-medium hover:underline">
+            Learn More →
+          </a>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Card 2 -->
-    <div class="bg-white rounded-2xl shadow p-6">
-      <h2 class="text-xl font-semibold mb-3">Subdomain (DDD)</h2>
-      <p class="text-gray-600 mb-4">
-        Divide your system into smaller areas with clear responsibilities.
-      </p>
-      <a href="ddd.html" class="text-blue-500 font-medium">Learn More →</a>
+    <!-- Extra Info Section -->
+    <div class="max-w-4xl mx-auto mt-10 bg-white p-6 rounded-xl shadow">
+      <h3 class="text-xl font-semibold mb-3 flex items-center gap-2">
+        <i data-feather="info"></i> Why Decomposition Matters
+      </h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+        <li>Improves scalability by isolating services</li>
+        <li>Enables independent deployments</li>
+        <li>Reduces complexity in large systems</li>
+        <li>Aligns teams with business domains</li>
+      </ul>
     </div>
 
-  </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center p-6 text-sm">
+    <p class="mb-2">Microservices Design Patterns • Decomposition</p>
+    <div class="flex justify-center gap-4">
+      <span class="flex items-center gap-1">
+        <i data-feather="code"></i> Tailwind CSS
+      </span>
+      <span class="flex items-center gap-1">
+        <i data-feather="cpu"></i> System Design
+      </span>
+    </div>
+    <p class="mt-3 text-gray-400 text-xs">© 2026 Your Name</p>
+  </footer>
+
+  <script>
+    feather.replace();
+  </script>
 
 </body>
 </html>
