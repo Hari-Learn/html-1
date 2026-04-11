@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Gateway & BFF</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800">
+
+  <div class="max-w-6xl mx-auto p-6 md:p-10">
+
+    <!-- Header -->
+    <div class="mb-10 text-center">
+      <h1 class="text-4xl font-extrabold text-purple-600 mb-3">
+        API Gateway & BFF Patterns
+      </h1>
+      <p class="text-gray-600 text-lg">
+        Understanding modern backend architecture patterns
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- API Gateway Card -->
+      <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 border-l-4 border-purple-500">
+        <div class="flex items-center mb-4">
+          <span class="text-3xl mr-3">🌐</span>
+          <h2 class="text-2xl font-semibold">API Gateway</h2>
+        </div>
+
+        <p class="text-gray-600 mb-4">
+          A single entry point that manages and routes all client requests to appropriate backend services.
+        </p>
+
+        <ul class="list-disc pl-5 text-gray-600 space-y-1">
+          <li>Centralized routing</li>
+          <li>Authentication & authorization</li>
+          <li>Rate limiting & caching</li>
+          <li>Logging & monitoring</li>
+        </ul>
+      </div>
+
+      <!-- BFF Card -->
+      <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 border-l-4 border-blue-500">
+        <div class="flex items-center mb-4">
+          <span class="text-3xl mr-3">📱</span>
+          <h2 class="text-2xl font-semibold">Backend for Frontend (BFF)</h2>
+        </div>
+
+        <p class="text-gray-600 mb-4">
+          Dedicated backend services designed for specific frontend applications like web, mobile, or desktop.
+        </p>
+
+        <ul class="list-disc pl-5 text-gray-600 space-y-1">
+          <li>Frontend-specific APIs</li>
+          <li>Optimized data aggregation</li>
+          <li>Reduced over-fetching</li>
+          <li>Improved performance</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Comparison Section -->
+    <div class="mt-10 p-6 bg-white rounded-2xl shadow-md">
+      <h2 class="text-2xl font-semibold mb-4">Key Difference</h2>
+      <p class="text-gray-600">
+        <span class="font-semibold text-purple-600">API Gateway</span> focuses on managing requests across services,
+        while <span class="font-semibold text-blue-600">BFF</span> focuses on tailoring responses for specific user interfaces.
+      </p>
+    </div>
+
+    <!-- Back Button -->
+    <div class="mt-8 text-center">
+      <a href="index.html"
+         class="inline-block px-5 py-2 bg-purple-600 text-white rounded-lg shadow hover:bg-purple-700 transition">
+        ← Back
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>
