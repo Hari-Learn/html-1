@@ -16,7 +16,7 @@ console.log(numbers); // Output: [1, 5, 10, 20]
 numbers.sort((a, b) => b - a);
 console.log(numbers); // Output: [20, 10, 5, 1]
 
-//let users = [
+let users = [
   { name: "Alice", age: 25 },
   { name: "Bob", age: 20 },
   { name: "Charlie", age: 30 }

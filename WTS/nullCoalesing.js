@@ -24,3 +24,5 @@ console.log(displayCity); // "Unknown"
 //Unlike ||, it doesn’t treat 0, false, or "" as empty.
 
 //Works well when combining with objects that may have falsy values but are still valid.
+
+

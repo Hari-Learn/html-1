@@ -52,3 +52,12 @@ const merged = {
 
 console.log(merged);
 
+var x = 100;
+{
+    var x = 500
+}
+let y = x;
+{
+    let y = 1000;
+}
+console.log(y);
