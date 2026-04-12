@@ -2,44 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Synchronous vs Asynchronous</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
 
-  <div class="max-w-5xl mx-auto p-8">
-    <h1 class="text-3xl font-bold mb-6 text-green-600">
-      Synchronous & Asynchronous Communication
-    </h1>
+<body class="bg-gradient-to-br from-gray-50 to-gray-200 text-gray-800">
 
-    <!-- Synchronous -->
-    <div class="mb-8 p-6 bg-white rounded-2xl shadow">
-      <h2 class="text-2xl font-semibold mb-2">Synchronous Communication</h2>
-      <p class="mb-2">
-        Services communicate directly and wait for a response.
+  <div class="max-w-6xl mx-auto p-6 md:p-10">
+
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-extrabold text-green-600 mb-3">
+        Synchronous vs Asynchronous Communication
+      </h1>
+      <p class="text-gray-600 text-lg">
+        How services talk to each other in modern systems
       </p>
-      <ul class="list-disc pl-5">
-        <li>REST APIs</li>
-        <li>gRPC calls</li>
-      </ul>
     </div>
 
-    <!-- Asynchronous -->
-    <div class="p-6 bg-white rounded-2xl shadow">
-      <h2 class="text-2xl font-semibold mb-2">Asynchronous Messaging</h2>
-      <p class="mb-2">
-        Services communicate via message brokers without waiting.
-      </p>
-      <ul class="list-disc pl-5">
-        <li>Kafka</li>
-        <li>RabbitMQ</li>
-        <li>Event-driven communication</li>
-      </ul>
+    <!-- Comparison Grid -->
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- Synchronous Card -->
+      <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition border-l-4 border-green-500">
+        <div class="flex items-center mb-4">
+          <span class="text-3xl mr-3">⏳</span>
+          <h2 class="text-2xl font-semibold">Synchronous</h2>
+        </div>
+
+        <p class="text-gray-600 mb-4">
+          One service calls another and <span class="font-semibold">waits</span> for a response before continuing.
+        </p>
+
+        <ul class="list-disc pl-5 text-gray-600 space-y-1 mb-4">
+          <li>Immediate response required</li>
+          <li>Tightly coupled services</li>
+          <li>Simple to implement</li>
+        </ul>
+
+        <div class="bg-green-50 p-3 rounded-lg text-sm">
+          💡 Like making a phone call and waiting for the person to answer.
+        </div>
+
+        <div class="mt-4">
+          <p class="font-semibold text-sm mb-1">Examples:</p>
+          <ul class="list-disc pl-5 text-gray-600 text-sm">
+            <li>REST APIs</li>
+            <li>gRPC calls</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Asynchronous Card -->
+      <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition border-l-4 border-blue-500">
+        <div class="flex items-center mb-4">
+          <span class="text-3xl mr-3">📩</span>
+          <h2 class="text-2xl font-semibold">Asynchronous</h2>
+        </div>
+
+        <p class="text-gray-600 mb-4">
+          Services send messages and <span class="font-semibold">don’t wait</span> for an immediate response.
+        </p>
+
+        <ul class="list-disc pl-5 text-gray-600 space-y-1 mb-4">
+          <li>Loosely coupled services</li>
+          <li>Better scalability</li>
+          <li>Handles spikes well</li>
+        </ul>
+
+        <div class="bg-blue-50 p-3 rounded-lg text-sm">
+          💡 Like sending a WhatsApp message and replying later.
+        </div>
+
+        <div class="mt-4">
+          <p class="font-semibold text-sm mb-1">Examples:</p>
+          <ul class="list-disc pl-5 text-gray-600 text-sm">
+            <li>Kafka</li>
+            <li>RabbitMQ</li>
+            <li>Event-driven systems</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
 
-    <a href="index.html" class="inline-block mt-6 text-blue-600 underline">
-      ← Back
-    </a>
+    <!-- Visual Flow -->
+    <div class="mt-10 p-6 bg-white rounded-2xl shadow-md">
+      <h2 class="text-2xl font-semibold mb-6 text-center">🔄 How They Work</h2>
+
+      <div class="grid md:grid-cols-2 gap-6 text-center">
+
+        <!-- Sync Flow -->
+        <div>
+          <p class="font-semibold mb-3 text-green-600">Synchronous Flow</p>
+          <div class="flex items-center justify-center gap-2">
+            <div class="bg-green-100 px-3 py-2 rounded">Service A</div>
+            <span>→</span>
+            <div class="bg-green-100 px-3 py-2 rounded">Service B</div>
+            <span>⏳</span>
+            <div class="bg-green-100 px-3 py-2 rounded">Response</div>
+          </div>
+        </div>
+
+        <!-- Async Flow -->
+        <div>
+          <p class="font-semibold mb-3 text-blue-600">Asynchronous Flow</p>
+          <div class="flex items-center justify-center gap-2 flex-wrap">
+            <div class="bg-blue-100 px-3 py-2 rounded">Service A</div>
+            <span>→</span>
+            <div class="bg-blue-100 px-3 py-2 rounded">Queue</div>
+            <span>→</span>
+            <div class="bg-blue-100 px-3 py-2 rounded">Service B</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Key Difference -->
+    <div class="mt-10 p-6 bg-white rounded-2xl shadow-md">
+      <h2 class="text-2xl font-semibold mb-3">⚡ Key Difference</h2>
+      <p class="text-gray-600">
+        <span class="font-semibold text-green-600">Synchronous</span> communication blocks execution until a response is received,
+        while <span class="font-semibold text-blue-600">Asynchronous</span> communication allows systems to continue working without waiting.
+      </p>
+    </div>
+
+    <!-- Back Button -->
+    <div class="mt-8 text-center">
+      <a href="index.html"
+         class="inline-block px-5 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition">
+        ← Back
+      </a>
+    </div>
+
   </div>
 
 </body>
