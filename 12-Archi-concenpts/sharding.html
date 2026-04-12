@@ -2,44 +2,123 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Database Sharding</title>
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 font-sans text-gray-800">
 
-<header class="bg-purple-600 text-white text-center p-6">
-<h1 class="text-3xl font-bold">Database Sharding</h1>
-<p class="text-lg">Scaling databases horizontally</p>
+<!-- Header -->
+<header class="bg-purple-600 text-white text-center p-8 shadow-md">
+  <h1 class="text-4xl font-extrabold mb-2">Database Sharding</h1>
+  <p class="text-lg">Explained simply (ELI10)</p>
 </header>
 
-<section class="max-w-4xl mx-auto p-6">
+<section class="max-w-5xl mx-auto p-6">
 
-<div class="bg-white p-6 shadow-lg rounded-lg mb-6">
-<h2 class="text-2xl font-semibold mb-3">What is Sharding?</h2>
-<p class="text-gray-700">
-Sharding is a database architecture pattern where data is split across multiple
-servers called shards. Each shard holds a portion of the total dataset.
-</p>
-</div>
+  <!-- WHY -->
+  <div class="bg-white p-6 shadow-md rounded-2xl mb-6 hover:shadow-xl transition">
+    <h2 class="text-2xl font-semibold mb-4 flex items-center">
+      ❓ Why do we need Sharding?
+    </h2>
 
-<div class="bg-white p-6 shadow-lg rounded-lg mb-6">
-<h2 class="text-2xl font-semibold mb-3">Why Use Sharding?</h2>
-<ul class="list-disc ml-6 text-gray-700">
-<li>Improves database performance</li>
-<li>Supports large-scale applications</li>
-<li>Distributes data across servers</li>
-</ul>
-</div>
+    <p class="mb-4">
+      Imagine you have <span class="font-semibold">one huge cupboard</span> storing all your books 📚.
+    </p>
 
-<div class="bg-white p-6 shadow-lg rounded-lg">
-<h2 class="text-2xl font-semibold mb-3">Sharding Strategies</h2>
-<ul class="list-disc ml-6 text-gray-700">
-<li>Range-Based Sharding</li>
-<li>Hash-Based Sharding</li>
-<li>Directory-Based Sharding</li>
-</ul>
-</div>
+    <p class="mb-4">
+      As more books come in, it becomes:
+    </p>
+
+    <ul class="list-disc ml-6 mb-4 text-gray-700">
+      <li>Too slow to find anything 😵</li>
+      <li>Too full to store more 😬</li>
+      <li>Easy to break under pressure 💥</li>
+    </ul>
+
+    <p>
+      So instead of one giant cupboard, you split books into <span class="font-semibold text-purple-600">multiple cupboards</span>.
+    </p>
+  </div>
+
+  <!-- WHAT -->
+  <div class="bg-white p-6 shadow-md rounded-2xl mb-6 hover:shadow-xl transition">
+    <h2 class="text-2xl font-semibold mb-4 flex items-center">
+      📦 What is Sharding?
+    </h2>
+
+    <p class="mb-4">
+      Sharding means splitting your data into smaller pieces and storing them in
+      different databases (called <span class="font-semibold text-purple-600">shards</span>).
+    </p>
+
+    <!-- Visual -->
+    <div class="flex flex-wrap justify-center gap-4 text-center mt-4">
+      <div class="bg-purple-100 p-4 rounded-xl w-32">Shard 1</div>
+      <div class="bg-purple-100 p-4 rounded-xl w-32">Shard 2</div>
+      <div class="bg-purple-100 p-4 rounded-xl w-32">Shard 3</div>
+    </div>
+
+    <p class="mt-4 text-gray-700">
+      Each shard stores only a portion of the total data.
+    </p>
+  </div>
+
+  <!-- HOW -->
+  <div class="bg-white p-6 shadow-md rounded-2xl mb-6 hover:shadow-xl transition">
+    <h2 class="text-2xl font-semibold mb-4 flex items-center">
+      ⚙️ How does Sharding work?
+    </h2>
+
+    <p class="mb-4">
+      Data is split using different strategies:
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-4 text-center">
+
+      <div class="bg-blue-50 p-4 rounded-xl">
+        <p class="font-semibold mb-2">Range-Based</p>
+        <p class="text-sm text-gray-600">Users 1–1000 → Shard 1</p>
+      </div>
+
+      <div class="bg-green-50 p-4 rounded-xl">
+        <p class="font-semibold mb-2">Hash-Based</p>
+        <p class="text-sm text-gray-600">User ID → Hash → Shard</p>
+      </div>
+
+      <div class="bg-yellow-50 p-4 rounded-xl">
+        <p class="font-semibold mb-2">Directory-Based</p>
+        <p class="text-sm text-gray-600">Lookup table decides shard</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SIMPLE FLOW -->
+  <div class="bg-white p-6 shadow-md rounded-2xl mb-6">
+    <h2 class="text-2xl font-semibold mb-4">🔄 Simple Flow</h2>
+
+    <div class="flex flex-wrap items-center justify-center gap-3 text-center">
+      <div class="bg-gray-200 px-4 py-2 rounded">App</div>
+      <span>→</span>
+      <div class="bg-purple-200 px-4 py-2 rounded">Router</div>
+      <span>→</span>
+      <div class="bg-purple-100 px-4 py-2 rounded">Shard</div>
+    </div>
+
+    <p class="mt-4 text-gray-600 text-center">
+      The app decides which shard to use and sends the request there.
+    </p>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="bg-white p-6 shadow-md rounded-2xl">
+    <h2 class="text-2xl font-semibold mb-3">⚡ In One Line</h2>
+    <p class="text-gray-700">
+      Sharding = <span class="font-semibold text-purple-600">splitting big data into smaller chunks</span> across multiple databases to improve performance and scalability.
+    </p>
+  </div>
 
 </section>
 
