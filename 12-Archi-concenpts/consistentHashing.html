@@ -2,108 +2,76 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Consistent Hashing - ELI10</title>
+<title>Consistent Hashing</title>
 <script src="https://cdn.tailwindcss.com"></script>
 
 <!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 font-sans h-screen overflow-hidden">
 
-<header class="bg-green-600 text-white p-6 shadow">
-  <h1 class="text-3xl font-bold">Consistent Hashing (ELI10)</h1>
-  <p class="text-sm opacity-90">Simple, smart data distribution 😄</p>
+<header class="bg-green-600 text-white px-8 py-4 shadow flex justify-between items-center">
+  <h1 class="text-2xl font-bold">Consistent Hashing</h1>
+  <p class="text-sm opacity-90">Simple & Smart Data Distribution</p>
 </header>
 
-<main class="max-w-5xl mx-auto mt-8 p-6 space-y-6">
+<main class="w-full h-[calc(100vh-72px)] p-6 grid grid-cols-2 lg:grid-cols-3 gap-4">
 
   <!-- What is it -->
-  <div class="bg-white rounded-xl shadow overflow-hidden">
-    <div class="bg-green-500 text-white p-4 flex items-center gap-3">
-      <i class="fas fa-circle-nodes text-xl"></i>
-      <h2 class="text-xl font-semibold">What is Consistent Hashing?</h2>
+  <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col">
+    <div class="bg-green-500 text-white p-3 font-semibold flex items-center gap-2">
+      <i class="fas fa-circle-nodes"></i>
+      What is it?
     </div>
-    <div class="p-4 text-gray-700">
-      Imagine putting toys 🧸 into boxes 📦.  
-      If you add/remove a box, you don’t want to move ALL toys again 😩  
-      <br><br>
-      Consistent hashing helps move only a few toys instead of everything 👍
+    <div class="p-3 text-sm text-gray-700">
+      Like putting toys into boxes 🧸📦 without moving everything when boxes change.
     </div>
   </div>
 
   <!-- How it works -->
-  <div class="bg-white rounded-xl shadow overflow-hidden">
-    <div class="bg-blue-500 text-white p-4 flex items-center gap-3">
-      <i class="fas fa-gear text-xl"></i>
-      <h2 class="text-xl font-semibold">How It Works</h2>
+  <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col">
+    <div class="bg-blue-500 text-white p-3 font-semibold flex items-center gap-2">
+      <i class="fas fa-gear"></i>
+      How it works
     </div>
-    <div class="p-4">
-      <ul class="list-disc pl-6 text-gray-700 space-y-2">
-        <li>Everything is placed on a big circle 🎡</li>
-        <li>Servers are placed on the circle</li>
-        <li>Data is also placed on the circle</li>
-        <li>Each data goes to the next server clockwise ➡️</li>
-      </ul>
+    <div class="p-3 text-sm text-gray-700">
+      Uses a circle 🎡 where servers & data are placed. Data goes to next server ➡️
     </div>
   </div>
 
   <!-- Example -->
-  <div class="bg-white rounded-xl shadow overflow-hidden">
-    <div class="bg-purple-500 text-white p-4 flex items-center gap-3">
-      <i class="fas fa-clock text-xl"></i>
-      <h2 class="text-xl font-semibold">Simple Example</h2>
+  <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col">
+    <div class="bg-purple-500 text-white p-3 font-semibold flex items-center gap-2">
+      <i class="fas fa-clock"></i>
+      Example
     </div>
-    <div class="p-4 text-gray-700">
-      Think of a clock 🕒  
-      <br><br>
-      Servers at 1, 5, 9  
-      <br>
-      Data at 3 → goes to 5  
-      <br>
-      Data at 8 → goes to 9  
+    <div class="p-3 text-sm text-gray-700">
+      Think clock 🕒 → Data at 3 goes to server at 5.
     </div>
   </div>
 
   <!-- Benefits -->
-  <div class="bg-white rounded-xl shadow overflow-hidden">
-    <div class="bg-orange-500 text-white p-4 flex items-center gap-3">
-      <i class="fas fa-star text-xl"></i>
-      <h2 class="text-xl font-semibold">Why It's Useful</h2>
+  <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col col-span-2 lg:col-span-1">
+    <div class="bg-orange-500 text-white p-3 font-semibold flex items-center gap-2">
+      <i class="fas fa-star"></i>
+      Benefits
     </div>
-
-    <div class="p-4 grid md:grid-cols-3 gap-4">
-
-      <div class="bg-gray-100 p-4 rounded-lg text-center">
-        <i class="fas fa-seedling text-green-600 text-2xl mb-2"></i>
-        <h3 class="font-bold">Easy to Grow</h3>
-        <p class="text-sm text-gray-600">Add servers easily 🌱</p>
-      </div>
-
-      <div class="bg-gray-100 p-4 rounded-lg text-center">
-        <i class="fas fa-truck text-blue-600 text-2xl mb-2"></i>
-        <h3 class="font-bold">Less Moving</h3>
-        <p class="text-sm text-gray-600">Only few items move 🚚</p>
-      </div>
-
-      <div class="bg-gray-100 p-4 rounded-lg text-center">
-        <i class="fas fa-balance-scale text-purple-600 text-2xl mb-2"></i>
-        <h3 class="font-bold">Balanced</h3>
-        <p class="text-sm text-gray-600">Spread evenly ⚖️</p>
-      </div>
-
+    <div class="p-3 text-sm text-gray-700 space-y-1">
+      <p>🌱 Easy scaling</p>
+      <p>🚚 Less data movement</p>
+      <p>⚖️ Balanced load</p>
     </div>
   </div>
 
   <!-- Bonus -->
-  <div class="bg-white rounded-xl shadow overflow-hidden">
-    <div class="bg-pink-500 text-white p-4 flex items-center gap-3">
-      <i class="fas fa-lightbulb text-xl"></i>
-      <h2 class="text-xl font-semibold">Cool Trick</h2>
+  <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col">
+    <div class="bg-pink-500 text-white p-3 font-semibold flex items-center gap-2">
+      <i class="fas fa-lightbulb"></i>
+      Bonus
     </div>
-    <div class="p-4 text-gray-700">
-      Engineers add "virtual nodes" (extra fake servers)  
-      to make distribution smoother and fair 😎
+    <div class="p-3 text-sm text-gray-700">
+      Virtual nodes help make things even smoother 😎
     </div>
   </div>
 
