@@ -75,6 +75,46 @@
     </div>
   </div>
 
+  <!-- Interactive Hash Ring -->
+<div class="bg-white rounded-xl shadow overflow-hidden col-span-2">
+
+  <!-- Title -->
+  <div class="bg-indigo-500 text-white p-3 font-semibold flex items-center gap-2">
+    <i class="fas fa-circle-notch"></i>
+    Interactive Hash Ring
+  </div>
+
+  <!-- Content -->
+  <div class="p-6 flex justify-center items-center">
+
+    <div class="relative w-64 h-64 group">
+
+      <!-- Circle -->
+      <div class="absolute inset-0 rounded-full border-4 border-gray-300"></div>
+
+      <!-- Servers -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 text-green-600 font-bold">S1</div>
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 text-green-600 font-bold">S2</div>
+      <div class="absolute left-0 top-1/2 -translate-y-1/2 text-green-600 font-bold">S3</div>
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 text-green-600 font-bold">S4</div>
+
+      <!-- Data Node -->
+      <div class="absolute top-10 left-1/2 -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full
+                  transition-all duration-700 ease-in-out
+                  group-hover:top-1/2 group-hover:left-full group-hover:-translate-x-6 group-hover:-translate-y-1/2">
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Hint -->
+  <div class="text-center pb-4 text-sm text-gray-500">
+    Hover to see data move ➡️
+  </div>
+
+</div>
+
 </main>
 
 </body>
