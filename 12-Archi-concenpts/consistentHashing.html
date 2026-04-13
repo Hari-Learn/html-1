@@ -2,58 +2,96 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Consistent Hashing</title>
+<title>Consistent Hashing - ELI10</title>
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-100 font-sans">
 
 <header class="bg-green-600 text-white p-6 shadow">
-<h1 class="text-3xl font-bold">Consistent Hashing</h1>
-<p class="text-sm opacity-90">Efficient data distribution in distributed systems</p>
+  <h1 class="text-3xl font-bold">Consistent Hashing (Explained Like You're 10)</h1>
+  <p class="text-sm opacity-90">A smarter way to store data without making a mess 😄</p>
 </header>
 
 <main class="max-w-5xl mx-auto mt-8 p-6 bg-white rounded-xl shadow">
 
-<section class="mb-6">
-<h2 class="text-2xl font-semibold text-green-600 mb-2">What is Consistent Hashing?</h2>
-<p class="text-gray-700">
-Consistent hashing distributes data across multiple servers such that
-minimal data is moved when servers are added or removed.
-</p>
-</section>
+  <!-- What is it -->
+  <section class="mb-6">
+    <h2 class="text-2xl font-semibold text-green-600 mb-2">What is Consistent Hashing?</h2>
+    <p class="text-gray-700">
+      Imagine you have a bunch of toys 🧸 and some boxes to store them.
+      You want to spread toys evenly so no box is too full.
+      <br><br>
+      Now imagine if you add or remove a box — you don’t want to move ALL the toys again 😩
+      <br><br>
+      <strong>Consistent hashing</strong> is a smart way to place toys so that when boxes change,
+      only a few toys need to move.
+    </p>
+  </section>
 
-<section class="mb-6">
-<h2 class="text-xl font-semibold mb-2">How It Works</h2>
-<ul class="list-disc pl-6 text-gray-700 space-y-1">
-<li>Both servers and keys are hashed</li>
-<li>Placed on a circular hash ring</li>
-<li>Each key is stored on the next server clockwise</li>
-</ul>
-</section>
+  <!-- How it works -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">How It Works</h2>
+    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+      <li>Imagine everything is placed on a big circle 🎡</li>
+      <li>Servers (boxes) are placed on the circle</li>
+      <li>Data (toys) are also placed on the circle</li>
+      <li>Each toy goes to the next box in the circle (clockwise ➡️)</li>
+    </ul>
+  </section>
 
-<section>
-<h2 class="text-xl font-semibold mb-2">Benefits</h2>
+  <!-- Example -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">Simple Example</h2>
+    <p class="text-gray-700">
+      Think of a clock 🕒:
+      <br><br>
+      Boxes are at 1, 5, and 9.
+      <br>
+      A toy lands at 3 → it goes to box at 5.
+      <br>
+      A toy lands at 8 → it goes to box at 9.
+    </p>
+  </section>
 
-<div class="grid md:grid-cols-3 gap-4">
+  <!-- Benefits -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">Why It's Useful</h2>
 
-<div class="bg-gray-100 p-4 rounded-lg">
-<h3 class="font-bold">Scalable</h3>
-<p class="text-sm text-gray-600">Easy to add or remove servers.</p>
-</div>
+    <div class="grid md:grid-cols-3 gap-4">
 
-<div class="bg-gray-100 p-4 rounded-lg">
-<h3 class="font-bold">Minimal Rehashing</h3>
-<p class="text-sm text-gray-600">Only small amount of data moves.</p>
-</div>
+      <div class="bg-gray-100 p-4 rounded-lg">
+        <h3 class="font-bold">Easy to Grow 🌱</h3>
+        <p class="text-sm text-gray-600">
+          You can add new servers without breaking everything.
+        </p>
+      </div>
 
-<div class="bg-gray-100 p-4 rounded-lg">
-<h3 class="font-bold">Load Distribution</h3>
-<p class="text-sm text-gray-600">Helps balance data across nodes.</p>
-</div>
+      <div class="bg-gray-100 p-4 rounded-lg">
+        <h3 class="font-bold">Less Moving 🚚</h3>
+        <p class="text-sm text-gray-600">
+          Only a few data items need to move when things change.
+        </p>
+      </div>
 
-</div>
-</section>
+      <div class="bg-gray-100 p-4 rounded-lg">
+        <h3 class="font-bold">Balanced ⚖️</h3>
+        <p class="text-sm text-gray-600">
+          Data is spread nicely across servers.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Bonus tip -->
+  <section class="mt-8">
+    <h2 class="text-xl font-semibold mb-2">Cool Trick</h2>
+    <p class="text-gray-700">
+      Engineers often add "fake" extra boxes (called virtual nodes)
+      to make the distribution even smoother 😎
+    </p>
+  </section>
 
 </main>
 
