@@ -4,94 +4,108 @@
 <meta charset="UTF-8">
 <title>Consistent Hashing - ELI10</title>
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 
 <body class="bg-gray-100 font-sans">
 
 <header class="bg-green-600 text-white p-6 shadow">
-  <h1 class="text-3xl font-bold">Consistent Hashing (Explained Like You're 10)</h1>
-  <p class="text-sm opacity-90">A smarter way to store data without making a mess 😄</p>
+  <h1 class="text-3xl font-bold">Consistent Hashing (ELI10)</h1>
+  <p class="text-sm opacity-90">Simple, smart data distribution 😄</p>
 </header>
 
-<main class="max-w-5xl mx-auto mt-8 p-6 bg-white rounded-xl shadow">
+<main class="max-w-5xl mx-auto mt-8 p-6 space-y-6">
 
   <!-- What is it -->
-  <section class="mb-6">
-    <h2 class="text-2xl font-semibold text-green-600 mb-2">What is Consistent Hashing?</h2>
-    <p class="text-gray-700">
-      Imagine you have a bunch of toys 🧸 and some boxes to store them.
-      You want to spread toys evenly so no box is too full.
+  <div class="bg-white rounded-xl shadow overflow-hidden">
+    <div class="bg-green-500 text-white p-4 flex items-center gap-3">
+      <i class="fas fa-circle-nodes text-xl"></i>
+      <h2 class="text-xl font-semibold">What is Consistent Hashing?</h2>
+    </div>
+    <div class="p-4 text-gray-700">
+      Imagine putting toys 🧸 into boxes 📦.  
+      If you add/remove a box, you don’t want to move ALL toys again 😩  
       <br><br>
-      Now imagine if you add or remove a box — you don’t want to move ALL the toys again 😩
-      <br><br>
-      <strong>Consistent hashing</strong> is a smart way to place toys so that when boxes change,
-      only a few toys need to move.
-    </p>
-  </section>
+      Consistent hashing helps move only a few toys instead of everything 👍
+    </div>
+  </div>
 
   <!-- How it works -->
-  <section class="mb-6">
-    <h2 class="text-xl font-semibold mb-2">How It Works</h2>
-    <ul class="list-disc pl-6 text-gray-700 space-y-2">
-      <li>Imagine everything is placed on a big circle 🎡</li>
-      <li>Servers (boxes) are placed on the circle</li>
-      <li>Data (toys) are also placed on the circle</li>
-      <li>Each toy goes to the next box in the circle (clockwise ➡️)</li>
-    </ul>
-  </section>
+  <div class="bg-white rounded-xl shadow overflow-hidden">
+    <div class="bg-blue-500 text-white p-4 flex items-center gap-3">
+      <i class="fas fa-gear text-xl"></i>
+      <h2 class="text-xl font-semibold">How It Works</h2>
+    </div>
+    <div class="p-4">
+      <ul class="list-disc pl-6 text-gray-700 space-y-2">
+        <li>Everything is placed on a big circle 🎡</li>
+        <li>Servers are placed on the circle</li>
+        <li>Data is also placed on the circle</li>
+        <li>Each data goes to the next server clockwise ➡️</li>
+      </ul>
+    </div>
+  </div>
 
   <!-- Example -->
-  <section class="mb-6">
-    <h2 class="text-xl font-semibold mb-2">Simple Example</h2>
-    <p class="text-gray-700">
-      Think of a clock 🕒:
+  <div class="bg-white rounded-xl shadow overflow-hidden">
+    <div class="bg-purple-500 text-white p-4 flex items-center gap-3">
+      <i class="fas fa-clock text-xl"></i>
+      <h2 class="text-xl font-semibold">Simple Example</h2>
+    </div>
+    <div class="p-4 text-gray-700">
+      Think of a clock 🕒  
       <br><br>
-      Boxes are at 1, 5, and 9.
+      Servers at 1, 5, 9  
       <br>
-      A toy lands at 3 → it goes to box at 5.
+      Data at 3 → goes to 5  
       <br>
-      A toy lands at 8 → it goes to box at 9.
-    </p>
-  </section>
+      Data at 8 → goes to 9  
+    </div>
+  </div>
 
   <!-- Benefits -->
-  <section>
-    <h2 class="text-xl font-semibold mb-4">Why It's Useful</h2>
+  <div class="bg-white rounded-xl shadow overflow-hidden">
+    <div class="bg-orange-500 text-white p-4 flex items-center gap-3">
+      <i class="fas fa-star text-xl"></i>
+      <h2 class="text-xl font-semibold">Why It's Useful</h2>
+    </div>
 
-    <div class="grid md:grid-cols-3 gap-4">
+    <div class="p-4 grid md:grid-cols-3 gap-4">
 
-      <div class="bg-gray-100 p-4 rounded-lg">
-        <h3 class="font-bold">Easy to Grow 🌱</h3>
-        <p class="text-sm text-gray-600">
-          You can add new servers without breaking everything.
-        </p>
+      <div class="bg-gray-100 p-4 rounded-lg text-center">
+        <i class="fas fa-seedling text-green-600 text-2xl mb-2"></i>
+        <h3 class="font-bold">Easy to Grow</h3>
+        <p class="text-sm text-gray-600">Add servers easily 🌱</p>
       </div>
 
-      <div class="bg-gray-100 p-4 rounded-lg">
-        <h3 class="font-bold">Less Moving 🚚</h3>
-        <p class="text-sm text-gray-600">
-          Only a few data items need to move when things change.
-        </p>
+      <div class="bg-gray-100 p-4 rounded-lg text-center">
+        <i class="fas fa-truck text-blue-600 text-2xl mb-2"></i>
+        <h3 class="font-bold">Less Moving</h3>
+        <p class="text-sm text-gray-600">Only few items move 🚚</p>
       </div>
 
-      <div class="bg-gray-100 p-4 rounded-lg">
-        <h3 class="font-bold">Balanced ⚖️</h3>
-        <p class="text-sm text-gray-600">
-          Data is spread nicely across servers.
-        </p>
+      <div class="bg-gray-100 p-4 rounded-lg text-center">
+        <i class="fas fa-balance-scale text-purple-600 text-2xl mb-2"></i>
+        <h3 class="font-bold">Balanced</h3>
+        <p class="text-sm text-gray-600">Spread evenly ⚖️</p>
       </div>
 
     </div>
-  </section>
+  </div>
 
-  <!-- Bonus tip -->
-  <section class="mt-8">
-    <h2 class="text-xl font-semibold mb-2">Cool Trick</h2>
-    <p class="text-gray-700">
-      Engineers often add "fake" extra boxes (called virtual nodes)
-      to make the distribution even smoother 😎
-    </p>
-  </section>
+  <!-- Bonus -->
+  <div class="bg-white rounded-xl shadow overflow-hidden">
+    <div class="bg-pink-500 text-white p-4 flex items-center gap-3">
+      <i class="fas fa-lightbulb text-xl"></i>
+      <h2 class="text-xl font-semibold">Cool Trick</h2>
+    </div>
+    <div class="p-4 text-gray-700">
+      Engineers add "virtual nodes" (extra fake servers)  
+      to make distribution smoother and fair 😎
+    </div>
+  </div>
 
 </main>
 
