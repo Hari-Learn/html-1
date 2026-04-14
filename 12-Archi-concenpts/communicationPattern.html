@@ -5,70 +5,112 @@
   <title>Communication Patterns - ELI10</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
 
-  <div class="max-w-4xl mx-auto p-8">
-    
-    <!-- Title -->
-    <h1 class="text-4xl font-bold mb-4 text-blue-600">
-      Communication Patterns (Explained Like You're 10)
-    </h1>
-    
-    <!-- Intro -->
-    <p class="mb-8 text-lg max-w-2xl">
-      Imagine different apps (or services) are like friends talking to each other 📱.
-      <br><br>
-      Communication patterns are just the different ways they send messages —
-      some talk directly, some send messages and reply later!
-    </p>
+<body class="bg-gradient-to-br from-gray-100 to-blue-100 text-gray-800">
 
-    <!-- Cards -->
-    <div class="grid gap-6">
+  <div class="max-w-5xl mx-auto p-8">
 
-      <!-- Sync -->
-      <a href="sync.html" class="block p-6 bg-white rounded-2xl shadow hover:bg-blue-50 transition">
-        <h2 class="text-2xl font-semibold mb-2">Synchronous Communication ⏳</h2>
-        <p class="text-gray-700">
-          Like a phone call 📞 — you ask something and wait for the answer right away.
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-5xl font-extrabold text-blue-600 mb-4">
+        Communication Patterns
+      </h1>
+      <p class="text-xl text-gray-700 max-w-2xl mx-auto">
+        Explained like you're 10 👇  
+        <br><br>
+        Think of apps like friends chatting with each other 📱 —  
+        they just use different ways to send messages!
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Sync Card -->
+      <a href="sync.html"
+         class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300 border border-transparent hover:border-blue-300">
+
+        <div class="flex items-center gap-4 mb-4">
+          <!-- Icon -->
+          <div class="bg-blue-100 p-3 rounded-xl group-hover:bg-blue-200 transition">
+            ⏳
+          </div>
+          <h2 class="text-xl font-bold">Synchronous</h2>
+        </div>
+
+        <p class="text-gray-700 mb-3">
+          Like a phone call 📞 — you ask something and wait immediately for the answer.
         </p>
-        <p class="text-sm text-gray-500 mt-2">
-          Example: REST APIs, gRPC
-        </p>
+
+        <span class="text-sm text-gray-500">
+          REST APIs • gRPC
+        </span>
       </a>
 
-      <!-- Async -->
-      <a href="async.html" class="block p-6 bg-white rounded-2xl shadow hover:bg-blue-50 transition">
-        <h2 class="text-2xl font-semibold mb-2">Asynchronous Messaging 📬</h2>
-        <p class="text-gray-700">
-          Like sending a text message — you send it and continue your work.
-          The reply comes later.
+      <!-- Async Card -->
+      <a href="async.html"
+         class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300 border border-transparent hover:border-green-300">
+
+        <div class="flex items-center gap-4 mb-4">
+          <div class="bg-green-100 p-3 rounded-xl group-hover:bg-green-200 transition">
+            📬
+          </div>
+          <h2 class="text-xl font-bold">Asynchronous</h2>
+        </div>
+
+        <p class="text-gray-700 mb-3">
+          Like sending a message 💬 — you continue your work and get a reply later.
         </p>
-        <p class="text-sm text-gray-500 mt-2">
-          Example: message queues, event systems
-        </p>
+
+        <span class="text-sm text-gray-500">
+          Queues • Events • Pub/Sub
+        </span>
       </a>
 
-      <!-- Gateway -->
-      <a href="patterns.html" class="block p-6 bg-white rounded-2xl shadow hover:bg-blue-50 transition">
-        <h2 class="text-2xl font-semibold mb-2">Gateway & BFF 🚪</h2>
-        <p class="text-gray-700">
-          Like a receptionist at an office — you talk to one person,
-          and they handle everything behind the scenes.
+      <!-- Gateway Card -->
+      <a href="patterns.html"
+         class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300 border border-transparent hover:border-purple-300">
+
+        <div class="flex items-center gap-4 mb-4">
+          <div class="bg-purple-100 p-3 rounded-xl group-hover:bg-purple-200 transition">
+            🚪
+          </div>
+          <h2 class="text-xl font-bold">Gateway & BFF</h2>
+        </div>
+
+        <p class="text-gray-700 mb-3">
+          Like a receptionist 🧑‍💼 — you talk to one place and it handles everything behind the scenes.
         </p>
-        <p class="text-sm text-gray-500 mt-2">
-          API Gateway & Backend-for-Frontend patterns
-        </p>
+
+        <span class="text-sm text-gray-500">
+          API Gateway • Backend-for-Frontend
+        </span>
       </a>
 
     </div>
 
-    <!-- Bonus Tip -->
-    <div class="mt-10 bg-blue-100 p-6 rounded-xl">
-      <h3 class="text-lg font-semibold mb-2">Quick Tip 💡</h3>
-      <p class="text-gray-700">
-        Good systems often use a mix of both styles —
-        fast direct calls when needed, and messaging for flexibility and scale.
-      </p>
+    <!-- Divider -->
+    <div class="my-12 border-t"></div>
+
+    <!-- Bonus Section -->
+    <div class="bg-white rounded-2xl shadow-md p-6 flex items-start gap-4 border-l-4 border-blue-500">
+
+      <div class="text-2xl">💡</div>
+
+      <div>
+        <h3 class="text-lg font-semibold mb-1">Pro Tip</h3>
+        <p class="text-gray-700">
+          The best systems mix both styles —
+          use fast direct calls when you need instant answers,
+          and messaging when you want flexibility and scale 🚀
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center mt-12 text-sm text-gray-500">
+      Built for learning • Keep exploring 🚀
     </div>
 
   </div>
