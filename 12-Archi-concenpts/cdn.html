@@ -30,37 +30,81 @@
   </h1>
 
   <!-- Intro -->
-  <p class="text-lg mb-8 max-w-2xl">
-    A Content Delivery Network (CDN) is a geographically distributed network of
-    servers that delivers web content closer to users, improving performance,
-    speed, and reliability.
+  <p class="text-lg mb-6 max-w-3xl">
+    A CDN is a network of servers placed around the world that helps deliver
+    websites, images, and videos faster by serving them from the closest location.
   </p>
 
-  <!-- Cards -->
-  <div class="grid md:grid-cols-2 gap-6">
+  <!-- ELI10 -->
+  <div class="bg-purple-100 border-l-4 border-purple-500 p-4 rounded mb-8">
+    <h2 class="text-xl font-semibold mb-2">Explain Like I'm 10 👶</h2>
+    <p>
+      Imagine you want pizza 🍕. Instead of ordering from a shop in another city,
+      you order from the nearest shop so it arrives faster.
+      <br><br>
+      A CDN works the same way:
+      instead of loading a website from one far-away server, it loads it from a
+      nearby server so it’s super fast!
+    </p>
+  </div>
 
-    <!-- How it works -->
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-      <h2 class="text-2xl font-semibold mb-4 text-purple-600">How It Works</h2>
-      <ul class="list-disc pl-6 space-y-2">
-        <li>User requests content from a website</li>
-        <li>Request is routed to the nearest CDN server</li>
-        <li>Content is delivered from the closest location</li>
-        <li>Reduces distance and improves speed</li>
-      </ul>
-    </div>
+  <!-- Flow -->
+  <div class="bg-white p-6 rounded-xl shadow mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-purple-600">How It Works</h2>
+    <ol class="list-decimal pl-6 space-y-2">
+      <li>You open a website</li>
+      <li>Your request goes to the nearest CDN server (called an Edge Server)</li>
+      <li>If the content is already stored there → it is sent immediately</li>
+      <li>If not → CDN fetches it from the main server and saves it for next time</li>
+    </ol>
+  </div>
+
+  <!-- Cards -->
+  <div class="grid md:grid-cols-2 gap-6 mb-8">
 
     <!-- Advantages -->
     <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
       <h2 class="text-2xl font-semibold mb-4 text-purple-600">Advantages</h2>
       <ul class="list-disc pl-6 space-y-2">
-        <li>Faster website loading</li>
-        <li>Reduced latency</li>
-        <li>Improved global availability</li>
-        <li>Lower bandwidth usage</li>
+        <li>⚡ Faster loading websites</li>
+        <li>🌍 Works well for global users</li>
+        <li>📉 Reduces load on main server</li>
+        <li>🔒 Improves security (DDoS protection)</li>
       </ul>
     </div>
 
+    <!-- Key Concepts -->
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h2 class="text-2xl font-semibold mb-4 text-purple-600">Key Concepts</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><b>Edge Server:</b> Server close to the user</li>
+        <li><b>Origin Server:</b> Main backend server</li>
+        <li><b>Caching:</b> Saving content for reuse</li>
+        <li><b>Latency:</b> Delay before data arrives</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Types -->
+  <div class="bg-white p-6 rounded-xl shadow mb-8">
+    <h2 class="text-2xl font-semibold mb-4 text-purple-600">Types of CDN Content</h2>
+    <ul class="list-disc pl-6 space-y-2">
+      <li><b>Static Content:</b> Images, CSS, JavaScript</li>
+      <li><b>Dynamic Content:</b> API responses, user data</li>
+      <li><b>Streaming:</b> Videos and live streams</li>
+    </ul>
+  </div>
+
+  <!-- Real World -->
+  <div class="bg-white p-6 rounded-xl shadow">
+    <h2 class="text-2xl font-semibold mb-4 text-purple-600">Real-World Use Cases</h2>
+    <ul class="list-disc pl-6 space-y-2">
+      <li>Video streaming platforms</li>
+      <li>E-commerce websites</li>
+      <li>Online games</li>
+      <li>Social media apps</li>
+    </ul>
   </div>
 
 </div>
