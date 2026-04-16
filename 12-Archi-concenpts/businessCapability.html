@@ -5,34 +5,74 @@
   <title>Business Capability</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-6">
 
-  <div class="max-w-3xl mx-auto">
-    <h1 class="text-3xl font-bold mb-6">Decompose by Business Capability</h1>
+<body class="bg-gray-100">
 
-    <div class="bg-white rounded-2xl shadow p-6">
-      <h2 class="text-xl font-semibold mb-3">ELI10 Explanation</h2>
-      <p class="text-gray-700 mb-4">
-        Imagine a big toy store. Instead of one person doing everything,
-        you have different people for billing, packing, and selling toys.
-      </p>
-      <p class="text-gray-700 mb-4">
-        In software, we do the same thing. We split the system into parts like:
-      </p>
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-5 shadow">
+    <h1 class="text-2xl font-bold text-center">Business Capability Explained</h1>
+  </header>
 
-      <ul class="list-disc ml-6 text-gray-700 mb-4">
-        <li>Payments service 💳</li>
-        <li>Orders service 📦</li>
-        <li>User service 👤</li>
-      </ul>
+  <!-- Main Content -->
+  <main class="w-full px-6 py-10">
 
-      <p class="text-gray-700">
-        Each service does one job really well!
-      </p>
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Intro Card -->
+      <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
+        <h2 class="text-xl font-semibold mb-3">🧠 ELI10 Explanation</h2>
+        <p class="text-gray-700">
+          Imagine a big toy store 🧸. If one person tries to do everything,
+          it becomes messy and slow.
+        </p>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="bg-white rounded-2xl shadow-md p-5 hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold mb-2">💳 Payments</h3>
+          <p class="text-gray-600">
+            This part handles money — like paying at the counter.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-md p-5 hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold mb-2">📦 Orders</h3>
+          <p class="text-gray-600">
+            This part keeps track of what people buy and prepares it.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-md p-5 hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold mb-2">👤 Users</h3>
+          <p class="text-gray-600">
+            This part remembers customers and their details.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Summary Card -->
+      <div class="bg-green-100 border-l-4 border-green-500 rounded-xl p-6 mt-8">
+        <p class="text-gray-800 font-medium">
+          👉 Big idea: Break one big system into small parts, so each part does one job really well!
+        </p>
+      </div>
+
+      <!-- Back Link -->
+      <div class="mt-6">
+        <a href="index.html" class="text-blue-500 hover:underline">← Back</a>
+      </div>
+
     </div>
 
-    <a href="index.html" class="inline-block mt-6 text-blue-500">← Back</a>
-  </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4 mt-10">
+    <p>© 2026 My Learning App • Built with ❤️ using Tailwind CSS</p>
+  </footer>
 
 </body>
 </html>
