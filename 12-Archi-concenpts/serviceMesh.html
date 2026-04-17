@@ -1,33 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Service Mesh</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<title>Service Mesh - ELI10</title>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-green-50 p-10">
 
-  <h1 class="text-3xl font-bold text-center mb-8">Service Mesh (Istio)</h1>
+<body class="bg-green-50 font-sans">
 
-  <div class="max-w-xl mx-auto bg-white rounded-2xl shadow-lg p-6">
-    <h2 class="text-xl font-semibold mb-4">What is it?</h2>
-    <p class="text-gray-700">
-      A service mesh manages how different parts of an app talk to each other.
-      It handles security, traffic, and monitoring.
+<!-- HEADER -->
+<header class="bg-green-600 text-white text-center p-8 shadow-md">
+  <h1 class="text-4xl font-bold mb-2">🕸️ Service Mesh (Istio)</h1>
+  <p class="text-lg">Explained like you're 10!</p>
+</header>
+
+<!-- MAIN CONTENT -->
+<section class="max-w-5xl mx-auto p-6 grid gap-6">
+
+  <!-- WHAT IS IT -->
+  <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+    <div class="flex items-center gap-3 mb-3">
+      <!-- Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+      <h2 class="text-2xl font-semibold">What is Service Mesh?</h2>
+    </div>
+
+    <p class="text-gray-700 text-lg">
+      A <b>Service Mesh</b> helps different parts of an app talk to each other safely and smoothly.
     </p>
 
-    <h2 class="text-xl font-semibold mt-6 mb-2">ELI10 Explanation</h2>
-    <p class="text-gray-700">
-      Imagine a traffic police 🚦 controlling cars so they don’t crash,
-      go the right way, and stay safe.
-      That’s what a service mesh does for apps!
-    </p>
-
-    <h2 class="text-xl font-semibold mt-6 mb-2">Example</h2>
-    <p class="text-gray-700">
-      If one service is slow, the mesh redirects traffic to a faster one automatically.
+    <p class="mt-3 text-gray-600">
+      👉 It takes care of things like <b>security 🔒</b>, <b>traffic control 🚦</b>, and <b>monitoring 📊</b>
+      so developers don’t have to worry about them.
     </p>
   </div>
+
+  <!-- ELI10 -->
+  <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+    <div class="flex items-center gap-3 mb-3">
+      <!-- Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-3 0-5 2-5 4s2 4 5 4 5-2 5-4-2-4-5-4z" />
+      </svg>
+      <h2 class="text-2xl font-semibold">ELI10 Explanation</h2>
+    </div>
+
+    <p class="text-gray-700 text-lg">
+      Imagine a city full of cars 🚗.
+    </p>
+
+    <p class="mt-2 text-gray-700">
+      A <b>traffic police 🚦</b> makes sure:
+    </p>
+
+    <ul class="list-disc ml-6 mt-2 text-gray-700">
+      <li>Cars don’t crash 💥</li>
+      <li>They take the right routes 🛣️</li>
+      <li>Emergency vehicles go first 🚑</li>
+    </ul>
+
+    <p class="mt-3 text-gray-600">
+      👉 A <b>Service Mesh</b> does the same thing for apps talking to each other.
+    </p>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+    <div class="flex items-center gap-3 mb-3">
+      <!-- Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2a4 4 0 014-4h4" />
+      </svg>
+      <h2 class="text-2xl font-semibold">What it Handles</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4 mt-4">
+
+      <div class="bg-green-100 p-4 rounded-lg text-center">
+        <p class="text-xl font-bold">🔒 Security</p>
+        <p class="text-sm text-gray-600 mt-1">Keeps communication safe</p>
+      </div>
+
+      <div class="bg-yellow-100 p-4 rounded-lg text-center">
+        <p class="text-xl font-bold">🚦 Traffic</p>
+        <p class="text-sm text-gray-600 mt-1">Controls request flow</p>
+      </div>
+
+      <div class="bg-blue-100 p-4 rounded-lg text-center">
+        <p class="text-xl font-bold">📊 Monitoring</p>
+        <p class="text-sm text-gray-600 mt-1">Tracks performance</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EXAMPLE -->
+  <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+    <div class="flex items-center gap-3 mb-3">
+      <!-- Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01" />
+      </svg>
+      <h2 class="text-2xl font-semibold">Real-Life Example</h2>
+    </div>
+
+    <p class="text-gray-700 text-lg">
+      If one service becomes slow 🐢,
+    </p>
+
+    <p class="mt-2 text-gray-700">
+      👉 The service mesh automatically sends traffic to a faster one ⚡
+      so users don’t notice any problem.
+    </p>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-800 text-white text-center p-4 mt-8">
+  <p>Made simple 💡 | Service Mesh made easy</p>
+</footer>
 
 </body>
 </html>
