@@ -2,45 +2,110 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Service Discovery</title>
+<title>Service Discovery - ELI10</title>
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-100 font-sans">
 
-<header class="bg-green-600 text-white text-center p-6">
-  <h1 class="text-3xl font-bold">Service Discovery</h1>
-  <p class="text-lg">Finding services dynamically in microservices architecture</p>
+<!-- HEADER -->
+<header class="bg-green-600 text-white text-center p-8 shadow-md">
+  <h1 class="text-4xl font-bold mb-2">🔍 Service Discovery</h1>
+  <p class="text-lg">Explained like you're 10!</p>
 </header>
 
-<section class="max-w-4xl mx-auto p-6">
+<!-- MAIN -->
+<section class="max-w-5xl mx-auto p-6 grid gap-6">
 
-<div class="bg-white p-6 shadow-lg rounded-lg mb-6">
-<h2 class="text-2xl font-semibold mb-3">What is Service Discovery?</h2>
-<p class="text-gray-700">
-Service discovery allows applications and microservices to find each other dynamically
-without hardcoding network locations.
-</p>
-</div>
+  <!-- WHAT IS -->
+  <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+    <div class="flex items-center gap-3 mb-3">
+      <!-- Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l4-4 4 4m0-8l-4 4-4-4" />
+      </svg>
+      <h2 class="text-2xl font-semibold">What is Service Discovery?</h2>
+    </div>
 
-<div class="bg-white p-6 shadow-lg rounded-lg mb-6">
-<h2 class="text-2xl font-semibold mb-3">Types</h2>
-<ul class="list-disc ml-6 text-gray-700">
-<li>Client-Side Discovery</li>
-<li>Server-Side Discovery</li>
-</ul>
-</div>
+    <p class="text-gray-700 text-lg">
+      Imagine you're in a big school and want to find your friend.
+      Instead of remembering their classroom, you ask the school office.
+      📍 The office tells you where your friend is right now.
+    </p>
 
-<div class="bg-white p-6 shadow-lg rounded-lg">
-<h2 class="text-2xl font-semibold mb-3">Popular Tools</h2>
-<ul class="list-disc ml-6 text-gray-700">
-<li>Eureka</li>
-<li>Consul</li>
-<li>Kubernetes Service Discovery</li>
-</ul>
-</div>
+    <p class="mt-3 text-gray-600">
+      👉 In the same way, computers use <b>Service Discovery</b> to find each other
+      without remembering fixed addresses.
+    </p>
+  </div>
+
+  <!-- TYPES -->
+  <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+    <div class="flex items-center gap-3 mb-3">
+      <!-- Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2a4 4 0 014-4h4" />
+      </svg>
+      <h2 class="text-2xl font-semibold">Types</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4 mt-4">
+      
+      <div class="bg-blue-50 p-4 rounded-lg">
+        <h3 class="font-semibold text-lg mb-2">👦 Client-Side</h3>
+        <p class="text-gray-700">
+          The app itself finds where to go.
+          Like calling your friend directly.
+        </p>
+      </div>
+
+      <div class="bg-purple-50 p-4 rounded-lg">
+        <h3 class="font-semibold text-lg mb-2">🏢 Server-Side</h3>
+        <p class="text-gray-700">
+          A helper (like a receptionist) sends your request.
+          You don’t need to know where your friend is.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOOLS -->
+  <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+    <div class="flex items-center gap-3 mb-3">
+      <!-- Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18" />
+      </svg>
+      <h2 class="text-2xl font-semibold">Popular Tools</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4 mt-4">
+
+      <div class="bg-gray-50 p-4 rounded-lg text-center">
+        <p class="text-xl font-bold">🌐 Eureka</p>
+        <p class="text-gray-600 text-sm mt-1">Netflix tool for finding services</p>
+      </div>
+
+      <div class="bg-gray-50 p-4 rounded-lg text-center">
+        <p class="text-xl font-bold">🧭 Consul</p>
+        <p class="text-gray-600 text-sm mt-1">Service networking tool</p>
+      </div>
+
+      <div class="bg-gray-50 p-4 rounded-lg text-center">
+        <p class="text-xl font-bold">⚙️ Kubernetes</p>
+        <p class="text-gray-600 text-sm mt-1">Auto service discovery in clusters</p>
+      </div>
+
+    </div>
+  </div>
 
 </section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-800 text-white text-center p-4 mt-8">
+  <p>Made simple 💡 | Microservices made easy</p>
+</footer>
 
 </body>
 </html>
