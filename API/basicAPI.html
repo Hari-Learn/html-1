@@ -6,48 +6,95 @@
   <title>API Basics - Page 1</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-yellow-50 p-6">
 
-  <h1 class="text-3xl font-bold text-center mb-6">API Basics (Page 1)</h1>
+<body class="bg-gradient-to-br from-yellow-50 to-orange-100 p-6 font-sans">
 
-  <div class="grid gap-6">
+  <!-- Title -->
+  <h1 class="text-4xl font-extrabold text-center mb-8">🌐 API Basics (Page 1)</h1>
+
+  <div class="grid gap-6 max-w-3xl mx-auto">
 
     <!-- API -->
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h2 class="text-xl font-semibold">🔗 What is API?</h2>
-      <p>An API is like a waiter in a restaurant.</p>
-      <p>You tell the waiter what you want, and it brings it from the kitchen.</p>
+    <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition">
+      <h2 class="text-2xl font-bold mb-2">🍽️ What is an API?</h2>
+      <p class="text-gray-700">
+        Imagine you're at a restaurant.
+      </p>
+      <p class="text-gray-700 mt-2">
+        You <strong>tell the waiter</strong> what you want 🍕, and the waiter brings it from the kitchen.
+      </p>
+      <p class="text-gray-700 mt-2">
+        👉 The <strong>waiter = API</strong><br>
+        👉 The <strong>kitchen = server</strong>
+      </p>
     </div>
 
     <!-- Endpoint -->
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h2 class="text-xl font-semibold">📍 Endpoint</h2>
-      <p>An endpoint is like a specific door to get something.</p>
-      <p>Each door gives you different information.</p>
+    <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition">
+      <h2 class="text-2xl font-bold mb-2">🚪 What is an Endpoint?</h2>
+      <p class="text-gray-700">
+        Think of a big building with many doors.
+      </p>
+      <p class="text-gray-700 mt-2">
+        Each door 🚪 leads to something different:
+      </p>
+      <ul class="list-disc ml-6 mt-2 text-gray-700">
+        <li>One door → user info 👤</li>
+        <li>Another door → photos 🖼️</li>
+      </ul>
+      <p class="text-gray-700 mt-2">
+        👉 Each door is an <strong>endpoint</strong>
+      </p>
     </div>
 
     <!-- HTTP Methods -->
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h2 class="text-xl font-semibold">📬 HTTP Methods</h2>
-      <p>These are actions like GET (read), POST (send), PUT (update), DELETE (remove).</p>
-      <p>Like telling what you want to do.</p>
+    <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition">
+      <h2 class="text-2xl font-bold mb-2">📬 HTTP Methods (Actions)</h2>
+      <p class="text-gray-700">
+        These are like buttons telling what you want to do:
+      </p>
+      <ul class="mt-3 space-y-1 text-gray-700">
+        <li>📖 <strong>GET</strong> → Read something</li>
+        <li>📤 <strong>POST</strong> → Send something new</li>
+        <li>✏️ <strong>PUT</strong> → Update something</li>
+        <li>🗑️ <strong>DELETE</strong> → Remove something</li>
+      </ul>
     </div>
 
     <!-- Request -->
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h2 class="text-xl font-semibold">📤 Request</h2>
-      <p>A request is when you ask the server for something.</p>
-      <p>Like placing an order.</p>
+    <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition">
+      <h2 class="text-2xl font-bold mb-2">📤 What is a Request?</h2>
+      <p class="text-gray-700">
+        A request is when you ask for something.
+      </p>
+      <p class="text-gray-700 mt-2">
+        Like saying: <em>"I want a burger 🍔"</em>
+      </p>
+      <p class="text-gray-700 mt-2">
+        👉 You → send a <strong>request</strong> to the server
+      </p>
     </div>
 
     <!-- Response -->
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h2 class="text-xl font-semibold">📥 Response</h2>
-      <p>A response is what the server sends back.</p>
-      <p>Like receiving your food.</p>
+    <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition">
+      <h2 class="text-2xl font-bold mb-2">📥 What is a Response?</h2>
+      <p class="text-gray-700">
+        A response is the answer you get back.
+      </p>
+      <p class="text-gray-700 mt-2">
+        Like receiving your burger 🍔 from the waiter.
+      </p>
+      <p class="text-gray-700 mt-2">
+        👉 Server → sends a <strong>response</strong> back to you
+      </p>
     </div>
 
   </div>
+
+  <!-- Footer -->
+  <p class="text-center text-gray-600 mt-10 text-sm">
+    🎯 Simple idea: You ask → API helps → You get results!
+  </p>
 
 </body>
 </html>
