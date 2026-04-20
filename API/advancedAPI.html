@@ -6,48 +6,96 @@
   <title>API Advanced - Page 3</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-indigo-50 p-6">
 
-  <h1 class="text-3xl font-bold text-center mb-6">API Advanced Concepts (Page 3)</h1>
+<body class="bg-gradient-to-br from-indigo-50 to-purple-100 p-6 font-sans">
 
-  <div class="grid gap-6">
+  <!-- Title -->
+  <h1 class="text-4xl font-extrabold text-center mb-8">🚀 API Advanced Concepts (Page 3)</h1>
+
+  <div class="grid gap-6 max-w-3xl mx-auto">
 
     <!-- Rate Limiting -->
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h2 class="text-xl font-semibold">⏱️ Rate Limiting</h2>
-      <p>This limits how many times you can ask the server.</p>
-      <p>Like "only 5 tries per minute".</p>
+    <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition">
+      <h2 class="text-2xl font-bold mb-2">⏱️ Rate Limiting</h2>
+      <p class="text-gray-700">
+        This controls how many times you can ask the server in a short time.
+      </p>
+      <p class="text-gray-700 mt-2">
+        Like a game that says: <strong>"You can only try 5 times per minute"</strong> 🎮
+      </p>
+      <p class="text-gray-700 mt-2">
+        👉 It stops overload and keeps servers safe
+      </p>
     </div>
 
     <!-- API Key -->
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h2 class="text-xl font-semibold">🔑 API Key</h2>
-      <p>A secret code to use the API.</p>
-      <p>Like a password for apps.</p>
+    <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition">
+      <h2 class="text-2xl font-bold mb-2">🔑 API Key</h2>
+      <p class="text-gray-700">
+        This is a secret ID used to access an API.
+      </p>
+      <p class="text-gray-700 mt-2">
+        Like a special ticket 🎟️ that lets only you enter.
+      </p>
+      <p class="text-gray-700 mt-2">
+        👉 Without it, the API says "No entry!"
+      </p>
     </div>
 
     <!-- JSON -->
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h2 class="text-xl font-semibold">🧾 JSON</h2>
-      <p>A simple format to send data.</p>
-      <p>It looks like key-value pairs.</p>
+    <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition">
+      <h2 class="text-2xl font-bold mb-2">🧾 JSON (Data Language)</h2>
+      <p class="text-gray-700">
+        JSON is a simple way to send data between apps.
+      </p>
+      <p class="text-gray-700 mt-2">
+        It looks like pairs:
+      </p>
+      <pre class="bg-gray-100 p-3 rounded mt-2 text-sm">
+{
+  "name": "John",
+  "age": 10
+}
+      </pre>
+      <p class="text-gray-700 mt-2">
+        👉 Think of it like a labeled box 📦
+      </p>
     </div>
 
     <!-- Webhook -->
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h2 class="text-xl font-semibold">🔔 Webhook</h2>
-      <p>A webhook sends data automatically when something happens.</p>
-      <p>Like getting a notification.</p>
+    <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition">
+      <h2 class="text-2xl font-bold mb-2">🔔 Webhook</h2>
+      <p class="text-gray-700">
+        A webhook is like an automatic messenger.
+      </p>
+      <p class="text-gray-700 mt-2">
+        It sends you a message 📩 when something happens.
+      </p>
+      <p class="text-gray-700 mt-2">
+        Example: “Your order is shipped 🚚”
+      </p>
     </div>
 
     <!-- OAuth -->
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h2 class="text-xl font-semibold">🔐 OAuth</h2>
-      <p>Lets you log in using another account.</p>
-      <p>Like "Login with Google".</p>
+    <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition">
+      <h2 class="text-2xl font-bold mb-2">🔐 OAuth (Login with others)</h2>
+      <p class="text-gray-700">
+        OAuth lets you log in using another account.
+      </p>
+      <p class="text-gray-700 mt-2">
+        Like using Google or Facebook instead of creating a new login.
+      </p>
+      <p class="text-gray-700 mt-2">
+        👉 You don’t share your password directly
+      </p>
     </div>
 
   </div>
+
+  <!-- Footer -->
+  <p class="text-center text-gray-600 mt-10 text-sm">
+    🎯 APIs are just smart messengers that follow rules!
+  </p>
 
 </body>
 </html>
