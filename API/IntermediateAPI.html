@@ -6,48 +6,101 @@
   <title>API Communication - Page 2</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-red-50 p-6">
 
-  <h1 class="text-3xl font-bold text-center mb-6">API Communication (Page 2)</h1>
+<body class="bg-gradient-to-br from-red-50 to-pink-100 p-6 font-sans">
 
-  <div class="grid gap-6">
+  <!-- Title -->
+  <h1 class="text-4xl font-extrabold text-center mb-8">💬 API Communication (Page 2)</h1>
+
+  <div class="grid gap-6 max-w-3xl mx-auto">
 
     <!-- Status Codes -->
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h2 class="text-xl font-semibold">📊 Status Codes</h2>
-      <p>These are numbers that tell what happened.</p>
-      <p>200 = success, 404 = not found, 500 = error.</p>
+    <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition">
+      <h2 class="text-2xl font-bold mb-2">📊 Status Codes</h2>
+      <p class="text-gray-700">
+        These are like reply messages from the server.
+      </p>
+      <p class="text-gray-700 mt-2">
+        They tell you what happened:
+      </p>
+      <ul class="mt-3 space-y-1 text-gray-700">
+        <li>✅ <strong>200</strong> → Everything worked!</li>
+        <li>🔍 <strong>404</strong> → Couldn't find it</li>
+        <li>💥 <strong>500</strong> → Server had a problem</li>
+      </ul>
     </div>
 
     <!-- Authentication -->
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h2 class="text-xl font-semibold">🔐 Authentication</h2>
-      <p>This checks who you are.</p>
-      <p>Like logging into your account.</p>
+    <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition">
+      <h2 class="text-2xl font-bold mb-2">🔐 Authentication (Who are you?)</h2>
+      <p class="text-gray-700">
+        This checks your identity.
+      </p>
+      <p class="text-gray-700 mt-2">
+        Like logging into your account with a username and password.
+      </p>
+      <p class="text-gray-700 mt-2">
+        👉 "Are you really you?"
+      </p>
     </div>
 
     <!-- Parameters -->
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h2 class="text-xl font-semibold">⚙️ Parameters</h2>
-      <p>Extra details you send with a request.</p>
-      <p>Like choosing size or color.</p>
+    <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition">
+      <h2 class="text-2xl font-bold mb-2">⚙️ Parameters (Extra choices)</h2>
+      <p class="text-gray-700">
+        These are extra details you send.
+      </p>
+      <p class="text-gray-700 mt-2">
+        Like ordering a pizza 🍕:
+      </p>
+      <ul class="list-disc ml-6 mt-2 text-gray-700">
+        <li>Size: Large</li>
+        <li>Toppings: Cheese 🧀</li>
+      </ul>
+      <p class="text-gray-700 mt-2">
+        👉 These choices = parameters
+      </p>
     </div>
 
     <!-- Headers -->
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h2 class="text-xl font-semibold">📑 Headers</h2>
-      <p>Small extra information sent with a request.</p>
-      <p>Like writing details on an envelope.</p>
+    <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition">
+      <h2 class="text-2xl font-bold mb-2">📑 Headers</h2>
+      <p class="text-gray-700">
+        Headers are small hidden details sent with your request.
+      </p>
+      <p class="text-gray-700 mt-2">
+        Like writing info on an envelope ✉️:
+      </p>
+      <ul class="list-disc ml-6 mt-2 text-gray-700">
+        <li>Who sent it</li>
+        <li>What type of data it is</li>
+      </ul>
     </div>
 
     <!-- Authorization -->
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h2 class="text-xl font-semibold">✅ Authorization</h2>
-      <p>This checks what you are allowed to do.</p>
-      <p>Like permission to enter a room.</p>
+    <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition">
+      <h2 class="text-2xl font-bold mb-2">✅ Authorization (What can you do?)</h2>
+      <p class="text-gray-700">
+        This checks your permissions.
+      </p>
+      <p class="text-gray-700 mt-2">
+        Like entering a room 🚪:
+      </p>
+      <ul class="list-disc ml-6 mt-2 text-gray-700">
+        <li>Guest → can only look 👀</li>
+        <li>Admin → can change things ✏️</li>
+      </ul>
+      <p class="text-gray-700 mt-2">
+        👉 "Are you allowed to do this?"
+      </p>
     </div>
 
   </div>
+
+  <!-- Footer -->
+  <p class="text-center text-gray-600 mt-10 text-sm">
+    🎯 First prove who you are → then check what you can do!
+  </p>
 
 </body>
 </html>
