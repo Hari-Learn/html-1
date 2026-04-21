@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FTTH Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-5xl mx-auto p-6">
+    
+    <!-- Header -->
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-blue-600">FTTH (Fiber To The Home)</h1>
+      <p class="text-gray-600 mt-2">Overview, Architecture, Issues & Testing</p>
+    </header>
+
+    <!-- What is FTTH -->
+    <section class="mb-8 bg-white p-6 rounded-2xl shadow">
+      <h2 class="text-2xl font-semibold mb-3">What is FTTH?</h2>
+      <p>
+        FTTH (Fiber To The Home) is a broadband network architecture that uses optical fiber
+        to provide high-speed internet directly to residential homes. It delivers faster speeds,
+        lower latency, and better reliability compared to traditional copper-based networks.
+      </p>
+    </section>
+
+    <!-- Architecture -->
+    <section class="mb-8 bg-white p-6 rounded-2xl shadow">
+      <h2 class="text-2xl font-semibold mb-3">FTTH Architecture</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>OLT (Optical Line Terminal):</strong> Located at service provider’s central office.</li>
+        <li><strong>ODN (Optical Distribution Network):</strong> Fiber cables, splitters, and connectors.</li>
+        <li><strong>Splitter:</strong> Divides signal from OLT to multiple users.</li>
+        <li><strong>ONT/ONU:</strong> Installed at customer premises to convert optical signals to electrical.</li>
+      </ul>
+    </section>
+
+    <!-- Common Issues -->
+    <section class="mb-8 bg-white p-6 rounded-2xl shadow">
+      <h2 class="text-2xl font-semibold mb-3">Common FTTH Issues</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Low optical power levels</li>
+        <li>Fiber cuts or bends</li>
+        <li>Dirty connectors</li>
+        <li>Packet loss and latency issues</li>
+        <li>Slow internet speed</li>
+        <li>ONT device faults</li>
+      </ul>
+    </section>
+
+    <!-- Testing -->
+    <section class="mb-8 bg-white p-6 rounded-2xl shadow">
+      <h2 class="text-2xl font-semibold mb-3">Testing & Troubleshooting</h2>
+
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-semibold text-lg">1. Optical Power Measurement</h3>
+          <p>Use a power meter to measure optical signal strength in dBm. Typical range: -8 dBm to -28 dBm.</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-lg">2. Speed Test</h3>
+          <p>Use speedtest tools to verify bandwidth performance.</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-lg">3. iPerf Testing</h3>
+          <p>Used to measure throughput between two network devices.</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-lg">4. Packet Loss Detection</h3>
+          <p>Check for lost packets which indicate network instability.</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-lg">5. Ping Test</h3>
+          <p>Measure latency and response time to a server.</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-lg">6. Traceroute</h3>
+          <p>Identify network path and locate delays or failures.</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-lg">7. Latency Check</h3>
+          <p>Ensure latency is low for real-time applications like gaming or video calls.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-500 text-sm mt-10">
+      © 2026 FTTH Guide | Simple Network Reference
+    </footer>
+
+  </div>
+
+</body>
+</html>
