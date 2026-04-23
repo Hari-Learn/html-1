@@ -2,28 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Concepts - Page 3</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <div class="max-w-4xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-6">AI System Design</h1>
 
-    <div class="bg-white p-5 rounded-2xl shadow mb-4">
-      <h2 class="text-xl font-semibold">A2A (Agent-to-Agent Communication)</h2>
-      <p class="mt-2">A2A allows different AI agents to communicate and share information for coordinated decision-making.</p>
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">AI Concepts</h1>
+      <span class="text-sm text-gray-500">Page 3</span>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-5xl mx-auto p-6">
+
+    <h2 class="text-3xl font-bold mb-8 text-center">AI System Design</h2>
+
+    <div class="grid gap-6 md:grid-cols-2">
+
+      <!-- A2A Card -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">🔗</span>
+          <h3 class="text-xl font-semibold text-indigo-600">A2A Communication</h3>
+        </div>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          A2A is like **AI talking to other AI**. Imagine teammates passing messages to solve a problem together.
+        </p>
+        <p class="mt-2 text-gray-600">
+          Each agent shares useful info so the whole system can make better decisions.
+        </p>
+      </div>
+
+      <!-- Memory Card -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">🧠</span>
+          <h3 class="text-xl font-semibold text-indigo-600">Memory & State</h3>
+        </div>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          This is like **AI remembering things**. Short-term memory is what it just saw,
+          and long-term memory is what it learned earlier.
+        </p>
+        <p class="mt-2 text-gray-600">
+          Good memory helps AI stay consistent across conversations.
+        </p>
+      </div>
+
+      <!-- Context Window Card -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100 md:col-span-2">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">📦</span>
+          <h3 class="text-xl font-semibold text-indigo-600">Context Window</h3>
+        </div>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          Think of this as **how much the AI can "see" at once**.
+        </p>
+        <p class="mt-2 text-gray-600">
+          A bigger context window means the AI can handle longer conversations,
+          more details, and solve more complex problems without forgetting.
+        </p>
+      </div>
+
     </div>
 
-    <div class="bg-white p-5 rounded-2xl shadow mb-4">
-      <h2 class="text-xl font-semibold">Memory & State Management</h2>
-      <p class="mt-2">Managing short-term and long-term memory helps AI systems maintain context across interactions.</p>
-    </div>
+  </main>
 
-    <div class="bg-white p-5 rounded-2xl shadow mb-4">
-      <h2 class="text-xl font-semibold">Context Windows</h2>
-      <p class="mt-2">Context window defines how much information an AI model can process at once. Larger windows allow more complex reasoning.</p>
-    </div>
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 py-6">
+    © 2026 AI Learning Hub
+  </footer>
 
-  </div>
 </body>
 </html>
