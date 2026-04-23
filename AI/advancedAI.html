@@ -2,28 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Concepts - Page 2</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <div class="max-w-4xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-6">Advanced AI Techniques</h1>
 
-    <div class="bg-white p-5 rounded-2xl shadow mb-4">
-      <h2 class="text-xl font-semibold">Evals</h2>
-      <p class="mt-2">Evals are systematic tests used to measure model performance, reliability, and accuracy.</p>
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">AI Concepts</h1>
+      <span class="text-sm text-gray-500">Page 2</span>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-5xl mx-auto p-6">
+
+    <h2 class="text-3xl font-bold mb-8 text-center">Advanced AI Techniques</h2>
+
+    <div class="grid gap-6 md:grid-cols-2">
+
+      <!-- Evals Card -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">🧪</span>
+          <h3 class="text-xl font-semibold text-indigo-600">Evals</h3>
+        </div>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          Think of evals like **tests for AI**. Just like exams check how well you learned something,
+          evals check how well an AI model performs.
+        </p>
+        <p class="mt-2 text-gray-600">
+          They help answer: “Is the AI giving correct answers?” and “Can we trust it?”
+        </p>
+      </div>
+
+      <!-- RAG Card -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">📚</span>
+          <h3 class="text-xl font-semibold text-indigo-600">RAG</h3>
+        </div>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          RAG is like **an open-book exam for AI**. Instead of only using memory,
+          the AI first looks up helpful information from outside sources.
+        </p>
+        <p class="mt-2 text-gray-600">
+          Then it uses that info to give better, more accurate answers.
+        </p>
+      </div>
+
+      <!-- Multi-Agent Card -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100 md:col-span-2">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">🤖🤝🤖</span>
+          <h3 class="text-xl font-semibold text-indigo-600">Multi-Agent Systems</h3>
+        </div>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          Imagine a **team project**, where each person has a role. That’s how multi-agent systems work.
+        </p>
+        <p class="mt-2 text-gray-600">
+          One AI might research, another writes, and another checks errors—working together to solve bigger problems.
+        </p>
+      </div>
+
     </div>
 
-    <div class="bg-white p-5 rounded-2xl shadow mb-4">
-      <h2 class="text-xl font-semibold">RAG (Retrieval-Augmented Generation)</h2>
-      <p class="mt-2">RAG enhances AI responses by retrieving relevant documents from external sources before generating answers.</p>
-    </div>
+  </main>
 
-    <div class="bg-white p-5 rounded-2xl shadow mb-4">
-      <h2 class="text-xl font-semibold">Multi-Agent Systems</h2>
-      <p class="mt-2">Multiple AI agents collaborate to solve complex tasks by dividing responsibilities.</p>
-    </div>
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 py-6">
+    © 2026 AI Learning Hub
+  </footer>
 
-  </div>
 </body>
 </html>
