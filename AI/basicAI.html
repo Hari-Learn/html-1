@@ -2,28 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Concepts - Page 1</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <div class="max-w-4xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-6">Core AI Concepts</h1>
 
-    <div class="bg-white p-5 rounded-2xl shadow mb-4">
-      <h2 class="text-xl font-semibold">Model Context (MC)</h2>
-      <p class="mt-2">Model Context refers to the information provided to an AI model during inference. It includes prompts, system instructions, and conversation history.</p>
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">AI Concepts</h1>
+      <span class="text-sm text-gray-500">Page 1</span>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto p-6">
+
+    <h2 class="text-3xl font-bold mb-8 text-center">Core AI Concepts</h2>
+
+    <!-- Cards Grid -->
+    <div class="grid gap-6 md:grid-cols-2">
+
+      <!-- Card 1 -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100">
+        <h3 class="text-xl font-semibold text-indigo-600">Model Context (MC)</h3>
+        <p class="mt-3 text-gray-600 leading-relaxed">
+          Model Context refers to all the information provided to an AI model during inference,
+          including prompts, system instructions, and conversation history.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100">
+        <h3 class="text-xl font-semibold text-indigo-600">Embeddings</h3>
+        <p class="mt-3 text-gray-600 leading-relaxed">
+          Embeddings convert text into numerical vectors, enabling similarity search,
+          clustering, and deeper semantic understanding of content.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100 md:col-span-2">
+        <h3 class="text-xl font-semibold text-indigo-600">Model Routing</h3>
+        <p class="mt-3 text-gray-600 leading-relaxed">
+          Model routing determines the best AI model for a task by balancing cost,
+          latency, and complexity—ensuring efficient and optimal performance.
+        </p>
+      </div>
+
     </div>
 
-    <div class="bg-white p-5 rounded-2xl shadow mb-4">
-      <h2 class="text-xl font-semibold">Embeddings</h2>
-      <p class="mt-2">Embeddings convert text into numerical vectors, enabling similarity search, clustering, and semantic understanding.</p>
-    </div>
+  </main>
 
-    <div class="bg-white p-5 rounded-2xl shadow mb-4">
-      <h2 class="text-xl font-semibold">Model Routing</h2>
-      <p class="mt-2">Model routing selects the best model for a task based on cost, latency, and complexity.</p>
-    </div>
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 py-6">
+    © 2026 AI Learning Hub
+  </footer>
 
-  </div>
 </body>
 </html>
