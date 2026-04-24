@@ -1,21 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terraform</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terraform Basics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    Terraform is an open-source infrastructure as code (IaC) tool developed by HashiCorp.
-    It allows you to define and provision infrastructure resources across various cloud providers and services using a declarative configuration language called HashiCorp Configuration Language (HCL).
-    With Terraform, you can create, manage, and version infrastructure in a consistent and repeatable manner.
-    Key features of Terraform include:               
-    - **Infrastructure as Code (IaC)**: You define your infrastructure using code, which can be versioned and shared.
-      - **Provider Support**: Terraform supports a wide range of cloud providers (AWS, Azure, GCP, etc.) and services through plugins called providers.
-      - **Declarative Language**: You describe the desired state of your infrastructure, and Terraform takes care of the rest.
-      - **State Management**: Terraform maintains a state file that tracks the current state of your infrastructure, allowing it to determine what changes need to be made.
-      - **Plan and Apply**: Terraform provides a two-step process where you can preview changes (plan) before applying them (apply).
-      - **Modularity**: You can create reusable modules to encapsulate and share common infrastructure patterns.
-      - **Community and Ecosystem**: Terraform has a large and active community, with many pre-built modules and providers available.
+
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white py-8 text-center shadow-md">
+    <h1 class="text-3xl font-bold">Terraform</h1>
+    <p class="mt-2 text-lg opacity-90">Infrastructure as Code Made Simple</p>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-5xl mx-auto p-6">
+
+    <!-- Intro -->
+    <section class="bg-white p-6 rounded-2xl shadow-md mb-8">
+      <h2 class="text-2xl font-semibold text-indigo-600 mb-4">What is Terraform?</h2>
+      <p class="text-gray-600 leading-relaxed">
+        Terraform is an open-source tool created by <strong>HashiCorp</strong> that lets you manage infrastructure using code.
+      </p>
+      <p class="mt-3 text-gray-600">
+        Think of it like writing instructions to automatically build servers, networks, and cloud resources—just like building with LEGO, but using code 🧱.
+      </p>
+    </section>
+
+    <!-- Key Features -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-6 text-center">Key Features 🚀</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- IaC -->
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">💻</span>
+            <h3 class="text-lg font-semibold text-indigo-600">Infrastructure as Code</h3>
+          </div>
+          <p class="mt-3 text-gray-600">
+            Write code to create infrastructure. Easy to save, reuse, and share.
+          </p>
+        </div>
+
+        <!-- Providers -->
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">☁️</span>
+            <h3 class="text-lg font-semibold text-indigo-600">Provider Support</h3>
+          </div>
+          <p class="mt-3 text-gray-600">
+            Works with AWS, Azure, GCP, and many more using plugins.
+          </p>
+        </div>
+
+        <!-- Declarative -->
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">📝</span>
+            <h3 class="text-lg font-semibold text-indigo-600">Declarative Language</h3>
+          </div>
+          <p class="mt-3 text-gray-600">
+            You tell Terraform what you want—it figures out how to do it.
+          </p>
+        </div>
+
+        <!-- State -->
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">📦</span>
+            <h3 class="text-lg font-semibold text-indigo-600">State Management</h3>
+          </div>
+          <p class="mt-3 text-gray-600">
+            Keeps track of your infrastructure so changes are safe and accurate.
+          </p>
+        </div>
+
+        <!-- Plan & Apply -->
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">⚙️</span>
+            <h3 class="text-lg font-semibold text-indigo-600">Plan & Apply</h3>
+          </div>
+          <p class="mt-3 text-gray-600">
+            Preview changes before applying them—no surprises.
+          </p>
+        </div>
+
+        <!-- Modules -->
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">🧩</span>
+            <h3 class="text-lg font-semibold text-indigo-600">Modularity</h3>
+          </div>
+          <p class="mt-3 text-gray-600">
+            Reuse code blocks to build faster and stay organized.
+          </p>
+        </div>
+
+        <!-- Community -->
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition md:col-span-2">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">🌍</span>
+            <h3 class="text-lg font-semibold text-indigo-600">Community & Ecosystem</h3>
+          </div>
+          <p class="mt-3 text-gray-600">
+            Huge community with ready-made modules and tools to speed up development.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Flow -->
+    <section class="mt-10 bg-indigo-600 text-white p-6 rounded-2xl text-center shadow-lg">
+      <h2 class="text-xl font-semibold mb-2">How Terraform Works</h2>
+      <p>
+        Write Code → Plan Changes → Apply → Infrastructure Ready 🚀
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 py-6">
+    © 2026 Terraform Learning Page
+  </footer>
+
 </body>
 </html>
