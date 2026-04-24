@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network Infrastructure Components</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">Network Infrastructure</h1>
+      <span class="text-sm text-gray-500">Internal Components</span>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-6xl mx-auto p-6">
+
+    <h2 class="text-3xl font-bold text-center mb-10">Inside a Data Center 🏢</h2>
+
+    <!-- Flow Overview -->
+    <div class="grid md:grid-cols-5 gap-4 items-center text-center mb-12">
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        🔥<br><span class="font-semibold">Firewall</span>
+      </div>
+
+      <div class="text-2xl">➡️</div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        🌐<br><span class="font-semibold">Core Switch</span>
+      </div>
+
+      <div class="text-2xl">➡️</div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        🔀<br><span class="font-semibold">Distribution</span>
+      </div>
+
+      <div class="text-2xl">⬇️</div>
+
+      <div class="bg-white p-4 rounded-xl shadow md:col-span-2">
+        🧩<br><span class="font-semibold">ToR Switch</span>
+      </div>
+
+      <div class="text-2xl">➡️</div>
+
+      <div class="bg-white p-4 rounded-xl shadow md:col-span-2">
+        🖥️<br><span class="font-semibold">Servers</span>
+      </div>
+
+    </div>
+
+    <!-- Cards -->
+    <div class="grid gap-6 md:grid-cols-2">
+
+      <!-- Firewall -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition border">
+        <div class="flex items-center gap-3">
+          🔥 <h3 class="text-xl font-semibold text-indigo-600">Firewall</h3>
+        </div>
+        <p class="mt-4 text-gray-600">
+          The firewall is the **first security checkpoint** inside your network.
+        </p>
+        <p class="mt-2 text-gray-600">
+          It decides what traffic is safe and blocks harmful requests.
+        </p>
+      </div>
+
+      <!-- Core Switch -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition border">
+        <div class="flex items-center gap-3">
+          🌐 <h3 class="text-xl font-semibold text-indigo-600">Core Switch</h3>
+        </div>
+        <p class="mt-4 text-gray-600">
+          The core switch is like the **main highway** of the network.
+        </p>
+        <p class="mt-2 text-gray-600">
+          It handles large volumes of traffic and connects major parts of the network.
+        </p>
+      </div>
+
+      <!-- Distribution Switch -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition border">
+        <div class="flex items-center gap-3">
+          🔀 <h3 class="text-xl font-semibold text-indigo-600">Distribution Switch</h3>
+        </div>
+        <p class="mt-4 text-gray-600">
+          This layer organizes traffic between core and access layers.
+        </p>
+        <p class="mt-2 text-gray-600">
+          Think of it as a **traffic controller** directing data efficiently.
+        </p>
+      </div>
+
+      <!-- ToR Switch -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition border">
+        <div class="flex items-center gap-3">
+          🧩 <h3 class="text-xl font-semibold text-indigo-600">ToR (Top of Rack)</h3>
+        </div>
+        <p class="mt-4 text-gray-600">
+          Located on top of server racks, these switches connect servers directly.
+        </p>
+        <p class="mt-2 text-gray-600">
+          They act like a **local hub** for servers in a rack.
+        </p>
+      </div>
+
+      <!-- Web Servers -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition border">
+        <div class="flex items-center gap-3">
+          🌍 <h3 class="text-xl font-semibold text-indigo-600">Web Servers</h3>
+        </div>
+        <p class="mt-4 text-gray-600">
+          These are the machines that deliver websites and apps to users.
+        </p>
+        <p class="mt-2 text-gray-600">
+          When you open a site, you're talking to a web server.
+        </p>
+      </div>
+
+      <!-- Patch Panels -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition border">
+        <div class="flex items-center gap-3">
+          🔌 <h3 class="text-xl font-semibold text-indigo-600">Patch Panels</h3>
+        </div>
+        <p class="mt-4 text-gray-600">
+          Patch panels organize network cables neatly.
+        </p>
+        <p class="mt-2 text-gray-600">
+          Think of them like a **plug board** that keeps connections clean and manageable.
+        </p>
+      </div>
+
+      <!-- Structured Cabling -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition border">
+        <div class="flex items-center gap-3">
+          🧵 <h3 class="text-xl font-semibold text-indigo-600">Structured Cabling</h3>
+        </div>
+        <p class="mt-4 text-gray-600">
+          This is the organized system of cables running through the building.
+        </p>
+        <p class="mt-2 text-gray-600">
+          It ensures everything is connected reliably and easy to maintain.
+        </p>
+      </div>
+
+      <!-- Server Racks -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition border">
+        <div class="flex items-center gap-3">
+          🗄️ <h3 class="text-xl font-semibold text-indigo-600">Server Racks</h3>
+        </div>
+        <p class="mt-4 text-gray-600">
+          Server racks hold servers and networking equipment in an organized way.
+        </p>
+        <p class="mt-2 text-gray-600">
+          Like **shelves for computers**, keeping everything tidy and cool.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Summary -->
+    <div class="mt-12 bg-indigo-600 text-white p-6 rounded-2xl shadow-lg text-center">
+      <h3 class="text-xl font-semibold mb-2">Simple Internal Flow</h3>
+      <p>
+        Firewall → Core → Distribution → ToR → Servers
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 py-6">
+    © 2026 Network Infrastructure Guide
+  </footer>
+
+</body>
+</html>
