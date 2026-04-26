@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packet Flow Explained (ELI10)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-indigo-50 to-blue-100 font-sans">
+
+  <div class="max-w-6xl mx-auto p-6 md:p-10">
+
+    <!-- Header -->
+    <header class="text-center mb-14">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-700 mb-4">
+        Packet Flow in a Network 🚀
+      </h1>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        Let’s understand how data travels across a network in a super simple way (ELI10 style).
+      </p>
+    </header>
+
+    <!-- Steps -->
+    <div class="space-y-8">
+
+      <!-- Step 1 -->
+      <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-blue-500">
+        <h2 class="text-xl font-bold text-blue-600 mb-2">1. DNS Lookup 🌍</h2>
+        <p class="text-gray-600">
+          You type a website name like <strong>google.com</strong>.  
+          DNS is like a phonebook — it finds the website’s IP address so your computer knows where to go.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-green-500">
+        <h2 class="text-xl font-bold text-green-600 mb-2">2. TCP Handshake 🤝</h2>
+        <p class="text-gray-600">
+          Your computer and the server say “Hello” to each other.  
+          This 3-step handshake makes sure both sides are ready to talk reliably.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-purple-500">
+        <h2 class="text-xl font-bold text-purple-600 mb-2">3. Routing Decision 🧭</h2>
+        <p class="text-gray-600">
+          Routers decide the best path for your data, like Google Maps choosing the fastest route.
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-pink-500">
+        <h2 class="text-xl font-bold text-pink-600 mb-2">4. Switching 🔀</h2>
+        <p class="text-gray-600">
+          Inside a local network, switches send data to the correct device using MAC addresses.
+        </p>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-yellow-500">
+        <h2 class="text-xl font-bold text-yellow-600 mb-2">5. Routing 🌐</h2>
+        <p class="text-gray-600">
+          Data travels across multiple networks through routers until it gets closer to the destination.
+        </p>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-red-500">
+        <h2 class="text-xl font-bold text-red-600 mb-2">6. Destination Network 🎯</h2>
+        <p class="text-gray-600">
+          The packet finally reaches the destination network where the target server lives.
+        </p>
+      </div>
+
+      <!-- Step 7 -->
+      <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-indigo-500">
+        <h2 class="text-xl font-bold text-indigo-600 mb-2">7. Decapsulation 📦</h2>
+        <p class="text-gray-600">
+          The data is unpacked layer by layer (like opening a parcel) until the actual message is revealed.
+        </p>
+      </div>
+
+      <!-- Step 8 -->
+      <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-teal-500">
+        <h2 class="text-xl font-bold text-teal-600 mb-2">8. End User 👤</h2>
+        <p class="text-gray-600">
+          The website loads, and you see the content. Mission complete! 🎉
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Summary -->
+    <div class="mt-16 bg-white p-6 rounded-2xl shadow-md text-center">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">
+        Simple Flow Summary 🔄
+      </h3>
+      <p class="text-gray-600">
+        DNS → Handshake → Routing → Switching → Routing → Destination → Decapsulation → You 🎉
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-sm text-gray-500">
+      Designed for learning • Packet Flow (ELI10)
+    </footer>
+
+  </div>
+
+</body>
+</html>
