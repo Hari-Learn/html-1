@@ -7,47 +7,94 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-blue-50 font-sans">
+<body class="bg-gradient-to-br from-blue-50 via-sky-50 to-indigo-50 font-sans">
 
-<div class="max-w-5xl mx-auto p-8">
+<div class="max-w-6xl mx-auto p-8">
 
-  <h1 class="text-4xl font-bold text-blue-700 text-center mb-10">
-    Windows File Systems 🪟 (ELI10)
+  <h1 class="text-4xl font-bold text-blue-700 text-center mb-4">
+    Windows File Systems 🪟
   </h1>
 
-  <div class="grid md:grid-cols-3 gap-6">
+  <p class="text-center text-gray-600 mb-10">
+    Think of these like different types of notebooks for storing your files 📚
+  </p>
+
+  <!-- Grid -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
     <!-- FAT32 -->
-    <div class="bg-white p-6 rounded-2xl shadow border-t-4 border-blue-500">
-      <h2 class="text-xl font-bold mb-2">FAT32</h2>
-      <p class="text-gray-600">
-        Like an old school notebook 📒.  
-        Works everywhere, but you can’t store very big files (max ~4GB).
+    <div class="bg-white p-6 rounded-2xl shadow-lg border border-blue-100">
+      <h2 class="text-xl font-bold mb-2 text-blue-600">📒 FAT32</h2>
+      <p class="text-gray-600 mb-3">
+        An old but widely compatible notebook.
       </p>
+      <ul class="text-sm text-gray-500 space-y-1">
+        <li>🌍 Works almost everywhere</li>
+        <li>📦 Max file size ~4GB</li>
+        <li>🐢 Older and limited</li>
+      </ul>
     </div>
 
     <!-- exFAT -->
-    <div class="bg-white p-6 rounded-2xl shadow border-t-4 border-green-500">
-      <h2 class="text-xl font-bold mb-2">exFAT</h2>
-      <p class="text-gray-600">
-        A modern notebook 📘.  
-        Works on many devices and supports large files. Great for USB drives.
+    <div class="bg-white p-6 rounded-2xl shadow-lg border border-green-100">
+      <h2 class="text-xl font-bold mb-2 text-green-600">📘 exFAT</h2>
+      <p class="text-gray-600 mb-3">
+        A modern notebook for portable storage.
       </p>
+      <ul class="text-sm text-gray-500 space-y-1">
+        <li>💾 Great for USB drives</li>
+        <li>📂 Supports large files</li>
+        <li>🔄 Works across devices</li>
+      </ul>
     </div>
 
     <!-- NTFS -->
-    <div class="bg-white p-6 rounded-2xl shadow border-t-4 border-purple-500">
-      <h2 class="text-xl font-bold mb-2">NTFS</h2>
-      <p class="text-gray-600">
-        A smart digital locker 🔐.  
-        Supports permissions, security, and very large files. Used by Windows.
+    <div class="bg-white p-6 rounded-2xl shadow-lg border border-purple-100">
+      <h2 class="text-xl font-bold mb-2 text-purple-600">🔐 NTFS</h2>
+      <p class="text-gray-600 mb-3">
+        A secure digital locker for Windows.
+      </p>
+      <ul class="text-sm text-gray-500 space-y-1">
+        <li>🔒 File permissions & security</li>
+        <li>📊 Handles huge files</li>
+        <li>⚡ Default for Windows</li>
+      </ul>
+    </div>
+
+    <!-- Analogy -->
+    <div class="bg-white p-6 rounded-2xl shadow-md border border-yellow-100">
+      <h2 class="text-lg font-bold mb-2 text-yellow-600">🧸 Easy Analogy</h2>
+      <p class="text-gray-600 text-sm">
+        FAT32 = old notebook 📒<br>
+        exFAT = travel notebook 🎒<br>
+        NTFS = secure locker 🔐
+      </p>
+    </div>
+
+    <!-- Comparison -->
+    <div class="bg-white p-6 rounded-2xl shadow-md border border-indigo-100">
+      <h2 class="text-lg font-bold mb-2 text-indigo-600">⚖️ Quick Compare</h2>
+      <p class="text-gray-600 text-sm">
+        FAT32 → most compatible 🌍<br>
+        exFAT → best for USB 💾<br>
+        NTFS → best for Windows 💻
+      </p>
+    </div>
+
+    <!-- When to Use -->
+    <div class="bg-white p-6 rounded-2xl shadow-md border border-pink-100">
+      <h2 class="text-lg font-bold mb-2 text-pink-600">📍 When to Use</h2>
+      <p class="text-gray-600 text-sm">
+        Old devices → FAT32 📼<br>
+        USB/SD cards → exFAT 💾<br>
+        Windows PC → NTFS 🖥️
       </p>
     </div>
 
   </div>
 
-  <footer class="text-center mt-10 text-gray-500 text-sm">
-    Windows File Systems • ELI10 Guide
+  <footer class="text-center mt-12 text-gray-400 text-sm">
+    Windows File Systems • Made Simple ✨
   </footer>
 
 </div>
