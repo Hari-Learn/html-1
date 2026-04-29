@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Microservices Resilience Patterns</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <div class="max-w-6xl mx-auto p-6">
+    <h1 class="text-3xl font-bold text-center mb-8">
+      🛡️ Resilience Patterns in Microservices
+    </h1>
+
+    <!-- Intro -->
+    <div class="bg-white p-6 rounded-2xl shadow mb-8">
+      <h2 class="text-xl font-semibold mb-2">🤔 What is this?</h2>
+      <p class="text-gray-600">
+        Imagine your system is like a group of friends working together. 
+        If one friend gets tired or slow, others should not panic or crash. 
+        These patterns help your system stay calm and keep working.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Timeouts -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold mb-2">⏱ Timeouts</h2>
+        <p class="text-gray-600">
+          Don’t wait forever! If one service is too slow, stop waiting 
+          after some time and move on.
+        </p>
+      </div>
+
+      <!-- Retries -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold mb-2">🔁 Retries</h2>
+        <p class="text-gray-600">
+          If something fails, try again a few times. 
+          Sometimes problems are temporary.
+        </p>
+      </div>
+
+      <!-- Rate Limits -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold mb-2">🚦 Rate Limits</h2>
+        <p class="text-gray-600">
+          Don’t allow too many requests at once. 
+          This keeps your system from getting overwhelmed.
+        </p>
+      </div>
+
+      <!-- Circuit Breaker -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold mb-2">⚡ Circuit Breaker</h2>
+        <p class="text-gray-600">
+          If a service keeps failing, stop calling it for a while. 
+          Give it time to recover.
+        </p>
+      </div>
+
+      <!-- Protection -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold mb-2">🛑 Overload Protection</h2>
+        <p class="text-gray-600">
+          Slow down or reject extra work when your system is too busy. 
+          This prevents everything from crashing.
+        </p>
+      </div>
+
+      <!-- Cascading Failures -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold mb-2">🌊 Cascading Failures</h2>
+        <p class="text-gray-600">
+          One failure should NOT break everything. 
+          Keep problems contained so they don’t spread.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Why It Matters -->
+    <div class="bg-blue-100 p-6 rounded-2xl shadow mt-8">
+      <h2 class="text-xl font-semibold mb-2">💡 Why It Matters</h2>
+      <p class="text-gray-700">
+        These patterns help your system <strong>degrade gracefully</strong>. 
+        That means even if something goes wrong, your app still works a little 
+        instead of completely collapsing.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
