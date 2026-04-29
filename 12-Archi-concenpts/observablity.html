@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Centralized Observability Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <div class="max-w-6xl mx-auto p-6">
+    <h1 class="text-3xl font-bold text-center mb-8">
+      🔎 Centralized Observability Pattern
+    </h1>
+
+    <!-- Intro -->
+    <div class="bg-white p-6 rounded-2xl shadow mb-8">
+      <h2 class="text-xl font-semibold mb-2">🤔 What is this?</h2>
+      <p class="text-gray-600">
+        Imagine your system is like a busy city. Lots of things are happening at once.
+        Observability helps you see what’s going on everywhere, all in one place.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Structured Logs -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold mb-2">📜 Structured Logs</h2>
+        <p class="text-gray-600">
+          Instead of messy text logs, use clean and organized logs (like JSON).
+          This makes searching and understanding problems much easier.
+        </p>
+      </div>
+
+      <!-- Metrics -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold mb-2">📊 Metrics</h2>
+        <p class="text-gray-600">
+          Numbers that tell you how your system is doing,
+          like response time, errors, and traffic.
+        </p>
+      </div>
+
+      <!-- Traces -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold mb-2">🧵 Traces</h2>
+        <p class="text-gray-600">
+          Follow a request step-by-step across services,
+          so you know exactly where something slowed down or failed.
+        </p>
+      </div>
+
+      <!-- Correlation IDs -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold mb-2">🆔 Correlation IDs</h2>
+        <p class="text-gray-600">
+          Give each request a unique ID.
+          This helps you connect logs, metrics, and traces together.
+        </p>
+      </div>
+
+      <!-- Tools -->
+      <div class="bg-white p-5 rounded-2xl shadow col-span-1 md:col-span-2 lg:col-span-3">
+        <h2 class="text-xl font-semibold mb-2">🛠 Tools You Can Use</h2>
+        <p class="text-gray-600">
+          Use tools like OpenTelemetry to collect data,
+          Prometheus to store metrics, and Grafana to visualize everything
+          in easy-to-read dashboards.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Why It Matters -->
+    <div class="bg-green-100 p-6 rounded-2xl shadow mt-8">
+      <h2 class="text-xl font-semibold mb-2">💡 Why It Matters</h2>
+      <p class="text-gray-700">
+        Observability makes debugging <strong>predictable and fast</strong>.
+        Instead of guessing what went wrong, you can clearly see the problem
+        and fix it quickly—even in complex distributed systems.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
