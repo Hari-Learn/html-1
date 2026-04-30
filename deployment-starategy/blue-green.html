@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blue-Green Deployment & Testing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <header class="bg-blue-600 text-white p-6">
+    <h1 class="text-3xl font-bold">Blue-Green Deployment & Quality Assurance</h1>
+    <p class="mt-2 text-lg">Delivering secure and tested applications</p>
+  </header>
+
+  <main class="p-8 space-y-10">
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Blue-Green Deployment</h2>
+      <p class="leading-relaxed">
+        Blue-Green deployment uses two identical environments. One (Blue) serves production traffic,
+        while the other (Green) hosts the new version. Traffic is switched only after successful validation,
+        enabling instant rollback if needed.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Automated Testing</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="bg-white p-5 rounded-xl shadow">
+          <h3 class="font-bold mb-2">Unit Testing</h3>
+          <p>Validates individual components for correctness.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl shadow">
+          <h3 class="font-bold mb-2">Integration Testing</h3>
+          <p>Ensures components work together properly.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl shadow">
+          <h3 class="font-bold mb-2">End-to-End Testing</h3>
+          <p>Simulates real user scenarios to verify workflows.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Static Analysis & Security</h2>
+      <div class="space-y-4">
+
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h3 class="font-bold mb-2">Static Code Analysis</h3>
+          <p>
+            Automatically reviews code for bugs, vulnerabilities, and coding standard violations
+            before execution.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h3 class="font-bold mb-2">Security Scanning</h3>
+          <p>
+            Detects vulnerabilities in dependencies and infrastructure to ensure secure deployments.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-gray-900 text-white text-center p-4">
+    <p>Hariharan D designed for learning purposes. © 2026 Deployment & Security Practices</p>
+  </footer>
+
+</body>
+</html>
