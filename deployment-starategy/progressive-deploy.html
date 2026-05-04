@@ -4,42 +4,100 @@
   <meta charset="UTF-8">
   <title>Progressive Delivery</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
+
 <body class="bg-gray-100 font-sans">
-  <div class="max-w-3xl mx-auto p-8 bg-white mt-10 rounded-2xl shadow">
-    
-    <h1 class="text-3xl font-bold text-indigo-600 mb-4">
-      Progressive Delivery
-    </h1>
 
-    <p class="text-lg mb-4">
-      Imagine you made a new game update, but you're not sure if everyone will like it.
-    </p>
+  <div class="max-w-4xl mx-auto p-6 mt-10">
 
-    <p class="mb-4">
-      So instead of giving it to everyone at once, you give it slowly to a few players first.
-    </p>
-
-    <div class="bg-indigo-50 p-4 rounded-lg mb-4">
-      <p><strong>How it works:</strong></p>
-      <ul class="list-disc ml-6 mt-2">
-        <li>Start with a small group of users</li>
-        <li>Watch if everything works fine</li>
-        <li>Slowly give it to more users</li>
-      </ul>
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-indigo-600 mb-2">
+        🚀 Progressive Delivery
+      </h1>
+      <p class="text-gray-600 text-lg">
+        Roll out new features safely, step by step
+      </p>
     </div>
 
-    <p class="mb-4">
-      If something goes wrong, you can stop early before everyone is affected.
-    </p>
+    <!-- Intro Card -->
+    <div class="bg-white p-6 rounded-2xl shadow mb-6">
+      <div class="flex items-center gap-3 mb-3">
+        <i data-feather="help-circle" class="text-indigo-500"></i>
+        <h2 class="text-xl font-semibold">What is it? (ELI10)</h2>
+      </div>
+      <p class="text-gray-700">
+        Imagine you made a <strong>new game update 🎮</strong>, but you're not sure if everyone will like it.
+      </p>
+      <p class="text-gray-700 mt-2">
+        Instead of giving it to everyone at once, you <strong>release it slowly to a few players first</strong>.
+      </p>
+    </div>
 
-    <div class="bg-green-50 p-4 rounded-lg">
-      <p><strong>Simple example:</strong></p>
-      <p>
-        Like tasting food with a few people before serving it to the whole class.
+    <!-- Steps -->
+    <div class="grid md:grid-cols-3 gap-6 mb-6">
+
+      <!-- Step 1 -->
+      <div class="bg-white p-5 rounded-2xl shadow text-center">
+        <i data-feather="users" class="mx-auto text-indigo-500 mb-2"></i>
+        <h3 class="font-semibold mb-2">1. Start Small</h3>
+        <p class="text-sm text-gray-600">
+          Give the update to a small group of users first.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="bg-white p-5 rounded-2xl shadow text-center">
+        <i data-feather="eye" class="mx-auto text-blue-500 mb-2"></i>
+        <h3 class="font-semibold mb-2">2. Watch Closely</h3>
+        <p class="text-sm text-gray-600">
+          Check if things work well and users are happy.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="bg-white p-5 rounded-2xl shadow text-center">
+        <i data-feather="trending-up" class="mx-auto text-green-500 mb-2"></i>
+        <h3 class="font-semibold mb-2">3. Grow Slowly</h3>
+        <p class="text-sm text-gray-600">
+          If all is good, give it to more and more users.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Safety Card -->
+    <div class="bg-red-50 p-6 rounded-2xl shadow mb-6">
+      <div class="flex items-center gap-3 mb-3">
+        <i data-feather="shield" class="text-red-500"></i>
+        <h2 class="text-xl font-semibold">Why do this?</h2>
+      </div>
+      <p class="text-gray-700">
+        If something breaks 💥, only a few users are affected. 
+        You can <strong>stop early and fix it</strong> before everyone sees the problem.
+      </p>
+    </div>
+
+    <!-- Example Card -->
+    <div class="bg-green-50 p-6 rounded-2xl shadow">
+      <div class="flex items-center gap-3 mb-3">
+        <i data-feather="coffee" class="text-green-500"></i>
+        <h2 class="text-xl font-semibold">Simple Example</h2>
+      </div>
+      <p class="text-gray-700">
+        It’s like cooking food 🍲 and letting a few people taste it first 
+        before serving it to the whole class.
       </p>
     </div>
 
   </div>
+
+  <script>
+    feather.replace()
+  </script>
+
 </body>
 </html>
