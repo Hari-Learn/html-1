@@ -4,42 +4,99 @@
   <meta charset="UTF-8">
   <title>Parallel Run</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
+
 <body class="bg-gray-100 font-sans">
-  <div class="max-w-3xl mx-auto p-8 bg-white mt-10 rounded-2xl shadow">
-    
-    <h1 class="text-3xl font-bold text-green-600 mb-4">
-      Parallel Run
-    </h1>
 
-    <p class="text-lg mb-4">
-      Imagine you built a new calculator, but you don’t trust it fully yet.
-    </p>
+  <div class="max-w-4xl mx-auto p-6 mt-10">
 
-    <p class="mb-4">
-      So you use both the old calculator and the new one at the same time.
-    </p>
-
-    <div class="bg-green-50 p-4 rounded-lg mb-4">
-      <p><strong>How it works:</strong></p>
-      <ul class="list-disc ml-6 mt-2">
-        <li>Run old system and new system together</li>
-        <li>Compare results from both</li>
-        <li>Make sure they match</li>
-      </ul>
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-green-600 mb-2">
+        ⚡ Parallel Run
+      </h1>
+      <p class="text-gray-600 text-lg">
+        A super simple way to test something new safely
+      </p>
     </div>
 
-    <p class="mb-4">
-      Once you're sure the new one works perfectly, you stop using the old one.
-    </p>
+    <!-- Intro Card -->
+    <div class="bg-white p-6 rounded-2xl shadow mb-6">
+      <div class="flex items-center gap-3 mb-3">
+        <i data-feather="help-circle" class="text-green-500"></i>
+        <h2 class="text-xl font-semibold">What is it? (ELI10)</h2>
+      </div>
+      <p class="text-gray-700">
+        Imagine you built a <strong>new calculator 🧮</strong>, but you're not 100% sure it's correct.
+      </p>
+      <p class="text-gray-700 mt-2">
+        So instead of trusting it blindly, you run <strong>both the old and new calculators at the same time</strong> and compare answers.
+      </p>
+    </div>
 
-    <div class="bg-blue-50 p-4 rounded-lg">
-      <p><strong>Simple example:</strong></p>
-      <p>
-        Like double-checking your homework with two different methods.
+    <!-- Steps Cards -->
+    <div class="grid md:grid-cols-3 gap-6 mb-6">
+
+      <!-- Step 1 -->
+      <div class="bg-white p-5 rounded-2xl shadow text-center">
+        <i data-feather="play" class="mx-auto text-green-500 mb-2"></i>
+        <h3 class="font-semibold mb-2">1. Run Both</h3>
+        <p class="text-sm text-gray-600">
+          Use the old system and the new system together.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="bg-white p-5 rounded-2xl shadow text-center">
+        <i data-feather="shuffle" class="mx-auto text-blue-500 mb-2"></i>
+        <h3 class="font-semibold mb-2">2. Compare</h3>
+        <p class="text-sm text-gray-600">
+          Check if both give the same results.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="bg-white p-5 rounded-2xl shadow text-center">
+        <i data-feather="check-circle" class="mx-auto text-purple-500 mb-2"></i>
+        <h3 class="font-semibold mb-2">3. Switch</h3>
+        <p class="text-sm text-gray-600">
+          If everything matches, you can trust the new one!
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Why Card -->
+    <div class="bg-yellow-50 p-6 rounded-2xl shadow mb-6">
+      <div class="flex items-center gap-3 mb-3">
+        <i data-feather="alert-triangle" class="text-yellow-500"></i>
+        <h2 class="text-xl font-semibold">Why do this?</h2>
+      </div>
+      <p class="text-gray-700">
+        Because new systems can have bugs 🐞. Running both helps you 
+        <strong>catch mistakes before they cause problems</strong>.
+      </p>
+    </div>
+
+    <!-- Example Card -->
+    <div class="bg-blue-50 p-6 rounded-2xl shadow">
+      <div class="flex items-center gap-3 mb-3">
+        <i data-feather="book-open" class="text-blue-500"></i>
+        <h2 class="text-xl font-semibold">Simple Example</h2>
+      </div>
+      <p class="text-gray-700">
+        It's like solving a math problem in two ways to make sure your answer is correct ✅.
       </p>
     </div>
 
   </div>
+
+  <script>
+    feather.replace()
+  </script>
+
 </body>
 </html>
