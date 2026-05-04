@@ -4,42 +4,122 @@
   <meta charset="UTF-8">
   <title>Phased Deployment</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
+
 <body class="bg-gray-100 font-sans">
-  <div class="max-w-3xl mx-auto p-8 bg-white mt-10 rounded-2xl shadow">
-    
-    <h1 class="text-3xl font-bold text-blue-600 mb-4">
-      Phased / Wave Deployment
-    </h1>
 
-    <p class="text-lg mb-4">
-      Imagine you have many schools to deliver new books to.
-    </p>
+  <div class="max-w-4xl mx-auto p-6 mt-10">
 
-    <p class="mb-4">
-      Instead of sending to all schools at once, you send them in groups (waves).
-    </p>
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-blue-600 mb-2">
+        🌊 Phased / Wave Deployment
+      </h1>
+      <p class="text-gray-600 text-lg">
+        Release in steps instead of all at once
+      </p>
+    </div>
 
-    <div class="bg-blue-50 p-4 rounded-lg mb-4">
-      <p><strong>How it works:</strong></p>
-      <ul class="list-disc ml-6 mt-2">
-        <li>Release to one group first</li>
-        <li>Check if everything is okay</li>
-        <li>Then release to the next group</li>
+    <!-- Intro -->
+    <div class="bg-white p-6 rounded-2xl shadow mb-6">
+      <div class="flex items-center gap-3 mb-3">
+        <i data-feather="help-circle" class="text-blue-500"></i>
+        <h2 class="text-xl font-semibold">What is it? (ELI10)</h2>
+      </div>
+      <p class="text-gray-700">
+        Imagine you have to deliver <strong>new books 📚 to many schools</strong>.
+      </p>
+      <p class="text-gray-700 mt-2">
+        Instead of sending them to everyone at once, you send them <strong>group by group (waves)</strong>.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="grid md:grid-cols-3 gap-6 mb-6">
+
+      <div class="bg-white p-5 rounded-2xl shadow text-center">
+        <i data-feather="layers" class="mx-auto text-blue-500 mb-2"></i>
+        <h3 class="font-semibold mb-2">1. First Wave</h3>
+        <p class="text-sm text-gray-600">
+          Send to the first group (like one school or one region).
+        </p>
+      </div>
+
+      <div class="bg-white p-5 rounded-2xl shadow text-center">
+        <i data-feather="check-square" class="mx-auto text-green-500 mb-2"></i>
+        <h3 class="font-semibold mb-2">2. Check</h3>
+        <p class="text-sm text-gray-600">
+          Make sure everything works properly.
+        </p>
+      </div>
+
+      <div class="bg-white p-5 rounded-2xl shadow text-center">
+        <i data-feather="repeat" class="mx-auto text-purple-500 mb-2"></i>
+        <h3 class="font-semibold mb-2">3. Next Waves</h3>
+        <p class="text-sm text-gray-600">
+          Slowly send to more groups one by one.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Why -->
+    <div class="bg-yellow-50 p-6 rounded-2xl shadow mb-6">
+      <div class="flex items-center gap-3 mb-3">
+        <i data-feather="shield" class="text-yellow-500"></i>
+        <h2 class="text-xl font-semibold">Why use this?</h2>
+      </div>
+      <p class="text-gray-700">
+        Each wave acts like a <strong>safety checkpoint 🛑</strong>.
+        If something goes wrong, you can stop before it affects everyone.
+      </p>
+    </div>
+
+    <!-- Real-world Examples -->
+    <div class="bg-white p-6 rounded-2xl shadow mb-6">
+      <div class="flex items-center gap-3 mb-4">
+        <i data-feather="globe" class="text-blue-500"></i>
+        <h2 class="text-xl font-semibold">Real-world examples</h2>
+      </div>
+
+      <ul class="space-y-3 text-gray-700">
+        <li>🌍 <strong>Apps:</strong> Release update to one country first, then others</li>
+        <li>🏢 <strong>Companies:</strong> Roll out software team by team</li>
+        <li>🖥️ <strong>Servers:</strong> Update one cluster, then the next</li>
       </ul>
     </div>
 
-    <p class="mb-4">
-      Each group acts like a safety checkpoint.
-    </p>
+    <!-- Comparison Hint -->
+    <div class="bg-indigo-50 p-6 rounded-2xl shadow mb-6">
+      <div class="flex items-center gap-3 mb-3">
+        <i data-feather="git-branch" class="text-indigo-500"></i>
+        <h2 class="text-xl font-semibold">How is it different?</h2>
+      </div>
+      <p class="text-gray-700">
+        Unlike <strong>Progressive Delivery</strong>, this is usually based on 
+        <strong>fixed groups (like regions or servers)</strong> rather than random users.
+      </p>
+    </div>
 
-    <div class="bg-green-50 p-4 rounded-lg">
-      <p><strong>Simple example:</strong></p>
-      <p>
-        Like watering plants row by row instead of flooding the whole garden at once.
+    <!-- Simple Example -->
+    <div class="bg-green-50 p-6 rounded-2xl shadow">
+      <div class="flex items-center gap-3 mb-3">
+        <i data-feather="droplet" class="text-green-500"></i>
+        <h2 class="text-xl font-semibold">Simple Example</h2>
+      </div>
+      <p class="text-gray-700">
+        It's like watering plants 🌱 <strong>row by row</strong> instead of flooding the whole garden at once.
       </p>
     </div>
 
   </div>
+
+  <script>
+    feather.replace()
+  </script>
+
 </body>
 </html>
