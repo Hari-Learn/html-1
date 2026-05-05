@@ -5,37 +5,107 @@
   <title>Immutable Deployment</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 font-sans">
-  <div class="max-w-3xl mx-auto p-8 bg-white mt-10 rounded-2xl shadow">
-    <h1 class="text-3xl font-bold text-green-600 mb-4">Immutable Deployment</h1>
 
-    <p class="text-lg mb-4">
-      Imagine you built a toy house, but instead of fixing it, you always build a brand new one.
-    </p>
+<body class="bg-gradient-to-br from-green-50 to-green-100 font-sans p-6">
 
-    <p class="mb-4">
-      That’s how immutable deployment works—you never change old servers.
-    </p>
+  <div class="max-w-5xl mx-auto">
 
-    <div class="bg-green-50 p-4 rounded-lg mb-4">
-      <p><strong>How it works:</strong></p>
-      <ul class="list-disc ml-6 mt-2">
-        <li>Create a brand new version of the app</li>
-        <li>Start new servers with it</li>
-        <li>Delete the old servers</li>
-      </ul>
-    </div>
-
-    <p class="mb-4">
-      This avoids bugs caused by leftover changes or broken updates.
-    </p>
-
-    <div class="bg-blue-50 p-4 rounded-lg">
-      <p><strong>Simple example:</strong></p>
-      <p>
-        Like replacing your old phone with a new one instead of repairing it again and again.
+    <!-- Header -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 mb-6 text-center">
+      <div class="flex justify-center mb-4">
+        <!-- Cube Icon -->
+        <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M20 7l-8-4-8 4 8 4 8-4zM4 7v10l8 4 8-4V7" />
+        </svg>
+      </div>
+      <h1 class="text-4xl font-bold text-green-600">Immutable Deployment</h1>
+      <p class="mt-3 text-gray-600 text-lg">
+        Never modify — always replace with a fresh version 🧱
       </p>
     </div>
+
+    <!-- Analogy Card -->
+    <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-3 flex items-center gap-2">
+        🧸 Simple Analogy
+      </h2>
+      <p class="text-gray-700 text-lg">
+        Imagine building a toy house. Instead of fixing it, you always create a
+        <strong>brand new one</strong>.
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- What -->
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+        <div class="mb-3 text-green-500">
+          <!-- Info Icon -->
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M13 16h-1v-4h-1m1-4h.01M12 20h.01M4 6h16M4 18h16" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">What is it?</h3>
+        <p class="text-gray-600">
+          You never modify existing servers. Instead, you deploy a completely
+          <strong>new version</strong> every time.
+        </p>
+      </div>
+
+      <!-- How -->
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+        <div class="mb-3 text-blue-500">
+          <!-- Process Icon -->
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9 5h6M9 19h6M5 9h14M5 15h14" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">How it works</h3>
+        <ul class="text-gray-600 space-y-2">
+          <li>🆕 Create a new app version</li>
+          <li>🚀 Launch new servers</li>
+          <li>🗑️ Remove old servers</li>
+        </ul>
+      </div>
+
+      <!-- Why -->
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+        <div class="mb-3 text-purple-500">
+          <!-- Shield Icon -->
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 3l8 4v5c0 5-3.5 9-8 10-4.5-1-8-5-8-10V7l8-4z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Why use it?</h3>
+        <ul class="text-gray-600 space-y-2">
+          <li>✅ No leftover bugs</li>
+          <li>✅ Clean, predictable deployments</li>
+          <li>✅ Easy rollback (just switch back)</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Example Card -->
+    <div class="mt-6 bg-blue-50 rounded-2xl shadow-sm p-6">
+      <h2 class="text-lg font-semibold mb-2 flex items-center gap-2">
+        📱 Simple Example
+      </h2>
+      <p class="text-gray-700">
+        Like replacing your old phone with a new one instead of repairing it repeatedly.
+      </p>
+    </div>
+
   </div>
+
 </body>
 </html>
