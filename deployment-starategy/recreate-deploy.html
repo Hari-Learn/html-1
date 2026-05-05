@@ -5,38 +5,110 @@
   <title>Recreate Deployment</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-red-50 font-sans p-10">
 
-  <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-2xl p-8">
-    <h1 class="text-3xl font-bold text-red-600 mb-4">🔁 Recreate Deployment</h1>
+<body class="bg-gradient-to-br from-red-50 to-red-100 font-sans p-6">
 
-    <p class="mb-4 text-lg">
-      Imagine closing your shop 🏪, changing everything inside, and then reopening.
-      During that time, customers can’t enter.
-    </p>
+  <div class="max-w-5xl mx-auto">
 
-    <h2 class="text-xl font-semibold mt-4">👉 What is it?</h2>
-    <p class="mb-4">
-      You <strong>stop the old app completely</strong> and then start the new one.
-    </p>
-
-    <h2 class="text-xl font-semibold">🤔 Why use this?</h2>
-    <ul class="list-disc ml-6 mb-4">
-      <li>Simple and easy to understand</li>
-      <li>No confusion between old and new versions</li>
-      <li>Good when big changes are needed</li>
-    </ul>
-
-    <h2 class="text-xl font-semibold">📅 When to use it?</h2>
-    <ul class="list-disc ml-6">
-      <li>When downtime is okay</li>
-      <li>When system changes are large</li>
-      <li>When compatibility issues exist</li>
-    </ul>
-
-    <div class="mt-6 p-4 bg-red-100 rounded-lg">
-      ⚠️ Downside: Users cannot access the app during deployment.
+    <!-- Header -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 mb-6 text-center">
+      <div class="flex justify-center mb-4">
+        <!-- Refresh Icon -->
+        <svg class="w-12 h-12 text-red-600" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 4v6h6M20 20v-6h-6M5 19a9 9 0 0014-7M19 5a9 9 0 00-14 7" />
+        </svg>
+      </div>
+      <h1 class="text-4xl font-bold text-red-600">Recreate Deployment</h1>
+      <p class="mt-3 text-gray-600 text-lg">
+        Replace everything at once — simple but causes downtime 🔁
+      </p>
     </div>
+
+    <!-- Analogy Card -->
+    <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-3 flex items-center gap-2">
+        🏪 Simple Analogy
+      </h2>
+      <p class="text-gray-700 text-lg">
+        Imagine closing your shop, updating everything inside, and reopening later.
+        During that time, <strong>no customers can enter</strong>.
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- What -->
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+        <div class="mb-3 text-red-500">
+          <!-- Info Icon -->
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M13 16h-1v-4h-1m1-4h.01M12 20h.01M4 6h16M4 18h16" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">What is it?</h3>
+        <p class="text-gray-600">
+          You <strong>stop the old app completely</strong> and then start the new one.
+        </p>
+      </div>
+
+      <!-- Why -->
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+        <div class="mb-3 text-green-500">
+          <!-- Check Icon -->
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Why use it?</h3>
+        <ul class="text-gray-600 space-y-2">
+          <li>✅ Simple to implement</li>
+          <li>✅ No version conflicts</li>
+          <li>✅ Works well for major changes</li>
+        </ul>
+      </div>
+
+      <!-- When -->
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+        <div class="mb-3 text-purple-500">
+          <!-- Calendar Icon -->
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7H3v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">When to use?</h3>
+        <ul class="text-gray-600 space-y-2">
+          <li>📌 Downtime is acceptable</li>
+          <li>📌 Large system changes</li>
+          <li>📌 Compatibility issues exist</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Warning Card -->
+    <div class="mt-6 bg-red-100 border-l-4 border-red-500 p-5 rounded-xl shadow-sm">
+      <div class="flex items-center gap-3">
+        <!-- Warning Icon -->
+        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M12 9v2m0 4h.01M10.29 3.86l-7.4 12.8A2 2 0 004.6 20h14.8a2 2 0 001.71-3.34l-7.4-12.8a2 2 0 00-3.42 0z" />
+        </svg>
+        <p class="text-red-800 font-medium">
+          Users cannot access the app during deployment (downtime required).
+        </p>
+      </div>
+    </div>
+
   </div>
 
 </body>
