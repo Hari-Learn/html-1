@@ -2,52 +2,144 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>A/B Testing Deployment</title>
+  <title>CI/CD Made Simple</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-green-50 font-sans p-10">
 
-  <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-2xl p-8">
-    <h1 class="text-3xl font-bold text-green-600 mb-4">🧪 A/B Testing Deployment</h1>
+<body class="bg-violet-50 text-violet-900">
 
-    <p class="mb-4 text-lg">
-      Imagine giving two versions of a toy 🎮 to kids and seeing which one they like more.
-    </p>
+  <!-- Header -->
+  <header class="bg-violet-700 text-white p-10 text-center shadow-lg">
+    <h1 class="text-4xl font-extrabold">CI/CD 🚀</h1>
+    <p class="mt-3 text-lg opacity-90">Super simple way to build & ship code safely</p>
+  </header>
 
-    <h2 class="text-xl font-semibold mt-4">👉 What is it?</h2>
-    <p class="mb-4">
-      You show <strong>different versions of your app to different users</strong>.
-    </p>
+  <main class="p-8 space-y-14 max-w-6xl mx-auto">
 
-    <h2 class="text-xl font-semibold">🤔 Why use this?</h2>
-    <ul class="list-disc ml-6 mb-4">
-      <li>See which version performs better</li>
-      <li>Make decisions using real user behavior</li>
-      <li>Reduce risk before full release</li>
-    </ul>
+    <!-- What is CI/CD -->
+    <section>
+      <h2 class="text-3xl font-bold text-center mb-8">🤔 What is CI/CD?</h2>
 
-    <h2 class="text-xl font-semibold">📅 When to use it?</h2>
-    <ul class="list-disc ml-6">
-      <li>When testing new features</li>
-      <li>When improving UI/UX</li>
-      <li>When unsure which version is better</li>
-    </ul>
+      <div class="bg-white p-8 rounded-3xl shadow-lg border border-violet-100 text-center">
+        <p class="text-lg leading-relaxed">
+          Think of building an app like stacking LEGO 🏰
+        </p>
 
-    <div class="mt-6 p-4 bg-green-100 rounded-lg">
-      ⚠️ Needs tracking tools and more setup.
-    </div>
-  </div>
+        <div class="mt-6 grid md:grid-cols-2 gap-6">
 
-   <!-- Footer -->
-  <footer class="bg-green-600 text-white py-4">
-    <div class="max-w-3xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-      <p class="text-sm">&copy; 2026 Deployment Guide</p>
-      <div class="flex space-x-4 mt-2 md:mt-0">
-        <a href="#" class="hover:underline">Home</a>
-        <a href="#" class="hover:underline">Docs</a>
-        <a href="#" class="hover:underline">Contact</a>
+          <div class="bg-violet-100 p-6 rounded-2xl">
+            <h3 class="font-bold text-xl mb-2">🔧 CI</h3>
+            <p>
+              Every time you add a piece,
+              you check if it still works.
+            </p>
+          </div>
+
+          <div class="bg-violet-100 p-6 rounded-2xl">
+            <h3 class="font-bold text-xl mb-2">🚀 CD</h3>
+            <p>
+              If everything is good,
+              it goes live automatically!
+            </p>
+          </div>
+
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Deployment Strategies -->
+    <section>
+      <h2 class="text-3xl font-bold text-center mb-8">🛡️ Safe Releases</h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Canary -->
+        <div class="bg-white p-8 rounded-3xl shadow-lg border border-violet-100 hover:scale-105 transition">
+          
+          <div class="flex items-center gap-4 mb-4">
+            <div class="bg-violet-100 p-3 rounded-full">
+              <!-- Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-violet-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold">Canary Deployment</h3>
+          </div>
+
+          <p class="text-violet-800">
+            Give your update to a few users first 👀  
+            <br><br>
+            If nothing breaks → release to everyone!
+          </p>
+        </div>
+
+        <!-- Rolling -->
+        <div class="bg-white p-8 rounded-3xl shadow-lg border border-violet-100 hover:scale-105 transition">
+          
+          <div class="flex items-center gap-4 mb-4">
+            <div class="bg-violet-100 p-3 rounded-full">
+              <!-- Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-violet-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 4v6h6M20 20v-6h-6" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold">Rolling Deployment</h3>
+          </div>
+
+          <p class="text-violet-800">
+            Update users little by little 🔄  
+            <br><br>
+            App stays live the whole time!
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section>
+      <h2 class="text-3xl font-bold text-center mb-8">✨ Why it’s cool</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="bg-white p-6 rounded-2xl shadow-md border border-violet-100 flex items-center gap-4">
+          <div class="bg-violet-100 p-3 rounded-full">
+            🛡️
+          </div>
+          <p>Less chance of breaking stuff</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-md border border-violet-100 flex items-center gap-4">
+          <div class="bg-violet-100 p-3 rounded-full">
+            ⚡
+          </div>
+          <p>Faster updates</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-md border border-violet-100 flex items-center gap-4">
+          <div class="bg-violet-100 p-3 rounded-full">
+            🔁
+          </div>
+          <p>Quick feedback</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-md border border-violet-100 flex items-center gap-4">
+          <div class="bg-violet-100 p-3 rounded-full">
+            😊
+          </div>
+          <p>Smooth user experience</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-violet-800 text-white text-center p-5 mt-10">
+    <p>Made by Hariharan D • © 2026</p>
   </footer>
 
 </body>
