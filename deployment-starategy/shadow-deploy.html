@@ -5,37 +5,93 @@
   <title>Shadow Deployment</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 font-sans">
-  <div class="max-w-3xl mx-auto p-8 bg-white mt-10 rounded-2xl shadow">
-    <h1 class="text-3xl font-bold text-blue-600 mb-4">Shadow Deployment</h1>
-    
-    <p class="text-lg mb-4">
-      Imagine you built a new version of your app, but you're not sure if it works perfectly yet.
-    </p>
 
-    <p class="mb-4">
-      So instead of showing it to users, you let it quietly run in the background like a "shadow".
-    </p>
+<body class="bg-[#f5f0e6] text-[#5a1f1f] font-sans">
 
-    <div class="bg-blue-50 p-4 rounded-lg mb-4">
-      <p><strong>How it works:</strong></p>
-      <ul class="list-disc ml-6 mt-2">
-        <li>Users use the old app normally</li>
-        <li>The same requests are secretly sent to the new app</li>
-        <li>But users never see the new app</li>
-      </ul>
+  <!-- Container -->
+  <div class="max-w-5xl mx-auto p-8 space-y-8">
+
+    <!-- Header Card -->
+    <div class="bg-[#7b1e1e] text-white p-8 rounded-3xl shadow-lg text-center">
+      <h1 class="text-4xl font-extrabold">Shadow Deployment 👻</h1>
+      <p class="mt-2 text-lg opacity-90">Test quietly. No risk. No users affected.</p>
     </div>
 
-    <p class="mb-4">
-      This helps developers check if the new version behaves correctly without any risk.
-    </p>
-
-    <div class="bg-green-50 p-4 rounded-lg">
-      <p><strong>Simple example:</strong></p>
-      <p>
-        Like testing a new robot chef in the kitchen, but not serving its food yet—just comparing it with the real chef.
+    <!-- Intro Card -->
+    <div class="bg-white p-6 rounded-2xl shadow-md border border-[#e6d5c3]">
+      <p class="text-lg leading-relaxed">
+        Imagine you built a new version of your app… but you're not sure it's perfect yet 🤔
+      </p>
+      <p class="mt-3">
+        So instead of showing it to users, you let it run quietly in the background — like a shadow 👻
       </p>
     </div>
+
+    <!-- How it works -->
+    <div class="bg-white p-6 rounded-2xl shadow-md border border-[#e6d5c3]">
+      <h2 class="text-2xl font-bold mb-4 text-[#7b1e1e]">⚙️ How it works</h2>
+
+      <div class="grid md:grid-cols-3 gap-4">
+
+        <div class="bg-[#f5f0e6] p-4 rounded-xl text-center">
+          <div class="text-2xl mb-2">👤</div>
+          <p>Users use the old app normally</p>
+        </div>
+
+        <div class="bg-[#f5f0e6] p-4 rounded-xl text-center">
+          <div class="text-2xl mb-2">🔁</div>
+          <p>Requests are copied to the new app</p>
+        </div>
+
+        <div class="bg-[#f5f0e6] p-4 rounded-xl text-center">
+          <div class="text-2xl mb-2">🙈</div>
+          <p>Users never see the new app</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Why it helps -->
+    <div class="bg-white p-6 rounded-2xl shadow-md border border-[#e6d5c3]">
+      <h2 class="text-2xl font-bold mb-4 text-[#7b1e1e]">🛡️ Why this is useful</h2>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="bg-[#f5f0e6] p-4 rounded-xl flex gap-3 items-center">
+          <span class="text-xl">✔️</span>
+          <p>No risk to real users</p>
+        </div>
+
+        <div class="bg-[#f5f0e6] p-4 rounded-xl flex gap-3 items-center">
+          <span class="text-xl">🔍</span>
+          <p>Find bugs safely</p>
+        </div>
+
+        <div class="bg-[#f5f0e6] p-4 rounded-xl flex gap-3 items-center">
+          <span class="text-xl">⚡</span>
+          <p>Test with real traffic</p>
+        </div>
+
+        <div class="bg-[#f5f0e6] p-4 rounded-xl flex gap-3 items-center">
+          <span class="text-xl">🧠</span>
+          <p>Compare old vs new easily</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Example Card -->
+    <div class="bg-[#7b1e1e] text-white p-6 rounded-2xl shadow-md">
+      <h2 class="text-2xl font-bold mb-3">🍳 Simple Example</h2>
+      <p class="leading-relaxed">
+        It’s like testing a new robot chef 🤖 in the kitchen,
+        but not serving its food yet.
+        <br><br>
+        You just compare it with the real chef 👨‍🍳 and see if it cooks better.
+      </p>
+    </div>
+
   </div>
+
 </body>
 </html>
