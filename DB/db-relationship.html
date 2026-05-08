@@ -4,121 +4,206 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Choose Database - Page 1</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 text-gray-800">
 
-  <div class="max-w-7xl mx-auto py-12 px-6">
-    
-    <h1 class="text-5xl font-bold text-center text-blue-700 mb-12">
-      How to Choose a Database?
-    </h1>
+<div class="max-w-7xl mx-auto py-14 px-6">
 
-    <div class="grid md:grid-cols-2 gap-8">
+  <h1 class="text-5xl font-bold text-center text-blue-700 mb-4">
+    How to Choose a Database
+  </h1>
 
-      <!-- Data Structure -->
-      <div class="bg-white rounded-2xl shadow-lg p-8 border-t-8 border-blue-500">
-        <h2 class="text-3xl font-bold mb-6">
-          1. Based on Data Structure
-        </h2>
+  <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+    Understand database selection based on structure and relationships.
+    Each option explains <b>what it is</b>, <b>why it matters</b>, and <b>how it behaves</b>.
+  </p>
 
-        <div class="mb-8">
-          <h3 class="text-2xl font-semibold text-green-600">
-            Fixed Schema
-          </h3>
+  <div class="grid md:grid-cols-2 gap-10">
 
-          <p class="mt-3 text-gray-600">
-            Best for structured and relational data models.
-          </p>
+    <!-- ================= DATA STRUCTURE ================= -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 border-l-8 border-blue-500">
 
-          <ul class="list-disc pl-6 mt-4 space-y-2">
-            <li>Strict table structure</li>
-            <li>ACID compliance</li>
-            <li>Reliable transactions</li>
-          </ul>
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-2">
+        🧱 1. Based on Data Structure
+      </h2>
 
-          <div class="bg-green-50 p-4 rounded-xl mt-5">
+      <!-- Fixed Schema -->
+      <div class="mb-10">
+
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-green-600 text-2xl">🗂️</span>
+          <h3 class="text-2xl font-semibold">Fixed Schema (Relational Model)</h3>
+        </div>
+
+        <p class="text-gray-600 mb-4">
+          Best for structured data with predictable format and strong consistency.
+        </p>
+
+        <div class="bg-green-50 p-5 rounded-xl space-y-3">
+
+          <div>
+            <p class="font-bold">What</p>
+            <p>Data stored in tables with strict schema definitions.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">Why</p>
+            <p>Ensures reliability, integrity, and ACID transactions.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">How</p>
+            <p>Uses relational tables with joins and constraints.</p>
+          </div>
+
+          <div>
             <p class="font-bold">Tools</p>
             <p>MySQL, PostgreSQL, Oracle</p>
           </div>
-        </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold text-purple-600">
-            Evolving Schema
-          </h3>
-
-          <p class="mt-3 text-gray-600">
-            Best for flexible and changing data structures.
-          </p>
-
-          <ul class="list-disc pl-6 mt-4 space-y-2">
-            <li>Schema flexibility</li>
-            <li>Document storage</li>
-            <li>Horizontal scaling</li>
-          </ul>
-
-          <div class="bg-purple-50 p-4 rounded-xl mt-5">
-            <p class="font-bold">Tools</p>
-            <p>MongoDB, CouchDB, Firebase</p>
-          </div>
         </div>
       </div>
 
-      <!-- Relationships -->
-      <div class="bg-white rounded-2xl shadow-lg p-8 border-t-8 border-pink-500">
+      <!-- Evolving Schema -->
+      <div>
 
-        <h2 class="text-3xl font-bold mb-6">
-          2. Based on Relationships
-        </h2>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-purple-600 text-2xl">🧬</span>
+          <h3 class="text-2xl font-semibold">Evolving Schema (NoSQL / Flexible)</h3>
+        </div>
 
-        <div class="mb-8">
-          <h3 class="text-2xl font-semibold text-red-600">
-            Complex Joins & Strong Consistency
-          </h3>
+        <p class="text-gray-600 mb-4">
+          Best for rapidly changing or semi-structured data.
+        </p>
 
-          <p class="mt-3 text-gray-600">
-            Suitable for transactional systems and normalized data.
-          </p>
+        <div class="bg-purple-50 p-5 rounded-xl space-y-3">
 
-          <div class="bg-red-50 p-4 rounded-xl mt-5">
+          <div>
+            <p class="font-bold">What</p>
+            <p>Schema-less or dynamic schema document storage.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">Why</p>
+            <p>Supports fast iteration and flexible data models.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">How</p>
+            <p>Stores JSON-like documents instead of rigid tables.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">Tools</p>
+            <p>MongoDB, CouchDB, Firebase</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= RELATIONSHIPS ================= -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 border-l-8 border-pink-500">
+
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-2">
+        🔗 2. Based on Relationships
+      </h2>
+
+      <!-- Relational -->
+      <div class="mb-10">
+
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-red-600 text-2xl">🏦</span>
+          <h3 class="text-2xl font-semibold">Strong Relationships (SQL Systems)</h3>
+        </div>
+
+        <p class="text-gray-600 mb-4">
+          Ideal for transactional systems requiring strict consistency.
+        </p>
+
+        <div class="bg-red-50 p-5 rounded-xl space-y-3">
+
+          <div>
+            <p class="font-bold">What</p>
+            <p>Data is normalized and linked via foreign keys.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">Why</p>
+            <p>Ensures consistency and prevents data anomalies.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">How</p>
+            <p>Uses joins, constraints, and ACID transactions.</p>
+          </div>
+
+          <div>
             <p class="font-bold">Tools</p>
             <p>PostgreSQL, MySQL, SQL Server</p>
           </div>
+
+        </div>
+      </div>
+
+      <!-- NoSQL / Denormalized -->
+      <div>
+
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-indigo-600 text-2xl">⚡</span>
+          <h3 class="text-2xl font-semibold">Loose Relationships (NoSQL Systems)</h3>
         </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold text-indigo-600">
-            Denormalized & Simple Lookups
-          </h3>
+        <p class="text-gray-600 mb-4">
+          Optimized for scalability, speed, and distributed systems.
+        </p>
 
-          <p class="mt-3 text-gray-600">
-            NoSQL databases are optimized for scalability and speed.
-          </p>
+        <div class="bg-indigo-50 p-5 rounded-xl space-y-3">
 
-          <div class="grid grid-cols-3 gap-4 mt-5">
-
-            <div class="bg-indigo-100 p-4 rounded-xl text-center">
-              <h4 class="font-bold">Volume</h4>
-              <p class="text-sm">Huge Data</p>
-            </div>
-
-            <div class="bg-indigo-100 p-4 rounded-xl text-center">
-              <h4 class="font-bold">Velocity</h4>
-              <p class="text-sm">Fast Processing</p>
-            </div>
-
-            <div class="bg-indigo-100 p-4 rounded-xl text-center">
-              <h4 class="font-bold">Variety</h4>
-              <p class="text-sm">Multiple Formats</p>
-            </div>
-
+          <div>
+            <p class="font-bold">What</p>
+            <p>Data is often duplicated for fast access.</p>
           </div>
 
-          <div class="bg-indigo-50 p-4 rounded-xl mt-5">
+          <div>
+            <p class="font-bold">Why</p>
+            <p>Reduces joins and improves horizontal scalability.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">How</p>
+            <p>Uses key-value, document, or wide-column models.</p>
+          </div>
+
+          <div>
             <p class="font-bold">Tools</p>
             <p>MongoDB, Cassandra, DynamoDB</p>
           </div>
+
+        </div>
+
+        <!-- VVV explanation block -->
+        <div class="grid grid-cols-3 gap-4 mt-6">
+
+          <div class="bg-indigo-100 p-4 rounded-xl text-center">
+            <p class="font-bold">Volume</p>
+            <p class="text-sm">Massive scale</p>
+          </div>
+
+          <div class="bg-indigo-100 p-4 rounded-xl text-center">
+            <p class="font-bold">Velocity</p>
+            <p class="text-sm">High throughput</p>
+          </div>
+
+          <div class="bg-indigo-100 p-4 rounded-xl text-center">
+            <p class="font-bold">Variety</p>
+            <p class="text-sm">Flexible formats</p>
+          </div>
+
         </div>
 
       </div>
@@ -126,6 +211,8 @@
     </div>
 
   </div>
+
+</div>
 
 </body>
 </html>
