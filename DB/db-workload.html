@@ -3,108 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Choose Database - Page 2</title>
+  <title>Database Selection - Page 2</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-slate-100 text-gray-800">
 
-<div class="max-w-7xl mx-auto py-12 px-6">
+<div class="max-w-7xl mx-auto py-14 px-6">
 
-  <h1 class="text-5xl font-bold text-center text-teal-700 mb-12">
+  <h1 class="text-5xl font-bold text-center text-teal-700 mb-4">
     Database Selection by Scale & Workload
   </h1>
 
-  <div class="grid md:grid-cols-2 gap-8">
+  <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+    Understand how database choice changes based on traffic scale and workload patterns.
+    Focus on <b>system behavior</b> instead of just tools.
+  </p>
 
-    <!-- Scale -->
+  <div class="grid md:grid-cols-2 gap-10">
+
+    <!-- ================= SCALE ================= -->
     <div class="bg-white rounded-2xl shadow-xl p-8 border-l-8 border-green-500">
 
-      <h2 class="text-3xl font-bold mb-6">
-        3. Based on Scale & Traffic
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-2">
+        📈 3. Based on Scale & Traffic
       </h2>
 
-      <div class="mb-8">
-        <h3 class="text-2xl font-semibold text-green-700">
-          Low / Medium Traffic
-        </h3>
+      <!-- Low / Medium -->
+      <div class="mb-10">
 
-        <ul class="list-disc pl-6 mt-4 space-y-2">
-          <li>Single-node database</li>
-          <li>Simple deployments</li>
-          <li>Lower operational cost</li>
-        </ul>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-green-600 text-2xl">🟢</span>
+          <h3 class="text-2xl font-semibold">Low / Medium Traffic Systems</h3>
+        </div>
 
-        <div class="bg-green-50 p-4 rounded-xl mt-5">
-          <p class="font-bold">Tools</p>
-          <p>MySQL, SQLite, PostgreSQL</p>
+        <p class="text-gray-600 mb-4">
+          Best for applications with predictable and limited user load.
+        </p>
+
+        <div class="bg-green-50 p-5 rounded-xl space-y-3">
+
+          <div>
+            <p class="font-bold">What</p>
+            <p>Single-node or simple horizontally unscaled databases.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">Why</p>
+            <p>Lower cost and easier to manage infrastructure.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">How</p>
+            <p>Runs on a single server or basic replication setup.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">Tools</p>
+            <p>MySQL, SQLite, PostgreSQL</p>
+          </div>
+
         </div>
       </div>
 
+      <!-- High Scale -->
       <div>
-        <h3 class="text-2xl font-semibold text-orange-600">
-          High Traffic / Global Scale
-        </h3>
 
-        <ul class="list-disc pl-6 mt-4 space-y-2">
-          <li>Distributed databases</li>
-          <li>Auto scaling</li>
-          <li>Fault tolerance</li>
-        </ul>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-orange-600 text-2xl">🌍</span>
+          <h3 class="text-2xl font-semibold">High Traffic / Global Scale</h3>
+        </div>
 
-        <div class="bg-orange-50 p-4 rounded-xl mt-5">
-          <p class="font-bold">Tools</p>
-          <p>Cassandra, CockroachDB, DynamoDB</p>
+        <p class="text-gray-600 mb-4">
+          Designed for distributed systems handling massive concurrent users.
+        </p>
+
+        <div class="bg-orange-50 p-5 rounded-xl space-y-3">
+
+          <div>
+            <p class="font-bold">What</p>
+            <p>Distributed databases spread across multiple regions.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">Why</p>
+            <p>Ensures availability, fault tolerance, and scalability.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">How</p>
+            <p>Data is partitioned (sharding) and replicated globally.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">Tools</p>
+            <p>Cassandra, CockroachDB, DynamoDB</p>
+          </div>
+
         </div>
       </div>
 
     </div>
 
-    <!-- Read vs Write -->
+    <!-- ================= WORKLOAD ================= -->
     <div class="bg-white rounded-2xl shadow-xl p-8 border-l-8 border-blue-500">
 
-      <h2 class="text-3xl font-bold mb-6">
-        4. Based on Read vs Write Pattern
+      <h2 class="text-3xl font-bold mb-6 flex items-center gap-2">
+        ⚙️ 4. Based on Workload Pattern
       </h2>
 
-      <div class="mb-8">
+      <!-- Read Heavy -->
+      <div class="mb-10">
 
-        <h3 class="text-2xl font-semibold text-blue-700">
-          Read-Heavy Systems
-        </h3>
-
-        <p class="mt-3 text-gray-600">
-          Optimized for analytics dashboards and reporting systems.
-        </p>
-
-        <div class="bg-blue-50 p-5 rounded-xl mt-5">
-          <p class="font-bold">OLAP Systems</p>
-          <p>Analytical processing and aggregations.</p>
-
-          <p class="mt-3 font-semibold">Examples</p>
-          <p>Snowflake, BigQuery, Amazon Redshift</p>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-blue-600 text-2xl">📊</span>
+          <h3 class="text-2xl font-semibold">Read-Heavy Systems (OLAP)</h3>
         </div>
 
+        <p class="text-gray-600 mb-4">
+          Optimized for analytics, dashboards, and reporting workloads.
+        </p>
+
+        <div class="bg-blue-50 p-5 rounded-xl space-y-3">
+
+          <div>
+            <p class="font-bold">What</p>
+            <p>Systems that perform heavy aggregations and queries.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">Why</p>
+            <p>Fast insights from large datasets.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">How</p>
+            <p>Columnar storage and pre-aggregated data models.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">Tools</p>
+            <p>Snowflake, BigQuery, Amazon Redshift</p>
+          </div>
+
+        </div>
       </div>
 
+      <!-- Write Heavy -->
       <div>
 
-        <h3 class="text-2xl font-semibold text-pink-700">
-          Write-Heavy Systems
-        </h3>
-
-        <p class="mt-3 text-gray-600">
-          Designed for transactions and logging systems.
-        </p>
-
-        <div class="bg-pink-50 p-5 rounded-xl mt-5">
-          <p class="font-bold">OLTP Systems</p>
-          <p>Fast inserts, updates, and transactions.</p>
-
-          <p class="mt-3 font-semibold">Examples</p>
-          <p>PostgreSQL, MySQL, SQL Server</p>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-pink-600 text-2xl">✍️</span>
+          <h3 class="text-2xl font-semibold">Write-Heavy Systems (OLTP)</h3>
         </div>
 
+        <p class="text-gray-600 mb-4">
+          Designed for frequent inserts, updates, and transactional systems.
+        </p>
+
+        <div class="bg-pink-50 p-5 rounded-xl space-y-3">
+
+          <div>
+            <p class="font-bold">What</p>
+            <p>Systems optimized for fast row-level transactions.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">Why</p>
+            <p>Ensures consistency during frequent updates.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">How</p>
+            <p>Row-based storage with indexing and locking mechanisms.</p>
+          </div>
+
+          <div>
+            <p class="font-bold">Tools</p>
+            <p>PostgreSQL, MySQL, SQL Server</p>
+          </div>
+
+        </div>
       </div>
 
     </div>
