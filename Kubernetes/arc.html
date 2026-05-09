@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kubernetes Architecture</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <nav class="bg-indigo-700 text-white p-5">
+    <div class="max-w-7xl mx-auto flex justify-between">
+      <h1 class="text-3xl font-bold">Kubernetes Architecture</h1>
+
+      <div class="space-x-6">
+        <a href="index.html">Basics</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="career.html">Career</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-r from-indigo-600 to-purple-700 text-white py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h1 class="text-6xl font-bold">Architecture Explained</h1>
+      <p class="mt-5 text-2xl">Master Nodes + Worker Nodes</p>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-16 space-y-12">
+
+    <section class="bg-white rounded-2xl shadow-lg p-8">
+
+      <h2 class="text-4xl font-bold text-indigo-700 mb-6">
+        Kubernetes Cluster
+      </h2>
+
+      <p class="text-lg leading-9">
+        A cluster is a group of computers working together.
+      </p>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-8">
+
+        <div class="bg-blue-100 p-8 rounded-xl">
+          <h3 class="text-3xl font-bold mb-4">Master Node</h3>
+
+          <ul class="space-y-3 text-lg">
+            <li>🧠 Brain of Kubernetes</li>
+            <li>📋 Makes decisions</li>
+            <li>📡 Controls cluster</li>
+          </ul>
+        </div>
+
+        <div class="bg-green-100 p-8 rounded-xl">
+          <h3 class="text-3xl font-bold mb-4">Worker Node</h3>
+
+          <ul class="space-y-3 text-lg">
+            <li>⚙️ Runs applications</li>
+            <li>📦 Hosts containers</li>
+            <li>🚀 Handles workloads</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-8">
+
+      <div class="bg-white p-8 rounded-2xl shadow-lg">
+        <h2 class="text-3xl font-bold text-purple-700 mb-5">Pods</h2>
+
+        <p class="text-lg leading-8">
+          Pods are the smallest unit in Kubernetes.
+          They contain containers.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-2xl shadow-lg">
+        <h2 class="text-3xl font-bold text-red-700 mb-5">Services</h2>
+
+        <p class="text-lg leading-8">
+          Services help apps communicate with each other.
+        </p>
+      </div>
+
+    </section>
+
+    <section class="bg-white rounded-2xl shadow-lg p-8">
+
+      <h2 class="text-4xl font-bold text-blue-700 mb-8">
+        Important Components
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="bg-blue-100 p-6 rounded-xl">
+          <h3 class="font-bold text-2xl">API Server</h3>
+          <p class="mt-3">Front door of Kubernetes.</p>
+        </div>
+
+        <div class="bg-green-100 p-6 rounded-xl">
+          <h3 class="font-bold text-2xl">Scheduler</h3>
+          <p class="mt-3">Assigns workloads.</p>
+        </div>
+
+        <div class="bg-yellow-100 p-6 rounded-xl">
+          <h3 class="font-bold text-2xl">etcd</h3>
+          <p class="mt-3">Stores cluster data.</p>
+        </div>
+
+        <div class="bg-red-100 p-6 rounded-xl">
+          <h3 class="font-bold text-2xl">Controller</h3>
+          <p class="mt-3">Keeps system healthy.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
