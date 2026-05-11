@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chunking in RAG Explained</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #020617;
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center justify-center px-6 py-16">
+    <div class="max-w-6xl mx-auto text-center">
+
+      <div class="inline-block px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-400/20 text-cyan-300 text-sm mb-6">
+        RAG Series • Part 3
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
+        What is
+        <span class="text-cyan-400">Chunking</span>?
+      </h1>
+
+      <p class="mt-8 text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+        Learn how RAG breaks large documents into smaller pieces
+        so AI can search and understand information better.
+      </p>
+
+      <a href="#intro"
+        class="inline-block mt-10 px-8 py-4 rounded-xl bg-cyan-400 text-slate-950 font-bold hover:bg-cyan-300 transition shadow-lg shadow-cyan-500/30">
+        Start Learning
+      </a>
+
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section id="intro" class="px-6 py-20 border-t border-slate-800">
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-4xl font-bold mb-10">
+        Imagine Reading a Huge Book 📚
+      </h2>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+
+        <p class="text-lg text-slate-300 leading-relaxed mb-6">
+          Imagine your teacher gives you a
+          <span class="text-cyan-300 font-semibold">
+            1000-page book
+          </span>
+          and asks:
+        </p>
+
+        <div class="bg-slate-950 border border-slate-700 rounded-xl p-5 mb-8">
+          <p class="text-cyan-300 text-xl">
+            “Find the rules about school exams.”
+          </p>
+        </div>
+
+        <p class="text-lg text-slate-300 leading-relaxed mb-6">
+          Reading the entire book every single time would be super slow.
+        </p>
+
+        <p class="text-lg text-slate-300 leading-relaxed">
+          So instead, we divide the book into
+          <span class="text-white font-semibold">
+            smaller sections
+          </span>.
+        </p>
+
+        <div class="mt-8 p-6 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
+          <p class="text-xl text-slate-200 leading-relaxed">
+            Those small pieces are called
+            <span class="font-bold text-cyan-300">
+              Chunks
+            </span>.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SIMPLE DEFINITION -->
+  <section class="px-6 py-20">
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-4xl font-bold mb-12">
+        Simple Definition
+      </h2>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-10">
+
+        <p class="text-2xl leading-relaxed text-slate-200">
+          Chunking means:
+        </p>
+
+        <div class="mt-8 text-3xl md:text-5xl font-extrabold leading-relaxed">
+          <span class="text-cyan-300">
+            Breaking Big Text
+          </span>
+
+          <span class="text-slate-500">
+            →
+          </span>
+
+          <span class="text-white">
+            Into Small Pieces
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY CHUNKING -->
+  <section class="px-6 py-20 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center mb-16">
+        Why Do We Need Chunking?
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="bg-red-500/10 border border-red-500/20 rounded-2xl p-8">
+          <div class="text-5xl mb-5">🐌</div>
+
+          <h3 class="text-2xl font-bold text-red-300 mb-4">
+            Large Documents Are Slow
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed">
+            AI cannot efficiently search giant files every time.
+          </p>
+        </div>
+
+        <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-2xl p-8">
+          <div class="text-5xl mb-5">🧠</div>
+
+          <h3 class="text-2xl font-bold text-yellow-300 mb-4">
+            AI Has Context Limits
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed">
+            AI models cannot read unlimited text at once.
+          </p>
+        </div>
+
+        <div class="bg-cyan-500/10 border border-cyan-500/20 rounded-2xl p-8">
+          <div class="text-5xl mb-5">🎯</div>
+
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">
+            Better Search Accuracy
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed">
+            Smaller chunks help retrieve exactly the needed information.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXAMPLE -->
+  <section class="px-6 py-20">
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-4xl font-bold mb-12">
+        Simple Chunking Example
+      </h2>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+
+        <div class="bg-slate-950 border border-slate-700 rounded-xl p-6 mb-10">
+
+          <p class="text-slate-300 leading-relaxed">
+            Original Document:
+          </p>
+
+          <p class="mt-4 text-slate-400 leading-relaxed">
+            “The library opens at 8AM. Students must carry ID cards.
+            Mobile phones are not allowed during exams.
+            Late submissions lose marks.”
+          </p>
+
+        </div>
+
+        <h3 class="text-2xl font-bold text-cyan-300 mb-8">
+          After Chunking:
+        </h3>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <div class="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-6">
+            <p class="text-cyan-300 font-bold mb-3">
+              Chunk 1
+            </p>
+
+            <p class="text-slate-300">
+              “The library opens at 8AM.”
+            </p>
+          </div>
+
+          <div class="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-6">
+            <p class="text-cyan-300 font-bold mb-3">
+              Chunk 2
+            </p>
+
+            <p class="text-slate-300">
+              “Students must carry ID cards.”
+            </p>
+          </div>
+
+          <div class="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-6">
+            <p class="text-cyan-300 font-bold mb-3">
+              Chunk 3
+            </p>
+
+            <p class="text-slate-300">
+              “Mobile phones are not allowed during exams.”
+            </p>
+          </div>
+
+          <div class="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-6">
+            <p class="text-cyan-300 font-bold mb-3">
+              Chunk 4
+            </p>
+
+            <p class="text-slate-300">
+              “Late submissions lose marks.”
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CHUNKING STRATEGIES -->
+  <section class="px-6 py-20 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center mb-16">
+        Chunking Strategies in RAG
+      </h2>
+
+      <div class="space-y-10">
+
+        <!-- FIXED -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+
+          <div class="flex items-center gap-4 mb-6">
+            <div class="text-5xl">📏</div>
+
+            <h3 class="text-3xl font-bold text-cyan-300">
+              1. Fixed Size Chunking
+            </h3>
+          </div>
+
+          <p class="text-lg text-slate-300 leading-relaxed mb-6">
+            Split text into equal sizes.
+          </p>
+
+          <div class="grid md:grid-cols-4 gap-4">
+
+            <div class="bg-slate-950 border border-slate-700 rounded-xl p-4 text-center">
+              500 words
+            </div>
+
+            <div class="bg-slate-950 border border-slate-700 rounded-xl p-4 text-center">
+              500 words
+            </div>
+
+            <div class="bg-slate-950 border border-slate-700 rounded-xl p-4 text-center">
+              500 words
+            </div>
+
+            <div class="bg-slate-950 border border-slate-700 rounded-xl p-4 text-center">
+              500 words
+            </div>
+
+          </div>
+
+          <div class="mt-8 grid md:grid-cols-2 gap-6">
+
+            <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-6">
+              <h4 class="text-green-300 font-bold mb-3">
+                ✅ Good
+              </h4>
+
+              <p class="text-slate-300">
+                Simple and fast.
+              </p>
+            </div>
+
+            <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-6">
+              <h4 class="text-red-300 font-bold mb-3">
+                ❌ Bad
+              </h4>
+
+              <p class="text-slate-300">
+                Can break sentences in weird places.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- SENTENCE -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+
+          <div class="flex items-center gap-4 mb-6">
+            <div class="text-5xl">📝</div>
+
+            <h3 class="text-3xl font-bold text-cyan-300">
+              2. Sentence Chunking
+            </h3>
+          </div>
+
+          <p class="text-lg text-slate-300 leading-relaxed mb-6">
+            Split text sentence by sentence.
+          </p>
+
+          <div class="space-y-4">
+
+            <div class="bg-slate-950 border border-slate-700 rounded-xl p-4">
+              Sentence 1
+            </div>
+
+            <div class="bg-slate-950 border border-slate-700 rounded-xl p-4">
+              Sentence 2
+            </div>
+
+            <div class="bg-slate-950 border border-slate-700 rounded-xl p-4">
+              Sentence 3
+            </div>
+
+          </div>
+
+          <div class="mt-8 p-6 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
+            <p class="text-slate-200">
+              Better readability and cleaner meaning.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- PARAGRAPH -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+
+          <div class="flex items-center gap-4 mb-6">
+            <div class="text-5xl">📄</div>
+
+            <h3 class="text-3xl font-bold text-cyan-300">
+              3. Paragraph Chunking
+            </h3>
+          </div>
+
+          <p class="text-lg text-slate-300 leading-relaxed mb-6">
+            Keep full paragraphs together.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="bg-slate-950 border border-slate-700 rounded-xl p-6">
+              Paragraph 1
+            </div>
+
+            <div class="bg-slate-950 border border-slate-700 rounded-xl p-6">
+              Paragraph 2
+            </div>
+
+          </div>
+
+          <div class="mt-8 p-6 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
+            <p class="text-slate-200">
+              Great for preserving context and meaning.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- OVERLAP -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+
+          <div class="flex items-center gap-4 mb-6">
+            <div class="text-5xl">🔗</div>
+
+            <h3 class="text-3xl font-bold text-cyan-300">
+              4. Overlapping Chunking
+            </h3>
+          </div>
+
+          <p class="text-lg text-slate-300 leading-relaxed mb-6">
+            Some text is repeated between chunks.
+          </p>
+
+          <div class="space-y-4">
+
+            <div class="bg-slate-950 border border-slate-700 rounded-xl p-5">
+              Chunk 1 → “AI helps students learn faster.”
+            </div>
+
+            <div class="bg-slate-950 border border-slate-700 rounded-xl p-5">
+              Chunk 2 → “students learn faster and improve skills.”
+            </div>
+
+          </div>
+
+          <div class="mt-8 grid md:grid-cols-2 gap-6">
+
+            <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-6">
+              <h4 class="text-green-300 font-bold mb-3">
+                ✅ Good
+              </h4>
+
+              <p class="text-slate-300">
+                Prevents losing important context.
+              </p>
+            </div>
+
+            <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-6">
+              <h4 class="text-yellow-300 font-bold mb-3">
+                ⚠️ Tradeoff
+              </h4>
+
+              <p class="text-slate-300">
+                Uses more storage space.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- SEMANTIC -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+
+          <div class="flex items-center gap-4 mb-6">
+            <div class="text-5xl">🧠</div>
+
+            <h3 class="text-3xl font-bold text-cyan-300">
+              5. Semantic Chunking
+            </h3>
+          </div>
+
+          <p class="text-lg text-slate-300 leading-relaxed mb-6">
+            Split based on meaning instead of size.
+          </p>
+
+          <div class="bg-slate-950 border border-slate-700 rounded-xl p-6">
+            <p class="text-slate-300 leading-relaxed">
+              All text related to “exam rules”
+              stays together in one chunk,
+              even if it is long.
+            </p>
+          </div>
+
+          <div class="mt-8 p-6 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
+            <p class="text-slate-200">
+              This is smarter and often gives better RAG results.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHICH STRATEGY -->
+  <section class="px-6 py-20 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center mb-16">
+        Which Strategy is Best?
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+          <div class="text-5xl mb-5">⚡</div>
+
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">
+            Fast Projects
+          </h3>
+
+          <p class="text-slate-400 leading-relaxed">
+            Use fixed-size chunking.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+          <div class="text-5xl mb-5">📖</div>
+
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">
+            Better Readability
+          </h3>
+
+          <p class="text-slate-400 leading-relaxed">
+            Use sentence or paragraph chunking.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+          <div class="text-5xl mb-5">🚀</div>
+
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">
+            Advanced AI Systems
+          </h3>
+
+          <p class="text-slate-400 leading-relaxed">
+            Use semantic + overlapping chunking.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL SUMMARY -->
+  <section class="px-6 py-24 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto text-center">
+
+      <h2 class="text-5xl font-bold mb-8">
+        Final Understanding
+      </h2>
+
+      <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-3xl p-10">
+
+        <p class="text-2xl leading-relaxed text-slate-200">
+          Chunking is simply:
+        </p>
+
+        <div class="mt-10 text-3xl md:text-5xl font-extrabold leading-relaxed">
+
+          <span class="text-cyan-300">
+            Divide Large Knowledge
+          </span>
+
+          <span class="text-slate-500">
+            →
+          </span>
+
+          <span class="text-white">
+            Into Searchable Pieces
+          </span>
+
+        </div>
+
+      </div>
+
+      <p class="mt-10 text-slate-400 text-lg">
+        Good chunking =
+        better retrieval,
+        better context,
+        and better AI answers.
+      </p>
+
+    </div>
+  </section>
+
+</body>
+</html>
