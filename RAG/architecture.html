@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAG Architecture Explained Simply</title>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #020617;
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center justify-center px-6 py-16">
+    <div class="max-w-6xl mx-auto text-center">
+
+      <div class="inline-block px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-6">
+        RAG Series • Part 2
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
+        RAG
+        <span class="text-cyan-400">Architecture</span>
+      </h1>
+
+      <p class="mt-8 text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+        Let’s understand how RAG works internally —
+        using very simple examples first.
+      </p>
+
+      <a href="#story"
+        class="inline-block mt-10 px-8 py-4 rounded-xl bg-cyan-400 text-slate-950 font-bold hover:bg-cyan-300 transition shadow-lg shadow-cyan-500/30">
+        Learn Step by Step
+      </a>
+
+    </div>
+  </section>
+
+  <!-- SIMPLE STORY -->
+  <section id="story" class="px-6 py-20 border-t border-slate-800">
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-4xl font-bold mb-10">
+        Imagine a Smart School Assistant
+      </h2>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+
+        <p class="text-lg text-slate-300 leading-relaxed mb-6">
+          Imagine a robot helper in your school.
+        </p>
+
+        <p class="text-lg text-slate-300 leading-relaxed mb-6">
+          You ask:
+        </p>
+
+        <div class="bg-slate-950 border border-slate-700 rounded-xl p-5 mb-8">
+          <p class="text-cyan-300 text-xl">
+            “What are the rules for the school library?”
+          </p>
+        </div>
+
+        <p class="text-lg text-slate-300 leading-relaxed mb-6">
+          The robot does NOT memorize every book and document.
+        </p>
+
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Instead, it follows a process:
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section class="px-6 py-20">
+    <div class="max-w-6xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center mb-16">
+        Simple RAG Flow
+      </h2>
+
+      <div class="grid md:grid-cols-5 gap-6 items-center">
+
+        <!-- USER -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+          <div class="text-5xl mb-4">🙋</div>
+          <h3 class="font-bold text-xl mb-3 text-cyan-300">
+            User
+          </h3>
+          <p class="text-slate-400">
+            Asks a question
+          </p>
+        </div>
+
+        <!-- ARROW -->
+        <div class="hidden md:flex justify-center text-4xl text-cyan-400">
+          →
+        </div>
+
+        <!-- SEARCH -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+          <div class="text-5xl mb-4">🔍</div>
+          <h3 class="font-bold text-xl mb-3 text-cyan-300">
+            Retriever
+          </h3>
+          <p class="text-slate-400">
+            Searches useful information
+          </p>
+        </div>
+
+        <!-- ARROW -->
+        <div class="hidden md:flex justify-center text-4xl text-cyan-400">
+          →
+        </div>
+
+        <!-- AI -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+          <div class="text-5xl mb-4">🤖</div>
+          <h3 class="font-bold text-xl mb-3 text-cyan-300">
+            AI Model
+          </h3>
+          <p class="text-slate-400">
+            Creates final answer
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAIN COMPONENTS -->
+  <section class="px-6 py-20 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto">
+
+      <h2 class="text-4xl font-bold mb-16 text-center">
+        Main Parts of RAG Architecture
+      </h2>
+
+      <div class="space-y-10">
+
+        <!-- DOCUMENTS -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="text-5xl">📚</div>
+            <h3 class="text-3xl font-bold text-cyan-300">
+              1. Documents
+            </h3>
+          </div>
+
+          <p class="text-lg text-slate-300 leading-relaxed mb-4">
+            These are the knowledge sources.
+          </p>
+
+          <p class="text-lg text-slate-400 leading-relaxed">
+            PDFs, websites, notes, Word files,
+            company documents, or databases.
+          </p>
+
+          <div class="mt-6 bg-slate-950 border border-slate-700 rounded-xl p-5">
+            <p class="text-slate-300">
+              Example:
+              <span class="text-cyan-300">
+                School rulebook PDF
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <!-- CHUNKING -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="text-5xl">✂️</div>
+            <h3 class="text-3xl font-bold text-cyan-300">
+              2. Chunking
+            </h3>
+          </div>
+
+          <p class="text-lg text-slate-300 leading-relaxed mb-4">
+            Big documents are too large for AI to search easily.
+          </p>
+
+          <p class="text-lg text-slate-400 leading-relaxed">
+            So we cut documents into small pieces called
+            <span class="text-white font-semibold">chunks</span>.
+          </p>
+
+          <div class="mt-6 grid md:grid-cols-3 gap-4">
+
+            <div class="bg-slate-950 border border-slate-700 rounded-xl p-4 text-center">
+              Chunk 1
+            </div>
+
+            <div class="bg-slate-950 border border-slate-700 rounded-xl p-4 text-center">
+              Chunk 2
+            </div>
+
+            <div class="bg-slate-950 border border-slate-700 rounded-xl p-4 text-center">
+              Chunk 3
+            </div>
+
+          </div>
+        </div>
+
+        <!-- EMBEDDINGS -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="text-5xl">🧠</div>
+            <h3 class="text-3xl font-bold text-cyan-300">
+              3. Embeddings
+            </h3>
+          </div>
+
+          <p class="text-lg text-slate-300 leading-relaxed mb-4">
+            Computers do not truly understand words like humans.
+          </p>
+
+          <p class="text-lg text-slate-400 leading-relaxed">
+            So text is converted into numbers called
+            <span class="text-white font-semibold">
+              vectors or embeddings
+            </span>.
+          </p>
+
+          <div class="mt-6 bg-slate-950 border border-slate-700 rounded-xl p-5 overflow-auto">
+<pre class="text-cyan-300 text-sm">
+"Library closes at 5PM"
+
+↓
+
+[0.12, 0.87, 0.44, 0.91 ...]
+</pre>
+          </div>
+
+        </div>
+
+        <!-- VECTOR DB -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="text-5xl">🗄️</div>
+            <h3 class="text-3xl font-bold text-cyan-300">
+              4. Vector Database
+            </h3>
+          </div>
+
+          <p class="text-lg text-slate-300 leading-relaxed mb-4">
+            All embeddings are stored in a special database.
+          </p>
+
+          <p class="text-lg text-slate-400 leading-relaxed">
+            This database helps find similar information very fast.
+          </p>
+
+          <div class="mt-6 p-6 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
+            <p class="text-slate-200">
+              Think of it like a super smart library shelf.
+            </p>
+          </div>
+        </div>
+
+        <!-- RETRIEVER -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="text-5xl">🔎</div>
+            <h3 class="text-3xl font-bold text-cyan-300">
+              5. Retriever
+            </h3>
+          </div>
+
+          <p class="text-lg text-slate-300 leading-relaxed mb-4">
+            When a user asks a question,
+            the retriever searches the vector database.
+          </p>
+
+          <p class="text-lg text-slate-400 leading-relaxed">
+            It finds the most relevant chunks.
+          </p>
+
+          <div class="mt-6 bg-slate-950 border border-slate-700 rounded-xl p-5">
+            <p class="text-cyan-300">
+              “Find chunks related to library rules.”
+            </p>
+          </div>
+        </div>
+
+        <!-- LLM -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="text-5xl">🤖</div>
+            <h3 class="text-3xl font-bold text-cyan-300">
+              6. LLM (AI Model)
+            </h3>
+          </div>
+
+          <p class="text-lg text-slate-300 leading-relaxed mb-4">
+            Finally, the retrieved chunks are sent to the AI model.
+          </p>
+
+          <p class="text-lg text-slate-400 leading-relaxed">
+            The AI reads the information
+            and generates a human-friendly answer.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FULL FLOW -->
+  <section class="px-6 py-24 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center mb-16">
+        Full RAG Architecture Flow
+      </h2>
+
+      <div class="overflow-x-auto">
+
+        <div class="min-w-[1100px] flex items-center gap-4">
+
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center w-48">
+            📚<br />
+            Documents
+          </div>
+
+          <div class="text-cyan-400 text-3xl">→</div>
+
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center w-48">
+            ✂️<br />
+            Chunking
+          </div>
+
+          <div class="text-cyan-400 text-3xl">→</div>
+
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center w-48">
+            🧠<br />
+            Embeddings
+          </div>
+
+          <div class="text-cyan-400 text-3xl">→</div>
+
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center w-48">
+            🗄️<br />
+            Vector DB
+          </div>
+
+          <div class="text-cyan-400 text-3xl">→</div>
+
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center w-48">
+            🔎<br />
+            Retriever
+          </div>
+
+          <div class="text-cyan-400 text-3xl">→</div>
+
+          <div class="bg-cyan-500/10 border border-cyan-500/30 rounded-2xl p-6 text-center w-48">
+            🤖<br />
+            AI Answer
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY IMPORTANT -->
+  <section class="px-6 py-20">
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-4xl font-bold mb-12 text-center">
+        Why This Architecture is Powerful
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+          <div class="text-5xl mb-5">⚡</div>
+
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">
+            Fast Search
+          </h3>
+
+          <p class="text-slate-400 leading-relaxed">
+            Finds useful information quickly
+            from huge amounts of data.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+          <div class="text-5xl mb-5">🎯</div>
+
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">
+            Better Accuracy
+          </h3>
+
+          <p class="text-slate-400 leading-relaxed">
+            AI answers using real documents
+            instead of random guessing.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+          <div class="text-5xl mb-5">🔒</div>
+
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">
+            Private Knowledge
+          </h3>
+
+          <p class="text-slate-400 leading-relaxed">
+            Companies can use their own internal data safely.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL SUMMARY -->
+  <section class="px-6 py-24 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto text-center">
+
+      <h2 class="text-5xl font-bold mb-8">
+        Final Simple Understanding
+      </h2>
+
+      <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-3xl p-10">
+
+        <p class="text-2xl text-slate-200 leading-relaxed">
+          RAG Architecture is basically:
+        </p>
+
+        <div class="mt-10 text-3xl md:text-5xl font-extrabold leading-relaxed">
+
+          <span class="text-cyan-300">Store Knowledge</span>
+
+          <span class="text-slate-500"> → </span>
+
+          <span class="text-white">Find Relevant Data</span>
+
+          <span class="text-slate-500"> → </span>
+
+          <span class="text-cyan-300">Generate Smart Answer</span>
+
+        </div>
+
+      </div>
+
+      <p class="mt-10 text-slate-400 text-lg">
+        Next level topics can include:
+        semantic search, cosine similarity,
+        hybrid search, reranking, agents,
+        memory, and advanced RAG pipelines.
+      </p>
+
+    </div>
+  </section>
+
+</body>
+</html>
