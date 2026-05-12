@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAG Embedding Explained</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white font-sans">
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-indigo-600 to-cyan-500 py-20 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h1 class="text-5xl font-extrabold mb-6">
+        Understanding Embeddings in RAG
+      </h1>
+      <p class="text-xl text-slate-100 max-w-3xl mx-auto">
+        Learn what embeddings are, why they are used in Retrieval-Augmented Generation (RAG),
+        and how they help AI systems search and understand information intelligently.
+      </p>
+    </div>
+  </section>
+
+  <!-- What is RAG -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="bg-slate-900 rounded-2xl p-8 shadow-2xl border border-slate-800">
+        <h2 class="text-3xl font-bold text-cyan-400 mb-4">
+          What is RAG?
+        </h2>
+
+        <p class="text-slate-300 leading-8 text-lg">
+          RAG stands for <span class="text-cyan-300 font-semibold">Retrieval-Augmented Generation</span>.
+          It is an AI architecture that combines:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mt-8">
+          <div class="bg-slate-800 p-6 rounded-xl">
+            <h3 class="text-2xl font-bold text-indigo-400 mb-3">
+              Retrieval
+            </h3>
+            <p class="text-slate-300">
+              Fetching relevant information from documents, databases, PDFs,
+              websites, or knowledge bases.
+            </p>
+          </div>
+
+          <div class="bg-slate-800 p-6 rounded-xl">
+            <h3 class="text-2xl font-bold text-indigo-400 mb-3">
+              Generation
+            </h3>
+            <p class="text-slate-300">
+              Using an LLM (Large Language Model) to generate accurate responses
+              based on the retrieved data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is Embedding -->
+  <section class="py-16 px-6 bg-slate-900">
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-cyan-400 mb-8">
+        What is Embedding?
+      </h2>
+
+      <div class="space-y-6 text-lg leading-8 text-slate-300">
+
+        <p>
+          An <span class="text-cyan-300 font-semibold">embedding</span> is a
+          numerical representation of text, images, or data in vector form.
+        </p>
+
+        <p>
+          AI models convert sentences into lists of numbers called
+          <span class="text-indigo-300 font-semibold">vectors</span>.
+          These vectors capture the meaning and context of the text.
+        </p>
+
+        <div class="bg-slate-800 rounded-xl p-6 border border-slate-700">
+          <p class="text-green-300 font-mono text-lg">
+            "Artificial Intelligence is powerful"
+          </p>
+
+          <p class="mt-4 text-slate-400">
+            may become →
+          </p>
+
+          <p class="text-yellow-300 font-mono mt-2 break-all">
+            [0.24, -0.91, 0.77, 0.11, 0.52, ...]
+          </p>
+        </div>
+
+        <p>
+          Similar meanings produce similar vectors. This allows AI systems
+          to compare semantic meaning instead of exact keyword matching.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Embedding -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-cyan-400 mb-8">
+        Why is Embedding Used in RAG?
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+          <div class="text-5xl mb-4">🔍</div>
+          <h3 class="text-2xl font-bold mb-3 text-indigo-400">
+            Semantic Search
+          </h3>
+          <p class="text-slate-300">
+            Embeddings help find documents with similar meaning,
+            even if exact words are different.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+          <div class="text-5xl mb-4">⚡</div>
+          <h3 class="text-2xl font-bold mb-3 text-indigo-400">
+            Faster Retrieval
+          </h3>
+          <p class="text-slate-300">
+            Vector databases quickly compare embeddings to retrieve
+            the most relevant information.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+          <div class="text-5xl mb-4">🧠</div>
+          <h3 class="text-2xl font-bold mb-3 text-indigo-400">
+            Better AI Responses
+          </h3>
+          <p class="text-slate-300">
+            The LLM receives contextually relevant data,
+            improving answer quality and accuracy.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-16 px-6 bg-slate-900">
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-cyan-400 mb-10">
+        How Embedding Works in RAG
+      </h2>
+
+      <div class="space-y-6">
+
+        <div class="flex items-start gap-5 bg-slate-800 p-6 rounded-xl">
+          <div class="w-12 h-12 flex items-center justify-center rounded-full bg-cyan-500 text-black font-bold">
+            1
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300">
+              Split Documents
+            </h3>
+            <p class="text-slate-300 mt-2">
+              Large documents are divided into smaller chunks.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-5 bg-slate-800 p-6 rounded-xl">
+          <div class="w-12 h-12 flex items-center justify-center rounded-full bg-cyan-500 text-black font-bold">
+            2
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300">
+              Generate Embeddings
+            </h3>
+            <p class="text-slate-300 mt-2">
+              Each chunk is converted into vector embeddings using an embedding model.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-5 bg-slate-800 p-6 rounded-xl">
+          <div class="w-12 h-12 flex items-center justify-center rounded-full bg-cyan-500 text-black font-bold">
+            3
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300">
+              Store in Vector Database
+            </h3>
+            <p class="text-slate-300 mt-2">
+              Embeddings are stored in vector databases like Pinecone,
+              Weaviate, or FAISS.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-5 bg-slate-800 p-6 rounded-xl">
+          <div class="w-12 h-12 flex items-center justify-center rounded-full bg-cyan-500 text-black font-bold">
+            4
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300">
+              User Query Embedding
+            </h3>
+            <p class="text-slate-300 mt-2">
+              The user question is also converted into an embedding vector.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-5 bg-slate-800 p-6 rounded-xl">
+          <div class="w-12 h-12 flex items-center justify-center rounded-full bg-cyan-500 text-black font-bold">
+            5
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300">
+              Similarity Search
+            </h3>
+            <p class="text-slate-300 mt-2">
+              The system compares vectors and retrieves the most similar chunks.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-5 bg-slate-800 p-6 rounded-xl">
+          <div class="w-12 h-12 flex items-center justify-center rounded-full bg-cyan-500 text-black font-bold">
+            6
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300">
+              Generate Final Answer
+            </h3>
+            <p class="text-slate-300 mt-2">
+              Retrieved context is passed to the LLM to generate a meaningful response.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Flow -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+
+      <h2 class="text-4xl font-bold text-cyan-400 mb-10">
+        RAG Embedding Flow
+      </h2>
+
+      <div class="bg-slate-900 rounded-2xl p-8 border border-slate-800 overflow-x-auto">
+        <div class="flex flex-wrap justify-center items-center gap-4 text-lg font-semibold">
+
+          <div class="bg-indigo-500 px-5 py-3 rounded-xl">
+            Documents
+          </div>
+
+          <div>➡️</div>
+
+          <div class="bg-cyan-500 text-black px-5 py-3 rounded-xl">
+            Embeddings
+          </div>
+
+          <div>➡️</div>
+
+          <div class="bg-indigo-500 px-5 py-3 rounded-xl">
+            Vector DB
+          </div>
+
+          <div>➡️</div>
+
+          <div class="bg-cyan-500 text-black px-5 py-3 rounded-xl">
+            Similarity Search
+          </div>
+
+          <div>➡️</div>
+
+          <div class="bg-indigo-500 px-5 py-3 rounded-xl">
+            LLM Answer
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 text-center text-slate-500 border-t border-slate-800">
+    <p>
+      Built with Tailwind CSS • RAG Embedding Educational Page
+    </p>
+  </footer>
+
+</body>
+</html>
