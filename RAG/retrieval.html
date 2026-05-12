@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RAG Retrieval Explained</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white font-sans">
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-600 py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
+        RAG Retrieval
+      </h1>
+
+      <p class="text-xl text-slate-100 max-w-3xl mx-auto leading-8">
+        A simple ELI10 explanation of what Retrieval means in RAG,
+        why it is important, and how AI uses it to find the right information.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- WHAT IS RETRIEVAL -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl">
+
+        <h2 class="text-4xl font-bold text-cyan-400 mb-8">
+          What is Retrieval?
+        </h2>
+
+        <div class="space-y-6 text-lg leading-8 text-slate-300">
+
+          <p>
+            Imagine your teacher asks:
+          </p>
+
+          <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+            <p class="text-yellow-300 text-xl font-semibold">
+              “What is the capital of Japan?”
+            </p>
+          </div>
+
+          <p>
+            Before answering, you first search your school book
+            and find the correct information:
+          </p>
+
+          <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+            <p class="text-green-300 text-xl font-semibold">
+              “Tokyo is the capital of Japan.”
+            </p>
+          </div>
+
+          <p>
+            That searching step is called
+            <span class="text-cyan-300 font-semibold">Retrieval</span>.
+          </p>
+
+          <p>
+            In RAG systems, Retrieval means:
+          </p>
+
+          <div class="bg-indigo-500/20 border border-indigo-500 rounded-2xl p-6">
+            <p class="text-indigo-200 text-lg">
+              AI searches documents, PDFs, websites, or databases
+              to find useful information before generating an answer.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY RETRIEVAL -->
+  <section class="py-16 px-6 bg-slate-900">
+    <div class="max-w-6xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-cyan-400 text-center mb-12">
+        Why is Retrieval Important?
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- CARD -->
+        <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 hover:scale-105 transition duration-300">
+
+          <div class="text-5xl mb-5">📚</div>
+
+          <h3 class="text-2xl font-bold text-indigo-300 mb-4">
+            Finds Correct Information
+          </h3>
+
+          <p class="text-slate-300 leading-7">
+            Instead of guessing,
+            AI first searches trusted data sources for answers.
+          </p>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 hover:scale-105 transition duration-300">
+
+          <div class="text-5xl mb-5">🧠</div>
+
+          <h3 class="text-2xl font-bold text-indigo-300 mb-4">
+            Makes AI Smarter
+          </h3>
+
+          <p class="text-slate-300 leading-7">
+            Retrieval gives extra knowledge to the AI model,
+            helping it answer better.
+          </p>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 hover:scale-105 transition duration-300">
+
+          <div class="text-5xl mb-5">⚡</div>
+
+          <h3 class="text-2xl font-bold text-indigo-300 mb-4">
+            Uses Latest Data
+          </h3>
+
+          <p class="text-slate-300 leading-7">
+            AI can retrieve new documents and updated information
+            without retraining the whole model.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-cyan-400 text-center mb-12">
+        How Retrieval Works in RAG
+      </h2>
+
+      <div class="space-y-8">
+
+        <!-- STEP -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex gap-5">
+
+          <div class="w-14 h-14 rounded-full bg-cyan-400 text-black flex items-center justify-center font-bold text-xl">
+            1
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300 mb-2">
+              Store Knowledge
+            </h3>
+
+            <p class="text-slate-300 leading-7">
+              Documents, PDFs, websites, and notes are stored inside a database.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- STEP -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex gap-5">
+
+          <div class="w-14 h-14 rounded-full bg-cyan-400 text-black flex items-center justify-center font-bold text-xl">
+            2
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300 mb-2">
+              User Asks a Question
+            </h3>
+
+            <p class="text-slate-300 leading-7">
+              Example:
+              “What are the benefits of solar energy?”
+            </p>
+          </div>
+
+        </div>
+
+        <!-- STEP -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex gap-5">
+
+          <div class="w-14 h-14 rounded-full bg-cyan-400 text-black flex items-center justify-center font-bold text-xl">
+            3
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300 mb-2">
+              Retrieval Searches Data
+            </h3>
+
+            <p class="text-slate-300 leading-7">
+              The system searches for the most relevant content
+              related to the question.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- STEP -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex gap-5">
+
+          <div class="w-14 h-14 rounded-full bg-cyan-400 text-black flex items-center justify-center font-bold text-xl">
+            4
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300 mb-2">
+              Best Information is Selected
+            </h3>
+
+            <p class="text-slate-300 leading-7">
+              The retrieval system picks the most useful text chunks.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- STEP -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex gap-5">
+
+          <div class="w-14 h-14 rounded-full bg-cyan-400 text-black flex items-center justify-center font-bold text-xl">
+            5
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300 mb-2">
+              AI Generates Final Answer
+            </h3>
+
+            <p class="text-slate-300 leading-7">
+              The retrieved information is sent to the AI model
+              to create the final response.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SIMPLE EXAMPLE -->
+  <section class="py-16 px-6 bg-slate-900">
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-cyan-400 text-center mb-12">
+        Easy Example
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- USER -->
+        <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700">
+          <h3 class="text-2xl font-bold text-yellow-300 mb-5">
+            User Question
+          </h3>
+
+          <p class="text-slate-300 text-lg leading-8">
+            “What are planets made of?”
+          </p>
+        </div>
+
+        <!-- RETRIEVAL -->
+        <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700">
+          <h3 class="text-2xl font-bold text-green-300 mb-5">
+            Retrieval Finds
+          </h3>
+
+          <p class="text-slate-300 text-lg leading-8">
+            “Planets are made of rock, gas, ice,
+            and metals depending on the planet type.”
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section class="py-16 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+
+      <h2 class="text-4xl font-bold text-cyan-400 mb-12">
+        Retrieval Flow
+      </h2>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-10 overflow-x-auto">
+
+        <div class="flex flex-wrap justify-center items-center gap-5 text-lg font-bold">
+
+          <div class="bg-indigo-500 px-6 py-4 rounded-2xl">
+            User Question
+          </div>
+
+          <div class="text-3xl">➡️</div>
+
+          <div class="bg-cyan-400 text-black px-6 py-4 rounded-2xl">
+            Search Documents
+          </div>
+
+          <div class="text-3xl">➡️</div>
+
+          <div class="bg-indigo-500 px-6 py-4 rounded-2xl">
+            Find Best Match
+          </div>
+
+          <div class="text-3xl">➡️</div>
+
+          <div class="bg-cyan-400 text-black px-6 py-4 rounded-2xl">
+            Send to AI
+          </div>
+
+          <div class="text-3xl">➡️</div>
+
+          <div class="bg-indigo-500 px-6 py-4 rounded-2xl">
+            Final Answer
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 py-10 text-center text-slate-500">
+    <p>
+      Built with Tailwind CSS • ELI10 RAG Retrieval Guide
+    </p>
+  </footer>
+
+</body>
+</html>
