@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RAG Vector Database Explained</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white font-sans">
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-r from-violet-600 to-cyan-500 py-20 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h1 class="text-5xl font-extrabold mb-6">
+        RAG Vector Database
+      </h1>
+
+      <p class="text-xl text-slate-100 max-w-3xl mx-auto leading-8">
+        A simple ELI10 explanation of what a vector database is,
+        why RAG systems use it, and how it works behind the scenes.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHAT IS -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-2xl">
+        <h2 class="text-4xl font-bold text-cyan-400 mb-8">
+          What is a Vector Database?
+        </h2>
+
+        <div class="space-y-6 text-lg leading-8 text-slate-300">
+
+          <p>
+            Imagine you have a giant library with millions of books.
+          </p>
+
+          <p>
+            Instead of searching by exact words,
+            the library understands the <span class="text-cyan-300 font-semibold">meaning</span>
+            of every sentence.
+          </p>
+
+          <p>
+            A <span class="text-indigo-300 font-semibold">vector database</span>
+            stores information as special number patterns called
+            <span class="text-yellow-300 font-semibold">vectors</span>.
+          </p>
+
+          <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+            <p class="text-green-300 font-mono text-lg">
+              "Cats are cute pets"
+            </p>
+
+            <p class="text-slate-400 mt-3">
+              becomes →
+            </p>
+
+            <p class="text-yellow-300 font-mono mt-2 break-all">
+              [0.12, -0.88, 0.45, 0.71, 0.23, ...]
+            </p>
+          </div>
+
+          <p>
+            These vectors help AI find text with similar meaning,
+            even if the words are different.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="py-16 px-6 bg-slate-900">
+    <div class="max-w-6xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-cyan-400 text-center mb-12">
+        Why is a Vector Database Used in RAG?
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- CARD -->
+        <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:scale-105 transition duration-300">
+          <div class="text-5xl mb-5">🔍</div>
+
+          <h3 class="text-2xl font-bold text-indigo-300 mb-4">
+            Smart Searching
+          </h3>
+
+          <p class="text-slate-300 leading-7">
+            It searches by meaning instead of exact keywords.
+            So AI can understand similar ideas and questions.
+          </p>
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:scale-105 transition duration-300">
+          <div class="text-5xl mb-5">⚡</div>
+
+          <h3 class="text-2xl font-bold text-indigo-300 mb-4">
+            Super Fast
+          </h3>
+
+          <p class="text-slate-300 leading-7">
+            It can search through millions of vectors very quickly
+            to find the best matching information.
+          </p>
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:scale-105 transition duration-300">
+          <div class="text-5xl mb-5">🧠</div>
+
+          <h3 class="text-2xl font-bold text-indigo-300 mb-4">
+            Better AI Answers
+          </h3>
+
+          <p class="text-slate-300 leading-7">
+            The AI gets the right context before answering,
+            which makes responses smarter and more accurate.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-cyan-400 text-center mb-12">
+        How Does It Work?
+      </h2>
+
+      <div class="space-y-8">
+
+        <!-- STEP -->
+        <div class="flex gap-5 bg-slate-900 p-6 rounded-2xl border border-slate-800">
+          <div class="w-14 h-14 flex items-center justify-center rounded-full bg-cyan-400 text-black font-bold text-xl">
+            1
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300 mb-2">
+              Add Documents
+            </h3>
+
+            <p class="text-slate-300 leading-7">
+              PDFs, websites, notes, and documents are added into the system.
+            </p>
+          </div>
+        </div>
+
+        <!-- STEP -->
+        <div class="flex gap-5 bg-slate-900 p-6 rounded-2xl border border-slate-800">
+          <div class="w-14 h-14 flex items-center justify-center rounded-full bg-cyan-400 text-black font-bold text-xl">
+            2
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300 mb-2">
+              Convert to Vectors
+            </h3>
+
+            <p class="text-slate-300 leading-7">
+              AI converts every text chunk into vectors (number patterns).
+            </p>
+          </div>
+        </div>
+
+        <!-- STEP -->
+        <div class="flex gap-5 bg-slate-900 p-6 rounded-2xl border border-slate-800">
+          <div class="w-14 h-14 flex items-center justify-center rounded-full bg-cyan-400 text-black font-bold text-xl">
+            3
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300 mb-2">
+              Store in Vector Database
+            </h3>
+
+            <p class="text-slate-300 leading-7">
+              These vectors are stored inside a special database
+              built for similarity searching.
+            </p>
+          </div>
+        </div>
+
+        <!-- STEP -->
+        <div class="flex gap-5 bg-slate-900 p-6 rounded-2xl border border-slate-800">
+          <div class="w-14 h-14 flex items-center justify-center rounded-full bg-cyan-400 text-black font-bold text-xl">
+            4
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300 mb-2">
+              User Asks Question
+            </h3>
+
+            <p class="text-slate-300 leading-7">
+              The user question is also converted into a vector.
+            </p>
+          </div>
+        </div>
+
+        <!-- STEP -->
+        <div class="flex gap-5 bg-slate-900 p-6 rounded-2xl border border-slate-800">
+          <div class="w-14 h-14 flex items-center justify-center rounded-full bg-cyan-400 text-black font-bold text-xl">
+            5
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300 mb-2">
+              Find Similar Meaning
+            </h3>
+
+            <p class="text-slate-300 leading-7">
+              The vector database finds the closest matching vectors.
+            </p>
+          </div>
+        </div>
+
+        <!-- STEP -->
+        <div class="flex gap-5 bg-slate-900 p-6 rounded-2xl border border-slate-800">
+          <div class="w-14 h-14 flex items-center justify-center rounded-full bg-cyan-400 text-black font-bold text-xl">
+            6
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold text-indigo-300 mb-2">
+              AI Generates Answer
+            </h3>
+
+            <p class="text-slate-300 leading-7">
+              The matching content is sent to the AI model,
+              which creates the final answer.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SIMPLE FLOW -->
+  <section class="py-16 px-6 bg-slate-900">
+    <div class="max-w-6xl mx-auto text-center">
+
+      <h2 class="text-4xl font-bold text-cyan-400 mb-12">
+        Easy Flow Diagram
+      </h2>
+
+      <div class="bg-slate-800 rounded-3xl p-10 border border-slate-700 overflow-x-auto">
+
+        <div class="flex flex-wrap justify-center items-center gap-5 text-lg font-bold">
+
+          <div class="bg-indigo-500 px-6 py-4 rounded-2xl">
+            Documents
+          </div>
+
+          <div class="text-3xl">➡️</div>
+
+          <div class="bg-cyan-400 text-black px-6 py-4 rounded-2xl">
+            Embeddings
+          </div>
+
+          <div class="text-3xl">➡️</div>
+
+          <div class="bg-indigo-500 px-6 py-4 rounded-2xl">
+            Vector DB
+          </div>
+
+          <div class="text-3xl">➡️</div>
+
+          <div class="bg-cyan-400 text-black px-6 py-4 rounded-2xl">
+            Similar Search
+          </div>
+
+          <div class="text-3xl">➡️</div>
+
+          <div class="bg-indigo-500 px-6 py-4 rounded-2xl">
+            AI Answer
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXAMPLES -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-cyan-400 text-center mb-12">
+        Popular Vector Databases
+      </h2>
+
+      <div class="grid md:grid-cols-4 gap-6">
+
+        <div class="bg-slate-900 p-6 rounded-2xl text-center border border-slate-800">
+          <h3 class="text-2xl font-bold text-indigo-300">Pinecone</h3>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-2xl text-center border border-slate-800">
+          <h3 class="text-2xl font-bold text-indigo-300">Weaviate</h3>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-2xl text-center border border-slate-800">
+          <h3 class="text-2xl font-bold text-indigo-300">FAISS</h3>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-2xl text-center border border-slate-800">
+          <h3 class="text-2xl font-bold text-indigo-300">ChromaDB</h3>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 py-10 text-center text-slate-500">
+    <p>
+      Built with Tailwind CSS • ELI10 RAG Vector Database Guide
+    </p>
+  </footer>
+
+</body>
+</html>
