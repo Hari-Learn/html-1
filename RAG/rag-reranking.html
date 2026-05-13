@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RAG - ReRanking Explained</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white font-sans">
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center justify-center px-6 bg-gradient-to-br from-blue-950 via-slate-900 to-purple-950">
+
+    <div class="max-w-6xl text-center">
+
+      <div class="inline-block px-5 py-2 rounded-full bg-cyan-500/20 text-cyan-300 mb-6">
+        RAG Retrieval Techniques
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-8">
+        ReRanking in
+        <span class="text-cyan-400">RAG</span>
+      </h1>
+
+      <p class="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-4xl mx-auto">
+        An ELI10 explanation of how AI
+        <span class="text-pink-400 font-bold">re-orders search results</span>
+        to choose the
+        <span class="text-yellow-300 font-bold">best information first</span>.
+      </p>
+
+      <div class="mt-10">
+        <a href="#what"
+          class="bg-cyan-500 hover:bg-cyan-400 transition px-8 py-4 rounded-2xl font-bold text-lg shadow-lg shadow-cyan-500/30">
+          Learn ReRanking
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WHAT -->
+  <section id="what" class="py-20 px-6 bg-slate-900">
+
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+      <!-- LEFT -->
+      <div>
+
+        <div class="inline-block px-4 py-2 rounded-full bg-pink-500/20 text-pink-300 mb-5">
+          WHAT IS RERANKING?
+        </div>
+
+        <h2 class="text-4xl font-bold text-pink-400 mb-6">
+          What is ReRanking?
+        </h2>
+
+        <p class="text-lg text-slate-300 leading-8 mb-5">
+          Imagine you search:
+        </p>
+
+        <div class="bg-slate-800 p-5 rounded-2xl border border-pink-500/20 mb-6">
+          <p class="text-yellow-300 font-bold text-xl">
+            “How do airplanes fly?”
+          </p>
+        </div>
+
+        <p class="text-lg text-slate-300 leading-8 mb-5">
+          The AI search system finds many documents.
+        </p>
+
+        <p class="text-lg text-slate-300 leading-8 mb-5">
+          But some results are
+          <span class="text-cyan-300 font-bold">more useful</span>
+          than others.
+        </p>
+
+        <p class="text-lg text-slate-300 leading-8">
+          ReRanking means:
+        </p>
+
+        <ul class="mt-5 space-y-3">
+
+          <li class="bg-cyan-500/10 p-4 rounded-xl text-cyan-300">
+            ✅ Move the best results to the top
+          </li>
+
+          <li class="bg-pink-500/10 p-4 rounded-xl text-pink-300">
+            ✅ Push weaker results lower
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="bg-slate-800 p-8 rounded-3xl border border-cyan-500/20">
+
+        <h3 class="text-2xl font-bold text-cyan-300 mb-8 text-center">
+          Before vs After ReRanking
+        </h3>
+
+        <div class="grid grid-cols-2 gap-6">
+
+          <!-- BEFORE -->
+          <div class="bg-red-500/10 p-5 rounded-2xl border border-red-500/20">
+
+            <h4 class="text-red-300 font-bold mb-4 text-center">
+              ❌ Before
+            </h4>
+
+            <div class="space-y-3">
+
+              <div class="bg-slate-900 p-3 rounded-lg">
+                Random airplane facts
+              </div>
+
+              <div class="bg-slate-900 p-3 rounded-lg">
+                Airport history
+              </div>
+
+              <div class="bg-slate-900 p-3 rounded-lg">
+                Airplane wings explanation
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- AFTER -->
+          <div class="bg-green-500/10 p-5 rounded-2xl border border-green-500/20">
+
+            <h4 class="text-green-300 font-bold mb-4 text-center">
+              ✅ After
+            </h4>
+
+            <div class="space-y-3">
+
+              <div class="bg-slate-900 p-3 rounded-lg">
+                Airplane wings explanation
+              </div>
+
+              <div class="bg-slate-900 p-3 rounded-lg">
+                Lift and airflow
+              </div>
+
+              <div class="bg-slate-900 p-3 rounded-lg">
+                How engines help flight
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WHY -->
+  <section class="py-20 px-6 bg-gradient-to-r from-purple-950 to-slate-900">
+
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16">
+
+        <div class="inline-block px-4 py-2 rounded-full bg-yellow-500/20 text-yellow-300 mb-5">
+          WHY IS IT IMPORTANT?
+        </div>
+
+        <h2 class="text-4xl font-bold text-yellow-300">
+          Why RAG Uses ReRanking
+        </h2>
+
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- CARD -->
+        <div class="bg-slate-800 p-8 rounded-3xl border border-cyan-500/20">
+
+          <div class="text-5xl mb-5">🎯</div>
+
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">
+            Better Accuracy
+          </h3>
+
+          <p class="text-slate-300 leading-8">
+            AI sees the most relevant information first,
+            so answers become more correct.
+          </p>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-slate-800 p-8 rounded-3xl border border-pink-500/20">
+
+          <div class="text-5xl mb-5">⚡</div>
+
+          <h3 class="text-2xl font-bold text-pink-300 mb-4">
+            Faster Understanding
+          </h3>
+
+          <p class="text-slate-300 leading-8">
+            AI spends more attention on important documents
+            instead of weak matches.
+          </p>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-slate-800 p-8 rounded-3xl border border-green-500/20">
+
+          <div class="text-5xl mb-5">🧠</div>
+
+          <h3 class="text-2xl font-bold text-green-300 mb-4">
+            Smarter Responses
+          </h3>
+
+          <p class="text-slate-300 leading-8">
+            Better document order means better context for the AI model.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- HOW -->
+  <section class="py-20 px-6 bg-slate-950">
+
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16">
+
+        <div class="inline-block px-4 py-2 rounded-full bg-green-500/20 text-green-300 mb-5">
+          HOW DOES IT WORK?
+        </div>
+
+        <h2 class="text-4xl font-bold text-green-400">
+          How ReRanking Works
+        </h2>
+
+      </div>
+
+      <div class="space-y-8">
+
+        <!-- STEP 1 -->
+        <div class="bg-slate-900 p-8 rounded-3xl border-l-8 border-cyan-400">
+
+          <div class="flex gap-6 items-start">
+
+            <div class="bg-cyan-500 text-black w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold">
+              1
+            </div>
+
+            <div>
+
+              <h3 class="text-2xl font-bold text-cyan-300 mb-3">
+                Search for Documents
+              </h3>
+
+              <p class="text-lg text-slate-300 leading-8">
+                The retriever finds many possible matching documents.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="bg-slate-900 p-8 rounded-3xl border-l-8 border-pink-400">
+
+          <div class="flex gap-6 items-start">
+
+            <div class="bg-pink-500 text-black w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold">
+              2
+            </div>
+
+            <div>
+
+              <h3 class="text-2xl font-bold text-pink-300 mb-3">
+                Check Quality Again
+              </h3>
+
+              <p class="text-lg text-slate-300 leading-8">
+                A reranker model carefully compares the question
+                with each document.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="bg-slate-900 p-8 rounded-3xl border-l-8 border-yellow-400">
+
+          <div class="flex gap-6 items-start">
+
+            <div class="bg-yellow-400 text-black w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold">
+              3
+            </div>
+
+            <div>
+
+              <h3 class="text-2xl font-bold text-yellow-300 mb-3">
+                Reorder the Results
+              </h3>
+
+              <p class="text-lg text-slate-300 leading-8">
+                The best documents move to the top of the list.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="bg-slate-900 p-8 rounded-3xl border-l-8 border-green-400">
+
+          <div class="flex gap-6 items-start">
+
+            <div class="bg-green-500 text-black w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold">
+              4
+            </div>
+
+            <div>
+
+              <h3 class="text-2xl font-bold text-green-300 mb-3">
+                Generate Better Answer
+              </h3>
+
+              <p class="text-lg text-slate-300 leading-8">
+                AI now uses the highest-quality context
+                to create the final response.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FLOW -->
+  <section class="py-20 px-6 bg-gradient-to-r from-cyan-950 to-blue-950">
+
+    <div class="max-w-6xl mx-auto text-center">
+
+      <h2 class="text-4xl font-bold text-cyan-300 mb-14">
+        Simple ReRanking Flow
+      </h2>
+
+      <div class="grid md:grid-cols-5 gap-6 items-center">
+
+        <div class="bg-slate-900 p-6 rounded-2xl">
+          <div class="text-5xl mb-4">❓</div>
+          <p class="font-bold text-yellow-300">
+            User Question
+          </p>
+        </div>
+
+        <div class="text-4xl">➡️</div>
+
+        <div class="bg-slate-900 p-6 rounded-2xl">
+          <div class="text-5xl mb-4">🔍</div>
+          <p class="font-bold text-pink-300">
+            Retrieve Documents
+          </p>
+        </div>
+
+        <div class="text-4xl">➡️</div>
+
+        <div class="bg-slate-900 p-6 rounded-2xl">
+          <div class="text-5xl mb-4">📊</div>
+          <p class="font-bold text-cyan-300">
+            ReRank Results
+          </p>
+        </div>
+
+      </div>
+
+      <div class="mt-10 flex justify-center">
+
+        <div class="bg-green-500/10 border border-green-500/20 rounded-3xl p-8 max-w-2xl">
+
+          <div class="text-6xl mb-4">🤖</div>
+
+          <h3 class="text-3xl font-bold text-green-300 mb-4">
+            Better AI Answer
+          </h3>
+
+          <p class="text-slate-300 text-lg leading-8">
+            The best-ranked documents help the AI
+            answer more clearly and accurately.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 bg-black border-t border-slate-800 text-center">
+
+    <p class="text-slate-400 text-lg">
+      Built with ❤️ using Tailwind CSS
+    </p>
+
+  </footer>
+
+</body>
+</html>
