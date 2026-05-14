@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recursive Character Splitter - RAG Chunking</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white font-sans">
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-cyan-600 via-blue-700 to-indigo-900 py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+
+      <div class="inline-block px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-6">
+        RAG Chunking Series 🚀
+      </div>
+
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
+        Recursive Character Splitter
+      </h1>
+
+      <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+        A smarter way to split text in RAG systems
+        — explained like you're 10 years old 🧠
+      </p>
+
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-10 shadow-2xl">
+
+        <h2 class="text-4xl font-bold mb-6 text-cyan-400">
+          First... What Problem Are We Solving?
+        </h2>
+
+        <p class="text-lg text-slate-300 leading-relaxed mb-5">
+          In RAG systems, we split big text into smaller pieces called
+          <span class="font-bold text-white">chunks</span>.
+        </p>
+
+        <p class="text-lg text-slate-300 leading-relaxed mb-5">
+          But normal fixed-size chunking can cut sentences in weird places 😅
+        </p>
+
+        <div class="bg-slate-950 rounded-2xl p-6 border border-slate-700 mt-8">
+
+          <p class="text-red-400 font-bold mb-4">
+            Bad Split Example ❌
+          </p>
+
+          <div class="space-y-3 text-lg">
+            <p>
+              Chunk 1:
+              <span class="text-cyan-400">
+                "The cat was sleeping under the..."
+              </span>
+            </p>
+
+            <p>
+              Chunk 2:
+              <span class="text-pink-400">
+                "...table because it was tired."
+              </span>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHAT IS RECURSIVE -->
+  <section class="py-20 px-6 bg-slate-900">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-14">
+
+        <h2 class="text-5xl font-extrabold mb-5 text-green-400">
+          What is Recursive Character Splitter?
+        </h2>
+
+        <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+          It tries to split text in smarter places instead of randomly cutting.
+        </p>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- LEFT -->
+        <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8">
+
+          <h3 class="text-3xl font-bold mb-6 text-yellow-400">
+            Imagine Cutting a Sandwich 🥪
+          </h3>
+
+          <p class="text-slate-300 text-lg leading-relaxed mb-5">
+            Instead of smashing the sandwich anywhere...
+          </p>
+
+          <p class="text-slate-300 text-lg leading-relaxed">
+            You cut it carefully where it makes sense.
+          </p>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8">
+
+          <h3 class="text-3xl font-bold mb-6 text-pink-400">
+            The AI Does the Same ✂️
+          </h3>
+
+          <p class="text-slate-300 text-lg leading-relaxed mb-5">
+            It first tries to split using:
+          </p>
+
+          <ul class="space-y-3 text-lg text-slate-200">
+            <li>📖 Paragraphs</li>
+            <li>📝 Sentences</li>
+            <li>🔤 Words</li>
+            <li>➡️ Characters (last option)</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STEP BY STEP -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-14">
+        <h2 class="text-5xl font-bold mb-4">
+          How It Works 🔍
+        </h2>
+
+        <p class="text-xl text-slate-400">
+          Step-by-step ELI10 explanation
+        </p>
+      </div>
+
+      <div class="space-y-8">
+
+        <!-- STEP 1 -->
+        <div class="bg-slate-900 rounded-3xl border border-slate-800 p-8 flex gap-6">
+
+          <div class="text-5xl font-extrabold text-cyan-400">
+            1
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold mb-3">
+              Try Splitting by Paragraphs
+            </h3>
+
+            <p class="text-slate-300 text-lg leading-relaxed">
+              The splitter first checks:
+              "Can I split nicely using paragraphs?"
+            </p>
+          </div>
+
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="bg-slate-900 rounded-3xl border border-slate-800 p-8 flex gap-6">
+
+          <div class="text-5xl font-extrabold text-pink-400">
+            2
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold mb-3">
+              Too Big? Try Sentences
+            </h3>
+
+            <p class="text-slate-300 text-lg leading-relaxed">
+              If the chunk is still too large,
+              it tries splitting by sentences.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="bg-slate-900 rounded-3xl border border-slate-800 p-8 flex gap-6">
+
+          <div class="text-5xl font-extrabold text-green-400">
+            3
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold mb-3">
+              Still Too Big? Split More
+            </h3>
+
+            <p class="text-slate-300 text-lg leading-relaxed">
+              Then it tries words...
+              and finally characters if needed.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY GOOD -->
+  <section class="py-20 px-6 bg-slate-900">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-14">
+        <h2 class="text-5xl font-bold mb-5 text-cyan-400">
+          Why Is It Better?
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- CARD -->
+        <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 hover:-translate-y-2 transition duration-300">
+
+          <div class="text-5xl mb-5">
+            🧠
+          </div>
+
+          <h3 class="text-2xl font-bold mb-4 text-yellow-400">
+            Keeps Meaning Together
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed">
+            Sentences stay complete, so the AI understands better.
+          </p>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 hover:-translate-y-2 transition duration-300">
+
+          <div class="text-5xl mb-5">
+            📚
+          </div>
+
+          <h3 class="text-2xl font-bold mb-4 text-pink-400">
+            Better Search Results
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed">
+            The AI can find more useful chunks when answering questions.
+          </p>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 hover:-translate-y-2 transition duration-300">
+
+          <div class="text-5xl mb-5">
+            🚀
+          </div>
+
+          <h3 class="text-2xl font-bold mb-4 text-green-400">
+            Most Popular Method
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed">
+            Many modern RAG apps use this because it works really well.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <h2 class="text-5xl font-bold text-center mb-14">
+        Fixed Size vs Recursive Splitter ⚔️
+      </h2>
+
+      <div class="overflow-x-auto">
+
+        <table class="w-full bg-slate-900 rounded-3xl overflow-hidden border border-slate-800">
+
+          <thead class="bg-slate-800">
+            <tr>
+              <th class="p-6 text-left text-xl">Feature</th>
+              <th class="p-6 text-left text-xl text-cyan-400">
+                Fixed Size
+              </th>
+              <th class="p-6 text-left text-xl text-green-400">
+                Recursive Splitter
+              </th>
+            </tr>
+          </thead>
+
+          <tbody class="text-slate-300">
+
+            <tr class="border-t border-slate-800">
+              <td class="p-6 font-bold">Easy to Build</td>
+              <td class="p-6">✅ Very Easy</td>
+              <td class="p-6">⚠️ Slightly Smarter</td>
+            </tr>
+
+            <tr class="border-t border-slate-800">
+              <td class="p-6 font-bold">Keeps Sentences Safe</td>
+              <td class="p-6">❌ Sometimes Breaks</td>
+              <td class="p-6">✅ Much Better</td>
+            </tr>
+
+            <tr class="border-t border-slate-800">
+              <td class="p-6 font-bold">Used in Modern RAG</td>
+              <td class="p-6">⚠️ Basic Systems</td>
+              <td class="p-6">🚀 Very Common</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SUMMARY -->
+  <section class="py-20 px-6 bg-gradient-to-r from-cyan-600 to-blue-800">
+
+    <div class="max-w-4xl mx-auto text-center">
+
+      <h2 class="text-5xl font-extrabold mb-8">
+        Quick Summary 🎯
+      </h2>
+
+      <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-10">
+
+        <ul class="space-y-5 text-left text-lg">
+
+          <li>
+            ✅ Recursive Character Splitter is a smart chunking method.
+          </li>
+
+          <li>
+            ✅ It tries paragraphs → sentences → words → characters.
+          </li>
+
+          <li>
+            ✅ It keeps ideas and sentences together better.
+          </li>
+
+          <li>
+            ✅ It improves RAG search and AI answers.
+          </li>
+
+          <li>
+            🚀 One of the most popular chunking methods today.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 text-center text-slate-500 bg-slate-950">
+    Built with Tailwind CSS • Recursive Chunking Explained for Beginners 🚀
+  </footer>
+
+</body>
+</html>
