@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document Based Chunking - RAG Explained</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white font-sans">
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+
+      <div class="inline-block px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-6">
+        RAG Chunking Series 📚
+      </div>
+
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
+        Document Based Chunking
+      </h1>
+
+      <p class="text-xl md:text-2xl text-orange-100 max-w-3xl mx-auto leading-relaxed">
+        A smarter way to split documents in RAG systems
+        — explained like you're 10 years old 🚀
+      </p>
+
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-10 shadow-2xl">
+
+        <h2 class="text-4xl font-bold mb-6 text-orange-400">
+          What Is Document Based Chunking?
+        </h2>
+
+        <p class="text-lg text-slate-300 leading-relaxed mb-5">
+          Imagine you have a giant school textbook 📖.
+        </p>
+
+        <p class="text-lg text-slate-300 leading-relaxed mb-5">
+          Instead of cutting the book randomly every 100 words...
+        </p>
+
+        <p class="text-lg text-slate-300 leading-relaxed">
+          We split the book using its
+          <span class="font-bold text-white">
+            natural structure
+          </span>.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SIMPLE EXAMPLE -->
+  <section class="py-20 px-6 bg-slate-900">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-14">
+
+        <h2 class="text-5xl font-extrabold mb-5 text-cyan-400">
+          Think of a School Book 📚
+        </h2>
+
+        <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+          Books are already organized nicely.
+        </p>
+
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- CARD -->
+        <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8">
+
+          <div class="text-5xl mb-5">
+            🏷️
+          </div>
+
+          <h3 class="text-2xl font-bold mb-4 text-yellow-400">
+            Titles
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed">
+            Big headings tell us what the section is about.
+          </p>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8">
+
+          <div class="text-5xl mb-5">
+            📑
+          </div>
+
+          <h3 class="text-2xl font-bold mb-4 text-pink-400">
+            Chapters
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed">
+            Chapters already group related information together.
+          </p>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8">
+
+          <div class="text-5xl mb-5">
+            📝
+          </div>
+
+          <h3 class="text-2xl font-bold mb-4 text-green-400">
+            Paragraphs
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed">
+            Each paragraph usually talks about one idea.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-14">
+        <h2 class="text-5xl font-bold mb-4">
+          How It Works 🔍
+        </h2>
+
+        <p class="text-xl text-slate-400">
+          Easy ELI10 explanation
+        </p>
+      </div>
+
+      <div class="space-y-8">
+
+        <!-- STEP 1 -->
+        <div class="bg-slate-900 rounded-3xl border border-slate-800 p-8 flex gap-6">
+
+          <div class="text-5xl font-extrabold text-orange-400">
+            1
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold mb-3">
+              Read the Document Structure
+            </h3>
+
+            <p class="text-slate-300 text-lg leading-relaxed">
+              The AI first checks headings, chapters,
+              tables, lists, and paragraphs.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="bg-slate-900 rounded-3xl border border-slate-800 p-8 flex gap-6">
+
+          <div class="text-5xl font-extrabold text-cyan-400">
+            2
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold mb-3">
+              Split by Meaning
+            </h3>
+
+            <p class="text-slate-300 text-lg leading-relaxed">
+              Instead of random cuts,
+              it keeps related information together.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="bg-slate-900 rounded-3xl border border-slate-800 p-8 flex gap-6">
+
+          <div class="text-5xl font-extrabold text-pink-400">
+            3
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold mb-3">
+              Create Better Chunks
+            </h3>
+
+            <p class="text-slate-300 text-lg leading-relaxed">
+              The final chunks are cleaner,
+              smarter, and easier for AI to understand.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXAMPLE -->
+  <section class="py-20 px-6 bg-slate-900">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-14">
+
+        <h2 class="text-5xl font-bold mb-5 text-green-400">
+          Example 📖
+        </h2>
+
+      </div>
+
+      <div class="bg-slate-800 rounded-3xl border border-slate-700 p-10">
+
+        <div class="space-y-6">
+
+          <div class="bg-orange-500/10 border border-orange-500 rounded-2xl p-6">
+            <h3 class="text-2xl font-bold text-orange-400 mb-3">
+              Chapter 1: Dinosaurs
+            </h3>
+
+            <p class="text-slate-300">
+              Information about dinosaurs stays together.
+            </p>
+          </div>
+
+          <div class="bg-cyan-500/10 border border-cyan-500 rounded-2xl p-6">
+            <h3 class="text-2xl font-bold text-cyan-400 mb-3">
+              Chapter 2: Volcanoes
+            </h3>
+
+            <p class="text-slate-300">
+              Volcano information becomes another chunk.
+            </p>
+          </div>
+
+          <div class="bg-pink-500/10 border border-pink-500 rounded-2xl p-6">
+            <h3 class="text-2xl font-bold text-pink-400 mb-3">
+              Chapter 3: Oceans
+            </h3>
+
+            <p class="text-slate-300">
+              Ocean topics are grouped separately.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY GOOD -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-14">
+        <h2 class="text-5xl font-bold mb-5 text-cyan-400">
+          Why Is It Useful?
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- CARD -->
+        <div class="bg-slate-900 rounded-3xl p-8 border border-slate-800 hover:-translate-y-2 transition">
+
+          <div class="text-5xl mb-5">
+            🧠
+          </div>
+
+          <h3 class="text-2xl font-bold mb-4 text-yellow-400">
+            Better Understanding
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed">
+            The AI understands topics more clearly.
+          </p>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-slate-900 rounded-3xl p-8 border border-slate-800 hover:-translate-y-2 transition">
+
+          <div class="text-5xl mb-5">
+            🔎
+          </div>
+
+          <h3 class="text-2xl font-bold mb-4 text-pink-400">
+            Better Search
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed">
+            The right information is easier to find.
+          </p>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-slate-900 rounded-3xl p-8 border border-slate-800 hover:-translate-y-2 transition">
+
+          <div class="text-5xl mb-5">
+            📚
+          </div>
+
+          <h3 class="text-2xl font-bold mb-4 text-green-400">
+            Keeps Context
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed">
+            Related ideas stay together instead of breaking apart.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="py-20 px-6 bg-slate-900">
+    <div class="max-w-6xl mx-auto">
+
+      <h2 class="text-5xl font-bold text-center mb-14">
+        Fixed Size vs Document Based ⚔️
+      </h2>
+
+      <div class="overflow-x-auto">
+
+        <table class="w-full bg-slate-800 rounded-3xl overflow-hidden border border-slate-700">
+
+          <thead class="bg-slate-700">
+            <tr>
+              <th class="p-6 text-left text-xl">Feature</th>
+              <th class="p-6 text-left text-xl text-orange-400">
+                Fixed Size
+              </th>
+              <th class="p-6 text-left text-xl text-green-400">
+                Document Based
+              </th>
+            </tr>
+          </thead>
+
+          <tbody class="text-slate-300">
+
+            <tr class="border-t border-slate-700">
+              <td class="p-6 font-bold">Easy to Build</td>
+              <td class="p-6">✅ Very Easy</td>
+              <td class="p-6">⚠️ Smarter Setup</td>
+            </tr>
+
+            <tr class="border-t border-slate-700">
+              <td class="p-6 font-bold">Understands Structure</td>
+              <td class="p-6">❌ No</td>
+              <td class="p-6">✅ Yes</td>
+            </tr>
+
+            <tr class="border-t border-slate-700">
+              <td class="p-6 font-bold">Keeps Context Better</td>
+              <td class="p-6">⚠️ Sometimes</td>
+              <td class="p-6">🚀 Excellent</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SUMMARY -->
+  <section class="py-20 px-6 bg-gradient-to-r from-orange-500 to-pink-600">
+
+    <div class="max-w-4xl mx-auto text-center">
+
+      <h2 class="text-5xl font-extrabold mb-8">
+        Quick Summary 🎯
+      </h2>
+
+      <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-10">
+
+        <ul class="space-y-5 text-left text-lg">
+
+          <li>
+            ✅ Document based chunking uses document structure.
+          </li>
+
+          <li>
+            ✅ It splits using headings, chapters, and paragraphs.
+          </li>
+
+          <li>
+            ✅ It keeps related information together.
+          </li>
+
+          <li>
+            ✅ It improves RAG search and AI understanding.
+          </li>
+
+          <li>
+            🚀 Great for PDFs, books, manuals, and reports.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 text-center text-slate-500 bg-slate-950">
+    Built with Tailwind CSS • Document Chunking Explained for Beginners 🚀
+  </footer>
+
+</body>
+</html>
