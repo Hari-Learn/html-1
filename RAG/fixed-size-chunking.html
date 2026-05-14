@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAG Chunking Explained (ELI10)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white font-sans">
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 py-20 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
+        RAG Chunking
+      </h1>
+
+      <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+        Understanding <span class="font-bold">Fixed Size Chunking</span>
+        in simple "Explain Like I'm 10" style 🚀
+      </p>
+    </div>
+  </section>
+
+  <!-- What is RAG -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="bg-slate-900 rounded-3xl p-8 shadow-2xl border border-slate-800">
+        <h2 class="text-3xl font-bold mb-6 text-cyan-400">
+          What is RAG?
+        </h2>
+
+        <p class="text-lg text-slate-300 leading-relaxed mb-4">
+          Imagine you have a super smart robot friend 🤖.
+        </p>
+
+        <p class="text-lg text-slate-300 leading-relaxed mb-4">
+          But the robot cannot remember every book in the world.
+          So before answering your question, it quickly looks inside
+          notes and books to find useful information.
+        </p>
+
+        <p class="text-lg text-slate-300 leading-relaxed">
+          That is basically what
+          <span class="font-bold text-white">
+            RAG (Retrieval-Augmented Generation)
+          </span>
+          does.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chunking -->
+  <section class="py-16 px-6 bg-slate-900">
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center mb-12">
+        What is Chunking?
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700">
+          <h3 class="text-2xl font-bold mb-4 text-yellow-400">
+            Think About a Huge Book 📚
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed">
+            If the robot tries to read the whole book at once,
+            it becomes slow and confused.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700">
+          <h3 class="text-2xl font-bold mb-4 text-pink-400">
+            So We Split It ✂️
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed">
+            We cut the big book into smaller pieces called
+            <span class="font-bold text-white">chunks</span>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Fixed Size Chunking -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-14">
+        <h2 class="text-5xl font-extrabold mb-4 text-green-400">
+          Fixed Size Chunking
+        </h2>
+
+        <p class="text-xl text-slate-300">
+          The easiest and most common chunking method
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-r from-slate-800 to-slate-900 rounded-3xl p-10 border border-slate-700 shadow-2xl">
+
+        <h3 class="text-3xl font-bold mb-6">
+          What Is It?
+        </h3>
+
+        <p class="text-lg text-slate-300 leading-relaxed mb-6">
+          Fixed size chunking means:
+        </p>
+
+        <div class="bg-slate-950 rounded-2xl p-6 border border-slate-700 mb-8">
+          <p class="text-2xl text-center font-bold text-cyan-400">
+            "Cut text into equal-sized pieces."
+          </p>
+        </div>
+
+        <p class="text-lg text-slate-300 leading-relaxed mb-6">
+          Example:
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-4">
+
+          <div class="bg-indigo-500/20 border border-indigo-400 rounded-xl p-5">
+            <h4 class="font-bold text-indigo-300 mb-2">Chunk 1</h4>
+            <p class="text-slate-300 text-sm">
+              First 100 words
+            </p>
+          </div>
+
+          <div class="bg-pink-500/20 border border-pink-400 rounded-xl p-5">
+            <h4 class="font-bold text-pink-300 mb-2">Chunk 2</h4>
+            <p class="text-slate-300 text-sm">
+              Next 100 words
+            </p>
+          </div>
+
+          <div class="bg-green-500/20 border border-green-400 rounded-xl p-5">
+            <h4 class="font-bold text-green-300 mb-2">Chunk 3</h4>
+            <p class="text-slate-300 text-sm">
+              Another 100 words
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Use It -->
+  <section class="py-20 px-6 bg-slate-900">
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center mb-14">
+        Why Do We Use Fixed Size Chunking?
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:scale-105 transition">
+          <div class="text-5xl mb-4">⚡</div>
+
+          <h3 class="text-2xl font-bold mb-4 text-yellow-400">
+            Faster
+          </h3>
+
+          <p class="text-slate-300">
+            Small pieces are quicker for the AI to search through.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:scale-105 transition">
+          <div class="text-5xl mb-4">🧠</div>
+
+          <h3 class="text-2xl font-bold mb-4 text-cyan-400">
+            Easier to Understand
+          </h3>
+
+          <p class="text-slate-300">
+            The AI focuses on one small idea at a time.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:scale-105 transition">
+          <div class="text-5xl mb-4">💰</div>
+
+          <h3 class="text-2xl font-bold mb-4 text-green-400">
+            Saves Money
+          </h3>
+
+          <p class="text-slate-300">
+            Smaller chunks use fewer AI tokens and less computing power.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Simple Problem -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="bg-red-500/10 border border-red-500 rounded-3xl p-10">
+        <h2 class="text-4xl font-bold mb-6 text-red-400">
+          One Small Problem 😅
+        </h2>
+
+        <p class="text-lg text-slate-300 leading-relaxed mb-4">
+          Sometimes the text gets cut in weird places.
+        </p>
+
+        <div class="bg-slate-950 rounded-2xl p-6 border border-slate-700 my-6">
+          <p class="text-slate-400">
+            Example:
+          </p>
+
+          <p class="mt-3 text-lg">
+            Chunk 1:
+            <span class="text-cyan-400">
+              "The dinosaur lived in the..."
+            </span>
+          </p>
+
+          <p class="mt-2 text-lg">
+            Chunk 2:
+            <span class="text-pink-400">
+              "...forest and ate plants."
+            </span>
+          </p>
+        </div>
+
+        <p class="text-lg text-slate-300">
+          The meaning can break because the sentence was split in half.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section class="py-20 px-6 bg-gradient-to-r from-indigo-600 to-purple-700">
+    <div class="max-w-4xl mx-auto text-center">
+
+      <h2 class="text-5xl font-extrabold mb-8">
+        Quick Summary 🎯
+      </h2>
+
+      <div class="bg-white/10 backdrop-blur rounded-3xl p-10 border border-white/20">
+
+        <ul class="space-y-5 text-left text-lg">
+          <li>✅ RAG helps AI search information before answering.</li>
+          <li>✅ Chunking means splitting large text into smaller pieces.</li>
+          <li>✅ Fixed size chunking cuts text into equal parts.</li>
+          <li>✅ It is simple, fast, and cheap.</li>
+          <li>⚠️ But sometimes it cuts sentences awkwardly.</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 text-center text-slate-500 bg-slate-950">
+    Made with Tailwind CSS • RAG Explained for Beginners 🚀
+  </footer>
+
+</body>
+</html>
