@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Similarity Search in RAG - ELI10</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white font-sans">
+
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center justify-center px-6 py-16 bg-gradient-to-br from-indigo-950 via-slate-900 to-cyan-950">
+    <div class="max-w-5xl text-center">
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+        Similarity Search in <span class="text-cyan-400">RAG</span>
+      </h1>
+
+      <p class="text-xl md:text-2xl text-slate-300 leading-relaxed">
+        A simple ELI10 explanation of how AI finds the
+        <span class="text-pink-400 font-bold">most similar information</span>
+        before answering your question.
+      </p>
+
+      <div class="mt-10">
+        <a href="#what"
+          class="bg-cyan-500 hover:bg-cyan-400 transition px-8 py-4 rounded-2xl text-lg font-bold shadow-lg shadow-cyan-500/30">
+          Start Learning
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT -->
+  <section id="what" class="py-20 px-6 bg-slate-900">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+
+      <div>
+        <div class="inline-block px-4 py-2 rounded-full bg-cyan-500/20 text-cyan-300 mb-4">
+          WHAT IS IT?
+        </div>
+
+        <h2 class="text-4xl font-bold mb-6 text-cyan-400">
+          Similarity Search
+        </h2>
+
+        <p class="text-lg text-slate-300 leading-8 mb-4">
+          Imagine you have a giant library with millions of books.
+        </p>
+
+        <p class="text-lg text-slate-300 leading-8 mb-4">
+          Instead of searching by exact words,
+          AI searches by <span class="text-yellow-300 font-bold">meaning</span>.
+        </p>
+
+        <p class="text-lg text-slate-300 leading-8">
+          Similarity Search helps AI find pieces of information that
+          are <span class="text-pink-400 font-bold">most similar</span>
+          to your question.
+        </p>
+      </div>
+
+      <div class="bg-slate-800 rounded-3xl p-8 border border-cyan-500/20">
+        <div class="space-y-4">
+
+          <div class="bg-pink-500/20 p-4 rounded-xl">
+            <p class="font-bold text-pink-300">Question:</p>
+            <p class="text-slate-200">"Why is the sky blue?"</p>
+          </div>
+
+          <div class="text-center text-3xl">⬇️</div>
+
+          <div class="bg-cyan-500/20 p-4 rounded-xl">
+            <p class="font-bold text-cyan-300">AI Searches:</p>
+            <p class="text-slate-200">
+              Finds documents about light, atmosphere, and colors.
+            </p>
+          </div>
+
+          <div class="text-center text-3xl">⬇️</div>
+
+          <div class="bg-green-500/20 p-4 rounded-xl">
+            <p class="font-bold text-green-300">Best Match:</p>
+            <p class="text-slate-200">
+              AI picks the most relevant information.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="py-20 px-6 bg-gradient-to-r from-purple-950 to-slate-900">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16">
+        <div class="inline-block px-4 py-2 rounded-full bg-purple-500/20 text-purple-300 mb-4">
+          WHY DO WE NEED IT?
+        </div>
+
+        <h2 class="text-4xl font-bold text-purple-400">
+          Why Similarity Search is Important
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="bg-slate-800 p-8 rounded-3xl border border-purple-500/20">
+          <div class="text-5xl mb-4">⚡</div>
+          <h3 class="text-2xl font-bold text-yellow-300 mb-4">
+            Faster Answers
+          </h3>
+          <p class="text-slate-300 leading-7">
+            AI does not read everything every time.
+            It quickly finds only the useful parts.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 p-8 rounded-3xl border border-pink-500/20">
+          <div class="text-5xl mb-4">🧠</div>
+          <h3 class="text-2xl font-bold text-pink-300 mb-4">
+            Smarter Understanding
+          </h3>
+          <p class="text-slate-300 leading-7">
+            Even if words are different,
+            AI can still understand similar meanings.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 p-8 rounded-3xl border border-cyan-500/20">
+          <div class="text-5xl mb-4">📚</div>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">
+            Better Knowledge
+          </h3>
+          <p class="text-slate-300 leading-7">
+            RAG uses outside documents,
+            so answers become more accurate and updated.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section class="py-20 px-6 bg-slate-950">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16">
+        <div class="inline-block px-4 py-2 rounded-full bg-green-500/20 text-green-300 mb-4">
+          HOW DOES IT WORK?
+        </div>
+
+        <h2 class="text-4xl font-bold text-green-400">
+          How Similarity Search Works in RAG
+        </h2>
+      </div>
+
+      <div class="space-y-8">
+
+        <!-- Step 1 -->
+        <div class="bg-slate-900 p-8 rounded-3xl border-l-8 border-cyan-400">
+          <div class="flex items-start gap-6">
+            <div class="bg-cyan-500 text-black w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold">
+              1
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-bold text-cyan-300 mb-3">
+                Convert Text into Numbers
+              </h3>
+
+              <p class="text-slate-300 leading-8 text-lg">
+                AI turns words into special number patterns called
+                <span class="text-yellow-300 font-bold">embeddings</span>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-slate-900 p-8 rounded-3xl border-l-8 border-pink-400">
+          <div class="flex items-start gap-6">
+            <div class="bg-pink-500 text-black w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold">
+              2
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-bold text-pink-300 mb-3">
+                Compare Meanings
+              </h3>
+
+              <p class="text-slate-300 leading-8 text-lg">
+                AI compares your question embedding with document embeddings
+                to find the closest meaning.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-slate-900 p-8 rounded-3xl border-l-8 border-green-400">
+          <div class="flex items-start gap-6">
+            <div class="bg-green-500 text-black w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold">
+              3
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-bold text-green-300 mb-3">
+                Send Best Results to AI
+              </h3>
+
+              <p class="text-slate-300 leading-8 text-lg">
+                RAG gives the best matching information to the AI model,
+                so it can generate a helpful answer.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMPLE FLOW -->
+  <section class="py-20 px-6 bg-gradient-to-r from-cyan-950 to-blue-950">
+    <div class="max-w-5xl mx-auto text-center">
+
+      <h2 class="text-4xl font-bold mb-12 text-cyan-300">
+        Simple RAG Flow
+      </h2>
+
+      <div class="grid md:grid-cols-4 gap-6 items-center">
+
+        <div class="bg-slate-900 p-6 rounded-2xl">
+          <div class="text-5xl mb-4">❓</div>
+          <p class="font-bold text-yellow-300">User Question</p>
+        </div>
+
+        <div class="text-4xl text-cyan-300">➡️</div>
+
+        <div class="bg-slate-900 p-6 rounded-2xl">
+          <div class="text-5xl mb-4">🔍</div>
+          <p class="font-bold text-pink-300">Similarity Search</p>
+        </div>
+
+        <div class="text-4xl text-cyan-300">➡️</div>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-8">
+
+        <div class="bg-slate-900 p-6 rounded-2xl">
+          <div class="text-5xl mb-4">📄</div>
+          <p class="font-bold text-green-300">Relevant Documents</p>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-2xl">
+          <div class="text-5xl mb-4">🤖</div>
+          <p class="font-bold text-cyan-300">AI Generates Answer</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 text-center bg-black border-t border-slate-800">
+    <p class="text-slate-400 text-lg">
+      Built with ❤️ using Tailwind CSS
+    </p>
+  </footer>
+
+</body>
+</html>
