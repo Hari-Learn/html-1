@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Token-Based Chunking in RAG</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans">
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center px-6">
+    <div class="max-w-6xl grid lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Left Content -->
+      <div>
+        <span class="inline-block px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 text-sm border border-cyan-500/20">
+          Retrieval-Augmented Generation (RAG)
+        </span>
+
+        <h1 class="text-5xl lg:text-6xl font-bold leading-tight mt-6">
+          Token-Based
+          <span class="text-cyan-400">Chunking</span>
+          in RAG
+        </h1>
+
+        <p class="text-slate-400 text-lg mt-6 leading-relaxed">
+          Token-based chunking splits documents into smaller chunks based on token count
+          instead of paragraphs or sentences. It helps Large Language Models retrieve
+          relevant context efficiently while staying within token limits.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mt-8">
+          <button class="px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold transition">
+            Learn More
+          </button>
+
+          <button class="px-6 py-3 rounded-xl border border-slate-700 hover:border-cyan-400 hover:text-cyan-400 transition">
+            View Example
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Illustration -->
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl">
+        <div class="space-y-4">
+
+          <!-- Original Document -->
+          <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
+            <h3 class="text-cyan-400 font-semibold mb-2">Original Document</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              “Retrieval-Augmented Generation improves LLM responses by combining
+              external knowledge retrieval with generation models...”
+            </p>
+          </div>
+
+          <!-- Arrow -->
+          <div class="flex justify-center">
+            <div class="text-cyan-400 text-3xl">↓</div>
+          </div>
+
+          <!-- Chunks -->
+          <div class="grid gap-3">
+            <div class="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-4">
+              <span class="text-cyan-300 text-sm font-medium">Chunk 1</span>
+              <p class="text-slate-300 text-sm mt-1">
+                Retrieval-Augmented Generation improves...
+              </p>
+            </div>
+
+            <div class="bg-purple-500/10 border border-purple-500/20 rounded-xl p-4">
+              <span class="text-purple-300 text-sm font-medium">Chunk 2</span>
+              <p class="text-slate-300 text-sm mt-1">
+                External knowledge retrieval helps...
+              </p>
+            </div>
+
+            <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4">
+              <span class="text-emerald-300 text-sm font-medium">Chunk 3</span>
+              <p class="text-slate-300 text-sm mt-1">
+                Token limits require optimized chunk sizes...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-24 px-6 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold">
+          Why Use Token-Based Chunking?
+        </h2>
+        <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+          Efficient chunking improves semantic search accuracy, reduces context overflow,
+          and increases retrieval relevance in RAG pipelines.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-2xl">
+            ⚡
+          </div>
+
+          <h3 class="text-xl font-semibold mt-6">
+            Better Retrieval
+          </h3>
+
+          <p class="text-slate-400 mt-3 leading-relaxed">
+            Chunks aligned with token limits improve embedding quality
+            and semantic matching during retrieval.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-purple-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-2xl">
+            🧠
+          </div>
+
+          <h3 class="text-xl font-semibold mt-6">
+            LLM Optimization
+          </h3>
+
+          <p class="text-slate-400 mt-3 leading-relaxed">
+            Prevents exceeding model context windows while preserving
+            important information for generation tasks.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-emerald-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl">
+            🔍
+          </div>
+
+          <h3 class="text-xl font-semibold mt-6">
+            Accurate Context
+          </h3>
+
+          <p class="text-slate-400 mt-3 leading-relaxed">
+            Smaller token-aware chunks reduce irrelevant retrievals
+            and improve answer precision in RAG systems.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Example Section -->
+  <section class="py-24 px-6 bg-slate-900/50">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold">
+          Example Workflow
+        </h2>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 overflow-x-auto">
+<pre class="text-sm text-slate-300 leading-relaxed">
+1. Load document
+2. Convert text into tokens
+3. Split every 300-500 tokens
+4. Add overlap (50-100 tokens)
+5. Generate embeddings
+6. Store in vector database
+7. Retrieve relevant chunks during query
+</pre>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
+    Built with Tailwind CSS • Token-Based Chunking in RAG
+  </footer>
+
+</body>
+</html>
