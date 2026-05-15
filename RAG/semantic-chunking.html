@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Semantic Chunking in RAG</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-slate-200 font-sans">
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center px-6 py-20">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+
+      <!-- Left Content -->
+      <div>
+
+        <span class="px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-sm">
+          Advanced RAG Strategy
+        </span>
+
+        <h1 class="text-5xl lg:text-6xl font-bold leading-tight mt-6">
+          Semantic
+          <span class="text-violet-400">Chunking</span>
+          in RAG
+        </h1>
+
+        <p class="mt-6 text-lg text-slate-400 leading-relaxed">
+          Semantic chunking divides documents based on meaning and contextual relationships
+          instead of fixed token limits. It preserves topic continuity, improves retrieval quality,
+          and delivers more accurate responses in Retrieval-Augmented Generation systems.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mt-8">
+          <button class="px-6 py-3 rounded-xl bg-violet-500 hover:bg-violet-400 text-slate-950 font-semibold transition">
+            Explore Concept
+          </button>
+
+          <button class="px-6 py-3 rounded-xl border border-slate-700 hover:border-violet-400 hover:text-violet-400 transition">
+            See Workflow
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Right Visualization -->
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl">
+
+        <h3 class="text-2xl font-semibold mb-6 text-violet-400">
+          Semantic Flow
+        </h3>
+
+        <div class="space-y-5">
+
+          <!-- Paragraph -->
+          <div class="bg-slate-800 border border-slate-700 rounded-2xl p-5">
+            <p class="text-slate-400 text-sm leading-relaxed">
+              “RAG systems combine retrieval mechanisms with language models.
+              Semantic chunking ensures related concepts remain together for
+              better contextual understanding.”
+            </p>
+          </div>
+
+          <!-- Arrow -->
+          <div class="flex justify-center text-violet-400 text-3xl">
+            ↓
+          </div>
+
+          <!-- Semantic Groups -->
+          <div class="space-y-4">
+
+            <div class="bg-violet-500/10 border border-violet-500/20 rounded-2xl p-4">
+              <h4 class="text-violet-300 font-semibold text-sm">
+                Semantic Chunk A
+              </h4>
+              <p class="text-slate-300 text-sm mt-2">
+                RAG systems combine retrieval mechanisms with language models.
+              </p>
+            </div>
+
+            <div class="bg-cyan-500/10 border border-cyan-500/20 rounded-2xl p-4">
+              <h4 class="text-cyan-300 font-semibold text-sm">
+                Semantic Chunk B
+              </h4>
+              <p class="text-slate-300 text-sm mt-2">
+                Related concepts are grouped together for contextual understanding.
+              </p>
+            </div>
+
+            <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-4">
+              <h4 class="text-emerald-300 font-semibold text-sm">
+                Semantic Chunk C
+              </h4>
+              <p class="text-slate-300 text-sm mt-2">
+                Better chunk meaning improves vector retrieval performance.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-24 px-6 border-t border-slate-800">
+
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold">
+          Benefits of Semantic Chunking
+        </h2>
+
+        <p class="text-slate-400 mt-4 max-w-3xl mx-auto">
+          Unlike fixed-size chunking, semantic chunking maintains conceptual integrity,
+          making retrieval more context-aware and meaningful.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Card -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-7 hover:border-violet-500/40 transition">
+
+          <div class="w-14 h-14 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-400 text-2xl">
+            🧩
+          </div>
+
+          <h3 class="text-2xl font-semibold mt-6">
+            Context Preservation
+          </h3>
+
+          <p class="text-slate-400 mt-4 leading-relaxed">
+            Keeps semantically related sentences together, reducing fragmented information
+            during retrieval.
+          </p>
+
+        </div>
+
+        <!-- Card -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-7 hover:border-cyan-500/40 transition">
+
+          <div class="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-2xl">
+            📚
+          </div>
+
+          <h3 class="text-2xl font-semibold mt-6">
+            Better Embeddings
+          </h3>
+
+          <p class="text-slate-400 mt-4 leading-relaxed">
+            Embedding vectors become more meaningful because chunks represent complete ideas
+            instead of arbitrary token ranges.
+          </p>
+
+        </div>
+
+        <!-- Card -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-7 hover:border-emerald-500/40 transition">
+
+          <div class="w-14 h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl">
+            🚀
+          </div>
+
+          <h3 class="text-2xl font-semibold mt-6">
+            Higher Retrieval Accuracy
+          </h3>
+
+          <p class="text-slate-400 mt-4 leading-relaxed">
+            Query matching becomes more precise because chunks align with actual semantic topics.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Comparison Section -->
+  <section class="py-24 px-6 bg-slate-900/50">
+
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-14">
+        <h2 class="text-4xl font-bold">
+          Semantic vs Token Chunking
+        </h2>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border border-slate-800 rounded-2xl overflow-hidden">
+
+          <thead class="bg-slate-900">
+            <tr>
+              <th class="p-5 text-left text-violet-400">Feature</th>
+              <th class="p-5 text-left">Token Chunking</th>
+              <th class="p-5 text-left">Semantic Chunking</th>
+            </tr>
+          </thead>
+
+          <tbody class="divide-y divide-slate-800">
+
+            <tr class="bg-slate-950">
+              <td class="p-5 font-medium">Chunk Basis</td>
+              <td class="p-5 text-slate-400">Fixed token count</td>
+              <td class="p-5 text-slate-400">Meaning & context</td>
+            </tr>
+
+            <tr class="bg-slate-900/30">
+              <td class="p-5 font-medium">Context Quality</td>
+              <td class="p-5 text-slate-400">Medium</td>
+              <td class="p-5 text-slate-400">High</td>
+            </tr>
+
+            <tr class="bg-slate-950">
+              <td class="p-5 font-medium">Retrieval Precision</td>
+              <td class="p-5 text-slate-400">Moderate</td>
+              <td class="p-5 text-slate-400">Better semantic alignment</td>
+            </tr>
+
+            <tr class="bg-slate-900/30">
+              <td class="p-5 font-medium">Complexity</td>
+              <td class="p-5 text-slate-400">Simple</td>
+              <td class="p-5 text-slate-400">Advanced NLP-based</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Workflow -->
+  <section class="py-24 px-6">
+
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold">
+          Semantic Chunking Workflow
+        </h2>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+<pre class="text-sm text-slate-300 leading-relaxed overflow-x-auto">
+1. Load document
+2. Split into sentences
+3. Generate sentence embeddings
+4. Measure semantic similarity
+5. Group related sentences
+6. Create semantic chunks
+7. Store embeddings in vector database
+8. Retrieve relevant chunks during queries
+</pre>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
+    Semantic Chunking in Retrieval-Augmented Generation • Tailwind CSS UI
+  </footer>
+
+</body>
+</html>
