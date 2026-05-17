@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geoproximity Routing Policy</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 text-slate-800">
+
+  <!-- Header -->
+  <header class="bg-violet-700 text-white py-10 shadow-lg">
+    <div class="max-w-6xl mx-auto px-6">
+      <h1 class="text-4xl font-bold mb-2">
+        Cloud DNS Routing Policies
+      </h1>
+
+      <p class="text-violet-100 text-lg">
+        Geoproximity Routing Policy
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-12">
+
+    <!-- Intro -->
+    <section class="mb-12">
+      <div class="bg-white rounded-2xl shadow-md p-8">
+
+        <h2 class="text-2xl font-bold text-violet-700 mb-4">
+          What is Geoproximity Routing?
+        </h2>
+
+        <p class="text-lg leading-relaxed">
+          Geoproximity routing directs users to cloud resources based on
+          the geographic distance between users and resources.
+          It can also shift traffic using a <strong>bias value</strong>
+          to expand or reduce traffic to specific regions.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="mb-12">
+      <div class="bg-white rounded-2xl shadow-md p-8 border-l-8 border-violet-500">
+
+        <h2 class="text-3xl font-bold text-violet-600 mb-6">
+          How Geoproximity Routing Works
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <!-- Region A -->
+          <div class="bg-violet-50 rounded-xl p-6 text-center">
+
+            <div class="text-5xl mb-4">🌎</div>
+
+            <h3 class="text-xl font-bold mb-3">
+              US Region
+            </h3>
+
+            <p class="mb-4">
+              North American users are routed to nearby US servers.
+            </p>
+
+            <div class="bg-blue-500 text-white px-4 py-2 rounded-full inline-block">
+              Closest Match
+            </div>
+
+          </div>
+
+          <!-- Region B -->
+          <div class="bg-violet-100 rounded-xl p-6 text-center">
+
+            <div class="text-5xl mb-4">🌍</div>
+
+            <h3 class="text-xl font-bold mb-3">
+              Europe Region
+            </h3>
+
+            <p class="mb-4">
+              European traffic is directed to EU infrastructure.
+            </p>
+
+            <div class="bg-green-500 text-white px-4 py-2 rounded-full inline-block">
+              Distance-Based
+            </div>
+
+          </div>
+
+          <!-- Region C -->
+          <div class="bg-violet-50 rounded-xl p-6 text-center">
+
+            <div class="text-5xl mb-4">🌏</div>
+
+            <h3 class="text-xl font-bold mb-3">
+              Asia Region
+            </h3>
+
+            <p class="mb-4">
+              Asian users connect to nearby APAC resources.
+            </p>
+
+            <div class="bg-purple-500 text-white px-4 py-2 rounded-full inline-block">
+              Regional Routing
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bias Feature -->
+    <section class="mb-12">
+      <div class="bg-white rounded-2xl shadow-md p-8 border-l-8 border-pink-500">
+
+        <h2 class="text-3xl font-bold text-pink-600 mb-6">
+          Traffic Bias Control
+        </h2>
+
+        <p class="text-lg mb-6">
+          Geoproximity routing allows administrators to apply
+          <strong>bias values</strong> to increase or decrease
+          traffic flow toward specific regions.
+        </p>
+
+        <!-- Bias Examples -->
+        <div class="grid md:grid-cols-2 gap-8">
+
+          <!-- Positive Bias -->
+          <div class="bg-pink-50 p-6 rounded-xl">
+
+            <h3 class="text-xl font-semibold mb-4">
+              Positive Bias (+)
+            </h3>
+
+            <p class="mb-4">
+              Expands the geographic area served by a resource,
+              attracting more traffic.
+            </p>
+
+            <div class="w-full bg-gray-200 rounded-full h-5">
+              <div class="bg-pink-500 h-5 rounded-full w-4/5"></div>
+            </div>
+
+            <p class="mt-3 text-sm text-slate-600">
+              More users routed to this region
+            </p>
+
+          </div>
+
+          <!-- Negative Bias -->
+          <div class="bg-pink-100 p-6 rounded-xl">
+
+            <h3 class="text-xl font-semibold mb-4">
+              Negative Bias (-)
+            </h3>
+
+            <p class="mb-4">
+              Reduces the geographic influence of a resource,
+              decreasing traffic flow.
+            </p>
+
+            <div class="w-full bg-gray-200 rounded-full h-5">
+              <div class="bg-red-500 h-5 rounded-full w-1/3"></div>
+            </div>
+
+            <p class="mt-3 text-sm text-slate-600">
+              Fewer users routed to this region
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="mb-12">
+      <div class="bg-white rounded-2xl shadow-md p-8 border-l-8 border-cyan-500">
+
+        <h2 class="text-3xl font-bold text-cyan-600 mb-6">
+          Benefits of Geoproximity Routing
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <div class="bg-cyan-50 p-5 rounded-xl">
+
+            <div class="text-3xl mb-3">⚡</div>
+
+            <h3 class="font-bold text-lg mb-2">
+              Faster Access
+            </h3>
+
+            <p>
+              Users connect to geographically closer resources.
+            </p>
+
+          </div>
+
+          <div class="bg-cyan-100 p-5 rounded-xl">
+
+            <div class="text-3xl mb-3">🌐</div>
+
+            <h3 class="font-bold text-lg mb-2">
+              Smart Distribution
+            </h3>
+
+            <p>
+              Traffic is intelligently balanced across regions.
+            </p>
+
+          </div>
+
+          <div class="bg-cyan-50 p-5 rounded-xl">
+
+            <div class="text-3xl mb-3">📈</div>
+
+            <h3 class="font-bold text-lg mb-2">
+              Scalability
+            </h3>
+
+            <p>
+              Supports global cloud application growth.
+            </p>
+
+          </div>
+
+          <div class="bg-cyan-100 p-5 rounded-xl">
+
+            <div class="text-3xl mb-3">🎯</div>
+
+            <h3 class="font-bold text-lg mb-2">
+              Fine-Grained Control
+            </h3>
+
+            <p>
+              Adjust regional traffic using customizable bias values.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="mb-12">
+      <div class="bg-white rounded-2xl shadow-md p-8 border-l-8 border-orange-500">
+
+        <h2 class="text-3xl font-bold text-orange-600 mb-6">
+          Common Use Cases
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <div class="bg-orange-50 p-6 rounded-xl">
+
+            <h3 class="text-xl font-semibold mb-3">
+              Regional Traffic Management
+            </h3>
+
+            <p>
+              Shift traffic between cloud regions during high demand.
+            </p>
+
+          </div>
+
+          <div class="bg-orange-100 p-6 rounded-xl">
+
+            <h3 class="text-xl font-semibold mb-3">
+              Data Center Expansion
+            </h3>
+
+            <p>
+              Gradually direct users toward newly deployed infrastructure.
+            </p>
+
+          </div>
+
+          <div class="bg-orange-50 p-6 rounded-xl">
+
+            <h3 class="text-xl font-semibold mb-3">
+              Global Applications
+            </h3>
+
+            <p>
+              Optimize routing for worldwide users and services.
+            </p>
+
+          </div>
+
+          <div class="bg-orange-100 p-6 rounded-xl">
+
+            <h3 class="text-xl font-semibold mb-3">
+              Load Optimization
+            </h3>
+
+            <p>
+              Reduce congestion in overloaded cloud regions.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section>
+      <div class="bg-white rounded-2xl shadow-md p-8">
+
+        <h2 class="text-2xl font-bold mb-6 text-slate-700">
+          Geoproximity Routing Summary
+        </h2>
+
+        <div class="overflow-x-auto">
+
+          <table class="w-full border-collapse">
+
+            <thead>
+              <tr class="bg-slate-200">
+                <th class="p-4 text-left">Feature</th>
+                <th class="p-4 text-left">Geoproximity Routing</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr class="border-b">
+                <td class="p-4 font-medium">Routing Method</td>
+                <td class="p-4">
+                  Geographic distance + bias values
+                </td>
+              </tr>
+
+              <tr class="border-b bg-slate-50">
+                <td class="p-4 font-medium">Main Goal</td>
+                <td class="p-4">
+                  Intelligent regional traffic control
+                </td>
+              </tr>
+
+              <tr class="border-b">
+                <td class="p-4 font-medium">Best For</td>
+                <td class="p-4">
+                  Global cloud infrastructures
+                </td>
+              </tr>
+
+              <tr class="bg-slate-50">
+                <td class="p-4 font-medium">Key Advantage</td>
+                <td class="p-4">
+                  Fine-grained traffic shifting
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-300 py-6 mt-12">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p>
+        Geoproximity DNS Routing Policy 
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
