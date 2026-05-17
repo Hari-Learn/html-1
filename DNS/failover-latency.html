@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DNS Failover & Latency-Based Routing</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 text-slate-800">
+
+  <!-- Header -->
+  <header class="bg-indigo-700 text-white py-10 shadow-lg">
+    <div class="max-w-6xl mx-auto px-6">
+      <h1 class="text-4xl font-bold mb-2">
+        DNS Routing Policies
+      </h1>
+      <p class="text-indigo-100 text-lg">
+        Failover Routing & Latency-Based Routing
+      </p>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-6xl mx-auto px-6 py-12">
+
+    <!-- Intro -->
+    <section class="mb-12">
+      <div class="bg-white rounded-2xl shadow-md p-8">
+        <h2 class="text-2xl font-bold text-indigo-700 mb-4">
+          Advanced Cloud DNS Routing
+        </h2>
+
+        <p class="text-lg leading-relaxed">
+          Advanced DNS routing policies improve application availability,
+          reliability, and user experience by intelligently directing
+          traffic to healthy and nearest resources.
+        </p>
+      </div>
+    </section>
+
+    <!-- Failover Routing -->
+    <section class="mb-12">
+      <div class="bg-white rounded-2xl shadow-md p-8 border-l-8 border-red-500">
+
+        <h2 class="text-3xl font-bold text-red-600 mb-4">
+          Failover Routing Policy
+        </h2>
+
+        <p class="text-lg mb-6">
+          Failover routing redirects traffic to a backup resource when
+          the primary resource becomes unavailable.
+        </p>
+
+        <!-- Diagram -->
+        <div class="grid md:grid-cols-2 gap-8">
+
+          <!-- Primary -->
+          <div class="bg-red-50 p-6 rounded-xl">
+            <h3 class="text-xl font-semibold mb-4">
+              Primary Server
+            </h3>
+
+            <div class="flex items-center justify-between">
+              <div class="bg-white shadow px-4 py-3 rounded-lg">
+                Users
+              </div>
+
+              <span class="text-3xl">➡️</span>
+
+              <div class="bg-red-500 text-white px-4 py-3 rounded-lg shadow">
+                Primary Region
+              </div>
+            </div>
+
+            <p class="mt-4 text-sm text-slate-600">
+              Normal traffic is sent to the primary endpoint.
+            </p>
+          </div>
+
+          <!-- Backup -->
+          <div class="bg-red-100 p-6 rounded-xl">
+            <h3 class="text-xl font-semibold mb-4">
+              Backup Server
+            </h3>
+
+            <div class="flex items-center justify-between">
+              <div class="bg-white shadow px-4 py-3 rounded-lg">
+                Failure Detected
+              </div>
+
+              <span class="text-3xl">➡️</span>
+
+              <div class="bg-orange-500 text-white px-4 py-3 rounded-lg shadow">
+                Backup Region
+              </div>
+            </div>
+
+            <p class="mt-4 text-sm text-slate-600">
+              Traffic automatically switches to backup infrastructure.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Benefits -->
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+
+          <div class="bg-red-100 p-5 rounded-xl">
+            <h4 class="font-bold text-lg mb-2">
+              High Availability
+            </h4>
+            <p>
+              Keeps applications online during outages.
+            </p>
+          </div>
+
+          <div class="bg-red-100 p-5 rounded-xl">
+            <h4 class="font-bold text-lg mb-2">
+              Disaster Recovery
+            </h4>
+            <p>
+              Provides backup infrastructure in another region.
+            </p>
+          </div>
+
+          <div class="bg-red-100 p-5 rounded-xl">
+            <h4 class="font-bold text-lg mb-2">
+              Automatic Recovery
+            </h4>
+            <p>
+              DNS automatically reroutes traffic when failures occur.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Latency Routing -->
+    <section class="mb-12">
+      <div class="bg-white rounded-2xl shadow-md p-8 border-l-8 border-blue-500">
+
+        <h2 class="text-3xl font-bold text-blue-600 mb-4">
+          Latency-Based Routing
+        </h2>
+
+        <p class="text-lg mb-6">
+          Latency-based routing directs users to the server
+          with the lowest network latency for faster response times.
+        </p>
+
+        <!-- Regions -->
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <!-- USA -->
+          <div class="bg-blue-50 rounded-xl p-6 text-center">
+            <div class="text-5xl mb-3">🌎</div>
+
+            <h3 class="text-xl font-bold mb-2">
+              US Region
+            </h3>
+
+            <p class="mb-3">
+              Best for North American users
+            </p>
+
+            <div class="bg-blue-500 text-white rounded-full py-2 px-4 inline-block">
+              Low Latency
+            </div>
+          </div>
+
+          <!-- Europe -->
+          <div class="bg-blue-100 rounded-xl p-6 text-center">
+            <div class="text-5xl mb-3">🌍</div>
+
+            <h3 class="text-xl font-bold mb-2">
+              Europe Region
+            </h3>
+
+            <p class="mb-3">
+              Best for European users
+            </p>
+
+            <div class="bg-green-500 text-white rounded-full py-2 px-4 inline-block">
+              Fast Response
+            </div>
+          </div>
+
+          <!-- Asia -->
+          <div class="bg-blue-50 rounded-xl p-6 text-center">
+            <div class="text-5xl mb-3">🌏</div>
+
+            <h3 class="text-xl font-bold mb-2">
+              Asia Region
+            </h3>
+
+            <p class="mb-3">
+              Best for Asian users
+            </p>
+
+            <div class="bg-purple-500 text-white rounded-full py-2 px-4 inline-block">
+              Optimized Path
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Advantages -->
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+
+          <div class="bg-blue-100 p-5 rounded-xl">
+            <h4 class="font-bold text-lg mb-2">
+              Faster Loading
+            </h4>
+            <p>
+              Users connect to the nearest available region.
+            </p>
+          </div>
+
+          <div class="bg-blue-100 p-5 rounded-xl">
+            <h4 class="font-bold text-lg mb-2">
+              Better Experience
+            </h4>
+            <p>
+              Reduced delays improve application responsiveness.
+            </p>
+          </div>
+
+          <div class="bg-blue-100 p-5 rounded-xl">
+            <h4 class="font-bold text-lg mb-2">
+              Global Performance
+            </h4>
+            <p>
+              Ideal for worldwide cloud deployments.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section>
+      <div class="bg-white rounded-2xl shadow-md p-8">
+
+        <h2 class="text-2xl font-bold mb-6 text-slate-700">
+          Routing Policy Comparison
+        </h2>
+
+        <div class="overflow-x-auto">
+
+          <table class="w-full border-collapse">
+
+            <thead>
+              <tr class="bg-slate-200">
+                <th class="p-4 text-left">Feature</th>
+                <th class="p-4 text-left">Failover Routing</th>
+                <th class="p-4 text-left">Latency Routing</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr class="border-b">
+                <td class="p-4 font-medium">Purpose</td>
+                <td class="p-4">Backup & recovery</td>
+                <td class="p-4">Performance optimization</td>
+              </tr>
+
+              <tr class="border-b bg-slate-50">
+                <td class="p-4 font-medium">Traffic Direction</td>
+                <td class="p-4">Primary → Backup</td>
+                <td class="p-4">Nearest low-latency region</td>
+              </tr>
+
+              <tr class="border-b">
+                <td class="p-4 font-medium">Best For</td>
+                <td class="p-4">High availability systems</td>
+                <td class="p-4">Global applications</td>
+              </tr>
+
+              <tr class="bg-slate-50">
+                <td class="p-4 font-medium">Main Benefit</td>
+                <td class="p-4">Reliability</td>
+                <td class="p-4">Speed</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-300 py-6 mt-12">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p>
+        Cloud DNS Routing Policies • Tailwind CSS Demo Page
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
