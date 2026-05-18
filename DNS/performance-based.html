@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Performance-Based Routing</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-slate-200 min-h-screen">
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 py-20">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+
+      <h1 class="text-5xl font-extrabold text-white mb-6">
+        Performance-Based Routing
+      </h1>
+
+      <p class="text-xl text-indigo-100 max-w-3xl mx-auto leading-relaxed">
+        A DNS routing policy that directs users to the best-performing
+        endpoint based on latency, network health, throughput,
+        and real-time infrastructure metrics.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-16">
+
+    <!-- Intro -->
+    <section class="mb-16">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-xl">
+
+        <h2 class="text-3xl font-bold text-cyan-400 mb-5">
+          What is Performance-Based Routing?
+        </h2>
+
+        <p class="text-slate-300 text-lg leading-8">
+          Performance-based routing intelligently directs traffic
+          to the infrastructure endpoint delivering the best user
+          experience at a given moment. Unlike simple latency routing,
+          it can evaluate multiple performance indicators such as
+          response time, server load, packet loss, congestion,
+          and availability.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="grid md:grid-cols-2 gap-8 mb-16">
+
+      <!-- Card -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+
+        <div class="text-5xl mb-4">⚡</div>
+
+        <h3 class="text-2xl font-semibold text-white mb-4">
+          How It Works
+        </h3>
+
+        <p class="text-slate-400 leading-7">
+          DNS systems continuously monitor application and network
+          performance across multiple regions. Incoming user requests
+          are dynamically routed to the endpoint currently providing
+          the best overall performance.
+        </p>
+
+      </div>
+
+      <!-- Card -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+
+        <div class="text-5xl mb-4">📊</div>
+
+        <h3 class="text-2xl font-semibold text-white mb-4">
+          Metrics Evaluated
+        </h3>
+
+        <ul class="space-y-3 text-slate-400">
+          <li>✔ Network latency</li>
+          <li>✔ Server response time</li>
+          <li>✔ Packet loss</li>
+          <li>✔ Infrastructure load</li>
+          <li>✔ Regional congestion</li>
+        </ul>
+
+      </div>
+
+    </section>
+
+    <!-- Comparison -->
+    <section class="mb-16">
+
+      <h2 class="text-3xl font-bold text-cyan-400 mb-8">
+        Latency Routing vs Performance Routing
+      </h2>
+
+      <div class="overflow-x-auto rounded-2xl border border-slate-800">
+
+        <table class="w-full text-left">
+
+          <thead class="bg-slate-800 text-cyan-300">
+            <tr>
+              <th class="p-4">Feature</th>
+              <th class="p-4">Latency Routing</th>
+              <th class="p-4">Performance Routing</th>
+            </tr>
+          </thead>
+
+          <tbody class="bg-slate-900 text-slate-300">
+
+            <tr class="border-t border-slate-800">
+              <td class="p-4">Uses Ping/Latency</td>
+              <td class="p-4">Yes</td>
+              <td class="p-4">Yes</td>
+            </tr>
+
+            <tr class="border-t border-slate-800">
+              <td class="p-4">Checks Server Load</td>
+              <td class="p-4">No</td>
+              <td class="p-4">Yes</td>
+            </tr>
+
+            <tr class="border-t border-slate-800">
+              <td class="p-4">Dynamic Optimization</td>
+              <td class="p-4">Limited</td>
+              <td class="p-4">Advanced</td>
+            </tr>
+
+            <tr class="border-t border-slate-800">
+              <td class="p-4">Real-Time Metrics</td>
+              <td class="p-4">Basic</td>
+              <td class="p-4">Comprehensive</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+    <!-- Workflow -->
+    <section class="mb-16">
+
+      <h2 class="text-3xl font-bold text-cyan-400 mb-8">
+        Example Routing Workflow
+      </h2>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+
+<pre class="text-green-400 text-sm leading-7">
+User Request
+      ↓
+DNS Performance Engine
+      ↓
+Evaluate:
+- Latency
+- Server Load
+- Packet Loss
+- Regional Health
+      ↓
+Best Endpoint Selected
+      ↓
+User Connected
+</pre>
+
+      </div>
+
+    </section>
+
+    <!-- Benefits -->
+    <section class="mb-16">
+
+      <h2 class="text-3xl font-bold text-cyan-400 mb-8">
+        Key Benefits
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Benefit -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+
+          <h3 class="text-xl font-semibold text-white mb-3">
+            Faster User Experience
+          </h3>
+
+          <p class="text-slate-400 leading-7">
+            Users are automatically routed to the fastest and
+            healthiest infrastructure available.
+          </p>
+
+        </div>
+
+        <!-- Benefit -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+
+          <h3 class="text-xl font-semibold text-white mb-3">
+            Intelligent Traffic Steering
+          </h3>
+
+          <p class="text-slate-400 leading-7">
+            Routing decisions adapt dynamically based on changing
+            network and application conditions.
+          </p>
+
+        </div>
+
+        <!-- Benefit -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+
+          <h3 class="text-xl font-semibold text-white mb-3">
+            Better Reliability
+          </h3>
+
+          <p class="text-slate-400 leading-7">
+            Traffic automatically avoids overloaded or degraded
+            infrastructure regions.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Use Cases -->
+    <section>
+
+      <h2 class="text-3xl font-bold text-cyan-400 mb-8">
+        Common Use Cases
+      </h2>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+
+        <div class="grid md:grid-cols-2 gap-6 text-slate-300">
+
+          <div>
+            <ul class="space-y-3">
+              <li>🌍 Global SaaS platforms</li>
+              <li>🎮 Gaming infrastructure</li>
+              <li>📡 Streaming services</li>
+            </ul>
+          </div>
+
+          <div>
+            <ul class="space-y-3">
+              <li>☁ Multi-cloud applications</li>
+              <li>⚡ Enterprise web applications</li>
+              <li>🛡 High-availability APIs</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-8 text-center text-slate-500">
+    <p>
+      DNS Routing Policies • Performance-Based Routing
+    </p>
+  </footer>
+
+</body>
+</html>
