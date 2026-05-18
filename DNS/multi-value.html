@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi-Value Answer Routing</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-slate-200 min-h-screen">
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 py-20">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+
+      <h1 class="text-5xl font-extrabold text-white mb-6">
+        Multi-Value Answer Routing
+      </h1>
+
+      <p class="text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed">
+        A DNS routing policy that returns multiple healthy IP addresses
+        in response to a DNS query for improved availability,
+        redundancy, and basic load distribution.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main class="max-w-6xl mx-auto px-6 py-16">
+
+    <!-- Definition -->
+    <section class="mb-16">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-xl">
+
+        <h2 class="text-3xl font-bold text-cyan-400 mb-5">
+          What is Multi-Value Answer Routing?
+        </h2>
+
+        <p class="text-slate-300 text-lg leading-8">
+          Multi-value answer routing allows a DNS server to return multiple
+          IP addresses for a single domain name. Only healthy endpoints
+          are included in the response, helping improve application
+          availability and fault tolerance.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="grid md:grid-cols-2 gap-8 mb-16">
+
+      <!-- Card 1 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+
+        <div class="text-5xl mb-4">🌐</div>
+
+        <h3 class="text-2xl font-semibold text-white mb-4">
+          How It Works
+        </h3>
+
+        <p class="text-slate-400 leading-7">
+          Instead of returning only one IP address,
+          the DNS service responds with multiple healthy
+          endpoints. Client systems typically choose one
+          of the returned addresses to establish a connection.
+        </p>
+
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+
+        <div class="text-5xl mb-4">⚡</div>
+
+        <h3 class="text-2xl font-semibold text-white mb-4">
+          Key Advantages
+        </h3>
+
+        <ul class="space-y-3 text-slate-400">
+          <li>✔ High availability</li>
+          <li>✔ Basic traffic balancing</li>
+          <li>✔ Health-check integration</li>
+          <li>✔ Improved fault tolerance</li>
+          <li>✔ Simple global distribution</li>
+        </ul>
+
+      </div>
+
+    </section>
+
+    <!-- DNS Flow -->
+    <section class="mb-16">
+
+      <h2 class="text-3xl font-bold text-cyan-400 mb-8">
+        Example DNS Response
+      </h2>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 overflow-x-auto">
+
+<pre class="text-green-400 text-sm leading-7">
+Query:
+example.com
+
+DNS Response:
+192.0.2.10
+192.0.2.11
+192.0.2.12
+</pre>
+
+      </div>
+
+    </section>
+
+    <!-- Benefits Grid -->
+    <section class="mb-16">
+
+      <h2 class="text-3xl font-bold text-cyan-400 mb-8">
+        Benefits
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Benefit -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+
+          <h3 class="text-xl font-semibold text-white mb-3">
+            Redundancy
+          </h3>
+
+          <p class="text-slate-400 leading-7">
+            Multiple servers ensure service continuity even if
+            one endpoint becomes unavailable.
+          </p>
+
+        </div>
+
+        <!-- Benefit -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+
+          <h3 class="text-xl font-semibold text-white mb-3">
+            Simplicity
+          </h3>
+
+          <p class="text-slate-400 leading-7">
+            Easier to configure compared to advanced load
+            balancing or geolocation routing systems.
+          </p>
+
+        </div>
+
+        <!-- Benefit -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+
+          <h3 class="text-xl font-semibold text-white mb-3">
+            Health Awareness
+          </h3>
+
+          <p class="text-slate-400 leading-7">
+            Unhealthy servers are automatically excluded from
+            DNS responses using health checks.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Use Cases -->
+    <section>
+
+      <h2 class="text-3xl font-bold text-cyan-400 mb-8">
+        Common Use Cases
+      </h2>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+
+        <div class="grid md:grid-cols-2 gap-6 text-slate-300">
+
+          <div>
+            <ul class="space-y-3">
+              <li>🌍 Global web applications</li>
+              <li>🛡 Disaster recovery</li>
+              <li>☁ Multi-cloud deployments</li>
+            </ul>
+          </div>
+
+          <div>
+            <ul class="space-y-3">
+              <li>⚡ Basic DNS load balancing</li>
+              <li>📡 Highly available APIs</li>
+              <li>🏢 Distributed enterprise systems</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-8 text-center text-slate-500">
+    <p>
+      DNS Routing Policies • Multi-Value Answer Routing
+    </p>
+  </footer>
+
+</body>
+</html>
