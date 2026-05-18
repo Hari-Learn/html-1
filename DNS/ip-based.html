@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IP-Based / CIDR-Based Routing</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-200 min-h-screen">
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 py-20">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h1 class="text-5xl font-extrabold text-white mb-6">
+        IP-Based / CIDR-Based Routing
+      </h1>
+
+      <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+        Route DNS traffic based on the client’s source IP address or CIDR block
+        instead of geographic location or latency.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-16">
+
+    <!-- Definition -->
+    <section class="mb-16">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-2xl">
+        <h2 class="text-3xl font-bold text-cyan-400 mb-4">
+          What is IP-Based Routing?
+        </h2>
+
+        <p class="text-slate-300 leading-8 text-lg">
+          IP-based routing (or CIDR-based routing) is a DNS traffic management
+          policy where users are directed to different endpoints depending on
+          their source IP range. CIDR blocks allow administrators to define
+          routing behavior for specific networks, ISPs, corporate offices,
+          regions, or cloud providers.
+        </p>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="grid md:grid-cols-2 gap-8 mb-16">
+
+      <div class="bg-slate-900 rounded-2xl border border-slate-800 p-8">
+        <div class="text-5xl mb-4">🌍</div>
+
+        <h3 class="text-2xl font-semibold text-white mb-4">
+          Example Scenario
+        </h3>
+
+        <p class="text-slate-400 leading-7">
+          Users from the CIDR range
+          <span class="text-cyan-400 font-mono">203.0.113.0/24</span>
+          are routed to the Asia data center, while users from
+          <span class="text-cyan-400 font-mono">198.51.100.0/24</span>
+          are routed to the Europe region.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 rounded-2xl border border-slate-800 p-8">
+        <div class="text-5xl mb-4">⚡</div>
+
+        <h3 class="text-2xl font-semibold text-white mb-4">
+          Why Use It?
+        </h3>
+
+        <ul class="space-y-3 text-slate-400">
+          <li>✔ ISP-specific traffic steering</li>
+          <li>✔ Enterprise network segmentation</li>
+          <li>✔ Compliance & regional restrictions</li>
+          <li>✔ Cloud provider optimization</li>
+          <li>✔ Custom traffic engineering</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- CIDR Table -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-cyan-400 mb-8">
+        Sample CIDR Routing Rules
+      </h2>
+
+      <div class="overflow-x-auto rounded-2xl border border-slate-800">
+        <table class="w-full text-left">
+          <thead class="bg-slate-800 text-cyan-300">
+            <tr>
+              <th class="p-4">CIDR Block</th>
+              <th class="p-4">Region</th>
+              <th class="p-4">Target Endpoint</th>
+            </tr>
+          </thead>
+
+          <tbody class="bg-slate-900 text-slate-300">
+            <tr class="border-t border-slate-800">
+              <td class="p-4 font-mono">203.0.113.0/24</td>
+              <td class="p-4">Asia</td>
+              <td class="p-4">asia.example.com</td>
+            </tr>
+
+            <tr class="border-t border-slate-800">
+              <td class="p-4 font-mono">198.51.100.0/24</td>
+              <td class="p-4">Europe</td>
+              <td class="p-4">eu.example.com</td>
+            </tr>
+
+            <tr class="border-t border-slate-800">
+              <td class="p-4 font-mono">192.0.2.0/24</td>
+              <td class="p-4">US East</td>
+              <td class="p-4">us-east.example.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-cyan-400 mb-8">
+        Key Benefits
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">
+            Better Control
+          </h3>
+
+          <p class="text-slate-400 leading-7">
+            Administrators gain precise control over how specific networks are
+            routed across infrastructure.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">
+            Improved Performance
+          </h3>
+
+          <p class="text-slate-400 leading-7">
+            Traffic can be directed toward optimized or preferred endpoints
+            for certain ISPs and enterprise networks.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">
+            Compliance
+          </h3>
+
+          <p class="text-slate-400 leading-7">
+            Organizations can enforce region-specific routing rules for legal
+            or business requirements.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-8 text-center text-slate-500">
+    <p>
+      DNS Routing Concepts • IP-Based / CIDR-Based Routing
+    </p>
+  </footer>
+
+</body>
+</html>
