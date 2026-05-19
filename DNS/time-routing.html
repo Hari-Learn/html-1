@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Time Window Routing</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white min-h-screen">
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-orange-900 via-slate-900 to-black py-20">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="inline-block px-4 py-2 rounded-full bg-orange-500/20 border border-orange-400 text-orange-300 text-sm mb-6">
+        DNS Routing Policy
+      </div>
+
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
+        Time Window Routing
+      </h1>
+
+      <p class="text-xl text-slate-300 max-w-3xl leading-relaxed">
+        Time Window Routing directs traffic to different servers or endpoints
+        based on a specific time schedule, date range, or business hours.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <h2 class="text-4xl font-bold mb-12">
+        How It Works
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+          <div class="text-4xl mb-4">⏰</div>
+
+          <h3 class="text-2xl font-semibold mb-3">
+            Define Schedule
+          </h3>
+
+          <p class="text-slate-400">
+            Configure routing rules for specific times, dates,
+            weekdays, or business hours.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+          <div class="text-4xl mb-4">🔀</div>
+
+          <h3 class="text-2xl font-semibold mb-3">
+            Traffic Switching
+          </h3>
+
+          <p class="text-slate-400">
+            DNS responses change automatically based on the
+            active time window.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+          <div class="text-4xl mb-4">🌍</div>
+
+          <h3 class="text-2xl font-semibold mb-3">
+            Automated Routing
+          </h3>
+
+          <p class="text-slate-400">
+            Users are routed to different endpoints during
+            peak hours, maintenance windows, or events.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Example -->
+  <section class="bg-slate-900 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <h2 class="text-4xl font-bold mb-10">
+        Example Scenario
+      </h2>
+
+      <div class="bg-black border border-slate-800 rounded-2xl p-8 overflow-x-auto">
+
+<pre class="text-green-400 leading-8 text-sm md:text-base">
+08:00 AM - 06:00 PM
+→ Route traffic to Primary Production Server
+
+06:00 PM - 08:00 AM
+→ Route traffic to Backup / Low-Cost Server
+
+Weekend
+→ Route traffic to Maintenance Environment
+</pre>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <!-- Benefits -->
+        <div class="bg-emerald-900/20 border border-emerald-700 rounded-2xl p-8">
+
+          <h2 class="text-3xl font-bold text-emerald-400 mb-6">
+            Benefits
+          </h2>
+
+          <ul class="space-y-4 text-slate-300">
+            <li>✅ Automates scheduled routing</li>
+            <li>✅ Useful for maintenance windows</li>
+            <li>✅ Reduces infrastructure costs</li>
+            <li>✅ Supports business-hour traffic patterns</li>
+            <li>✅ Helps with disaster recovery planning</li>
+          </ul>
+
+        </div>
+
+        <!-- Limitations -->
+        <div class="bg-red-900/20 border border-red-700 rounded-2xl p-8">
+
+          <h2 class="text-3xl font-bold text-red-400 mb-6">
+            Limitations
+          </h2>
+
+          <ul class="space-y-4 text-slate-300">
+            <li>❌ Not suitable for real-time load balancing</li>
+            <li>❌ DNS cache delays may affect switching</li>
+            <li>❌ Requires careful schedule planning</li>
+            <li>❌ Time zone handling can be complex</li>
+            <li>❌ Less dynamic than latency-based routing</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="bg-slate-900 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <h2 class="text-4xl font-bold mb-12">
+        Common Use Cases
+      </h2>
+
+      <div class="grid md:grid-cols-4 gap-6">
+
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+          <div class="text-5xl mb-4">🛠️</div>
+
+          <h3 class="text-xl font-semibold mb-2">
+            Maintenance Windows
+          </h3>
+
+          <p class="text-slate-400 text-sm">
+            Redirect traffic during planned upgrades.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+          <div class="text-5xl mb-4">💰</div>
+
+          <h3 class="text-xl font-semibold mb-2">
+            Cost Optimization
+          </h3>
+
+          <p class="text-slate-400 text-sm">
+            Use cheaper infrastructure during off-hours.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+          <div class="text-5xl mb-4">📈</div>
+
+          <h3 class="text-xl font-semibold mb-2">
+            Peak Traffic Handling
+          </h3>
+
+          <p class="text-slate-400 text-sm">
+            Scale routing during business hours.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+          <div class="text-5xl mb-4">🧪</div>
+
+          <h3 class="text-xl font-semibold mb-2">
+            Scheduled Testing
+          </h3>
+
+          <p class="text-slate-400 text-sm">
+            Route users to testing environments temporarily.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-8">
+    <div class="max-w-6xl mx-auto px-6 text-center text-slate-500">
+      Time Window Routing • Tailwind CSS Demo Page
+    </div>
+  </footer>
+
+</body>
+</html>
