@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anycast DNS</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white min-h-screen">
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-purple-900 via-slate-900 to-black py-20">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/20 border border-purple-400 text-purple-300 text-sm mb-6">
+        🌍 Global DNS Routing Technology
+      </div>
+
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+        Anycast DNS
+      </h1>
+
+      <p class="text-xl text-slate-300 leading-relaxed max-w-3xl">
+        Anycast DNS uses the same IP address across multiple geographically
+        distributed DNS servers. Internet routing automatically directs users
+        to the nearest or best-performing server location.
+      </p>
+
+      <div class="mt-10 grid md:grid-cols-4 gap-4">
+
+        <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-5">
+          <div class="text-slate-400 text-sm">Routing Type</div>
+          <div class="font-bold text-lg mt-1">Network-Based</div>
+        </div>
+
+        <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-5">
+          <div class="text-slate-400 text-sm">Performance</div>
+          <div class="font-bold text-lg mt-1">Very High</div>
+        </div>
+
+        <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-5">
+          <div class="text-slate-400 text-sm">Availability</div>
+          <div class="font-bold text-lg mt-1">Global Redundancy</div>
+        </div>
+
+        <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-5">
+          <div class="text-slate-400 text-sm">Used By</div>
+          <div class="font-bold text-lg mt-1">CDNs & DNS Providers</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Concept Section -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <h2 class="text-4xl font-bold mb-12">
+        How Anycast DNS Works
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+          <div class="text-5xl mb-5">🌐</div>
+          <h3 class="text-2xl font-bold mb-4">
+            Same IP Everywhere
+          </h3>
+
+          <p class="text-slate-400 leading-relaxed">
+            Multiple DNS servers across the world advertise the same IP address
+            using BGP routing.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+          <div class="text-5xl mb-5">📍</div>
+          <h3 class="text-2xl font-bold mb-4">
+            Nearest Server Selected
+          </h3>
+
+          <p class="text-slate-400 leading-relaxed">
+            Internet routers automatically send user traffic to the closest
+            or most optimal Anycast node.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+          <div class="text-5xl mb-5">⚡</div>
+          <h3 class="text-2xl font-bold mb-4">
+            Faster DNS Responses
+          </h3>
+
+          <p class="text-slate-400 leading-relaxed">
+            Reduced latency improves DNS resolution speed and enhances
+            application performance globally.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Architecture Flow -->
+  <section class="bg-slate-900 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <h2 class="text-4xl font-bold mb-12">
+        Example Architecture
+      </h2>
+
+      <div class="bg-black border border-slate-800 rounded-3xl p-8 overflow-x-auto">
+
+<pre class="text-green-400 text-sm md:text-base leading-8">
+                +----------------+
+                |   User Query   |
+                +--------+-------+
+                         |
+                         v
+              +-------------------+
+              |  Anycast IP Addr  |
+              |   203.0.113.10    |
+              +-------------------+
+                   /      |      \
+                  /       |       \
+                 v        v        v
+
+          +----------+ +----------+ +----------+
+          | Chennai  | | Singapore| | Frankfurt|
+          | DNS Node | | DNS Node | | DNS Node |
+          +----------+ +----------+ +----------+
+
+Traffic automatically goes to the nearest DNS node.
+</pre>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Advantages -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <!-- Advantages -->
+        <div class="bg-emerald-900/20 border border-emerald-700 rounded-3xl p-8">
+
+          <h2 class="text-3xl font-bold text-emerald-400 mb-8">
+            Advantages
+          </h2>
+
+          <div class="space-y-5">
+
+            <div class="flex gap-4">
+              <div class="text-2xl">⚡</div>
+              <div>
+                <h3 class="font-semibold text-lg">Low Latency</h3>
+                <p class="text-slate-400 text-sm">
+                  Queries are answered by the nearest DNS node.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="text-2xl">🛡️</div>
+              <div>
+                <h3 class="font-semibold text-lg">DDoS Resistance</h3>
+                <p class="text-slate-400 text-sm">
+                  Traffic gets distributed across global infrastructure.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="text-2xl">🌍</div>
+              <div>
+                <h3 class="font-semibold text-lg">Global Availability</h3>
+                <p class="text-slate-400 text-sm">
+                  Multiple edge locations improve uptime.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="text-2xl">🔁</div>
+              <div>
+                <h3 class="font-semibold text-lg">Automatic Failover</h3>
+                <p class="text-slate-400 text-sm">
+                  Routing shifts automatically if a node becomes unavailable.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Limitations -->
+        <div class="bg-red-900/20 border border-red-700 rounded-3xl p-8">
+
+          <h2 class="text-3xl font-bold text-red-400 mb-8">
+            Limitations
+          </h2>
+
+          <div class="space-y-5">
+
+            <div class="flex gap-4">
+              <div class="text-2xl">⚙️</div>
+              <div>
+                <h3 class="font-semibold text-lg">Complex Setup</h3>
+                <p class="text-slate-400 text-sm">
+                  Requires BGP and distributed network infrastructure.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="text-2xl">💰</div>
+              <div>
+                <h3 class="font-semibold text-lg">Higher Cost</h3>
+                <p class="text-slate-400 text-sm">
+                  Global deployment and edge nodes increase operational costs.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="text-2xl">📡</div>
+              <div>
+                <h3 class="font-semibold text-lg">Routing Dependency</h3>
+                <p class="text-slate-400 text-sm">
+                  Performance depends on ISP and internet routing behavior.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="text-2xl">🧠</div>
+              <div>
+                <h3 class="font-semibold text-lg">Advanced Networking Knowledge</h3>
+                <p class="text-slate-400 text-sm">
+                  Requires expertise in networking and traffic engineering.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Real World Usage -->
+  <section class="bg-slate-900 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <h2 class="text-4xl font-bold mb-12">
+        Real World Usage
+      </h2>
+
+      <div class="grid md:grid-cols-4 gap-6">
+
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+          <div class="text-5xl mb-4">☁️</div>
+          <h3 class="text-xl font-semibold mb-2">Cloud DNS</h3>
+          <p class="text-slate-400 text-sm">
+            Global DNS providers use Anycast for fast resolution.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+          <div class="text-5xl mb-4">🎥</div>
+          <h3 class="text-xl font-semibold mb-2">CDNs</h3>
+          <p class="text-slate-400 text-sm">
+            Content delivery networks route users to nearby edges.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+          <div class="text-5xl mb-4">🛡️</div>
+          <h3 class="text-xl font-semibold mb-2">DDoS Protection</h3>
+          <p class="text-slate-400 text-sm">
+            Security providers distribute attack traffic globally.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+          <div class="text-5xl mb-4">📶</div>
+          <h3 class="text-xl font-semibold mb-2">Global APIs</h3>
+          <p class="text-slate-400 text-sm">
+            API platforms reduce latency for worldwide clients.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-8">
+    <div class="max-w-7xl mx-auto px-6 text-center text-slate-500">
+      Anycast DNS • Tailwind CSS Educational Page
+    </div>
+  </footer>
+
+</body>
+</html>
