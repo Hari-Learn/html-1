@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alias / ANAME / CNAME Flattening</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-700 to-indigo-700 text-white py-16">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h1 class="text-5xl font-bold mb-4">
+        Alias / ANAME / CNAME Flattening
+      </h1>
+      <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+        Modern DNS techniques that allow root domains to point to cloud services,
+        load balancers, and CDNs without traditional CNAME limitations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-12">
+
+    <!-- Overview -->
+    <section class="bg-white rounded-2xl shadow-lg p-8 mb-10">
+      <h2 class="text-3xl font-bold mb-4 text-indigo-700">
+        What is CNAME Flattening?
+      </h2>
+
+      <p class="text-lg leading-relaxed mb-4">
+        Normally, a <strong>CNAME record</strong> cannot be used at the root
+        domain level (also called the apex domain), such as:
+      </p>
+
+      <div class="bg-slate-900 text-green-400 rounded-lg p-4 font-mono text-sm mb-6">
+        example.com → CNAME → app.hostingprovider.com
+      </div>
+
+      <p class="text-lg leading-relaxed">
+        DNS standards do not allow CNAME records at the zone apex because it
+        conflicts with required DNS records like NS and SOA.
+        To solve this problem, cloud DNS providers introduced:
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+          <h3 class="text-2xl font-semibold text-blue-700 mb-3">Alias Record</h3>
+          <p>
+            Used mainly by AWS Route 53. It maps root domains directly
+            to AWS resources like Load Balancers or CloudFront distributions.
+          </p>
+        </div>
+
+        <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
+          <h3 class="text-2xl font-semibold text-indigo-700 mb-3">ANAME Record</h3>
+          <p>
+            Provided by some DNS vendors. Behaves like a CNAME at the root domain
+            while returning A/AAAA records to clients.
+          </p>
+        </div>
+
+        <div class="bg-purple-50 border border-purple-200 rounded-xl p-6">
+          <h3 class="text-2xl font-semibold text-purple-700 mb-3">CNAME Flattening</h3>
+          <p>
+            Used by providers like Cloudflare. The DNS provider resolves the CNAME
+            internally and returns IP addresses directly.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Why Needed -->
+    <section class="grid md:grid-cols-2 gap-8 mb-10">
+
+      <div class="bg-white rounded-2xl shadow-lg p-8">
+        <h2 class="text-2xl font-bold mb-4 text-green-700">
+          Why It’s Needed
+        </h2>
+
+        <ul class="space-y-3 list-disc list-inside text-lg">
+          <li>Supports root domains (example.com)</li>
+          <li>Works with cloud load balancers</li>
+          <li>Enables CDN integration</li>
+          <li>Improves scalability</li>
+          <li>Provides dynamic IP updates</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8">
+        <h2 class="text-2xl font-bold mb-4 text-red-700">
+          Traditional DNS Limitation
+        </h2>
+
+        <div class="bg-red-50 border border-red-200 rounded-lg p-5">
+          <p class="mb-3 font-semibold">
+            ❌ Invalid:
+          </p>
+
+          <div class="bg-slate-900 text-red-400 rounded-lg p-4 font-mono text-sm mb-4">
+            example.com → CNAME → service.cloud.com
+          </div>
+
+          <p class="font-semibold mb-3">
+            ✅ Valid with Flattening:
+          </p>
+
+          <div class="bg-slate-900 text-green-400 rounded-lg p-4 font-mono text-sm">
+            example.com → Alias / ANAME → cloud service
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Workflow -->
+    <section class="bg-white rounded-2xl shadow-lg p-8 mb-10">
+      <h2 class="text-3xl font-bold mb-6 text-cyan-700">
+        How CNAME Flattening Works
+      </h2>
+
+      <div class="space-y-6">
+
+        <div class="flex items-start gap-4">
+          <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">
+            1
+          </div>
+          <div>
+            <h3 class="font-semibold text-xl">User Requests Domain</h3>
+            <p>The browser queries DNS for example.com.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">
+            2
+          </div>
+          <div>
+            <h3 class="font-semibold text-xl">DNS Provider Resolves Target</h3>
+            <p>The DNS service internally resolves the cloud hostname.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">
+            3
+          </div>
+          <div>
+            <h3 class="font-semibold text-xl">Returns IP Address</h3>
+            <p>The DNS provider sends A/AAAA records back to the client.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Providers -->
+    <section class="bg-white rounded-2xl shadow-lg p-8">
+      <h2 class="text-3xl font-bold mb-6 text-violet-700">
+        Popular Cloud Providers
+      </h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-violet-100">
+              <th class="border p-4 text-left">Provider</th>
+              <th class="border p-4 text-left">Feature Name</th>
+              <th class="border p-4 text-left">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border p-4">AWS Route 53</td>
+              <td class="border p-4">Alias Record</td>
+              <td class="border p-4">Map apex domain to AWS resources</td>
+            </tr>
+            <tr class="bg-slate-50">
+              <td class="border p-4">Cloudflare</td>
+              <td class="border p-4">CNAME Flattening</td>
+              <td class="border p-4">Flatten CNAME at root domain</td>
+            </tr>
+            <tr>
+              <td class="border p-4">NS1 / DNS Made Easy</td>
+              <td class="border p-4">ANAME Record</td>
+              <td class="border p-4">Root-domain aliasing support</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-300 py-6 mt-12">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p>
+        DNS Routing Concepts • Alias / ANAME / CNAME Flattening
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
