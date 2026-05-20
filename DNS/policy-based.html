@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Policy-Based Routing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white py-12">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl font-bold mb-3">
+        Policy-Based Routing
+      </h1>
+
+      <p class="text-lg text-indigo-100">
+        Intelligent DNS routing using custom business and network rules.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-4xl mx-auto px-6 py-10">
+
+    <!-- Intro -->
+    <section class="bg-white rounded-2xl shadow-md p-8 mb-8">
+      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">
+        What is Policy-Based Routing?
+      </h2>
+
+      <p class="text-lg leading-relaxed mb-4">
+        Policy-Based Routing routes traffic according to predefined
+        rules instead of using only basic DNS responses.
+      </p>
+
+      <p class="text-lg leading-relaxed">
+        Routing decisions can depend on factors such as source IP,
+        ASN (Autonomous System Number), device type,
+        user location, or custom application logic.
+      </p>
+    </section>
+
+    <!-- Features -->
+    <section class="grid md:grid-cols-2 gap-6 mb-8">
+
+      <div class="bg-white rounded-2xl shadow-md p-6">
+        <h3 class="text-xl font-semibold text-blue-700 mb-4">
+          Routing Criteria
+        </h3>
+
+        <ul class="space-y-2 list-disc list-inside">
+          <li>Source IP Address</li>
+          <li>ASN / ISP Network</li>
+          <li>Device Type</li>
+          <li>User Location</li>
+          <li>Application Rules</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-6">
+        <h3 class="text-xl font-semibold text-green-700 mb-4">
+          Common Benefits
+        </h3>
+
+        <ul class="space-y-2 list-disc list-inside">
+          <li>Advanced traffic control</li>
+          <li>Improved performance</li>
+          <li>Enhanced security</li>
+          <li>Custom user experience</li>
+          <li>Enterprise-grade routing</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Workflow -->
+    <section class="bg-white rounded-2xl shadow-md p-8 mb-8">
+      <h2 class="text-2xl font-semibold text-cyan-700 mb-6">
+        How It Works
+      </h2>
+
+      <div class="space-y-5">
+
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-cyan-600 text-white flex items-center justify-center font-bold">
+            1
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-lg">
+              User Sends DNS Request
+            </h3>
+
+            <p>
+              The DNS provider receives a request from a client device.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-cyan-600 text-white flex items-center justify-center font-bold">
+            2
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-lg">
+              Policies Are Evaluated
+            </h3>
+
+            <p>
+              The system checks routing rules such as IP, ASN, or device type.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-cyan-600 text-white flex items-center justify-center font-bold">
+            3
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-lg">
+              Best Endpoint Selected
+            </h3>
+
+            <p>
+              Traffic is routed to the endpoint matching the defined policy.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Example -->
+    <section class="bg-white rounded-2xl shadow-md p-8">
+      <h2 class="text-2xl font-semibold text-red-700 mb-4">
+        Example Policy
+      </h2>
+
+      <div class="bg-gray-900 text-green-400 rounded-lg p-5 font-mono text-sm">
+        IF Device = Mobile <br>
+        → Route to Mobile Optimized Server <br><br>
+
+        IF Source ASN = ISP-A <br>
+        → Route to Regional CDN <br><br>
+
+        IF Source IP = Corporate Network <br>
+        → Route to Private Application Gateway
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-5 mt-10">
+    <div class="text-center">
+      <p>Cloud DNS Routing • Policy-Based Routing</p>
+    </div>
+  </footer>
+
+</body>
+</html>
