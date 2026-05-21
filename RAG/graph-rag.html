@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GraphRAG Architecture</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-gray-800">
+
+  <div class="max-w-6xl mx-auto px-6 py-12">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-emerald-700">
+        GraphRAG Architecture
+      </h1>
+      <p class="mt-4 text-lg text-gray-600">
+        Retrieval-Augmented Generation with Knowledge Graphs
+      </p>
+    </div>
+
+    <!-- Main Flow -->
+    <div class="grid md:grid-cols-4 gap-6 items-center">
+
+      <!-- User -->
+      <div class="bg-white rounded-2xl shadow-md p-6 text-center">
+        <div class="text-4xl mb-3">👤</div>
+        <h2 class="font-semibold text-lg">User Query</h2>
+        <p class="text-sm text-gray-500 mt-2">
+          Ask a question
+        </p>
+      </div>
+
+      <!-- Arrow -->
+      <div class="hidden md:flex justify-center text-3xl text-emerald-500">
+        →
+      </div>
+
+      <!-- Graph Retriever -->
+      <div class="bg-white rounded-2xl shadow-md p-6 text-center">
+        <div class="text-4xl mb-3">🕸️</div>
+        <h2 class="font-semibold text-lg">Graph Retriever</h2>
+        <p class="text-sm text-gray-500 mt-2">
+          Finds connected entities & relationships
+        </p>
+      </div>
+
+      <!-- Arrow -->
+      <div class="hidden md:flex justify-center text-3xl text-emerald-500">
+        →
+      </div>
+
+      <!-- LLM -->
+      <div class="bg-white rounded-2xl shadow-md p-6 text-center">
+        <div class="text-4xl mb-3">🤖</div>
+        <h2 class="font-semibold text-lg">LLM Response</h2>
+        <p class="text-sm text-gray-500 mt-2">
+          Generates graph-aware answers
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Knowledge Graph Section -->
+    <div class="mt-16">
+
+      <h2 class="text-2xl font-bold text-center text-emerald-700 mb-8">
+        Knowledge Graph Components
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Entities -->
+        <div class="bg-white rounded-2xl shadow-md p-6">
+          <h3 class="text-xl font-semibold mb-3">📌 Entities</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• People</li>
+            <li>• Documents</li>
+            <li>• Topics</li>
+          </ul>
+        </div>
+
+        <!-- Relationships -->
+        <div class="bg-white rounded-2xl shadow-md p-6">
+          <h3 class="text-xl font-semibold mb-3">🔗 Relationships</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Connected data</li>
+            <li>• Context mapping</li>
+            <li>• Semantic links</li>
+          </ul>
+        </div>
+
+        <!-- Reasoning -->
+        <div class="bg-white rounded-2xl shadow-md p-6">
+          <h3 class="text-xl font-semibold mb-3">🧠 Reasoning</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Multi-hop queries</li>
+            <li>• Context enrichment</li>
+            <li>• Explainable answers</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-16 text-center text-sm text-gray-500">
+      GraphRAG improves contextual retrieval using graph-based reasoning
+    </div>
+
+  </div>
+
+</body>
+</html>
