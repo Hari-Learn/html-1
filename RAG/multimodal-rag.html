@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multimodal RAG Explained</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 text-slate-800">
+
+  <div class="max-w-4xl mx-auto p-6">
+
+    <!-- Header -->
+    <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+      <h1 class="text-4xl font-bold text-indigo-600 mb-4">
+        Multimodal RAG
+      </h1>
+
+      <p class="text-lg leading-relaxed">
+        Imagine an AI that can understand not only words,
+        but also pictures, audio, videos, and documents.
+        That is called <strong>Multimodal RAG</strong>.
+      </p>
+    </div>
+
+    <!-- What is Multimodal -->
+    <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-4">
+        What does "Multimodal" mean?
+      </h2>
+
+      <p class="mb-4">
+        "Multi" means many, and "Modal" means types of information.
+      </p>
+
+      <div class="grid md:grid-cols-4 gap-4 mt-6">
+
+        <div class="bg-blue-50 rounded-xl p-5 text-center">
+          <div class="text-4xl mb-2">📝</div>
+          <h3 class="font-semibold">Text</h3>
+        </div>
+
+        <div class="bg-pink-50 rounded-xl p-5 text-center">
+          <div class="text-4xl mb-2">🖼️</div>
+          <h3 class="font-semibold">Images</h3>
+        </div>
+
+        <div class="bg-green-50 rounded-xl p-5 text-center">
+          <div class="text-4xl mb-2">🎤</div>
+          <h3 class="font-semibold">Audio</h3>
+        </div>
+
+        <div class="bg-yellow-50 rounded-xl p-5 text-center">
+          <div class="text-4xl mb-2">🎥</div>
+          <h3 class="font-semibold">Video</h3>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- What is Multimodal RAG -->
+    <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+
+      <h2 class="text-2xl font-semibold text-green-600 mb-4">
+        So what is Multimodal RAG?
+      </h2>
+
+      <p class="mb-4">
+        Normal RAG mostly works with text documents.
+      </p>
+
+      <p class="mb-6">
+        But Multimodal RAG can search and understand:
+      </p>
+
+      <div class="space-y-4">
+
+        <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl">
+          <span class="text-3xl">📄</span>
+          <p>PDF files and notes</p>
+        </div>
+
+        <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl">
+          <span class="text-3xl">🖼️</span>
+          <p>Pictures and diagrams</p>
+        </div>
+
+        <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl">
+          <span class="text-3xl">🎧</span>
+          <p>Voice recordings and audio</p>
+        </div>
+
+        <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl">
+          <span class="text-3xl">🎬</span>
+          <p>Videos and screen recordings</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- How it works -->
+    <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+
+      <h2 class="text-2xl font-semibold text-orange-600 mb-4">
+        How does it work?
+      </h2>
+
+      <div class="grid md:grid-cols-4 gap-4 text-center mt-6">
+
+        <div class="bg-blue-50 rounded-xl p-4">
+          <div class="text-3xl mb-2">🔍</div>
+          <h3 class="font-semibold">1. Search</h3>
+          <p class="text-sm mt-2">
+            AI searches text, images, and media.
+          </p>
+        </div>
+
+        <div class="bg-purple-50 rounded-xl p-4">
+          <div class="text-3xl mb-2">🧠</div>
+          <h3 class="font-semibold">2. Understand</h3>
+          <p class="text-sm mt-2">
+            AI understands different content types.
+          </p>
+        </div>
+
+        <div class="bg-yellow-50 rounded-xl p-4">
+          <div class="text-3xl mb-2">🔗</div>
+          <h3 class="font-semibold">3. Combine</h3>
+          <p class="text-sm mt-2">
+            AI combines all useful information.
+          </p>
+        </div>
+
+        <div class="bg-green-50 rounded-xl p-4">
+          <div class="text-3xl mb-2">✅</div>
+          <h3 class="font-semibold">4. Answer</h3>
+          <p class="text-sm mt-2">
+            AI gives a smarter response.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Why important -->
+    <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+
+      <h2 class="text-2xl font-semibold text-red-600 mb-4">
+        Why is it important?
+      </h2>
+
+      <ul class="space-y-4">
+
+        <li class="flex gap-3">
+          <span class="text-2xl">📚</span>
+          <p>
+            Helps AI learn from more than just text.
+          </p>
+        </li>
+
+        <li class="flex gap-3">
+          <span class="text-2xl">🖼️</span>
+          <p>
+            AI can understand images and diagrams.
+          </p>
+        </li>
+
+        <li class="flex gap-3">
+          <span class="text-2xl">🎤</span>
+          <p>
+            AI can work with audio and speech.
+          </p>
+        </li>
+
+        <li class="flex gap-3">
+          <span class="text-2xl">⚡</span>
+          <p>
+            Makes AI assistants more powerful and useful.
+          </p>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- Example -->
+    <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+
+      <h2 class="text-2xl font-semibold text-pink-600 mb-4">
+        Easy Example
+      </h2>
+
+      <div class="bg-slate-50 border rounded-xl p-5">
+
+        <p class="mb-4">
+          You upload:
+        </p>
+
+        <div class="space-y-3">
+
+          <div class="bg-blue-100 rounded-lg p-3">
+            📄 A science PDF
+          </div>
+
+          <div class="bg-pink-100 rounded-lg p-3">
+            🖼️ A diagram image
+          </div>
+
+          <div class="bg-green-100 rounded-lg p-3">
+            🎤 Teacher voice recording
+          </div>
+
+        </div>
+
+        <p class="mt-6">
+          Multimodal RAG can understand all of them together
+          and answer your questions better.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white rounded-3xl mt-8">
+      <div class="p-8">
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+          <div>
+            <h3 class="text-xl font-semibold text-blue-400 mb-3">
+              About
+            </h3>
+
+            <p class="text-slate-300 text-sm">
+              Multimodal RAG helps AI understand text, images,
+              audio, and videos together.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-green-400 mb-3">
+              Features
+            </h3>
+
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li>✅ Text Understanding</li>
+              <li>✅ Image Analysis</li>
+              <li>✅ Audio Support</li>
+              <li>✅ Better AI Answers</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-pink-400 mb-3">
+              Simple Idea
+            </h3>
+
+            <div class="bg-slate-800 rounded-xl p-4 text-sm text-slate-200">
+              "AI learns using eyes, ears, and reading together."
+            </div>
+          </div>
+
+        </div>
+
+        <div class="border-t border-slate-700 mt-8 pt-4 text-center text-sm text-slate-400">
+          Made with Tailwind CSS • Multimodal AI Learning 🚀
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
