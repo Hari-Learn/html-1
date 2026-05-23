@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factory Method Pattern</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-5xl mx-auto p-8">
+
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-indigo-600 mb-4">
+        Factory Method Design Pattern
+      </h1>
+
+      <p class="text-lg text-gray-600">
+        Creates objects without exposing the object creation logic.
+      </p>
+    </div>
+
+    <!-- Definition -->
+    <div class="bg-white shadow-lg rounded-2xl p-6 mb-8">
+      <h2 class="text-2xl font-semibold text-indigo-500 mb-4">
+        What is Factory Method?
+      </h2>
+
+      <p class="mb-4">
+        The Factory Method Pattern provides an interface for creating objects
+        in a superclass, but allows subclasses to alter the type of objects
+        that will be created.
+      </p>
+
+      <p>
+        It helps in:
+      </p>
+
+      <ul class="list-disc pl-6 mt-3 space-y-2">
+        <li>Reducing tight coupling</li>
+        <li>Improving code flexibility</li>
+        <li>Centralizing object creation</li>
+        <li>Making code easier to maintain</li>
+      </ul>
+    </div>
+
+    <!-- Example -->
+    <div class="bg-white shadow-lg rounded-2xl p-6 mb-8">
+      <h2 class="text-2xl font-semibold text-green-600 mb-4">
+        JavaScript Example
+      </h2>
+
+      <pre class="bg-gray-900 text-green-400 p-4 rounded-xl overflow-auto text-sm">
+class Car {
+  drive() {
+    return "Driving Car";
+  }
+}
+
+class Bike {
+  ride() {
+    return "Riding Bike";
+  }
+}
+
+class VehicleFactory {
+  static createVehicle(type) {
+    if (type === "car") {
+      return new Car();
+    }
+
+    if (type === "bike") {
+      return new Bike();
+    }
+  }
+}
+
+const car = VehicleFactory.createVehicle("car");
+console.log(car.drive());
+      </pre>
+    </div>
+
+    <!-- Advantages -->
+    <div class="bg-white shadow-lg rounded-2xl p-6">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-4">
+        Advantages
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="bg-purple-100 p-4 rounded-xl">
+          ✔ Encapsulates object creation
+        </div>
+
+        <div class="bg-purple-100 p-4 rounded-xl">
+          ✔ Reduces dependency
+        </div>
+
+        <div class="bg-purple-100 p-4 rounded-xl">
+          ✔ Improves scalability
+        </div>
+
+        <div class="bg-purple-100 p-4 rounded-xl">
+          ✔ Cleaner and reusable code
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
