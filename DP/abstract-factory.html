@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abstract Factory Pattern</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-5xl mx-auto p-8">
+
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-pink-600 mb-4">
+        Abstract Factory Design Pattern
+      </h1>
+
+      <p class="text-lg text-gray-600">
+        Creates families of related objects without specifying their concrete classes.
+      </p>
+    </div>
+
+    <!-- Introduction -->
+    <div class="bg-white shadow-lg rounded-2xl p-6 mb-8">
+      <h2 class="text-2xl font-semibold text-pink-500 mb-4">
+        What is Abstract Factory?
+      </h2>
+
+      <p class="mb-4">
+        The Abstract Factory Pattern provides an interface for creating
+        related or dependent objects without directly specifying their classes.
+      </p>
+
+      <p>
+        It is commonly used when:
+      </p>
+
+      <ul class="list-disc pl-6 mt-3 space-y-2">
+        <li>Multiple related objects are needed</li>
+        <li>You want consistent object families</li>
+        <li>The system should be independent of object creation</li>
+        <li>Supporting multiple themes or platforms</li>
+      </ul>
+    </div>
+
+    <!-- Example -->
+    <div class="bg-white shadow-lg rounded-2xl p-6 mb-8">
+      <h2 class="text-2xl font-semibold text-green-600 mb-4">
+        JavaScript Example
+      </h2>
+
+      <pre class="bg-gray-900 text-green-400 p-4 rounded-xl overflow-auto text-sm">
+class WindowsButton {
+  paint() {
+    return "Windows Button";
+  }
+}
+
+class MacButton {
+  paint() {
+    return "Mac Button";
+  }
+}
+
+class GUIFactory {
+  static createButton(type) {
+    if (type === "windows") {
+      return new WindowsButton();
+    }
+
+    if (type === "mac") {
+      return new MacButton();
+    }
+  }
+}
+
+const button = GUIFactory.createButton("windows");
+
+console.log(button.paint());
+      </pre>
+    </div>
+
+    <!-- Advantages -->
+    <div class="bg-white shadow-lg rounded-2xl p-6">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-4">
+        Advantages
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="bg-purple-100 p-4 rounded-xl">
+          ✔ Ensures compatible objects
+        </div>
+
+        <div class="bg-purple-100 p-4 rounded-xl">
+          ✔ Improves consistency
+        </div>
+
+        <div class="bg-purple-100 p-4 rounded-xl">
+          ✔ Reduces tight coupling
+        </div>
+
+        <div class="bg-purple-100 p-4 rounded-xl">
+          ✔ Easy to extend product families
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
