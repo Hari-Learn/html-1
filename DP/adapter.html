@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adapter Design Pattern</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-green-600 text-white py-6 shadow-lg">
+    <div class="max-w-5xl mx-auto px-6">
+      <h1 class="text-4xl font-bold">Adapter Design Pattern</h1>
+      <p class="mt-2 text-green-100">
+        Converts one interface into another interface.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-6 py-10">
+
+    <!-- Introduction -->
+    <section class="bg-white rounded-2xl shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-semibold text-green-600 mb-4">
+        What is Adapter Pattern?
+      </h2>
+
+      <p class="leading-7 text-gray-700">
+        The Adapter Design Pattern allows two incompatible interfaces
+        to work together. It acts like a bridge between existing classes
+        by converting one interface into another expected interface.
+      </p>
+    </section>
+
+    <!-- Benefits -->
+    <section class="bg-white rounded-2xl shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-semibold text-green-600 mb-4">
+        Benefits
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-green-50 p-4 rounded-xl">
+          ✅ Reuses existing code
+        </div>
+
+        <div class="bg-green-50 p-4 rounded-xl">
+          ✅ Connects incompatible systems
+        </div>
+
+        <div class="bg-green-50 p-4 rounded-xl">
+          ✅ Improves flexibility
+        </div>
+
+        <div class="bg-green-50 p-4 rounded-xl">
+          ✅ Reduces code changes
+        </div>
+      </div>
+    </section>
+
+    <!-- Java Example -->
+    <section class="bg-white rounded-2xl shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-semibold text-green-600 mb-4">
+        Java Example
+      </h2>
+
+      <pre class="bg-gray-900 text-green-400 p-5 rounded-xl overflow-x-auto text-sm">
+<code>
+interface MediaPlayer {
+    void play(String audioType);
+}
+
+class Mp3Player {
+    public void playMp3() {
+        System.out.println("Playing MP3");
+    }
+}
+
+class Adapter implements MediaPlayer {
+
+    private Mp3Player mp3Player;
+
+    Adapter(Mp3Player mp3Player) {
+        this.mp3Player = mp3Player;
+    }
+
+    public void play(String audioType) {
+        mp3Player.playMp3();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        MediaPlayer player =
+            new Adapter(new Mp3Player());
+
+        player.play("mp3");
+    }
+}
+</code>
+      </pre>
+    </section>
+
+    <!-- Real World Example -->
+    <section class="bg-white rounded-2xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-green-600 mb-4">
+        Real World Example
+      </h2>
+
+      <p class="leading-7 text-gray-700">
+        A mobile charger adapter is a real-world example.
+        The adapter converts electrical connections so different
+        devices can work with the same power socket.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 text-center py-5 mt-10">
+    <p>© 2026 Adapter Design Pattern Demo</p>
+  </footer>
+
+</body>
+</html>
