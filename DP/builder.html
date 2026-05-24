@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Builder Design Pattern</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6 shadow-lg">
+    <div class="max-w-5xl mx-auto px-6">
+      <h1 class="text-4xl font-bold">Builder Design Pattern</h1>
+      <p class="mt-2 text-blue-100">
+        A Creational Design Pattern used to construct complex objects step by step.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-6 py-10">
+
+    <!-- Introduction -->
+    <section class="bg-white rounded-2xl shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-600">What is Builder Pattern?</h2>
+      <p class="leading-7 text-gray-700">
+        The Builder Pattern helps create complex objects using a step-by-step approach.
+        Instead of using a large constructor with many parameters, the builder pattern
+        allows flexible and readable object creation.
+      </p>
+    </section>
+
+    <!-- Advantages -->
+    <section class="bg-white rounded-2xl shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-600">Advantages</h2>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-blue-50 p-4 rounded-xl">
+          ✅ Improves code readability
+        </div>
+
+        <div class="bg-blue-50 p-4 rounded-xl">
+          ✅ Handles complex object creation
+        </div>
+
+        <div class="bg-blue-50 p-4 rounded-xl">
+          ✅ Avoids telescoping constructors
+        </div>
+
+        <div class="bg-blue-50 p-4 rounded-xl">
+          ✅ Easy to maintain and extend
+        </div>
+      </div>
+    </section>
+
+    <!-- Example -->
+    <section class="bg-white rounded-2xl shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-600">Java Example</h2>
+
+      <pre class="bg-gray-900 text-green-400 p-5 rounded-xl overflow-x-auto text-sm">
+<code>
+class Car {
+    private String engine;
+    private int wheels;
+
+    public static class Builder {
+        private String engine;
+        private int wheels;
+
+        public Builder setEngine(String engine) {
+            this.engine = engine;
+            return this;
+        }
+
+        public Builder setWheels(int wheels) {
+            this.wheels = wheels;
+            return this;
+        }
+
+        public Car build() {
+            Car car = new Car();
+            car.engine = this.engine;
+            car.wheels = this.wheels;
+            return car;
+        }
+    }
+}
+</code>
+      </pre>
+    </section>
+
+    <!-- Real World Example -->
+    <section class="bg-white rounded-2xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-600">Real World Example</h2>
+
+      <p class="text-gray-700 leading-7">
+        Ordering a burger in a restaurant is similar to the Builder Pattern.
+        You can customize ingredients step by step:
+      </p>
+
+      <ul class="list-disc ml-6 mt-4 space-y-2 text-gray-700">
+        <li>Select bun type</li>
+        <li>Add cheese</li>
+        <li>Add vegetables</li>
+        <li>Choose sauces</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 text-center py-5 mt-10">
+    <p>© 2026 Builder Design Pattern Demo</p>
+  </footer>
+
+</body>
+</html>
