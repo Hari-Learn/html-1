@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prototype Design Pattern</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-purple-600 text-white py-6 shadow-lg">
+    <div class="max-w-5xl mx-auto px-6">
+      <h1 class="text-4xl font-bold">Prototype Design Pattern</h1>
+      <p class="mt-2 text-purple-100">
+        Creates objects by cloning existing ones.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-6 py-10">
+
+    <!-- Introduction -->
+    <section class="bg-white rounded-2xl shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-4">
+        What is Prototype Pattern?
+      </h2>
+
+      <p class="leading-7 text-gray-700">
+        The Prototype Design Pattern is a creational pattern used to create
+        new objects by copying an existing object instead of creating
+        them from scratch.
+      </p>
+    </section>
+
+    <!-- Benefits -->
+    <section class="bg-white rounded-2xl shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-4">
+        Benefits
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-purple-50 p-4 rounded-xl">
+          ✅ Faster object creation
+        </div>
+
+        <div class="bg-purple-50 p-4 rounded-xl">
+          ✅ Reduces repetitive initialization
+        </div>
+
+        <div class="bg-purple-50 p-4 rounded-xl">
+          ✅ Improves performance
+        </div>
+
+        <div class="bg-purple-50 p-4 rounded-xl">
+          ✅ Useful for complex objects
+        </div>
+      </div>
+    </section>
+
+    <!-- Example -->
+    <section class="bg-white rounded-2xl shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-4">
+        Java Example
+      </h2>
+
+      <pre class="bg-gray-900 text-green-400 p-5 rounded-xl overflow-x-auto text-sm">
+<code>
+class Car implements Cloneable {
+
+    String model;
+
+    Car(String model) {
+        this.model = model;
+    }
+
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+
+        Car car1 = new Car("BMW");
+
+        Car car2 = (Car) car1.clone();
+
+        System.out.println(car2.model);
+    }
+}
+</code>
+      </pre>
+    </section>
+
+    <!-- Real World Example -->
+    <section class="bg-white rounded-2xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-purple-600 mb-4">
+        Real World Example
+      </h2>
+
+      <p class="leading-7 text-gray-700">
+        Photocopying a document is a real-world example of the Prototype Pattern.
+        Instead of creating a new document from scratch, you simply copy
+        the existing one.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 text-center py-5 mt-10">
+    <p>© 2026 Prototype Design Pattern Demo</p>
+  </footer>
+
+</body>
+</html>
