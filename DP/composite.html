@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Composite Design Pattern</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 40px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    .info-box {
+      background: #eef8f0;
+      border-left: 5px solid #27ae60;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 3px 6px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Composite Design Pattern</h1>
+
+    <p>
+      The <strong>Composite Design Pattern</strong> is a structural design pattern
+      used to treat individual objects and groups of objects in the same way.
+    </p>
+
+    <div class="info-box">
+      <strong>Definition:</strong><br>
+      “Treat groups and individual objects uniformly.”
+    </div>
+
+    <h2>Why Use Composite Pattern?</h2>
+
+    <ul>
+      <li>Simplifies working with tree-like structures.</li>
+      <li>Allows clients to treat single and grouped objects equally.</li>
+      <li>Makes recursive structures easier to manage.</li>
+    </ul>
+
+    <h2>Example</h2>
+
+    <p>
+      A file system where both files and folders are treated as items.
+    </p>
+
+    <code>Folder → File / Folder</code>
+
+    <h2>Benefits</h2>
+
+    <ul>
+      <li>Cleaner hierarchical code structure</li>
+      <li>Easier scalability</li>
+      <li>Improves flexibility and maintainability</li>
+    </ul>
+
+  </div>
+
+</body>
+</html>
