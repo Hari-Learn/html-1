@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bridge Design Pattern</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 40px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    .highlight {
+      background: #e8f4ff;
+      padding: 15px;
+      border-left: 5px solid #3498db;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    code {
+      background: #f1f1f1;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Bridge Design Pattern</h1>
+
+    <p>
+      The <strong>Bridge Design Pattern</strong> is a structural design pattern
+      that separates an abstraction from its implementation so that both can
+      evolve independently.
+    </p>
+
+    <div class="highlight">
+      <strong>Definition:</strong><br>
+      “Separate abstraction from implementation.”
+    </div>
+
+    <h2>Why Use Bridge Pattern?</h2>
+    <ul>
+      <li>Reduces tight coupling between abstraction and implementation.</li>
+      <li>Improves flexibility and scalability.</li>
+      <li>Allows independent development of interfaces and implementations.</li>
+    </ul>
+
+    <h2>Example</h2>
+    <p>
+      Imagine a remote control (<em>abstraction</em>) working with different
+      devices like TV or Radio (<em>implementations</em>).
+    </p>
+
+    <code>Remote → Device</code>
+
+    <h2>Benefits</h2>
+    <ul>
+      <li>Cleaner code structure</li>
+      <li>Better maintainability</li>
+      <li>Supports Open/Closed Principle</li>
+    </ul>
+  </div>
+
+</body>
+</html>
