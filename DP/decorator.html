@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decorator Design Pattern</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      margin: 0;
+      padding: 40px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    .highlight {
+      background: #fff4e5;
+      border-left: 5px solid #f39c12;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    code {
+      background: #f1f1f1;
+      padding: 3px 6px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Decorator Design Pattern</h1>
+
+    <p>
+      The <strong>Decorator Design Pattern</strong> is a structural design pattern
+      used to add new behavior to objects dynamically without changing their original code.
+    </p>
+
+    <div class="highlight">
+      <strong>Definition:</strong><br>
+      “Add behavior dynamically.”
+    </div>
+
+    <h2>Why Use Decorator Pattern?</h2>
+
+    <ul>
+      <li>Add features without modifying existing classes.</li>
+      <li>Supports flexible and reusable code.</li>
+      <li>Follows the Open/Closed Principle.</li>
+    </ul>
+
+    <h2>Example</h2>
+
+    <p>
+      A coffee ordering system where extra toppings like milk or chocolate
+      can be added dynamically.
+    </p>
+
+    <code>Coffee → Milk → Chocolate</code>
+
+    <h2>Benefits</h2>
+
+    <ul>
+      <li>Flexible feature extension</li>
+      <li>Avoids large inheritance hierarchies</li>
+      <li>Improves maintainability</li>
+    </ul>
+
+  </div>
+
+</body>
+</html>
