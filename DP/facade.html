@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facade Design Pattern - ELI10</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-3xl bg-white shadow-xl rounded-2xl p-8">
+
+    <h1 class="text-4xl font-bold text-blue-600 mb-4">
+      Facade Design Pattern
+    </h1>
+
+    <p class="text-lg mb-6">
+      Imagine you want to watch a movie at home.
+    </p>
+
+    <div class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-lg mb-6">
+      <p class="mb-2">Normally, you must:</p>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Turn on the TV</li>
+        <li>Turn on the speaker</li>
+        <li>Switch to HDMI</li>
+        <li>Open Netflix</li>
+        <li>Choose the movie</li>
+      </ul>
+    </div>
+
+    <p class="text-lg mb-4">
+      That is a lot of steps.
+    </p>
+
+    <div class="bg-green-50 border-l-4 border-green-500 p-5 rounded-lg mb-6">
+      <p class="font-semibold mb-2">
+        Facade Pattern says:
+      </p>
+
+      <p>
+        "Hide all those complicated steps behind one simple button."
+      </p>
+
+      <button class="mt-4 bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-lg transition">
+        ▶ Start Movie
+      </button>
+    </div>
+
+    <h2 class="text-2xl font-semibold mb-3">
+      Simple Definition
+    </h2>
+
+    <p class="mb-6">
+      A <span class="font-bold text-blue-600">Facade</span> provides one simple interface
+      to a complex system.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">
+      Real-Life Examples
+    </h2>
+
+    <ul class="list-disc pl-6 space-y-2 mb-6">
+      <li>Remote control for TV setup</li>
+      <li>Food delivery app handling restaurants + payment + delivery</li>
+      <li>"Login with Google" button</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold mb-3">
+      Tiny Code Example
+    </h2>
+
+    <div class="bg-gray-900 text-green-400 rounded-lg p-4 overflow-x-auto text-sm">
+<pre>
+class TV {
+  on() {
+    console.log("TV ON");
+  }
+}
+
+class Speaker {
+  on() {
+    console.log("Speaker ON");
+  }
+}
+
+class HomeTheaterFacade {
+  startMovie() {
+    const tv = new TV();
+    const speaker = new Speaker();
+
+    tv.on();
+    speaker.on();
+
+    console.log("Movie Started 🎬");
+  }
+}
+
+const theater = new HomeTheaterFacade();
+theater.startMovie();
+</pre>
+    </div>
+
+    <div class="mt-8 text-center text-gray-500 text-sm">
+      Facade = Simple door to a complicated system 🚪
+    </div>
+
+  </div>
+
+</body>
+</html>
