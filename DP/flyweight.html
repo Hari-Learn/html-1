@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flyweight Design Pattern - ELI10</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-3xl bg-white rounded-2xl shadow-xl p-8">
+
+    <h1 class="text-4xl font-bold text-purple-600 mb-4">
+      Flyweight Design Pattern
+    </h1>
+
+    <p class="text-lg mb-6">
+      Imagine a game with 10,000 trees 🌳
+    </p>
+
+    <div class="bg-purple-50 border-l-4 border-purple-500 p-5 rounded-lg mb-6">
+      <p class="mb-3">
+        If every tree stores:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Tree image</li>
+        <li>Tree color</li>
+        <li>Tree shape</li>
+        <li>Tree texture</li>
+      </ul>
+
+      <p class="mt-4">
+        then the game wastes lots of memory 😵
+      </p>
+    </div>
+
+    <div class="bg-green-50 border-l-4 border-green-500 p-5 rounded-lg mb-6">
+      <p class="font-semibold mb-2">
+        Flyweight Pattern says:
+      </p>
+
+      <p>
+        "Reuse shared things instead of creating them again and again."
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-semibold mb-3">
+      Easy Example
+    </h2>
+
+    <p class="mb-6">
+      Instead of storing the same tree image 10,000 times,
+      store it only once and let all trees share it 🌳
+    </p>
+
+    <div class="grid grid-cols-5 gap-3 text-center text-3xl mb-8">
+      <div>🌳</div>
+      <div>🌳</div>
+      <div>🌳</div>
+      <div>🌳</div>
+      <div>🌳</div>
+      <div>🌳</div>
+      <div>🌳</div>
+      <div>🌳</div>
+      <div>🌳</div>
+      <div>🌳</div>
+    </div>
+
+    <h2 class="text-2xl font-semibold mb-3">
+      Simple Definition
+    </h2>
+
+    <p class="mb-6">
+      <span class="font-bold text-purple-600">Flyweight</span>
+      saves memory by sharing common data between many objects.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">
+      Real-Life Examples
+    </h2>
+
+    <ul class="list-disc pl-6 space-y-2 mb-6">
+      <li>Game trees sharing same graphics</li>
+      <li>Emoji icons reused in apps</li>
+      <li>Letters in a text editor</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold mb-3">
+      Tiny Code Example
+    </h2>
+
+    <div class="bg-gray-900 text-green-400 rounded-lg p-4 overflow-x-auto text-sm">
+<pre>
+class TreeType {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+const sharedTree = new TreeType("Green Tree");
+
+const tree1 = sharedTree;
+const tree2 = sharedTree;
+
+console.log(tree1 === tree2); // true
+</pre>
+    </div>
+
+    <div class="mt-8 text-center text-gray-500 text-sm">
+      Flyweight = Share common stuff to save memory 🧠
+    </div>
+
+  </div>
+
+</body>
+</html>
