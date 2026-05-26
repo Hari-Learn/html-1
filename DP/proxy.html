@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proxy Design Pattern - ELI10</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-3xl bg-white shadow-2xl rounded-2xl p-8">
+
+    <h1 class="text-4xl font-bold text-indigo-600 mb-4">
+      Proxy Design Pattern
+    </h1>
+
+    <p class="text-lg mb-6">
+      Imagine you want to enter a VIP party 🎉
+    </p>
+
+    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-5 rounded-lg mb-6">
+      <p class="mb-3">
+        But first, a security guard checks:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Do you have a ticket?</li>
+        <li>Are you allowed inside?</li>
+        <li>Is the party full?</li>
+      </ul>
+    </div>
+
+    <p class="text-lg mb-4">
+      The guard controls access to the real party.
+    </p>
+
+    <div class="bg-green-50 border-l-4 border-green-500 p-5 rounded-lg mb-6">
+      <p class="font-semibold mb-2">
+        Proxy Pattern says:
+      </p>
+
+      <p>
+        "Use a helper object to control access to another object."
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-semibold mb-3">
+      Simple Definition
+    </h2>
+
+    <p class="mb-6">
+      A <span class="font-bold text-indigo-600">Proxy</span>
+      stands in front of the real object and controls how it is used.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">
+      Real-Life Examples
+    </h2>
+
+    <ul class="list-disc pl-6 space-y-2 mb-6">
+      <li>Security guard at a building</li>
+      <li>Parental control on apps</li>
+      <li>Loading images only when needed</li>
+      <li>Password-protected websites</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold mb-3">
+      Tiny Code Example
+    </h2>
+
+    <div class="bg-gray-900 text-green-400 rounded-lg p-4 overflow-x-auto text-sm">
+<pre>
+class RealVideo {
+  play() {
+    console.log("Playing video 🎬");
+  }
+}
+
+class VideoProxy {
+  constructor(age) {
+    this.age = age;
+    this.video = new RealVideo();
+  }
+
+  play() {
+    if (this.age >= 18) {
+      this.video.play();
+    } else {
+      console.log("Access Denied 🚫");
+    }
+  }
+}
+
+const user = new VideoProxy(15);
+user.play();
+</pre>
+    </div>
+
+    <div class="mt-8 text-center text-gray-500 text-sm">
+      Proxy = A smart middle person 🛡️
+    </div>
+
+  </div>
+
+</body>
+</html>
