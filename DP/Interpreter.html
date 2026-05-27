@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interpreter Pattern</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-3xl bg-white rounded-2xl shadow-xl p-8">
+
+    <h1 class="text-4xl font-bold text-indigo-600 mb-4">
+      Interpreter Pattern
+    </h1>
+
+    <p class="text-gray-700 text-lg mb-6">
+      The <span class="font-semibold">Interpreter</span> design pattern
+      defines a grammar for a language and provides an interpreter
+      to process and evaluate expressions.
+    </p>
+
+    <!-- Flow Diagram -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
+
+      <div class="bg-blue-500 text-white px-5 py-4 rounded-xl shadow-md">
+        Input Expression
+      </div>
+
+      <div class="text-3xl text-gray-500">→</div>
+
+      <div class="bg-purple-500 text-white px-5 py-4 rounded-xl shadow-md">
+        Interpreter
+      </div>
+
+      <div class="text-3xl text-gray-500">→</div>
+
+      <div class="bg-green-500 text-white px-5 py-4 rounded-xl shadow-md">
+        Result
+      </div>
+
+    </div>
+
+    <!-- Example Section -->
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+
+      <h2 class="text-2xl font-semibold text-gray-800 mb-3">
+        Example
+      </h2>
+
+      <p class="text-gray-700 mb-4">
+        A calculator application interprets expressions like:
+      </p>
+
+      <div class="bg-gray-200 text-gray-800 px-4 py-3 rounded-lg font-mono text-lg">
+        5 + 3 - 2
+      </div>
+
+      <p class="mt-4 text-gray-600 italic">
+        The interpreter reads the grammar rules and evaluates the expression step by step.
+      </p>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
