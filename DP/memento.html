@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memento Design Pattern</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl w-full bg-white rounded-2xl shadow-xl p-8">
+    
+    <h1 class="text-4xl font-bold text-indigo-600 mb-4">
+      Memento Design Pattern
+    </h1>
+
+    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+      The <span class="font-semibold text-indigo-500">Memento</span> pattern
+      is a behavioral design pattern that allows an object to save and restore
+      its previous state without exposing its internal details.
+    </p>
+
+    <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-5 mb-6">
+      <h2 class="text-xl font-semibold text-indigo-700 mb-2">
+        Definition
+      </h2>
+
+      <p class="text-gray-700">
+        “Saves and restores object state.”
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      
+      <div class="bg-green-50 border border-green-200 rounded-xl p-4">
+        <h3 class="text-lg font-semibold text-green-700 mb-2">
+          Common Uses
+        </h3>
+
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Undo / Redo systems</li>
+          <li>Game checkpoints</li>
+          <li>Text editor history</li>
+          <li>Version snapshots</li>
+        </ul>
+      </div>
+
+      <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
+        <h3 class="text-lg font-semibold text-yellow-700 mb-2">
+          Benefits
+        </h3>
+
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Preserves object state</li>
+          <li>Supports rollback functionality</li>
+          <li>Encapsulates internal data</li>
+          <li>Improves maintainability</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-8 text-center">
+      <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl transition duration-300 shadow-md">
+        Learn More
+      </button>
+    </div>
+
+  </div>
+
+</body>
+</html>
