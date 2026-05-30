@@ -1,74 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Memento Design Pattern</title>
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
 
-  <div class="max-w-2xl w-full bg-white rounded-2xl shadow-xl p-8">
-    
-    <h1 class="text-4xl font-bold text-indigo-600 mb-4">
-      Memento Design Pattern
-    </h1>
+<body class="bg-gradient-to-br from-indigo-100 via-white to-purple-100 min-h-screen p-6">
 
-    <p class="text-gray-700 text-lg leading-relaxed mb-6">
-      The <span class="font-semibold text-indigo-500">Memento</span> pattern
-      is a behavioral design pattern that allows an object to save and restore
-      its previous state without exposing its internal details.
-    </p>
+<div class="max-w-5xl mx-auto">
 
-    <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-5 mb-6">
-      <h2 class="text-xl font-semibold text-indigo-700 mb-2">
-        Definition
-      </h2>
+  <!-- Hero -->
+  <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl shadow-2xl p-8 text-white mb-8">
 
-      <p class="text-gray-700">
-        “Saves and restores object state.”
-      </p>
-    </div>
+    <div class="flex flex-col md:flex-row items-center gap-6">
 
-    <div class="grid md:grid-cols-2 gap-4">
-      
-      <div class="bg-green-50 border border-green-200 rounded-xl p-4">
-        <h3 class="text-lg font-semibold text-green-700 mb-2">
-          Common Uses
-        </h3>
-
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li>Undo / Redo systems</li>
-          <li>Game checkpoints</li>
-          <li>Text editor history</li>
-          <li>Version snapshots</li>
-        </ul>
+      <div class="text-8xl">
+        💾
       </div>
 
-      <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
-        <h3 class="text-lg font-semibold text-yellow-700 mb-2">
-          Benefits
-        </h3>
+      <div>
+        <h1 class="text-5xl font-bold mb-3">
+          Memento Pattern
+        </h1>
 
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li>Preserves object state</li>
-          <li>Supports rollback functionality</li>
-          <li>Encapsulates internal data</li>
-          <li>Improves maintainability</li>
-        </ul>
+        <p class="text-xl text-indigo-100">
+          Save a snapshot now. Restore it later.
+        </p>
       </div>
 
-    </div>
-
-    <div class="mt-8 text-center">
-      <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl transition duration-300 shadow-md">
-        Learn More
-      </button>
     </div>
 
   </div>
+
+  <!-- Story -->
+  <div class="bg-white rounded-3xl shadow-lg p-8 mb-8">
+
+    <h2 class="text-3xl font-bold text-indigo-600 mb-4">
+      🎮 Imagine Playing a Game
+    </h2>
+
+    <p class="text-lg text-gray-700 mb-6">
+      You're playing a difficult game and reach a checkpoint.
+      The game automatically saves your progress.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-5">
+
+      <div class="bg-blue-50 p-5 rounded-2xl border border-blue-200">
+        <div class="text-5xl mb-3">🎮</div>
+        <h3 class="font-bold">
+          Playing
+        </h3>
+        <p class="mt-2">
+          You keep progressing.
+        </p>
+      </div>
+
+      <div class="bg-green-50 p-5 rounded-2xl border border-green-200">
+        <div class="text-5xl mb-3">💾</div>
+        <h3 class="font-bold">
+          Save Checkpoint
+        </h3>
+        <p class="mt-2">
+          Game stores your current state.
+        </p>
+      </div>
+
+      <div class="bg-purple-50 p-5 rounded-2xl border border-purple-200">
+        <div class="text-5xl mb-3">↩️</div>
+        <h3 class="font-bold">
+          Restore
+        </h3>
+        <p class="mt-2">
+          Go back whenever needed.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Definition -->
+  <div class="bg-indigo-50 border border-indigo-200 rounded-3xl p-8 mb-8">
+
+    <h2 class="text-3xl font-bold text-indigo-700 mb-4">
+      💡 Definition
+    </h2>
+
+    <p class="text-lg text-gray-700">
+      The <strong>Memento Pattern</strong> lets an object save its internal
+      state into a snapshot and restore it later without exposing its private data.
+    </p>
+
+  </div>
+
+  <!-- Timeline -->
+  <div class="bg-white rounded-3xl shadow-lg p-8 mb-8">
+
+    <h2 class="text-3xl font-bold text-indigo-600 mb-6">
+      ⏳ Snapshot Timeline
+    </h2>
+
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+
+      <div class="bg-indigo-100 px-5 py-4 rounded-2xl">
+        State 1
+      </div>
+
+      <div class="text-3xl">
+        ➜
+      </div>
+
+      <div class="bg-green-100 px-5 py-4 rounded-2xl">
+        💾 Save
+      </div>
+
+      <div class="text-3xl">
+        ➜
+      </div>
+
+      <div class="bg-indigo-100 px-5 py-4 rounded-2xl">
+        State 2
+      </div>
+
+      <div class="text-3xl">
+        ➜
+      </div>
+
+      <div class="bg-red-100 px-5 py-4 rounded-2xl">
+        ❌ Error
+      </div>
+
+      <div class="text-3xl">
+        ➜
+      </div>
+
+      <div class="bg-purple-100 px-5 py-4 rounded-2xl">
+        ↩️ Restore
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Main Components -->
+  <div class="bg-white rounded-3xl shadow-lg p-8 mb-8">
+
+    <h2 class="text-3xl font-bold text-indigo-600 mb-6">
+      🏗 Key Participants
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="bg-blue-50 p-5 rounded-2xl border border-blue-200">
+        <div class="text-4xl mb-3">📝</div>
+
+        <h3 class="font-bold text-lg">
+          Originator
+        </h3>
+
+        <p class="mt-2 text-gray-700">
+          The object whose state is being saved.
+        </p>
+      </div>
+
+      <div class="bg-green-50 p-5 rounded-2xl border border-green-200">
+        <div class="text-4xl mb-3">💾</div>
+
+        <h3 class="font-bold text-lg">
+          Memento
+        </h3>
+
+        <p class="mt-2 text-gray-700">
+          Stores the snapshot safely.
+        </p>
+      </div>
+
+      <div class="bg-purple-50 p-5 rounded-2xl border border-purple-200">
+        <div class="text-4xl mb-3">📦</div>
+
+        <h3 class="font-bold text-lg">
+          Caretaker
+        </h3>
+
+        <p class="mt-2 text-gray-700">
+          Keeps and manages snapshots.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Uses -->
+  <div class="bg-white rounded-3xl shadow-lg p-8 mb-8">
+
+    <h2 class="text-3xl font-bold text-indigo-600 mb-6">
+      🌍 Real-World Uses
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-gray-50 p-5 rounded-2xl">
+        ↩️ Undo / Redo
+      </div>
+
+      <div class="bg-gray-50 p-5 rounded-2xl">
+        🎮 Game Checkpoints
+      </div>
+
+      <div class="bg-gray-50 p-5 rounded-2xl">
+        📝 Text Editor History
+      </div>
+
+      <div class="bg-gray-50 p-5 rounded-2xl">
+        📚 Version Control
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Pros / Cons -->
+  <div class="grid md:grid-cols-2 gap-6 mb-8">
+
+    <div class="bg-green-50 border border-green-200 rounded-3xl p-6">
+
+      <h2 class="text-2xl font-bold text-green-700 mb-4">
+        ✅ Benefits
+      </h2>
+
+      <ul class="space-y-2">
+        <li>✔ Easy rollback</li>
+        <li>✔ Keeps data encapsulated</li>
+        <li>✔ Supports undo features</li>
+        <li>✔ Improves reliability</li>
+      </ul>
+
+    </div>
+
+    <div class="bg-red-50 border border-red-200 rounded-3xl p-6">
+
+      <h2 class="text-2xl font-bold text-red-700 mb-4">
+        ❌ Drawbacks
+      </h2>
+
+      <ul class="space-y-2">
+        <li>✖ Uses extra memory</li>
+        <li>✖ Many snapshots can become expensive</li>
+        <li>✖ More classes to manage</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+  <!-- Undo Example -->
+  <div class="bg-white rounded-3xl shadow-lg p-8 mb-8">
+
+    <h2 class="text-3xl font-bold text-indigo-600 mb-4">
+      💻 Example Flow
+    </h2>
+
+    <div class="bg-gray-900 rounded-2xl p-6 text-green-400 font-mono">
+
+Editor State = "Hello"
+
+💾 Save Snapshot
+
+Editor State = "Hello World"
+
+❌ Mistake Happens
+
+↩️ Restore Snapshot
+
+Editor State = "Hello"
+
+    </div>
+
+  </div>
+
+  <!-- Summary -->
+  <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-8 text-center text-white shadow-xl">
+
+    <div class="text-7xl mb-4">
+      💾
+    </div>
+
+    <h2 class="text-3xl font-bold mb-3">
+      Remember This
+    </h2>
+
+    <p class="text-xl">
+      Memento = Taking a snapshot of an object so you can travel back in time later.
+    </p>
+
+  </div>
+
+</div>
 
 </body>
 </html>
