@@ -3,73 +3,207 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chain of Responsibility</title>
+  <title>Chain of Responsibility Pattern</title>
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Heroicons -->
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
 
-  <div class="max-w-3xl bg-white shadow-xl rounded-2xl p-8">
-    
-    <h1 class="text-4xl font-bold text-blue-600 mb-4">
-      Chain of Responsibility
-    </h1>
+<body class="bg-gradient-to-br from-slate-100 to-blue-50 min-h-screen py-10 px-6">
 
-    <p class="text-gray-700 text-lg mb-6">
-      The <span class="font-semibold">Chain of Responsibility</span> design pattern
-      passes a request through a chain of handlers. Each handler decides whether
-      to process the request or forward it to the next handler.
-    </p>
+  <div class="max-w-6xl mx-auto">
 
-    <!-- Flow -->
-    <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
-      
-      <div class="bg-blue-500 text-white px-6 py-4 rounded-xl shadow-md">
-        Request
+    <!-- Hero Section -->
+    <div class="bg-white rounded-3xl shadow-xl p-10 mb-8">
+
+      <div class="flex items-center gap-4 mb-4">
+        <div class="bg-blue-100 p-4 rounded-2xl">
+          <i data-feather="git-branch" class="text-blue-600"></i>
+        </div>
+
+        <div>
+          <h1 class="text-4xl font-bold text-blue-600">
+            Chain of Responsibility
+          </h1>
+
+          <p class="text-gray-500">
+            Behavioral Design Pattern
+          </p>
+        </div>
       </div>
 
-      <div class="text-3xl text-gray-500">→</div>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        The <strong>Chain of Responsibility</strong> pattern allows a request
+        to travel through a chain of handlers. Each handler decides whether
+        it can process the request or pass it to the next handler.
+      </p>
 
-      <div class="bg-green-500 text-white px-6 py-4 rounded-xl shadow-md">
-        Handler 1
+    </div>
+
+    <!-- Flow Diagram -->
+    <div class="bg-white rounded-3xl shadow-xl p-8 mb-8">
+
+      <h2 class="text-2xl font-bold mb-6 text-gray-800">
+        Request Flow
+      </h2>
+
+      <div class="flex flex-col md:flex-row items-center justify-center gap-5">
+
+        <div class="bg-blue-500 text-white px-8 py-5 rounded-2xl shadow-lg">
+          📩 Request
+        </div>
+
+        <div class="text-4xl text-gray-400">→</div>
+
+        <div class="bg-green-500 text-white px-8 py-5 rounded-2xl shadow-lg hover:scale-105 transition">
+          👨‍💻 Handler 1
+        </div>
+
+        <div class="text-4xl text-gray-400">→</div>
+
+        <div class="bg-yellow-500 text-white px-8 py-5 rounded-2xl shadow-lg hover:scale-105 transition">
+          ⚙️ Handler 2
+        </div>
+
+        <div class="text-4xl text-gray-400">→</div>
+
+        <div class="bg-red-500 text-white px-8 py-5 rounded-2xl shadow-lg hover:scale-105 transition">
+          👨‍💼 Handler 3
+        </div>
+
       </div>
 
-      <div class="text-3xl text-gray-500">→</div>
+    </div>
 
-      <div class="bg-yellow-500 text-white px-6 py-4 rounded-xl shadow-md">
-        Handler 2
+    <!-- Key Characteristics -->
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <div class="text-4xl mb-3">🔄</div>
+        <h3 class="font-bold text-lg mb-2">
+          Decoupling
+        </h3>
+        <p class="text-gray-600">
+          Sender doesn't know which handler will process the request.
+        </p>
       </div>
 
-      <div class="text-3xl text-gray-500">→</div>
-
-      <div class="bg-red-500 text-white px-6 py-4 rounded-xl shadow-md">
-        Handler 3
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <div class="text-4xl mb-3">⚡</div>
+        <h3 class="font-bold text-lg mb-2">
+          Flexibility
+        </h3>
+        <p class="text-gray-600">
+          Handlers can be added, removed, or reordered dynamically.
+        </p>
       </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <div class="text-4xl mb-3">🧩</div>
+        <h3 class="font-bold text-lg mb-2">
+          Reusability
+        </h3>
+        <p class="text-gray-600">
+          Individual handlers can be reused in different chains.
+        </p>
+      </div>
+
     </div>
 
     <!-- Example -->
-    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
-      <h2 class="text-2xl font-semibold mb-3 text-gray-800">
-        Example
+    <div class="bg-white rounded-3xl shadow-xl p-8 mb-8">
+
+      <h2 class="text-2xl font-bold mb-6 text-gray-800">
+        Customer Support Example
       </h2>
 
-      <p class="text-gray-700 mb-3">
-        Imagine a customer support system:
-      </p>
+      <div class="grid md:grid-cols-3 gap-6">
 
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>Level 1 handles basic issues</li>
-        <li>Level 2 handles technical issues</li>
-        <li>Manager handles critical issues</li>
-      </ul>
+        <div class="border-l-4 border-green-500 bg-green-50 p-5 rounded-xl">
+          <h3 class="font-bold text-green-700 mb-2">
+            🟢 Level 1 Support
+          </h3>
 
-      <p class="mt-4 text-gray-600 italic">
-        If one handler cannot process the request, it forwards it to the next handler.
-      </p>
+          <p class="text-gray-600">
+            Handles password resets, account questions, and basic issues.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-yellow-500 bg-yellow-50 p-5 rounded-xl">
+          <h3 class="font-bold text-yellow-700 mb-2">
+            🟡 Level 2 Support
+          </h3>
+
+          <p class="text-gray-600">
+            Handles technical bugs, system failures, and configuration issues.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-red-500 bg-red-50 p-5 rounded-xl">
+          <h3 class="font-bold text-red-700 mb-2">
+            🔴 Manager
+          </h3>
+
+          <p class="text-gray-600">
+            Handles critical complaints and business-impacting problems.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="mt-6 bg-blue-50 border border-blue-200 p-4 rounded-xl">
+        <p class="text-blue-700">
+          💡 If Level 1 cannot resolve the issue, it forwards the request
+          to Level 2. If Level 2 still cannot handle it, the Manager receives it.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Advantages & Disadvantages -->
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Advantages -->
+      <div class="bg-white rounded-3xl shadow-xl p-8">
+
+        <h2 class="text-2xl font-bold text-green-600 mb-4">
+          ✅ Advantages
+        </h2>
+
+        <ul class="space-y-3 text-gray-700">
+          <li>✔ Reduces coupling between sender and receiver</li>
+          <li>✔ Easy to add new handlers</li>
+          <li>✔ Improves maintainability</li>
+          <li>✔ Supports dynamic request processing</li>
+        </ul>
+
+      </div>
+
+      <!-- Disadvantages -->
+      <div class="bg-white rounded-3xl shadow-xl p-8">
+
+        <h2 class="text-2xl font-bold text-red-600 mb-4">
+          ❌ Disadvantages
+        </h2>
+
+        <ul class="space-y-3 text-gray-700">
+          <li>✖ Request may go unhandled</li>
+          <li>✖ Debugging can be difficult</li>
+          <li>✖ Long chains may affect performance</li>
+          <li>✖ Complex handler management</li>
+        </ul>
+
+      </div>
+
     </div>
 
   </div>
+
+  <script>
+    feather.replace();
+  </script>
 
 </body>
 </html>
