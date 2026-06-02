@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repository Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-3xl bg-white shadow-md rounded-lg p-8">
+        <h1 class="text-4xl font-bold text-indigo-600 mb-4">
+            Repository Pattern
+        </h1>
+
+        <p class="text-gray-700 mb-6">
+            The Repository Pattern provides a layer between the application
+            and the data source. It centralizes data access logic and hides
+            database implementation details from the business logic.
+        </p>
+
+        <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded mb-6">
+            <h2 class="text-xl font-semibold text-indigo-700 mb-2">
+                Benefits
+            </h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                <li>Separates business logic from data access.</li>
+                <li>Makes code easier to maintain.</li>
+                <li>Improves testability using mock repositories.</li>
+                <li>Supports multiple data sources with minimal changes.</li>
+            </ul>
+        </div>
+
+        <h2 class="text-2xl font-semibold mb-3">
+            Simple Example
+        </h2>
+
+        <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm">
+class UserRepository {
+    getUserById(id) {
+        return { id: id, name: "John Doe" };
+    }
+}
+
+class UserService {
+    constructor(userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    getUser(id) {
+        return this.userRepository.getUserById(id);
+    }
+}
+
+const repo = new UserRepository();
+const service = new UserService(repo);
+
+console.log(service.getUser(1));
+        </pre>
+
+        <p class="mt-6 text-gray-700">
+            In this example, <strong>UserService</strong> does not directly
+            access the database. It retrieves data through the
+            <strong>UserRepository</strong>, making the application more
+            modular and easier to test.
+        </p>
+    </div>
+
+</body>
+</html>
