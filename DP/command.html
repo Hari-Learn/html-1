@@ -1,72 +1,255 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Command Pattern</title>
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
 
-  <div class="max-w-3xl bg-white rounded-2xl shadow-xl p-8">
+<body class="bg-gradient-to-br from-slate-100 to-purple-50 min-h-screen py-10 px-6">
 
-    <h1 class="text-4xl font-bold text-purple-600 mb-4">
-      Command Pattern
-    </h1>
+<div class="max-w-6xl mx-auto">
 
-    <p class="text-gray-700 text-lg mb-6">
-      The <span class="font-semibold">Command</span> design pattern encapsulates
-      requests as objects. This allows commands to be stored, queued,
-      logged, or undone.
-    </p>
+  <!-- Hero Section -->
+  <div class="bg-white rounded-3xl shadow-xl p-10 mb-8">
 
-    <!-- Diagram -->
-    <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
+    <div class="flex items-center gap-4 mb-5">
 
-      <div class="bg-blue-500 text-white px-5 py-4 rounded-xl shadow-md">
-        Client
+      <div class="bg-purple-100 p-4 rounded-2xl">
+        <i data-feather="terminal" class="text-purple-600"></i>
       </div>
 
-      <div class="text-3xl text-gray-500">→</div>
+      <div>
+        <h1 class="text-4xl font-bold text-purple-600">
+          Command Pattern
+        </h1>
 
-      <div class="bg-purple-500 text-white px-5 py-4 rounded-xl shadow-md">
-        Command
-      </div>
-
-      <div class="text-3xl text-gray-500">→</div>
-
-      <div class="bg-green-500 text-white px-5 py-4 rounded-xl shadow-md">
-        Receiver
+        <p class="text-gray-500">
+          Behavioral Design Pattern
+        </p>
       </div>
 
     </div>
 
-    <!-- Example -->
-    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+    <p class="text-lg text-gray-700 leading-relaxed">
+      The <strong>Command Pattern</strong> encapsulates a request as an object,
+      allowing requests to be parameterized, queued, logged, and even undone.
+      It separates the object that invokes an operation from the one that
+      actually performs it.
+    </p>
 
-      <h2 class="text-2xl font-semibold text-gray-800 mb-3">
-        Example
-      </h2>
+  </div>
 
-      <p class="text-gray-700 mb-4">
-        A remote control sends commands to devices:
-      </p>
+  <!-- Flow Diagram -->
+  <div class="bg-white rounded-3xl shadow-xl p-8 mb-8">
 
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>Turn TV On</li>
-        <li>Turn TV Off</li>
-        <li>Increase Volume</li>
-      </ul>
+    <h2 class="text-2xl font-bold mb-6 text-gray-800">
+      Command Flow
+    </h2>
 
-      <p class="mt-4 text-gray-600 italic">
-        Each button click is represented as a command object.
-      </p>
+    <div class="flex flex-col lg:flex-row items-center justify-center gap-4">
+
+      <div class="bg-blue-500 text-white px-8 py-5 rounded-2xl shadow-lg">
+        👤 Client
+      </div>
+
+      <div class="text-4xl text-gray-400">→</div>
+
+      <div class="bg-purple-500 text-white px-8 py-5 rounded-2xl shadow-lg">
+        📦 Command
+      </div>
+
+      <div class="text-4xl text-gray-400">→</div>
+
+      <div class="bg-orange-500 text-white px-8 py-5 rounded-2xl shadow-lg">
+        🎮 Invoker
+      </div>
+
+      <div class="text-4xl text-gray-400">→</div>
+
+      <div class="bg-green-500 text-white px-8 py-5 rounded-2xl shadow-lg">
+        ⚙️ Receiver
+      </div>
 
     </div>
 
   </div>
 
+  <!-- Participants -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+
+    <div class="bg-white rounded-2xl shadow-lg p-6 hover:-translate-y-2 transition">
+      <div class="text-4xl mb-3">👤</div>
+      <h3 class="font-bold text-lg mb-2">Client</h3>
+      <p class="text-gray-600">
+        Creates command objects and assigns receivers.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg p-6 hover:-translate-y-2 transition">
+      <div class="text-4xl mb-3">📦</div>
+      <h3 class="font-bold text-lg mb-2">Command</h3>
+      <p class="text-gray-600">
+        Encapsulates a request into an executable object.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg p-6 hover:-translate-y-2 transition">
+      <div class="text-4xl mb-3">🎮</div>
+      <h3 class="font-bold text-lg mb-2">Invoker</h3>
+      <p class="text-gray-600">
+        Executes commands without knowing implementation details.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg p-6 hover:-translate-y-2 transition">
+      <div class="text-4xl mb-3">⚙️</div>
+      <h3 class="font-bold text-lg mb-2">Receiver</h3>
+      <p class="text-gray-600">
+        Performs the actual business operation.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Remote Control Example -->
+  <div class="bg-white rounded-3xl shadow-xl p-8 mb-8">
+
+    <h2 class="text-2xl font-bold mb-6">
+      TV Remote Control Example
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="bg-purple-50 border-l-4 border-purple-500 p-5 rounded-xl">
+        <h3 class="font-bold text-purple-700 mb-2">
+          📺 Turn TV On
+        </h3>
+        <p class="text-gray-600">
+          Executes an OnCommand object.
+        </p>
+      </div>
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-xl">
+        <h3 class="font-bold text-blue-700 mb-2">
+          🔇 Turn TV Off
+        </h3>
+        <p class="text-gray-600">
+          Executes an OffCommand object.
+        </p>
+      </div>
+
+      <div class="bg-green-50 border-l-4 border-green-500 p-5 rounded-xl">
+        <h3 class="font-bold text-green-700 mb-2">
+          🔊 Increase Volume
+        </h3>
+        <p class="text-gray-600">
+          Executes a VolumeUpCommand object.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="mt-6 bg-purple-50 border border-purple-200 p-4 rounded-xl">
+      <p class="text-purple-700">
+        💡 Every button on the remote is represented as a separate command object.
+        The remote only triggers commands and does not know how the TV works internally.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Real World Use Cases -->
+  <div class="bg-white rounded-3xl shadow-xl p-8 mb-8">
+
+    <h2 class="text-2xl font-bold mb-6">
+      Real-World Use Cases
+    </h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <div class="bg-slate-50 p-5 rounded-xl">
+        <div class="text-3xl mb-2">↩️</div>
+        <h3 class="font-semibold mb-2">Undo/Redo</h3>
+        <p class="text-gray-600 text-sm">
+          Text editors and design tools.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 p-5 rounded-xl">
+        <div class="text-3xl mb-2">📋</div>
+        <h3 class="font-semibold mb-2">Task Queues</h3>
+        <p class="text-gray-600 text-sm">
+          Execute jobs asynchronously.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 p-5 rounded-xl">
+        <div class="text-3xl mb-2">🎮</div>
+        <h3 class="font-semibold mb-2">Game Controls</h3>
+        <p class="text-gray-600 text-sm">
+          Map actions to buttons.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 p-5 rounded-xl">
+        <div class="text-3xl mb-2">🏠</div>
+        <h3 class="font-semibold mb-2">Smart Homes</h3>
+        <p class="text-gray-600 text-sm">
+          Turn devices on/off remotely.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Pros and Cons -->
+  <div class="grid md:grid-cols-2 gap-8 mb-8">
+
+    <div class="bg-white rounded-3xl shadow-xl p-8">
+
+      <h2 class="text-2xl font-bold text-green-600 mb-4">
+        ✅ Advantages
+      </h2>
+
+      <ul class="space-y-3 text-gray-700">
+        <li>✔ Decouples sender and receiver</li>
+        <li>✔ Supports undo and redo</li>
+        <li>✔ Easy command logging</li>
+        <li>✔ Supports queuing operations</li>
+        <li>✔ Extensible architecture</li>
+      </ul>
+
+    </div>
+
+    <div class="bg-white rounded-3xl shadow-xl p-8">
+
+      <h2 class="text-2xl font-bold text-red-600 mb-4">
+        ❌ Disadvantages
+      </h2>
+
+      <ul class="space-y-3 text-gray-700">
+        <li>✖ Many command classes required</li>
+        <li>✖ Increased code complexity</li>
+        <li>✖ More objects to manage</li>
+        <li>✖ Can be overkill for simple tasks</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  feather.replace();
+</script>
+
 </body>
 </html>
+```
