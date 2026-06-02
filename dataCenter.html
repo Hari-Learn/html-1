@@ -1,81 +1,145 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Concepts - Page 3</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Concepts - Page 3</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+.card-hover{
+    transition: all 0.3s ease;
+}
+.card-hover:hover{
+    transform: translateY(-8px);
+}
+</style>
 </head>
 
-<body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800 min-h-screen">
+<body class="bg-gradient-to-br from-slate-100 via-indigo-50 to-blue-100 min-h-screen text-gray-800">
 
-  <!-- Header -->
-  <header class="bg-white shadow-md">
-    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-indigo-600">AI Concepts</h1>
-      <span class="text-sm text-gray-500">Page 3</span>
+<!-- Header -->
+<header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 class="text-3xl font-extrabold bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
+            AI Concepts
+        </h1>
+
+        <span class="bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-sm font-medium">
+            Page 3
+        </span>
     </div>
-  </header>
+</header>
 
-  <!-- Main -->
-  <main class="max-w-5xl mx-auto p-6">
+<!-- Hero Section -->
+<section class="max-w-6xl mx-auto px-6 py-12 text-center">
+    <h2 class="text-5xl font-extrabold mb-4 text-gray-900">
+        AI System Design
+    </h2>
 
-    <h2 class="text-3xl font-bold mb-8 text-center">AI System Design</h2>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Understand how modern AI systems communicate, remember information,
+        and process large amounts of context to solve complex tasks.
+    </p>
+</section>
 
-    <div class="grid gap-6 md:grid-cols-2">
+<!-- Cards -->
+<main class="max-w-6xl mx-auto px-6 pb-12">
 
-      <!-- A2A Card -->
-      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100">
-        <div class="flex items-center gap-3">
-          <span class="text-3xl">🔗</span>
-          <h3 class="text-xl font-semibold text-indigo-600">A2A Communication</h3>
+    <div class="grid gap-8 md:grid-cols-2">
+
+        <!-- A2A -->
+        <div class="card-hover bg-white rounded-3xl p-8 shadow-lg border border-indigo-100">
+
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-indigo-100 flex items-center justify-center text-3xl">
+                    🔗
+                </div>
+
+                <h3 class="text-2xl font-bold text-indigo-600">
+                    A2A Communication
+                </h3>
+            </div>
+
+            <p class="mt-5 text-gray-600 leading-relaxed">
+                A2A (Agent-to-Agent) communication is like multiple AI teammates
+                collaborating on the same project.
+            </p>
+
+            <p class="mt-3 text-gray-600">
+                Each AI agent shares knowledge, tasks, and updates with others
+                to achieve better results together.
+            </p>
         </div>
-        <p class="mt-4 text-gray-600 leading-relaxed">
-          A2A is like **AI talking to other AI**. Imagine teammates passing messages to solve a problem together.
-        </p>
-        <p class="mt-2 text-gray-600">
-          Each agent shares useful info so the whole system can make better decisions.
-        </p>
-      </div>
 
-      <!-- Memory Card -->
-      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100">
-        <div class="flex items-center gap-3">
-          <span class="text-3xl">🧠</span>
-          <h3 class="text-xl font-semibold text-indigo-600">Memory & State</h3>
-        </div>
-        <p class="mt-4 text-gray-600 leading-relaxed">
-          This is like **AI remembering things**. Short-term memory is what it just saw,
-          and long-term memory is what it learned earlier.
-        </p>
-        <p class="mt-2 text-gray-600">
-          Good memory helps AI stay consistent across conversations.
-        </p>
-      </div>
+        <!-- Memory -->
+        <div class="card-hover bg-white rounded-3xl p-8 shadow-lg border border-purple-100">
 
-      <!-- Context Window Card -->
-      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100 md:col-span-2">
-        <div class="flex items-center gap-3">
-          <span class="text-3xl">📦</span>
-          <h3 class="text-xl font-semibold text-indigo-600">Context Window</h3>
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-purple-100 flex items-center justify-center text-3xl">
+                    🧠
+                </div>
+
+                <h3 class="text-2xl font-bold text-purple-600">
+                    Memory & State
+                </h3>
+            </div>
+
+            <p class="mt-5 text-gray-600 leading-relaxed">
+                Memory helps AI remember previous information and maintain
+                context throughout interactions.
+            </p>
+
+            <p class="mt-3 text-gray-600">
+                Short-term memory handles recent inputs, while long-term memory
+                stores knowledge learned over time.
+            </p>
         </div>
-        <p class="mt-4 text-gray-600 leading-relaxed">
-          Think of this as **how much the AI can "see" at once**.
-        </p>
-        <p class="mt-2 text-gray-600">
-          A bigger context window means the AI can handle longer conversations,
-          more details, and solve more complex problems without forgetting.
-        </p>
-      </div>
+
+        <!-- Context Window -->
+        <div class="card-hover bg-white rounded-3xl p-8 shadow-lg border border-blue-100 md:col-span-2">
+
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center text-3xl">
+                    📦
+                </div>
+
+                <h3 class="text-2xl font-bold text-blue-600">
+                    Context Window
+                </h3>
+            </div>
+
+            <p class="mt-5 text-gray-600 leading-relaxed">
+                The context window represents how much information an AI model
+                can process at one time.
+            </p>
+
+            <p class="mt-3 text-gray-600">
+                Larger context windows allow AI to understand longer documents,
+                maintain extended conversations, and solve more complex tasks
+                without losing important details.
+            </p>
+        </div>
 
     </div>
 
-  </main>
+</main>
 
-  <!-- Footer -->
-  <footer class="text-center text-sm text-gray-500 py-6">
-   Hariharan D designed for learning purpose © 2026 AI Learning Hub
-  </footer>
+<!-- Footer -->
+<footer class="bg-slate-900 text-gray-400 py-8 mt-8">
+    <div class="text-center">
+        <p class="font-medium text-white">
+            Hariharan D
+        </p>
+
+        <p class="mt-2 text-sm">
+            Designed for learning purposes © 2026 AI Learning Hub
+        </p>
+    </div>
+</footer>
 
 </body>
 </html>
+
