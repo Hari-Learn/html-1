@@ -5,65 +5,213 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Interpreter Pattern</title>
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
 
-  <div class="max-w-3xl bg-white rounded-2xl shadow-xl p-8">
+<body class="bg-gradient-to-br from-slate-100 to-indigo-100 min-h-screen py-10 px-4">
 
-    <h1 class="text-4xl font-bold text-indigo-600 mb-4">
-      Interpreter Pattern
-    </h1>
+  <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
 
-    <p class="text-gray-700 text-lg mb-6">
-      The <span class="font-semibold">Interpreter</span> design pattern
-      defines a grammar for a language and provides an interpreter
-      to process and evaluate expressions.
-    </p>
-
-    <!-- Flow Diagram -->
-    <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
-
-      <div class="bg-blue-500 text-white px-5 py-4 rounded-xl shadow-md">
-        Input Expression
-      </div>
-
-      <div class="text-3xl text-gray-500">→</div>
-
-      <div class="bg-purple-500 text-white px-5 py-4 rounded-xl shadow-md">
-        Interpreter
-      </div>
-
-      <div class="text-3xl text-gray-500">→</div>
-
-      <div class="bg-green-500 text-white px-5 py-4 rounded-xl shadow-md">
-        Result
-      </div>
-
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8">
+      <h1 class="text-5xl font-bold mb-3">
+        Interpreter Design Pattern
+      </h1>
+      <p class="text-lg text-indigo-100">
+        Defines a grammar for a language and provides an interpreter
+        to evaluate expressions in that language.
+      </p>
     </div>
 
-    <!-- Example Section -->
-    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+    <div class="p-8">
 
-      <h2 class="text-2xl font-semibold text-gray-800 mb-3">
-        Example
-      </h2>
+      <!-- Overview -->
+      <section class="mb-10">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+          What is it?
+        </h2>
 
-      <p class="text-gray-700 mb-4">
-        A calculator application interprets expressions like:
-      </p>
+        <p class="text-gray-700 leading-relaxed">
+          The <span class="font-semibold text-indigo-600">Interpreter Pattern</span>
+          is a behavioral design pattern that is used to evaluate sentences
+          in a language. Each grammar rule is represented by a class,
+          and expressions are interpreted recursively.
+        </p>
+      </section>
 
-      <div class="bg-gray-200 text-gray-800 px-4 py-3 rounded-lg font-mono text-lg">
-        5 + 3 - 2
-      </div>
+      <!-- Flow -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">
+          How It Works
+        </h2>
 
-    
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+
+          <div class="bg-blue-500 text-white px-6 py-5 rounded-2xl shadow-lg">
+            📝 Input Expression
+          </div>
+
+          <div class="text-4xl text-gray-400">→</div>
+
+          <div class="bg-purple-500 text-white px-6 py-5 rounded-2xl shadow-lg">
+            🧠 Interpreter
+          </div>
+
+          <div class="text-4xl text-gray-400">→</div>
+
+          <div class="bg-green-500 text-white px-6 py-5 rounded-2xl shadow-lg">
+            ✅ Result
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Components -->
+      <section class="mb-10">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">
+          Main Components
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-5">
+
+          <div class="bg-blue-50 p-5 rounded-xl border">
+            <h3 class="font-bold text-blue-600 mb-2">
+              Abstract Expression
+            </h3>
+            <p class="text-gray-700 text-sm">
+              Declares an interpret() operation common to all nodes.
+            </p>
+          </div>
+
+          <div class="bg-purple-50 p-5 rounded-xl border">
+            <h3 class="font-bold text-purple-600 mb-2">
+              Terminal Expression
+            </h3>
+            <p class="text-gray-700 text-sm">
+              Represents basic symbols or values.
+            </p>
+          </div>
+
+          <div class="bg-green-50 p-5 rounded-xl border">
+            <h3 class="font-bold text-green-600 mb-2">
+              Non-Terminal Expression
+            </h3>
+            <p class="text-gray-700 text-sm">
+              Combines expressions and applies grammar rules.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Example -->
+      <section class="mb-10">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+          Example
+        </h2>
+
+        <p class="text-gray-700 mb-4">
+          Consider a calculator interpreting the expression:
+        </p>
+
+        <div class="bg-gray-900 text-green-400 p-5 rounded-xl font-mono text-xl shadow">
+          5 + 3 - 2
+        </div>
+
+        <div class="mt-5 flex flex-wrap gap-3">
+
+          <div class="bg-blue-100 px-4 py-2 rounded-lg">
+            5 + 3 = 8
+          </div>
+
+          <div class="bg-purple-100 px-4 py-2 rounded-lg">
+            8 - 2 = 6
+          </div>
+
+          <div class="bg-green-100 px-4 py-2 rounded-lg font-bold">
+            Result = 6
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Real World Uses -->
+      <section class="mb-10">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">
+          Real-World Applications
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-5">
+
+          <div class="bg-indigo-50 p-5 rounded-xl border">
+            <h3 class="font-semibold mb-2">Programming Languages</h3>
+            <p class="text-gray-700">
+              Compilers and parsers interpret source code syntax.
+            </p>
+          </div>
+
+          <div class="bg-indigo-50 p-5 rounded-xl border">
+            <h3 class="font-semibold mb-2">SQL Engines</h3>
+            <p class="text-gray-700">
+              Database queries are parsed and interpreted.
+            </p>
+          </div>
+
+          <div class="bg-indigo-50 p-5 rounded-xl border">
+            <h3 class="font-semibold mb-2">Search Filters</h3>
+            <p class="text-gray-700">
+              Expressions like "price > 100 AND stock > 0".
+            </p>
+          </div>
+
+          <div class="bg-indigo-50 p-5 rounded-xl border">
+            <h3 class="font-semibold mb-2">Rule Engines</h3>
+            <p class="text-gray-700">
+              Business rules are represented as expressions.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Pros & Cons -->
+      <section>
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">
+          Advantages & Disadvantages
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <div class="bg-green-50 border border-green-200 p-5 rounded-xl">
+            <h3 class="text-green-700 font-bold mb-3">
+              Advantages
+            </h3>
+
+            <ul class="space-y-2 text-gray-700">
+              <li>✔ Easy to extend grammar.</li>
+              <li>✔ Represents rules clearly.</li>
+              <li>✔ Good for simple languages.</li>
+            </ul>
+          </div>
+
+          <div class="bg-red-50 border border-red-200 p-5 rounded-xl">
+            <h3 class="text-red-700 font-bold mb-3">
+              Disadvantages
+            </h3>
+
+            <ul class="space-y-2 text-gray-700">
+              <li>✖ Complex grammars create many classes.</li>
+              <li>✖ Can become difficult to maintain.</li>
+              <li>✖ Performance may degrade for large expressions.</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
 
     </div>
 
   </div>
-
 
 </body>
 </html>
