@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CQRS (Command Query Responsibility Segregation)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-4xl bg-white rounded-xl shadow-lg p-8">
+        <h1 class="text-4xl font-bold text-emerald-600 mb-4">
+            CQRS (Command Query Responsibility Segregation)
+        </h1>
+
+        <p class="text-gray-700 mb-6">
+            CQRS is an architectural pattern that separates operations that
+            modify data (Commands) from operations that read data (Queries).
+            Instead of using the same model for both reading and writing,
+            CQRS uses different models and responsibilities for each.
+        </p>
+
+        <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded mb-6">
+            <h2 class="text-xl font-semibold text-emerald-700 mb-2">
+                Core Concepts
+            </h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                <li><strong>Command</strong> – Creates, updates, or deletes data.</li>
+                <li><strong>Query</strong> – Retrieves data without changing it.</li>
+                <li>Read and write operations are handled separately.</li>
+                <li>Improves scalability and maintainability in complex systems.</li>
+            </ul>
+        </div>
+
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-6">
+            <h2 class="text-xl font-semibold text-blue-700 mb-2">
+                Benefits
+            </h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                <li>Clear separation of responsibilities.</li>
+                <li>Optimized read and write models.</li>
+                <li>Easier scaling of large applications.</li>
+                <li>Better maintainability and flexibility.</li>
+            </ul>
+        </div>
+
+        <h2 class="text-2xl font-semibold mb-3">
+            Simple Example
+        </h2>
+
+        <pre class="bg-slate-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm">
+class UserCommandService {
+    createUser(name) {
+        console.log(`User created: ${name}`);
+    }
+}
+
+class UserQueryService {
+    getUser(id) {
+        return { id, name: "John Doe" };
+    }
+}
+
+// Command (Write)
+const commandService = new UserCommandService();
+commandService.createUser("John Doe");
+
+// Query (Read)
+const queryService = new UserQueryService();
+console.log(queryService.getUser(1));
+        </pre>
+
+        <p class="mt-6 text-gray-700">
+            In this example, <strong>UserCommandService</strong> is responsible
+            for modifying data, while <strong>UserQueryService</strong> is
+            responsible for retrieving data. This separation is the core idea
+            behind CQRS.
+        </p>
+    </div>
+
+</body>
+</html>
