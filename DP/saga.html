@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saga Pattern (Distributed Transactions)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+  <div class="max-w-5xl mx-auto px-6 py-12">
+
+    <!-- Header -->
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-slate-900">
+        Saga Pattern (Distributed Transactions)
+      </h1>
+      <p class="mt-3 text-lg text-slate-600">
+        Managing transactions across multiple microservices without a global database transaction.
+      </p>
+    </header>
+
+    <!-- Overview -->
+    <section class="bg-white rounded-xl shadow-md p-8 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">What is the Saga Pattern?</h2>
+      <p class="leading-relaxed">
+        The Saga Pattern is a distributed transaction management approach used in
+        microservices architectures. A business transaction is broken into a
+        sequence of local transactions. Each service completes its work and
+        publishes an event that triggers the next step. If a step fails,
+        compensating transactions are executed to undo previous actions.
+      </p>
+    </section>
+
+    <!-- Workflow -->
+    <section class="bg-white rounded-xl shadow-md p-8 mb-8">
+      <h2 class="text-2xl font-semibold mb-6">Example Workflow: Online Order</h2>
+
+      <div class="flex flex-col md:flex-row items-center gap-4 text-center">
+        <div class="bg-blue-50 p-4 rounded-lg w-full">
+          <strong>Create Order</strong>
+        </div>
+
+        <div class="text-2xl">→</div>
+
+        <div class="bg-green-50 p-4 rounded-lg w-full">
+          <strong>Reserve Inventory</strong>
+        </div>
+
+        <div class="text-2xl">→</div>
+
+        <div class="bg-yellow-50 p-4 rounded-lg w-full">
+          <strong>Process Payment</strong>
+        </div>
+
+        <div class="text-2xl">→</div>
+
+        <div class="bg-purple-50 p-4 rounded-lg w-full">
+          <strong>Confirm Order</strong>
+        </div>
+      </div>
+
+      <p class="mt-6 text-slate-700">
+        If payment fails, compensating actions such as inventory release and
+        order cancellation are triggered automatically.
+      </p>
+    </section>
+
+    <!-- Compensation -->
+    <section class="bg-white rounded-xl shadow-md p-8 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Compensating Transactions</h2>
+
+      <div class="bg-red-50 border border-red-200 rounded-lg p-5">
+        <p class="font-medium mb-2">Failure Scenario</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Order Created ✓</li>
+          <li>Inventory Reserved ✓</li>
+          <li>Payment Failed ✗</li>
+          <li>Release Inventory ↩</li>
+          <li>Cancel Order ↩</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Pros & Cons -->
+    <section class="grid md:grid-cols-2 gap-6 mb-8">
+
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-xl font-semibold text-green-600 mb-3">Advantages</h3>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Supports microservices architecture</li>
+          <li>Avoids distributed database locks</li>
+          <li>Improves scalability</li>
+          <li>Provides eventual consistency</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-xl font-semibold text-red-600 mb-3">Challenges</h3>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Complex failure handling</li>
+          <li>Requires compensating actions</li>
+          <li>Eventual consistency instead of immediate consistency</li>
+          <li>More difficult debugging and monitoring</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Types -->
+    <section class="bg-white rounded-xl shadow-md p-8">
+      <h2 class="text-2xl font-semibold mb-4">Saga Implementation Styles</h2>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-slate-50 p-5 rounded-lg border">
+          <h3 class="font-semibold mb-2">Choreography</h3>
+          <p>
+            Services communicate through events without a central coordinator.
+            Each service reacts to events and triggers the next step.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-5 rounded-lg border">
+          <h3 class="font-semibold mb-2">Orchestration</h3>
+          <p>
+            A dedicated Saga Orchestrator controls the workflow and instructs
+            services on what action to perform next.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center mt-10 text-slate-500">
+      The Saga Pattern enables reliable distributed transactions through local
+      transactions and compensating actions.
+    </footer>
+
+  </div>
+
+</body>
+</html>
