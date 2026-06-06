@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strangler Fig Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+  <div class="max-w-5xl mx-auto px-6 py-12">
+
+    <!-- Header -->
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-slate-900">
+        Strangler Fig Pattern
+      </h1>
+      <p class="mt-3 text-lg text-slate-600">
+        Modernize legacy systems incrementally without a risky full rewrite.
+      </p>
+    </header>
+
+    <!-- Introduction -->
+    <section class="bg-white rounded-xl shadow-md p-8 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">What is the Strangler Fig Pattern?</h2>
+      <p class="leading-relaxed">
+        The Strangler Fig Pattern is a software modernization strategy where
+        a legacy application is gradually replaced by a new system. Instead of
+        rebuilding everything at once, functionality is migrated piece by piece
+        until the old system can be safely retired.
+      </p>
+    </section>
+
+    <!-- Why the Name -->
+    <section class="bg-white rounded-xl shadow-md p-8 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Why is it Called "Strangler Fig"?</h2>
+      <p>
+        The pattern is inspired by the strangler fig tree, which grows around
+        an existing tree. Over time, it gradually replaces the original tree.
+        Similarly, new software components grow around a legacy system until
+        the old application is no longer needed.
+      </p>
+    </section>
+
+    <!-- Workflow -->
+    <section class="bg-white rounded-xl shadow-md p-8 mb-8">
+      <h2 class="text-2xl font-semibold mb-6">Migration Flow</h2>
+
+      <div class="flex flex-col md:flex-row items-center gap-4 text-center">
+
+        <div class="bg-red-50 p-4 rounded-lg w-full">
+          <strong>Legacy System</strong>
+        </div>
+
+        <div class="text-2xl">→</div>
+
+        <div class="bg-yellow-50 p-4 rounded-lg w-full">
+          <strong>Route Requests</strong>
+          <p class="text-sm text-slate-600">Proxy / Gateway</p>
+        </div>
+
+        <div class="text-2xl">→</div>
+
+        <div class="bg-green-50 p-4 rounded-lg w-full">
+          <strong>New Services</strong>
+        </div>
+
+      </div>
+
+      <p class="mt-6 text-slate-700">
+        As new features are developed, traffic is gradually redirected from the
+        legacy application to modern services until the migration is complete.
+      </p>
+    </section>
+
+    <!-- Example -->
+    <section class="bg-white rounded-xl shadow-md p-8 mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Example Scenario</h2>
+
+      <div class="bg-slate-900 text-green-400 rounded-lg p-4 font-mono text-sm">
+        Step 1: Legacy E-Commerce Application<br>
+        Step 2: Extract Product Service<br>
+        Step 3: Extract Order Service<br>
+        Step 4: Extract Payment Service<br>
+        Step 5: Decommission Legacy Application
+      </div>
+
+      <p class="mt-4">
+        Each capability is migrated independently, reducing risk and enabling
+        continuous delivery of new functionality.
+      </p>
+    </section>
+
+    <!-- Benefits & Challenges -->
+    <section class="grid md:grid-cols-2 gap-6 mb-8">
+
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-xl font-semibold text-green-600 mb-3">Advantages</h3>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Reduces migration risk</li>
+          <li>Allows gradual modernization</li>
+          <li>Minimizes downtime</li>
+          <li>Delivers business value continuously</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-xl font-semibold text-red-600 mb-3">Challenges</h3>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Temporary system complexity</li>
+          <li>Requires routing and integration logic</li>
+          <li>Data synchronization concerns</li>
+          <li>Long migration timelines for large systems</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Best Practices -->
+    <section class="bg-white rounded-xl shadow-md p-8">
+      <h2 class="text-2xl font-semibold mb-4">Best Practices</h2>
+
+      <ul class="list-disc pl-5 space-y-3">
+        <li>Start with low-risk, independent features.</li>
+        <li>Use an API Gateway or proxy for request routing.</li>
+        <li>Monitor both old and new systems during migration.</li>
+        <li>Automate testing to validate behavior consistency.</li>
+        <li>Retire legacy components as soon as replacement is stable.</li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center mt-10 text-slate-500">
+      The Strangler Fig Pattern enables safe, incremental modernization of
+      legacy applications while keeping the business running.
+    </footer>
+
+  </div>
+
+</body>
+</html>
