@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulkhead Design Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <div class="max-w-3xl mx-auto p-8">
+    
+    <div class="bg-white rounded-lg shadow p-6">
+      <h1 class="text-3xl font-bold text-blue-600 mb-4">
+        Bulkhead Design Pattern
+      </h1>
+
+      <p class="text-gray-700 mb-4">
+        The Bulkhead Pattern isolates different parts of an application so that
+        a failure in one component does not impact others.
+      </p>
+
+      <div class="bg-blue-50 p-4 rounded mb-4">
+        <strong>Example:</strong>
+        <p>
+          If the Payment Service becomes overloaded, the Product Catalog and
+          User Services continue to operate normally because they use separate
+          resources.
+        </p>
+      </div>
+
+      <h2 class="text-xl font-semibold mb-2">Benefits</h2>
+      <ul class="list-disc pl-5 text-gray-700">
+        <li>Prevents cascading failures</li>
+        <li>Improves system resilience</li>
+        <li>Provides fault isolation</li>
+        <li>Enhances availability</li>
+      </ul>
+
+      <div class="mt-6 p-3 bg-green-50 rounded">
+        Client → Service A | Service B | Service C
+        <br>
+        Each service has its own resources and limits.
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
