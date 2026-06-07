@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circuit Breaker Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+  <div class="max-w-4xl mx-auto p-8">
+
+    <!-- Header -->
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+      <h1 class="text-4xl font-bold text-red-600 mb-2">
+        Circuit Breaker Pattern
+      </h1>
+      <p class="text-gray-600">
+        Prevent cascading failures by stopping requests to unhealthy services.
+      </p>
+    </div>
+
+    <!-- Introduction -->
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3">What is Circuit Breaker?</h2>
+      <p>
+        The Circuit Breaker Pattern monitors service calls and temporarily
+        blocks requests when failures exceed a threshold. This prevents
+        overloaded or failing services from causing widespread system issues.
+      </p>
+    </div>
+
+    <!-- States -->
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-4">Circuit States</h2>
+
+      <div class="flex flex-col md:flex-row gap-4 text-center">
+
+        <div class="flex-1 bg-green-50 p-4 rounded">
+          <h3 class="font-bold text-green-700">Closed</h3>
+          <p class="text-sm mt-2">
+            Requests flow normally.
+          </p>
+        </div>
+
+        <div class="flex-1 bg-yellow-50 p-4 rounded">
+          <h3 class="font-bold text-yellow-700">Half-Open</h3>
+          <p class="text-sm mt-2">
+            Limited requests are allowed for testing.
+          </p>
+        </div>
+
+        <div class="flex-1 bg-red-50 p-4 rounded">
+          <h3 class="font-bold text-red-700">Open</h3>
+          <p class="text-sm mt-2">
+            Requests are blocked until recovery.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Workflow -->
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3">How It Works</h2>
+
+      <div class="bg-slate-900 text-green-400 p-4 rounded font-mono text-sm">
+        Client Request<br>
+        ↓<br>
+        Service Failure Detected<br>
+        ↓<br>
+        Failure Threshold Reached<br>
+        ↓<br>
+        Circuit Opens<br>
+        ↓<br>
+        Requests Rejected Temporarily<br>
+        ↓<br>
+        Recovery Test (Half-Open)<br>
+        ↓<br>
+        Circuit Closes if Successful
+      </div>
+    </div>
+
+    <!-- Example -->
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold mb-3">Example</h2>
+
+      <p>
+        An Order Service depends on a Payment Service. If the Payment Service
+        starts timing out repeatedly, the circuit breaker opens and immediately
+        returns a fallback response instead of waiting for more failed calls.
+      </p>
+    </div>
+
+    <!-- Benefits -->
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-2xl font-semibold mb-3">Benefits</h2>
+
+      <ul class="list-disc pl-5 space-y-2">
+        <li>Prevents cascading failures</li>
+        <li>Improves system resilience</li>
+        <li>Reduces response latency during outages</li>
+        <li>Allows failing services time to recover</li>
+        <li>Provides better user experience with fallbacks</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
