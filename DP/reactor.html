@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reactor Concurrency Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+  <div class="max-w-5xl mx-auto p-8">
+
+    <!-- Header -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h1 class="text-3xl font-bold text-cyan-600 mb-2">
+        Reactor Concurrency Pattern
+      </h1>
+      <p class="text-gray-600">
+        The Reactor pattern handles multiple simultaneous I/O events using a single
+        event loop, allowing applications to efficiently manage many connections
+        without creating a thread for each request.
+      </p>
+    </div>
+
+    <!-- Overview -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-3">Overview</h2>
+      <p>
+        Instead of continuously polling resources or creating numerous threads,
+        the Reactor waits for events such as network requests, user actions, or
+        file operations. When an event occurs, it dispatches the event to the
+        appropriate handler for processing.
+      </p>
+    </div>
+
+    <!-- Components -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-4">Key Components</h2>
+
+      <div class="grid md:grid-cols-4 gap-4">
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="font-bold text-blue-700">Event Source</h3>
+          <p class="text-sm mt-2">
+            Generates events such as client requests or I/O operations.
+          </p>
+        </div>
+
+        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+          <h3 class="font-bold text-yellow-700">Event Demultiplexer</h3>
+          <p class="text-sm mt-2">
+            Detects which events are ready for processing.
+          </p>
+        </div>
+
+        <div class="bg-cyan-50 border border-cyan-200 rounded-lg p-4">
+          <h3 class="font-bold text-cyan-700">Reactor</h3>
+          <p class="text-sm mt-2">
+            Central event loop that dispatches events to handlers.
+          </p>
+        </div>
+
+        <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+          <h3 class="font-bold text-green-700">Event Handler</h3>
+          <p class="text-sm mt-2">
+            Processes specific events and executes business logic.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flow -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-4">Event Flow</h2>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 text-center">
+        <div class="bg-blue-100 text-blue-800 px-4 py-3 rounded-lg font-medium">
+          Event Source
+        </div>
+
+        <div class="text-2xl">➡️</div>
+
+        <div class="bg-yellow-100 text-yellow-800 px-4 py-3 rounded-lg font-medium">
+          Event Demultiplexer
+        </div>
+
+        <div class="text-2xl">➡️</div>
+
+        <div class="bg-cyan-100 text-cyan-800 px-4 py-3 rounded-lg font-medium">
+          Reactor
+        </div>
+
+        <div class="text-2xl">➡️</div>
+
+        <div class="bg-green-100 text-green-800 px-4 py-3 rounded-lg font-medium">
+          Event Handler
+        </div>
+      </div>
+    </div>
+
+    <!-- Example -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-3">Common Use Cases</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>High-performance web servers.</li>
+        <li>Network proxies and gateways.</li>
+        <li>Chat and messaging applications.</li>
+        <li>Real-time communication systems.</li>
+        <li>Event-driven frameworks such as Node.js and Netty.</li>
+      </ul>
+    </div>
+
+    <!-- Advantages -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-xl font-semibold mb-3">Advantages</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Handles thousands of concurrent connections efficiently.</li>
+        <li>Reduces thread management overhead.</li>
+        <li>Improves scalability for I/O-bound applications.</li>
+        <li>Provides a centralized event-processing mechanism.</li>
+        <li>Works well in asynchronous and event-driven systems.</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
