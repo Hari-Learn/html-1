@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Active Record Integration Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+  <div class="max-w-5xl mx-auto p-8">
+
+    <!-- Header -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h1 class="text-3xl font-bold text-emerald-600 mb-2">
+        Active Record Pattern
+      </h1>
+      <p class="text-gray-600">
+        An integration pattern where an object represents both application data
+        and the logic required to store, retrieve, update, and delete that data
+        from a database.
+      </p>
+    </div>
+
+    <!-- Overview -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-3">Overview</h2>
+      <p>
+        In the Active Record pattern, database tables are mapped directly to
+        classes, and rows are mapped to objects. Each object contains both
+        business data and persistence methods, allowing it to interact directly
+        with the database.
+      </p>
+    </div>
+
+    <!-- Key Components -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-4">Key Components</h2>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="font-bold text-blue-700">Active Record Object</h3>
+          <p class="text-sm mt-2">
+            Represents a database row and contains persistence methods.
+          </p>
+        </div>
+
+        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+          <h3 class="font-bold text-yellow-700">Business Data</h3>
+          <p class="text-sm mt-2">
+            Stores application-specific fields such as name, email, or status.
+          </p>
+        </div>
+
+        <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+          <h3 class="font-bold text-green-700">Database</h3>
+          <p class="text-sm mt-2">
+            Persists and retrieves object data from tables.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flow -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-4">Workflow</h2>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 text-center">
+        <div class="bg-blue-100 text-blue-800 px-5 py-3 rounded-lg font-medium">
+          Object Created
+        </div>
+
+        <div class="text-2xl">➡️</div>
+
+        <div class="bg-yellow-100 text-yellow-800 px-5 py-3 rounded-lg font-medium">
+          save()
+        </div>
+
+        <div class="text-2xl">➡️</div>
+
+        <div class="bg-green-100 text-green-800 px-5 py-3 rounded-lg font-medium">
+          Database
+        </div>
+
+        <div class="text-2xl">➡️</div>
+
+        <div class="bg-purple-100 text-purple-800 px-5 py-3 rounded-lg font-medium">
+          find() / update() / delete()
+        </div>
+      </div>
+    </div>
+
+    <!-- Example -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-3">Example</h2>
+
+      <div class="bg-slate-50 border rounded-lg p-4">
+        <p class="mb-3">
+          A <strong>User</strong> class directly manages its own persistence:
+        </p>
+
+        <pre class="bg-slate-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm">
+class User {
+  id;
+  name;
+  email;
+
+  save();
+  update();
+  delete();
+  find();
+}
+        </pre>
+
+        <p class="mt-3">
+          The object contains both the data and the database operations.
+        </p>
+      </div>
+    </div>
+
+    <!-- Advantages -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-3">Advantages</h2>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Simple and easy to understand.</li>
+        <li>Reduces boilerplate code.</li>
+        <li>Speeds up CRUD application development.</li>
+        <li>Works well for small and medium-sized applications.</li>
+        <li>Common in many ORM frameworks.</li>
+      </ul>
+    </div>
+
+    <!-- Comparison -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-xl font-semibold mb-3">
+        Active Record vs Data Mapper
+      </h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border border-gray-200">
+          <thead class="bg-slate-200">
+            <tr>
+              <th class="border p-3 text-left">Feature</th>
+              <th class="border p-3 text-left">Active Record</th>
+              <th class="border p-3 text-left">Data Mapper</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border p-3">Persistence Logic</td>
+              <td class="border p-3">Inside the entity</td>
+              <td class="border p-3">Separate mapper class</td>
+            </tr>
+            <tr>
+              <td class="border p-3">Complexity</td>
+              <td class="border p-3">Low</td>
+              <td class="border p-3">Higher</td>
+            </tr>
+            <tr>
+              <td class="border p-3">Separation of Concerns</td>
+              <td class="border p-3">Limited</td>
+              <td class="border p-3">Strong</td>
+            </tr>
+            <tr>
+              <td class="border p-3">Best For</td>
+              <td class="border p-3">CRUD Applications</td>
+              <td class="border p-3">Complex Domain Models</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
