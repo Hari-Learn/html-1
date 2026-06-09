@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layered Architecture (N-Tier) Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+  <div class="max-w-5xl mx-auto p-8">
+
+    <!-- Header -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h1 class="text-3xl font-bold text-indigo-600 mb-2">
+        Layered Architecture (N-Tier) Pattern
+      </h1>
+      <p class="text-gray-600">
+        A software architecture pattern that organizes an application into
+        separate layers, where each layer has a specific responsibility and
+        communicates with adjacent layers.
+      </p>
+    </div>
+
+    <!-- Overview -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-3">Overview</h2>
+      <p>
+        Layered Architecture, also known as N-Tier Architecture, divides an
+        application into logical layers. This separation improves maintainability,
+        scalability, and testability by ensuring that each layer focuses on a
+        single concern.
+      </p>
+    </div>
+
+    <!-- Layers -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-4">Common Layers</h2>
+
+      <div class="space-y-4">
+
+        <div class="bg-blue-100 border border-blue-300 rounded-lg p-4">
+          <h3 class="font-bold text-blue-800">Presentation Layer</h3>
+          <p class="text-sm mt-1">
+            Handles user interaction, UI rendering, and request processing.
+          </p>
+        </div>
+
+        <div class="bg-green-100 border border-green-300 rounded-lg p-4">
+          <h3 class="font-bold text-green-800">Business Layer</h3>
+          <p class="text-sm mt-1">
+            Contains business rules, workflows, and application logic.
+          </p>
+        </div>
+
+        <div class="bg-yellow-100 border border-yellow-300 rounded-lg p-4">
+          <h3 class="font-bold text-yellow-800">Data Access Layer</h3>
+          <p class="text-sm mt-1">
+            Handles communication with databases and external data sources.
+          </p>
+        </div>
+
+        <div class="bg-purple-100 border border-purple-300 rounded-lg p-4">
+          <h3 class="font-bold text-purple-800">Database Layer</h3>
+          <p class="text-sm mt-1">
+            Stores and manages application data.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Architecture Flow -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-4">Request Flow</h2>
+
+      <div class="flex flex-col items-center space-y-3 text-center">
+
+        <div class="bg-blue-100 text-blue-800 px-6 py-3 rounded-lg font-medium w-64">
+          Presentation Layer
+        </div>
+
+        <div class="text-2xl">⬇️</div>
+
+        <div class="bg-green-100 text-green-800 px-6 py-3 rounded-lg font-medium w-64">
+          Business Layer
+        </div>
+
+        <div class="text-2xl">⬇️</div>
+
+        <div class="bg-yellow-100 text-yellow-800 px-6 py-3 rounded-lg font-medium w-64">
+          Data Access Layer
+        </div>
+
+        <div class="text-2xl">⬇️</div>
+
+        <div class="bg-purple-100 text-purple-800 px-6 py-3 rounded-lg font-medium w-64">
+          Database Layer
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Example -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-3">Example: E-Commerce Application</h2>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Presentation Layer:</strong> Product pages and checkout screens.</li>
+        <li><strong>Business Layer:</strong> Order processing and pricing rules.</li>
+        <li><strong>Data Access Layer:</strong> Product and order repositories.</li>
+        <li><strong>Database Layer:</strong> Customer, product, and order tables.</li>
+      </ul>
+    </div>
+
+    <!-- Benefits -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-3">Benefits</h2>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Clear separation of responsibilities.</li>
+        <li>Easier maintenance and testing.</li>
+        <li>Improved code organization.</li>
+        <li>Supports team collaboration.</li>
+        <li>Allows individual layers to evolve independently.</li>
+      </ul>
+    </div>
+
+    <!-- Challenges -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-xl font-semibold mb-3">Challenges</h2>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Can introduce additional complexity for small applications.</li>
+        <li>Requests may pass through multiple layers, affecting performance.</li>
+        <li>Strict layer boundaries require disciplined design.</li>
+        <li>Over-engineering is possible if too many layers are introduced.</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
