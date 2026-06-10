@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Check Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen">
+
+    <div class="max-w-5xl mx-auto p-8">
+
+        <!-- Header -->
+        <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+            <h1 class="text-4xl font-bold text-slate-800 mb-3">
+                Claim Check Pattern
+            </h1>
+            <p class="text-lg text-slate-600">
+                A messaging pattern that stores large payloads externally and
+                sends only a lightweight reference (claim check) through the
+                messaging system.
+            </p>
+        </div>
+
+        <!-- Problem -->
+        <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+                The Problem
+            </h2>
+
+            <p class="text-slate-700 mb-4">
+                Message brokers work best with small messages. Large files,
+                documents, images, or reports can:
+            </p>
+
+            <ul class="list-disc ml-6 text-slate-700 space-y-2">
+                <li>Increase network traffic</li>
+                <li>Slow down message processing</li>
+                <li>Consume broker storage</li>
+                <li>Reduce overall system performance</li>
+            </ul>
+
+            <div class="mt-4 bg-red-50 border border-red-200 rounded-lg p-4">
+                <p class="text-red-700 font-medium">
+                    Example: Sending a 100 MB PDF through a message queue.
+                </p>
+            </div>
+        </div>
+
+        <!-- Solution -->
+        <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+                The Solution
+            </h2>
+
+            <p class="text-slate-700 mb-6">
+                Store the large payload in external storage and send only a
+                unique identifier or reference in the message.
+            </p>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+                <div class="bg-blue-100 text-blue-800 px-6 py-4 rounded-xl font-medium">
+                    Large File
+                </div>
+
+                <div class="text-3xl text-slate-400">→</div>
+
+                <div class="bg-yellow-100 text-yellow-800 px-6 py-4 rounded-xl font-medium">
+                    External Storage
+                </div>
+
+                <div class="text-3xl text-slate-400">→</div>
+
+                <div class="bg-green-100 text-green-800 px-6 py-4 rounded-xl font-medium">
+                    File ID
+                </div>
+
+                <div class="text-3xl text-slate-400">→</div>
+
+                <div class="bg-purple-100 text-purple-800 px-6 py-4 rounded-xl font-medium">
+                    Message Queue
+                </div>
+            </div>
+        </div>
+
+        <!-- Example -->
+        <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+                Example Message
+            </h2>
+
+            <div class="bg-slate-900 text-green-400 rounded-xl p-5 overflow-auto">
+<pre>
+Instead of:
+
+{
+  "file": "100MB PDF content..."
+}
+
+Send:
+
+{
+  "documentId": "DOC-12345"
+}
+</pre>
+            </div>
+
+            <p class="mt-4 text-slate-700">
+                The consumer retrieves the actual document using the
+                provided identifier.
+            </p>
+        </div>
+
+        <!-- Workflow -->
+        <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+                Workflow
+            </h2>
+
+            <ol class="space-y-3 text-slate-700">
+                <li><strong>1.</strong> Store large payload in external storage.</li>
+                <li><strong>2.</strong> Generate a unique claim check ID.</li>
+                <li><strong>3.</strong> Send only the ID through the message queue.</li>
+                <li><strong>4.</strong> Consumer receives the message.</li>
+                <li><strong>5.</strong> Consumer retrieves the payload using the ID.</li>
+                <li><strong>6.</strong> Process the payload.</li>
+            </ol>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+                Common Use Cases
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-4">
+
+                <div class="border rounded-xl p-4">
+                    <h3 class="font-semibold text-slate-800 mb-2">
+                        📄 Document Processing
+                    </h3>
+                    <p class="text-slate-600">
+                        Large PDFs and reports stored outside the queue.
+                    </p>
+                </div>
+
+                <div class="border rounded-xl p-4">
+                    <h3 class="font-semibold text-slate-800 mb-2">
+                        🖼️ Image Processing
+                    </h3>
+                    <p class="text-slate-600">
+                        Send image references instead of image binaries.
+                    </p>
+                </div>
+
+                <div class="border rounded-xl p-4">
+                    <h3 class="font-semibold text-slate-800 mb-2">
+                        🎥 Media Pipelines
+                    </h3>
+                    <p class="text-slate-600">
+                        Store videos in object storage and send IDs.
+                    </p>
+                </div>
+
+                <div class="border rounded-xl p-4">
+                    <h3 class="font-semibold text-slate-800 mb-2">
+                        ☁️ Cloud Applications
+                    </h3>
+                    <p class="text-slate-600">
+                        Common with S3, Azure Blob Storage, and GCS.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Pros & Cons -->
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="bg-green-50 border border-green-200 rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-green-800 mb-4">
+                    Advantages
+                </h2>
+
+                <ul class="space-y-2 text-green-700">
+                    <li>✔ Smaller messages</li>
+                    <li>✔ Faster message processing</li>
+                    <li>✔ Reduced broker storage usage</li>
+                    <li>✔ Better scalability</li>
+                    <li>✔ Efficient handling of large files</li>
+                </ul>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-red-800 mb-4">
+                    Challenges
+                </h2>
+
+                <ul class="space-y-2 text-red-700">
+                    <li>✖ Additional storage dependency</li>
+                    <li>✖ Extra retrieval step</li>
+                    <li>✖ Storage cleanup required</li>
+                    <li>✖ Handling missing references</li>
+                    <li>✖ More complex architecture</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Summary -->
+        <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 mt-6">
+            <h2 class="text-xl font-semibold text-blue-800 mb-3">
+                Key Takeaway
+            </h2>
+            <p class="text-blue-700">
+                The Claim Check Pattern improves messaging efficiency by
+                replacing large payloads with lightweight references. It is
+                especially valuable in distributed systems that process
+                documents, media files, and other large data objects.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
