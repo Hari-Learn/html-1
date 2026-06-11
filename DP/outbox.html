@@ -1,169 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Outbox Pattern Design Pattern</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outbox Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-100 text-slate-800">
+<body class="bg-slate-100 min-h-screen">
 
-  <div class="max-w-5xl mx-auto px-6 py-12">
+    <div class="max-w-5xl mx-auto p-8">
 
-    <!-- Header -->
-    <header class="text-center mb-10">
-      <h1 class="text-4xl font-bold text-slate-900">
-        Outbox Pattern
-      </h1>
-      <p class="mt-3 text-lg text-slate-600">
-        Ensuring reliable event publishing and data consistency in distributed systems.
-      </p>
-    </header>
-
-    <!-- Introduction -->
-    <section class="bg-white rounded-xl shadow-md p-8 mb-8">
-      <h2 class="text-2xl font-semibold mb-4">What is the Outbox Pattern?</h2>
-      <p class="leading-relaxed">
-        The Outbox Pattern is a design pattern used in microservices and
-        event-driven architectures to guarantee that database updates and
-        message publishing happen reliably. Instead of publishing events
-        directly to a message broker, events are first stored in an
-        <strong>Outbox Table</strong> within the same database transaction.
-      </p>
-    </section>
-
-    <!-- Workflow -->
-    <section class="bg-white rounded-xl shadow-md p-8 mb-8">
-      <h2 class="text-2xl font-semibold mb-6">How It Works</h2>
-
-      <div class="flex flex-col md:flex-row items-center gap-4 text-center">
-
-        <div class="bg-blue-50 p-4 rounded-lg w-full">
-          <strong>Business Action</strong>
-          <p class="text-sm text-slate-600">Create Order</p>
+        <!-- Header -->
+        <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+            <h1 class="text-4xl font-bold text-slate-800 mb-3">
+                Outbox Pattern
+            </h1>
+            <p class="text-lg text-slate-600">
+                A reliability pattern that ensures database updates and
+                event/message publishing happen consistently without losing
+                messages during failures.
+            </p>
         </div>
 
-        <div class="text-2xl">→</div>
+        <!-- Problem -->
+        <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+                The Problem
+            </h2>
 
-        <div class="bg-green-50 p-4 rounded-lg w-full">
-          <strong>Database Transaction</strong>
-          <p class="text-sm text-slate-600">Save Data + Outbox Event</p>
+            <p class="text-slate-700 mb-4">
+                Consider an order service that saves an order and then
+                publishes an event.
+            </p>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+<pre class="text-red-700 overflow-x-auto">
+1. Save Order to Database
+2. Publish OrderCreated Event
+</pre>
+            </div>
+
+            <p class="mt-4 text-slate-700">
+                What happens if the database update succeeds but the event
+                publication fails?
+            </p>
+
+            <ul class="list-disc ml-6 mt-3 text-slate-700">
+                <li>Order exists in the database.</li>
+                <li>No event is published.</li>
+                <li>Other services never know the order was created.</li>
+            </ul>
         </div>
 
-        <div class="text-2xl">→</div>
+        <!-- Solution -->
+        <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+                The Solution
+            </h2>
 
-        <div class="bg-yellow-50 p-4 rounded-lg w-full">
-          <strong>Outbox Processor</strong>
-          <p class="text-sm text-slate-600">Reads Pending Events</p>
+            <p class="text-slate-700 mb-6">
+                Store both the business data and the event in the same
+                database transaction. A background process later publishes
+                the event safely.
+            </p>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+
+                <div class="bg-blue-100 text-blue-800 px-6 py-4 rounded-xl font-medium">
+                    Save Order
+                </div>
+
+                <div class="text-3xl text-slate-400">→</div>
+
+                <div class="bg-yellow-100 text-yellow-800 px-6 py-4 rounded-xl font-medium">
+                    Write Outbox Record
+                </div>
+
+                <div class="text-3xl text-slate-400">→</div>
+
+                <div class="bg-green-100 text-green-800 px-6 py-4 rounded-xl font-medium">
+                    Publish Event Later
+                </div>
+
+            </div>
         </div>
 
-        <div class="text-2xl">→</div>
+        <!-- Database Example -->
+        <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+                Example Database Tables
+            </h2>
 
-        <div class="bg-purple-50 p-4 rounded-lg w-full">
-          <strong>Message Broker</strong>
-          <p class="text-sm text-slate-600">Publish Event</p>
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <div>
+                    <h3 class="font-semibold mb-2 text-slate-700">
+                        Orders Table
+                    </h3>
+
+                    <div class="bg-slate-900 text-green-400 rounded-xl p-4">
+<pre>
+id | customer
+----------------
+101 | John
+</pre>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-2 text-slate-700">
+                        Outbox Table
+                    </h3>
+
+                    <div class="bg-slate-900 text-green-400 rounded-xl p-4">
+<pre>
+id | event
+------------------------
+1  | OrderCreated
+</pre>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-      </div>
-    </section>
+        <!-- Workflow -->
+        <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+                Workflow
+            </h2>
 
-    <!-- Problem Solved -->
-    <section class="bg-white rounded-xl shadow-md p-8 mb-8">
-      <h2 class="text-2xl font-semibold mb-4">Problem It Solves</h2>
-
-      <div class="bg-red-50 border border-red-200 rounded-lg p-5 mb-4">
-        <h3 class="font-semibold text-red-700 mb-2">Without Outbox</h3>
-        <ul class="list-disc pl-5 space-y-1">
-          <li>Database update succeeds ✓</li>
-          <li>Message publishing fails ✗</li>
-          <li>Systems become inconsistent</li>
-        </ul>
-      </div>
-
-      <div class="bg-green-50 border border-green-200 rounded-lg p-5">
-        <h3 class="font-semibold text-green-700 mb-2">With Outbox</h3>
-        <ul class="list-disc pl-5 space-y-1">
-          <li>Data and event saved atomically ✓</li>
-          <li>Event can be retried later ✓</li>
-          <li>Improves reliability and consistency ✓</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Example -->
-    <section class="bg-white rounded-xl shadow-md p-8 mb-8">
-      <h2 class="text-2xl font-semibold mb-4">Example</h2>
-
-      <div class="bg-slate-900 text-green-400 rounded-lg p-4 font-mono text-sm">
-        Order Created<br>
-        ├─ Save Order Record<br>
-        ├─ Save "OrderCreated" Event to Outbox<br>
-        └─ Commit Transaction<br><br>
-
-        Outbox Worker → Publish Event → Mark Processed
-      </div>
-    </section>
-
-    <!-- Benefits & Challenges -->
-    <section class="grid md:grid-cols-2 gap-6 mb-8">
-
-      <div class="bg-white rounded-xl shadow-md p-6">
-        <h3 class="text-xl font-semibold text-green-600 mb-3">Advantages</h3>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Reliable event delivery</li>
-          <li>Prevents lost messages</li>
-          <li>Maintains data consistency</li>
-          <li>Works well with microservices</li>
-        </ul>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md p-6">
-        <h3 class="text-xl font-semibold text-red-600 mb-3">Challenges</h3>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Requires additional Outbox table</li>
-          <li>Needs background processing</li>
-          <li>Handling duplicate messages</li>
-          <li>Operational monitoring is important</li>
-        </ul>
-      </div>
-
-    </section>
-
-    <!-- Key Components -->
-    <section class="bg-white rounded-xl shadow-md p-8">
-      <h2 class="text-2xl font-semibold mb-4">Key Components</h2>
-
-      <div class="grid md:grid-cols-3 gap-4">
-        <div class="bg-blue-50 rounded-lg p-4 text-center">
-          <h3 class="font-semibold">Application</h3>
-          <p class="text-sm mt-2">
-            Performs business operations.
-          </p>
+            <ol class="space-y-3 text-slate-700">
+                <li><strong>1.</strong> Begin database transaction.</li>
+                <li><strong>2.</strong> Save business data (Order).</li>
+                <li><strong>3.</strong> Insert event into Outbox table.</li>
+                <li><strong>4.</strong> Commit transaction.</li>
+                <li><strong>5.</strong> Background worker reads Outbox records.</li>
+                <li><strong>6.</strong> Publish events to message broker.</li>
+                <li><strong>7.</strong> Mark Outbox record as processed.</li>
+            </ol>
         </div>
 
-        <div class="bg-green-50 rounded-lg p-4 text-center">
-          <h3 class="font-semibold">Outbox Table</h3>
-          <p class="text-sm mt-2">
-            Stores pending integration events.
-          </p>
+        <!-- Benefits -->
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+            <div class="bg-green-50 border border-green-200 rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-green-800 mb-4">
+                    Advantages
+                </h2>
+
+                <ul class="space-y-2 text-green-700">
+                    <li>✔ Prevents lost events</li>
+                    <li>✔ Reliable message delivery</li>
+                    <li>✔ No distributed transactions needed</li>
+                    <li>✔ Works well with microservices</li>
+                    <li>✔ Improves fault tolerance</li>
+                </ul>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-2xl p-6">
+                <h2 class="text-xl font-semibold text-red-800 mb-4">
+                    Challenges
+                </h2>
+
+                <ul class="space-y-2 text-red-700">
+                    <li>✖ Additional Outbox table</li>
+                    <li>✖ Background worker required</li>
+                    <li>✖ Event cleanup needed</li>
+                    <li>✖ Increased operational complexity</li>
+                    <li>✖ Duplicate events may occur</li>
+                </ul>
+            </div>
+
         </div>
 
-        <div class="bg-purple-50 rounded-lg p-4 text-center">
-          <h3 class="font-semibold">Message Broker</h3>
-          <p class="text-sm mt-2">
-            Delivers events to other services.
-          </p>
+        <!-- Use Cases -->
+        <div class="bg-white rounded-2xl shadow-md p-8 mb-6">
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+                Common Use Cases
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-4">
+
+                <div class="border rounded-xl p-4">
+                    <h3 class="font-semibold text-slate-800 mb-2">
+                        🛒 E-Commerce
+                    </h3>
+                    <p class="text-slate-600">
+                        Publish order and inventory events reliably.
+                    </p>
+                </div>
+
+                <div class="border rounded-xl p-4">
+                    <h3 class="font-semibold text-slate-800 mb-2">
+                        💳 Payment Systems
+                    </h3>
+                    <p class="text-slate-600">
+                        Ensure payment events are never lost.
+                    </p>
+                </div>
+
+                <div class="border rounded-xl p-4">
+                    <h3 class="font-semibold text-slate-800 mb-2">
+                        📦 Logistics
+                    </h3>
+                    <p class="text-slate-600">
+                        Track shipment updates across services.
+                    </p>
+                </div>
+
+                <div class="border rounded-xl p-4">
+                    <h3 class="font-semibold text-slate-800 mb-2">
+                        ☁️ Event-Driven Systems
+                    </h3>
+                    <p class="text-slate-600">
+                        Reliable integration between microservices.
+                    </p>
+                </div>
+
+            </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="text-center mt-10 text-slate-500">
-      The Outbox Pattern bridges database transactions and event publishing to
-      achieve reliable communication in distributed systems.
-    </footer>
+        <!-- Summary -->
+        <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6">
+            <h2 class="text-xl font-semibold text-blue-800 mb-3">
+                Key Takeaway
+            </h2>
 
-  </div>
+            <p class="text-blue-700">
+                The Outbox Pattern guarantees that database changes and
+                published events stay consistent by storing events in an
+                Outbox table as part of the same transaction. It is one of
+                the most widely used reliability patterns in modern
+                microservices architectures.
+            </p>
+        </div>
+
+    </div>
 
 </body>
 </html>
