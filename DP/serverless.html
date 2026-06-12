@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serverless Architecture</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+  <div class="max-w-5xl mx-auto px-6 py-10">
+
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-indigo-700">
+        Serverless Architecture
+      </h1>
+      <p class="mt-3 text-gray-600">
+        Build and run applications without managing servers. Cloud providers
+        automatically handle infrastructure, scaling, and availability.
+      </p>
+    </div>
+
+    <!-- Architecture Diagram -->
+    <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+      <h2 class="text-2xl font-semibold mb-6 text-center">
+        Request Flow
+      </h2>
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+
+        <div class="bg-blue-100 text-blue-800 px-6 py-4 rounded-lg font-medium">
+          User / Client
+        </div>
+
+        <div class="text-2xl text-gray-400">→</div>
+
+        <div class="bg-green-100 text-green-800 px-6 py-4 rounded-lg font-medium">
+          API Gateway
+        </div>
+
+        <div class="text-2xl text-gray-400">→</div>
+
+        <div class="bg-yellow-100 text-yellow-800 px-6 py-4 rounded-lg font-medium">
+          Serverless Function
+        </div>
+
+        <div class="text-2xl text-gray-400">→</div>
+
+        <div class="bg-purple-100 text-purple-800 px-6 py-4 rounded-lg font-medium">
+          Database / Storage
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Components -->
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-lg font-semibold text-blue-700 mb-2">
+          Client
+        </h3>
+        <p class="text-gray-600">
+          A web app, mobile app, or external system that sends requests.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-lg font-semibold text-green-700 mb-2">
+          API Gateway
+        </h3>
+        <p class="text-gray-600">
+          Receives requests, handles routing, authentication, and triggers functions.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-lg font-semibold text-yellow-700 mb-2">
+          Serverless Function
+        </h3>
+        <p class="text-gray-600">
+          Executes business logic only when triggered. No server management required.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-lg font-semibold text-purple-700 mb-2">
+          Database / Storage
+        </h3>
+        <p class="text-gray-600">
+          Stores application data, files, logs, and other resources.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Benefits -->
+    <div class="bg-white rounded-xl shadow p-6 mt-8">
+      <h2 class="text-2xl font-semibold mb-4">
+        Benefits
+      </h2>
+
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>No server provisioning or maintenance.</li>
+        <li>Automatic scaling based on demand.</li>
+        <li>Pay only for actual execution time.</li>
+        <li>Faster development and deployment.</li>
+        <li>High availability managed by the cloud provider.</li>
+      </ul>
+    </div>
+
+    <!-- Key Principle -->
+    <div class="mt-8 bg-indigo-50 border border-indigo-200 rounded-xl p-6">
+      <h2 class="text-xl font-semibold text-indigo-700 mb-2">
+        Key Principle
+      </h2>
+      <p class="text-gray-700">
+        Developers focus on writing business logic while the cloud provider
+        manages servers, scaling, networking, and infrastructure operations.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
