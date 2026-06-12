@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onion Architecture Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-8">
+
+  <div class="max-w-4xl w-full bg-white rounded-2xl shadow-lg p-8">
+    
+    <h1 class="text-4xl font-bold text-center text-indigo-700 mb-4">
+      Onion Architecture
+    </h1>
+
+    <p class="text-gray-600 text-center mb-10">
+      Onion Architecture organizes software into concentric layers, placing
+      business rules at the center and keeping external concerns at the outer layers.
+    </p>
+
+    <!-- Onion Layers -->
+    <div class="relative flex items-center justify-center h-[500px]">
+
+      <!-- Infrastructure -->
+      <div class="absolute w-96 h-96 rounded-full bg-indigo-100 border-4 border-indigo-300 flex items-center justify-center">
+        <span class="absolute top-8 font-semibold text-indigo-800">
+          Infrastructure Layer
+        </span>
+      </div>
+
+      <!-- Application -->
+      <div class="absolute w-72 h-72 rounded-full bg-blue-100 border-4 border-blue-300 flex items-center justify-center">
+        <span class="absolute top-6 font-semibold text-blue-800">
+          Application Layer
+        </span>
+      </div>
+
+      <!-- Domain Services -->
+      <div class="absolute w-52 h-52 rounded-full bg-green-100 border-4 border-green-300 flex items-center justify-center">
+        <span class="absolute top-5 font-semibold text-green-800">
+          Domain Services
+        </span>
+      </div>
+
+      <!-- Core Domain -->
+      <div class="absolute w-32 h-32 rounded-full bg-yellow-200 border-4 border-yellow-400 flex items-center justify-center text-center">
+        <span class="font-bold text-yellow-900">
+          Core Domain
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Explanation -->
+    <div class="grid md:grid-cols-2 gap-6 mt-8">
+      
+      <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+        <h3 class="font-bold text-yellow-800 mb-2">Core Domain</h3>
+        <p class="text-sm text-gray-700">
+          Contains entities, business rules, and domain logic.
+          This layer should not depend on any other layer.
+        </p>
+      </div>
+
+      <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+        <h3 class="font-bold text-green-800 mb-2">Domain Services</h3>
+        <p class="text-sm text-gray-700">
+          Encapsulates business operations that don't naturally belong
+          to a single entity.
+        </p>
+      </div>
+
+      <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+        <h3 class="font-bold text-blue-800 mb-2">Application Layer</h3>
+        <p class="text-sm text-gray-700">
+          Coordinates workflows, use cases, and communication between
+          domain and external systems.
+        </p>
+      </div>
+
+      <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-200">
+        <h3 class="font-bold text-indigo-800 mb-2">Infrastructure Layer</h3>
+        <p class="text-sm text-gray-700">
+          Handles databases, APIs, file systems, messaging, and other
+          external dependencies.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="mt-8 p-4 bg-slate-50 border rounded-lg">
+      <h3 class="font-semibold mb-2">Key Principle</h3>
+      <p class="text-gray-700">
+        Dependencies always point inward. Outer layers can depend on inner
+        layers, but inner layers must never depend on outer layers.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
