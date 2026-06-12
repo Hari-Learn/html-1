@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MVP Architecture Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen py-10 px-4">
+
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-indigo-700">
+        MVP Architecture
+      </h1>
+      <p class="mt-3 text-gray-600">
+        Model-View-Presenter (MVP) separates the user interface from business
+        logic, making applications easier to maintain and test.
+      </p>
+    </div>
+
+    <!-- Architecture Diagram -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+
+      <h2 class="text-2xl font-semibold text-center mb-8">
+        Component Interaction
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6 items-center">
+
+        <!-- View -->
+        <div class="bg-blue-100 border border-blue-300 rounded-xl p-6 text-center">
+          <h3 class="text-xl font-bold text-blue-800">View</h3>
+          <p class="mt-2 text-sm text-gray-700">
+            Displays UI and forwards user actions to the Presenter.
+          </p>
+        </div>
+
+        <!-- Presenter -->
+        <div class="bg-green-100 border border-green-300 rounded-xl p-6 text-center">
+          <h3 class="text-xl font-bold text-green-800">Presenter</h3>
+          <p class="mt-2 text-sm text-gray-700">
+            Handles application logic and coordinates View and Model.
+          </p>
+        </div>
+
+        <!-- Model -->
+        <div class="bg-purple-100 border border-purple-300 rounded-xl p-6 text-center">
+          <h3 class="text-xl font-bold text-purple-800">Model</h3>
+          <p class="mt-2 text-sm text-gray-700">
+            Stores data and business rules.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Flow -->
+      <div class="flex flex-wrap justify-center items-center gap-4 mt-8 text-lg font-semibold">
+
+        <div class="bg-blue-100 px-4 py-2 rounded">
+          View
+        </div>
+
+        <span>→</span>
+
+        <div class="bg-green-100 px-4 py-2 rounded">
+          Presenter
+        </div>
+
+        <span>↔</span>
+
+        <div class="bg-purple-100 px-4 py-2 rounded">
+          Model
+        </div>
+
+        <span>→</span>
+
+        <div class="bg-blue-100 px-4 py-2 rounded">
+          View Update
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Responsibilities -->
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-semibold text-blue-700 mb-3">
+          View
+        </h3>
+        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+          <li>Displays data</li>
+          <li>Captures user input</li>
+          <li>Contains minimal logic</li>
+          <li>Delegates actions to Presenter</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-semibold text-green-700 mb-3">
+          Presenter
+        </h3>
+        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+          <li>Processes user actions</li>
+          <li>Calls Model methods</li>
+          <li>Formats data for View</li>
+          <li>Updates the View</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-semibold text-purple-700 mb-3">
+          Model
+        </h3>
+        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+          <li>Stores application data</li>
+          <li>Contains business logic</li>
+          <li>Handles data access</li>
+          <li>Independent of UI</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Advantages -->
+    <div class="bg-white rounded-xl shadow p-6 mt-8">
+      <h2 class="text-2xl font-semibold mb-4">
+        Advantages of MVP
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-4 text-gray-700">
+        <div>✓ Better separation of concerns</div>
+        <div>✓ Easier unit testing</div>
+        <div>✓ Improved maintainability</div>
+        <div>✓ Reusable business logic</div>
+        <div>✓ Cleaner UI code</div>
+        <div>✓ Scalable application structure</div>
+      </div>
+    </div>
+
+    <!-- Key Principle -->
+    <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 mt-8">
+      <h2 class="text-xl font-semibold text-indigo-700 mb-2">
+        Key Principle
+      </h2>
+      <p class="text-gray-700">
+        The View should focus only on displaying information, while the
+        Presenter contains the application's presentation logic and communicates
+        with the Model on behalf of the View.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
