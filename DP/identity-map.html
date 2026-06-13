@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identity Map Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+    <div class="max-w-2xl bg-white rounded-lg shadow-md p-8">
+        <h1 class="text-3xl font-bold text-blue-600 mb-4">
+            Identity Map Pattern
+        </h1>
+
+        <p class="text-gray-700 mb-4">
+            Identity Map is a design pattern that keeps a record of objects
+            already loaded from a database.
+        </p>
+
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+            <p class="text-gray-800">
+                It ensures that each database record is loaded only once
+                during a transaction or request.
+            </p>
+        </div>
+
+        <h2 class="text-xl font-semibold mb-2">Benefits</h2>
+        <ul class="list-disc pl-6 text-gray-700 space-y-1">
+            <li>Reduces duplicate database queries.</li>
+            <li>Improves application performance.</li>
+            <li>Maintains object consistency.</li>
+        </ul>
+
+        <div class="mt-6 p-4 bg-green-50 rounded">
+            <strong>Example:</strong> If User #101 is requested multiple
+            times, the application returns the same object from memory
+            instead of querying the database again.
+        </div>
+    </div>
+</body>
+</html>
