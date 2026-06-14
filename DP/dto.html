@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTO (Data Transfer Object)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <main class="flex-grow flex items-center justify-center p-6">
+        <div class="max-w-xl bg-white rounded-lg shadow-md p-6">
+            <h1 class="text-3xl font-bold text-blue-600 mb-4">
+                DTO (Data Transfer Object)
+            </h1>
+
+            <p class="text-gray-700 mb-4">
+                DTO is a design pattern used to transfer data between
+                different layers or systems. It contains only data and
+                does not include business logic.
+            </p>
+
+            <h2 class="text-xl font-semibold mb-2">Benefits</h2>
+            <ul class="list-disc pl-6 text-gray-700 space-y-1">
+                <li>Reduces the number of remote calls.</li>
+                <li>Improves data transfer efficiency.</li>
+                <li>Separates internal models from external APIs.</li>
+            </ul>
+
+            <div class="mt-4 p-4 bg-blue-50 rounded">
+                <strong>Example:</strong> A <code>UserDTO</code> object may
+                contain only <code>id</code>, <code>name</code>, and
+                <code>email</code> fields that are sent from the server to the client.
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t py-4 text-center text-sm text-gray-500">
+        © 2026 Design Patterns Guide. All rights reserved.
+    </footer>
+
+</body>
+</html>
