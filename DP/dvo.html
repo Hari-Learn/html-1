@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DVO (Data Value Object)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <main class="flex-grow flex items-center justify-center p-6">
+        <div class="max-w-xl bg-white rounded-lg shadow-md p-6">
+            <h1 class="text-3xl font-bold text-blue-600 mb-4">
+                DVO (Data Value Object)
+            </h1>
+
+            <p class="text-gray-700 mb-4">
+                A Data Value Object (DVO) represents data as a single,
+                immutable object. It is identified by its values rather
+                than by a unique identity.
+            </p>
+
+            <h2 class="text-xl font-semibold mb-2">Benefits</h2>
+            <ul class="list-disc pl-6 text-gray-700 space-y-1">
+                <li>Encapsulates related data in one object.</li>
+                <li>Improves code readability and maintainability.</li>
+                <li>Encourages immutability and consistency.</li>
+            </ul>
+
+            <div class="mt-4 p-4 bg-blue-50 rounded">
+                <strong>Example:</strong> An <code>Address</code> object
+                containing street, city, state, and postal code can be
+                treated as a value object because it is defined by its data.
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t py-4 text-center text-sm text-gray-500">
+        © 2026 Design Patterns Guide. All rights reserved.
+    </footer>
+
+</body>
+</html>
