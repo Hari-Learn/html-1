@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackboard Design Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="max-w-3xl bg-white rounded-lg shadow-lg p-8">
+
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-4">
+            Blackboard Design Pattern
+        </h1>
+
+        <p class="text-gray-600 text-center mb-8">
+            Multiple independent components collaborate by reading and writing
+            information to a shared "blackboard".
+        </p>
+
+        <!-- Simple Diagram -->
+        <div class="flex flex-col items-center gap-4">
+
+            <div class="flex gap-4">
+                <div class="bg-blue-500 text-white px-4 py-2 rounded">
+                    Expert A
+                </div>
+
+                <div class="bg-green-500 text-white px-4 py-2 rounded">
+                    Expert B
+                </div>
+
+                <div class="bg-purple-500 text-white px-4 py-2 rounded">
+                    Expert C
+                </div>
+            </div>
+
+            <div class="text-2xl">↓</div>
+
+            <div class="bg-yellow-400 text-black px-10 py-6 rounded-lg shadow font-bold">
+                Shared Blackboard
+            </div>
+
+        </div>
+
+        <div class="mt-8">
+            <h2 class="text-xl font-semibold mb-2">How It Works</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                <li>Experts analyze available data.</li>
+                <li>They write findings to the blackboard.</li>
+                <li>Other experts read and improve the solution.</li>
+                <li>The process continues until a final result is reached.</li>
+            </ul>
+        </div>
+
+        <div class="mt-6 p-4 bg-gray-50 border rounded">
+            <strong>Example:</strong>
+            Speech recognition systems, AI problem solving, and complex diagnostic systems.
+        </div>
+
+    </div>
+
+</body>
+</html>
