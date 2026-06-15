@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leader Election Design Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen">
+
+    <div class="max-w-5xl mx-auto p-8">
+
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-slate-800">
+                Leader Election Design Pattern
+            </h1>
+            <p class="mt-3 text-slate-600">
+                Ensures that only one node acts as the leader in a distributed system.
+            </p>
+        </div>
+
+        <!-- Overview -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4">
+                What is Leader Election?
+            </h2>
+            <p class="text-gray-700 leading-relaxed">
+                In distributed systems, multiple nodes may be capable of performing
+                the same task. The Leader Election pattern selects one node as the
+                leader to coordinate activities, manage shared resources, and make
+                decisions on behalf of the cluster.
+            </p>
+        </div>
+
+        <!-- Cluster Diagram -->
+        <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-6">
+                Cluster Example
+            </h2>
+
+            <div class="flex flex-wrap justify-center gap-6">
+
+                <div class="bg-green-500 text-white px-8 py-5 rounded-xl shadow-lg border-4 border-green-300">
+                    👑 Leader Node
+                </div>
+
+                <div class="bg-blue-500 text-white px-8 py-5 rounded-xl shadow">
+                    Worker Node
+                </div>
+
+                <div class="bg-blue-500 text-white px-8 py-5 rounded-xl shadow">
+                    Worker Node
+                </div>
+
+                <div class="bg-blue-500 text-white px-8 py-5 rounded-xl shadow">
+                    Worker Node
+                </div>
+            </div>
+
+            <div class="mt-8 text-center text-gray-600">
+                The leader coordinates tasks while worker nodes follow instructions.
+            </div>
+        </div>
+
+        <!-- Election Process -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4">
+                Election Flow
+            </h2>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+
+                <div class="bg-slate-200 px-5 py-3 rounded-lg">
+                    Leader Fails
+                </div>
+
+                <div class="text-2xl">→</div>
+
+                <div class="bg-yellow-200 px-5 py-3 rounded-lg">
+                    Election Starts
+                </div>
+
+                <div class="text-2xl">→</div>
+
+                <div class="bg-purple-200 px-5 py-3 rounded-lg">
+                    Nodes Vote
+                </div>
+
+                <div class="text-2xl">→</div>
+
+                <div class="bg-green-200 px-5 py-3 rounded-lg">
+                    New Leader Elected
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Real World Example -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4">
+                Real-World Uses
+            </h2>
+
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                <li>Kubernetes Control Plane Leadership</li>
+                <li>Apache ZooKeeper Clusters</li>
+                <li>Distributed Databases</li>
+                <li>Consensus Systems (Raft, Paxos)</li>
+                <li>Microservice Coordination</li>
+            </ul>
+        </div>
+
+        <!-- Pros and Cons -->
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+                <h3 class="text-xl font-semibold text-green-700 mb-3">
+                    Advantages
+                </h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Prevents conflicting decisions</li>
+                    <li>Simplifies cluster coordination</li>
+                    <li>Improves consistency</li>
+                    <li>Supports automatic failover</li>
+                </ul>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+                <h3 class="text-xl font-semibold text-red-700 mb-3">
+                    Challenges
+                </h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Election process adds complexity</li>
+                    <li>Temporary downtime during failover</li>
+                    <li>Network partitions can cause split-brain issues</li>
+                    <li>Requires consensus mechanisms</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
