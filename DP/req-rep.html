@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request-Reply Design Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-4xl w-full bg-white rounded-2xl shadow-lg overflow-hidden">
+        
+        <!-- Header -->
+        <div class="bg-blue-600 text-white p-8">
+            <h1 class="text-4xl font-bold">Request-Reply Design Pattern</h1>
+            <p class="mt-2 text-blue-100">
+                A communication pattern where a client sends a request and waits for a response from a service.
+            </p>
+        </div>
+
+        <!-- Content -->
+        <div class="p-8">
+
+            <!-- Overview -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-3">Overview</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    The Request-Reply pattern is commonly used in distributed systems,
+                    APIs, microservices, and client-server applications. The client
+                    initiates a request, the server processes it, and then sends back
+                    a reply containing the result.
+                </p>
+            </section>
+
+            <!-- Flow -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-5">Flow</h2>
+
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+
+                    <div class="bg-green-100 text-green-800 px-6 py-4 rounded-lg font-semibold shadow">
+                        Client
+                    </div>
+
+                    <div class="text-3xl text-blue-600 font-bold">
+                        ➜ Request ➜
+                    </div>
+
+                    <div class="bg-yellow-100 text-yellow-800 px-6 py-4 rounded-lg font-semibold shadow">
+                        Server
+                    </div>
+
+                    <div class="text-3xl text-purple-600 font-bold">
+                        ➜ Reply ➜
+                    </div>
+
+                    <div class="bg-purple-100 text-purple-800 px-6 py-4 rounded-lg font-semibold shadow">
+                        Response
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Example -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-3">Real-World Example</h2>
+
+                <div class="bg-slate-50 border rounded-lg p-5">
+                    <p class="text-gray-700">
+                        <strong>Scenario:</strong> A user logs into an application.
+                    </p>
+
+                    <ul class="list-disc pl-6 mt-3 text-gray-600 space-y-2">
+                        <li>User submits username and password.</li>
+                        <li>Application sends a request to the authentication service.</li>
+                        <li>Authentication service validates credentials.</li>
+                        <li>Service returns a success or failure response.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Advantages -->
+            <section>
+                <h2 class="text-2xl font-semibold text-gray-800 mb-3">Advantages</h2>
+
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-green-50 p-4 rounded-lg border">
+                        <h3 class="font-semibold text-green-700">Simple</h3>
+                        <p class="text-sm text-gray-600 mt-2">
+                            Easy to understand and implement.
+                        </p>
+                    </div>
+
+                    <div class="bg-blue-50 p-4 rounded-lg border">
+                        <h3 class="font-semibold text-blue-700">Reliable</h3>
+                        <p class="text-sm text-gray-600 mt-2">
+                            Clients receive confirmation through replies.
+                        </p>
+                    </div>
+
+                    <div class="bg-purple-50 p-4 rounded-lg border">
+                        <h3 class="font-semibold text-purple-700">Widely Used</h3>
+                        <p class="text-sm text-gray-600 mt-2">
+                            Common in REST APIs, RPC, and microservices.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+</body>
+</html>
