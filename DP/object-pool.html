@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Pool Design Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen">
+    <div class="max-w-4xl mx-auto px-6 py-10">
+        
+        <!-- Header -->
+        <div class="bg-white rounded-xl shadow-md p-8 mb-6">
+            <h1 class="text-4xl font-bold text-slate-800 mb-3">
+                Object Pool Design Pattern
+            </h1>
+            <p class="text-slate-600 text-lg">
+                A creational pattern that reuses existing objects instead of
+                creating and destroying them repeatedly.
+            </p>
+        </div>
+
+        <!-- What is it -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+                What is Object Pool?
+            </h2>
+            <p class="text-slate-600 leading-relaxed">
+                The Object Pool pattern maintains a collection of reusable
+                objects. When a client needs an object, it borrows one from
+                the pool. After use, the object is returned to the pool instead
+                of being destroyed.
+            </p>
+        </div>
+
+        <!-- Benefits -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+                Benefits
+            </h2>
+
+            <ul class="list-disc pl-6 space-y-2 text-slate-600">
+                <li>Reduces object creation overhead.</li>
+                <li>Improves application performance.</li>
+                <li>Helps manage limited resources efficiently.</li>
+                <li>Useful when object initialization is expensive.</li>
+            </ul>
+        </div>
+
+        <!-- Real World Examples -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+                Real-World Examples
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                    <h3 class="font-semibold text-blue-700 mb-2">
+                        Database Connection Pool
+                    </h3>
+                    <p class="text-slate-600 text-sm">
+                        Applications reuse database connections instead of
+                        opening a new connection for every request.
+                    </p>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded-lg border border-green-100">
+                    <h3 class="font-semibold text-green-700 mb-2">
+                        Thread Pool
+                    </h3>
+                    <p class="text-slate-600 text-sm">
+                        Worker threads are reused to execute tasks efficiently.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Flow -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+                Simple Flow
+            </h2>
+
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center">
+                <div class="bg-purple-100 px-4 py-3 rounded-lg">
+                    Request Object
+                </div>
+
+                <span class="text-xl">→</span>
+
+                <div class="bg-yellow-100 px-4 py-3 rounded-lg">
+                    Get From Pool
+                </div>
+
+                <span class="text-xl">→</span>
+
+                <div class="bg-green-100 px-4 py-3 rounded-lg">
+                    Use Object
+                </div>
+
+                <span class="text-xl">→</span>
+
+                <div class="bg-blue-100 px-4 py-3 rounded-lg">
+                    Return To Pool
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-slate-500 text-sm">
+            Object Pool Pattern • Resource Reuse • Better Performance
+        </div>
+
+    </div>
+</body>
+</html>
