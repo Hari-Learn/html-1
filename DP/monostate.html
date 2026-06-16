@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monostate (Borg) Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+    <div class="max-w-4xl mx-auto p-6">
+        
+        <!-- Hero Section -->
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-6">
+            <h1 class="text-4xl font-bold text-gray-800 mb-3">
+                Monostate (Borg) Design Pattern
+            </h1>
+            <p class="text-lg text-gray-600">
+                Multiple object instances share the same state, making them behave
+                as if they were a single object.
+            </p>
+        </div>
+
+        <!-- Introduction -->
+        <div class="bg-white rounded-xl shadow p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+                What is Monostate?
+            </h2>
+
+            <p class="text-gray-600 leading-relaxed">
+                The Monostate (also called the Borg Pattern) is an alternative to
+                the Singleton pattern. Instead of restricting object creation to
+                one instance, it allows multiple instances while sharing the same
+                internal state across all objects.
+            </p>
+        </div>
+
+        <!-- Singleton vs Monostate -->
+        <div class="bg-white rounded-xl shadow p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+                Singleton vs Monostate
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="border rounded-lg p-4 bg-red-50">
+                    <h3 class="font-bold text-red-700 mb-2">Singleton</h3>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                        <li>Only one instance exists.</li>
+                        <li>Global access point.</li>
+                        <li>Harder to test.</li>
+                    </ul>
+                </div>
+
+                <div class="border rounded-lg p-4 bg-green-50">
+                    <h3 class="font-bold text-green-700 mb-2">Monostate</h3>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                        <li>Multiple instances allowed.</li>
+                        <li>All instances share state.</li>
+                        <li>More flexible design.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example -->
+        <div class="bg-white rounded-xl shadow p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+                Example
+            </h2>
+
+            <div class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-auto">
+<pre>
+obj1 = Borg()
+obj2 = Borg()
+
+obj1.name = "Alice"
+
+print(obj2.name)
+# Output: Alice
+</pre>
+            </div>
+
+            <p class="text-gray-600 mt-4">
+                Even though <strong>obj1</strong> and <strong>obj2</strong> are
+                different objects, they share the same state.
+            </p>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="bg-white rounded-xl shadow p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+                Common Use Cases
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-blue-700 mb-2">
+                        Configuration
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        Share application settings across objects.
+                    </p>
+                </div>
+
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-purple-700 mb-2">
+                        Caching
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        Maintain a common cache state.
+                    </p>
+                </div>
+
+                <div class="bg-yellow-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-yellow-700 mb-2">
+                        Shared Context
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        Keep synchronized data across instances.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advantages & Disadvantages -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+                <h2 class="text-xl font-bold text-green-700 mb-3">
+                    Advantages
+                </h2>
+                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                    <li>Allows multiple object instances.</li>
+                    <li>Reduces Singleton restrictions.</li>
+                    <li>Easier to extend and test.</li>
+                </ul>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+                <h2 class="text-xl font-bold text-red-700 mb-3">
+                    Disadvantages
+                </h2>
+                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                    <li>Shared state can cause side effects.</li>
+                    <li>Harder to track data changes.</li>
+                    <li>Not thread-safe by default.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-8 text-gray-500 text-sm">
+            Monostate (Borg) Pattern • Shared State Across Multiple Instances
+        </div>
+
+    </div>
+
+</body>
+</html>
