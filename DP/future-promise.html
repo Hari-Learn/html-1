@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Future & Promise Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-3xl bg-white shadow-lg rounded-2xl p-8">
+        <h1 class="text-4xl font-bold text-indigo-600 mb-4">
+            Future / Promise Design Pattern
+        </h1>
+
+        <p class="text-gray-700 mb-6">
+            The <strong>Future/Promise</strong> pattern is used to handle asynchronous
+            operations. Instead of waiting for a task to complete, a placeholder
+            object (Future or Promise) is returned immediately. The result can be
+            accessed later when the task finishes.
+        </p>
+
+        <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded mb-6">
+            <h2 class="font-semibold text-lg text-indigo-700 mb-2">
+                Real-World Example
+            </h2>
+            <p class="text-gray-700">
+                Ordering food online: after placing an order, you receive a token
+                (Promise). You continue doing other things while the restaurant
+                prepares the food. Later, the order is delivered and the Promise
+                is fulfilled.
+            </p>
+        </div>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-semibold mb-3">Key Benefits</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>Improves application responsiveness.</li>
+                <li>Prevents blocking while waiting for long-running tasks.</li>
+                <li>Simplifies asynchronous programming.</li>
+                <li>Supports chaining and error handling.</li>
+            </ul>
+        </div>
+
+        <div class="bg-gray-900 text-green-400 rounded-lg p-4 overflow-auto">
+<pre><code>// JavaScript Promise Example
+
+function fetchData() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Data Loaded");
+    }, 2000);
+  });
+}
+
+fetchData()
+  .then(result => console.log(result))
+  .catch(error => console.error(error));
+</code></pre>
+        </div>
+
+        <div class="mt-6 text-sm text-gray-500">
+            Pattern Category: <span class="font-medium">Concurrency / Asynchronous Programming</span>
+        </div>
+    </div>
+
+</body>
+</html>
