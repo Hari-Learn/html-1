@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fork-Join Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-4xl bg-white rounded-2xl shadow-lg p-8">
+        <h1 class="text-4xl font-bold text-blue-600 mb-4">
+            Fork-Join Pattern
+        </h1>
+
+        <p class="text-gray-700 mb-6">
+            The <strong>Fork-Join</strong> pattern is a concurrency pattern used to
+            divide a large task into smaller independent subtasks (<em>Fork</em>),
+            execute them in parallel, and then combine their results
+            (<em>Join</em>) into a final result.
+        </p>
+
+        <!-- Visual Flow -->
+        <div class="bg-blue-50 rounded-xl p-6 mb-6">
+            <h2 class="text-xl font-semibold text-blue-700 mb-4">
+                Workflow
+            </h2>
+
+            <div class="flex flex-col items-center space-y-4">
+                <div class="bg-blue-600 text-white px-6 py-3 rounded-lg">
+                    Large Task
+                </div>
+
+                <div class="text-2xl">↓ Fork</div>
+
+                <div class="grid grid-cols-3 gap-4 w-full">
+                    <div class="bg-green-100 text-green-800 text-center p-3 rounded-lg">
+                        Task A
+                    </div>
+                    <div class="bg-green-100 text-green-800 text-center p-3 rounded-lg">
+                        Task B
+                    </div>
+                    <div class="bg-green-100 text-green-800 text-center p-3 rounded-lg">
+                        Task C
+                    </div>
+                </div>
+
+                <div class="text-2xl">↓ Join</div>
+
+                <div class="bg-purple-600 text-white px-6 py-3 rounded-lg">
+                    Combined Result
+                </div>
+            </div>
+        </div>
+
+        <!-- Example -->
+        <div class="mb-6">
+            <h2 class="text-2xl font-semibold mb-3">
+                Real-World Example
+            </h2>
+            <p class="text-gray-700">
+                Imagine calculating the total sales of a company. Instead of
+                processing all records sequentially, the data is split into
+                multiple chunks and processed by different threads simultaneously.
+                Once all threads finish, their results are merged to produce the
+                final total sales amount.
+            </p>
+        </div>
+
+        <!-- Benefits -->
+        <div class="mb-6">
+            <h2 class="text-2xl font-semibold mb-3">
+                Benefits
+            </h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>Improves performance using parallel execution.</li>
+                <li>Efficiently utilizes multi-core processors.</li>
+                <li>Reduces execution time for large computations.</li>
+                <li>Scales well for data-intensive workloads.</li>
+            </ul>
+        </div>
+
+        <!-- Code Example -->
+        <div class="bg-gray-900 text-green-400 rounded-lg p-4 overflow-auto">
+<pre><code>// JavaScript Example using Promise.all()
+
+async function processTasks() {
+  const taskA = Promise.resolve(10);
+  const taskB = Promise.resolve(20);
+  const taskC = Promise.resolve(30);
+
+  const results = await Promise.all([
+    taskA,
+    taskB,
+    taskC
+  ]);
+
+  const total = results.reduce(
+    (sum, value) => sum + value,
+    0
+  );
+
+  console.log(total); // 60
+}
+
+processTasks();
+</code></pre>
+        </div>
+
+        <div class="mt-6 text-sm text-gray-500">
+            Pattern Category:
+            <span class="font-medium">
+                Concurrency Pattern
+            </span>
+        </div>
+    </div>
+
+</body>
+</html>
