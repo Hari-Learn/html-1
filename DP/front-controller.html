@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Front Controller Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="max-w-2xl bg-white p-8 rounded-lg shadow">
+    <h1 class="text-3xl font-bold text-blue-600 mb-4">
+      Front Controller Pattern
+    </h1>
+
+    <p class="text-gray-700 mb-4">
+      The <strong>Front Controller</strong> pattern uses a single entry point
+      to handle all incoming requests before routing them to the appropriate
+      handlers or controllers.
+    </p>
+
+    <div class="bg-blue-50 p-4 rounded text-center font-medium">
+      User Request
+      <br>↓
+      <br>Front Controller
+      <br>↓
+      <br>Controller / Handler
+      <br>↓
+      <br>Response
+    </div>
+
+    <ul class="list-disc list-inside text-gray-700 mt-6">
+      <li>Centralizes request handling.</li>
+      <li>Provides common authentication and logging.</li>
+      <li>Improves maintainability and consistency.</li>
+    </ul>
+
+    <p class="mt-6 text-gray-600">
+      <strong>Example:</strong> In many web frameworks, all HTTP requests first
+      pass through a single dispatcher or router before reaching application
+      controllers.
+    </p>
+  </div>
+
+</body>
+</html>
