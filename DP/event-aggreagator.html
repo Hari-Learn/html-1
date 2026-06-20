@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Aggregator Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="max-w-2xl bg-white p-8 rounded-lg shadow">
+    <h1 class="text-3xl font-bold text-green-600 mb-4">
+      Event Aggregator Pattern
+    </h1>
+
+    <p class="text-gray-700 mb-4">
+      The <strong>Event Aggregator</strong> pattern provides a central hub for
+      publishing and subscribing to events.
+    </p>
+
+    <div class="bg-green-50 p-4 rounded text-center font-medium">
+      Component A ─┐
+      <br>
+      Component B ─┼─► Event Aggregator ─► Subscribers
+      <br>
+      Component C ─┘
+    </div>
+
+    <ul class="list-disc list-inside text-gray-700 mt-6">
+      <li>Reduces direct dependencies between components.</li>
+      <li>Improves modularity and maintainability.</li>
+      <li>Common in UI frameworks and event-driven systems.</li>
+    </ul>
+
+    <p class="mt-6 text-gray-600">
+      <strong>Example:</strong> In a dashboard application, multiple widgets
+      publish events to an Event Aggregator, and interested widgets receive
+      only the events they subscribe to.
+    </p>
+  </div>
+
+</body>
+</html>
