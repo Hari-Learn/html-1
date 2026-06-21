@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Init Container Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="max-w-2xl bg-white p-8 rounded-lg shadow">
+    <h1 class="text-3xl font-bold text-indigo-600 mb-4">
+      Init Container
+    </h1>
+
+    <p class="text-gray-700 mb-4">
+      An <strong>Init Container</strong> is a special container that runs before
+      the main application container starts. It performs setup tasks and exits
+      successfully before the application begins running.
+    </p>
+
+    <div class="bg-indigo-50 p-4 rounded text-center font-medium">
+      Start Pod
+      <br>↓
+      <br>Init Container
+      <br>(Setup / Configuration)
+      <br>↓
+      <br>Main Application Container
+      <br>↓
+      <br>Application Running
+    </div>
+
+    <ul class="list-disc list-inside text-gray-700 mt-6">
+      <li>Prepares configuration files.</li>
+      <li>Waits for dependencies to become available.</li>
+      <li>Initializes databases or resources.</li>
+      <li>Keeps startup logic separate from the main app.</li>
+    </ul>
+
+    <p class="mt-6 text-gray-600">
+      <strong>Example:</strong> An init container downloads configuration files
+      from a remote server before the main application container starts.
+    </p>
+  </div>
+
+</body>
+</html>
