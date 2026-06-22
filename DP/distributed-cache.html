@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distributed Cache Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="max-w-2xl bg-white p-8 rounded-lg shadow">
+    <h1 class="text-3xl font-bold text-red-600 mb-4">
+      Distributed Cache Pattern
+    </h1>
+
+    <p class="text-gray-700 mb-4">
+      A <strong>Distributed Cache</strong> stores frequently accessed data across
+      multiple cache servers, allowing applications to retrieve data faster and
+      reduce load on the primary database.
+    </p>
+
+    <div class="bg-red-50 p-4 rounded text-center font-medium">
+      Application
+      <br>↓
+      <br>Distributed Cache
+      <br>(Redis / Memcached)
+      <br>↓
+      <br>Database
+    </div>
+
+    <ul class="list-disc list-inside text-gray-700 mt-6">
+      <li>Reduces database load.</li>
+      <li>Improves response times.</li>
+      <li>Scales across multiple servers.</li>
+      <li>Supports high-traffic applications.</li>
+    </ul>
+
+    <p class="mt-6 text-gray-600">
+      <strong>Example:</strong> An e-commerce site caches product details in
+      Redis so repeated requests can be served without querying the database.
+    </p>
+  </div>
+
+</body>
+</html>
