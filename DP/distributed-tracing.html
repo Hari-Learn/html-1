@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distributed Tracing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="max-w-2xl bg-white p-8 rounded-lg shadow">
+    <h1 class="text-3xl font-bold text-cyan-600 mb-4">
+      Distributed Tracing
+    </h1>
+
+    <p class="text-gray-700 mb-4">
+      <strong>Distributed Tracing</strong> tracks a request as it travels
+      through multiple services in a distributed system, helping developers
+      understand performance and diagnose issues.
+    </p>
+
+    <div class="bg-cyan-50 p-4 rounded text-center font-medium">
+      User Request
+      <br>↓
+      <br>Service A
+      <br>↓
+      <br>Service B
+      <br>↓
+      <br>Database
+      <br>↓
+      <br>Response
+      <br><br>
+      (Same Trace ID Across All Components)
+    </div>
+
+    <ul class="list-disc list-inside text-gray-700 mt-6">
+      <li>Tracks requests end-to-end.</li>
+      <li>Identifies bottlenecks and failures.</li>
+      <li>Improves observability in microservices.</li>
+      <li>Helps with performance monitoring.</li>
+    </ul>
+
+    <p class="mt-6 text-gray-600">
+      <strong>Example:</strong> A single customer request passes through
+      an API Gateway, Order Service, Payment Service, and Database while
+      sharing the same Trace ID for troubleshooting.
+    </p>
+  </div>
+
+</body>
+</html>
