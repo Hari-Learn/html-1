@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guarded Suspension Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="max-w-2xl bg-white p-8 rounded-lg shadow">
+    <h1 class="text-3xl font-bold text-orange-600 mb-4">
+      Guarded Suspension Pattern
+    </h1>
+
+    <p class="text-gray-700 mb-4">
+      The <strong>Guarded Suspension</strong> pattern makes a thread wait until
+      a specific condition becomes true before continuing execution.
+    </p>
+
+    <div class="bg-orange-50 p-4 rounded text-center font-medium">
+      Request
+      <br>↓
+      <br>Check Condition
+      <br>↓
+      <br>Condition False?
+      <br>Wait
+      <br>↓
+      <br>Condition True
+      <br>↓
+      <br>Process Request
+    </div>
+
+    <ul class="list-disc list-inside text-gray-700 mt-6">
+      <li>Prevents processing incomplete data.</li>
+      <li>Ensures operations occur only when conditions are met.</li>
+      <li>Common in producer-consumer systems.</li>
+      <li>Improves synchronization between threads.</li>
+    </ul>
+
+    <p class="mt-6 text-gray-600">
+      <strong>Example:</strong> A consumer thread waits until a message queue
+      contains data before retrieving and processing messages.
+    </p>
+  </div>
+
+</body>
+</html>
