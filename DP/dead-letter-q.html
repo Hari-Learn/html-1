@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dead Letter Queue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-2xl bg-white rounded-xl shadow-lg p-8">
+        <h1 class="text-3xl font-bold text-blue-600 mb-4">
+            Dead Letter Queue (DLQ)
+        </h1>
+
+        <p class="text-gray-700 mb-4">
+            A Dead Letter Queue is a special queue that stores messages that
+            could not be processed successfully after multiple retry attempts.
+        </p>
+
+        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-4">
+            <p class="text-yellow-800">
+                Example: An order processing service receives a message with
+                invalid data. After several retries fail, the message is moved
+                to the Dead Letter Queue for investigation.
+            </p>
+        </div>
+
+        <h2 class="text-xl font-semibold mb-2">Why Use a DLQ?</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+            <li>Prevents message loss</li>
+            <li>Keeps the main queue healthy</li>
+            <li>Helps troubleshoot failed messages</li>
+            <li>Supports monitoring and recovery</li>
+        </ul>
+
+        <h2 class="text-xl font-semibold mb-2">Simple Flow</h2>
+
+        <div class="bg-gray-50 p-4 rounded-lg font-mono text-sm text-center">
+            Producer → Main Queue → Consumer<br>
+            ↓ (Repeated Failures)<br>
+            Dead Letter Queue
+        </div>
+    </div>
+
+</body>
+</html>
