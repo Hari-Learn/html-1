@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microkernel Architecture Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-3xl bg-white rounded-lg shadow-md p-8">
+    <h1 class="text-3xl font-bold text-blue-600 mb-4">
+      Microkernel Architecture Pattern
+    </h1>
+
+    <p class="text-gray-700 mb-4">
+      The Microkernel pattern organizes an application around a small core
+      system (the microkernel) and a set of plug-ins that extend its
+      functionality.
+    </p>
+
+    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+      <p class="text-blue-800">
+        The core provides essential services, while additional features are
+        added through plug-ins without changing the core application.
+      </p>
+    </div>
+
+    <h2 class="text-xl font-semibold mb-3">How It Works</h2>
+
+    <ol class="list-decimal list-inside text-gray-700 space-y-2 mb-6">
+      <li>The Microkernel provides core functionality.</li>
+      <li>Plug-ins register themselves with the core.</li>
+      <li>The core discovers and loads plug-ins.</li>
+      <li>Users access features provided by plug-ins.</li>
+      <li>New capabilities can be added without modifying the core.</li>
+    </ol>
+
+    <h2 class="text-xl font-semibold mb-3">Benefits</h2>
+
+    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+      <li>Easy extensibility through plug-ins.</li>
+      <li>Reduced impact of feature changes.</li>
+      <li>Flexible and modular architecture.</li>
+      <li>Supports customization for different users.</li>
+    </ul>
+
+    <h2 class="text-xl font-semibold mb-3">Examples</h2>
+
+    <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+      <li>Web browsers with extensions</li>
+      <li>IDEs with plug-in ecosystems</li>
+      <li>Operating systems with modular components</li>
+    </ul>
+
+    <h2 class="text-xl font-semibold mb-3">Simple Diagram</h2>
+
+    <div class="bg-gray-50 rounded-lg p-4 text-center font-mono text-sm">
+      Plugin A<br>
+      ↓<br>
+      Plugin B → Microkernel Core ← Plugin C<br>
+      ↓<br>
+      Shared Services & APIs
+    </div>
+  </div>
+
+</body>
+</html>
