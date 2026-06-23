@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Corruption Layer Pattern</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+    <div class="card shadow-sm mx-auto" style="max-width: 900px;">
+        <div class="card-body">
+
+            <h1 class="text-primary mb-4">Anti-Corruption Layer (ACL)</h1>
+
+            <p class="lead">
+                The Anti-Corruption Layer is a Domain-Driven Design (DDD) pattern
+                that protects a modern application from the complexities and
+                inconsistencies of external or legacy systems.
+            </p>
+
+            <div class="alert alert-info">
+                Think of the ACL as a translator. It converts data and requests
+                between your application's domain model and an external system's
+                model, preventing external concepts from leaking into your codebase.
+            </div>
+
+            <h3 class="mt-4">Why Use It?</h3>
+            <ul>
+                <li>Protects your domain model from legacy systems.</li>
+                <li>Reduces coupling between systems.</li>
+                <li>Makes future system replacements easier.</li>
+                <li>Improves maintainability and flexibility.</li>
+            </ul>
+
+            <h3 class="mt-4">How It Works</h3>
+            <ol>
+                <li>Your application sends a request to the ACL.</li>
+                <li>The ACL translates the request format.</li>
+                <li>The external system processes the request.</li>
+                <li>The ACL converts the response back to your domain model.</li>
+                <li>Your application works only with its own business concepts.</li>
+            </ol>
+
+            <h3 class="mt-4">Example</h3>
+            <p>
+                A modern e-commerce application integrates with a legacy ERP system.
+                The ERP uses fields like <code>CUST_ID</code> and
+                <code>ORD_AMT</code>, while the application uses
+                <code>CustomerId</code> and <code>OrderTotal</code>.
+                The Anti-Corruption Layer handles the mapping between them.
+            </p>
+
+            <h3 class="mt-4">Simple Diagram</h3>
+
+            <div class="border rounded p-3 bg-white text-center font-monospace">
+                Modern Application<br>
+                ↓<br>
+                Anti-Corruption Layer (Translator)<br>
+                ↓<br>
+                Legacy / External System
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
