@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scatter-Gather Pattern</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+    <div class="card shadow-sm mx-auto" style="max-width: 900px;">
+        <div class="card-body">
+
+            <h1 class="text-primary mb-4">Scatter-Gather Pattern</h1>
+
+            <p class="lead">
+                Scatter-Gather is an integration and distributed systems pattern
+                where a request is sent to multiple services in parallel
+                (scatter), and the responses are collected and combined
+                (gather) into a single result.
+            </p>
+
+            <div class="alert alert-info">
+                This pattern improves response time by executing multiple
+                operations concurrently instead of sequentially.
+            </div>
+
+            <h3 class="mt-4">How It Works</h3>
+            <ol>
+                <li>A client sends a request.</li>
+                <li>The request is distributed to multiple services.</li>
+                <li>Services process the request independently.</li>
+                <li>Responses are collected from all services.</li>
+                <li>The results are aggregated into a single response.</li>
+            </ol>
+
+            <h3 class="mt-4">Benefits</h3>
+            <ul>
+                <li>Faster response times through parallel processing.</li>
+                <li>Efficient use of distributed systems.</li>
+                <li>Supports aggregation from multiple data sources.</li>
+                <li>Improves scalability and flexibility.</li>
+            </ul>
+
+            <h3 class="mt-4">Common Use Cases</h3>
+            <ul>
+                <li>Travel booking systems comparing flight prices.</li>
+                <li>E-commerce product search across vendors.</li>
+                <li>Microservices-based dashboards.</li>
+                <li>Real-time analytics and reporting systems.</li>
+            </ul>
+
+            <h3 class="mt-4">Example</h3>
+            <p>
+                A travel website sends the same search request to multiple
+                airline providers simultaneously. Once all responses arrive,
+                it combines them into a single list of available flights.
+            </p>
+
+            <h3 class="mt-4">Simple Diagram</h3>
+
+            <div class="border rounded p-3 bg-white text-center font-monospace">
+                Client Request<br>
+                ↓<br>
+                Scatter<br>
+                ↙ &nbsp;&nbsp; ↓ &nbsp;&nbsp; ↘<br>
+                Service A &nbsp; Service B &nbsp; Service C<br>
+                ↘ &nbsp;&nbsp; ↓ &nbsp;&nbsp; ↙<br>
+                Gather & Aggregate<br>
+                ↓<br>
+                Single Response
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
