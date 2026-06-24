@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monad Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl bg-white rounded-lg shadow-md p-8">
+    
+    <h1 class="text-3xl font-bold text-purple-600 mb-4">
+      Monad
+    </h1>
+
+    <p class="text-gray-700 mb-4">
+      A Monad is a functional programming pattern that encapsulates
+      computations and side effects, allowing operations to be chained
+      together safely and predictably.
+    </p>
+
+    <div class="bg-purple-50 border-l-4 border-purple-500 p-4 mb-6">
+      <p class="text-purple-800">
+        Instead of handling errors, null values, or asynchronous results
+        directly, a Monad wraps them and manages the flow of computation.
+      </p>
+    </div>
+
+    <h2 class="text-xl font-semibold mb-2">Why Use a Monad?</h2>
+
+    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+      <li>Simplifies complex computations.</li>
+      <li>Handles side effects in a controlled way.</li>
+      <li>Reduces error-prone code.</li>
+      <li>Supports clean function chaining.</li>
+    </ul>
+
+    <h2 class="text-xl font-semibold mb-2">Simple Example</h2>
+
+    <p class="text-gray-700 mb-6">
+      A value is wrapped inside a Monad. Each function processes the value
+      and returns another Monad, creating a safe chain of operations.
+    </p>
+
+    <h2 class="text-xl font-semibold mb-2">Simple Flow</h2>
+
+    <div class="bg-gray-50 rounded-lg p-4 text-center font-mono text-sm">
+      Value<br>
+      ↓<br>
+      Monad<br>
+      ↓ bind/map ↓<br>
+      Function A<br>
+      ↓<br>
+      Function B<br>
+      ↓<br>
+      Result
+    </div>
+
+  </div>
+
+</body>
+</html>
