@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claim Check Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl bg-white rounded-lg shadow p-8">
+    
+    <h1 class="text-3xl font-bold text-blue-600 mb-4">
+      Claim Check Pattern
+    </h1>
+
+    <p class="text-gray-700 mb-4">
+      The Claim Check pattern stores large payloads outside the message and
+      sends only a reference (claim check) through the messaging system.
+    </p>
+
+    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+      <p class="text-blue-800">
+        This keeps messages small and improves performance when handling
+        large files or documents.
+      </p>
+    </div>
+
+    <h2 class="text-xl font-semibold mb-2">How It Works</h2>
+
+    <ol class="list-decimal list-inside text-gray-700 space-y-2 mb-6">
+      <li>Store the large payload in external storage.</li>
+      <li>Generate a reference ID.</li>
+      <li>Send the reference in the message.</li>
+      <li>Receiver uses the reference to retrieve the payload.</li>
+    </ol>
+
+    <h2 class="text-xl font-semibold mb-2">Benefits</h2>
+
+    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+      <li>Smaller message sizes.</li>
+      <li>Faster message processing.</li>
+      <li>Reduced network usage.</li>
+      <li>Better scalability.</li>
+    </ul>
+
+    <h2 class="text-xl font-semibold mb-2">Simple Flow</h2>
+
+    <div class="bg-gray-50 rounded p-4 text-center font-mono text-sm">
+      Large File<br>
+      ↓<br>
+      External Storage<br>
+      ↓<br>
+      Reference ID<br>
+      ↓<br>
+      Message Queue<br>
+      ↓<br>
+      Consumer Retrieves File
+    </div>
+
+  </div>
+
+</body>
+</html>
