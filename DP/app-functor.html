@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applicative Functor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl bg-white rounded-lg shadow-md p-8">
+
+    <h1 class="text-3xl font-bold text-indigo-600 mb-4">
+      Applicative Functor
+    </h1>
+
+    <p class="text-gray-700 mb-4">
+      An Applicative Functor is a functional programming pattern that
+      applies wrapped functions to wrapped values.
+    </p>
+
+    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 mb-6">
+      <p class="text-indigo-800">
+        Unlike a regular Functor, which applies a normal function to a
+        wrapped value, an Applicative Functor can apply a function that
+        is itself wrapped inside a container.
+      </p>
+    </div>
+
+    <h2 class="text-xl font-semibold mb-2">How It Works</h2>
+
+    <ol class="list-decimal list-inside text-gray-700 space-y-2 mb-6">
+      <li>Store a function inside a container.</li>
+      <li>Store a value inside a container.</li>
+      <li>Apply the wrapped function to the wrapped value.</li>
+      <li>Return the result in the same type of container.</li>
+    </ol>
+
+    <h2 class="text-xl font-semibold mb-2">Benefits</h2>
+
+    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+      <li>Works with multiple wrapped values.</li>
+      <li>Supports functional composition.</li>
+      <li>Maintains consistent container types.</li>
+      <li>Reduces boilerplate code.</li>
+    </ul>
+
+    <h2 class="text-xl font-semibold mb-2">Simple Example</h2>
+
+    <p class="text-gray-700 mb-6">
+      A container holds the function <code>x → x + 10</code> and another
+      container holds the value <code>5</code>. Applying them produces a
+      container holding <code>15</code>.
+    </p>
+
+    <h2 class="text-xl font-semibold mb-2">Simple Flow</h2>
+
+    <div class="bg-gray-50 rounded-lg p-4 text-center font-mono text-sm">
+      Box(x → x + 10)<br>
+      +<br>
+      Box(5)<br>
+      ↓ apply<br>
+      Box(15)
+    </div>
+
+  </div>
+
+</body>
+</html>
