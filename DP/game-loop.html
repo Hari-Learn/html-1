@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Loop Design Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl bg-white rounded-2xl shadow-lg p-8">
+    <h1 class="text-4xl font-bold text-slate-800 mb-4">
+      🎮 Game Loop Pattern
+    </h1>
+
+    <p class="text-lg text-slate-600 mb-6">
+      The <strong>Game Loop</strong> is the core execution cycle of a game. It
+      continuously updates the game state, processes player input, and renders
+      graphics until the game ends.
+    </p>
+
+    <div class="bg-slate-50 border rounded-xl p-5 mb-6">
+      <h2 class="text-xl font-semibold mb-3">Basic Flow</h2>
+
+      <ol class="list-decimal list-inside space-y-2 text-slate-700">
+        <li>Read player input</li>
+        <li>Update game objects</li>
+        <li>Detect collisions</li>
+        <li>Render the scene</li>
+        <li>Repeat until the game exits</li>
+      </ol>
+    </div>
+
+    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded">
+      <p class="font-semibold text-indigo-700">Pseudo Code</p>
+
+      <pre class="mt-3 text-sm text-slate-800 overflow-auto">
+while (gameRunning) {
+    processInput();
+    update();
+    render();
+}
+      </pre>
+    </div>
+
+    <p class="mt-6 text-sm text-slate-500">
+      Used in almost every game engine including Unity, Unreal Engine, Godot,
+      and custom game frameworks.
+    </p>
+  </div>
+
+</body>
+</html>
