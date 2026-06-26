@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dirty Flag Design Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl bg-white rounded-2xl shadow-lg p-8">
+    <h1 class="text-4xl font-bold text-slate-800 mb-4">
+      🚩 Dirty Flag Pattern
+    </h1>
+
+    <p class="text-lg text-slate-600 mb-6">
+      The <strong>Dirty Flag</strong> pattern delays expensive calculations until
+      they are actually needed. When data changes, it is marked as
+      <strong>"dirty"</strong>. The value is recalculated only when someone requests it.
+    </p>
+
+    <div class="bg-slate-50 border rounded-xl p-5 mb-6">
+      <h2 class="text-xl font-semibold mb-3">How It Works</h2>
+
+      <ol class="list-decimal list-inside space-y-2 text-slate-700">
+        <li>Data changes.</li>
+        <li>Set the dirty flag to <code>true</code>.</li>
+        <li>When the value is needed, check the flag.</li>
+        <li>If dirty, recalculate the value.</li>
+        <li>Clear the flag and return the updated result.</li>
+      </ol>
+    </div>
+
+    <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+      <p class="font-semibold text-green-700">Pseudo Code</p>
+
+      <pre class="mt-3 text-sm text-slate-800 overflow-auto">
+if (dirty) {
+    recalculate();
+    dirty = false;
+}
+
+return cachedValue;
+      </pre>
+    </div>
+
+    <p class="mt-6 text-sm text-slate-500">
+      Commonly used in game engines, graphics rendering, scene graphs, caching,
+      and UI frameworks to avoid unnecessary computations.
+    </p>
+
+  </div>
+
+</body>
+</html>
