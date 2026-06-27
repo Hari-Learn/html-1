@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copy-on-Write Design Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl bg-white rounded-2xl shadow-lg p-8">
+    <h1 class="text-4xl font-bold text-slate-800 mb-4">
+      📄 Copy-on-Write (COW) Pattern
+    </h1>
+
+    <p class="text-lg text-slate-600 mb-6">
+      The <strong>Copy-on-Write</strong> pattern allows multiple objects to share
+      the same data until one of them needs to modify it. A new copy is created
+      only when a write operation occurs, saving memory and improving performance.
+    </p>
+
+    <div class="bg-slate-50 border rounded-xl p-5 mb-6">
+      <h2 class="text-xl font-semibold mb-3">How It Works</h2>
+
+      <ol class="list-decimal list-inside space-y-2 text-slate-700">
+        <li>Multiple objects share the same data.</li>
+        <li>Read operations use the shared data directly.</li>
+        <li>When an object wants to modify the data, create a private copy.</li>
+        <li>Update the copied data without affecting others.</li>
+      </ol>
+    </div>
+
+    <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded">
+      <p class="font-semibold text-amber-700">Pseudo Code</p>
+
+      <pre class="mt-3 text-sm text-slate-800 overflow-auto">
+if (shared) {
+    data = copy(data);
+}
+
+modify(data);
+      </pre>
+    </div>
+
+    <p class="mt-6 text-sm text-slate-500">
+      Commonly used in operating systems, memory management, immutable data
+      structures, databases, and frameworks where many reads occur but writes
+      are relatively infrequent.
+    </p>
+
+  </div>
+
+</body>
+</html>
