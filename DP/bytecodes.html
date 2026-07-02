@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bytecode Design Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl bg-white rounded-2xl shadow-lg p-8">
+
+    <h1 class="text-4xl font-bold text-slate-800 mb-4">
+      ⚙️ Bytecode Pattern
+    </h1>
+
+    <p class="text-lg text-slate-600 mb-6">
+      The <strong>Bytecode</strong> pattern compiles scripts or source code into
+      a compact intermediate format called <strong>bytecode</strong>. A virtual
+      machine (VM) then executes the bytecode instead of interpreting the source
+      code directly, improving performance and portability.
+    </p>
+
+    <div class="bg-slate-50 border rounded-xl p-5 mb-6">
+      <h2 class="text-xl font-semibold mb-3">How It Works</h2>
+
+      <ol class="list-decimal list-inside space-y-2 text-slate-700">
+        <li>Write the source code or script.</li>
+        <li>Compile it into bytecode.</li>
+        <li>Load the bytecode into a virtual machine.</li>
+        <li>The VM executes the bytecode instructions.</li>
+      </ol>
+    </div>
+
+    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded">
+      <p class="font-semibold text-indigo-700">Pseudo Code</p>
+
+      <pre class="mt-3 text-sm text-slate-800 overflow-auto">
+bytecode = compile(source);
+
+vm.load(bytecode);
+vm.execute();
+      </pre>
+    </div>
+
+    <p class="mt-6 text-sm text-slate-500">
+      Commonly used in Java (JVM), .NET (CLR), Python, Lua, game engines, and
+      scripting systems to enable portable and efficient script execution.
+    </p>
+
+  </div>
+
+</body>
+</html>
