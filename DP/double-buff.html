@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Double Buffer Design Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl bg-white rounded-2xl shadow-lg p-8">
+
+    <h1 class="text-4xl font-bold text-slate-800 mb-4">
+      🖼️ Double Buffer Pattern
+    </h1>
+
+    <p class="text-lg text-slate-600 mb-6">
+      The <strong>Double Buffer</strong> pattern uses two memory buffers to
+      eliminate screen flickering. One buffer (front buffer) is displayed to the
+      user, while the other (back buffer) is used to draw the next frame. After
+      rendering is complete, the two buffers are swapped.
+    </p>
+
+    <div class="bg-slate-50 border rounded-xl p-5 mb-6">
+      <h2 class="text-xl font-semibold mb-3">How It Works</h2>
+
+      <ol class="list-decimal list-inside space-y-2 text-slate-700">
+        <li>Display the front buffer on the screen.</li>
+        <li>Draw the next frame in the back buffer.</li>
+        <li>Swap the front and back buffers.</li>
+        <li>Repeat for every frame.</li>
+      </ol>
+    </div>
+
+    <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded">
+      <p class="font-semibold text-purple-700">Pseudo Code</p>
+
+      <pre class="mt-3 text-sm text-slate-800 overflow-auto">
+while (running) {
+    draw(backBuffer);
+    swap(frontBuffer, backBuffer);
+    display(frontBuffer);
+}
+      </pre>
+    </div>
+
+    <p class="mt-6 text-sm text-slate-500">
+      Commonly used in game engines, graphics libraries, GUI frameworks, and
+      animation systems to provide smooth, flicker-free rendering.
+    </p>
+
+  </div>
+
+</body>
+</html>
