@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request-Reply Design Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl bg-white rounded-2xl shadow-lg p-8">
+
+    <h1 class="text-4xl font-bold text-slate-800 mb-4">
+      📨 Request-Reply Pattern
+    </h1>
+
+    <p class="text-lg text-slate-600 mb-6">
+      The <strong>Request-Reply</strong> pattern allows one service to send a
+      request message and wait for a response message. It is commonly used to
+      implement <strong>RPC (Remote Procedure Call) over messaging</strong>,
+      enabling communication between distributed systems.
+    </p>
+
+    <div class="bg-slate-50 border rounded-xl p-5 mb-6">
+      <h2 class="text-xl font-semibold mb-3">How It Works</h2>
+
+      <ol class="list-decimal list-inside space-y-2 text-slate-700">
+        <li>A client sends a request message.</li>
+        <li>The message broker delivers it to a service.</li>
+        <li>The service processes the request.</li>
+        <li>The service sends a reply back to the client.</li>
+      </ol>
+    </div>
+
+    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded">
+      <p class="font-semibold text-indigo-700">Pseudo Code</p>
+
+      <pre class="mt-3 text-sm text-slate-800 overflow-auto">
+client.send(request);
+
+response = client.waitForReply();
+
+process(response);
+      </pre>
+    </div>
+
+    <p class="mt-6 text-sm text-slate-500">
+      Commonly used in RabbitMQ, Apache Kafka, Azure Service Bus, gRPC, and
+      enterprise messaging systems where services communicate asynchronously
+      while still expecting a response.
+    </p>
+
+  </div>
+
+</body>
+</html>
