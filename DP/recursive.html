@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recursive Descent Parser</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl bg-white rounded-2xl shadow-lg p-8">
+
+    <h1 class="text-4xl font-bold text-slate-800 mb-4">
+      🌲 Recursive Descent Parser
+    </h1>
+
+    <p class="text-lg text-slate-600 mb-6">
+      <strong>Recursive Descent</strong> is a parser implementation technique
+      where each grammar rule is represented by a recursive function. It parses
+      source code from the top down, making it simple and easy to understand.
+    </p>
+
+    <div class="bg-slate-50 border rounded-xl p-5 mb-6">
+      <h2 class="text-xl font-semibold mb-3">How It Works</h2>
+
+      <ol class="list-decimal list-inside space-y-2 text-slate-700">
+        <li>Read the next token from the input.</li>
+        <li>Call the function for the current grammar rule.</li>
+        <li>Recursively parse nested grammar rules.</li>
+        <li>Return the completed parse tree or AST.</li>
+      </ol>
+    </div>
+
+    <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+      <p class="font-semibold text-green-700">Pseudo Code</p>
+
+      <pre class="mt-3 text-sm text-slate-800 overflow-auto">
+parseExpression() {
+    parseTerm();
+
+    while (hasOperator()) {
+        parseTerm();
+    }
+}
+      </pre>
+    </div>
+
+    <p class="mt-6 text-sm text-slate-500">
+      Commonly used in compilers, interpreters, scripting languages, and
+      configuration file parsers because of its simplicity and readability.
+    </p>
+
+  </div>
+
+</body>
+</html>
