@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pratt Parser Design Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl bg-white rounded-2xl shadow-lg p-8">
+
+    <h1 class="text-4xl font-bold text-slate-800 mb-4">
+      🧩 Pratt Parser Pattern
+    </h1>
+
+    <p class="text-lg text-slate-600 mb-6">
+      A <strong>Pratt Parser</strong> is an expression parsing technique that
+      uses token precedence (binding power) to parse expressions. It is simple,
+      flexible, and handles operator precedence and associativity without
+      requiring a large grammar.
+    </p>
+
+    <div class="bg-slate-50 border rounded-xl p-5 mb-6">
+      <h2 class="text-xl font-semibold mb-3">How It Works</h2>
+
+      <ol class="list-decimal list-inside space-y-2 text-slate-700">
+        <li>Read the next token.</li>
+        <li>Parse the left side of the expression.</li>
+        <li>Compare operator precedence.</li>
+        <li>Recursively parse the right side if needed.</li>
+      </ol>
+    </div>
+
+    <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded">
+      <p class="font-semibold text-orange-700">Pseudo Code</p>
+
+      <pre class="mt-3 text-sm text-slate-800 overflow-auto">
+left = parsePrefix();
+
+while (precedence < nextPrecedence()) {
+    left = parseInfix(left);
+}
+
+return left;
+      </pre>
+    </div>
+
+    <p class="mt-6 text-sm text-slate-500">
+      Commonly used in interpreters, compilers, scripting languages, and
+      expression evaluators because it provides an elegant way to parse complex
+      expressions with many operators.
+    </p>
+
+  </div>
+
+</body>
+</html>
