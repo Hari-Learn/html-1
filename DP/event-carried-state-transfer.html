@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event-Carried State Transfer Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl bg-white rounded-2xl shadow-lg p-8">
+
+    <h1 class="text-4xl font-bold text-slate-800 mb-4">
+      📦 Event-Carried State Transfer
+    </h1>
+
+    <p class="text-lg text-slate-600 mb-6">
+      The <strong>Event-Carried State Transfer</strong> pattern includes the
+      required data inside an event so that other services do not need to make
+      additional requests. This helps <strong>reduce service calls</strong> and
+      improves performance in distributed systems.
+    </p>
+
+    <div class="bg-slate-50 border rounded-xl p-5 mb-6">
+      <h2 class="text-xl font-semibold mb-3">How It Works</h2>
+
+      <ol class="list-decimal list-inside space-y-2 text-slate-700">
+        <li>A service updates its data.</li>
+        <li>It publishes an event containing the updated state.</li>
+        <li>Other services receive the event.</li>
+        <li>They use the included data without querying the original service.</li>
+      </ol>
+    </div>
+
+    <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded">
+      <p class="font-semibold text-emerald-700">Pseudo Code</p>
+
+      <pre class="mt-3 text-sm text-slate-800 overflow-auto">
+event = {
+    id,
+    name,
+    status
+};
+
+publish(event);
+      </pre>
+    </div>
+
+    <p class="mt-6 text-sm text-slate-500">
+      Commonly used in event-driven architectures, microservices, Apache Kafka,
+      RabbitMQ, and cloud systems to reduce network traffic and improve service
+      independence.
+    </p>
+
+  </div>
+
+</body>
+</html>
