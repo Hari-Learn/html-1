@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Backpressure Design Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl bg-white rounded-2xl shadow-lg p-8">
+
+    <h1 class="text-4xl font-bold text-slate-800 mb-4">
+      🌊 Backpressure Pattern
+    </h1>
+
+    <p class="text-lg text-slate-600 mb-6">
+      The <strong>Backpressure</strong> pattern controls the flow of data between
+      a producer and a consumer. If the consumer cannot process data fast
+      enough, the producer slows down or pauses to prevent overload.
+    </p>
+
+    <div class="bg-slate-50 border rounded-xl p-5 mb-6">
+      <h2 class="text-xl font-semibold mb-3">How It Works</h2>
+
+      <ol class="list-decimal list-inside space-y-2 text-slate-700">
+        <li>The producer generates data.</li>
+        <li>The consumer processes the data.</li>
+        <li>If the consumer becomes busy, it signals the producer.</li>
+        <li>The producer slows down or waits before sending more data.</li>
+      </ol>
+    </div>
+
+    <div class="bg-cyan-50 border-l-4 border-cyan-500 p-4 rounded">
+      <p class="font-semibold text-cyan-700">Pseudo Code</p>
+
+      <pre class="mt-3 text-sm text-slate-800 overflow-auto">
+while (producer.hasData()) {
+
+    if (consumer.isReady()) {
+        consumer.process(data);
+    } else {
+        wait();
+    }
+
+}
+      </pre>
+    </div>
+
+    <p class="mt-6 text-sm text-slate-500">
+      Commonly used in reactive streams, Apache Kafka, Apache Flink, message
+      queues, and asynchronous systems to maintain stable throughput and prevent
+      resource exhaustion.
+    </p>
+
+  </div>
+
+</body>
+</html>
