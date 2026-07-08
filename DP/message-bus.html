@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message Bus Design Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl bg-white rounded-2xl shadow-lg p-8">
+
+    <h1 class="text-4xl font-bold text-slate-800 mb-4">
+      🚌 Message Bus Pattern
+    </h1>
+
+    <p class="text-lg text-slate-600 mb-6">
+      The <strong>Message Bus</strong> pattern provides a centralized
+      communication channel through which applications or services exchange
+      messages. Components communicate through the bus instead of talking
+      directly to each other, reducing coupling.
+    </p>
+
+    <div class="bg-slate-50 border rounded-xl p-5 mb-6">
+      <h2 class="text-xl font-semibold mb-3">How It Works</h2>
+
+      <ol class="list-decimal list-inside space-y-2 text-slate-700">
+        <li>A sender publishes a message to the bus.</li>
+        <li>The Message Bus receives the message.</li>
+        <li>The bus routes the message to the appropriate receiver(s).</li>
+        <li>Subscribers process the received message.</li>
+      </ol>
+    </div>
+
+    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+      <p class="font-semibold text-blue-700">Pseudo Code</p>
+
+      <pre class="mt-3 text-sm text-slate-800 overflow-auto">
+messageBus.publish(message);
+
+subscriber.onMessage(message);
+
+process(message);
+      </pre>
+    </div>
+
+    <p class="mt-6 text-sm text-slate-500">
+      Commonly used in enterprise applications, microservices, event-driven
+      systems, CQRS architectures, and messaging platforms to enable scalable,
+      centralized communication.
+    </p>
+
+  </div>
+
+</body>
+</html>
