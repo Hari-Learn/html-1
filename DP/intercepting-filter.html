@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intercepting Filter Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <div class="max-w-3xl mx-auto mt-10 bg-white shadow-md rounded-lg p-8">
+
+    <h1 class="text-3xl font-bold text-blue-600">
+      Intercepting Filter Pattern
+    </h1>
+
+    <p class="text-gray-600 mt-2">
+      <strong>Category:</strong> Enterprise Pattern
+    </p>
+
+    <div class="mt-6 bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+      <p>
+        <strong>Definition:</strong><br>
+        Apply preprocessing and postprocessing to requests before they reach the target resource.
+      </p>
+    </div>
+
+    <h2 class="text-xl font-semibold mt-8 mb-3">Purpose</h2>
+    <ul class="list-disc pl-6 space-y-2">
+      <li>Validate incoming requests.</li>
+      <li>Perform authentication and authorization.</li>
+      <li>Log requests and responses.</li>
+      <li>Apply request or response transformations.</li>
+    </ul>
+
+    <h2 class="text-xl font-semibold mt-8 mb-3">Simple Flow</h2>
+
+    <div class="bg-gray-100 rounded p-4 text-center font-medium">
+      Client
+      <span class="mx-2">→</span>
+      Filter
+      <span class="mx-2">→</span>
+      Target Resource
+      <span class="mx-2">→</span>
+      Response
+    </div>
+
+    <h2 class="text-xl font-semibold mt-8 mb-3">Example</h2>
+
+    <div class="bg-gray-900 text-green-300 rounded p-4 overflow-x-auto">
+<pre><code>AuthenticationFilter
+        ↓
+LoggingFilter
+        ↓
+RequestHandler</code></pre>
+    </div>
+
+  </div>
+
+</body>
+</html>
