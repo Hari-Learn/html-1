@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twin Pattern - Structural Design Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+  <div class="max-w-5xl mx-auto px-6 py-10">
+    
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-2xl p-8 shadow-lg">
+      <h1 class="text-4xl font-bold">Twin Pattern</h1>
+      <p class="mt-3 text-lg">
+        <span class="font-semibold">Category:</span> Structural Design Pattern
+      </p>
+      <p class="mt-2 text-indigo-100 text-lg">
+        Split one logical object into two cooperating classes.
+      </p>
+    </div>
+
+    <!-- Overview -->
+    <div class="mt-8 bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold mb-4">Overview</h2>
+      <p class="leading-7">
+        The <strong>Twin Pattern</strong> divides a single logical entity into two
+        closely connected classes. Each class handles a specific responsibility
+        while collaborating with the other, allowing developers to overcome
+        language limitations such as single inheritance and improve code
+        organization.
+      </p>
+    </div>
+
+    <!-- Key Idea -->
+    <div class="mt-8 grid md:grid-cols-2 gap-6">
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-5">
+        <h3 class="text-xl font-semibold text-blue-700 mb-3">Purpose</h3>
+        <ul class="list-disc ml-5 space-y-2">
+          <li>Separate responsibilities into two classes.</li>
+          <li>Allow both classes to work as one logical object.</li>
+          <li>Improve maintainability and readability.</li>
+          <li>Handle multiple behaviors without multiple inheritance.</li>
+        </ul>
+      </div>
+
+      <div class="bg-green-50 border-l-4 border-green-500 rounded-lg p-5">
+        <h3 class="text-xl font-semibold text-green-700 mb-3">How It Works</h3>
+        <ol class="list-decimal ml-5 space-y-2">
+          <li>Create two related classes.</li>
+          <li>Each class stores a reference to its twin.</li>
+          <li>Responsibilities are divided between them.</li>
+          <li>They collaborate to provide complete functionality.</li>
+        </ol>
+      </div>
+
+    </div>
+
+    <!-- Example -->
+    <div class="mt-8 bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold mb-4">Simple Example</h2>
+
+      <div class="bg-slate-900 text-green-300 rounded-lg p-5 overflow-x-auto">
+<pre><code>class GameLogic {
+    Animation animation;
+
+    void move() {
+        System.out.println("Moving...");
+        animation.play();
+    }
+}
+
+class Animation {
+    GameLogic logic;
+
+    void play() {
+        System.out.println("Playing animation");
+    }
+}</code></pre>
+      </div>
+
+      <p class="mt-4 text-slate-600">
+        In this example, <strong>GameLogic</strong> handles movement while
+        <strong>Animation</strong> handles visual effects. Together they behave
+        as one logical object.
+      </p>
+    </div>
+
+    <!-- Advantages & Disadvantages -->
+    <div class="mt-8 grid md:grid-cols-2 gap-6">
+
+      <div class="bg-emerald-50 rounded-xl p-6 shadow">
+        <h2 class="text-2xl font-semibold text-emerald-700 mb-4">
+          Advantages
+        </h2>
+        <ul class="list-disc ml-5 space-y-2">
+          <li>Better separation of concerns.</li>
+          <li>Cleaner and modular code.</li>
+          <li>Avoids multiple inheritance issues.</li>
+          <li>Easier testing and maintenance.</li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 rounded-xl p-6 shadow">
+        <h2 class="text-2xl font-semibold text-red-700 mb-4">
+          Disadvantages
+        </h2>
+        <ul class="list-disc ml-5 space-y-2">
+          <li>Requires synchronization between twins.</li>
+          <li>Extra references increase complexity.</li>
+          <li>Not suitable for simple objects.</li>
+          <li>Can be harder to understand initially.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Use Cases -->
+    <div class="mt-8 bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-2xl font-semibold mb-4">Common Use Cases</h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-indigo-100 rounded-lg p-4 text-center font-medium">
+          Game Development
+        </div>
+
+        <div class="bg-purple-100 rounded-lg p-4 text-center font-medium">
+          GUI Components
+        </div>
+
+        <div class="bg-pink-100 rounded-lg p-4 text-center font-medium">
+          Animation Systems
+        </div>
+
+        <div class="bg-cyan-100 rounded-lg p-4 text-center font-medium">
+          Complex Domain Objects
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-10 text-center text-slate-500 text-sm">
+      Structural Design Pattern • Twin Pattern
+    </div>
+
+  </div>
+
+</body>
+</html>
