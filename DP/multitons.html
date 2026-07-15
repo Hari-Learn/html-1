@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multiton Pattern</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-3xl mx-auto mt-12 bg-white rounded-xl shadow-lg p-8">
+
+    <h1 class="text-3xl font-bold text-blue-600 mb-4">
+      Multiton Pattern
+    </h1>
+
+    <p class="text-lg mb-6">
+      Similar to <span class="font-semibold text-purple-600">Singleton</span>
+      but allows a fixed number of named instances.
+    </p>
+
+    <div class="bg-gray-50 border-l-4 border-blue-500 p-5 rounded">
+      <h2 class="text-xl font-semibold mb-2">
+        What is Multiton?
+      </h2>
+
+      <p>
+        The Multiton Pattern restricts the creation of objects by maintaining
+        a collection of named instances. Instead of allowing only one instance
+        like Singleton, it allows a predefined number of unique instances.
+      </p>
+    </div>
+
+    <div class="mt-6">
+      <h2 class="text-xl font-semibold mb-3">
+        Example
+      </h2>
+
+      <pre class="bg-gray-900 text-green-300 p-4 rounded-lg overflow-x-auto">
+class DatabaseMultiton {
+  static instances = {};
+
+  static getInstance(name) {
+    if (!this.instances[name]) {
+      this.instances[name] = new DatabaseMultiton(name);
+    }
+
+    return this.instances[name];
+  }
+
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+const db1 = DatabaseMultiton.getInstance("users");
+const db2 = DatabaseMultiton.getInstance("orders");
+
+console.log(db1.name); // users
+console.log(db2.name); // orders
+      </pre>
+    </div>
+
+    <div class="mt-6 bg-green-50 border border-green-200 p-5 rounded-lg">
+      <h2 class="text-xl font-semibold text-green-700 mb-2">
+        Key Idea
+      </h2>
+
+      <ul class="list-disc ml-6 space-y-2">
+        <li>Singleton → Only one object exists.</li>
+        <li>Multiton → Multiple controlled objects exist.</li>
+        <li>Each instance is identified by a unique name/key.</li>
+        <li>Useful for managing resources like database connections, caches, or configurations.</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
