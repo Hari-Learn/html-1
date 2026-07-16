@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Distributed Lock Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-4xl bg-white rounded-2xl shadow-xl p-8">
+
+    <h1 class="text-4xl font-bold text-indigo-700 mb-4">
+      Distributed Lock Pattern
+    </h1>
+
+    <p class="text-gray-700 text-lg mb-6">
+      <strong>Distributed Lock Pattern</strong> is a synchronization technique used in
+      distributed systems to ensure that only one process or service can access a
+      shared resource at a time. It prevents race conditions, duplicate processing,
+      and data inconsistencies when multiple machines or application instances are
+      working concurrently.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5">
+        <h2 class="text-xl font-semibold text-indigo-700 mb-3">
+          Purpose
+        </h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Coordinate access across multiple servers.</li>
+          <li>Prevent concurrent modifications.</li>
+          <li>Ensure only one worker executes a critical task.</li>
+          <li>Maintain data consistency.</li>
+        </ul>
+      </div>
+
+      <div class="bg-cyan-50 border border-cyan-200 rounded-lg p-5">
+        <h2 class="text-xl font-semibold text-cyan-700 mb-3">
+          Common Use Cases
+        </h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Background job scheduling.</li>
+          <li>Payment processing.</li>
+          <li>Inventory management.</li>
+          <li>Leader election in distributed systems.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mb-6">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-3">
+        How It Works
+      </h2>
+
+      <ol class="list-decimal list-inside text-gray-700 space-y-2">
+        <li>A service requests a lock from a shared lock manager.</li>
+        <li>If the lock is available, it is granted exclusively.</li>
+        <li>The service performs its critical operation.</li>
+        <li>After completion, the lock is released.</li>
+        <li>Other waiting services can then acquire the lock.</li>
+      </ol>
+    </div>
+
+    <div class="bg-gray-50 border rounded-lg p-5 mb-6">
+      <h2 class="text-xl font-semibold text-gray-800 mb-3">
+        Workflow Example
+      </h2>
+
+      <div class="text-center text-sm font-medium text-gray-700 space-y-2">
+        <div>Application A &nbsp;&nbsp;&nbsp;&nbsp; Application B</div>
+
+        <div class="text-indigo-600 font-bold">
+          ↓ Request Lock
+        </div>
+
+        <div class="border rounded-lg p-3 bg-indigo-100 inline-block">
+          Distributed Lock Service
+        </div>
+
+        <div class="text-green-600 font-bold">
+          ↓ Lock Granted
+        </div>
+
+        <div class="border rounded-lg p-3 bg-green-100 inline-block">
+          Shared Database / Resource
+        </div>
+
+        <div class="text-red-500 font-bold">
+          ↑ Release Lock
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <div>
+        <h2 class="text-xl font-semibold text-green-700 mb-3">
+          Advantages
+        </h2>
+
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Prevents race conditions.</li>
+          <li>Ensures data consistency.</li>
+          <li>Avoids duplicate task execution.</li>
+          <li>Supports scalable distributed applications.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-semibold text-red-600 mb-3">
+          Challenges
+        </h2>
+
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Deadlocks if locks are not released.</li>
+          <li>Lock expiration must be handled carefully.</li>
+          <li>Network failures can complicate coordination.</li>
+          <li>May introduce latency in highly concurrent systems.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-8 bg-indigo-50 border-l-4 border-indigo-500 p-5 rounded">
+      <h2 class="text-lg font-semibold text-indigo-700 mb-2">
+        Real-World Example
+      </h2>
+
+      <p class="text-gray-700">
+        Consider an online ticket booking platform with multiple application
+        servers. When two users try to reserve the last available seat
+        simultaneously, a distributed lock ensures that only one server can update
+        the booking record at a time. Once the reservation is completed, the lock
+        is released, preventing double booking and maintaining data integrity.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
