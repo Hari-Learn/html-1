@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blue-Green Deployment Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-3xl bg-white rounded-2xl shadow-xl p-8">
+    
+    <h1 class="text-4xl font-bold text-blue-700 mb-4">
+      Blue-Green Deployment Pattern
+    </h1>
+
+    <p class="text-gray-700 text-lg mb-6">
+      <strong>Blue-Green Deployment</strong> is a software release strategy that
+      maintains two identical production environments—<span class="font-semibold text-blue-600">Blue</span>
+      and <span class="font-semibold text-green-600">Green</span>. One environment
+      serves live user traffic while the other is used to deploy and validate the
+      new application version. Once testing is complete, traffic is switched to the
+      updated environment, resulting in a fast and low-risk release.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+        <h2 class="text-xl font-semibold text-blue-700 mb-2">Blue Environment</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Current live production version.</li>
+          <li>Handles all user requests.</li>
+          <li>Remains unchanged during deployment.</li>
+        </ul>
+      </div>
+
+      <div class="bg-green-50 border border-green-200 rounded-lg p-5">
+        <h2 class="text-xl font-semibold text-green-700 mb-2">Green Environment</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Receives the new application version.</li>
+          <li>Tested before going live.</li>
+          <li>Becomes the live environment after traffic switch.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mb-6">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-3">Deployment Process</h2>
+      <ol class="list-decimal list-inside text-gray-700 space-y-2">
+        <li>Users access the current <strong>Blue</strong> production environment.</li>
+        <li>Deploy the new release to the <strong>Green</strong> environment.</li>
+        <li>Run automated tests and verify application health.</li>
+        <li>Switch production traffic from Blue to Green.</li>
+        <li>If issues occur, immediately redirect traffic back to Blue.</li>
+      </ol>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h2 class="text-xl font-semibold text-green-700 mb-2">Advantages</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Near-zero downtime deployments.</li>
+          <li>Quick rollback if problems occur.</li>
+          <li>Safe testing in a production-like environment.</li>
+          <li>Reduced deployment risk.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-semibold text-red-600 mb-2">Limitations</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Requires duplicate infrastructure.</li>
+          <li>Higher operational costs.</li>
+          <li>Database changes require careful planning.</li>
+          <li>Traffic switching must be properly managed.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 p-4 bg-indigo-50 border-l-4 border-indigo-500 rounded">
+      <h2 class="font-semibold text-indigo-700 mb-2">Example</h2>
+      <p class="text-gray-700">
+        An e-commerce website runs version <strong>1.0</strong> in the Blue
+        environment. Version <strong>2.0</strong> is deployed to the Green
+        environment and thoroughly tested. Once verified, the load balancer routes
+        all customer traffic to Green. If any critical issue is detected, traffic
+        can be instantly switched back to Blue, minimizing service disruption.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
