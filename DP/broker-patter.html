@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Broker Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 flex items-center justify-center min-h-screen p-6">
+
+  <div class="max-w-3xl w-full bg-white rounded-2xl shadow-xl p-8">
+    
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-blue-700">Broker Pattern</h1>
+      <p class="mt-3 text-lg text-gray-600">
+        Manages communication between distributed components.
+      </p>
+    </div>
+
+    <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-3">
+        What is the Broker Pattern?
+      </h2>
+      <p class="text-gray-700 leading-7">
+        The <strong>Broker Pattern</strong> is a distributed architectural pattern
+        that enables communication between clients and remote services through
+        a broker component. The broker acts as an intermediary, handling message
+        routing, service discovery, request forwarding, and response delivery,
+        allowing distributed components to interact without knowing each other's
+        implementation details or locations.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-8">
+      
+      <div class="bg-green-50 p-5 rounded-xl shadow-sm">
+        <h3 class="text-xl font-semibold text-green-700 mb-3">Advantages</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Loose coupling between distributed components.</li>
+          <li>Simplifies remote communication.</li>
+          <li>Supports scalability and flexibility.</li>
+          <li>Centralizes request routing.</li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-5 rounded-xl shadow-sm">
+        <h3 class="text-xl font-semibold text-red-700 mb-3">Challenges</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Broker can become a bottleneck.</li>
+          <li>Additional network overhead.</li>
+          <li>Higher system complexity.</li>
+          <li>Single point of failure if not replicated.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-8 bg-gray-100 rounded-xl p-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-4">
+        Basic Communication Flow
+      </h3>
+
+      <div class="flex flex-wrap justify-center items-center gap-3 text-center">
+        <div class="bg-blue-600 text-white px-4 py-3 rounded-lg shadow">
+          Client
+        </div>
+
+        <span class="text-2xl font-bold">→</span>
+
+        <div class="bg-indigo-600 text-white px-4 py-3 rounded-lg shadow">
+          Broker
+        </div>
+
+        <span class="text-2xl font-bold">→</span>
+
+        <div class="bg-green-600 text-white px-4 py-3 rounded-lg shadow">
+          Remote Service
+        </div>
+
+        <span class="text-2xl font-bold">→</span>
+
+        <div class="bg-purple-600 text-white px-4 py-3 rounded-lg shadow">
+          Response
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 border-t pt-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-3">
+        Common Use Cases
+      </h3>
+      <ul class="grid md:grid-cols-2 gap-3 text-gray-700">
+        <li class="bg-slate-50 p-3 rounded-lg">✔ Remote Procedure Call (RPC)</li>
+        <li class="bg-slate-50 p-3 rounded-lg">✔ CORBA</li>
+        <li class="bg-slate-50 p-3 rounded-lg">✔ Java RMI</li>
+        <li class="bg-slate-50 p-3 rounded-lg">✔ Distributed Enterprise Systems</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
