@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scope Stack</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen flex items-center justify-center">
+
+  <main class="max-w-5xl w-full px-6 py-12">
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl overflow-hidden">
+
+      <!-- Hero Section -->
+      <div class="bg-gradient-to-r from-cyan-600 to-blue-700 p-10">
+        <span class="inline-flex items-center px-4 py-1 rounded-full bg-white/10 text-sm font-medium">
+          🗂️ Symbol Management
+        </span>
+
+        <h1 class="mt-5 text-5xl font-extrabold tracking-tight">
+          Scope Stack
+        </h1>
+
+        <p class="mt-4 text-lg text-cyan-100 max-w-3xl leading-8">
+          Manages nested scopes efficiently, ensuring variables, functions,
+          and symbols are resolved correctly while entering and exiting
+          different levels of a program's structure.
+        </p>
+      </div>
+
+      <!-- Feature Cards -->
+      <section class="grid gap-6 md:grid-cols-3 p-10">
+
+        <div class="bg-slate-800/60 border border-slate-700 rounded-2xl p-6">
+          <div class="text-4xl mb-4">📂</div>
+          <h2 class="text-xl font-semibold">Nested Scopes</h2>
+          <p class="mt-3 text-slate-400">
+            Track blocks, functions, and namespaces using a structured
+            stack of scopes.
+          </p>
+        </div>
+
+        <div class="bg-slate-800/60 border border-slate-700 rounded-2xl p-6">
+          <div class="text-4xl mb-4">🔍</div>
+          <h2 class="text-xl font-semibold">Symbol Resolution</h2>
+          <p class="mt-3 text-slate-400">
+            Resolve identifiers by searching from the current scope outward,
+            following lexical scoping rules.
+          </p>
+        </div>
+
+        <div class="bg-slate-800/60 border border-slate-700 rounded-2xl p-6">
+          <div class="text-4xl mb-4">⚡</div>
+          <h2 class="text-xl font-semibold">Efficient Management</h2>
+          <p class="mt-3 text-slate-400">
+            Push and pop scopes quickly as the parser enters and exits
+            program blocks.
+          </p>
+        </div>
+
+      </section>
+
+      <!-- Information Panel -->
+      <section class="px-10 pb-10">
+        <div class="rounded-2xl bg-slate-800 border border-slate-700 p-6">
+          <h3 class="text-xl font-semibold mb-3">Why Use a Scope Stack?</h3>
+          <p class="text-slate-300 leading-7">
+            A scope stack provides a reliable way to manage visibility and
+            lifetime of identifiers during semantic analysis. It simplifies
+            symbol lookup, prevents naming conflicts, and ensures declarations
+            are correctly associated with their respective scopes.
+          </p>
+        </div>
+
+        <div class="mt-8">
+          <button class="bg-cyan-600 hover:bg-cyan-500 transition px-6 py-3 rounded-lg font-semibold shadow-lg">
+            Explore Scope Stack
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+</body>
+</html>
