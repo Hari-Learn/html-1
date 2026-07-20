@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vector Clock - Distributed Systems</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen flex items-center justify-center">
+
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+      <!-- Left Content -->
+      <div>
+        <span class="inline-flex items-center rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 px-4 py-1 text-sm font-medium">
+          Distributed Systems
+        </span>
+
+        <h1 class="mt-6 text-5xl font-extrabold leading-tight">
+          Vector <span class="text-indigo-400">Clock</span>
+        </h1>
+
+        <p class="mt-6 text-lg text-slate-300 leading-relaxed">
+          Vector Clocks are logical clocks used in distributed systems to
+          determine the causal relationship between events occurring on
+          different processes.
+        </p>
+
+        <div class="mt-8 p-5 rounded-xl bg-slate-900 border border-slate-800">
+          <h2 class="text-xl font-semibold text-indigo-300">
+            Track causality of events
+          </h2>
+          <p class="mt-3 text-slate-400">
+            Unlike Lamport Clocks, Vector Clocks can distinguish whether two
+            events are causally related or occurred concurrently, making them
+            essential for conflict detection, distributed databases, and
+            version control systems.
+          </p>
+        </div>
+
+        <div class="mt-8 flex gap-4">
+          <button class="px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 transition">
+            Learn More
+          </button>
+
+          <button class="px-6 py-3 rounded-lg border border-slate-700 hover:bg-slate-800 transition">
+            Documentation
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Illustration -->
+      <div class="flex justify-center">
+        <div class="relative w-80 h-80">
+
+          <!-- Center -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-20 h-20 rounded-full bg-indigo-500 flex items-center justify-center text-2xl font-bold shadow-lg shadow-indigo-500/40">
+              VC
+            </div>
+          </div>
+
+          <!-- Process Nodes -->
+          <div class="absolute top-2 left-1/2 -translate-x-1/2">
+            <div class="w-16 h-16 rounded-full bg-slate-800 border border-indigo-400 flex items-center justify-center">
+              P1
+            </div>
+          </div>
+
+          <div class="absolute bottom-6 left-4">
+            <div class="w-16 h-16 rounded-full bg-slate-800 border border-indigo-400 flex items-center justify-center">
+              P2
+            </div>
+          </div>
+
+          <div class="absolute bottom-6 right-4">
+            <div class="w-16 h-16 rounded-full bg-slate-800 border border-indigo-400 flex items-center justify-center">
+              P3
+            </div>
+          </div>
+
+          <!-- Connection Lines -->
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 320 320">
+            <line x1="160" y1="55" x2="160" y2="160"
+              stroke="#818cf8" stroke-width="2" stroke-dasharray="6 6"/>
+            <line x1="70" y1="265" x2="160" y2="160"
+              stroke="#818cf8" stroke-width="2" stroke-dasharray="6 6"/>
+            <line x1="250" y1="265" x2="160" y2="160"
+              stroke="#818cf8" stroke-width="2" stroke-dasharray="6 6"/>
+          </svg>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
