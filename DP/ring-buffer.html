@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ring Buffer - High Performance</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen flex items-center justify-center">
+
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Left Content -->
+      <div>
+        <span class="inline-flex items-center rounded-full bg-orange-500/10 border border-orange-500/30 px-4 py-1 text-sm font-medium text-orange-300">
+          High Performance
+        </span>
+
+        <h1 class="mt-6 text-5xl font-extrabold">
+          Ring <span class="text-orange-400">Buffer</span>
+        </h1>
+
+        <p class="mt-6 text-lg text-slate-300 leading-relaxed">
+          A Ring Buffer (Circular Buffer) is a fixed-size data structure that
+          stores elements in a circular manner, allowing efficient memory usage
+          and constant-time read/write operations.
+        </p>
+
+        <div class="mt-8 rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h2 class="text-xl font-semibold text-orange-300">
+            Fixed-size circular buffer
+          </h2>
+
+          <p class="mt-3 text-slate-400 leading-relaxed">
+            When the buffer reaches its capacity, new data overwrites the oldest
+            entries. Ring Buffers are widely used in high-performance systems,
+            networking, audio/video streaming, operating systems, and producer–
+            consumer architectures due to their predictable performance.
+          </p>
+        </div>
+
+        <div class="mt-8 flex gap-4">
+          <button class="px-6 py-3 rounded-lg bg-orange-600 hover:bg-orange-500 transition">
+            Learn More
+          </button>
+
+          <button class="px-6 py-3 rounded-lg border border-slate-700 hover:bg-slate-800 transition">
+            Documentation
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Illustration -->
+      <div class="flex justify-center">
+        <div class="relative w-96 h-96">
+
+          <!-- Circular Buffer -->
+          <div class="absolute inset-0 rounded-full border-8 border-orange-500/30"></div>
+
+          <!-- Buffer Slots -->
+          <div class="absolute top-2 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-orange-500 flex items-center justify-center font-bold">0</div>
+
+          <div class="absolute top-16 right-8 w-14 h-14 rounded-full bg-slate-800 border border-orange-400 flex items-center justify-center font-bold">1</div>
+
+          <div class="absolute bottom-20 right-2 w-14 h-14 rounded-full bg-slate-800 border border-orange-400 flex items-center justify-center font-bold">2</div>
+
+          <div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-slate-800 border border-orange-400 flex items-center justify-center font-bold">3</div>
+
+          <div class="absolute bottom-20 left-2 w-14 h-14 rounded-full bg-slate-800 border border-orange-400 flex items-center justify-center font-bold">4</div>
+
+          <div class="absolute top-16 left-8 w-14 h-14 rounded-full bg-slate-800 border border-orange-400 flex items-center justify-center font-bold">5</div>
+
+          <!-- Center -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-28 h-28 rounded-full bg-slate-900 border border-orange-500 flex flex-col items-center justify-center">
+              <span class="text-orange-300 font-semibold">Head →</span>
+              <span class="text-slate-400 text-sm mt-1">← Tail</span>
+            </div>
+          </div>
+
+          <!-- Circular Arrow -->
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 400">
+            <path d="M90 90 A155 155 0 1 1 310 90"
+                  fill="none"
+                  stroke="#fb923c"
+                  stroke-width="4"
+                  stroke-dasharray="8 8"/>
+            <polygon points="300,70 325,80 308,98" fill="#fb923c"/>
+          </svg>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
