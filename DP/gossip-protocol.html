@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gossip Protocol - Distributed Systems</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen flex items-center justify-center">
+
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Left Content -->
+      <div>
+        <span class="inline-flex items-center rounded-full bg-pink-500/10 border border-pink-500/30 px-4 py-1 text-sm font-medium text-pink-300">
+          Distributed Systems
+        </span>
+
+        <h1 class="mt-6 text-5xl font-extrabold leading-tight">
+          Gossip <span class="text-pink-400">Protocol</span>
+        </h1>
+
+        <p class="mt-6 text-lg text-slate-300 leading-relaxed">
+          Gossip Protocol is a decentralized communication mechanism where
+          nodes randomly exchange information with peers, allowing updates to
+          spread efficiently across large distributed systems.
+        </p>
+
+        <div class="mt-8 rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h2 class="text-xl font-semibold text-pink-300">
+            Spread information probabilistically
+          </h2>
+
+          <p class="mt-3 text-slate-400 leading-relaxed">
+            Instead of broadcasting to every node, each participant periodically
+            shares information with a few random peers. Over multiple rounds,
+            updates propagate rapidly, making gossip protocols scalable,
+            fault-tolerant, and resilient to node failures.
+          </p>
+        </div>
+
+        <div class="mt-8 flex gap-4">
+          <button class="px-6 py-3 rounded-lg bg-pink-600 hover:bg-pink-500 transition">
+            Learn More
+          </button>
+
+          <button class="px-6 py-3 rounded-lg border border-slate-700 hover:bg-slate-800 transition">
+            Documentation
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Illustration -->
+      <div class="flex justify-center">
+        <div class="relative w-96 h-96">
+
+          <!-- Center Node -->
+          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div class="w-20 h-20 rounded-full bg-pink-500 flex items-center justify-center font-bold shadow-lg shadow-pink-500/40">
+              Node
+            </div>
+          </div>
+
+          <!-- Outer Nodes -->
+          <div class="absolute top-4 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-slate-800 border border-pink-400 flex items-center justify-center">A</div>
+
+          <div class="absolute top-20 right-6 w-14 h-14 rounded-full bg-slate-800 border border-pink-400 flex items-center justify-center">B</div>
+
+          <div class="absolute bottom-20 right-6 w-14 h-14 rounded-full bg-slate-800 border border-pink-400 flex items-center justify-center">C</div>
+
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-slate-800 border border-pink-400 flex items-center justify-center">D</div>
+
+          <div class="absolute bottom-20 left-6 w-14 h-14 rounded-full bg-slate-800 border border-pink-400 flex items-center justify-center">E</div>
+
+          <div class="absolute top-20 left-6 w-14 h-14 rounded-full bg-slate-800 border border-pink-400 flex items-center justify-center">F</div>
+
+          <!-- Connection Lines -->
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 400">
+            <line x1="200" y1="60" x2="200" y2="170"
+                  stroke="#ec4899" stroke-width="2" stroke-dasharray="6 6"/>
+            <line x1="320" y1="120" x2="230" y2="185"
+                  stroke="#ec4899" stroke-width="2" stroke-dasharray="6 6"/>
+            <line x1="320" y1="280" x2="230" y2="215"
+                  stroke="#ec4899" stroke-width="2" stroke-dasharray="6 6"/>
+            <line x1="200" y1="340" x2="200" y2="230"
+                  stroke="#ec4899" stroke-width="2" stroke-dasharray="6 6"/>
+            <line x1="80" y1="280" x2="170" y2="215"
+                  stroke="#ec4899" stroke-width="2" stroke-dasharray="6 6"/>
+            <line x1="80" y1="120" x2="170" y2="185"
+                  stroke="#ec4899" stroke-width="2" stroke-dasharray="6 6"/>
+          </svg>
+
+          <!-- Animated Pulse -->
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="w-32 h-32 rounded-full border-2 border-pink-500/40 animate-ping"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
