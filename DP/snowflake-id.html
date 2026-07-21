@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snowflake ID - Distributed Systems</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen flex items-center justify-center">
+
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Left Content -->
+      <div>
+        <span class="inline-flex items-center rounded-full bg-sky-500/10 border border-sky-500/30 px-4 py-1 text-sm font-medium text-sky-300">
+          Distributed Systems
+        </span>
+
+        <h1 class="mt-6 text-5xl font-extrabold leading-tight">
+          Snowflake <span class="text-sky-400">ID</span>
+        </h1>
+
+        <p class="mt-6 text-lg text-slate-300 leading-relaxed">
+          Snowflake ID is a distributed unique identifier algorithm that
+          generates globally unique, time-ordered 64-bit IDs without requiring
+          a centralized database or coordination service.
+        </p>
+
+        <div class="mt-8 rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h2 class="text-xl font-semibold text-sky-300">
+            Generate unique distributed IDs
+          </h2>
+
+          <p class="mt-3 text-slate-400 leading-relaxed">
+            A Snowflake ID combines a timestamp, machine identifier, and
+            sequence number into a single integer. This enables high-throughput,
+            collision-free ID generation across distributed servers while
+            maintaining chronological ordering.
+          </p>
+        </div>
+
+        <div class="mt-8 flex gap-4">
+          <button class="px-6 py-3 rounded-lg bg-sky-600 hover:bg-sky-500 transition">
+            Learn More
+          </button>
+
+          <button class="px-6 py-3 rounded-lg border border-slate-700 hover:bg-slate-800 transition">
+            Documentation
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Illustration -->
+      <div class="flex justify-center">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-2xl w-full max-w-md">
+
+          <h3 class="text-center text-sky-300 font-semibold text-lg mb-6">
+            Snowflake ID Structure
+          </h3>
+
+          <!-- Bit Layout -->
+          <div class="space-y-3">
+            <div class="grid grid-cols-12 gap-1 text-xs font-semibold text-center">
+
+              <div class="col-span-5 bg-sky-600 rounded py-3">
+                Timestamp
+                <div class="text-[10px] mt-1 opacity-80">41 bits</div>
+              </div>
+
+              <div class="col-span-2 bg-indigo-600 rounded py-3">
+                Node
+                <div class="text-[10px] mt-1 opacity-80">10 bits</div>
+              </div>
+
+              <div class="col-span-2 bg-purple-600 rounded py-3">
+                Worker
+                <div class="text-[10px] mt-1 opacity-80">5 bits</div>
+              </div>
+
+              <div class="col-span-3 bg-emerald-600 rounded py-3">
+                Sequence
+                <div class="text-[10px] mt-1 opacity-80">12 bits</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Example ID -->
+          <div class="mt-8 rounded-xl bg-slate-800 border border-slate-700 p-5">
+            <p class="text-sm text-slate-400 mb-2">
+              Example Generated ID
+            </p>
+
+            <div class="font-mono text-sky-300 text-lg break-all">
+              1827364519283746501
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div class="grid grid-cols-2 gap-4 mt-8">
+            <div class="rounded-lg bg-slate-800 p-4 text-center">
+              <div class="text-2xl">⚡</div>
+              <p class="mt-2 text-sm text-slate-300">High Throughput</p>
+            </div>
+
+            <div class="rounded-lg bg-slate-800 p-4 text-center">
+              <div class="text-2xl">🌐</div>
+              <p class="mt-2 text-sm text-slate-300">Distributed</p>
+            </div>
+
+            <div class="rounded-lg bg-slate-800 p-4 text-center">
+              <div class="text-2xl">🔒</div>
+              <p class="mt-2 text-sm text-slate-300">Unique IDs</p>
+            </div>
+
+            <div class="rounded-lg bg-slate-800 p-4 text-center">
+              <div class="text-2xl">🕒</div>
+              <p class="mt-2 text-sm text-slate-300">Time Ordered</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
