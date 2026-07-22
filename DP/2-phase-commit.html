@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Two-Phase Commit (2PC)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen flex items-center justify-center p-6">
+
+<div class="max-w-5xl w-full bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl p-8">
+
+    <!-- Header -->
+    <div class="text-center">
+        <span class="inline-block px-4 py-1 rounded-full bg-cyan-500/20 text-cyan-400 font-semibold text-sm">
+            Distributed Transactions
+        </span>
+
+        <h1 class="text-5xl font-extrabold mt-4 text-cyan-400">
+            Two-Phase Commit (2PC)
+        </h1>
+
+        <p class="mt-4 text-lg text-slate-300">
+            Coordinate atomic commits across multiple systems.
+        </p>
+    </div>
+
+    <!-- Coordinator -->
+    <div class="flex justify-center mt-10">
+        <div class="bg-cyan-600 px-8 py-5 rounded-xl shadow-lg text-center">
+            <div class="text-4xl">🎯</div>
+            <h2 class="text-xl font-bold mt-2">Coordinator</h2>
+        </div>
+    </div>
+
+    <!-- Participants -->
+    <div class="flex justify-center mt-6">
+        <div class="text-cyan-400 text-3xl">↓</div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mt-6">
+        <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center">
+            <div class="text-4xl">🗄️</div>
+            <h3 class="font-bold text-lg mt-2">Database A</h3>
+        </div>
+
+        <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center">
+            <div class="text-4xl">🗄️</div>
+            <h3 class="font-bold text-lg mt-2">Database B</h3>
+        </div>
+
+        <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 text-center">
+            <div class="text-4xl">🗄️</div>
+            <h3 class="font-bold text-lg mt-2">Database C</h3>
+        </div>
+    </div>
+
+    <!-- Two Phases -->
+    <div class="grid md:grid-cols-2 gap-8 mt-12">
+
+        <!-- Phase 1 -->
+        <div class="bg-slate-800 border border-yellow-500/40 rounded-xl p-6">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-yellow-500 text-black font-bold flex items-center justify-center">
+                    1
+                </div>
+                <h2 class="text-2xl font-bold text-yellow-400">
+                    Prepare Phase
+                </h2>
+            </div>
+
+            <ul class="mt-5 space-y-3 text-slate-300">
+                <li>• Coordinator asks all participants to prepare.</li>
+                <li>• Each participant validates the transaction.</li>
+                <li>• Replies with <span class="text-green-400 font-semibold">YES</span> or <span class="text-red-400 font-semibold">NO</span>.</li>
+            </ul>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="bg-slate-800 border border-green-500/40 rounded-xl p-6">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-green-500 text-black font-bold flex items-center justify-center">
+                    2
+                </div>
+                <h2 class="text-2xl font-bold text-green-400">
+                    Commit Phase
+                </h2>
+            </div>
+
+            <ul class="mt-5 space-y-3 text-slate-300">
+                <li>• If everyone votes <span class="text-green-400">YES</span>, commit.</li>
+                <li>• If any participant votes <span class="text-red-400">NO</span>, rollback.</li>
+                <li>• All participants reach the same final state.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Flow -->
+    <div class="mt-12 bg-slate-950 border border-slate-700 rounded-xl p-6">
+        <h2 class="text-2xl font-bold text-cyan-400 mb-4">
+            Transaction Flow
+        </h2>
+
+<pre class="text-green-400 overflow-x-auto"><code>Coordinator
+      │
+      ├── PREPARE ─────────► Participants
+      │◄──── YES / NO ──────
+      │
+      ├── COMMIT (All YES)
+      │          OR
+      └── ROLLBACK (Any NO)</code></pre>
+    </div>
+
+    <!-- Summary -->
+    <div class="mt-10 bg-cyan-500/10 border border-cyan-500/30 rounded-xl p-5">
+        <h3 class="text-xl font-bold text-cyan-300">
+            Key Idea
+        </h3>
+
+        <p class="mt-2 text-slate-300">
+            Two-Phase Commit (2PC) guarantees that a distributed transaction is
+            <span class="font-semibold text-white">atomic</span>—either every
+            participant commits the transaction or every participant rolls it back,
+            ensuring consistency across all systems.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
