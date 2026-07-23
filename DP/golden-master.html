@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golden Master Testing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-yellow-50 to-amber-100 min-h-screen flex items-center justify-center">
+
+  <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-10">
+    <div class="text-center">
+      <span class="inline-block px-4 py-1 text-sm font-semibold text-amber-700 bg-amber-100 rounded-full">
+        Software Testing
+      </span>
+
+      <h1 class="mt-6 text-5xl font-extrabold text-gray-900">
+        Golden Master Testing
+      </h1>
+
+      <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+        <strong>Golden Master Testing</strong> is a regression testing technique that
+        validates software by comparing the current output with a previously
+        approved "golden master" output. If the outputs match, the application
+        is considered to behave consistently; any differences indicate potential
+        regressions or intentional changes that require review.
+      </p>
+
+      <div class="mt-8 bg-amber-50 border-l-4 border-amber-500 rounded-lg p-5 text-left">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">
+          Key Concept
+        </h2>
+        <p class="text-gray-700">
+          <span class="font-medium">Regression testing by comparing outputs.</span>
+          The current execution results are compared against a trusted baseline
+          (Golden Master) to detect unexpected changes automatically.
+        </p>
+      </div>
+
+      <div class="mt-8 flex justify-center gap-4">
+        <div class="bg-green-100 text-green-800 px-5 py-3 rounded-lg font-semibold">
+          ✓ Baseline Output
+        </div>
+        <div class="bg-blue-100 text-blue-800 px-5 py-3 rounded-lg font-semibold">
+          ⇄ Compare Outputs
+        </div>
+        <div class="bg-red-100 text-red-800 px-5 py-3 rounded-lg font-semibold">
+          ⚠ Detect Changes
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
