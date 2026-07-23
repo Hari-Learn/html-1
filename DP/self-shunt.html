@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-Shunt Testing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-indigo-50 to-blue-100 min-h-screen flex items-center justify-center">
+
+  <div class="max-w-2xl w-full bg-white rounded-2xl shadow-xl p-10">
+    <div class="text-center">
+      <span class="inline-block px-4 py-1 text-sm font-semibold text-indigo-700 bg-indigo-100 rounded-full">
+        Software Testing
+      </span>
+
+      <h1 class="mt-6 text-5xl font-extrabold text-gray-900">
+        Self-Shunt Testing
+      </h1>
+
+      <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+        <strong>Self-Shunt Testing</strong> is a unit testing technique in which
+        the test object acts as its own mock. Instead of creating separate mock
+        objects, the test class implements the required interfaces and provides
+        the expected behavior directly, simplifying test setup for certain
+        scenarios.
+      </p>
+
+      <div class="mt-8 bg-indigo-50 border-l-4 border-indigo-500 rounded-lg p-5 text-left">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">
+          Key Concept
+        </h2>
+        <p class="text-gray-700">
+          <span class="font-medium">Test object acts as its own mock.</span>
+          The test class itself fulfills the role of the mock object, making it
+          easier to verify interactions without creating separate mock
+          implementations.
+        </p>
+      </div>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <div class="bg-green-100 text-green-800 px-5 py-3 rounded-lg font-semibold">
+          ✓ Test Object
+        </div>
+        <div class="bg-blue-100 text-blue-800 px-5 py-3 rounded-lg font-semibold">
+          ⇄ Acts as Mock
+        </div>
+        <div class="bg-purple-100 text-purple-800 px-5 py-3 rounded-lg font-semibold">
+          ✔ Verify Behavior
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
