@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pimpl (Pointer to Implementation) - C++</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+<div class="max-w-5xl mx-auto p-8">
+
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-xl p-8 shadow-lg">
+        <h1 class="text-4xl font-bold">Pimpl (Pointer to Implementation)</h1>
+        <p class="mt-3 text-lg">
+            A C++ design technique used to <span class="font-semibold">reduce compile-time dependencies</span>
+            and hide implementation details.
+        </p>
+    </div>
+
+    <!-- What is Pimpl -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-4">What is Pimpl?</h2>
+
+        <p class="leading-8">
+            <strong>Pimpl</strong> stands for
+            <span class="font-semibold text-indigo-600">
+                Pointer to Implementation
+            </span>.
+            Instead of storing all member variables directly inside a class,
+            the class stores only a pointer to a hidden implementation class.
+        </p>
+
+        <div class="mt-5 bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded">
+            <strong>Goal:</strong>
+            Hide implementation details and reduce header file dependencies.
+        </div>
+    </section>
+
+    <!-- Why Use -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-5">Why Use Pimpl?</h2>
+
+        <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-green-50 p-5 rounded-lg border">
+                <h3 class="font-bold text-green-700 mb-2">
+                    ✅ Faster Compilation
+                </h3>
+                <p>
+                    Changing implementation details does not force every
+                    source file to recompile.
+                </p>
+            </div>
+
+            <div class="bg-blue-50 p-5 rounded-lg border">
+                <h3 class="font-bold text-blue-700 mb-2">
+                    🔒 Information Hiding
+                </h3>
+                <p>
+                    Private data members remain hidden from users of the class.
+                </p>
+            </div>
+
+            <div class="bg-purple-50 p-5 rounded-lg border">
+                <h3 class="font-bold text-purple-700 mb-2">
+                    📦 Stable Interface
+                </h3>
+                <p>
+                    Public header files rarely change even when implementation
+                    changes frequently.
+                </p>
+            </div>
+
+            <div class="bg-yellow-50 p-5 rounded-lg border">
+                <h3 class="font-bold text-yellow-700 mb-2">
+                    ⚙️ Better Build Times
+                </h3>
+                <p>
+                    Large projects compile much faster because fewer files need
+                    rebuilding.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Structure -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-5">Structure</h2>
+
+<pre class="bg-slate-900 text-green-400 rounded-lg p-5 overflow-x-auto">
+Widget
+ ├── Widget.h
+ │      class Widget
+ │      {
+ │          Impl* impl;
+ │      };
+ │
+ └── Widget.cpp
+        class Widget::Impl
+        {
+            // Hidden implementation
+        };
+</pre>
+
+    </section>
+
+    <!-- Advantages -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-5">Advantages</h2>
+
+        <ul class="space-y-3 list-disc list-inside">
+            <li>Reduces compile-time dependencies.</li>
+            <li>Improves encapsulation.</li>
+            <li>Reduces header file changes.</li>
+            <li>Helps maintain binary compatibility.</li>
+            <li>Ideal for large C++ projects and libraries.</li>
+        </ul>
+    </section>
+
+    <!-- Disadvantages -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-5">Disadvantages</h2>
+
+        <ul class="space-y-3 list-disc list-inside">
+            <li>Extra heap allocation.</li>
+            <li>Additional pointer dereference.</li>
+            <li>Slight runtime overhead.</li>
+            <li>More boilerplate code.</li>
+        </ul>
+    </section>
+
+    <!-- ELI10 -->
+    <section class="bg-indigo-100 rounded-xl p-6 mt-8 border border-indigo-300">
+        <h2 class="text-2xl font-bold mb-4">ELI10 Example</h2>
+
+        <p class="leading-8">
+            Imagine you have a TV remote.
+            You only use the buttons on the outside.
+            You don't need to know the electronics inside the remote.
+        </p>
+
+        <p class="leading-8 mt-4">
+            With Pimpl:
+        </p>
+
+        <ul class="list-disc list-inside mt-3 space-y-2">
+            <li>The <strong>remote</strong> = Public class (Header file)</li>
+            <li>The <strong>electronics inside</strong> = Hidden implementation (.cpp file)</li>
+            <li>You can redesign the electronics without changing the buttons.</li>
+        </ul>
+
+        <div class="mt-5 bg-white rounded-lg p-4 border-l-4 border-indigo-600">
+            <strong>Key Idea:</strong>
+            Users only see the interface. The implementation stays hidden,
+            resulting in fewer recompilations and cleaner code.
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
