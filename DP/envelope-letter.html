@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envelope-Letter Idiom - C++</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+<div class="max-w-5xl mx-auto p-8">
+
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl shadow-lg p-8">
+        <h1 class="text-4xl font-bold">Envelope-Letter Idiom</h1>
+        <p class="mt-3 text-lg">
+            A C++ design technique used to
+            <span class="font-semibold">hide implementation behind a wrapper.</span>
+        </p>
+    </div>
+
+    <!-- Introduction -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-4">What is the Envelope-Letter Idiom?</h2>
+
+        <p class="leading-8">
+            The <strong>Envelope-Letter Idiom</strong> separates an object's
+            interface from its implementation.
+            The public object acts as an <span class="font-semibold text-emerald-600">Envelope</span>,
+            while the actual implementation is the
+            <span class="font-semibold text-emerald-600">Letter</span> hidden inside.
+        </p>
+
+        <div class="mt-5 bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded">
+            <strong>Goal:</strong>
+            Hide implementation details while exposing a clean public interface.
+        </div>
+    </section>
+
+    <!-- Concept -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-5">How It Works</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="bg-blue-50 rounded-lg p-5 border">
+                <h3 class="font-bold text-blue-700 mb-2">📩 Envelope</h3>
+                <p>
+                    The wrapper class that users interact with.
+                    It forwards requests to the hidden implementation.
+                </p>
+            </div>
+
+            <div class="bg-purple-50 rounded-lg p-5 border">
+                <h3 class="font-bold text-purple-700 mb-2">📄 Letter</h3>
+                <p>
+                    The actual implementation class that performs the work.
+                    Users never access it directly.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Diagram -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-5">Structure</h2>
+
+<pre class="bg-slate-900 text-green-400 rounded-lg p-5 overflow-x-auto">
+Application
+      │
+      ▼
++-------------------+
+|   Envelope Class  |
+|  (Public Wrapper) |
++-------------------+
+          │
+          ▼
++-------------------+
+|   Letter Class    |
+| Hidden Implementation |
++-------------------+
+</pre>
+
+    </section>
+
+    <!-- Benefits -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-5">Advantages</h2>
+
+        <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-green-50 rounded-lg p-5 border">
+                <h3 class="font-bold text-green-700 mb-2">✅ Information Hiding</h3>
+                <p>Implementation details remain private.</p>
+            </div>
+
+            <div class="bg-indigo-50 rounded-lg p-5 border">
+                <h3 class="font-bold text-indigo-700 mb-2">✅ Cleaner Interface</h3>
+                <p>Users interact with a simple public API.</p>
+            </div>
+
+            <div class="bg-yellow-50 rounded-lg p-5 border">
+                <h3 class="font-bold text-yellow-700 mb-2">✅ Easier Maintenance</h3>
+                <p>Implementation changes rarely affect client code.</p>
+            </div>
+
+            <div class="bg-cyan-50 rounded-lg p-5 border">
+                <h3 class="font-bold text-cyan-700 mb-2">✅ Better Flexibility</h3>
+                <p>Implementation can be replaced without changing the interface.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Drawbacks -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-5">Disadvantages</h2>
+
+        <ul class="list-disc list-inside space-y-3">
+            <li>Extra level of indirection.</li>
+            <li>Additional dynamic memory usage in many implementations.</li>
+            <li>Slight runtime overhead due to forwarding calls.</li>
+            <li>Requires more boilerplate code.</li>
+        </ul>
+    </section>
+
+    <!-- Real World -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-5">Real-World Example</h2>
+
+        <div class="bg-slate-50 rounded-lg p-5 border">
+            <p class="leading-8">
+                Many GUI frameworks and large C++ libraries use wrapper classes
+                to hide complex rendering engines, networking code, or platform-
+                specific implementations from application developers.
+            </p>
+        </div>
+    </section>
+
+    <!-- ELI10 -->
+    <section class="bg-emerald-100 border border-emerald-300 rounded-xl p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-4">ELI10 (Explain Like I'm 10)</h2>
+
+        <p class="leading-8">
+            Imagine your friend sends you a birthday card.
+        </p>
+
+        <ul class="list-disc list-inside mt-4 space-y-2">
+            <li>📩 The <strong>Envelope</strong> protects what's inside.</li>
+            <li>📄 The <strong>Letter</strong> contains the actual message.</li>
+            <li>You open the envelope only when you need to read the letter.</li>
+        </ul>
+
+        <div class="mt-5 bg-white rounded-lg p-4 border-l-4 border-emerald-600">
+            <strong>In C++:</strong><br>
+            The <strong>Envelope</strong> is the public wrapper class.<br>
+            The <strong>Letter</strong> is the hidden implementation.<br><br>
+
+            Users interact with the wrapper, while the real work happens inside
+            the hidden implementation.
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
