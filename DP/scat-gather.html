@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scatter-Gather Messaging</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-5xl w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+    
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-emerald-600 to-cyan-600 text-white p-10">
+      <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-widest bg-white/20 rounded-full">
+        Messaging
+      </span>
+
+      <h1 class="mt-4 text-4xl font-bold">
+        Scatter-Gather
+      </h1>
+
+      <p class="mt-4 text-lg text-emerald-100 max-w-3xl">
+        Send requests to multiple services in parallel and aggregate their responses
+        into a single result, improving responsiveness and enabling distributed
+        processing.
+      </p>
+    </div>
+
+    <!-- Features -->
+    <div class="grid md:grid-cols-3 gap-6 p-8">
+      <div class="bg-slate-50 border rounded-xl p-6 hover:shadow-md transition">
+        <div class="text-4xl mb-4">📤</div>
+        <h2 class="text-xl font-semibold mb-2">Scatter Requests</h2>
+        <p class="text-slate-600">
+          Broadcast or send the same request simultaneously to multiple services or consumers.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border rounded-xl p-6 hover:shadow-md transition">
+        <div class="text-4xl mb-4">⚙️</div>
+        <h2 class="text-xl font-semibold mb-2">Parallel Processing</h2>
+        <p class="text-slate-600">
+          Each service processes the request independently, reducing overall response time.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border rounded-xl p-6 hover:shadow-md transition">
+        <div class="text-4xl mb-4">📥</div>
+        <h2 class="text-xl font-semibold mb-2">Gather Results</h2>
+        <p class="text-slate-600">
+          Collect and combine responses from all participating services into one unified result.
+        </p>
+      </div>
+    </div>
+
+    <!-- Workflow -->
+    <div class="px-8 pb-8">
+      <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+        <h3 class="text-lg font-semibold text-emerald-700 mb-4">
+          Typical Workflow
+        </h3>
+
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center">
+          <div class="bg-white rounded-lg shadow-sm px-5 py-4 w-full md:w-auto">
+            Client
+          </div>
+
+          <div class="text-2xl text-emerald-600">→</div>
+
+          <div class="bg-white rounded-lg shadow-sm px-5 py-4 w-full md:w-auto">
+            Scatter Request
+          </div>
+
+          <div class="text-2xl text-emerald-600">→</div>
+
+          <div class="bg-white rounded-lg shadow-sm px-5 py-4 w-full md:w-auto">
+            Multiple Services
+          </div>
+
+          <div class="text-2xl text-emerald-600">→</div>
+
+          <div class="bg-white rounded-lg shadow-sm px-5 py-4 w-full md:w-auto">
+            Gather Responses
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Note -->
+    <div class="px-8 pb-8">
+      <div class="rounded-xl bg-slate-50 border p-6">
+        <h3 class="text-lg font-semibold text-slate-800">Key Concept</h3>
+        <p class="mt-2 text-slate-600">
+          The Scatter-Gather messaging pattern distributes a request to multiple
+          services, waits for their responses, and aggregates the results before
+          returning a final response to the client. This approach is ideal for
+          search aggregation, pricing services, recommendation engines, and other
+          distributed systems that benefit from parallel execution.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
