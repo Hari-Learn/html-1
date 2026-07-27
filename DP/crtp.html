@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curiously Recurring Template Pattern (CRTP)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 text-white min-h-screen flex items-center justify-center">
+
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <div class="bg-slate-900/90 backdrop-blur border border-slate-800 rounded-3xl shadow-2xl overflow-hidden">
+
+      <!-- Hero -->
+      <div class="p-10 md:p-14">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 text-sm font-semibold">
+          💻 C++ Design Pattern
+        </span>
+
+        <h1 class="mt-6 text-5xl md:text-6xl font-extrabold leading-tight">
+          Curiously Recurring
+          <br />
+          Template Pattern (CRTP)
+        </h1>
+
+        <p class="mt-5 text-2xl font-semibold text-cyan-400">
+          Static Polymorphism
+        </p>
+
+        <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+          <strong>Curiously Recurring Template Pattern (CRTP)</strong> is a C++
+          technique where a class inherits from a template instantiated with the
+          derived class itself. It enables <strong>compile-time polymorphism</strong>,
+          eliminating virtual function overhead while providing highly optimized
+          code.
+        </p>
+      </div>
+
+      <!-- Features -->
+      <div class="grid gap-6 md:grid-cols-3 px-10">
+
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 hover:border-cyan-500 transition">
+          <div class="text-4xl mb-4">⚡</div>
+          <h3 class="text-xl font-bold">Zero Runtime Cost</h3>
+          <p class="mt-3 text-slate-400">
+            Uses compile-time dispatch instead of virtual functions for maximum
+            performance.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 hover:border-cyan-500 transition">
+          <div class="text-4xl mb-4">🧩</div>
+          <h3 class="text-xl font-bold">Code Reuse</h3>
+          <p class="mt-3 text-slate-400">
+            Share common functionality through template base classes while
+            preserving type-specific behaviour.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 hover:border-cyan-500 transition">
+          <div class="text-4xl mb-4">🚀</div>
+          <h3 class="text-xl font-bold">High Performance</h3>
+          <p class="mt-3 text-slate-400">
+            Enables compiler optimisations such as inlining, resulting in faster
+            execution.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Code Example -->
+      <div class="p-10">
+        <h2 class="text-2xl font-bold text-cyan-400 mb-5">
+          Example
+        </h2>
+
+        <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden">
+<pre class="p-6 overflow-x-auto text-sm text-emerald-400"><code>template&lt;typename Derived&gt;
+class Base {
+public:
+    void interface() {
+        static_cast&lt;Derived*&gt;(this)-&gt;implementation();
+    }
+};
+
+class Derived : public Base&lt;Derived&gt; {
+public:
+    void implementation() {
+        std::cout &lt;&lt; "Hello from CRTP!";
+    }
+};
+
+int main() {
+    Derived obj;
+    obj.interface();
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- Advantages -->
+      <div class="px-10 pb-10">
+        <h2 class="text-2xl font-bold text-cyan-400 mb-5">
+          Advantages
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-5">
+          <div class="bg-slate-800 rounded-xl p-5">
+            ✅ No virtual function overhead
+          </div>
+
+          <div class="bg-slate-800 rounded-xl p-5">
+            ✅ Compile-time type safety
+          </div>
+
+          <div class="bg-slate-800 rounded-xl p-5">
+            ✅ Better compiler optimisation
+          </div>
+
+          <div class="bg-slate-800 rounded-xl p-5">
+            ✅ Reusable template-based architecture
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="border-t border-slate-800 px-10 py-6 flex flex-wrap gap-4">
+        <button class="px-6 py-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition font-semibold">
+          Learn More
+        </button>
+
+        <button class="px-6 py-3 rounded-lg border border-slate-700 hover:border-cyan-500 hover:text-cyan-400 transition font-semibold">
+          View C++ Example
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
