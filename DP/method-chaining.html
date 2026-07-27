@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Method Chaining - API Design</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen flex items-center justify-center">
+
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl overflow-hidden">
+
+      <!-- Hero -->
+      <div class="p-10 md:p-14">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-semibold">
+          ⚡ API Design
+        </span>
+
+        <h1 class="mt-6 text-5xl md:text-6xl font-extrabold tracking-tight">
+          Method Chaining
+        </h1>
+
+        <p class="mt-4 text-2xl font-semibold text-indigo-400">
+          Return <code class="bg-slate-800 px-2 py-1 rounded">this</code> from methods.
+        </p>
+
+        <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+          <strong>Method Chaining</strong> is an API design pattern where each
+          method returns the current object (<code>this</code>), allowing multiple
+          method calls to be linked together in a single, readable expression.
+        </p>
+      </div>
+
+      <!-- Benefits -->
+      <div class="grid gap-6 md:grid-cols-3 px-10">
+
+        <div class="rounded-2xl bg-slate-800 border border-slate-700 p-6 hover:border-indigo-500 transition">
+          <div class="text-4xl mb-4">🔗</div>
+          <h3 class="text-xl font-semibold">Chain Calls</h3>
+          <p class="mt-3 text-slate-400">
+            Connect multiple operations into one clean and expressive statement.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-slate-800 border border-slate-700 p-6 hover:border-indigo-500 transition">
+          <div class="text-4xl mb-4">📖</div>
+          <h3 class="text-xl font-semibold">Readable Code</h3>
+          <p class="mt-3 text-slate-400">
+            Improve code clarity by reducing repetitive object references.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-slate-800 border border-slate-700 p-6 hover:border-indigo-500 transition">
+          <div class="text-4xl mb-4">🚀</div>
+          <h3 class="text-xl font-semibold">Simple APIs</h3>
+          <p class="mt-3 text-slate-400">
+            Build intuitive interfaces that are easy to learn and pleasant to use.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Example -->
+      <div class="p-10">
+        <h2 class="text-2xl font-bold text-indigo-400 mb-4">
+          Example
+        </h2>
+
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 overflow-x-auto">
+<pre class="text-sm text-emerald-400"><code>class Builder {
+  setName(name) {
+    this.name = name;
+    return this;
+  }
+
+  setAge(age) {
+    this.age = age;
+    return this;
+  }
+
+  build() {
+    return {
+      name: this.name,
+      age: this.age
+    };
+  }
+}
+
+const user = new Builder()
+  .setName("Alice")
+  .setAge(28)
+  .build();</code></pre>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="border-t border-slate-800 px-10 py-6 flex flex-wrap gap-4">
+        <button class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg font-semibold transition">
+          Learn More
+        </button>
+
+        <button class="px-6 py-3 border border-slate-700 hover:border-indigo-500 hover:text-indigo-400 rounded-lg font-semibold transition">
+          View Documentation
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
