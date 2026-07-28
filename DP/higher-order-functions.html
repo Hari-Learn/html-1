@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Higher-Order Functions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-4xl w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+
+    <!-- Header -->
+    <div class="bg-indigo-600 text-white p-8 text-center">
+      <span class="bg-indigo-500 px-4 py-1 rounded-full text-sm font-semibold">
+        Functional Programming
+      </span>
+      <h1 class="text-4xl font-bold mt-4">Higher-Order Functions</h1>
+      <p class="text-lg mt-2 text-indigo-100">
+        Functions that take functions as arguments or return functions.
+      </p>
+    </div>
+
+    <div class="p-8 space-y-8">
+
+      <!-- Definition -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-800 mb-3">
+          📘 What is a Higher-Order Function?
+        </h2>
+        <p class="text-slate-600 leading-relaxed">
+          A <strong>Higher-Order Function (HOF)</strong> is a function that
+          either <strong>accepts one or more functions as parameters</strong>
+          or <strong>returns another function</strong>. They are commonly used
+          in functional programming to create reusable and expressive code.
+        </p>
+      </section>
+
+      <!-- Characteristics -->
+      <section class="grid md:grid-cols-2 gap-6">
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="text-lg font-semibold text-blue-700 mb-3">
+            ✔ Accepts Functions
+          </h3>
+          <p class="text-slate-700">
+            A higher-order function can receive another function as an argument
+            and execute it.
+          </p>
+        </div>
+
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="text-lg font-semibold text-green-700 mb-3">
+            ✔ Returns Functions
+          </h3>
+          <p class="text-slate-700">
+            A higher-order function can return a new function for later use.
+          </p>
+        </div>
+      </section>
+
+      <!-- Example -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-800 mb-3">
+          💻 Example
+        </h2>
+
+        <div class="bg-slate-900 text-green-300 rounded-xl p-5 overflow-x-auto">
+<pre><code>// Higher-Order Function
+function greet(name, callback) {
+  const message = "Hello " + name;
+  callback(message);
+}
+
+function display(text) {
+  console.log(text);
+}
+
+greet("Alice", display);
+
+// Output:
+// Hello Alice</code></pre>
+        </div>
+      </section>
+
+      <!-- Common HOFs -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+          ⭐ Common Higher-Order Functions in JavaScript
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
+            <h3 class="font-bold text-purple-700">map()</h3>
+            <p class="text-sm text-slate-600 mt-2">
+              Transforms each element and returns a new array.
+            </p>
+          </div>
+
+          <div class="bg-orange-50 border border-orange-200 rounded-lg p-4">
+            <h3 class="font-bold text-orange-700">filter()</h3>
+            <p class="text-sm text-slate-600 mt-2">
+              Returns elements that satisfy a condition.
+            </p>
+          </div>
+
+          <div class="bg-pink-50 border border-pink-200 rounded-lg p-4">
+            <h3 class="font-bold text-pink-700">reduce()</h3>
+            <p class="text-sm text-slate-600 mt-2">
+              Combines array elements into a single value.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits -->
+      <section class="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
+        <h2 class="text-2xl font-semibold text-yellow-700 mb-3">
+          🚀 Benefits
+        </h2>
+
+        <ul class="list-disc list-inside text-slate-700 space-y-2">
+          <li>Promotes code reuse.</li>
+          <li>Improves readability and maintainability.</li>
+          <li>Encourages functional programming practices.</li>
+          <li>Reduces duplicate code.</li>
+          <li>Makes programs more modular and flexible.</li>
+        </ul>
+      </section>
+
+      <!-- Summary -->
+      <section class="bg-indigo-600 text-white rounded-xl p-6">
+        <h2 class="text-2xl font-bold mb-3">Summary</h2>
+        <p class="leading-relaxed">
+          A <strong>Higher-Order Function</strong> is a function that takes one
+          or more functions as arguments, returns a function, or both. They are
+          fundamental to JavaScript and functional programming, enabling
+          powerful abstractions through functions like
+          <code>map()</code>, <code>filter()</code>, and <code>reduce()</code>.
+        </p>
+      </section>
+
+    </div>
+  </div>
+
+</body>
+</html>
