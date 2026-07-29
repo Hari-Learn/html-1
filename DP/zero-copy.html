@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zero-Copy Design Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <div class="max-w-4xl mx-auto p-8">
+
+    <!-- Header -->
+    <div class="bg-blue-600 text-white rounded-lg shadow p-6 mb-6">
+      <h1 class="text-3xl font-bold">Zero-Copy Design Pattern</h1>
+      <p class="mt-2">
+        A high-performance technique that avoids unnecessary copying of data in memory.
+      </p>
+    </div>
+
+    <!-- What is Zero-Copy -->
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-3">
+        What is Zero-Copy?
+      </h2>
+
+      <p class="text-gray-700">
+        <strong>Zero-Copy</strong> is a design pattern that transfers data between
+        components without creating additional copies in memory.
+        Instead of copying the data from one buffer to another,
+        different parts of the application share or reference the same data.
+      </p>
+    </div>
+
+    <!-- Why Use -->
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-3">
+        Why Use Zero-Copy?
+      </h2>
+
+      <ul class="list-disc ml-6 space-y-2 text-gray-700">
+        <li>Improves application performance.</li>
+        <li>Reduces CPU usage.</li>
+        <li>Minimizes memory consumption.</li>
+        <li>Speeds up large file transfers.</li>
+        <li>Useful for networking and multimedia applications.</li>
+      </ul>
+    </div>
+
+    <!-- How it Works -->
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-3">
+        How It Works
+      </h2>
+
+      <div class="bg-gray-100 rounded p-4 text-center font-semibold">
+        File / Buffer
+        <br>⬇
+        <br>Shared Reference
+        <br>⬇
+        <br>Application / Network
+        <br>⬇
+        <br>No Extra Memory Copy
+      </div>
+    </div>
+
+    <!-- Example Use Cases -->
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-3">
+        Common Use Cases
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="border rounded-lg p-4">
+          <h3 class="font-bold">📂 File Transfer</h3>
+          <p>Copy files efficiently between storage devices.</p>
+        </div>
+
+        <div class="border rounded-lg p-4">
+          <h3 class="font-bold">🌐 Web Servers</h3>
+          <p>Serve static files with minimal CPU overhead.</p>
+        </div>
+
+        <div class="border rounded-lg p-4">
+          <h3 class="font-bold">🎥 Video Streaming</h3>
+          <p>Deliver media without repeated memory copies.</p>
+        </div>
+
+        <div class="border rounded-lg p-4">
+          <h3 class="font-bold">📡 Network Applications</h3>
+          <p>Transfer packets directly between buffers.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Advantages -->
+    <div class="bg-green-50 border border-green-300 rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-semibold text-green-700 mb-3">
+        Advantages
+      </h2>
+
+      <ul class="list-disc ml-6 space-y-2">
+        <li>High performance</li>
+        <li>Lower memory usage</li>
+        <li>Reduced CPU workload</li>
+        <li>Faster data transfer</li>
+        <li>Better scalability</li>
+      </ul>
+    </div>
+
+    <!-- Limitations -->
+    <div class="bg-red-50 border border-red-300 rounded-lg p-6">
+      <h2 class="text-2xl font-semibold text-red-700 mb-3">
+        Limitations
+      </h2>
+
+      <ul class="list-disc ml-6 space-y-2">
+        <li>Can be more difficult to implement.</li>
+        <li>Requires careful buffer and memory management.</li>
+        <li>Not suitable for every application.</li>
+        <li>Platform support may vary.</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
