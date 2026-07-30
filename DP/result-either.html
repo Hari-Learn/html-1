@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Result / Either - Represent Success or Failure</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-5xl w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8">
+      <h1 class="text-4xl font-bold">Result / Either</h1>
+      <p class="mt-2 text-indigo-100 text-lg">
+        Represent Success or Failure in a clean and predictable way.
+      </p>
+    </div>
+
+    <!-- Content -->
+    <div class="p-8 space-y-8">
+
+      <!-- What is -->
+      <section>
+        <h2 class="text-2xl font-bold text-slate-800 mb-3">
+          What is Result / Either?
+        </h2>
+
+        <p class="text-slate-600 leading-7">
+          <strong>Result</strong> (or <strong>Either</strong>) is a functional programming
+          pattern used to return either a successful value or an error instead
+          of throwing exceptions. This makes error handling explicit,
+          predictable, and easier to maintain.
+        </p>
+      </section>
+
+      <!-- Visual -->
+      <section class="grid md:grid-cols-2 gap-6">
+
+        <!-- Success -->
+        <div class="rounded-xl border border-green-200 bg-green-50 p-6">
+          <div class="text-5xl mb-4">✅</div>
+          <h3 class="text-xl font-semibold text-green-700">
+            Success (Ok / Right)
+          </h3>
+
+          <p class="mt-3 text-green-800">
+            Contains the expected value when the operation completes successfully.
+          </p>
+
+          <div class="mt-5 bg-green-100 rounded-lg p-4 font-mono text-sm text-green-900">
+Result.success(User)
+          </div>
+        </div>
+
+        <!-- Failure -->
+        <div class="rounded-xl border border-red-200 bg-red-50 p-6">
+          <div class="text-5xl mb-4">❌</div>
+          <h3 class="text-xl font-semibold text-red-700">
+            Failure (Error / Left)
+          </h3>
+
+          <p class="mt-3 text-red-800">
+            Contains an error describing why the operation failed.
+          </p>
+
+          <div class="mt-5 bg-red-100 rounded-lg p-4 font-mono text-sm text-red-900">
+Result.failure("User not found")
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Benefits -->
+      <section>
+        <h2 class="text-2xl font-bold text-slate-800 mb-4">
+          Benefits
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-4">
+
+          <div class="bg-slate-50 rounded-lg p-4 border">
+            ✅ Avoids unexpected exceptions
+          </div>
+
+          <div class="bg-slate-50 rounded-lg p-4 border">
+            ✅ Makes success and failure explicit
+          </div>
+
+          <div class="bg-slate-50 rounded-lg p-4 border">
+            ✅ Easier to test and debug
+          </div>
+
+          <div class="bg-slate-50 rounded-lg p-4 border">
+            ✅ Encourages cleaner application flow
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Example -->
+      <section>
+        <h2 class="text-2xl font-bold text-slate-800 mb-4">
+          Example Flow
+        </h2>
+
+        <div class="bg-slate-900 rounded-xl p-6 overflow-auto">
+<pre class="text-green-300 text-sm">
+Result&lt;User, Error&gt; result = repository.getUser(id);
+
+if (result.isSuccess()) {
+    print(result.value);
+} else {
+    print(result.error);
+}
+</pre>
+        </div>
+      </section>
+
+      <!-- Summary -->
+      <section class="bg-indigo-50 border-l-4 border-indigo-600 p-6 rounded-lg">
+        <h2 class="text-xl font-bold text-indigo-800 mb-2">
+          Summary
+        </h2>
+
+        <p class="text-indigo-900 leading-7">
+          The <strong>Result/Either</strong> pattern wraps the outcome of an
+          operation into two possible states:
+          <span class="font-semibold text-green-700">Success</span> or
+          <span class="font-semibold text-red-700">Failure</span>.
+          This approach improves reliability by making error handling part of
+          the application's normal control flow instead of relying on exceptions.
+        </p>
+      </section>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
