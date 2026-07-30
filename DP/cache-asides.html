@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cache-Aside Pattern</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen py-10 px-6">
+
+  <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-cyan-600 to-blue-700 text-white p-8">
+      <h1 class="text-4xl font-bold">Cache-Aside Pattern</h1>
+      <p class="mt-2 text-cyan-100 text-lg">
+        Application-managed caching for improved performance and reduced database load.
+      </p>
+    </div>
+
+    <div class="p-8 space-y-10">
+
+      <!-- Overview -->
+      <section>
+        <h2 class="text-2xl font-bold text-slate-800 mb-4">
+          What is Cache-Aside?
+        </h2>
+
+        <p class="text-slate-600 leading-7">
+          <strong>Cache-Aside</strong> is a caching strategy where the application
+          is responsible for reading from and writing to the cache. When data is
+          requested, the application first checks the cache. If the data is not
+          available (a <strong>cache miss</strong>), it retrieves the data from the
+          database, stores it in the cache, and returns it to the user.
+        </p>
+      </section>
+
+      <!-- Workflow -->
+      <section>
+        <h2 class="text-2xl font-bold text-slate-800 mb-6">
+          How It Works
+        </h2>
+
+        <div class="grid md:grid-cols-5 gap-4 text-center">
+
+          <div class="bg-blue-50 border rounded-xl p-5">
+            <div class="text-4xl mb-2">1️⃣</div>
+            <h3 class="font-semibold text-blue-700">Request</h3>
+            <p class="text-sm text-slate-600 mt-2">
+              Client requests data.
+            </p>
+          </div>
+
+          <div class="bg-yellow-50 border rounded-xl p-5">
+            <div class="text-4xl mb-2">2️⃣</div>
+            <h3 class="font-semibold text-yellow-700">Check Cache</h3>
+            <p class="text-sm text-slate-600 mt-2">
+              Look for the requested data in the cache.
+            </p>
+          </div>
+
+          <div class="bg-green-50 border rounded-xl p-5">
+            <div class="text-4xl mb-2">3️⃣</div>
+            <h3 class="font-semibold text-green-700">Cache Hit</h3>
+            <p class="text-sm text-slate-600 mt-2">
+              Return data directly from cache.
+            </p>
+          </div>
+
+          <div class="bg-orange-50 border rounded-xl p-5">
+            <div class="text-4xl mb-2">4️⃣</div>
+            <h3 class="font-semibold text-orange-700">Cache Miss</h3>
+            <p class="text-sm text-slate-600 mt-2">
+              Read data from the database.
+            </p>
+          </div>
+
+          <div class="bg-purple-50 border rounded-xl p-5">
+            <div class="text-4xl mb-2">5️⃣</div>
+            <h3 class="font-semibold text-purple-700">Update Cache</h3>
+            <p class="text-sm text-slate-600 mt-2">
+              Store data in cache for future requests.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Flow Diagram -->
+      <section>
+        <h2 class="text-2xl font-bold text-slate-800 mb-4">
+          Request Flow
+        </h2>
+
+        <div class="bg-slate-50 rounded-xl border p-6 overflow-x-auto">
+<pre class="text-sm text-slate-700 font-mono">
+Client
+   │
+   ▼
+Application
+   │
+   ▼
+Cache
+   │
+   ├── Hit ─────────► Return Data
+   │
+   └── Miss
+        │
+        ▼
+    Database
+        │
+        ▼
+ Save Result to Cache
+        │
+        ▼
+   Return Data
+</pre>
+        </div>
+      </section>
+
+      <!-- Advantages & Disadvantages -->
+      <section class="grid md:grid-cols-2 gap-6">
+
+        <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+          <h2 class="text-xl font-bold text-green-700 mb-4">
+            ✅ Advantages
+          </h2>
+
+          <ul class="space-y-3 text-slate-700">
+            <li>• Reduces database load.</li>
+            <li>• Faster response for frequently accessed data.</li>
+            <li>• Simple and widely adopted caching strategy.</li>
+            <li>• Cache is populated only when needed.</li>
+            <li>• Works with Redis, Memcached, and in-memory caches.</li>
+          </ul>
+        </div>
+
+        <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+          <h2 class="text-xl font-bold text-red-700 mb-4">
+            ⚠️ Challenges
+          </h2>
+
+          <ul class="space-y-3 text-slate-700">
+            <li>• Cache invalidation must be handled carefully.</li>
+            <li>• First request after expiration is slower.</li>
+            <li>• Risk of stale data if cache isn't updated.</li>
+            <li>• Additional application logic is required.</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- Example -->
+      <section>
+        <h2 class="text-2xl font-bold text-slate-800 mb-4">
+          Pseudocode Example
+        </h2>
+
+        <div class="bg-slate-900 rounded-xl p-6 overflow-auto">
+<pre class="text-green-300 text-sm">
+function getProduct(id):
+
+    product = cache.get(id)
+
+    if product exists:
+        return product
+
+    product = database.get(id)
+
+    cache.set(id, product)
+
+    return product
+</pre>
+        </div>
+      </section>
+
+      <!-- Best Practices -->
+      <section>
+        <h2 class="text-2xl font-bold text-slate-800 mb-4">
+          Best Practices
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-slate-50 border rounded-lg p-4">✅ Set an appropriate TTL (Time-To-Live).</div>
+          <div class="bg-slate-50 border rounded-lg p-4">✅ Invalidate cache after data updates.</div>
+          <div class="bg-slate-50 border rounded-lg p-4">✅ Cache frequently accessed data only.</div>
+          <div class="bg-slate-50 border rounded-lg p-4">✅ Monitor cache hit and miss ratios.</div>
+        </div>
+      </section>
+
+      <!-- Summary -->
+      <section class="bg-cyan-50 border-l-4 border-cyan-600 rounded-lg p-6">
+        <h2 class="text-xl font-bold text-cyan-800 mb-3">
+          Summary
+        </h2>
+
+        <p class="text-slate-700 leading-7">
+          The <strong>Cache-Aside</strong> pattern gives the application full control
+          over cache management. It improves performance by serving frequently
+          requested data from the cache while reducing database traffic. Proper
+          cache invalidation and expiration policies are essential to ensure data
+          consistency and freshness.
+        </p>
+      </section>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
