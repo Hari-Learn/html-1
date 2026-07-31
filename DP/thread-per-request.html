@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread-Per-Request</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<div class="max-w-4xl mx-auto p-6">
+    
+    <div class="bg-blue-600 text-white rounded-lg p-6 shadow-lg">
+        <h1 class="text-4xl font-bold">Thread-Per-Request</h1>
+        <p class="mt-2">
+            A concurrency model where a separate thread is created to handle each incoming client request.
+        </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="bg-white p-5 rounded-lg shadow">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-3">How It Works</h2>
+            <ul class="list-disc ml-5 space-y-2">
+                <li>Client sends a request.</li>
+                <li>Server creates a new thread.</li>
+                <li>The thread processes the request.</li>
+                <li>The thread ends after completing the task.</li>
+            </ul>
+        </div>
+
+        <div class="bg-white p-5 rounded-lg shadow">
+            <h2 class="text-2xl font-semibold text-green-600 mb-3">Advantages</h2>
+            <ul class="list-disc ml-5 space-y-2">
+                <li>Simple to implement.</li>
+                <li>Handles multiple clients simultaneously.</li>
+                <li>Improves responsiveness.</li>
+                <li>Easy to understand and debug.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bg-white p-5 rounded-lg shadow mt-6">
+        <h2 class="text-2xl font-semibold text-red-600 mb-3">Disadvantages</h2>
+        <ul class="list-disc ml-5 space-y-2">
+            <li>High memory usage for many threads.</li>
+            <li>Thread creation takes time.</li>
+            <li>Too many threads reduce performance.</li>
+            <li>Not suitable for very high-traffic servers.</li>
+        </ul>
+    </div>
+
+    <div class="bg-indigo-600 text-white rounded-lg p-6 mt-6 shadow">
+        <h2 class="text-2xl font-bold mb-2">Summary</h2>
+        <p>
+            The <strong>Thread-Per-Request</strong> model assigns one thread to each client request.
+            It is easy to develop and provides good concurrency, but creating a new thread for every
+            request can become expensive when the number of clients is very large.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
