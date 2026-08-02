@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Provider Interface (SPI)</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 flex items-center justify-center p-6">
+
+  <div class="max-w-3xl w-full">
+    <div class="bg-slate-900/80 backdrop-blur-lg border border-slate-700 rounded-3xl shadow-2xl p-10">
+
+      <!-- Badge -->
+      <span class="inline-flex items-center px-4 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-sm font-semibold">
+        Java Feature
+      </span>
+
+      <!-- Title -->
+      <h1 class="mt-6 text-4xl md:text-5xl font-extrabold text-white">
+        Service Provider Interface (SPI)
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="mt-3 text-xl font-semibold text-cyan-400">
+        Java
+      </p>
+
+      <!-- Description -->
+      <p class="mt-6 text-lg leading-8 text-slate-300">
+        Service Provider Interface (SPI) is a Java mechanism that enables
+        applications to discover and load service implementations at runtime.
+        Instead of hardcoding dependencies, Java dynamically finds provider
+        implementations using the <code class="text-cyan-300">ServiceLoader</code>
+        API, making applications flexible, modular, and easily extensible.
+      </p>
+
+      <!-- Highlight -->
+      <div class="mt-8 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-6">
+        <h2 class="text-lg font-semibold text-emerald-300">
+          Key Benefit
+        </h2>
+        <p class="mt-2 text-slate-300">
+          Loads implementations dynamically, allowing new providers to be added
+          without modifying existing application code.
+        </p>
+      </div>
+
+      <!-- Feature Cards -->
+      <div class="grid md:grid-cols-3 gap-5 mt-8">
+        <div class="bg-slate-800 rounded-xl p-5 border border-slate-700">
+          <div class="text-cyan-400 text-2xl mb-3">⚙️</div>
+          <h3 class="text-white font-semibold">Dynamic Loading</h3>
+          <p class="text-slate-400 text-sm mt-2">
+            Discovers service implementations automatically at runtime.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 rounded-xl p-5 border border-slate-700">
+          <div class="text-purple-400 text-2xl mb-3">🧩</div>
+          <h3 class="text-white font-semibold">Pluggable Design</h3>
+          <p class="text-slate-400 text-sm mt-2">
+            Enables applications to support plugins and extensions.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 rounded-xl p-5 border border-slate-700">
+          <div class="text-emerald-400 text-2xl mb-3">📦</div>
+          <h3 class="text-white font-semibold">Modular</h3>
+          <p class="text-slate-400 text-sm mt-2">
+            Promotes loose coupling and easier maintenance in Java projects.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
