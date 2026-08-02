@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plugin Pattern</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 flex items-center justify-center p-6">
+
+  <div class="max-w-4xl w-full">
+    <div class="bg-slate-900/90 backdrop-blur-md border border-slate-700 rounded-3xl shadow-2xl overflow-hidden">
+
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-indigo-600 to-violet-600 p-8">
+        <span class="inline-block px-4 py-1 rounded-full bg-white/10 border border-white/20 text-indigo-100 text-sm font-semibold">
+          Software Architecture
+        </span>
+
+        <h1 class="mt-5 text-4xl md:text-5xl font-extrabold text-white">
+          Plugin Pattern
+        </h1>
+
+        <p class="mt-3 text-xl text-indigo-100 font-medium">
+          IDEs
+        </p>
+      </div>
+
+      <!-- Content -->
+      <div class="p-8">
+
+        <p class="text-lg leading-8 text-slate-300">
+          The <strong class="text-white">Plugin Pattern</strong> is an architectural
+          approach that allows applications to be extended with additional
+          functionality without modifying the core system. Plugins are discovered
+          and loaded at runtime, enabling flexible customization and a modular
+          software design.
+        </p>
+
+        <!-- Highlight -->
+        <div class="mt-8 rounded-2xl bg-violet-500/10 border border-violet-500/30 p-6">
+          <h2 class="text-lg font-semibold text-violet-300">
+            Key Benefit
+          </h2>
+          <p class="mt-2 text-slate-300">
+            Supports runtime discovery and loading of extensions, making it ideal
+            for Integrated Development Environments (IDEs) and other extensible
+            applications.
+          </p>
+        </div>
+
+        <!-- Feature Grid -->
+        <div class="grid gap-6 md:grid-cols-3 mt-8">
+
+          <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+            <div class="text-3xl">🔌</div>
+            <h3 class="mt-4 text-lg font-semibold text-white">
+              Extensible
+            </h3>
+            <p class="mt-2 text-sm text-slate-400">
+              New capabilities can be added through plugins without changing the
+              application's core code.
+            </p>
+          </div>
+
+          <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+            <div class="text-3xl">🚀</div>
+            <h3 class="mt-4 text-lg font-semibold text-white">
+              Runtime Loading
+            </h3>
+            <p class="mt-2 text-sm text-slate-400">
+              Discovers and loads extensions dynamically while the application is
+              running.
+            </p>
+          </div>
+
+          <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+            <div class="text-3xl">🧩</div>
+            <h3 class="mt-4 text-lg font-semibold text-white">
+              Modular Design
+            </h3>
+            <p class="mt-2 text-sm text-slate-400">
+              Keeps the core application lightweight while allowing independent
+              plugin development.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Examples -->
+        <div class="mt-10 border-t border-slate-700 pt-6">
+          <h2 class="text-xl font-semibold text-white">
+            Common Uses
+          </h2>
+
+          <div class="flex flex-wrap gap-3 mt-4">
+            <span class="px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300">
+              IDE Extensions
+            </span>
+            <span class="px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">
+              Code Formatters
+            </span>
+            <span class="px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300">
+              Language Support
+            </span>
+            <span class="px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-300">
+              Debugging Tools
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
