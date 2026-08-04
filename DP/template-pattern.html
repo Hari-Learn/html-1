@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curiously Recurring Template Pattern (CRTP)</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl w-full bg-white rounded-xl shadow-lg border border-slate-200 p-8">
+
+    <!-- Language Badge -->
+    <span class="inline-block px-3 py-1 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full">
+      C++
+    </span>
+
+    <!-- Title -->
+    <h1 class="mt-4 text-3xl font-bold text-slate-900">
+      Curiously Recurring Template Pattern (CRTP)
+    </h1>
+
+    <!-- Description -->
+    <p class="mt-4 text-slate-600 leading-7">
+      The <strong>Curiously Recurring Template Pattern (CRTP)</strong> is a C++
+      design pattern in which a class inherits from a template instantiated
+      with the derived class itself. This enables static polymorphism and
+      allows many operations to be resolved during compilation.
+    </p>
+
+    <!-- Key Benefit -->
+    <div class="mt-6 bg-indigo-50 border-l-4 border-indigo-500 rounded-lg p-4">
+      <h2 class="font-semibold text-slate-800">
+        Key Benefit
+      </h2>
+      <p class="mt-2 text-slate-600">
+        Enables compile-time polymorphism, improving performance by avoiding
+        the runtime overhead of virtual function calls.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
