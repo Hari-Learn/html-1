@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poison Pill Design Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+    <!-- Hero -->
+    <header class="bg-gradient-to-r from-red-700 to-red-500 text-white">
+        <div class="max-w-6xl mx-auto px-6 py-14">
+            <span class="bg-red-900 px-3 py-1 rounded-full text-sm font-semibold">
+                Concurrency Design Pattern
+            </span>
+            <h1 class="text-5xl font-bold mt-4">Poison Pill Pattern</h1>
+            <p class="mt-4 text-lg text-red-100 max-w-3xl">
+                A graceful shutdown pattern used in producer-consumer and message queue
+                architectures where a special message (the "Poison Pill") tells consumers
+                to stop processing and terminate safely.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-10 space-y-10">
+
+        <!-- Overview -->
+        <section class="bg-white rounded-xl shadow p-8">
+            <h2 class="text-3xl font-bold mb-4">What is the Poison Pill Pattern?</h2>
+
+            <p class="leading-8">
+                The Poison Pill pattern is commonly used in concurrent programming
+                and distributed systems. Instead of abruptly stopping worker threads,
+                producers place a special message into the queue.
+                When a consumer receives this predefined message,
+                it understands that no more work is coming and exits gracefully.
+            </p>
+
+            <div class="mt-6 border-l-4 border-red-500 bg-red-50 p-5 rounded">
+                <strong>Idea:</strong>
+                Treat shutdown as just another message in the queue.
+            </div>
+        </section>
+
+        <!-- Problem -->
+        <section class="grid md:grid-cols-2 gap-8">
+
+            <div class="bg-white rounded-xl shadow p-8">
+                <h2 class="text-2xl font-bold mb-4 text-red-600">Problem</h2>
+
+                <ul class="list-disc ml-6 space-y-2">
+                    <li>Worker threads wait forever on blocking queues.</li>
+                    <li>Stopping threads forcefully may lose data.</li>
+                    <li>Graceful application shutdown becomes difficult.</li>
+                    <li>Consumers don't know when producers are finished.</li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-xl shadow p-8">
+                <h2 class="text-2xl font-bold mb-4 text-green-600">Solution</h2>
+
+                <ul class="list-disc ml-6 space-y-2">
+                    <li>Create a special "Poison Pill" object.</li>
+                    <li>Producer inserts it into the queue.</li>
+                    <li>Consumer recognizes it.</li>
+                    <li>Consumer exits safely.</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- Flow -->
+        <section class="bg-white rounded-xl shadow p-8">
+
+            <h2 class="text-3xl font-bold mb-6">
+                Pattern Flow
+            </h2>
+
+            <div class="overflow-x-auto">
+
+                <div class="flex items-center gap-4 font-semibold text-center min-w-max">
+
+                    <div class="bg-blue-100 px-6 py-4 rounded-lg shadow">
+                        Producer
+                    </div>
+
+                    <div class="text-3xl">➡️</div>
+
+                    <div class="bg-yellow-100 px-6 py-4 rounded-lg shadow">
+                        Queue
+                    </div>
+
+                    <div class="text-3xl">➡️</div>
+
+                    <div class="bg-green-100 px-6 py-4 rounded-lg shadow">
+                        Consumer
+                    </div>
+
+                    <div class="text-3xl">➡️</div>
+
+                    <div class="bg-red-100 px-6 py-4 rounded-lg shadow">
+                        Poison Pill
+                    </div>
+
+                    <div class="text-3xl">➡️</div>
+
+                    <div class="bg-gray-200 px-6 py-4 rounded-lg shadow">
+                        Consumer Stops
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Java Example -->
+        <section class="bg-white rounded-xl shadow p-8">
+
+            <h2 class="text-3xl font-bold mb-6">
+                Java Example
+            </h2>
+
+<pre class="bg-slate-900 text-green-400 rounded-lg p-6 overflow-auto text-sm"><code>class Message {
+    String text;
+
+    Message(String text) {
+        this.text = text;
+    }
+
+    boolean isPoisonPill() {
+        return "STOP".equals(text);
+    }
+}
+
+// Producer
+queue.put(new Message("Task 1"));
+queue.put(new Message("Task 2"));
+queue.put(new Message("STOP"));
+
+// Consumer
+while (true) {
+    Message msg = queue.take();
+
+    if (msg.isPoisonPill()) {
+        break;
+    }
+
+    process(msg);
+}</code></pre>
+
+        </section>
+
+        <!-- Advantages -->
+        <section class="grid md:grid-cols-2 gap-8">
+
+            <div class="bg-green-50 rounded-xl p-8 border border-green-300">
+                <h2 class="text-2xl font-bold text-green-700 mb-4">
+                    Advantages
+                </h2>
+
+                <ul class="list-disc ml-6 space-y-2">
+                    <li>Graceful shutdown.</li>
+                    <li>No forced thread interruption.</li>
+                    <li>Simple implementation.</li>
+                    <li>Works well with BlockingQueue.</li>
+                    <li>Easy to scale with multiple consumers.</li>
+                </ul>
+
+            </div>
+
+            <div class="bg-red-50 rounded-xl p-8 border border-red-300">
+
+                <h2 class="text-2xl font-bold text-red-700 mb-4">
+                    Disadvantages
+                </h2>
+
+                <ul class="list-disc ml-6 space-y-2">
+                    <li>Each consumer may require its own poison pill.</li>
+                    <li>Consumers must recognize the special message.</li>
+                    <li>Incorrect placement can stop processing too early.</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+        <!-- Use Cases -->
+        <section class="bg-white rounded-xl shadow p-8">
+
+            <h2 class="text-3xl font-bold mb-6">
+                Common Use Cases
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <div class="bg-blue-50 p-5 rounded-lg">
+                    <h3 class="font-bold mb-2">Message Queues</h3>
+                    <p>Gracefully terminate consumers after all jobs finish.</p>
+                </div>
+
+                <div class="bg-purple-50 p-5 rounded-lg">
+                    <h3 class="font-bold mb-2">Thread Pools</h3>
+                    <p>Shutdown worker threads without interruption.</p>
+                </div>
+
+                <div class="bg-yellow-50 p-5 rounded-lg">
+                    <h3 class="font-bold mb-2">Distributed Systems</h3>
+                    <p>Signal service workers that processing is complete.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Comparison -->
+        <section class="bg-white rounded-xl shadow p-8">
+
+            <h2 class="text-3xl font-bold mb-6">
+                Poison Pill vs Thread Interruption
+            </h2>
+
+            <div class="overflow-x-auto">
+
+                <table class="min-w-full border border-gray-300">
+
+                    <thead class="bg-slate-200">
+
+                    <tr>
+                        <th class="border p-3">Feature</th>
+                        <th class="border p-3">Poison Pill</th>
+                        <th class="border p-3">Interrupt()</th>
+                    </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    <tr>
+                        <td class="border p-3">Graceful Shutdown</td>
+                        <td class="border p-3 text-green-600">✔</td>
+                        <td class="border p-3">Sometimes</td>
+                    </tr>
+
+                    <tr>
+                        <td class="border p-3">Easy to Understand</td>
+                        <td class="border p-3 text-green-600">✔</td>
+                        <td class="border p-3">Moderate</td>
+                    </tr>
+
+                    <tr>
+                        <td class="border p-3">Works with Queues</td>
+                        <td class="border p-3 text-green-600">✔</td>
+                        <td class="border p-3">Limited</td>
+                    </tr>
+
+                    <tr>
+                        <td class="border p-3">Risk of Lost Work</td>
+                        <td class="border p-3">Low</td>
+                        <td class="border p-3 text-red-600">Higher</td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-300 py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="font-semibold text-white">Poison Pill Design Pattern</p>
+            <p class="mt-2">
+                A simple and effective way to gracefully terminate consumers in
+                concurrent and distributed systems by sending a special shutdown message.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
