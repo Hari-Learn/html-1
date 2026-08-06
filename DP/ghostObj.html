@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Object Design Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+<!-- Hero -->
+<header class="bg-gradient-to-r from-indigo-900 via-purple-800 to-blue-700 text-white">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <span class="inline-block bg-white/20 px-4 py-1 rounded-full text-sm font-semibold">
+            Enterprise Design Pattern • Lazy Loading
+        </span>
+
+        <h1 class="text-5xl font-bold mt-5">
+            Ghost Object Pattern
+        </h1>
+
+        <p class="mt-6 text-lg text-indigo-100 max-w-4xl">
+            The Ghost Object pattern delays loading an object's complete data until it is
+            actually needed. Initially, the object contains only its identity (such as an ID),
+            and the remaining data is fetched automatically on first access.
+        </p>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- Overview -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-5">
+            What is the Ghost Object Pattern?
+        </h2>
+
+        <p class="leading-8">
+            A Ghost Object represents an object that exists but whose complete state
+            has not yet been loaded from the database or another data source.
+            Instead of retrieving all data immediately, only the object's identifier
+            is created. When a property is accessed for the first time,
+            the object loads its missing data automatically.
+        </p>
+
+        <div class="mt-6 border-l-4 border-indigo-600 bg-indigo-50 p-5 rounded">
+            <strong>Core Idea:</strong>
+            Load object data only when it is actually required.
+        </div>
+
+    </section>
+
+    <!-- Problem / Solution -->
+    <section class="grid lg:grid-cols-2 gap-8">
+
+        <div class="bg-red-50 border border-red-300 rounded-xl p-8">
+            <h2 class="text-2xl font-bold text-red-700 mb-5">
+                Problem
+            </h2>
+
+            <ul class="list-disc ml-6 space-y-3">
+                <li>Loading every object can be expensive.</li>
+                <li>Large database queries reduce performance.</li>
+                <li>Many objects may never be fully used.</li>
+                <li>Memory usage increases unnecessarily.</li>
+                <li>Slow application startup.</li>
+            </ul>
+        </div>
+
+        <div class="bg-green-50 border border-green-300 rounded-xl p-8">
+            <h2 class="text-2xl font-bold text-green-700 mb-5">
+                Solution
+            </h2>
+
+            <ul class="list-disc ml-6 space-y-3">
+                <li>Create lightweight placeholder objects.</li>
+                <li>Store only the object's identifier.</li>
+                <li>Load remaining fields on first access.</li>
+                <li>Cache loaded data for future use.</li>
+                <li>Improve application performance.</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- Workflow -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-8">
+            Pattern Workflow
+        </h2>
+
+        <div class="overflow-x-auto">
+            <div class="flex items-center gap-5 min-w-max font-semibold">
+
+                <div class="bg-blue-100 px-6 py-4 rounded-lg shadow">
+                    Database
+                </div>
+
+                <div class="text-3xl">➡️</div>
+
+                <div class="bg-yellow-100 px-6 py-4 rounded-lg shadow">
+                    Ghost Object (ID Only)
+                </div>
+
+                <div class="text-3xl">➡️</div>
+
+                <div class="bg-purple-100 px-6 py-4 rounded-lg shadow">
+                    Property Access
+                </div>
+
+                <div class="text-3xl">➡️</div>
+
+                <div class="bg-green-100 px-6 py-4 rounded-lg shadow">
+                    Load Full Data
+                </div>
+
+                <div class="text-3xl">➡️</div>
+
+                <div class="bg-indigo-100 px-6 py-4 rounded-lg shadow">
+                    Fully Initialized Object
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Java Example -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-6">
+            Java Example
+        </h2>
+
+<pre class="bg-slate-900 text-green-400 rounded-lg p-6 overflow-auto text-sm"><code>class Customer {
+
+    private Long id;
+    private String name;
+    private boolean loaded = false;
+
+    public Customer(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+
+        if (!loaded) {
+            load();
+        }
+
+        return name;
+    }
+
+    private void load() {
+
+        // Simulate database lookup
+        this.name = "John Smith";
+        loaded = true;
+
+    }
+
+}</code></pre>
+
+        <p class="mt-5 text-gray-600">
+            Initially, only the customer ID is available. The remaining data is
+            fetched automatically when <code>getName()</code> is called.
+        </p>
+
+    </section>
+
+    <!-- Advantages / Disadvantages -->
+    <section class="grid lg:grid-cols-2 gap-8">
+
+        <div class="bg-green-50 border border-green-300 rounded-xl p-8">
+
+            <h2 class="text-2xl font-bold text-green-700 mb-5">
+                Advantages
+            </h2>
+
+            <ul class="list-disc ml-6 space-y-3">
+                <li>Faster application startup.</li>
+                <li>Lower memory consumption.</li>
+                <li>Reduces unnecessary database queries.</li>
+                <li>Objects are loaded only when needed.</li>
+                <li>Works well with ORM frameworks.</li>
+                <li>Improves scalability.</li>
+            </ul>
+
+        </div>
+
+        <div class="bg-red-50 border border-red-300 rounded-xl p-8">
+
+            <h2 class="text-2xl font-bold text-red-700 mb-5">
+                Disadvantages
+            </h2>
+
+            <ul class="list-disc ml-6 space-y-3">
+                <li>Additional implementation complexity.</li>
+                <li>Unexpected database queries may occur.</li>
+                <li>Thread safety must be considered.</li>
+                <li>Can lead to the N+1 query problem.</li>
+                <li>Harder to debug lazy-loading issues.</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- Comparison -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-6">
+            Ghost Object vs Virtual Proxy
+        </h2>
+
+        <div class="overflow-x-auto">
+
+            <table class="w-full border border-gray-300">
+
+                <thead class="bg-slate-200">
+                <tr>
+                    <th class="border p-3">Feature</th>
+                    <th class="border p-3">Ghost Object</th>
+                    <th class="border p-3">Virtual Proxy</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                <tr>
+                    <td class="border p-3">Object Exists</td>
+                    <td class="border p-3 text-green-600">✔ Yes</td>
+                    <td class="border p-3">Proxy Represents Object</td>
+                </tr>
+
+                <tr>
+                    <td class="border p-3">Loads Data Lazily</td>
+                    <td class="border p-3 text-green-600">✔ Yes</td>
+                    <td class="border p-3 text-green-600">✔ Yes</td>
+                </tr>
+
+                <tr>
+                    <td class="border p-3">Stores Identifier</td>
+                    <td class="border p-3 text-green-600">✔ Yes</td>
+                    <td class="border p-3">Usually No</td>
+                </tr>
+
+                <tr>
+                    <td class="border p-3">Typical Usage</td>
+                    <td class="border p-3">ORM & Persistence</td>
+                    <td class="border p-3">Large Objects & Resources</td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- Use Cases -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-6">
+            Common Use Cases
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="bg-blue-50 rounded-lg p-5">
+                <h3 class="font-bold mb-2">ORM Frameworks</h3>
+                <p>Hibernate, Entity Framework, and JPA lazy loading.</p>
+            </div>
+
+            <div class="bg-green-50 rounded-lg p-5">
+                <h3 class="font-bold mb-2">Large Databases</h3>
+                <p>Delay loading large records until required.</p>
+            </div>
+
+            <div class="bg-yellow-50 rounded-lg p-5">
+                <h3 class="font-bold mb-2">Enterprise Applications</h3>
+                <p>Improve performance in data-heavy systems.</p>
+            </div>
+
+            <div class="bg-purple-50 rounded-lg p-5">
+                <h3 class="font-bold mb-2">Cloud Applications</h3>
+                <p>Reduce unnecessary API and database calls.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Best Practices -->
+    <section class="bg-indigo-50 border border-indigo-300 rounded-xl p-8">
+
+        <h2 class="text-3xl font-bold text-indigo-700 mb-6">
+            Best Practices
+        </h2>
+
+        <ul class="grid md:grid-cols-2 gap-4 list-disc ml-6">
+            <li>Load data only when necessary.</li>
+            <li>Cache loaded objects after initialization.</li>
+            <li>Ensure lazy loading is thread-safe.</li>
+            <li>Avoid repeated database lookups.</li>
+            <li>Monitor for N+1 query issues.</li>
+            <li>Use batch loading when appropriate.</li>
+            <li>Document lazy-loading behavior clearly.</li>
+            <li>Combine with Repository and Unit of Work patterns.</li>
+        </ul>
+
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-slate-900 text-slate-300 mt-12">
+
+    <div class="max-w-7xl mx-auto px-6 py-8 text-center">
+
+        <h3 class="text-xl font-bold text-white">
+            Ghost Object Design Pattern
+        </h3>
+
+        <p class="mt-3 max-w-4xl mx-auto">
+            The Ghost Object pattern improves application performance by creating
+            lightweight placeholder objects that retrieve their complete state only
+            when needed. It is commonly used in ORM frameworks, enterprise systems,
+            and applications where lazy loading reduces memory usage and database
+            overhead.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
