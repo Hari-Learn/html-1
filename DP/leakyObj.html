@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leaky Bucket Design Pattern</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100">
+<div class="max-w-4xl mx-auto my-10 bg-white shadow-lg rounded-xl p-8">
+
+<h1 class="text-4xl font-bold text-blue-700 mb-4">Leaky Bucket Pattern</h1>
+
+<p class="text-gray-700 mb-6">
+The <strong>Leaky Bucket</strong> pattern is a rate-limiting algorithm used to
+control the flow of requests. Incoming requests are placed into a bucket (queue),
+and they leave the bucket at a constant rate. If the bucket becomes full,
+additional requests are discarded.
+</p>
+
+<h2 class="text-2xl font-semibold mb-3">How It Works</h2>
+
+<ol class="list-decimal ml-6 space-y-2">
+<li>Create a bucket with fixed capacity.</li>
+<li>Incoming requests enter the bucket.</li>
+<li>The bucket leaks requests at a fixed speed.</li>
+<li>If the bucket is full, new requests are rejected.</li>
+<li>This produces a smooth, predictable output rate.</li>
+</ol>
+
+<h2 class="text-2xl font-semibold mt-8 mb-3">Flow</h2>
+
+<div class="bg-blue-50 rounded-lg p-4 text-center font-semibold">
+Client → Bucket Queue → Constant Leak Rate → Server
+</div>
+
+<h2 class="text-2xl font-semibold mt-8 mb-3">Java Example</h2>
+
+<pre class="bg-slate-900 text-green-400 p-4 rounded-lg overflow-auto text-sm"><code>
+class LeakyBucket {
+
+    Queue<String> bucket = new LinkedList<>();
+    int capacity = 5;
+
+    boolean add(String request) {
+        if(bucket.size() == capacity) return false;
+        bucket.offer(request);
+        return true;
+    }
+
+    void process() {
+        if(!bucket.isEmpty())
+            System.out.println(bucket.poll());
+    }
+}
+</code></pre>
+
+<h2 class="text-2xl font-semibold mt-8 mb-3">Advantages</h2>
+
+<ul class="list-disc ml-6 space-y-2">
+<li>Controls traffic spikes.</li>
+<li>Provides steady request processing.</li>
+<li>Protects servers from overload.</li>
+<li>Easy to understand and implement.</li>
+<li>Improves system stability.</li>
+</ul>
+
+<h2 class="text-2xl font-semibold mt-8 mb-3">Disadvantages</h2>
+
+<ul class="list-disc ml-6 space-y-2">
+<li>Burst traffic may be dropped.</li>
+<li>Queue size must be configured carefully.</li>
+<li>Can increase request latency.</li>
+</ul>
+
+<h2 class="text-2xl font-semibold mt-8 mb-3">Common Use Cases</h2>
+
+<ul class="list-disc ml-6 space-y-2">
+<li>API gateways</li>
+<li>Network traffic shaping</li>
+<li>Load balancers</li>
+<li>Message processing systems</li>
+<li>DDoS protection</li>
+</ul>
+
+<div class="mt-8 bg-green-50 border-l-4 border-green-600 p-4 rounded">
+<strong>Key Idea:</strong> Unlike the Token Bucket algorithm, the Leaky Bucket
+processes requests at a constant rate, producing a smooth and predictable output
+even when incoming traffic arrives in bursts.
+</div>
+
+</div>
+</body>
+</html>
