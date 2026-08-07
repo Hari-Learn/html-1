@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Pattern - C++</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+<div class="max-w-5xl mx-auto p-8">
+
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl shadow-lg p-8">
+        <h1 class="text-4xl font-bold">Callback Pattern</h1>
+        <p class="mt-3 text-lg">
+            <span class="font-semibold">Behavioral Design Pattern</span><br>
+            Execute user-provided code later.
+        </p>
+    </div>
+
+    <!-- Introduction -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-4">What is a Callback?</h2>
+
+        <p class="leading-8">
+            A <strong>Callback</strong> is a function that is passed to another
+            function so it can be executed at a later time.
+        </p>
+
+        <p class="leading-8 mt-4">
+            Instead of deciding what should happen, a class lets the
+            <strong>caller provide the behavior</strong>.
+        </p>
+
+        <div class="mt-5 bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
+            <strong>Goal:</strong> Execute user-provided code when an event or task
+            occurs.
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-5">How It Works</h2>
+
+<pre class="bg-slate-900 text-green-400 rounded-lg p-5 overflow-x-auto">
+Application
+      │
+      ▼
+Register Callback
+      │
+      ▼
+Program stores callback
+      │
+      ▼
+Event Happens
+      │
+      ▼
+Execute Callback
+</pre>
+
+    </section>
+
+    <!-- Components -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-5">Main Components</h2>
+
+        <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-blue-50 border rounded-lg p-5">
+                <h3 class="font-bold text-blue-700 mb-2">👤 Caller</h3>
+                <p>
+                    Registers the callback function.
+                </p>
+            </div>
+
+            <div class="bg-green-50 border rounded-lg p-5">
+                <h3 class="font-bold text-green-700 mb-2">⚙️ Callback Function</h3>
+                <p>
+                    User-provided code that will execute later.
+                </p>
+            </div>
+
+            <div class="bg-purple-50 border rounded-lg p-5">
+                <h3 class="font-bold text-purple-700 mb-2">📦 Event Source</h3>
+                <p>
+                    Stores the callback until an event occurs.
+                </p>
+            </div>
+
+            <div class="bg-yellow-50 border rounded-lg p-5">
+                <h3 class="font-bold text-yellow-700 mb-2">🚀 Event</h3>
+                <p>
+                    Triggers execution of the registered callback.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Real World -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-5">Real-World Uses</h2>
+
+        <ul class="list-disc list-inside space-y-3">
+            <li>Button click handlers in GUI applications.</li>
+            <li>Timers that execute code after a delay.</li>
+            <li>Asynchronous networking operations.</li>
+            <li>File download completion notifications.</li>
+            <li>Game event handling.</li>
+        </ul>
+    </section>
+
+    <!-- Advantages -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-5">Advantages</h2>
+
+        <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="bg-green-50 border rounded-lg p-5">
+                <h3 class="font-bold text-green-700">✅ Flexible</h3>
+                <p>Different behaviors can be supplied without changing the class.</p>
+            </div>
+
+            <div class="bg-indigo-50 border rounded-lg p-5">
+                <h3 class="font-bold text-indigo-700">✅ Reusable</h3>
+                <p>One component can work with many callback functions.</p>
+            </div>
+
+            <div class="bg-cyan-50 border rounded-lg p-5">
+                <h3 class="font-bold text-cyan-700">✅ Event Driven</h3>
+                <p>Ideal for handling user interactions and asynchronous tasks.</p>
+            </div>
+
+            <div class="bg-orange-50 border rounded-lg p-5">
+                <h3 class="font-bold text-orange-700">✅ Decoupled</h3>
+                <p>The event source doesn't need to know what the callback does.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Disadvantages -->
+    <section class="bg-white rounded-xl shadow-md p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-5">Disadvantages</h2>
+
+        <ul class="list-disc list-inside space-y-3">
+            <li>Can make program flow harder to follow.</li>
+            <li>Nested callbacks may reduce readability ("callback hell").</li>
+            <li>Lifetime management must be handled carefully.</li>
+            <li>Debugging asynchronous callbacks can be challenging.</li>
+        </ul>
+    </section>
+
+    <!-- ELI10 -->
+    <section class="bg-blue-100 border border-blue-300 rounded-xl p-6 mt-8">
+        <h2 class="text-2xl font-bold mb-4">ELI10 (Explain Like I'm 10)</h2>
+
+        <p class="leading-8">
+            Imagine you ask your friend:
+        </p>
+
+        <div class="bg-white rounded-lg p-5 mt-4 border-l-4 border-blue-600">
+            <p>
+                "When the pizza delivery arrives,
+                <strong>call me immediately!</strong>"
+            </p>
+        </div>
+
+        <p class="leading-8 mt-5">
+            Your friend doesn't call you right away.
+            They wait until the pizza actually arrives.
+        </p>
+
+        <ul class="list-disc list-inside mt-4 space-y-2">
+            <li>🍕 Pizza arrives = Event</li>
+            <li>👤 Friend = Program</li>
+            <li>📞 Calling you = Callback</li>
+        </ul>
+
+        <div class="mt-5 bg-white rounded-lg p-4 border-l-4 border-blue-600">
+            <strong>Key Idea:</strong><br>
+            You give the program a function now, but it executes that function
+            later when something interesting happens.
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
