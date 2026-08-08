@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Queue</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <header class="text-center mb-10">
+      <p class="text-cyan-400 font-semibold tracking-widest text-sm">SYSTEM DESIGN</p>
+      <h1 class="text-5xl font-bold mt-3">Event Queue</h1>
+      <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+        A reliable buffer that stores events until consumers are ready to process them.
+      </p>
+    </header>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-8">
+      <h2 class="text-xl font-bold mb-6">Event Flow</h2>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <div class="flex-1 text-center p-5 rounded-xl bg-cyan-400/10 border border-cyan-400/20">
+          <div class="text-3xl">📤</div>
+          <h3 class="font-bold mt-2">Producer</h3>
+          <p class="text-xs text-slate-400 mt-1">Creates events</p>
+        </div>
+        <span class="text-cyan-400 text-2xl">→</span>
+        <div class="flex-1 text-center p-5 rounded-xl bg-violet-400/10 border border-violet-400/20">
+          <div class="text-3xl">📋</div>
+          <h3 class="font-bold mt-2">Queue</h3>
+          <p class="text-xs text-slate-400 mt-1">Buffers events</p>
+        </div>
+        <span class="text-violet-400 text-2xl">→</span>
+        <div class="flex-1 text-center p-5 rounded-xl bg-emerald-400/10 border border-emerald-400/20">
+          <div class="text-3xl">⚙️</div>
+          <h3 class="font-bold mt-2">Consumer</h3>
+          <p class="text-xs text-slate-400 mt-1">Processes events</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-5">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <span class="text-cyan-400 text-2xl">01</span>
+        <h2 class="font-bold text-lg mt-3">Decoupling</h2>
+        <p class="text-sm text-slate-400 mt-2">Producers and consumers operate independently.</p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <span class="text-violet-400 text-2xl">02</span>
+        <h2 class="font-bold text-lg mt-3">Reliability</h2>
+        <p class="text-sm text-slate-400 mt-2">Events wait safely when consumers are busy.</p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <span class="text-emerald-400 text-2xl">03</span>
+        <h2 class="font-bold text-lg mt-3">Scalability</h2>
+        <p class="text-sm text-slate-400 mt-2">Multiple consumers can process events in parallel.</p>
+      </div>
+    </section>
+
+    <div class="mt-8 p-5 rounded-2xl bg-slate-900 border border-slate-800 text-center">
+      <p class="text-sm text-slate-400">
+        <span class="text-emerald-400 font-semibold">Key idea:</span>
+        Produce → Queue → Consume → Acknowledge
+      </p>
+    </div>
+  </main>
+</body>
+</html>
