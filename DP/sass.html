@@ -1,0 +1,81 @@
+Here’s a single-page Tailwind HTML implementation under 100 lines:
+
+```html id="81427"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scheduler Agent Supervisor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <header class="text-center mb-10">
+      <p class="text-cyan-400 font-semibold tracking-widest text-sm">AI ORCHESTRATION</p>
+      <h1 class="text-4xl md:text-5xl font-bold mt-3">Scheduler Agent Supervisor</h1>
+      <p class="text-slate-400 max-w-2xl mx-auto mt-4">
+        Coordinate agents, schedule tasks, monitor execution, and recover from failures.
+      </p>
+    </header>
+
+    <section class="grid md:grid-cols-3 gap-5 mb-8">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">📅</div>
+        <h2 class="text-xl font-bold">Scheduler</h2>
+        <p class="text-slate-400 mt-2 text-sm">Plans tasks and assigns execution times based on priority.</p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">🤖</div>
+        <h2 class="text-xl font-bold">Agent</h2>
+        <p class="text-slate-400 mt-2 text-sm">Executes assigned work using tools, APIs, and business logic.</p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">🛡️</div>
+        <h2 class="text-xl font-bold">Supervisor</h2>
+        <p class="text-slate-400 mt-2 text-sm">Tracks agents, handles errors, and ensures reliable execution.</p>
+      </div>
+    </section>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+      <h2 class="text-xl font-bold mb-6">Execution Flow</h2>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center">
+        <div class="w-full p-4 rounded-xl bg-cyan-400/10 border border-cyan-400/20">
+          <b class="text-cyan-300">01 · Schedule</b>
+          <p class="text-xs text-slate-400 mt-1">Create & prioritize tasks</p>
+        </div>
+        <span class="text-slate-600">→</span>
+        <div class="w-full p-4 rounded-xl bg-violet-400/10 border border-violet-400/20">
+          <b class="text-violet-300">02 · Execute</b>
+          <p class="text-xs text-slate-400 mt-1">Agent performs the task</p>
+        </div>
+        <span class="text-slate-600">→</span>
+        <div class="w-full p-4 rounded-xl bg-emerald-400/10 border border-emerald-400/20">
+          <b class="text-emerald-300">03 · Supervise</b>
+          <p class="text-xs text-slate-400 mt-1">Monitor, retry, or escalate</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-5 mt-8">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <h2 class="font-bold mb-3">Core Responsibilities</h2>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li>✓ Task prioritization and scheduling</li>
+          <li>✓ Agent assignment and coordination</li>
+          <li>✓ Health and progress monitoring</li>
+          <li>✓ Retry and failure recovery</li>
+        </ul>
+      </div>
+      <div class="bg-gradient-to-br from-cyan-500/10 to-violet-500/10 border border-slate-800 rounded-2xl p-6">
+        <h2 class="font-bold mb-3">Key Benefit</h2>
+        <p class="text-slate-400 text-sm">
+          Separating scheduling, execution, and supervision creates an autonomous,
+          observable, and resilient agent workflow.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+```
