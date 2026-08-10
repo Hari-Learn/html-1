@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Proxy Design Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <main class="min-h-screen">
+    <header class="border-b border-slate-800">
+      <div class="max-w-5xl mx-auto px-6 py-5 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-cyan-400">Design Patterns</h1>
+        <span class="text-sm text-slate-400">Structural Pattern</span>
+      </div>
+    </header>
+
+    <section class="max-w-5xl mx-auto px-6 py-16">
+      <div class="max-w-3xl">
+        <span class="inline-block px-3 py-1 mb-4 rounded-full bg-cyan-400/10
+          text-cyan-400 text-sm font-medium">Smart Proxy</span>
+        <h2 class="text-5xl font-extrabold tracking-tight mb-6">
+          Smart Proxy <span class="text-cyan-400">Design Pattern</span>
+        </h2>
+        <p class="text-lg text-slate-400 leading-8">
+          A Smart Proxy controls access to a real object while adding extra
+          behavior such as logging, caching, access checks, lazy loading,
+          reference counting, or security.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 mt-12">
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+          <div class="text-2xl mb-3">🔐</div>
+          <h3 class="font-bold mb-2">Access Control</h3>
+          <p class="text-sm text-slate-400">Validate permissions before reaching the real object.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+          <div class="text-2xl mb-3">📊</div>
+          <h3 class="font-bold mb-2">Logging</h3>
+          <p class="text-sm text-slate-400">Track method calls, users, timing, and system activity.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+          <div class="text-2xl mb-3">⚡</div>
+          <h3 class="font-bold mb-2">Caching</h3>
+          <p class="text-sm text-slate-400">Return cached results and avoid unnecessary operations.</p>
+        </div>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+          <h3 class="text-lg font-bold text-cyan-400 mb-4">How It Works</h3>
+          <div class="flex items-center justify-center gap-3 text-sm">
+            <span class="px-4 py-3 rounded-lg bg-slate-800">Client</span>
+            <span class="text-cyan-400">→</span>
+            <span class="px-4 py-3 rounded-lg bg-cyan-500/20 text-cyan-300">Proxy</span>
+            <span class="text-cyan-400">→</span>
+            <span class="px-4 py-3 rounded-lg bg-slate-800">Real Object</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+          <h3 class="text-lg font-bold text-cyan-400 mb-4">Example</h3>
+          <pre class="text-sm text-slate-300 overflow-auto"><code>class SmartProxy {
+  request() {
+    checkAccess();
+    logRequest();
+    return realObject.request();
+  }
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="mt-8 p-6 rounded-2xl bg-cyan-400/10 border border-cyan-400/20">
+        <h3 class="font-bold text-cyan-300 mb-2">Key Idea</h3>
+        <p class="text-slate-300">
+          The proxy has the same interface as the real object, but intelligently
+          manages how and when the real object is accessed.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
