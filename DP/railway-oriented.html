@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Railway-Oriented Programming</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <header class="border-b border-slate-800">
+    <div class="max-w-5xl mx-auto px-6 py-5 flex justify-between">
+      <h1 class="font-bold text-xl text-cyan-400">Functional Patterns</h1>
+      <span class="text-sm text-slate-400">Error Handling</span>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-14">
+    <section class="max-w-3xl">
+      <span class="text-cyan-400 text-sm font-semibold">RAILWAY-ORIENTED PROGRAMMING</span>
+      <h2 class="text-5xl font-extrabold mt-3 mb-5">
+        Railway-Oriented <span class="text-cyan-400">Programming</span>
+      </h2>
+      <p class="text-lg text-slate-400 leading-8">
+        A functional approach to handling success and failure as two separate
+        execution paths, allowing operations to be composed without deeply
+        nested error-checking logic.
+      </p>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-6 mt-12">
+      <div class="p-6 rounded-2xl bg-slate-900 border border-emerald-500/20">
+        <div class="text-2xl mb-3">🟢</div>
+        <h3 class="font-bold text-emerald-400 mb-2">Success Track</h3>
+        <p class="text-sm text-slate-400">
+          Each successful operation passes its result to the next step.
+        </p>
+      </div>
+      <div class="p-6 rounded-2xl bg-slate-900 border border-red-500/20">
+        <div class="text-2xl mb-3">🔴</div>
+        <h3 class="font-bold text-red-400 mb-2">Failure Track</h3>
+        <p class="text-sm text-slate-400">
+          An error moves execution onto the failure track and skips later steps.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-10 p-7 rounded-2xl bg-slate-900 border border-slate-800">
+      <h3 class="text-xl font-bold text-cyan-400 mb-6">How It Works</h3>
+      <div class="flex flex-wrap items-center gap-3 text-sm">
+        <span class="px-4 py-3 bg-slate-800 rounded-lg">Input</span>
+        <span class="text-cyan-400">→</span>
+        <span class="px-4 py-3 bg-emerald-500/20 text-emerald-300 rounded-lg">Validate</span>
+        <span class="text-cyan-400">→</span>
+        <span class="px-4 py-3 bg-emerald-500/20 text-emerald-300 rounded-lg">Transform</span>
+        <span class="text-cyan-400">→</span>
+        <span class="px-4 py-3 bg-emerald-500/20 text-emerald-300 rounded-lg">Save</span>
+      </div>
+      <div class="mt-5 flex items-center gap-3 text-sm text-red-300">
+        <span>Any failure</span><span>→</span>
+        <span class="px-4 py-2 bg-red-500/10 rounded-lg">Error Handler</span>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-6 mt-8">
+      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+        <h3 class="font-bold text-cyan-400 mb-3">Example</h3>
+        <pre class="text-sm text-slate-300"><code>Result&lt;User&gt;
+  .bind(validate)
+  .bind(transform)
+  .bind(save)
+  .map(success)
+  .mapError(handleError);</code></pre>
+      </div>
+      <div class="p-6 rounded-2xl bg-cyan-400/10 border border-cyan-400/20">
+        <h3 class="font-bold text-cyan-300 mb-3">Key Idea</h3>
+        <p class="text-slate-300">
+          Think of the program as two railway tracks: successful values stay
+          on the success track, while failures switch to the error track.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
