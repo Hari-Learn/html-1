@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Context Mapping</title>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <header class="border-b border-slate-800 px-6 py-5">
+    <h1 class="text-2xl font-bold">Context Mapping</h1>
+    <p class="text-sm text-slate-400">E-Commerce Domain • Bounded Context Relationships</p>
+  </header>
+
+  <main class="p-6 max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-6 items-center">
+      
+      <section class="bg-slate-900 border border-blue-500/40 rounded-2xl p-5">
+        <span class="text-xs text-blue-400 font-bold">UPSTREAM</span>
+        <h2 class="text-xl font-bold mt-2">Product Catalog</h2>
+        <p class="text-slate-400 text-sm mt-2">Owns product, pricing and inventory information.</p>
+        <div class="mt-4 bg-blue-500/10 p-3 rounded-lg text-sm">
+          <b>Published Language</b><br>
+          Product API • Events
+        </div>
+      </section>
+
+      <div class="text-center">
+        <div class="text-indigo-400 font-bold">Customer / Supplier</div>
+        <div class="text-4xl text-slate-500 my-2">→</div>
+        <div class="text-xs text-slate-500">Conformist relationship</div>
+      </div>
+
+      <section class="bg-slate-900 border border-purple-500/40 rounded-2xl p-5">
+        <span class="text-xs text-purple-400 font-bold">DOWNSTREAM</span>
+        <h2 class="text-xl font-bold mt-2">Ordering</h2>
+        <p class="text-slate-400 text-sm mt-2">Uses product data to create customer orders.</p>
+        <div class="mt-4 bg-purple-500/10 p-3 rounded-lg text-sm">
+          <b>Anti-Corruption Layer</b><br>
+          Maps Catalog → Order model
+        </div>
+      </section>
+    </div>
+
+    <div class="my-8 border-t border-dashed border-slate-700"></div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <section class="bg-slate-900 border border-emerald-500/40 rounded-2xl p-5">
+        <span class="text-xs text-emerald-400 font-bold">SHARED KERNEL</span>
+        <h2 class="font-bold text-lg mt-2">Customer Identity</h2>
+        <p class="text-sm text-slate-400 mt-1">Small shared model agreed by both contexts.</p>
+      </section>
+
+      <section class="bg-slate-900 border border-orange-500/40 rounded-2xl p-5">
+        <span class="text-xs text-orange-400 font-bold">SEPARATE CONTEXT</span>
+        <h2 class="font-bold text-lg mt-2">Payments</h2>
+        <p class="text-sm text-slate-400 mt-1">Owns payment authorization and transaction state.</p>
+      </section>
+
+      <section class="bg-slate-900 border border-pink-500/40 rounded-2xl p-5">
+        <span class="text-xs text-pink-400 font-bold">OPEN HOST SERVICE</span>
+        <h2 class="font-bold text-lg mt-2">Shipping</h2>
+        <p class="text-sm text-slate-400 mt-1">Exposes a well-defined integration protocol.</p>
+      </section>
+    </div>
+
+    <div class="mt-8 bg-slate-900 rounded-xl p-5">
+      <h3 class="font-bold mb-3">Relationship Legend</h3>
+      <div class="flex flex-wrap gap-3 text-sm">
+        <span class="px-3 py-1 bg-blue-500/20 rounded-full">Upstream</span>
+        <span class="px-3 py-1 bg-purple-500/20 rounded-full">Downstream</span>
+        <span class="px-3 py-1 bg-emerald-500/20 rounded-full">Shared Kernel</span>
+        <span class="px-3 py-1 bg-pink-500/20 rounded-full">Open Host Service</span>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
