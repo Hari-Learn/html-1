@@ -1,0 +1,65 @@
+Here’s a single-page Tailwind HTML implementation, under 100 lines:
+
+```html id="58321"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lease Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="flex min-h-screen items-center justify-center px-6">
+    <section class="w-full max-w-3xl">
+      <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-400/20
+                  bg-emerald-400/10 px-4 py-2 text-sm text-emerald-300">
+        <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+        Distributed Systems
+      </div>
+
+      <h1 class="text-5xl font-bold tracking-tight sm:text-6xl">
+        Lease <span class="text-emerald-400">Pattern</span>
+      </h1>
+
+      <p class="mt-6 max-w-2xl text-xl leading-relaxed text-slate-300">
+        Grants temporary ownership/access that automatically expires.
+      </p>
+
+      <div class="mt-10 grid gap-4 sm:grid-cols-3">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-5">
+          <div class="text-2xl font-bold text-emerald-400">01</div>
+          <h2 class="mt-3 font-semibold">Grant</h2>
+          <p class="mt-2 text-sm text-slate-400">
+            A resource grants ownership for a limited duration.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-5">
+          <div class="text-2xl font-bold text-emerald-400">02</div>
+          <h2 class="mt-3 font-semibold">Renew</h2>
+          <p class="mt-2 text-sm text-slate-400">
+            The owner periodically renews the lease before it expires.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-5">
+          <div class="text-2xl font-bold text-emerald-400">03</div>
+          <h2 class="mt-3 font-semibold">Expire</h2>
+          <p class="mt-2 text-sm text-slate-400">
+            If not renewed, ownership automatically becomes available.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-8 rounded-2xl border border-emerald-400/20 bg-emerald-400/5 p-6">
+        <p class="text-sm uppercase tracking-widest text-emerald-300">Core idea</p>
+        <p class="mt-3 font-mono text-lg text-slate-200">
+          lease granted → time passes → lease expires → resource becomes available
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+```
