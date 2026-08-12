@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fencing Token</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="flex min-h-screen items-center justify-center px-6">
+    <section class="w-full max-w-3xl">
+      <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-cyan-400/20
+                  bg-cyan-400/10 px-4 py-2 text-sm text-cyan-300">
+        <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+        Distributed Systems
+      </div>
+
+      <h1 class="text-5xl font-bold tracking-tight sm:text-6xl">
+        Fencing <span class="text-cyan-400">Token</span>
+      </h1>
+
+      <p class="mt-6 max-w-2xl text-xl leading-relaxed text-slate-300">
+        Uses monotonically increasing tokens to prevent stale distributed operations.
+      </p>
+
+      <div class="mt-10 grid gap-4 sm:grid-cols-3">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-5">
+          <div class="text-2xl font-bold text-cyan-400">01</div>
+          <h2 class="mt-3 font-semibold">Acquire</h2>
+          <p class="mt-2 text-sm text-slate-400">
+            A client receives the latest fencing token.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-5">
+          <div class="text-2xl font-bold text-cyan-400">02</div>
+          <h2 class="mt-3 font-semibold">Increment</h2>
+          <p class="mt-2 text-sm text-slate-400">
+            Each new lock holder gets a higher token.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-5">
+          <div class="text-2xl font-bold text-cyan-400">03</div>
+          <h2 class="mt-3 font-semibold">Reject</h2>
+          <p class="mt-2 text-sm text-slate-400">
+            Storage rejects requests carrying an older token.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-8 rounded-2xl border border-cyan-400/20 bg-cyan-400/5 p-6">
+        <p class="text-sm uppercase tracking-widest text-cyan-300">Core idea</p>
+        <p class="mt-3 font-mono text-lg text-slate-200">
+          token 42 &lt; token 43 → stale operation rejected
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
