@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduler Agent Supervisor (SAS) Design Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 text-slate-800">
+
+<!-- Hero -->
+<header class="bg-gradient-to-r from-slate-900 via-indigo-800 to-blue-700 text-white">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <span class="inline-block px-4 py-1 rounded-full bg-white/20 text-sm font-semibold">
+            Distributed Systems • Workflow Pattern
+        </span>
+
+        <h1 class="text-5xl font-bold mt-5">
+            Scheduler Agent Supervisor (SAS) Pattern
+        </h1>
+
+        <p class="mt-6 text-lg max-w-4xl text-slate-200">
+            The Scheduler Agent Supervisor (SAS) pattern separates scheduling,
+            task execution, and supervision into independent components. A scheduler
+            assigns work, agents execute tasks, and supervisors monitor execution,
+            detect failures, retry jobs, and ensure the system continues operating
+            reliably.
+        </p>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- Overview -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-5">
+            What is the Scheduler Agent Supervisor Pattern?
+        </h2>
+
+        <p class="leading-8">
+            In distributed systems, background jobs are rarely executed directly by
+            the application. Instead, a dedicated scheduler creates jobs, worker
+            agents perform the work, and supervisors continuously monitor job health.
+            If an agent crashes or becomes unresponsive, the supervisor can restart,
+            reassign, or retry the job automatically.
+        </p>
+
+        <div class="mt-6 border-l-4 border-indigo-600 bg-indigo-50 p-5 rounded">
+            <strong>Core Idea:</strong>
+            Separate <strong>scheduling</strong>,
+            <strong>execution</strong>, and
+            <strong>monitoring</strong> into independent responsibilities.
+        </div>
+
+    </section>
+
+    <!-- Problem Solution -->
+
+    <section class="grid lg:grid-cols-2 gap-8">
+
+        <div class="bg-red-50 border border-red-300 rounded-xl p-8">
+
+            <h2 class="text-2xl font-bold text-red-700 mb-5">
+                Problem
+            </h2>
+
+            <ul class="list-disc ml-6 space-y-3">
+                <li>Long-running jobs may fail unexpectedly.</li>
+                <li>Worker crashes leave tasks incomplete.</li>
+                <li>Applications cannot continuously monitor background jobs.</li>
+                <li>Retry logic becomes duplicated.</li>
+                <li>Scheduling and execution become tightly coupled.</li>
+            </ul>
+
+        </div>
+
+        <div class="bg-green-50 border border-green-300 rounded-xl p-8">
+
+            <h2 class="text-2xl font-bold text-green-700 mb-5">
+                Solution
+            </h2>
+
+            <ul class="list-disc ml-6 space-y-3">
+                <li>Scheduler creates and assigns jobs.</li>
+                <li>Agents execute assigned work.</li>
+                <li>Supervisor monitors every running task.</li>
+                <li>Automatic retries after failures.</li>
+                <li>Supports scalable distributed execution.</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- Architecture -->
+
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-8">
+            Architecture Flow
+        </h2>
+
+        <div class="overflow-x-auto">
+
+            <div class="flex items-center gap-5 min-w-max font-semibold">
+
+                <div class="bg-blue-100 rounded-lg px-6 py-4 shadow">
+                    Client
+                </div>
+
+                <div class="text-3xl">➡️</div>
+
+                <div class="bg-indigo-100 rounded-lg px-6 py-4 shadow">
+                    Scheduler
+                </div>
+
+                <div class="text-3xl">➡️</div>
+
+                <div class="bg-yellow-100 rounded-lg px-6 py-4 shadow">
+                    Job Queue
+                </div>
+
+                <div class="text-3xl">➡️</div>
+
+                <div class="bg-green-100 rounded-lg px-6 py-4 shadow">
+                    Worker Agent
+                </div>
+
+                <div class="text-3xl">⬅️</div>
+
+                <div class="bg-red-100 rounded-lg px-6 py-4 shadow">
+                    Supervisor
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+
+            <div class="bg-slate-50 rounded-lg p-5">
+                <h3 class="font-bold mb-2">Scheduler</h3>
+                <p>Creates jobs and distributes work to available agents.</p>
+            </div>
+
+            <div class="bg-slate-50 rounded-lg p-5">
+                <h3 class="font-bold mb-2">Agent</h3>
+                <p>Processes assigned tasks and reports status.</p>
+            </div>
+
+            <div class="bg-slate-50 rounded-lg p-5">
+                <h3 class="font-bold mb-2">Supervisor</h3>
+                <p>Tracks execution, detects failures, and restarts jobs.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Java Example -->
+
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-6">
+            Java Example
+        </h2>
+
+<pre class="bg-slate-900 text-green-400 rounded-lg p-6 overflow-auto text-sm"><code>class Scheduler {
+
+    public void schedule(Job job) {
+        queue.add(job);
+    }
+
+}
+
+class WorkerAgent {
+
+    public void execute(Job job) {
+
+        try {
+
+            job.run();
+
+        } catch(Exception ex) {
+
+            Supervisor.notifyFailure(job);
+
+        }
+
+    }
+
+}
+
+class Supervisor {
+
+    public static void notifyFailure(Job job) {
+
+        System.out.println("Retrying " + job.getName());
+
+        queue.add(job);
+
+    }
+
+}</code></pre>
+
+    </section>
+
+    <!-- Responsibilities -->
+
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-6">
+            Component Responsibilities
+        </h2>
+
+        <div class="overflow-x-auto">
+
+            <table class="w-full border">
+
+                <thead class="bg-slate-200">
+
+                <tr>
+                    <th class="border p-3">Component</th>
+                    <th class="border p-3">Responsibility</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <tr>
+                    <td class="border p-3 font-semibold">Scheduler</td>
+                    <td class="border p-3">
+                        Creates jobs based on time, events, or requests.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="border p-3 font-semibold">Queue</td>
+                    <td class="border p-3">
+                        Stores pending work.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="border p-3 font-semibold">Worker Agent</td>
+                    <td class="border p-3">
+                        Executes assigned jobs.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="border p-3 font-semibold">Supervisor</td>
+                    <td class="border p-3">
+                        Detects failures, retries, monitors health.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="border p-3 font-semibold">Monitoring System</td>
+                    <td class="border p-3">
+                        Generates alerts and metrics.
+                    </td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- Advantages -->
+
+    <section class="grid lg:grid-cols-2 gap-8">
+
+        <div class="bg-green-50 border border-green-300 rounded-xl p-8">
+
+            <h2 class="text-2xl font-bold text-green-700 mb-5">
+                Advantages
+            </h2>
+
+            <ul class="list-disc ml-6 space-y-3">
+                <li>High fault tolerance.</li>
+                <li>Automatic retry mechanisms.</li>
+                <li>Easy horizontal scaling.</li>
+                <li>Clear separation of responsibilities.</li>
+                <li>Centralized monitoring.</li>
+                <li>Supports long-running workflows.</li>
+                <li>Improves reliability.</li>
+            </ul>
+
+        </div>
+
+        <div class="bg-red-50 border border-red-300 rounded-xl p-8">
+
+            <h2 class="text-2xl font-bold text-red-700 mb-5">
+                Disadvantages
+            </h2>
+
+            <ul class="list-disc ml-6 space-y-3">
+                <li>More infrastructure components.</li>
+                <li>Higher operational complexity.</li>
+                <li>Requires reliable messaging.</li>
+                <li>Supervisor itself may need redundancy.</li>
+                <li>Retry policies must be carefully designed.</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- Use Cases -->
+
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-6">
+            Common Use Cases
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="bg-blue-50 rounded-lg p-5">
+                <h3 class="font-bold mb-2">
+                    Batch Processing
+                </h3>
+
+                <p>
+                    Execute scheduled ETL and data processing jobs.
+                </p>
+
+            </div>
+
+            <div class="bg-green-50 rounded-lg p-5">
+
+                <h3 class="font-bold mb-2">
+                    Cloud Platforms
+                </h3>
+
+                <p>
+                    Manage background workers in Kubernetes or cloud services.
+                </p>
+
+            </div>
+
+            <div class="bg-yellow-50 rounded-lg p-5">
+
+                <h3 class="font-bold mb-2">
+                    CI/CD Systems
+                </h3>
+
+                <p>
+                    Execute build pipelines with automatic recovery.
+                </p>
+
+            </div>
+
+            <div class="bg-purple-50 rounded-lg p-5">
+
+                <h3 class="font-bold mb-2">
+                    Workflow Engines
+                </h3>
+
+                <p>
+                    Coordinate business process execution across services.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Comparison -->
+
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-6">
+            Scheduler Agent Supervisor vs Simple Job Queue
+        </h2>
+
+        <div class="overflow-x-auto">
+
+            <table class="w-full border">
+
+                <thead class="bg-slate-200">
+
+                <tr>
+                    <th class="border p-3">Feature</th>
+                    <th class="border p-3">Simple Queue</th>
+                    <th class="border p-3">SAS Pattern</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <tr>
+                    <td class="border p-3">Scheduling</td>
+                    <td class="border p-3">Basic</td>
+                    <td class="border p-3 text-green-600">Advanced</td>
+                </tr>
+
+                <tr>
+                    <td class="border p-3">Health Monitoring</td>
+                    <td class="border p-3">No</td>
+                    <td class="border p-3 text-green-600">Yes</td>
+                </tr>
+
+                <tr>
+                    <td class="border p-3">Automatic Retry</td>
+                    <td class="border p-3">Limited</td>
+                    <td class="border p-3 text-green-600">Yes</td>
+                </tr>
+
+                <tr>
+                    <td class="border p-3">Fault Recovery</td>
+                    <td class="border p-3">Manual</td>
+                    <td class="border p-3 text-green-600">Automatic</td>
+                </tr>
+
+                <tr>
+                    <td class="border p-3">Scalability</td>
+                    <td class="border p-3">Medium</td>
+                    <td class="border p-3">High</td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- Best Practices -->
+
+    <section class="bg-indigo-50 border border-indigo-300 rounded-xl p-8">
+
+        <h2 class="text-3xl font-bold text-indigo-700 mb-6">
+            Best Practices
+        </h2>
+
+        <ul class="grid md:grid-cols-2 gap-4 list-disc ml-6">
+
+            <li>Keep scheduler stateless whenever possible.</li>
+            <li>Make jobs idempotent for safe retries.</li>
+            <li>Implement heartbeat monitoring for workers.</li>
+            <li>Use exponential backoff for retries.</li>
+            <li>Persist job state in durable storage.</li>
+            <li>Track metrics for execution time and failures.</li>
+            <li>Dead-letter permanently failed jobs.</li>
+            <li>Prevent duplicate execution using distributed locks.</li>
+
+        </ul>
+
+    </section>
+
+</main>
+
+<!-- Footer -->
+
+<footer class="bg-slate-900 text-slate-300 mt-12">
+
+    <div class="max-w-7xl mx-auto px-6 py-8 text-center">
+
+        <h3 class="text-xl font-bold text-white">
+            Scheduler Agent Supervisor Design Pattern
+        </h3>
+
+        <p class="mt-3 max-w-4xl mx-auto">
+            The Scheduler Agent Supervisor pattern improves reliability in distributed
+            systems by separating job scheduling, execution, and supervision. This
+            architecture enables automatic recovery, scalable background processing,
+            and resilient workflow execution for enterprise applications.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

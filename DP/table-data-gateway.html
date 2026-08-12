@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Data Gateway Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-100 to-cyan-100 min-h-screen flex items-center justify-center p-6">
+
+<div class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden">
+
+    <!-- Header -->
+    <div class="bg-cyan-700 text-white text-center py-8 px-6">
+        <h1 class="text-4xl font-bold">Table Data Gateway Pattern</h1>
+        <p class="mt-3 text-lg text-cyan-100">
+            Provides an object interface for database tables.
+        </p>
+    </div>
+
+    <div class="p-8">
+
+        <!-- Overview -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Overview</h2>
+
+            <div class="bg-cyan-50 border-l-4 border-cyan-600 rounded-lg p-6">
+                <p class="text-gray-700 leading-7">
+                    The <strong>Table Data Gateway Pattern</strong> is an enterprise
+                    application architecture pattern that encapsulates all database
+                    operations for a single table within one gateway object.
+                    Instead of creating one object for each row, a single gateway
+                    class manages queries, inserts, updates, and deletes for the
+                    entire table.
+                </p>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="grid md:grid-cols-3 gap-6 mb-8">
+
+            <div class="bg-green-50 rounded-xl p-5 shadow">
+                <h3 class="text-xl font-semibold text-green-700 mb-3">
+                    Key Features
+                </h3>
+
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>One gateway per database table</li>
+                    <li>Centralizes SQL operations</li>
+                    <li>Provides CRUD methods</li>
+                    <li>Encapsulates database access</li>
+                </ul>
+            </div>
+
+            <div class="bg-blue-50 rounded-xl p-5 shadow">
+                <h3 class="text-xl font-semibold text-blue-700 mb-3">
+                    Advantages
+                </h3>
+
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Reduces duplicate SQL code</li>
+                    <li>Easy to maintain</li>
+                    <li>Improves code organization</li>
+                    <li>Simplifies data access</li>
+                </ul>
+            </div>
+
+            <div class="bg-red-50 rounded-xl p-5 shadow">
+                <h3 class="text-xl font-semibold text-red-700 mb-3">
+                    Limitations
+                </h3>
+
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Business logic remains separate</li>
+                    <li>Large gateway classes may grow complex</li>
+                    <li>Less suitable for rich domain models</li>
+                    <li>May require multiple joins manually</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- Architecture -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 text-center mb-6">
+                Architecture Flow
+            </h2>
+
+            <div class="flex flex-wrap justify-center items-center gap-4">
+
+                <div class="bg-indigo-600 text-white px-5 py-4 rounded-xl shadow-lg">
+                    Application
+                </div>
+
+                <span class="text-3xl font-bold text-gray-500">→</span>
+
+                <div class="bg-cyan-600 text-white px-5 py-4 rounded-xl shadow-lg">
+                    Table Gateway
+                </div>
+
+                <span class="text-3xl font-bold text-gray-500">→</span>
+
+                <div class="bg-green-600 text-white px-5 py-4 rounded-xl shadow-lg">
+                    SQL Queries
+                </div>
+
+                <span class="text-3xl font-bold text-gray-500">→</span>
+
+                <div class="bg-purple-600 text-white px-5 py-4 rounded-xl shadow-lg">
+                    Database Table
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CRUD Methods -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+                Typical Gateway Methods
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+                <div class="bg-green-100 rounded-xl p-5 text-center">
+                    <div class="text-4xl mb-3">➕</div>
+                    <h3 class="font-semibold">Insert()</h3>
+                    <p class="text-sm text-gray-600 mt-2">
+                        Adds new records.
+                    </p>
+                </div>
+
+                <div class="bg-blue-100 rounded-xl p-5 text-center">
+                    <div class="text-4xl mb-3">🔍</div>
+                    <h3 class="font-semibold">Find()</h3>
+                    <p class="text-sm text-gray-600 mt-2">
+                        Retrieves table data.
+                    </p>
+                </div>
+
+                <div class="bg-yellow-100 rounded-xl p-5 text-center">
+                    <div class="text-4xl mb-3">✏️</div>
+                    <h3 class="font-semibold">Update()</h3>
+                    <p class="text-sm text-gray-600 mt-2">
+                        Updates existing records.
+                    </p>
+                </div>
+
+                <div class="bg-red-100 rounded-xl p-5 text-center">
+                    <div class="text-4xl mb-3">🗑️</div>
+                    <h3 class="font-semibold">Delete()</h3>
+                    <p class="text-sm text-gray-600 mt-2">
+                        Removes records.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Comparison -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+                Row Gateway vs Table Gateway
+            </h2>
+
+            <div class="overflow-x-auto">
+                <table class="w-full border border-gray-300 rounded-lg overflow-hidden">
+                    <thead class="bg-cyan-600 text-white">
+                        <tr>
+                            <th class="p-3">Feature</th>
+                            <th class="p-3">Row Data Gateway</th>
+                            <th class="p-3">Table Data Gateway</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="text-center">
+
+                        <tr class="border-b">
+                            <td class="p-3 font-medium">Represents</td>
+                            <td class="p-3">Single Row</td>
+                            <td class="p-3">Entire Table</td>
+                        </tr>
+
+                        <tr class="border-b">
+                            <td class="p-3 font-medium">Objects</td>
+                            <td class="p-3">One per Record</td>
+                            <td class="p-3">One per Table</td>
+                        </tr>
+
+                        <tr>
+                            <td class="p-3 font-medium">Responsibility</td>
+                            <td class="p-3">Manage Row Data</td>
+                            <td class="p-3">Manage Table Operations</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Use Cases -->
+        <section>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+                Common Use Cases
+            </h2>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                <div class="bg-slate-100 rounded-lg p-4 text-center font-medium">
+                    Inventory Systems
+                </div>
+
+                <div class="bg-slate-100 rounded-lg p-4 text-center font-medium">
+                    Customer Management
+                </div>
+
+                <div class="bg-slate-100 rounded-lg p-4 text-center font-medium">
+                    Reporting Applications
+                </div>
+
+                <div class="bg-slate-100 rounded-lg p-4 text-center font-medium">
+                    Enterprise CRUD Systems
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+</body>
+</html>

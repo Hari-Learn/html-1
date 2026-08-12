@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Loop - Game Development</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-4xl w-full">
+    <!-- Card -->
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl p-8">
+
+      <!-- Heading -->
+      <div class="text-center mb-10">
+        <span class="inline-block bg-emerald-500/20 text-emerald-400 px-4 py-1 rounded-full text-sm font-semibold">
+          Game Development
+        </span>
+
+        <h1 class="text-5xl font-extrabold mt-4 text-emerald-400">
+          Game Loop
+        </h1>
+
+        <p class="mt-4 text-lg text-slate-300">
+          Continuous update-render cycle.
+        </p>
+      </div>
+
+      <!-- Loop Diagram -->
+      <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+
+        <!-- Input -->
+        <div class="bg-slate-800 rounded-xl p-6 w-56 text-center border border-slate-700">
+          <div class="text-4xl mb-3">🎮</div>
+          <h2 class="text-xl font-bold">Input</h2>
+          <p class="text-slate-400 mt-2 text-sm">
+            Read keyboard, mouse, or controller input.
+          </p>
+        </div>
+
+        <div class="text-4xl text-emerald-400">➜</div>
+
+        <!-- Update -->
+        <div class="bg-slate-800 rounded-xl p-6 w-56 text-center border border-slate-700">
+          <div class="text-4xl mb-3">⚙️</div>
+          <h2 class="text-xl font-bold">Update</h2>
+          <p class="text-slate-400 mt-2 text-sm">
+            Update player, enemies, physics, and game logic.
+          </p>
+        </div>
+
+        <div class="text-4xl text-emerald-400">➜</div>
+
+        <!-- Render -->
+        <div class="bg-slate-800 rounded-xl p-6 w-56 text-center border border-slate-700">
+          <div class="text-4xl mb-3">🖥️</div>
+          <h2 class="text-xl font-bold">Render</h2>
+          <p class="text-slate-400 mt-2 text-sm">
+            Draw the updated game scene on the screen.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Repeat -->
+      <div class="mt-10 text-center">
+        <div class="inline-flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-6 py-3">
+          <span class="text-2xl">🔄</span>
+          <span class="font-semibold text-emerald-300">
+            Repeat Every Frame (≈ 60 FPS)
+          </span>
+        </div>
+      </div>
+
+      <!-- Code Example -->
+      <div class="mt-10">
+        <h2 class="text-2xl font-bold mb-4 text-emerald-400">
+          Pseudocode
+        </h2>
+
+        <pre class="bg-slate-950 border border-slate-700 rounded-xl p-5 overflow-x-auto text-green-400 text-sm"><code>while (gameRunning) {
+    processInput();
+    update();
+    render();
+}</code></pre>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

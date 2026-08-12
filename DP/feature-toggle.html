@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feature Toggle Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-4xl w-full bg-white rounded-2xl shadow-xl p-8">
+
+    <!-- Header -->
+    <h1 class="text-4xl font-bold text-emerald-700 mb-4">
+      Feature Toggle Pattern
+    </h1>
+
+    <p class="text-lg text-gray-700 mb-6">
+      <strong>Feature Toggle (Feature Flag) Pattern</strong> is a software development
+      technique that allows features to be enabled or disabled at runtime without
+      redeploying the application. This provides greater flexibility for testing,
+      gradual rollouts, and quick rollback of new functionality.
+    </p>
+
+    <!-- Overview -->
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+      <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-5">
+        <h2 class="text-xl font-semibold text-emerald-700 mb-3">
+          Purpose
+        </h2>
+
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Enable or disable features dynamically.</li>
+          <li>Release unfinished features safely.</li>
+          <li>Reduce deployment risks.</li>
+          <li>Support continuous delivery.</li>
+        </ul>
+      </div>
+
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+        <h2 class="text-xl font-semibold text-blue-700 mb-3">
+          Common Use Cases
+        </h2>
+
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Beta feature releases.</li>
+          <li>A/B testing.</li>
+          <li>Canary deployments.</li>
+          <li>Emergency feature rollback.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- How It Works -->
+    <div class="mb-6">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-3">
+        How It Works
+      </h2>
+
+      <ol class="list-decimal list-inside text-gray-700 space-y-2">
+        <li>Developers wrap new functionality with a feature flag.</li>
+        <li>The application checks the flag before executing the feature.</li>
+        <li>If the flag is <span class="font-semibold text-green-600">ON</span>, users see the new functionality.</li>
+        <li>If the flag is <span class="font-semibold text-red-600">OFF</span>, the application uses the existing behavior.</li>
+        <li>Administrators can change the flag without restarting or redeploying the application.</li>
+      </ol>
+    </div>
+
+    <!-- Workflow -->
+    <div class="bg-gray-50 border rounded-lg p-5 mb-6">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">
+        Workflow
+      </h2>
+
+      <div class="flex flex-col items-center space-y-3 text-center">
+
+        <div class="bg-blue-100 px-5 py-3 rounded-lg shadow">
+          User Request
+        </div>
+
+        <div class="text-xl">↓</div>
+
+        <div class="bg-yellow-100 px-5 py-3 rounded-lg shadow">
+          Check Feature Flag
+        </div>
+
+        <div class="flex items-center justify-center gap-8">
+
+          <div class="text-center">
+            <div class="text-green-600 font-semibold mb-2">Flag ON</div>
+            <div class="bg-green-100 px-4 py-3 rounded-lg shadow">
+              New Feature
+            </div>
+          </div>
+
+          <div class="text-center">
+            <div class="text-red-600 font-semibold mb-2">Flag OFF</div>
+            <div class="bg-red-100 px-4 py-3 rounded-lg shadow">
+              Existing Feature
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Types -->
+    <div class="mb-6">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-3">
+        Types of Feature Toggles
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="border rounded-lg p-4 bg-slate-50">
+          <h3 class="font-semibold text-slate-700 mb-2">Release Toggles</h3>
+          <p class="text-gray-600">
+            Hide incomplete features until they are ready for production.
+          </p>
+        </div>
+
+        <div class="border rounded-lg p-4 bg-slate-50">
+          <h3 class="font-semibold text-slate-700 mb-2">Experiment Toggles</h3>
+          <p class="text-gray-600">
+            Enable A/B testing for different user groups.
+          </p>
+        </div>
+
+        <div class="border rounded-lg p-4 bg-slate-50">
+          <h3 class="font-semibold text-slate-700 mb-2">Operations Toggles</h3>
+          <p class="text-gray-600">
+            Disable resource-intensive features during high system load.
+          </p>
+        </div>
+
+        <div class="border rounded-lg p-4 bg-slate-50">
+          <h3 class="font-semibold text-slate-700 mb-2">Permission Toggles</h3>
+          <p class="text-gray-600">
+            Enable features only for premium or selected users.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Pros & Cons -->
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <div>
+        <h2 class="text-xl font-semibold text-green-700 mb-3">
+          Advantages
+        </h2>
+
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>No redeployment required.</li>
+          <li>Supports gradual feature rollout.</li>
+          <li>Quick rollback of problematic features.</li>
+          <li>Enables continuous deployment.</li>
+          <li>Improves testing in production.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-semibold text-red-600 mb-3">
+          Challenges
+        </h2>
+
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Increases code complexity.</li>
+          <li>Old feature flags should be removed regularly.</li>
+          <li>Requires proper flag management.</li>
+          <li>Too many toggles can become difficult to maintain.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Example -->
+    <div class="mt-8 bg-emerald-50 border-l-4 border-emerald-500 rounded-lg p-5">
+      <h2 class="text-lg font-semibold text-emerald-700 mb-2">
+        Real-World Example
+      </h2>
+
+      <p class="text-gray-700">
+        A streaming platform develops a new recommendation engine. Instead of
+        releasing it to all users, the feature is placed behind a feature flag.
+        Initially, only 10% of users receive the new recommendations. After
+        monitoring performance and user feedback, the rollout is gradually
+        increased to 100%. If any issues arise, the feature can be instantly
+        disabled without redeploying the application.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Pattern</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl w-full bg-white rounded-xl shadow-lg border border-slate-200 p-8">
+
+    <!-- Category Badge -->
+    <span class="inline-block px-3 py-1 text-sm font-medium text-purple-700 bg-purple-100 rounded-full">
+      Functional Programming
+    </span>
+
+    <!-- Title -->
+    <h1 class="mt-4 text-3xl font-bold text-slate-900">
+      Loan Pattern
+    </h1>
+
+    <!-- Description -->
+    <p class="mt-4 text-slate-600 leading-7">
+      The <strong>Loan Pattern</strong> is a resource management technique that
+      temporarily provides access to a resource, such as a file, database
+      connection, or network stream, while ensuring it is automatically released
+      after use. This helps reduce resource leaks and simplifies cleanup logic.
+    </p>
+
+    <!-- Key Benefit -->
+    <div class="mt-6 bg-purple-50 border-l-4 border-purple-500 rounded-lg p-4">
+      <h2 class="font-semibold text-slate-800">
+        Key Benefit
+      </h2>
+      <p class="mt-2 text-slate-600">
+        Safely acquires and releases resources, ensuring proper cleanup even
+        when exceptions or errors occur.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>

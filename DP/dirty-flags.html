@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dirty Flag - Game Development</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-white min-h-screen flex items-center justify-center">
+
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <div class="bg-gray-900 border border-gray-800 rounded-3xl shadow-2xl p-10 md:p-14">
+
+      <!-- Badge -->
+      <span class="inline-flex items-center px-4 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-medium text-sm">
+        🎮 Game Development
+      </span>
+
+      <!-- Heading -->
+      <h1 class="mt-6 text-5xl md:text-6xl font-extrabold tracking-tight">
+        Dirty Flag
+      </h1>
+
+      <!-- Subtitle -->
+      <h2 class="mt-4 text-3xl font-bold text-emerald-400">
+        Smart Recalculation
+      </h2>
+
+      <!-- Description -->
+      <p class="mt-6 text-lg text-gray-300 leading-8">
+        Improve game performance by <strong>recomputing values only when needed</strong>.
+        The Dirty Flag pattern avoids unnecessary calculations by marking data as
+        "dirty" whenever it changes, updating it only when it is actually required.
+      </p>
+
+      <!-- Features -->
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <div class="bg-gray-800 rounded-xl p-6">
+          <h3 class="text-xl font-semibold text-white">⚡ Faster Updates</h3>
+          <p class="mt-2 text-gray-400">
+            Skip expensive calculations until data changes.
+          </p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <h3 class="text-xl font-semibold text-white">🎯 Efficient Rendering</h3>
+          <p class="mt-2 text-gray-400">
+            Refresh only the objects that actually need updating.
+          </p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <h3 class="text-xl font-semibold text-white">🚀 Better Performance</h3>
+          <p class="mt-2 text-gray-400">
+            Reduce CPU usage and improve frame rates in complex scenes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="mt-10 flex flex-wrap gap-4">
+        <button class="px-6 py-3 rounded-lg bg-emerald-500 hover:bg-emerald-600 transition font-semibold">
+          Learn More
+        </button>
+
+        <button class="px-6 py-3 rounded-lg border border-gray-700 hover:border-emerald-500 hover:text-emerald-400 transition font-semibold">
+          View Example
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

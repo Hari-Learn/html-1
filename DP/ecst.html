@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event-Carried State Transfer Pattern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+<!-- Hero -->
+<header class="bg-gradient-to-r from-indigo-700 via-blue-700 to-cyan-600 text-white">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <span class="inline-block px-4 py-1 rounded-full bg-white/20 text-sm font-semibold">
+            Distributed Systems Design Pattern
+        </span>
+
+        <h1 class="text-5xl font-bold mt-5">
+            Event-Carried State Transfer (ECST)
+        </h1>
+
+        <p class="mt-6 max-w-3xl text-lg text-blue-100">
+            Event-Carried State Transfer is an event-driven architecture pattern in which
+            events contain the complete state (or enough state) needed by downstream
+            services. Consumers update their local data stores directly from the event
+            without making synchronous API calls to the producer.
+        </p>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- Definition -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+        <h2 class="text-3xl font-bold mb-5">
+            What is Event-Carried State Transfer?
+        </h2>
+
+        <p class="leading-8">
+            Instead of publishing only an event identifier (for example,
+            <strong>CustomerUpdated</strong> with a customer ID), the publisher includes
+            the actual business data inside the event. Consumers receive everything they
+            need to update their own databases without querying another service.
+        </p>
+
+        <div class="mt-6 bg-blue-50 border-l-4 border-blue-600 p-5 rounded">
+            <strong>Core Idea:</strong>
+            <span>
+                Move the required business state with the event instead of forcing
+                consumers to retrieve it later.
+            </span>
+        </div>
+    </section>
+
+    <!-- Problem & Solution -->
+    <section class="grid lg:grid-cols-2 gap-8">
+
+        <div class="bg-red-50 border border-red-300 rounded-xl p-8">
+            <h2 class="text-2xl font-bold text-red-700 mb-5">
+                Problem
+            </h2>
+
+            <ul class="list-disc ml-6 space-y-3">
+                <li>Consumers frequently call producer APIs.</li>
+                <li>High network latency.</li>
+                <li>Tight coupling between services.</li>
+                <li>Producer outages affect consumers.</li>
+                <li>Scalability decreases as consumers grow.</li>
+            </ul>
+        </div>
+
+        <div class="bg-green-50 border border-green-300 rounded-xl p-8">
+            <h2 class="text-2xl font-bold text-green-700 mb-5">
+                Solution
+            </h2>
+
+            <ul class="list-disc ml-6 space-y-3">
+                <li>Publish complete business data inside events.</li>
+                <li>Consumers update local databases.</li>
+                <li>No synchronous API requests required.</li>
+                <li>Services remain loosely coupled.</li>
+                <li>Improves resilience and scalability.</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- Flow -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-8">
+            Architecture Flow
+        </h2>
+
+        <div class="overflow-x-auto">
+
+            <div class="flex items-center gap-4 min-w-max font-semibold">
+
+                <div class="bg-blue-100 rounded-lg px-6 py-4 shadow">
+                    Customer Service
+                </div>
+
+                <div class="text-3xl">➡️</div>
+
+                <div class="bg-yellow-100 rounded-lg px-6 py-4 shadow">
+                    Publish Event
+                </div>
+
+                <div class="text-3xl">➡️</div>
+
+                <div class="bg-purple-100 rounded-lg px-6 py-4 shadow">
+                    Event Broker
+                </div>
+
+                <div class="text-3xl">➡️</div>
+
+                <div class="bg-green-100 rounded-lg px-6 py-4 shadow">
+                    Inventory Service
+                </div>
+
+                <div class="text-3xl">➡️</div>
+
+                <div class="bg-green-100 rounded-lg px-6 py-4 shadow">
+                    Billing Service
+                </div>
+
+                <div class="text-3xl">➡️</div>
+
+                <div class="bg-green-100 rounded-lg px-6 py-4 shadow">
+                    Notification Service
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Event Payload -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-6">
+            Example Event Payload
+        </h2>
+
+<pre class="bg-slate-900 text-green-400 rounded-lg p-6 overflow-auto text-sm"><code>{
+  "eventType": "CustomerUpdated",
+
+  "customer": {
+      "id": 1001,
+      "name": "John Smith",
+      "email": "john@example.com",
+      "phone": "+1-555-9876",
+      "address": "New York",
+      "status": "Premium"
+  },
+
+  "timestamp": "2026-08-05T10:30:00Z"
+}</code></pre>
+
+        <p class="mt-5 text-gray-600">
+            Notice that the event contains the complete customer information.
+            Consumers do not need to call the Customer Service again.
+        </p>
+
+    </section>
+
+    <!-- Java Example -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-6">
+            Java Example
+        </h2>
+
+<pre class="bg-slate-900 text-green-400 rounded-lg p-6 overflow-auto text-sm"><code>public class CustomerUpdatedEvent {
+
+    private Long id;
+    private String name;
+    private String email;
+    private String address;
+    private String status;
+
+}
+
+public class BillingConsumer {
+
+    public void handle(CustomerUpdatedEvent event) {
+
+        customerRepository.save(
+            new Customer(
+                event.getId(),
+                event.getName(),
+                event.getEmail(),
+                event.getAddress(),
+                event.getStatus()
+            )
+        );
+
+    }
+
+}</code></pre>
+
+    </section>
+
+    <!-- Advantages -->
+    <section class="grid lg:grid-cols-2 gap-8">
+
+        <div class="bg-green-50 border border-green-300 rounded-xl p-8">
+
+            <h2 class="text-2xl font-bold text-green-700 mb-5">
+                Advantages
+            </h2>
+
+            <ul class="list-disc ml-6 space-y-3">
+                <li>Loose coupling between services.</li>
+                <li>Reduces API calls.</li>
+                <li>Improves performance.</li>
+                <li>Supports offline consumers.</li>
+                <li>Highly scalable.</li>
+                <li>Works well with Kafka and RabbitMQ.</li>
+                <li>Supports local read models.</li>
+            </ul>
+
+        </div>
+
+        <div class="bg-red-50 border border-red-300 rounded-xl p-8">
+
+            <h2 class="text-2xl font-bold text-red-700 mb-5">
+                Disadvantages
+            </h2>
+
+            <ul class="list-disc ml-6 space-y-3">
+                <li>Events become larger.</li>
+                <li>Possible data duplication.</li>
+                <li>Schema evolution becomes challenging.</li>
+                <li>Consumers may hold stale data temporarily.</li>
+                <li>Requires eventual consistency.</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- ECST vs Event Notification -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-6">
+            Event Notification vs Event-Carried State Transfer
+        </h2>
+
+        <div class="overflow-x-auto">
+
+            <table class="w-full border border-gray-300">
+
+                <thead class="bg-slate-200">
+
+                <tr>
+                    <th class="border p-3">Feature</th>
+                    <th class="border p-3">Event Notification</th>
+                    <th class="border p-3">ECST</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <tr>
+                    <td class="border p-3">Contains ID Only</td>
+                    <td class="border p-3 text-green-600">✔</td>
+                    <td class="border p-3">✘</td>
+                </tr>
+
+                <tr>
+                    <td class="border p-3">Contains Business Data</td>
+                    <td class="border p-3">✘</td>
+                    <td class="border p-3 text-green-600">✔</td>
+                </tr>
+
+                <tr>
+                    <td class="border p-3">Requires API Call</td>
+                    <td class="border p-3 text-red-600">Yes</td>
+                    <td class="border p-3 text-green-600">No</td>
+                </tr>
+
+                <tr>
+                    <td class="border p-3">Loose Coupling</td>
+                    <td class="border p-3">Medium</td>
+                    <td class="border p-3 text-green-600">High</td>
+                </tr>
+
+                <tr>
+                    <td class="border p-3">Network Traffic</td>
+                    <td class="border p-3">Higher</td>
+                    <td class="border p-3">Lower</td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- Use Cases -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+
+        <h2 class="text-3xl font-bold mb-6">
+            Common Use Cases
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="bg-blue-50 rounded-lg p-5">
+                <h3 class="font-bold mb-2">Microservices</h3>
+                <p>Maintain local copies of shared data.</p>
+            </div>
+
+            <div class="bg-green-50 rounded-lg p-5">
+                <h3 class="font-bold mb-2">CQRS</h3>
+                <p>Build read models from domain events.</p>
+            </div>
+
+            <div class="bg-purple-50 rounded-lg p-5">
+                <h3 class="font-bold mb-2">Kafka Systems</h3>
+                <p>Distribute complete business state.</p>
+            </div>
+
+            <div class="bg-yellow-50 rounded-lg p-5">
+                <h3 class="font-bold mb-2">Event Sourcing</h3>
+                <p>Synchronize multiple services efficiently.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Best Practices -->
+    <section class="bg-indigo-50 border border-indigo-300 rounded-xl p-8">
+
+        <h2 class="text-3xl font-bold text-indigo-700 mb-5">
+            Best Practices
+        </h2>
+
+        <ul class="grid md:grid-cols-2 gap-4 list-disc ml-6">
+            <li>Include only required business state.</li>
+            <li>Version your event schema.</li>
+            <li>Keep events immutable.</li>
+            <li>Design consumers to be idempotent.</li>
+            <li>Use message brokers with durable storage.</li>
+            <li>Accept eventual consistency.</li>
+            <li>Avoid oversized event payloads.</li>
+            <li>Document event contracts clearly.</li>
+        </ul>
+
+    </section>
+
+</main>
+
+<footer class="bg-slate-900 text-slate-300 mt-12">
+    <div class="max-w-7xl mx-auto px-6 py-8 text-center">
+
+        <h3 class="text-xl font-bold text-white">
+            Event-Carried State Transfer Pattern
+        </h3>
+
+        <p class="mt-3 max-w-3xl mx-auto">
+            Instead of making consumers fetch data after receiving an event,
+            include the required state directly in the event. This reduces
+            coupling, minimizes network calls, and enables scalable,
+            event-driven microservices with eventual consistency.
+        </p>
+
+    </div>
+</footer>
+
+</body>
+</html>

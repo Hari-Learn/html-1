@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Epoch-Based Reclamation</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-3xl w-full">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-10">
+
+      <!-- Badge -->
+      <span class="inline-flex items-center rounded-full bg-emerald-500/10 px-4 py-1 text-sm font-medium text-emerald-400 border border-emerald-500/20">
+        Lock-Free Memory Management
+      </span>
+
+      <!-- Title -->
+      <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-white">
+        Epoch-Based Reclamation
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="mt-3 text-xl text-sky-400 font-semibold">
+        Lock-Free Systems
+      </p>
+
+      <!-- Description -->
+      <p class="mt-6 text-lg leading-8 text-slate-300">
+        Epoch-Based Reclamation (EBR) is a memory management technique used in
+        lock-free and concurrent data structures. It safely reclaims memory only
+        after all active threads have moved beyond the epoch in which the memory
+        was retired, preventing access to freed objects while maintaining high
+        concurrency and performance.
+      </p>
+
+      <!-- Highlight -->
+      <div class="mt-8 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5">
+        <h2 class="text-lg font-semibold text-emerald-300">
+          Key Benefit
+        </h2>
+        <p class="mt-2 text-slate-300">
+          Safely reclaims memory in concurrent structures without requiring
+          traditional locks, making it well-suited for high-performance,
+          lock-free systems.
+        </p>
+      </div>
+
+      <!-- Features -->
+      <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        <div class="rounded-xl bg-slate-800 p-5 border border-slate-700">
+          <h3 class="font-semibold text-white">Safe</h3>
+          <p class="mt-2 text-sm text-slate-400">
+            Prevents premature memory reclamation.
+          </p>
+        </div>
+
+        <div class="rounded-xl bg-slate-800 p-5 border border-slate-700">
+          <h3 class="font-semibold text-white">Concurrent</h3>
+          <p class="mt-2 text-sm text-slate-400">
+            Designed for multi-threaded lock-free algorithms.
+          </p>
+        </div>
+
+        <div class="rounded-xl bg-slate-800 p-5 border border-slate-700">
+          <h3 class="font-semibold text-white">Efficient</h3>
+          <p class="mt-2 text-sm text-slate-400">
+            Minimizes synchronization overhead while reclaiming memory.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
