@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messaging Mapper Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-200 min-h-screen">
+  <main class="max-w-5xl mx-auto px-6 py-10">
+    <header class="mb-10">
+      <span class="text-cyan-400 text-sm font-semibold">INTEGRATION PATTERN</span>
+      <h1 class="text-4xl font-bold text-white mt-2">Messaging Mapper</h1>
+      <p class="text-slate-400 mt-3 max-w-2xl">
+        Translates between application objects and message formats without
+        forcing either side to depend on the other's structure.
+      </p>
+    </header>
+
+    <section class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+        <h2 class="text-xl font-semibold text-white mb-3">What is Messaging Mapper?</h2>
+        <p class="text-slate-400 leading-7">
+          A Messaging Mapper separates the internal domain model from the
+          external messaging format by converting objects to messages and
+          messages back into application objects.
+        </p>
+      </div>
+      <div class="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-6">
+        <h2 class="text-xl font-semibold text-cyan-400 mb-3">Purpose</h2>
+        <p class="text-slate-300 leading-7">
+          Keep messaging concerns isolated from business logic and domain models.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-xl p-6 mb-8">
+      <h2 class="text-xl font-semibold text-white mb-5">Message Flow</h2>
+      <div class="flex flex-wrap items-center justify-center gap-3 text-sm">
+        <div class="bg-slate-800 px-5 py-3 rounded-lg">Domain Object</div>
+        <span class="text-cyan-400">→</span>
+        <div class="bg-cyan-500/20 border border-cyan-500/30 px-5 py-3 rounded-lg text-cyan-300">
+          Messaging Mapper
+        </div>
+        <span class="text-cyan-400">→</span>
+        <div class="bg-slate-800 px-5 py-3 rounded-lg">Message</div>
+        <span class="text-cyan-400">→</span>
+        <div class="bg-slate-800 px-5 py-3 rounded-lg">Message Broker</div>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+        <h2 class="text-lg font-semibold text-white mb-4">Benefits</h2>
+        <ul class="space-y-3 text-slate-400 text-sm">
+          <li>✓ Decouples domain objects from message formats</li>
+          <li>✓ Simplifies integration with external systems</li>
+          <li>✓ Allows message formats to evolve independently</li>
+          <li>✓ Improves testability and maintainability</li>
+        </ul>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+        <h2 class="text-lg font-semibold text-white mb-4">Example</h2>
+        <pre class="bg-slate-950 rounded-lg p-4 text-sm text-cyan-300 overflow-x-auto"><code>Message msg = mapper.toMessage(order);
+
+Order order = mapper.fromMessage(msg);</code></pre>
+      </div>
+    </section>
+
+    <footer class="text-center text-slate-600 text-sm mt-10">
+      Messaging Mapper · Integration Design Pattern
+    </footer>
+  </main>
+</body>
+</html>
