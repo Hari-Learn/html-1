@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Endpoint Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-200 min-h-screen">
+  <main class="max-w-5xl mx-auto px-6 py-10">
+    <header class="mb-10">
+      <span class="text-cyan-400 text-sm font-semibold">INTEGRATION PATTERN</span>
+      <h1 class="text-4xl font-bold text-white mt-2">Message Endpoint</h1>
+      <p class="text-slate-400 mt-3 max-w-2xl">
+        Connects an application to a messaging channel and provides the
+        interface required to send or receive messages.
+      </p>
+    </header>
+
+    <section class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+        <h2 class="text-xl font-semibold text-white mb-3">What is Message Endpoint?</h2>
+        <p class="text-slate-400 leading-7">
+          A Message Endpoint is the point where an application interacts with
+          a messaging system. It hides messaging infrastructure details and
+          handles message sending or receiving.
+        </p>
+      </div>
+      <div class="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-6">
+        <h2 class="text-xl font-semibold text-cyan-400 mb-3">Purpose</h2>
+        <p class="text-slate-300 leading-7">
+          Connect application logic with message channels in a controlled way.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-xl p-6 mb-8">
+      <h2 class="text-xl font-semibold text-white mb-5">Message Flow</h2>
+      <div class="flex flex-wrap items-center justify-center gap-3 text-sm">
+        <div class="bg-slate-800 px-5 py-3 rounded-lg">Application</div>
+        <span class="text-cyan-400">→</span>
+        <div class="bg-cyan-500/20 border border-cyan-500/30 px-5 py-3 rounded-lg text-cyan-300">
+          Message Endpoint
+        </div>
+        <span class="text-cyan-400">→</span>
+        <div class="bg-slate-800 px-5 py-3 rounded-lg">Message Channel</div>
+        <span class="text-cyan-400">→</span>
+        <div class="bg-slate-800 px-5 py-3 rounded-lg">Consumer</div>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+        <h2 class="text-lg font-semibold text-white mb-4">Benefits</h2>
+        <ul class="space-y-3 text-slate-400 text-sm">
+          <li>✓ Separates application logic from messaging infrastructure</li>
+          <li>✓ Centralizes message handling</li>
+          <li>✓ Simplifies testing and maintenance</li>
+          <li>✓ Supports both producers and consumers</li>
+        </ul>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+        <h2 class="text-lg font-semibold text-white mb-4">Example</h2>
+        <pre class="bg-slate-950 rounded-lg p-4 text-sm text-cyan-300 overflow-x-auto"><code>endpoint.send(orderMessage);
+
+Message msg = endpoint.receive();</code></pre>
+      </div>
+    </section>
+
+    <footer class="text-center text-slate-600 text-sm mt-10">
+      Message Endpoint · Integration Design Pattern
+    </footer>
+  </main>
+</body>
+</html>
