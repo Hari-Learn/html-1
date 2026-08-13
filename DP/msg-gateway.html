@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messaging Gateway Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-200 min-h-screen">
+  <div class="max-w-5xl mx-auto px-6 py-10">
+
+    <header class="mb-10">
+      <span class="text-cyan-400 text-sm font-semibold">INTEGRATION PATTERN</span>
+      <h1 class="text-4xl font-bold text-white mt-2">Messaging Gateway</h1>
+      <p class="text-slate-400 mt-3 max-w-2xl">
+        Provides a simple application-level interface for sending and receiving
+        messages through a messaging system.
+      </p>
+    </header>
+
+    <section class="grid md:grid-cols-3 gap-4 mb-8">
+      <div class="md:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-6">
+        <h2 class="text-xl font-semibold text-white mb-3">What is Messaging Gateway?</h2>
+        <p class="text-slate-400 leading-7">
+          A Messaging Gateway hides the details of a messaging infrastructure
+          behind a clean API. Application code communicates with the gateway
+          instead of directly interacting with queues, brokers, or messaging protocols.
+        </p>
+      </div>
+      <div class="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-6">
+        <h3 class="text-cyan-400 font-semibold mb-2">Goal</h3>
+        <p class="text-slate-300 text-sm leading-6">
+          Decouple business logic from messaging infrastructure.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-xl p-6 mb-8">
+      <h2 class="text-xl font-semibold text-white mb-5">Message Flow</h2>
+      <div class="flex flex-wrap items-center justify-center gap-3 text-sm">
+        <div class="bg-slate-800 px-5 py-3 rounded-lg">Application</div>
+        <span class="text-cyan-400">→</span>
+        <div class="bg-cyan-500/20 border border-cyan-500/30 px-5 py-3 rounded-lg text-cyan-300">
+          Messaging Gateway
+        </div>
+        <span class="text-cyan-400">→</span>
+        <div class="bg-slate-800 px-5 py-3 rounded-lg">Message Broker</div>
+        <span class="text-cyan-400">→</span>
+        <div class="bg-slate-800 px-5 py-3 rounded-lg">Consumer</div>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+        <h2 class="text-lg font-semibold text-white mb-4">Benefits</h2>
+        <ul class="space-y-3 text-slate-400 text-sm">
+          <li>✓ Hides messaging implementation details</li>
+          <li>✓ Reduces coupling with messaging infrastructure</li>
+          <li>✓ Easier testing and mocking</li>
+          <li>✓ Provides a business-friendly messaging API</li>
+        </ul>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+        <h2 class="text-lg font-semibold text-white mb-4">Example</h2>
+        <pre class="bg-slate-950 rounded-lg p-4 text-sm text-cyan-300 overflow-x-auto"><code>gateway.sendOrderCreated(order);
+
+gateway.sendNotification(userId, message);</code></pre>
+      </div>
+    </section>
+
+    <footer class="text-center text-slate-600 text-sm mt-10">
+      Messaging Gateway · Integration Design Pattern
+    </footer>
+  </div>
+</body>
+</html>
