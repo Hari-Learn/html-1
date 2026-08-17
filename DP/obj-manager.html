@@ -1,0 +1,264 @@
+Here’s a more detailed version with the same clean Tailwind style, while keeping the original content as the focal point:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Object Lifetime Manager</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-slate-200">
+  <main class="mx-auto max-w-6xl px-6 py-12 sm:px-8 lg:py-20">
+
+    <!-- Header -->
+    <header class="mb-12 text-center">
+      <span
+        class="inline-flex items-center rounded-full bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-400 ring-1 ring-inset ring-emerald-500/20"
+      >
+        Resource Management
+      </span>
+
+      <h1
+        class="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
+      >
+        Object Lifetime Manager
+      </h1>
+
+      <p class="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+        Controls the creation and destruction of shared objects while
+        simplifying ownership, lifecycle coordination, and resource cleanup.
+      </p>
+    </header>
+
+    <!-- Main Description -->
+    <section
+      class="rounded-3xl border border-slate-800 bg-slate-900 p-8 shadow-2xl shadow-black/20 sm:p-10"
+    >
+      <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+
+        <!-- Explanation -->
+        <div>
+          <div
+            class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 text-2xl ring-1 ring-inset ring-emerald-500/20"
+          >
+            ♻
+          </div>
+
+          <h2 class="text-2xl font-bold text-white">
+            What it does
+          </h2>
+
+          <p class="mt-4 leading-7 text-slate-400">
+            The Object Lifetime Manager provides a centralized mechanism for
+            managing shared objects. It determines when objects should be
+            created, reused, and ultimately destroyed.
+          </p>
+
+          <p class="mt-4 leading-7 text-slate-400">
+            By separating lifetime management from application logic,
+            components can safely share resources without each component
+            having to manage the complete lifecycle independently.
+          </p>
+        </div>
+
+        <!-- Key Statement -->
+        <div
+          class="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-7"
+        >
+          <p class="text-sm font-semibold uppercase tracking-wider text-emerald-400">
+            Core Responsibility
+          </p>
+
+          <p class="mt-4 text-2xl font-semibold leading-9 text-white">
+            Controls creation/destruction of shared objects
+          </p>
+
+          <div class="mt-6 flex items-center gap-3">
+            <div class="h-2 flex-1 rounded-full bg-slate-800">
+              <div class="h-2 w-3/4 rounded-full bg-emerald-500"></div>
+            </div>
+
+            <span class="text-sm font-bold text-emerald-400">
+              &lt; 150 lines
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concepts -->
+    <section class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+      <article
+        class="rounded-2xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-emerald-500/40"
+      >
+        <div class="text-2xl">➕</div>
+        <h3 class="mt-4 text-lg font-semibold text-white">
+          Creation
+        </h3>
+        <p class="mt-2 text-sm leading-6 text-slate-400">
+          Creates shared objects when they are required and avoids unnecessary
+          duplicate instances.
+        </p>
+      </article>
+
+      <article
+        class="rounded-2xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-emerald-500/40"
+      >
+        <div class="text-2xl">🔗</div>
+        <h3 class="mt-4 text-lg font-semibold text-white">
+          Shared Ownership
+        </h3>
+        <p class="mt-2 text-sm leading-6 text-slate-400">
+          Coordinates access to objects that are used by multiple components
+          or services.
+        </p>
+      </article>
+
+      <article
+        class="rounded-2xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-emerald-500/40"
+      >
+        <div class="text-2xl">🗑</div>
+        <h3 class="mt-4 text-lg font-semibold text-white">
+          Destruction
+        </h3>
+        <p class="mt-2 text-sm leading-6 text-slate-400">
+          Releases objects and associated resources when they are no longer
+          needed.
+        </p>
+      </article>
+
+    </section>
+
+    <!-- Lifecycle -->
+    <section
+      class="mt-8 rounded-3xl border border-slate-800 bg-slate-900 p-8 sm:p-10"
+    >
+      <h2 class="text-2xl font-bold text-white">
+        Object Lifecycle
+      </h2>
+
+      <p class="mt-3 max-w-2xl text-slate-400">
+        A typical lifecycle can be represented as a simple sequence of
+        acquisition, usage, sharing, and cleanup.
+      </p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-4">
+
+        <div class="rounded-xl bg-slate-800/70 p-5">
+          <span class="text-xs font-bold text-emerald-400">01</span>
+          <h3 class="mt-2 font-semibold text-white">Request</h3>
+          <p class="mt-2 text-sm text-slate-400">
+            A component requests a shared object.
+          </p>
+        </div>
+
+        <div class="rounded-xl bg-slate-800/70 p-5">
+          <span class="text-xs font-bold text-emerald-400">02</span>
+          <h3 class="mt-2 font-semibold text-white">Create</h3>
+          <p class="mt-2 text-sm text-slate-400">
+            The manager creates or retrieves the object.
+          </p>
+        </div>
+
+        <div class="rounded-xl bg-slate-800/70 p-5">
+          <span class="text-xs font-bold text-emerald-400">03</span>
+          <h3 class="mt-2 font-semibold text-white">Use</h3>
+          <p class="mt-2 text-sm text-slate-400">
+            Multiple consumers safely use the shared resource.
+          </p>
+        </div>
+
+        <div class="rounded-xl bg-slate-800/70 p-5">
+          <span class="text-xs font-bold text-emerald-400">04</span>
+          <h3 class="mt-2 font-semibold text-white">Release</h3>
+          <p class="mt-2 text-sm text-slate-400">
+            The object is destroyed when its lifetime ends.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="mt-8">
+      <h2 class="text-2xl font-bold text-white">
+        Key Benefits
+      </h2>
+
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+
+        <div
+          class="flex gap-4 rounded-2xl border border-slate-800 bg-slate-900 p-6"
+        >
+          <div class="text-emerald-400">✓</div>
+          <div>
+            <h3 class="font-semibold text-white">
+              Centralized lifecycle control
+            </h3>
+            <p class="mt-1 text-sm leading-6 text-slate-400">
+              Object ownership and cleanup rules are managed in one place.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="flex gap-4 rounded-2xl border border-slate-800 bg-slate-900 p-6"
+        >
+          <div class="text-emerald-400">✓</div>
+          <div>
+            <h3 class="font-semibold text-white">
+              Reduced resource leaks
+            </h3>
+            <p class="mt-1 text-sm leading-6 text-slate-400">
+              Explicit lifecycle handling makes resource cleanup easier to
+              reason about.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="flex gap-4 rounded-2xl border border-slate-800 bg-slate-900 p-6"
+        >
+          <div class="text-emerald-400">✓</div>
+          <div>
+            <h3 class="font-semibold text-white">
+              Simplified components
+            </h3>
+            <p class="mt-1 text-sm leading-6 text-slate-400">
+              Consumers do not need to implement complete object lifecycle
+              logic themselves.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="flex gap-4 rounded-2xl border border-slate-800 bg-slate-900 p-6"
+        >
+          <div class="text-emerald-400">✓</div>
+          <div>
+            <h3 class="font-semibold text-white">
+              Compact implementation
+            </h3>
+            <p class="mt-1 text-sm leading-6 text-slate-400">
+              The pattern is designed to provide lifecycle coordination in a
+              small implementation.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-sm text-slate-600">
+      Resource Management · Object Lifetime Manager
+    </footer>
+
+  </main>
+</body>
+</html>
+```
