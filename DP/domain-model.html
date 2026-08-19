@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domain Model</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-200 flex items-center justify-center p-6">
+  <main class="w-full max-w-4xl">
+    <section class="overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-2xl">
+
+      <header class="bg-gradient-to-r from-emerald-600 to-teal-600 px-8 py-10 text-center">
+        <span class="rounded-full bg-white/10 px-4 py-1 text-sm font-semibold text-emerald-100">
+          ENTERPRISE PATTERN
+        </span>
+        <h1 class="mt-4 text-4xl md:text-5xl font-bold text-white">
+          Domain Model
+        </h1>
+        <p class="mt-3 text-emerald-100">
+          Represent business logic as domain objects
+        </p>
+      </header>
+
+      <div class="p-8 md:p-10">
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-6">
+            <p class="text-sm font-semibold uppercase tracking-wider text-emerald-400">
+              Category
+            </p>
+            <h2 class="mt-3 text-2xl font-bold text-white">
+              Enterprise
+            </h2>
+            <p class="mt-3 text-slate-400">
+              An enterprise application pattern that models business
+              concepts and rules directly as objects.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-teal-500/30 bg-teal-500/10 p-6">
+            <p class="text-sm font-semibold uppercase tracking-wider text-teal-400">
+              Core Concept
+            </p>
+            <h2 class="mt-3 text-2xl font-bold text-white">
+              Business Objects
+            </h2>
+            <p class="mt-3 text-slate-400">
+              Business data and behavior are combined within domain
+              objects that reflect real-world business concepts.
+            </p>
+          </div>
+        </div>
+
+        <div class="my-8 flex items-center gap-4">
+          <div class="h-px flex-1 bg-slate-800"></div>
+          <span class="text-sm text-slate-500">DOMAIN STRUCTURE</span>
+          <div class="h-px flex-1 bg-slate-800"></div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-950 p-7">
+          <div class="grid md:grid-cols-3 gap-4 text-center">
+
+            <div class="rounded-xl bg-slate-800 p-5">
+              <div class="text-3xl">👤</div>
+              <div class="mt-3 font-bold text-white">Customer</div>
+              <div class="mt-1 text-sm text-slate-400">Customer data</div>
+            </div>
+
+            <div class="rounded-xl bg-emerald-600 p-5">
+              <div class="text-3xl">📦</div>
+              <div class="mt-3 font-bold text-white">Order</div>
+              <div class="mt-1 text-sm text-emerald-100">Business rules</div>
+            </div>
+
+            <div class="rounded-xl bg-slate-800 p-5">
+              <div class="text-3xl">💳</div>
+              <div class="mt-3 font-bold text-white">Payment</div>
+              <div class="mt-1 text-sm text-slate-400">Payment behavior</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mt-8 rounded-2xl bg-slate-800/60 p-6 text-center">
+          <h2 class="text-xl font-bold text-white">Definition</h2>
+          <p class="mt-3 text-lg leading-8 text-slate-300">
+            <span class="font-semibold text-emerald-400">Domain Model</span>
+            represents
+            <span class="font-semibold text-teal-400">business logic</span>
+            as
+            <span class="font-semibold text-white">domain objects</span>
+            that contain relevant data, behavior, and business rules.
+          </p>
+        </div>
+
+        <div class="mt-8 grid sm:grid-cols-3 gap-4 text-center">
+          <div class="rounded-xl bg-slate-800 p-5">
+            <div class="text-2xl">📊</div>
+            <p class="mt-2 font-semibold text-white">Data</p>
+          </div>
+          <div class="rounded-xl bg-slate-800 p-5">
+            <div class="text-2xl">⚙️</div>
+            <p class="mt-2 font-semibold text-white">Behavior</p>
+          </div>
+          <div class="rounded-xl bg-slate-800 p-5">
+            <div class="text-2xl">📜</div>
+            <p class="mt-2 font-semibold text-white">Business Rules</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</body>
+</html>
