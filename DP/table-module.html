@@ -1,0 +1,118 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Module</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-200 flex items-center justify-center p-6">
+  <main class="w-full max-w-4xl">
+    <section class="overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-2xl">
+
+      <header class="bg-gradient-to-r from-orange-600 to-amber-600 px-8 py-10 text-center">
+        <span class="rounded-full bg-white/10 px-4 py-1 text-sm font-semibold text-orange-100">
+          ENTERPRISE PATTERN
+        </span>
+        <h1 class="mt-4 text-4xl md:text-5xl font-bold text-white">
+          Table Module
+        </h1>
+        <p class="mt-3 text-orange-100">
+          Business logic organized around a database table
+        </p>
+      </header>
+
+      <div class="p-8 md:p-10">
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border border-orange-500/30 bg-orange-500/10 p-6">
+            <p class="text-sm font-semibold uppercase tracking-wider text-orange-400">
+              Category
+            </p>
+            <h2 class="mt-3 text-2xl font-bold text-white">
+              Enterprise
+            </h2>
+            <p class="mt-3 text-slate-400">
+              An enterprise application pattern that organizes business
+              operations around a database table.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-6">
+            <p class="text-sm font-semibold uppercase tracking-wider text-amber-400">
+              Core Concept
+            </p>
+            <h2 class="mt-3 text-2xl font-bold text-white">
+              Table-Centered Logic
+            </h2>
+            <p class="mt-3 text-slate-400">
+              Related business rules and operations are encapsulated
+              together for a specific database table.
+            </p>
+          </div>
+        </div>
+
+        <div class="my-8 flex items-center gap-4">
+          <div class="h-px flex-1 bg-slate-800"></div>
+          <span class="text-sm text-slate-500">STRUCTURE</span>
+          <div class="h-px flex-1 bg-slate-800"></div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-950 p-7">
+          <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+
+            <div class="w-full md:w-auto rounded-xl bg-slate-800 px-6 py-5 text-center">
+              <div class="text-3xl">🗄️</div>
+              <div class="mt-2 font-bold text-white">Customer Table</div>
+              <div class="mt-1 text-sm text-slate-400">
+                Database Records
+              </div>
+            </div>
+
+            <div class="text-3xl text-orange-400">↔</div>
+
+            <div class="w-full md:w-auto rounded-xl bg-orange-600 px-6 py-5 text-center">
+              <div class="text-3xl">⚙️</div>
+              <div class="mt-2 font-bold text-white">Table Module</div>
+              <div class="mt-1 text-sm text-orange-100">
+                Business Operations
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mt-8 rounded-2xl bg-slate-800/60 p-6 text-center">
+          <h2 class="text-xl font-bold text-white">Definition</h2>
+          <p class="mt-3 text-lg leading-8 text-slate-300">
+            <span class="font-semibold text-orange-400">Table Module</span>
+            encapsulates
+            <span class="font-semibold text-amber-400">business logic</span>
+            around a
+            <span class="font-semibold text-white">database table</span>,
+            providing a central place for operations related to that table.
+          </p>
+        </div>
+
+        <div class="mt-8 grid sm:grid-cols-3 gap-4 text-center">
+          <div class="rounded-xl bg-slate-800 p-5">
+            <div class="text-2xl">🗄️</div>
+            <p class="mt-2 font-semibold text-white">Table</p>
+          </div>
+          <div class="rounded-xl bg-slate-800 p-5">
+            <div class="text-2xl">⚙️</div>
+            <p class="mt-2 font-semibold text-white">Business Logic</p>
+          </div>
+          <div class="rounded-xl bg-slate-800 p-5">
+            <div class="text-2xl">🔗</div>
+            <p class="mt-2 font-semibold text-white">Operations</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+```
