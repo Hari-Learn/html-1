@@ -1,0 +1,71 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Expiration</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-200 flex items-center justify-center p-6">
+  <main class="w-full max-w-4xl">
+    <section class="overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-2xl">
+      <header class="bg-gradient-to-r from-amber-500 to-orange-600 px-8 py-10 text-center">
+        <span class="rounded-full bg-white/10 px-4 py-1 text-sm font-semibold text-amber-100">
+          MESSAGING DESIGN PATTERN
+        </span>
+        <h1 class="mt-4 text-4xl md:text-5xl font-bold text-white">
+          Message Expiration
+        </h1>
+        <p class="mt-3 text-amber-100">
+          Prevents outdated messages from being processed
+        </p>
+      </header>
+
+      <div class="p-8 md:p-10">
+        <div class="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-6 text-center">
+          <h2 class="text-2xl font-bold text-white">Core Idea</h2>
+          <p class="mt-3 text-lg text-slate-300">
+            A message is given an expiration time or time-to-live (TTL).
+            Once that period ends, the message is discarded or ignored.
+          </p>
+        </div>
+
+        <div class="my-8 flex flex-col md:flex-row items-center justify-center gap-4">
+          <div class="rounded-xl bg-slate-800 p-5 text-center">
+            <div class="text-2xl">📨</div>
+            <h3 class="mt-2 font-bold text-white">Message</h3>
+            <p class="text-sm text-slate-400">TTL: 60 seconds</p>
+          </div>
+
+          <div class="text-3xl text-amber-400">→</div>
+
+          <div class="rounded-xl bg-orange-600 p-5 text-center">
+            <div class="text-2xl">⏱️</div>
+            <h3 class="mt-2 font-bold text-white">Expiration</h3>
+            <p class="text-sm text-orange-100">Time limit reached</p>
+          </div>
+
+          <div class="text-3xl text-amber-400">→</div>
+
+          <div class="rounded-xl bg-slate-800 p-5 text-center">
+            <div class="text-2xl">🗑️</div>
+            <h3 class="mt-2 font-bold text-white">Discard</h3>
+            <p class="text-sm text-slate-400">No longer processed</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-slate-800/60 p-6">
+          <h2 class="text-xl font-bold text-white">Benefits</h2>
+          <div class="mt-4 grid md:grid-cols-3 gap-3">
+            <div class="rounded-lg bg-slate-800 p-4">⚡ Avoids stale processing</div>
+            <div class="rounded-lg bg-slate-800 p-4">🧹 Reduces queue buildup</div>
+            <div class="rounded-lg bg-slate-800 p-4">🎯 Keeps data relevant</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
