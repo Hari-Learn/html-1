@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipient List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="mx-auto flex min-h-screen max-w-5xl items-center px-6 py-16">
+    <section class="w-full">
+      <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-pink-400/20 bg-pink-400/10 px-4 py-2 text-sm text-pink-300">
+        <span class="h-2 w-2 rounded-full bg-pink-400"></span>
+        Messaging Pattern
+      </div>
+
+      <div class="grid gap-12 md:grid-cols-2 md:items-center">
+        <div>
+          <h1 class="text-5xl font-bold tracking-tight md:text-6xl">
+            Recipient <span class="text-pink-400">List</span>
+          </h1>
+          <p class="mt-6 text-xl leading-8 text-slate-300">
+            Sends a message to a dynamically determined set of recipients.
+          </p>
+          <p class="mt-4 max-w-xl leading-7 text-slate-400">
+            Recipients are selected at runtime based on message content,
+            user preferences, routing rules, or other business conditions.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
+          <div class="mb-6 flex items-center justify-between">
+            <span class="text-sm font-medium text-slate-400">Delivery targets</span>
+            <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs text-emerald-400">
+              Dynamic
+            </span>
+          </div>
+
+          <div class="space-y-4">
+            <div class="rounded-xl border border-pink-400/20 bg-pink-400/10 p-4">
+              <p class="font-semibold text-pink-300">Incoming Message</p>
+              <p class="mt-1 text-sm text-slate-400">Event: Order Updated</p>
+            </div>
+
+            <div class="flex justify-center text-2xl text-pink-400">↓</div>
+
+            <div class="rounded-xl bg-slate-800 p-4">
+              <p class="mb-3 text-sm text-slate-400">Recipients selected at runtime</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-full bg-blue-400/10 px-3 py-1 text-sm text-blue-300">User A</span>
+                <span class="rounded-full bg-violet-400/10 px-3 py-1 text-sm text-violet-300">User B</span>
+                <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-sm text-emerald-300">User C</span>
+              </div>
+            </div>
+
+            <div class="flex justify-center text-2xl text-pink-400">↓</div>
+
+            <div class="rounded-xl border border-emerald-400/20 bg-emerald-400/5 p-4 text-center">
+              <p class="font-semibold text-emerald-300">Message Delivered</p>
+              <p class="mt-1 text-sm text-slate-400">Sent to all selected recipients.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
