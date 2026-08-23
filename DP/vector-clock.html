@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vector Clock</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="mx-auto flex min-h-screen max-w-5xl items-center px-6 py-16">
+    <section class="w-full">
+      <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-fuchsia-400/20
+                  bg-fuchsia-400/10 px-4 py-2 text-sm text-fuchsia-300">
+        <span class="h-2 w-2 rounded-full bg-fuchsia-400"></span>
+        Distributed Systems
+      </div>
+
+      <div class="grid gap-12 md:grid-cols-2 md:items-center">
+        <div>
+          <h1 class="text-5xl font-bold tracking-tight md:text-6xl">
+            Vector <span class="text-fuchsia-400">Clock</span>
+          </h1>
+          <p class="mt-6 text-xl leading-8 text-slate-300">
+            Tracks causal relationships between distributed events.
+          </p>
+          <p class="mt-4 max-w-xl leading-7 text-slate-400">
+            Each node maintains a vector of logical counters, allowing the
+            system to determine whether events happened before, after, or
+            concurrently with one another.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
+          <div class="mb-6 flex items-center justify-between">
+            <span class="text-sm font-medium text-slate-400">Event timeline</span>
+            <span class="rounded-full bg-fuchsia-400/10 px-3 py-1 text-xs text-fuchsia-300">
+              Causality
+            </span>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-center justify-between rounded-xl bg-slate-800 p-4">
+              <span class="font-medium text-slate-300">Node A → Event 1</span>
+              <code class="rounded bg-slate-700 px-3 py-1 text-fuchsia-300">[1,0,0]</code>
+            </div>
+            <div class="ml-8 h-6 border-l border-fuchsia-400/40"></div>
+            <div class="flex items-center justify-between rounded-xl bg-fuchsia-400/10 p-4">
+              <span class="font-medium text-fuchsia-300">Node B → Event 2</span>
+              <code class="rounded bg-fuchsia-400/10 px-3 py-1 text-fuchsia-300">[1,1,0]</code>
+            </div>
+            <div class="ml-8 h-6 border-l border-fuchsia-400/40"></div>
+            <div class="rounded-xl border border-emerald-400/20 bg-emerald-400/5 p-4">
+              <p class="font-semibold text-emerald-300">Causal order detected</p>
+              <p class="mt-1 text-sm text-slate-400">
+                Event 1 happened before Event 2.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html> 

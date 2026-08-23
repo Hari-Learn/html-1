@@ -1,0 +1,93 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caching Allocator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-200">
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <header class="mb-10">
+      <span class="text-cyan-400 font-semibold tracking-wide">MEMORY MANAGEMENT</span>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mt-2">Caching Allocator</h1>
+      <p class="text-slate-400 text-lg mt-4 max-w-3xl">
+        A caching allocator improves performance by reusing previously allocated
+        memory instead of repeatedly requesting memory from the operating system.
+      </p>
+    </header>
+
+    <section class="grid md:grid-cols-3 gap-5 mb-10">
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+        <div class="text-cyan-400 text-2xl mb-3">01</div>
+        <h2 class="font-bold text-white text-xl">Request</h2>
+        <p class="text-slate-400 mt-2">Application asks for a memory block.</p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+        <div class="text-cyan-400 text-2xl mb-3">02</div>
+        <h2 class="font-bold text-white text-xl">Cache Lookup</h2>
+        <p class="text-slate-400 mt-2">Allocator checks whether a suitable block is cached.</p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+        <div class="text-cyan-400 text-2xl mb-3">03</div>
+        <h2 class="font-bold text-white text-xl">Reuse / Allocate</h2>
+        <p class="text-slate-400 mt-2">Reuse a cached block or obtain new memory.</p>
+      </div>
+    </section>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-4">How It Works</h2>
+      <div class="bg-slate-950 rounded-xl p-5 font-mono text-sm overflow-x-auto">
+        <div class="flex flex-col md:flex-row items-center gap-3">
+          <span class="bg-blue-500/20 text-blue-300 px-4 py-2 rounded">Application</span>
+          <span class="text-slate-500">→</span>
+          <span class="bg-purple-500/20 text-purple-300 px-4 py-2 rounded">Allocator</span>
+          <span class="text-slate-500">→</span>
+          <span class="bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded">Cache</span>
+          <span class="text-slate-500">→</span>
+          <span class="bg-orange-500/20 text-orange-300 px-4 py-2 rounded">OS / Heap</span>
+        </div>
+      </div>
+      <p class="text-slate-400 mt-5">
+        When memory is freed, the allocator can keep the block in a cache.
+        A later request for a similar size can reuse that block, avoiding the
+        overhead of a fresh system-level allocation.
+      </p>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-6">
+      <div class="bg-emerald-950/30 border border-emerald-900 rounded-xl p-6">
+        <h2 class="text-xl font-bold text-emerald-300 mb-4">Advantages</h2>
+        <ul class="space-y-3 text-slate-300">
+          <li>✓ Faster repeated allocations</li>
+          <li>✓ Reduces system-call overhead</li>
+          <li>✓ Reuses memory efficiently</li>
+          <li>✓ Useful for high-performance workloads</li>
+        </ul>
+      </div>
+
+      <div class="bg-amber-950/30 border border-amber-900 rounded-xl p-6">
+        <h2 class="text-xl font-bold text-amber-300 mb-4">Trade-offs</h2>
+        <ul class="space-y-3 text-slate-300">
+          <li>• Cached memory can increase memory usage</li>
+          <li>• Fragmentation can occur</li>
+          <li>• Cache management adds complexity</li>
+          <li>• Poor policies may retain unused memory</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mt-8 bg-cyan-950/30 border border-cyan-900 rounded-xl p-6">
+      <h2 class="text-xl font-bold text-cyan-300">Key Idea</h2>
+      <p class="text-slate-300 mt-2">
+        <strong class="text-white">Allocate once, reuse many times.</strong>
+        A caching allocator trades some retained memory for faster allocation
+        and deallocation, making it valuable in systems that create and destroy
+        many objects or buffers repeatedly.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
+```
