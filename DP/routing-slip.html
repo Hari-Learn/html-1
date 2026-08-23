@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routing Slip</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="mx-auto flex min-h-screen max-w-5xl items-center px-6 py-16">
+    <section class="w-full">
+      <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-amber-400/20 bg-amber-400/10 px-4 py-2 text-sm text-amber-300">
+        <span class="h-2 w-2 rounded-full bg-amber-400"></span>
+        Enterprise Integration
+      </div>
+
+      <div class="grid gap-12 md:grid-cols-2 md:items-center">
+        <div>
+          <h1 class="text-5xl font-bold tracking-tight md:text-6xl">
+            Routing <span class="text-amber-400">Slip</span>
+          </h1>
+          <p class="mt-6 text-xl leading-8 text-slate-300">
+            Carries the processing route along with the message.
+          </p>
+          <p class="mt-4 max-w-xl leading-7 text-slate-400">
+            A routing slip attaches a sequence of processing steps to a
+            message, allowing each recipient or processor to handle the
+            message according to its defined route.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
+          <div class="mb-6 flex items-center justify-between">
+            <span class="text-sm font-medium text-slate-400">Message route</span>
+            <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs text-emerald-400">
+              In progress
+            </span>
+          </div>
+
+          <div class="space-y-4">
+            <div class="rounded-xl border border-amber-400/20 bg-amber-400/10 p-4">
+              <p class="font-semibold text-amber-300">Message + Routing Slip</p>
+              <p class="mt-1 text-sm text-slate-400">
+                Route: Validate → Enrich → Transform → Deliver
+              </p>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="flex-1 rounded-xl bg-slate-800 p-4 text-center">
+                <p class="font-semibold text-blue-300">Validate</p>
+                <p class="text-xs text-slate-500">Step 1</p>
+              </div>
+              <span class="text-amber-400">→</span>
+              <div class="flex-1 rounded-xl bg-slate-800 p-4 text-center">
+                <p class="font-semibold text-violet-300">Enrich</p>
+                <p class="text-xs text-slate-500">Step 2</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="flex-1 rounded-xl bg-slate-800 p-4 text-center">
+                <p class="font-semibold text-cyan-300">Transform</p>
+                <p class="text-xs text-slate-500">Step 3</p>
+              </div>
+              <span class="text-amber-400">→</span>
+              <div class="flex-1 rounded-xl bg-slate-800 p-4 text-center">
+                <p class="font-semibold text-emerald-300">Deliver</p>
+                <p class="text-xs text-slate-500">Step 4</p>
+              </div>
+            </div>
+
+            <div class="rounded-xl border border-emerald-400/20 bg-emerald-400/5 p-4 text-center">
+              <p class="font-semibold text-emerald-300">✓ Route completed</p>
+              <p class="mt-1 text-sm text-slate-400">
+                Each processing step follows the route carried by the message.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
