@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wire Tap</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="mx-auto flex min-h-screen max-w-5xl items-center px-6 py-16">
+    <section class="w-full">
+      <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-lime-400/20 bg-lime-400/10 px-4 py-2 text-sm text-lime-300">
+        <span class="h-2 w-2 rounded-full bg-lime-400"></span>
+        Messaging Observability
+      </div>
+
+      <div class="grid gap-12 md:grid-cols-2 md:items-center">
+        <div>
+          <h1 class="text-5xl font-bold tracking-tight md:text-6xl">
+            Wire <span class="text-lime-400">Tap</span>
+          </h1>
+          <p class="mt-6 text-xl leading-8 text-slate-300">
+            Copies messages for monitoring or debugging.
+          </p>
+          <p class="mt-4 max-w-xl leading-7 text-slate-400">
+            A wire tap observes messages in transit and creates a copy for
+            logging, diagnostics, auditing, or monitoring without interrupting
+            the original message flow.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
+          <div class="mb-6 flex items-center justify-between">
+            <span class="text-sm font-medium text-slate-400">Message flow</span>
+            <span class="rounded-full bg-lime-400/10 px-3 py-1 text-xs text-lime-300">
+              Monitoring
+            </span>
+          </div>
+
+          <div class="space-y-4">
+            <div class="rounded-xl bg-slate-800 p-4 text-center">
+              <p class="font-semibold text-blue-300">Incoming Message</p>
+              <p class="mt-1 text-xs text-slate-500">Original message</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div class="rounded-xl border border-lime-400/30 bg-lime-400/10 p-4 text-center">
+                <p class="font-semibold text-lime-300">Wire Tap</p>
+                <p class="mt-1 text-xs text-slate-400">Copies message</p>
+              </div>
+              <div class="rounded-xl bg-slate-800 p-4 text-center">
+                <p class="font-semibold text-violet-300">Main Flow</p>
+                <p class="mt-1 text-xs text-slate-400">Continues normally</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div class="rounded-xl bg-slate-800 p-4 text-center">
+                <p class="font-semibold text-amber-300">Monitor</p>
+                <p class="mt-1 text-xs text-slate-500">Logs & diagnostics</p>
+              </div>
+              <div class="rounded-xl bg-slate-800 p-4 text-center">
+                <p class="font-semibold text-emerald-300">Consumer</p>
+                <p class="mt-1 text-xs text-slate-500">Receives original</p>
+              </div>
+            </div>
+
+            <div class="rounded-xl border border-emerald-400/20 bg-emerald-400/5 p-4 text-center">
+              <p class="font-semibold text-emerald-300">✓ Non-invasive observation</p>
+              <p class="mt-1 text-sm text-slate-400">
+                Monitoring occurs without changing the original flow.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
