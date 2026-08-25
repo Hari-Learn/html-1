@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="mx-auto flex min-h-screen max-w-5xl items-center px-6 py-16">
+    <section class="w-full">
+      <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-sm text-sky-300">
+        <span class="h-2 w-2 rounded-full bg-sky-400"></span>
+        Messaging Infrastructure
+      </div>
+
+      <div class="grid gap-12 md:grid-cols-2 md:items-center">
+        <div>
+          <h1 class="text-5xl font-bold tracking-tight md:text-6xl">
+            Message <span class="text-sky-400">Store</span>
+          </h1>
+          <p class="mt-6 text-xl leading-8 text-slate-300">
+            Persists messages independently of their consumers.
+          </p>
+          <p class="mt-4 max-w-xl leading-7 text-slate-400">
+            A message store keeps messages durable and available even when
+            consumers are offline, slow, or temporarily unavailable.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
+          <div class="mb-6 flex items-center justify-between">
+            <span class="text-sm font-medium text-slate-400">Message lifecycle</span>
+            <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs text-emerald-400">
+              Persistent
+            </span>
+          </div>
+
+          <div class="space-y-4">
+            <div class="rounded-xl bg-slate-800 p-4 text-center">
+              <p class="font-semibold text-blue-300">Producer</p>
+              <p class="mt-1 text-xs text-slate-500">Publishes message</p>
+            </div>
+
+            <div class="flex justify-center text-2xl text-sky-400">↓</div>
+
+            <div class="rounded-xl border border-sky-400/30 bg-sky-400/10 p-5">
+              <div class="flex items-center justify-between">
+                <p class="font-semibold text-sky-300">Message Store</p>
+                <span class="text-sky-400">●</span>
+              </div>
+              <p class="mt-1 text-sm text-slate-400">
+                Message safely persisted for later consumption.
+              </p>
+            </div>
+
+            <div class="flex justify-center text-2xl text-sky-400">↓</div>
+
+            <div class="rounded-xl bg-slate-800 p-4 text-center">
+              <p class="font-semibold text-violet-300">Consumer</p>
+              <p class="mt-1 text-xs text-slate-500">Reads when available</p>
+            </div>
+
+            <div class="rounded-xl border border-emerald-400/20 bg-emerald-400/5 p-4 text-center">
+              <p class="font-semibold text-emerald-300">✓ Durable delivery</p>
+              <p class="mt-1 text-sm text-slate-400">
+                Producers and consumers remain independent.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
