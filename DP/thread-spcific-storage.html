@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thread-Specific Storage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="mx-auto flex min-h-screen max-w-5xl items-center px-6 py-16">
+    <section class="w-full">
+      <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-fuchsia-400/20 bg-fuchsia-400/10 px-4 py-2 text-sm text-fuchsia-300">
+        <span class="h-2 w-2 rounded-full bg-fuchsia-400"></span>
+        Concurrency Pattern
+      </div>
+
+      <div class="grid gap-12 md:grid-cols-2 md:items-center">
+        <div>
+          <h1 class="text-5xl font-bold tracking-tight md:text-6xl">
+            Thread-Specific <span class="text-fuchsia-400">Storage</span>
+          </h1>
+          <p class="mt-6 text-xl leading-8 text-slate-300">
+            Gives each thread its own isolated data.
+          </p>
+          <p class="mt-4 max-w-xl leading-7 text-slate-400">
+            Each thread accesses a private storage area, allowing local state
+            to remain isolated without interfering with data owned by other threads.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
+          <div class="mb-6 flex items-center justify-between">
+            <span class="text-sm font-medium text-slate-400">Thread isolation</span>
+            <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs text-emerald-400">
+              Isolated
+            </span>
+          </div>
+
+          <div class="space-y-4">
+            <div class="rounded-xl border border-blue-400/20 bg-blue-400/10 p-4">
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-blue-300">Thread A</span>
+                <span class="text-xs text-slate-500">Private storage</span>
+              </div>
+              <div class="mt-3 rounded-lg bg-slate-900/70 p-3 text-sm">
+                <span class="text-slate-400">session = </span>
+                <span class="text-blue-300">"A-102"</span>
+              </div>
+            </div>
+
+            <div class="rounded-xl border border-violet-400/20 bg-violet-400/10 p-4">
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-violet-300">Thread B</span>
+                <span class="text-xs text-slate-500">Private storage</span>
+              </div>
+              <div class="mt-3 rounded-lg bg-slate-900/70 p-3 text-sm">
+                <span class="text-slate-400">session = </span>
+                <span class="text-violet-300">"B-207"</span>
+              </div>
+            </div>
+
+            <div class="rounded-xl border border-emerald-400/20 bg-emerald-400/5 p-4 text-center">
+              <p class="font-semibold text-emerald-300">✓ No shared state</p>
+              <p class="mt-1 text-sm text-slate-400">
+                Each thread reads and writes only its own data.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
