@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lock Striping</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white flex items-center justify-center p-6">
+  <main class="w-full max-w-2xl">
+    <section class="rounded-3xl border border-slate-800 bg-slate-900 p-8 shadow-2xl">
+      <div class="mb-6 flex items-center gap-3">
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500/20 text-2xl">
+          🔐
+        </div>
+        <span class="rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-medium text-indigo-400">
+          Concurrency
+        </span>
+      </div>
+
+      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
+        Lock Striping
+      </h1>
+
+      <p class="mt-5 text-lg leading-8 text-slate-300">
+        Uses multiple locks to increase concurrency.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        <div class="rounded-2xl bg-slate-800/70 p-5">
+          <div class="text-2xl">🔒</div>
+          <h2 class="mt-3 font-semibold">Multiple Locks</h2>
+          <p class="mt-2 text-sm text-slate-400">
+            Data is divided across several independent locks.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-slate-800/70 p-5">
+          <div class="text-2xl">⚡</div>
+          <h2 class="mt-3 font-semibold">More Concurrency</h2>
+          <p class="mt-2 text-sm text-slate-400">
+            Threads can work on different sections simultaneously.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-slate-800/70 p-5">
+          <div class="text-2xl">📈</div>
+          <h2 class="mt-3 font-semibold">Better Throughput</h2>
+          <p class="mt-2 text-sm text-slate-400">
+            Less lock contention can improve overall performance.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-8 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-5">
+        <p class="text-sm font-medium text-indigo-300">Key idea</p>
+        <p class="mt-2 text-slate-300">
+          Instead of protecting everything with one lock, lock striping
+          distributes access across multiple locks.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
