@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaos Testing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white flex items-center justify-center px-6">
+  <main class="max-w-3xl text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full
+                bg-orange-500/10 border border-orange-400/20 text-orange-300 text-sm">
+      <span class="w-2 h-2 rounded-full bg-orange-400"></span>
+      Resilience Engineering
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+      Chaos <span class="text-orange-400">Testing</span>
+    </h1>
+
+    <p class="text-xl md:text-2xl text-slate-300 leading-relaxed mb-10">
+      Systematically introduce failures into distributed systems
+      to validate resilience.
+    </p>
+
+    <section class="grid md:grid-cols-3 gap-4 text-left">
+      <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+        <div class="text-2xl mb-3">⚡</div>
+        <h2 class="font-semibold mb-2">Inject Failure</h2>
+        <p class="text-sm text-slate-400">Simulate outages, latency, and resource exhaustion.</p>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+        <div class="text-2xl mb-3">🔍</div>
+        <h2 class="font-semibold mb-2">Observe</h2>
+        <p class="text-sm text-slate-400">Monitor system behavior, dependencies, and recovery.</p>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+        <div class="text-2xl mb-3">🛡️</div>
+        <h2 class="font-semibold mb-2">Validate Resilience</h2>
+        <p class="text-sm text-slate-400">Confirm the system survives and recovers as expected.</p>
+      </div>
+    </section>
+
+    <div class="mt-10 text-sm text-slate-500">
+      Break things safely. Learn. Improve. Repeat.
+    </div>
+  </main>
+</body>
+</html>
