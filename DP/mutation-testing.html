@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mutation Testing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="min-h-screen flex items-center justify-center px-6 py-16">
+    <div class="w-full max-w-5xl">
+
+      <header class="text-center mb-14">
+        <span class="inline-block px-4 py-2 rounded-full bg-fuchsia-500/10
+                     border border-fuchsia-500/20 text-fuchsia-400
+                     text-sm font-medium mb-5">
+          Test Quality
+        </span>
+
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+          Mutation <span class="text-fuchsia-400">Testing</span>
+        </h1>
+
+        <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-300 leading-relaxed">
+          Deliberately introduce small code changes ("mutants") to determine
+          whether the test suite catches them.
+        </p>
+      </header>
+
+      <section class="grid md:grid-cols-3 gap-5">
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/70 p-6
+                        hover:border-fuchsia-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-fuchsia-500/10 flex items-center
+                      justify-center text-2xl mb-5">🧬</div>
+          <h2 class="text-xl font-semibold mb-3">Create Mutants</h2>
+          <p class="text-slate-400 leading-relaxed">
+            Introduce controlled changes such as altered conditions,
+            operators, or return values into the code.
+          </p>
+        </article>
+
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/70 p-6
+                        hover:border-pink-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center
+                      justify-center text-2xl mb-5">🧪</div>
+          <h2 class="text-xl font-semibold mb-3">Run Tests</h2>
+          <p class="text-slate-400 leading-relaxed">
+            Execute the existing test suite against each mutant to see
+            whether incorrect behavior is detected.
+          </p>
+        </article>
+
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/70 p-6
+                        hover:border-violet-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center
+                      justify-center text-2xl mb-5">🛡️</div>
+          <h2 class="text-xl font-semibold mb-3">Measure Strength</h2>
+          <p class="text-slate-400 leading-relaxed">
+            Identify surviving mutants and strengthen tests where
+            important defects go undetected.
+          </p>
+        </article>
+      </section>
+
+      <section class="mt-8 rounded-2xl border border-slate-800 bg-slate-900 p-7">
+        <div class="flex flex-col md:flex-row md:items-center
+                    md:justify-between gap-5">
+          <div>
+            <p class="text-sm text-slate-500 uppercase tracking-wider mb-2">
+              Objective
+            </p>
+            <h3 class="text-xl font-semibold">
+              Verify that tests can detect meaningful code changes.
+            </h3>
+          </div>
+
+          <div class="px-5 py-3 rounded-xl bg-fuchsia-500/10 text-fuchsia-300
+                      border border-fuchsia-500/20 text-sm whitespace-nowrap">
+            Mutate → Test → Kill
+          </div>
+        </div>
+      </section>
+
+      <footer class="text-center mt-10 text-sm text-slate-600">
+        Stronger tests. Fewer blind spots. Higher confidence.
+      </footer>
+
+    </div>
+  </main>
+</body>
+</html>
