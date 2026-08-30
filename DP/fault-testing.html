@@ -1,0 +1,90 @@
+Here’s a single-page Tailwind HTML implementation, kept under 150 lines:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fault Injection Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="min-h-screen flex items-center justify-center px-6 py-16">
+    <div class="w-full max-w-5xl">
+      
+      <header class="text-center mb-14">
+        <span class="inline-block px-4 py-2 rounded-full bg-red-500/10
+                     border border-red-500/20 text-red-400 text-sm font-medium mb-5">
+          Resilience Engineering
+        </span>
+
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+          Fault Injection <span class="text-red-400">Pattern</span>
+        </h1>
+
+        <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-300 leading-relaxed">
+          Deliberately introduce failures such as timeouts, network errors,
+          or service crashes to test resilience.
+        </p>
+      </header>
+
+      <section class="grid md:grid-cols-3 gap-5">
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/70 p-6
+                        hover:border-red-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center
+                      justify-center text-2xl mb-5">⏱️</div>
+          <h2 class="text-xl font-semibold mb-3">Timeouts</h2>
+          <p class="text-slate-400 leading-relaxed">
+            Simulate delayed responses to verify that services handle
+            slow dependencies gracefully.
+          </p>
+        </article>
+
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/70 p-6
+                        hover:border-orange-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center
+                      justify-center text-2xl mb-5">🌐</div>
+          <h2 class="text-xl font-semibold mb-3">Network Errors</h2>
+          <p class="text-slate-400 leading-relaxed">
+            Introduce dropped connections or unreachable dependencies
+            to test retry and fallback behavior.
+          </p>
+        </article>
+
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/70 p-6
+                        hover:border-purple-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center
+                      justify-center text-2xl mb-5">💥</div>
+          <h2 class="text-xl font-semibold mb-3">Service Crashes</h2>
+          <p class="text-slate-400 leading-relaxed">
+            Stop individual services to validate automatic recovery,
+            failover, and system availability.
+          </p>
+        </article>
+      </section>
+
+      <section class="mt-8 rounded-2xl border border-slate-800 bg-slate-900 p-7">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+          <div>
+            <p class="text-sm text-slate-500 uppercase tracking-wider mb-2">
+              Objective
+            </p>
+            <h3 class="text-xl font-semibold">
+              Discover weaknesses before production does.
+            </h3>
+          </div>
+          <div class="px-5 py-3 rounded-xl bg-red-500/10 text-red-300
+                      border border-red-500/20 text-sm">
+            Inject → Observe → Recover
+          </div>
+        </div>
+      </section>
+
+      <footer class="text-center mt-10 text-sm text-slate-600">
+        Controlled failures. Measurable resilience.
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
