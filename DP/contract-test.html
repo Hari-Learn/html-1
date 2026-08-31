@@ -1,0 +1,74 @@
+I can create the HTML page, but I don’t have access to a code-generation canvas in this session. Here’s a compact Tailwind HTML page under 150 lines:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contract Test Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100">
+  <main class="mx-auto flex min-h-screen max-w-5xl items-center px-6 py-12">
+    <section class="w-full">
+      <div class="mb-10">
+        <span class="inline-flex rounded-full border border-cyan-400/30
+          bg-cyan-400/10 px-3 py-1 text-sm font-medium text-cyan-300">
+          Testing Pattern
+        </span>
+        <h1 class="mt-5 text-4xl font-bold tracking-tight sm:text-6xl">
+          Contract Test Pattern
+        </h1>
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
+          Verify that two services agree on their API/data contract without
+          requiring full end-to-end testing.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <div class="mb-4 text-2xl">🤝</div>
+          <h2 class="text-xl font-semibold">1. Define the Contract</h2>
+          <p class="mt-3 text-sm leading-6 text-slate-400">
+            Specify the request, response, fields, types, and expectations
+            shared between the consumer and provider.
+          </p>
+        </article>
+
+        <article class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <div class="mb-4 text-2xl">🧪</div>
+          <h2 class="text-xl font-semibold">2. Test Independently</h2>
+          <p class="mt-3 text-sm leading-6 text-slate-400">
+            Run focused contract tests against each service rather than
+            depending on a complete end-to-end environment.
+          </p>
+        </article>
+
+        <article class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <div class="mb-4 text-2xl">✅</div>
+          <h2 class="text-xl font-semibold">3. Catch Breakage Early</h2>
+          <p class="mt-3 text-sm leading-6 text-slate-400">
+            Detect incompatible API or data changes before they reach
+            integration or production environments.
+          </p>
+        </article>
+      </div>
+
+      <div class="mt-8 rounded-2xl border border-cyan-400/20 bg-cyan-400/5 p-6">
+        <h2 class="text-lg font-semibold text-cyan-300">Why use it?</h2>
+        <div class="mt-4 grid gap-4 text-sm text-slate-300 sm:grid-cols-2">
+          <div>• Faster feedback than full E2E tests</div>
+          <div>• Clear ownership between services</div>
+          <div>• Safer independent deployments</div>
+          <div>• Focused API compatibility checks</div>
+        </div>
+      </div>
+
+      <footer class="mt-10 border-t border-slate-800 pt-6 text-sm text-slate-500">
+        Contract testing helps distributed services evolve independently
+        while keeping their shared expectations explicit.
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
