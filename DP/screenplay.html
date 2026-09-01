@@ -1,0 +1,137 @@
+Here’s a single-page Tailwind design for Screenplay Pattern, under 150 lines:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screenplay Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="max-w-6xl mx-auto px-6 py-14">
+
+    <!-- Header -->
+    <section class="text-center mb-12">
+      <span class="inline-block bg-purple-500/10 text-purple-400 px-4 py-2 rounded-full
+                   text-sm font-semibold">
+        Test Automation Pattern
+      </span>
+
+      <h1 class="text-4xl md:text-5xl font-bold mt-5">
+        Screenplay <span class="text-purple-400">Pattern</span>
+      </h1>
+
+      <p class="text-slate-400 text-lg mt-4 max-w-3xl mx-auto">
+        Models tests around <span class="text-white font-semibold">actors, tasks, and interactions</span>,
+        making automated tests readable, reusable, and scalable.
+      </p>
+    </section>
+
+    <!-- Core Concepts -->
+    <section class="grid md:grid-cols-3 gap-6 mb-10">
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="w-12 h-12 flex items-center justify-center rounded-xl
+                    bg-purple-500/10 text-2xl mb-5">👤</div>
+        <h2 class="text-xl font-bold mb-2">Actor</h2>
+        <p class="text-slate-400">
+          Represents a user or system that performs actions and has abilities.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="w-12 h-12 flex items-center justify-center rounded-xl
+                    bg-blue-500/10 text-2xl mb-5">🎯</div>
+        <h2 class="text-xl font-bold mb-2">Task</h2>
+        <p class="text-slate-400">
+          Represents a meaningful business goal performed by an actor.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="w-12 h-12 flex items-center justify-center rounded-xl
+                    bg-green-500/10 text-2xl mb-5">⚡</div>
+        <h2 class="text-xl font-bold mb-2">Interaction</h2>
+        <p class="text-slate-400">
+          Represents individual actions an actor performs with the application.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- Flow -->
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-7 mb-10">
+      <h2 class="text-2xl font-bold mb-6">How It Works</h2>
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="bg-purple-500/10 border border-purple-500/20 rounded-xl px-6 py-4 text-center">
+          <div class="text-purple-400 font-bold">Actor</div>
+          <div class="text-sm text-slate-400">Who?</div>
+        </div>
+
+        <div class="text-slate-600 text-2xl">→</div>
+
+        <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl px-6 py-4 text-center">
+          <div class="text-blue-400 font-bold">Task</div>
+          <div class="text-sm text-slate-400">What goal?</div>
+        </div>
+
+        <div class="text-slate-600 text-2xl">→</div>
+
+        <div class="bg-green-500/10 border border-green-500/20 rounded-xl px-6 py-4 text-center">
+          <div class="text-green-400 font-bold">Interactions</div>
+          <div class="text-sm text-slate-400">How?</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Example -->
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-7">
+      <h2 class="text-2xl font-bold mb-4">Example Scenario</h2>
+
+      <pre class="bg-slate-950 rounded-xl p-5 overflow-x-auto text-sm leading-6">
+<code><span class="text-purple-400">Actor</span>: John
+
+<span class="text-blue-400">Task</span>: Login to the application
+
+<span class="text-green-400">Interactions</span>:
+  Enter username
+  Enter password
+  Click Login
+
+John.attemptsTo(
+    Login.withCredentials("john", "secret")
+);</code></pre>
+    </section>
+
+    <!-- Benefits -->
+    <section class="mt-10 grid md:grid-cols-2 gap-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <h2 class="text-xl font-bold mb-3">Why Use It?</h2>
+        <ul class="space-y-2 text-slate-400">
+          <li>✓ Business-readable tests</li>
+          <li>✓ Reusable tasks and interactions</li>
+          <li>✓ Clear separation of responsibilities</li>
+          <li>✓ Scales well for large test suites</li>
+        </ul>
+      </div>
+
+      <div class="bg-purple-500/5 border border-purple-500/20 rounded-2xl p-6">
+        <h2 class="text-xl font-bold mb-3 text-purple-400">Key Idea</h2>
+        <p class="text-slate-300">
+          Instead of focusing on pages, the Screenplay Pattern focuses on
+          <strong>what actors want to accomplish</strong> and the interactions
+          they use to achieve their goals.
+        </p>
+      </div>
+    </section>
+
+    <footer class="text-center text-slate-500 mt-10 text-sm">
+      Screenplay Pattern • Actors + Tasks + Interactions
+    </footer>
+
+  </main>
+</body>
+</html>
