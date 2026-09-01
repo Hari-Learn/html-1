@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Factory</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="max-w-5xl mx-auto px-6 py-16">
+
+    <section class="text-center mb-12">
+      <span class="bg-green-500/10 text-green-400 px-4 py-2 rounded-full text-sm font-semibold">
+        Selenium Automation
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold mt-5">
+        Page Factory
+      </h1>
+      <p class="text-slate-400 text-lg mt-4 max-w-2xl mx-auto">
+        Simplifies initialization of page objects, commonly used with Selenium.
+      </p>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-6 mb-10">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">⚙️</div>
+        <h2 class="text-xl font-semibold mb-2">Easy Initialization</h2>
+        <p class="text-slate-400">
+          Automatically initializes web elements inside page object classes.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">🔍</div>
+        <h2 class="text-xl font-semibold mb-2">Web Elements</h2>
+        <p class="text-slate-400">
+          Uses annotations such as <code class="text-green-400">@FindBy</code> to locate elements.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">🚀</div>
+        <h2 class="text-xl font-semibold mb-2">Cleaner Code</h2>
+        <p class="text-slate-400">
+          Reduces repetitive element initialization and improves readability.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+      <h2 class="text-2xl font-bold mb-4">Selenium Example</h2>
+      <pre class="bg-slate-950 rounded-xl p-5 overflow-x-auto text-sm text-green-300"><code>public class LoginPage {
+
+    @FindBy(id = "username")
+    WebElement username;
+
+    @FindBy(id = "password")
+    WebElement password;
+
+    @FindBy(id = "login")
+    WebElement loginButton;
+
+    public LoginPage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
+}</code></pre>
+    </section>
+
+    <footer class="text-center text-slate-500 mt-10 text-sm">
+      Page Factory makes Selenium page object initialization simpler and more organized.
+    </footer>
+
+  </main>
+</body>
+</html>
