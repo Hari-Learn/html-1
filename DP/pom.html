@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Object Model (POM)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <main class="max-w-5xl mx-auto px-6 py-16">
+    <section class="text-center mb-12">
+      <span class="inline-block bg-blue-500/10 text-blue-400 px-4 py-2 rounded-full text-sm font-semibold">
+        Test Automation
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold mt-5">
+        Page Object Model <span class="text-blue-400">(POM)</span>
+      </h1>
+      <p class="text-slate-400 text-lg mt-4 max-w-2xl mx-auto">
+        Encapsulates UI elements and actions for each page.
+      </p>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-6 mb-10">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">🧩</div>
+        <h2 class="text-xl font-semibold mb-2">Encapsulation</h2>
+        <p class="text-slate-400">
+          Keeps page elements and their interactions inside dedicated page classes.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">♻️</div>
+        <h2 class="text-xl font-semibold mb-2">Reusability</h2>
+        <p class="text-slate-400">
+          Reuse common actions across multiple test cases without duplicating code.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">🛠️</div>
+        <h2 class="text-xl font-semibold mb-2">Maintainability</h2>
+        <p class="text-slate-400">
+          UI changes can be updated in one place instead of every test.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+      <h2 class="text-2xl font-bold mb-4">Example Structure</h2>
+      <pre class="bg-slate-950 rounded-xl p-5 overflow-x-auto text-sm text-blue-300"><code>class LoginPage:
+    username = "#username"
+    password = "#password"
+    login_button = "#login"
+
+    def login(self, user, pwd):
+        fill(self.username, user)
+        fill(self.password, pwd)
+        click(self.login_button)</code></pre>
+    </section>
+
+    <footer class="text-center text-slate-500 mt-10 text-sm">
+      POM separates test logic from page-specific UI details.
+    </footer>
+  </main>
+</body>
+</html>
