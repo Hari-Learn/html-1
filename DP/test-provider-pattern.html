@@ -1,0 +1,112 @@
+Here’s a matching single-page Tailwind design for Test Environment Provider Pattern, under 100 lines:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Environment Provider Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="max-w-5xl mx-auto px-6 py-14">
+
+    <!-- Header -->
+    <section class="text-center mb-12">
+      <span class="inline-block bg-emerald-500/10 text-emerald-400 px-4 py-2 rounded-full text-sm font-semibold">
+        Test Automation Pattern
+      </span>
+
+      <h1 class="text-4xl md:text-5xl font-bold mt-5">
+        Test Environment <span class="text-emerald-400">Provider Pattern</span>
+      </h1>
+
+      <p class="text-slate-400 text-lg mt-4 max-w-3xl mx-auto">
+        Abstracts the <span class="text-white font-semibold">creation and management of test environments</span>
+        for consistent and repeatable test execution.
+      </p>
+    </section>
+
+    <!-- Core Concepts -->
+    <section class="grid md:grid-cols-3 gap-6 mb-10">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">🏗️</div>
+        <h2 class="text-xl font-bold mb-2">Create</h2>
+        <p class="text-slate-400">
+          Provides a standard way to provision the infrastructure required for testing.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">⚙️</div>
+        <h2 class="text-xl font-bold mb-2">Manage</h2>
+        <p class="text-slate-400">
+          Handles configuration, setup, health checks, and lifecycle management.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">🧹</div>
+        <h2 class="text-xl font-bold mb-2">Destroy</h2>
+        <p class="text-slate-400">
+          Cleans up environments after testing to avoid resource waste and conflicts.
+        </p>
+      </div>
+    </section>
+
+    <!-- Workflow -->
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-7 mb-10">
+      <h2 class="text-2xl font-bold mb-6">Environment Lifecycle</h2>
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center">
+        <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl px-5 py-4">
+          <div class="text-blue-400 font-bold">Request</div>
+          <div class="text-sm text-slate-500">Ask for environment</div>
+        </div>
+
+        <span class="text-slate-600 text-2xl">→</span>
+
+        <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-xl px-5 py-4">
+          <div class="text-emerald-400 font-bold">Provision</div>
+          <div class="text-sm text-slate-500">Create resources</div>
+        </div>
+
+        <span class="text-slate-600 text-2xl">→</span>
+
+        <div class="bg-purple-500/10 border border-purple-500/20 rounded-xl px-5 py-4">
+          <div class="text-purple-400 font-bold">Test</div>
+          <div class="text-sm text-slate-500">Run test suite</div>
+        </div>
+
+        <span class="text-slate-600 text-2xl">→</span>
+
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl px-5 py-4">
+          <div class="text-red-400 font-bold">Cleanup</div>
+          <div class="text-sm text-slate-500">Release resources</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Example -->
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-7">
+      <h2 class="text-2xl font-bold mb-4">Example</h2>
+
+      <pre class="bg-slate-950 rounded-xl p-5 overflow-x-auto text-sm text-emerald-300"><code>environment = provider.create({
+    browser: "Chrome",
+    database: "TestDB",
+    services: ["API", "Auth"]
+});
+
+runTests(environment);
+
+provider.destroy(environment);</code></pre>
+    </section>
+
+    <footer class="text-center text-slate-500 mt-8 text-sm">
+      Test Environment Provider • Provision • Test • Cleanup
+    </footer>
+
+  </main>
+</body>
+</html>
