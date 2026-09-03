@@ -1,0 +1,114 @@
+Here’s a matching single-page Tailwind design for Test Isolation Pattern, under 100 lines:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Isolation Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="max-w-5xl mx-auto px-6 py-14">
+
+    <!-- Header -->
+    <section class="text-center mb-12">
+      <span class="inline-block bg-rose-500/10 text-rose-400 px-4 py-2 rounded-full text-sm font-semibold">
+        Test Automation Pattern
+      </span>
+
+      <h1 class="text-4xl md:text-5xl font-bold mt-5">
+        Test Isolation <span class="text-rose-400">Pattern</span>
+      </h1>
+
+      <p class="text-slate-400 text-lg mt-4 max-w-3xl mx-auto">
+        Ensures <span class="text-white font-semibold">one test cannot affect another</span>
+        by keeping test data, state, and resources independent.
+      </p>
+    </section>
+
+    <!-- Core Concepts -->
+    <section class="grid md:grid-cols-3 gap-6 mb-10">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">🔒</div>
+        <h2 class="text-xl font-bold mb-2">Independent State</h2>
+        <p class="text-slate-400">
+          Each test starts with its own predictable state and does not rely on previous tests.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">🗄️</div>
+        <h2 class="text-xl font-bold mb-2">Separate Data</h2>
+        <p class="text-slate-400">
+          Test data is isolated so updates or deletions cannot impact other test cases.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">⚡</div>
+        <h2 class="text-xl font-bold mb-2">Safe Parallelism</h2>
+        <p class="text-slate-400">
+          Independent tests can run concurrently without creating unwanted interference.
+        </p>
+      </div>
+    </section>
+
+    <!-- Workflow -->
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-7 mb-10">
+      <h2 class="text-2xl font-bold mb-6">Isolation Workflow</h2>
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center">
+        <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl px-5 py-4">
+          <div class="text-blue-400 font-bold">Setup</div>
+          <div class="text-sm text-slate-500">Create clean state</div>
+        </div>
+
+        <span class="text-slate-600 text-2xl">→</span>
+
+        <div class="bg-rose-500/10 border border-rose-500/20 rounded-xl px-5 py-4">
+          <div class="text-rose-400 font-bold">Test A</div>
+          <div class="text-sm text-slate-500">Own data &amp; state</div>
+        </div>
+
+        <span class="text-slate-600 text-2xl">+</span>
+
+        <div class="bg-purple-500/10 border border-purple-500/20 rounded-xl px-5 py-4">
+          <div class="text-purple-400 font-bold">Test B</div>
+          <div class="text-sm text-slate-500">Own data &amp; state</div>
+        </div>
+
+        <span class="text-slate-600 text-2xl">→</span>
+
+        <div class="bg-green-500/10 border border-green-500/20 rounded-xl px-5 py-4">
+          <div class="text-green-400 font-bold">Cleanup</div>
+          <div class="text-sm text-slate-500">Reset resources</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Example -->
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-7">
+      <h2 class="text-2xl font-bold mb-4">Example</h2>
+
+      <pre class="bg-slate-950 rounded-xl p-5 overflow-x-auto text-sm text-rose-300"><code>testA = createIsolatedTest("A");
+testB = createIsolatedTest("B");
+
+testA.createUser("Alice");
+testB.createUser("Bob");
+
+run(testA);
+run(testB);
+
+// Changes in Test A
+// cannot affect Test B.</code></pre>
+    </section>
+
+    <footer class="text-center text-slate-500 mt-8 text-sm">
+      Test Isolation • Independent • Predictable • Parallel
+    </footer>
+
+  </main>
+</body>
+</html>
