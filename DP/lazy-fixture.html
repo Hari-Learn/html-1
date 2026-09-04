@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lazy Fixture Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 flex items-center justify-center p-6 text-white">
+  <main class="w-full max-w-3xl">
+    <section class="rounded-3xl bg-slate-900 border border-slate-800 p-8 shadow-2xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="h-3 w-3 rounded-full bg-violet-400"></span>
+        <span class="text-sm font-semibold uppercase tracking-widest text-violet-300">
+          Testing Pattern
+        </span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight">
+        Lazy Fixture Pattern
+      </h1>
+
+      <p class="mt-5 text-lg leading-8 text-slate-300">
+        Creates test dependencies only when they are actually needed.
+      </p>
+
+      <div class="mt-8 rounded-2xl bg-slate-950 border border-slate-800 p-6">
+        <p class="text-sm text-slate-500 mb-3">Concept</p>
+        <code class="text-violet-300 text-sm sm:text-base">
+          fixture ??= createFixture();
+        </code>
+      </div>
+
+      <div class="mt-8 grid sm:grid-cols-3 gap-4">
+        <div class="rounded-2xl bg-slate-800/70 p-5">
+          <h2 class="font-semibold">Creates</h2>
+          <p class="mt-2 text-sm text-slate-400">Dependencies on demand</p>
+        </div>
+        <div class="rounded-2xl bg-slate-800/70 p-5">
+          <h2 class="font-semibold">Avoids</h2>
+          <p class="mt-2 text-sm text-slate-400">Unnecessary setup work</p>
+        </div>
+        <div class="rounded-2xl bg-slate-800/70 p-5">
+          <h2 class="font-semibold">Improves</h2>
+          <p class="mt-2 text-sm text-slate-400">Test efficiency</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
