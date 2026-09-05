@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shared Fixture Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="flex min-h-screen items-center justify-center px-6">
+    <section class="w-full max-w-3xl rounded-2xl border border-slate-800 bg-slate-900 p-8 shadow-2xl">
+      <div class="mb-6">
+        <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-400">
+          Test Pattern
+        </span>
+      </div>
+
+      <h1 class="mb-4 text-4xl font-bold tracking-tight">
+        Shared Fixture Pattern
+      </h1>
+
+      <p class="mb-8 text-lg leading-relaxed text-slate-300">
+        Reuses expensive setup across multiple tests when isolation permits.
+      </p>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-xl border border-slate-800 bg-slate-950 p-5">
+          <h2 class="mb-2 font-semibold text-emerald-400">Shared Setup</h2>
+          <p class="text-sm leading-6 text-slate-400">
+            Create costly resources once and reuse them across multiple tests.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-slate-800 bg-slate-950 p-5">
+          <h2 class="mb-2 font-semibold text-cyan-400">Efficiency</h2>
+          <p class="text-sm leading-6 text-slate-400">
+            Reduce test runtime by avoiding repeated expensive initialization.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-6 rounded-xl border border-emerald-500/10 bg-emerald-500/5 p-5">
+        <p class="text-sm text-slate-400">
+          <span class="font-semibold text-emerald-400">Purpose:</span>
+          Improve test performance while maintaining sufficient isolation between tests.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
