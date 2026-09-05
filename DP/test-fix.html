@@ -1,0 +1,55 @@
+I can create that HTML page, but I can’t generate or attach the actual file in this session. Here’s a complete Tailwind HTML page under 100 lines that you can save as `index.html`:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Fixture Pattern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="flex min-h-screen items-center justify-center px-6">
+    <section class="w-full max-w-3xl rounded-2xl border border-slate-800 bg-slate-900 p-8 shadow-2xl">
+      <div class="mb-6 flex items-center gap-3">
+        <span class="rounded-lg bg-blue-500/10 px-3 py-1 text-sm font-medium text-blue-400">
+          Test Pattern
+        </span>
+      </div>
+
+      <h1 class="mb-4 text-4xl font-bold tracking-tight">
+        Test Fixture Pattern
+      </h1>
+
+      <p class="mb-8 text-lg leading-relaxed text-slate-300">
+        Establishes and cleans up the environment required by a test.
+      </p>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-5">
+          <h2 class="mb-2 font-semibold text-emerald-400">Establish</h2>
+          <p class="text-sm leading-6 text-slate-400">
+            Prepare the required data, services, and resources before the test runs.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-5">
+          <h2 class="mb-2 font-semibold text-rose-400">Clean Up</h2>
+          <p class="text-sm leading-6 text-slate-400">
+            Remove or reset resources after the test completes to keep tests isolated.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-6 rounded-xl bg-blue-500/5 p-5 ring-1 ring-inset ring-blue-500/10">
+        <p class="text-sm text-slate-400">
+          <span class="font-semibold text-blue-400">Purpose:</span>
+          Provide a predictable environment so each test can run reliably and independently.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+```
