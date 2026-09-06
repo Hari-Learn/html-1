@@ -1,0 +1,86 @@
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Object Mother Pattern</title>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100">
+  <main class="mx-auto max-w-5xl px-6 py-12">
+    <div class="mb-10">
+      <span class="rounded-full bg-indigo-500/10 px-3 py-1 text-sm text-indigo-400">
+        Test Data Pattern
+      </span>
+      <h1 class="mt-4 text-4xl font-bold">Mother Object / Object Mother</h1>
+      <p class="mt-3 max-w-2xl text-slate-400">
+        Provides predefined test-object configurations such as
+        <code class="text-indigo-400">validUser()</code> and
+        <code class="text-indigo-400">adminUser()</code>.
+      </p>
+    </div>
+
+    <section class="grid gap-6 md:grid-cols-2">
+      <article class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <h2 class="text-xl font-semibold">The Idea</h2>
+        <p class="mt-3 text-sm leading-6 text-slate-400">
+          Instead of creating complex test objects repeatedly, an Object Mother
+          centralizes reusable, meaningful configurations.
+        </p>
+        <div class="mt-6 rounded-xl bg-slate-950 p-4">
+          <code class="text-sm text-emerald-400">
+            UserMother.validUser()<br />
+            UserMother.adminUser()
+          </code>
+        </div>
+      </article>
+
+      <article class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <h2 class="text-xl font-semibold">Example</h2>
+        <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950 p-4 text-sm text-slate-300"><code>class UserMother {
+  static validUser() {
+    return {
+      name: "Alice",
+      role: "USER",
+      active: true
+    };
+  }
+
+  static adminUser() {
+    return {
+      ...this.validUser(),
+      role: "ADMIN"
+    };
+  }
+}</code></pre>
+      </article>
+    </section>
+
+    <section class="mt-8 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-6">
+      <h2 class="text-xl font-semibold">Why use it?</h2>
+      <div class="mt-5 grid gap-4 sm:grid-cols-3">
+        <div>
+          <div class="text-2xl">♻️</div>
+          <h3 class="mt-2 font-medium">Reusable</h3>
+          <p class="text-sm text-slate-400">Avoid duplicate test setup.</p>
+        </div>
+        <div>
+          <div class="text-2xl">🎯</div>
+          <h3 class="mt-2 font-medium">Readable</h3>
+          <p class="text-sm text-slate-400">Tests express intent clearly.</p>
+        </div>
+        <div>
+          <div class="text-2xl">🧩</div>
+          <h3 class="mt-2 font-medium">Maintainable</h3>
+          <p class="text-sm text-slate-400">Change defaults in one place.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-8 text-center text-sm text-slate-500">
+      Object Mother Pattern · Clean Test Data
+    </footer>
+  </main>
+</body>
+</html>
