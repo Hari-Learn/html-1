@@ -1,0 +1,98 @@
+Here’s a clean single-page Tailwind HTML example, kept under 100 lines, for the **Interaction Pattern**.
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Interaction Pattern</title>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="mx-auto max-w-5xl px-6 py-12">
+
+    <header class="mb-10">
+      <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-sm text-cyan-400">
+        Test Automation Pattern
+      </span>
+      <h1 class="mt-4 text-4xl font-bold">Interaction Pattern</h1>
+      <p class="mt-3 max-w-3xl text-slate-400">
+        Represents a single interaction such as clicking, typing, or calling an API.
+      </p>
+    </header>
+
+    <section class="grid gap-5 md:grid-cols-3">
+      <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <div class="text-3xl">🖱️</div>
+        <h2 class="mt-4 text-xl font-semibold">Click</h2>
+        <p class="mt-2 text-sm text-slate-400">
+          Represents a user clicking a button, link, or other UI element.
+        </p>
+        <code class="mt-4 block rounded-lg bg-slate-950 p-3 text-sm text-cyan-400">
+          Click.on("#login")
+        </code>
+      </div>
+
+      <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <div class="text-3xl">⌨️</div>
+        <h2 class="mt-4 text-xl font-semibold">Type</h2>
+        <p class="mt-2 text-sm text-slate-400">
+          Represents entering information into an input field.
+        </p>
+        <code class="mt-4 block rounded-lg bg-slate-950 p-3 text-sm text-emerald-400">
+          Enter.theValue("Alice")
+        </code>
+      </div>
+
+      <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <div class="text-3xl">🌐</div>
+        <h2 class="mt-4 text-xl font-semibold">API Call</h2>
+        <p class="mt-2 text-sm text-slate-400">
+          Represents an interaction with a backend service or API.
+        </p>
+        <code class="mt-4 block rounded-lg bg-slate-950 p-3 text-sm text-violet-400">
+          CallAPI.get("/users")
+        </code>
+      </div>
+    </section>
+
+    <section class="mt-8 rounded-2xl border border-slate-800 bg-slate-900 p-6">
+      <h2 class="text-xl font-semibold">Example Flow</h2>
+      <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div class="rounded-xl bg-cyan-500/10 px-5 py-4 text-center">
+          <span class="text-sm text-slate-400">1. Click</span>
+          <p class="font-semibold text-cyan-400">Login</p>
+        </div>
+        <span class="hidden text-slate-600 sm:block">→</span>
+        <div class="rounded-xl bg-emerald-500/10 px-5 py-4 text-center">
+          <span class="text-sm text-slate-400">2. Type</span>
+          <p class="font-semibold text-emerald-400">Credentials</p>
+        </div>
+        <span class="hidden text-slate-600 sm:block">→</span>
+        <div class="rounded-xl bg-violet-500/10 px-5 py-4 text-center">
+          <span class="text-sm text-slate-400">3. Call</span>
+          <p class="font-semibold text-violet-400">API</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-8 grid gap-4 sm:grid-cols-3">
+      <div class="rounded-xl bg-slate-900 p-5">
+        <h3 class="font-semibold text-cyan-400">Focused</h3>
+        <p class="mt-2 text-sm text-slate-400">One interaction has one clear responsibility.</p>
+      </div>
+      <div class="rounded-xl bg-slate-900 p-5">
+        <h3 class="font-semibold text-emerald-400">Reusable</h3>
+        <p class="mt-2 text-sm text-slate-400">Interactions can be composed into larger tasks.</p>
+      </div>
+      <div class="rounded-xl bg-slate-900 p-5">
+        <h3 class="font-semibold text-violet-400">Maintainable</h3>
+        <p class="mt-2 text-sm text-slate-400">Implementation details stay isolated.</p>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
+```
