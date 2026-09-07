@@ -1,0 +1,132 @@
+Here’s a polished single-page Tailwind HTML example, under 150 lines, explaining the **Question Pattern** and how it separates information retrieval from actions and assertions.
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Question Pattern</title>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="mx-auto max-w-6xl px-6 py-12">
+
+    <!-- Header -->
+    <header class="mb-10">
+      <span class="rounded-full bg-blue-400/10 px-3 py-1 text-sm text-blue-400">
+        Test Automation Pattern
+      </span>
+
+      <h1 class="mt-4 text-4xl font-bold tracking-tight">
+        Question Pattern
+      </h1>
+
+      <p class="mt-3 max-w-3xl text-slate-400">
+        Retrieves information from the application so assertions can be
+        separated from actions. It is commonly used with the Screenplay Pattern.
+      </p>
+    </header>
+
+    <!-- Flow -->
+    <section class="grid gap-5 md:grid-cols-3">
+
+      <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <div class="text-3xl">👤</div>
+        <h2 class="mt-4 text-xl font-semibold">Actor</h2>
+        <p class="mt-2 text-sm text-slate-400">
+          Performs tasks and interacts with the application.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-blue-500/30 bg-blue-500/5 p-6">
+        <div class="text-3xl">❓</div>
+        <h2 class="mt-4 text-xl font-semibold">Question</h2>
+        <p class="mt-2 text-sm text-slate-400">
+          Retrieves a value or state from the application.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-6">
+        <div class="text-3xl">✓</div>
+        <h2 class="mt-4 text-xl font-semibold">Assertion</h2>
+        <p class="mt-2 text-sm text-slate-400">
+          Verifies the answer without mixing validation with actions.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- Example -->
+    <section class="mt-8 rounded-2xl border border-slate-800 bg-slate-900 p-6">
+      <h2 class="text-xl font-semibold">Screenplay Example</h2>
+
+      <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950 p-5 text-sm leading-6 text-slate-300"><code>Question&lt;String&gt; welcomeMessage() {
+  return Text.of(WELCOME_MESSAGE);
+}
+
+actor.attemptsTo(
+  Login.withCredentials("alice", "secret")
+);
+
+actor.should(
+  seeThat(welcomeMessage(), equalTo("Welcome, Alice!"))
+);</code></pre>
+    </section>
+
+    <!-- Benefits -->
+    <section class="mt-8">
+      <h2 class="text-2xl font-semibold">Key Benefits</h2>
+
+      <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+        <div class="rounded-xl bg-slate-900 p-5">
+          <div class="text-xl">🧩</div>
+          <h3 class="mt-3 font-semibold text-blue-400">Separation</h3>
+          <p class="mt-2 text-sm text-slate-400">
+            Keeps actions and assertions independent.
+          </p>
+        </div>
+
+        <div class="rounded-xl bg-slate-900 p-5">
+          <div class="text-xl">♻️</div>
+          <h3 class="mt-3 font-semibold text-emerald-400">Reusable</h3>
+          <p class="mt-2 text-sm text-slate-400">
+            Questions can be reused across multiple scenarios.
+          </p>
+        </div>
+
+        <div class="rounded-xl bg-slate-900 p-5">
+          <div class="text-xl">📖</div>
+          <h3 class="mt-3 font-semibold text-violet-400">Readable</h3>
+          <p class="mt-2 text-sm text-slate-400">
+            Tests read naturally as behavior-focused statements.
+          </p>
+        </div>
+
+        <div class="rounded-xl bg-slate-900 p-5">
+          <div class="text-xl">🛠️</div>
+          <h3 class="mt-3 font-semibold text-amber-400">Maintainable</h3>
+          <p class="mt-2 text-sm text-slate-400">
+            UI retrieval logic stays isolated from test expectations.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="mt-8 rounded-2xl border border-blue-500/20 bg-blue-500/5 p-6">
+      <h2 class="text-lg font-semibold text-blue-400">Pattern in one line</h2>
+      <p class="mt-2 text-slate-300">
+        <span class="font-semibold">Actor</span> performs an action →
+        <span class="font-semibold">Question</span> retrieves the result →
+        <span class="font-semibold">Assertion</span> verifies it.
+      </p>
+    </section>
+
+  </main>
+</body>
+</html>
+```
