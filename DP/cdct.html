@@ -1,0 +1,99 @@
+Here’s another standalone Tailwind page for **Consumer-Driven Contract Testing**, kept under 100 lines.
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Consumer-Driven Contract Testing</title>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="mx-auto max-w-5xl px-6 py-12">
+
+    <header class="mb-10">
+      <span class="rounded-full bg-pink-400/10 px-3 py-1 text-sm text-pink-400">
+        API Testing Strategy
+      </span>
+      <h1 class="mt-4 text-4xl font-bold tracking-tight">
+        Consumer-Driven Contract Testing
+      </h1>
+      <p class="mt-3 max-w-3xl text-slate-400">
+        Ensures that a service provider continues to meet the expectations
+        defined by its consumers through executable contracts.
+      </p>
+    </header>
+
+    <section class="grid gap-5 md:grid-cols-3">
+      <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <div class="text-3xl">📱</div>
+        <h2 class="mt-4 text-xl font-semibold">Consumer</h2>
+        <p class="mt-2 text-sm text-slate-400">
+          Defines the API behavior and data it expects from the provider.
+        </p>
+        <div class="mt-4 rounded-lg bg-slate-950 p-3 text-sm text-pink-400">
+          GET /users/42
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center text-3xl text-pink-400 md:block md:pt-20 md:text-center">
+        →
+      </div>
+
+      <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <div class="text-3xl">☁️</div>
+        <h2 class="mt-4 text-xl font-semibold">Provider</h2>
+        <p class="mt-2 text-sm text-slate-400">
+          Verifies that its implementation satisfies the consumer contract.
+        </p>
+        <div class="mt-4 rounded-lg bg-slate-950 p-3 text-sm text-emerald-400">
+          200 + User JSON
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-8 rounded-2xl border border-pink-500/20 bg-pink-500/5 p-6">
+      <h2 class="text-xl font-semibold">Contract Example</h2>
+      <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950 p-5 text-sm leading-6 text-slate-300"><code>consumer.expects("User API")
+  .uponReceiving("a user request")
+  .withRequest("GET", "/users/42")
+  .willRespondWith(200, {
+    id: 42,
+    name: "Alice"
+  });</code></pre>
+    </section>
+
+    <section class="mt-8 grid gap-4 sm:grid-cols-3">
+      <div class="rounded-xl bg-slate-900 p-5">
+        <div class="text-2xl">🤝</div>
+        <h3 class="mt-3 font-semibold text-pink-400">Shared Expectations</h3>
+        <p class="mt-2 text-sm text-slate-400">
+          Consumers explicitly define what they need.
+        </p>
+      </div>
+
+      <div class="rounded-xl bg-slate-900 p-5">
+        <div class="text-2xl">🛡️</div>
+        <h3 class="mt-3 font-semibold text-emerald-400">Early Detection</h3>
+        <p class="mt-2 text-sm text-slate-400">
+          Finds breaking API changes before integration.
+        </p>
+      </div>
+
+      <div class="rounded-xl bg-slate-900 p-5">
+        <div class="text-2xl">🚀</div>
+        <h3 class="mt-3 font-semibold text-cyan-400">Independent Delivery</h3>
+        <p class="mt-2 text-sm text-slate-400">
+          Services can evolve and deploy independently with confidence.
+        </p>
+      </div>
+    </section>
+
+    <footer class="mt-8 rounded-xl bg-slate-900 p-5 text-center text-sm text-slate-400">
+      Consumer defines the contract → Provider verifies it → Integration stays reliable.
+    </footer>
+
+  </main>
+</body>
+</html>
