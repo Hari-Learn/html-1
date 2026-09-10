@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Failover Testing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="flex min-h-screen items-center justify-center px-6 py-12">
+    <section class="w-full max-w-4xl overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-2xl">
+      <div class="grid md:grid-cols-2">
+        <div class="bg-gradient-to-br from-violet-500 to-indigo-700 p-8 md:p-12">
+          <div class="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 text-2xl">
+            ⇆
+          </div>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-violet-100">
+            Software Testing
+          </p>
+          <h1 class="text-4xl font-bold leading-tight md:text-5xl">
+            Failover Testing
+          </h1>
+        </div>
+
+        <div class="p-8 md:p-12">
+          <h2 class="mb-4 text-xl font-semibold text-violet-400">
+            What does it test?
+          </h2>
+          <p class="mb-8 text-lg leading-relaxed text-slate-300">
+            Verifies automatic switching to backup systems.
+          </p>
+
+          <div class="space-y-4">
+            <div class="rounded-xl border border-slate-700 bg-slate-800/70 p-4">
+              <span class="font-semibold">Automatic Switching</span>
+              <p class="mt-1 text-sm text-slate-400">
+                Confirms systems switch to backups when failures occur.
+              </p>
+            </div>
+            <div class="rounded-xl border border-slate-700 bg-slate-800/70 p-4">
+              <span class="font-semibold">Backup Systems</span>
+              <p class="mt-1 text-sm text-slate-400">
+                Ensures backup resources are ready and operational.
+              </p>
+            </div>
+            <div class="rounded-xl border border-slate-700 bg-slate-800/70 p-4">
+              <span class="font-semibold">Service Continuity</span>
+              <p class="mt-1 text-sm text-slate-400">
+                Validates continued service with minimal interruption.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
