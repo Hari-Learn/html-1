@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volume Testing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="mx-auto flex min-h-screen max-w-6xl items-center px-6 py-12">
+    <div class="grid w-full gap-8 lg:grid-cols-2 lg:items-center">
+
+      <!-- Content -->
+      <section>
+        <div class="mb-6 inline-flex items-center gap-3 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2">
+          <span class="text-xl">🗄️</span>
+          <span class="text-sm font-semibold uppercase tracking-widest text-cyan-300">
+            Performance Testing
+          </span>
+        </div>
+
+        <h1 class="text-5xl font-bold tracking-tight md:text-6xl">
+          Volume Testing
+        </h1>
+
+        <p class="mt-6 max-w-xl text-xl leading-9 text-slate-300">
+          Tests behavior with extremely large amounts of data.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <span class="rounded-lg bg-slate-800 px-4 py-2 text-sm text-slate-300">
+            Large Datasets
+          </span>
+          <span class="rounded-lg bg-slate-800 px-4 py-2 text-sm text-slate-300">
+            Data Processing
+          </span>
+          <span class="rounded-lg bg-slate-800 px-4 py-2 text-sm text-slate-300">
+            Scalability
+          </span>
+        </div>
+      </section>
+
+      <!-- Visual -->
+      <section class="relative">
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
+          <div class="mb-6 flex items-center justify-between">
+            <div>
+              <p class="text-sm text-slate-400">Data Volume</p>
+              <p class="mt-1 text-2xl font-bold">1.8 TB</p>
+            </div>
+            <div class="rounded-xl bg-cyan-400/10 px-3 py-2 text-sm text-cyan-300">
+              High Load
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <div>
+              <div class="mb-2 flex justify-between text-sm">
+                <span class="text-slate-400">Database</span>
+                <span>92%</span>
+              </div>
+              <div class="h-3 rounded-full bg-slate-800">
+                <div class="h-3 w-[92%] rounded-full bg-cyan-400"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="mb-2 flex justify-between text-sm">
+                <span class="text-slate-400">Storage</span>
+                <span>78%</span>
+              </div>
+              <div class="h-3 rounded-full bg-slate-800">
+                <div class="h-3 w-[78%] rounded-full bg-blue-500"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="mb-2 flex justify-between text-sm">
+                <span class="text-slate-400">Processing</span>
+                <span>84%</span>
+              </div>
+              <div class="h-3 rounded-full bg-slate-800">
+                <div class="h-3 w-[84%] rounded-full bg-violet-500"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 grid grid-cols-2 gap-4">
+            <div class="rounded-2xl bg-slate-800 p-4">
+              <p class="text-xs text-slate-400">Records Tested</p>
+              <p class="mt-2 text-xl font-bold">240M+</p>
+            </div>
+            <div class="rounded-2xl bg-slate-800 p-4">
+              <p class="text-xs text-slate-400">Response Time</p>
+              <p class="mt-2 text-xl font-bold">1.42s</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</body>
+</html>
