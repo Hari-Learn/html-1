@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burst Testing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white flex items-center justify-center p-6">
+  <main class="w-full max-w-3xl">
+    <section class="rounded-3xl border border-slate-800 bg-slate-900 p-8 md:p-12 shadow-2xl">
+      <div class="mb-8 flex items-center gap-4">
+        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-500/15 text-2xl">
+          ⚡
+        </div>
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-widest text-orange-400">
+            Performance Testing
+          </p>
+          <h1 class="mt-1 text-3xl font-bold md:text-4xl">
+            Burst Testing
+          </h1>
+        </div>
+      </div>
+
+      <p class="max-w-2xl text-lg leading-8 text-slate-300">
+        Tests short, intense bursts of traffic or activity.
+      </p>
+
+      <div class="mt-10 grid gap-4 sm:grid-cols-3">
+        <div class="rounded-2xl bg-slate-800/70 p-5">
+          <div class="mb-3 text-orange-400">01</div>
+          <h2 class="font-semibold">Sudden Load</h2>
+          <p class="mt-2 text-sm text-slate-400">
+            Simulates rapid spikes in users or requests.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-slate-800/70 p-5">
+          <div class="mb-3 text-orange-400">02</div>
+          <h2 class="font-semibold">Stress Response</h2>
+          <p class="mt-2 text-sm text-slate-400">
+            Observes how the system reacts under pressure.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-slate-800/70 p-5">
+          <div class="mb-3 text-orange-400">03</div>
+          <h2 class="font-semibold">Recovery</h2>
+          <p class="mt-2 text-slate-400">
+            Checks whether performance returns to normal afterward.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
