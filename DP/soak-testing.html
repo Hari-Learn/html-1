@@ -1,0 +1,69 @@
+Here’s a single-file Tailwind HTML page, kept under 100 lines. It uses the Tailwind CDN for simplicity.
+
+ Soak Testing HTML Page
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soak Testing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="flex min-h-screen items-center justify-center px-6 py-12">
+    <section class="w-full max-w-3xl">
+      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/30
+                  bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-300">
+        <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+        Performance Testing
+      </div>
+
+      <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 shadow-2xl
+                  shadow-cyan-950/30 sm:p-12">
+        <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl
+                    bg-cyan-400/10 text-3xl text-cyan-400">
+          ⏱
+        </div>
+
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
+          Soak Testing
+        </h1>
+
+        <p class="mt-5 text-xl leading-8 text-slate-300">
+          Runs the system for a long period to detect gradual degradation.
+        </p>
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-3">
+          <div class="rounded-2xl bg-slate-800/70 p-5">
+            <p class="text-sm text-slate-400">Duration</p>
+            <p class="mt-2 font-semibold text-cyan-300">Long-term</p>
+          </div>
+          <div class="rounded-2xl bg-slate-800/70 p-5">
+            <p class="text-sm text-slate-400">Focus</p>
+            <p class="mt-2 font-semibold text-cyan-300">Stability</p>
+          </div>
+          <div class="rounded-2xl bg-slate-800/70 p-5">
+            <p class="text-sm text-slate-400">Detects</p>
+            <p class="mt-2 font-semibold text-cyan-300">Degradation</p>
+          </div>
+        </div>
+
+        <div class="mt-8 rounded-2xl border border-slate-700 bg-slate-950/60 p-6">
+          <h2 class="font-semibold text-white">What it reveals</h2>
+          <p class="mt-2 leading-7 text-slate-400">
+            Soak testing can expose memory leaks, resource exhaustion, performance
+            decline, connection issues, and other problems that appear only over time.
+          </p>
+        </div>
+      </div>
+
+      <p class="mt-6 text-center text-sm text-slate-500">
+        Continuous testing for reliable, long-running systems.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
+```
