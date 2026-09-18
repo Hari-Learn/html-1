@@ -1,0 +1,69 @@
+Here’s a single-file Tailwind HTML page for **Model-Based Testing**:
+
+ Model-Based Testing HTML Page
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model-Based Testing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="flex min-h-screen items-center justify-center px-6 py-12">
+    <section class="w-full max-w-3xl">
+      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-400/30
+                  bg-indigo-400/10 px-4 py-2 text-sm font-medium text-indigo-300">
+        <span class="h-2 w-2 rounded-full bg-indigo-400"></span>
+        Automated Testing
+      </div>
+
+      <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 shadow-2xl
+                  shadow-indigo-950/30 sm:p-12">
+        <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl
+                    bg-indigo-400/10 text-3xl">
+          🧩
+        </div>
+
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
+          Model-Based Testing
+        </h1>
+
+        <p class="mt-5 text-xl leading-8 text-slate-300">
+          Generates tests from a behavioral model of the system.
+        </p>
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-3">
+          <div class="rounded-2xl bg-slate-800/70 p-5">
+            <p class="text-sm text-slate-400">Source</p>
+            <p class="mt-2 font-semibold text-indigo-300">Behavioral Model</p>
+          </div>
+          <div class="rounded-2xl bg-slate-800/70 p-5">
+            <p class="text-sm text-slate-400">Approach</p>
+            <p class="mt-2 font-semibold text-indigo-300">Automated</p>
+          </div>
+          <div class="rounded-2xl bg-slate-800/70 p-5">
+            <p class="text-sm text-slate-400">Focus</p>
+            <p class="mt-2 font-semibold text-indigo-300">System Behavior</p>
+          </div>
+        </div>
+
+        <div class="mt-8 rounded-2xl border border-slate-700 bg-slate-950/60 p-6">
+          <h2 class="font-semibold">What it reveals</h2>
+          <p class="mt-2 leading-7 text-slate-400">
+            Model-based testing uses a model that describes expected system behavior,
+            states, and transitions to automatically generate test cases and verify
+            that the actual system follows the expected behavior.
+          </p>
+        </div>
+      </div>
+
+      <p class="mt-6 text-center text-sm text-slate-500">
+        Model the behavior. Generate the tests. Validate the system.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
