@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metamorphic Testing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <header class="text-center mb-12">
+      <span class="text-cyan-400 font-semibold tracking-widest">SOFTWARE TESTING</span>
+      <h1 class="text-5xl font-bold mt-3">Metamorphic Testing</h1>
+      <p class="text-slate-400 max-w-2xl mx-auto mt-4">
+        A testing technique that checks whether related inputs produce outputs
+        that follow an expected relationship.
+      </p>
+    </header>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-7 mb-8">
+      <h2 class="text-2xl font-bold mb-4">Core Idea</h2>
+      <div class="grid md:grid-cols-3 gap-4 text-center">
+        <div class="bg-slate-800 rounded-xl p-5">
+          <div class="text-3xl">📥</div>
+          <h3 class="font-semibold mt-2">Input</h3>
+          <p class="text-slate-400 text-sm mt-1">Provide an original test case.</p>
+        </div>
+        <div class="bg-slate-800 rounded-xl p-5">
+          <div class="text-3xl">🔄</div>
+          <h3 class="font-semibold mt-2">Transform</h3>
+          <p class="text-slate-400 text-sm mt-1">Create a related input.</p>
+        </div>
+        <div class="bg-slate-800 rounded-xl p-5">
+          <div class="text-3xl">🔍</div>
+          <h3 class="font-semibold mt-2">Compare</h3>
+          <p class="text-slate-400 text-sm mt-1">Check the expected output relation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="bg-cyan-500/10 border border-cyan-400/20 rounded-2xl p-6">
+        <h2 class="text-xl font-bold text-cyan-300">Metamorphic Relation</h2>
+        <p class="text-slate-300 mt-3">
+          It defines how the output should change when the input is transformed.
+        </p>
+        <div class="bg-slate-950 rounded-lg p-4 mt-4 font-mono text-sm text-cyan-200">
+          f(x) = y<br>
+          f(transform(x)) = expected(y)
+        </div>
+      </div>
+
+      <div class="bg-purple-500/10 border border-purple-400/20 rounded-2xl p-6">
+        <h2 class="text-xl font-bold text-purple-300">Example</h2>
+        <p class="text-slate-300 mt-3">
+          For a sorting function, adding an element and sorting again should
+          produce a correctly ordered list containing that element.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-7">
+      <h2 class="text-2xl font-bold mb-4">Benefits</h2>
+      <ul class="grid md:grid-cols-2 gap-3 text-slate-300">
+        <li>✓ Useful when exact expected outputs are difficult to determine</li>
+        <li>✓ Finds inconsistencies between related executions</li>
+        <li>✓ Works well for complex input-output systems</li>
+        <li>✓ Reduces dependence on manually generated test oracles</li>
+      </ul>
+    </section>
+
+    <footer class="text-center text-slate-500 mt-10">
+      Metamorphic Testing • Test relationships, not just individual outputs.
+    </footer>
+  </main>
+</body>
+</html>
