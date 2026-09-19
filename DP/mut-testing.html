@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mutation Testing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+  <div class="max-w-5xl mx-auto px-6 py-12">
+    <header class="text-center mb-12">
+      <span class="text-indigo-400 font-semibold tracking-wide">SOFTWARE TESTING</span>
+      <h1 class="text-5xl font-bold mt-3">Mutation Testing</h1>
+      <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+        A technique for evaluating the effectiveness of a test suite by introducing small,
+        deliberate changes into source code.
+      </p>
+    </header>
+
+    <section class="grid md:grid-cols-3 gap-5 mb-10">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-3">🧬</div>
+        <h2 class="text-xl font-semibold">Mutation</h2>
+        <p class="text-slate-400 mt-2">Create small defects called mutants by modifying the code.</p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-3">🧪</div>
+        <h2 class="text-xl font-semibold">Run Tests</h2>
+        <p class="text-slate-400 mt-2">Execute the existing test suite against each mutant.</p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-3">📊</div>
+        <h2 class="text-xl font-semibold">Measure</h2>
+        <p class="text-slate-400 mt-2">Use mutation scores to understand test-suite strength.</p>
+      </div>
+    </section>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-7 mb-8">
+      <h2 class="text-2xl font-bold mb-4">How It Works</h2>
+      <div class="space-y-3 text-slate-300">
+        <p><b class="text-indigo-400">1.</b> Start with working production code.</p>
+        <p><b class="text-indigo-400">2.</b> Apply mutation operators such as changing <code class="text-pink-400">+</code> to <code class="text-pink-400">-</code>.</p>
+        <p><b class="text-indigo-400">3.</b> Run the test suite against the mutated code.</p>
+        <p><b class="text-indigo-400">4.</b> A mutant is <b>killed</b> if a test detects the change.</p>
+        <p><b class="text-indigo-400">5.</b> A mutant that survives indicates a potential testing gap.</p>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-6">
+      <div class="bg-indigo-500/10 border border-indigo-400/20 rounded-2xl p-6">
+        <h2 class="text-xl font-bold text-indigo-300">Mutation Score</h2>
+        <p class="text-3xl font-bold mt-3">Killed Mutants / Total Mutants × 100</p>
+        <p class="text-slate-400 mt-3">A higher score generally means more introduced faults are detected by the tests.</p>
+      </div>
+      <div class="bg-emerald-500/10 border border-emerald-400/20 rounded-2xl p-6">
+        <h2 class="text-xl font-bold text-emerald-300">Common Operators</h2>
+        <ul class="text-slate-300 mt-3 space-y-2">
+          <li>• Arithmetic operator changes</li>
+          <li>• Relational operator changes</li>
+          <li>• Boolean expression changes</li>
+          <li>• Statement deletion</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="text-center text-slate-500 mt-10">
+      Mutation Testing • Find weaknesses in your tests, not just your code.
+    </footer>
+  </div>
+</body>
+</html>
