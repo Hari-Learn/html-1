@@ -1,0 +1,114 @@
+Sure — here’s a single Tailwind HTML page with **“Active-Active”** as the main content, kept under 150 lines.
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Active-Active</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="flex min-h-screen items-center justify-center px-6 py-12">
+    <section class="w-full max-w-5xl">
+
+      <!-- Header -->
+      <div class="mb-10 text-center">
+        <span class="inline-flex items-center gap-2 rounded-full border
+                     border-emerald-500/30 bg-emerald-500/10 px-4 py-2
+                     text-sm font-medium text-emerald-400">
+          <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+          High Availability
+        </span>
+
+        <h1 class="mt-5 text-5xl font-bold tracking-tight md:text-6xl">
+          Active-Active
+        </h1>
+
+        <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-400">
+          Both systems actively handle traffic, providing resilience,
+          scalability, and continuous availability.
+        </p>
+      </div>
+
+      <!-- Architecture -->
+      <div class="grid items-center gap-6 md:grid-cols-5">
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6
+                    text-center shadow-xl md:col-span-2">
+          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center
+                      rounded-xl bg-blue-500/10 text-2xl">
+            🖥️
+          </div>
+
+          <h2 class="text-xl font-semibold">Node A</h2>
+
+          <div class="mt-4 flex items-center justify-center gap-2">
+            <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+            <span class="text-sm text-emerald-400">Active</span>
+          </div>
+
+          <p class="mt-3 text-sm text-slate-500">
+            Handling live traffic
+          </p>
+        </div>
+
+        <div class="flex items-center justify-center">
+          <div class="hidden h-px w-full bg-gradient-to-r
+                      from-blue-500 to-emerald-500 md:block"></div>
+          <span class="absolute rounded-full border border-slate-700
+                       bg-slate-950 px-3 py-1 text-xs text-slate-400">
+            Sync
+          </span>
+        </div>
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6
+                    text-center shadow-xl md:col-span-2">
+          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center
+                      rounded-xl bg-emerald-500/10 text-2xl">
+            🖥️
+          </div>
+
+          <h2 class="text-xl font-semibold">Node B</h2>
+
+          <div class="mt-4 flex items-center justify-center gap-2">
+            <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+            <span class="text-sm text-emerald-400">Active</span>
+          </div>
+
+          <p class="mt-3 text-sm text-slate-500">
+            Handling live traffic
+          </p>
+        </div>
+      </div>
+
+      <!-- Benefits -->
+      <div class="mt-10 grid gap-4 sm:grid-cols-3">
+        <div class="rounded-xl border border-slate-800 bg-slate-900/70 p-5">
+          <h3 class="font-semibold">Zero Downtime</h3>
+          <p class="mt-2 text-sm text-slate-400">
+            Traffic continues when one node becomes unavailable.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-slate-800 bg-slate-900/70 p-5">
+          <h3 class="font-semibold">Load Distribution</h3>
+          <p class="mt-2 text-sm text-slate-400">
+            Both nodes process requests simultaneously.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-slate-800 bg-slate-900/70 p-5">
+          <h3 class="font-semibold">Failover</h3>
+          <p class="mt-2 text-sm text-slate-400">
+            Workload can continue on the remaining active node.
+          </p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+</body>
+</html>
