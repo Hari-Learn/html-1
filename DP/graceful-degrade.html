@@ -1,0 +1,70 @@
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graceful Degradation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-white flex items-center justify-center p-6">
+  <main class="w-full max-w-4xl">
+
+    <header class="text-center mb-10">
+      <span class="rounded-full bg-amber-500/10 px-4 py-2 text-sm text-amber-400">
+        Resilience Strategy
+      </span>
+      <h1 class="mt-5 text-5xl font-bold">Graceful Degradation</h1>
+      <p class="mt-4 text-slate-400">
+        Keep essential services running while temporarily reducing non-critical features.
+      </p>
+    </header>
+
+    <section class="rounded-2xl border border-slate-800 bg-slate-900 p-7 shadow-xl">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h2 class="text-xl font-semibold">System Status</h2>
+          <p class="text-sm text-slate-500">Reduced functionality mode</p>
+        </div>
+        <span class="flex items-center gap-2 text-amber-400">
+          <span class="h-3 w-3 rounded-full bg-amber-400"></span>
+          Degraded
+        </span>
+      </div>
+
+      <div class="space-y-4">
+        <div class="flex items-center justify-between rounded-xl bg-slate-800 p-4">
+          <span>Core Services</span>
+          <span class="text-emerald-400">● Available</span>
+        </div>
+
+        <div class="flex items-center justify-between rounded-xl bg-slate-800 p-4">
+          <span>Payments</span>
+          <span class="text-emerald-400">● Available</span>
+        </div>
+
+        <div class="flex items-center justify-between rounded-xl bg-slate-800 p-4">
+          <span>Recommendations</span>
+          <span class="text-slate-500">● Disabled</span>
+        </div>
+
+        <div class="flex items-center justify-between rounded-xl bg-slate-800 p-4">
+          <span>Analytics</span>
+          <span class="text-slate-500">● Delayed</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="mt-6 rounded-xl border border-slate-800 bg-slate-900/70 p-6">
+      <h3 class="font-semibold">How it works</h3>
+      <p class="mt-2 text-sm leading-6 text-slate-400">
+        When resources or dependencies become unavailable, the system
+        prioritizes critical operations and temporarily limits optional features.
+      </p>
+    </div>
+
+  </main>
+</body>
+</html>
+```
