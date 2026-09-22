@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 1 - Advanced Prompting</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <main class="max-w-6xl mx-auto px-6 py-10">
+    <header class="mb-10">
+      <p class="text-emerald-400 font-semibold tracking-wide">DAY 1 • ADVANCED PROMPTING</p>
+      <h1 class="text-4xl font-bold mt-2">Artifacts, Chaining, Evaluation & Injection</h1>
+      <p class="text-slate-400 mt-3">Turn individual prompts into repeatable and reliable workflows.</p>
+    </header>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      <section class="card"><h2>Artifacts</h2><p>Artifacts are substantial outputs intended for continued use or editing, such as documents, code, diagrams, or structured deliverables.</p></section>
+      <section class="card"><h2>Projects</h2><p>Projects organize related work, instructions, files, and conversations around an ongoing goal, helping maintain relevant context.</p></section>
+      <section class="card"><h2>Prompt Chaining</h2><p>Use multiple prompts in sequence where one step's output becomes the next step's input:<br><b>Research → Extract → Analyze → Draft → Review.</b></p></section>
+      <section class="card"><h2>Prompt Evaluation</h2><p>Test prompts using a fixed test set and criteria such as correctness, completeness, format compliance, consistency, and groundedness.</p></section>
+
+      <section class="card md:col-span-2">
+        <h2>Prompt Injection</h2>
+        <p>Prompt injection is an attempt to manipulate an AI system through untrusted content or instructions.</p>
+        <div class="grid sm:grid-cols-3 gap-3 mt-5">
+          <div class="step">1. Identify trusted instructions</div>
+          <div class="step">2. Treat external content as untrusted data</div>
+          <div class="step">3. Validate before taking action</div>
+        </div>
+      </section>
+
+      <section class="card md:col-span-2">
+        <h2>Reusable Prompt Template</h2>
+        <pre class="bg-slate-950 border border-slate-700 rounded-lg p-4 overflow-auto text-emerald-300">ROLE: You are a {role}.
+
+TASK: {task}
+
+CONTEXT:
+{relevant_context}
+
+CONSTRAINTS:
+- {constraint_1}
+- {constraint_2}
+
+OUTPUT FORMAT:
+{format}
+
+QUALITY CHECK:
+- Verify against the provided context.
+- State uncertainty instead of inventing facts.</pre>
+      </section>
+
+      <section class="card md:col-span-2">
+        <h2>Day-1 Workflow</h2>
+        <p class="text-lg">Define the <b>task</b> → add <b>context</b> → set <b>constraints</b> → choose <b>role</b> → use examples when useful → decompose complex work → ground the answer → evaluate → iterate.</p>
+      </section>
+    </div>
+  </main>
+  <style>
+    .card{background:#0f172a;border:1px solid #334155;border-radius:1rem;padding:1.4rem}
+    .card h2{font-size:1.25rem;font-weight:700;color:#6ee7b7;margin-bottom:.55rem}
+    .card p{color:#cbd5e1;line-height:1.7}
+    .step{border:1px solid #334155;border-radius:.75rem;padding:.8rem;color:#cbd5e1}
+  </style>
+</body>
+</html>
