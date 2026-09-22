@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Channel Adapter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="mx-auto flex min-h-screen max-w-5xl items-center px-6 py-16">
+    <section class="w-full">
+      <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-teal-400/20 bg-teal-400/10 px-4 py-2 text-sm text-teal-300">
+        <span class="h-2 w-2 rounded-full bg-teal-400"></span>
+        Messaging Integration
+      </div>
+
+      <div class="grid gap-12 md:grid-cols-2 md:items-center">
+        <div>
+          <h1 class="text-5xl font-bold tracking-tight md:text-6xl">
+            Channel <span class="text-teal-400">Adapter</span>
+          </h1>
+          <p class="mt-6 text-xl leading-8 text-slate-300">
+            Connects external systems to messaging channels.
+          </p>
+          <p class="mt-4 max-w-xl leading-7 text-slate-400">
+            A channel adapter translates external protocols and data formats
+            into messages that can flow through a messaging system.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
+          <div class="mb-6 flex items-center justify-between">
+            <span class="text-sm font-medium text-slate-400">Integration flow</span>
+            <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs text-emerald-400">
+              Connected
+            </span>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-center justify-between rounded-xl bg-slate-800 p-4">
+              <div>
+                <p class="font-semibold text-blue-300">External System</p>
+                <p class="text-xs text-slate-500">HTTP / API</p>
+              </div>
+              <span class="text-teal-400">→</span>
+            </div>
+
+            <div class="rounded-xl border border-teal-400/20 bg-teal-400/10 p-5 text-center">
+              <p class="font-semibold text-teal-300">Channel Adapter</p>
+              <p class="mt-1 text-sm text-slate-400">
+                Translates and routes messages
+              </p>
+            </div>
+
+            <div class="flex items-center justify-between rounded-xl bg-slate-800 p-4">
+              <div>
+                <p class="font-semibold text-violet-300">Messaging Channel</p>
+                <p class="text-xs text-slate-500">Normalized messages</p>
+              </div>
+              <span class="text-emerald-400">✓</span>
+            </div>
+
+            <div class="rounded-xl bg-slate-800 p-4 text-center text-sm text-slate-400">
+              External protocols stay isolated from the messaging layer.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
