@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 1 - Model Behavior</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <main class="max-w-6xl mx-auto px-6 py-10">
+    <header class="mb-10">
+      <p class="text-violet-400 font-semibold tracking-wide">DAY 1 • MODEL BEHAVIOR</p>
+      <h1 class="text-4xl font-bold mt-2">Context, Tokens & Reliability</h1>
+      <p class="text-slate-400 mt-3">Understand how model context and generation affect prompt results.</p>
+    </header>
+
+    <div class="space-y-5">
+      <section class="card"><h2>Context Window</h2><p>The context window is the amount of input and output information a model can handle in a request or conversation. More context is useful, but relevant context is more valuable than unnecessary content.</p></section>
+      <section class="card"><h2>Token</h2><p>A token is a unit used by the model to process text. Words, parts of words, punctuation, and spaces may be represented by different token units. Token count is not the same as word count.</p></section>
+      <section class="card"><h2>Temperature</h2><p>Temperature is a generation-control setting in systems that expose it. Lower values generally produce more focused and predictable outputs; higher values can increase variation.</p></section>
+      <section class="card"><h2>Hallucination</h2><p>A hallucination is a response that sounds plausible but contains unsupported, fabricated, or incorrect information.</p></section>
+      <section class="card"><h2>Grounding</h2><p>Grounding means connecting the response to trusted information or supplied evidence. Example: "Answer only from the provided document. If the answer is absent, say so."</p></section>
+      <section class="card"><h2>Task Decomposition</h2><p>Break a complex task into smaller steps:<br><b>Extract facts → Classify → Analyze → Draft → Check constraints → Final answer.</b></p></section>
+      <section class="card"><h2>Iteration</h2><p>Prompting is iterative: create a prompt → inspect output → identify failure → improve instructions/context/examples → test again.</p></section>
+    </div>
+  </main>
+  <style>
+    .card{background:#0f172a;border:1px solid #334155;border-radius:1rem;padding:1.4rem}
+    .card h2{font-size:1.25rem;font-weight:700;color:#c4b5fd;margin-bottom:.55rem}
+    .card p{color:#cbd5e1;line-height:1.7}
+  </style>
+</body>
+</html>
