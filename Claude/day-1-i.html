@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 1 - Prompting Foundations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <main class="max-w-6xl mx-auto px-6 py-10">
+    <header class="mb-10">
+      <p class="text-cyan-400 font-semibold tracking-wide">DAY 1 • FOUNDATIONS</p>
+      <h1 class="text-4xl font-bold mt-2">Claude & Prompting Foundations</h1>
+      <p class="text-slate-400 mt-3">Core concepts for writing clear, useful prompts.</p>
+    </header>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <section class="card"><h2>What is Claude?</h2><p>Claude is an AI assistant/model family from Anthropic. You provide instructions and context, and it generates responses based on that input.</p></section>
+      <section class="card"><h2>Task</h2><p>The task is the specific outcome you want: summarize, classify, explain, extract, transform, generate, or analyze.</p></section>
+      <section class="card"><h2>Context</h2><p>Relevant background information that helps Claude understand the situation, data, audience, and purpose.</p></section>
+      <section class="card"><h2>Constraints</h2><p>Rules that limit the output, such as length, format, tone, required fields, exclusions, or source requirements.</p></section>
+      <section class="card"><h2>Roles</h2><p>A role frames the perspective or responsibility: tutor, reviewer, analyst, developer, technical writer, and so on.</p></section>
+      <section class="card"><h2>Clear vs Vague</h2><p><b>Vague:</b> "Write about APIs."<br><b>Clear:</b> "Explain REST APIs to a beginner in 5 bullets with one example."</p></section>
+      <section class="card"><h2>Zero-Shot Prompting</h2><p>Give the task without examples. The model must follow the instruction directly.</p></section>
+      <section class="card"><h2>Few-Shot Prompting</h2><p>Give a few input → output examples so the model can learn the expected pattern, style, or classification.</p></section>
+      <section class="card"><h2>System vs User Instruction</h2><p>System instructions define higher-level behavior and rules. User instructions specify the requested task within those rules.</p></section>
+      <section class="card"><h2>Prompt Template</h2><p>Reusable prompt structure with variables:<br><code>Task: {task}<br>Context: {context}<br>Output: {format}</code></p></section>
+    </div>
+  </main>
+  <style>
+    .card{background:#0f172a;border:1px solid #334155;border-radius:1rem;padding:1.25rem}
+    .card h2{font-size:1.15rem;font-weight:700;color:#67e8f9;margin-bottom:.6rem}
+    .card p{color:#cbd5e1;line-height:1.65}
+    code{color:#a5b4fc}
+  </style>
+</body>
+</html>
