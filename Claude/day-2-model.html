@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 2 — Claude | Models & API Fundamentals</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-slate-100">
+
+  <div class="max-w-6xl mx-auto px-6 py-10">
+
+    <!-- Header -->
+    <header class="mb-10">
+      <div class="inline-block px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-sm font-semibold">
+        CLAUDE FOUNDATION • DAY 2
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mt-4">
+        Models & API Fundamentals
+      </h1>
+
+      <p class="text-slate-400 mt-4 text-lg">
+        Learn Claude model families, model selection, API messages,
+        system prompts, and request parameters.
+      </p>
+    </header>
+
+    <!-- Models -->
+    <section class="grid md:grid-cols-3 gap-6 mb-8">
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">🧠</div>
+        <h2 class="text-2xl font-bold text-purple-400">Opus</h2>
+
+        <p class="text-slate-300 mt-3">
+          Designed for demanding tasks that require strong reasoning,
+          complex analysis, coding, and difficult problem solving.
+        </p>
+
+        <div class="mt-5 bg-purple-500/10 border border-purple-500/20 rounded-xl p-4">
+          <b>Think:</b> Maximum capability
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">⚡</div>
+        <h2 class="text-2xl font-bold text-cyan-400">Sonnet</h2>
+
+        <p class="text-slate-300 mt-3">
+          A balanced model for many general-purpose applications,
+          combining capability, speed, and cost.
+        </p>
+
+        <div class="mt-5 bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-4">
+          <b>Think:</b> Balanced choice
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-4">🚀</div>
+        <h2 class="text-2xl font-bold text-emerald-400">Haiku</h2>
+
+        <p class="text-slate-300 mt-3">
+          Optimized for fast and lightweight workloads where low latency
+          and efficient processing are important.
+        </p>
+
+        <div class="mt-5 bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4">
+          <b>Think:</b> Fast & efficient
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Choosing Model -->
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-8">
+
+      <h2 class="text-2xl font-bold mb-5">
+        2. Choosing the Right Model
+      </h2>
+
+      <div class="overflow-x-auto">
+
+        <table class="w-full text-left">
+          <thead>
+            <tr class="border-b border-slate-700">
+              <th class="py-3">Requirement</th>
+              <th class="py-3">Consider</th>
+              <th class="py-3">Reason</th>
+            </tr>
+          </thead>
+
+          <tbody class="text-slate-300">
+
+            <tr class="border-b border-slate-800">
+              <td class="py-4">Complex reasoning</td>
+              <td class="text-purple-400 font-semibold">Opus</td>
+              <td>Higher capability for difficult tasks</td>
+            </tr>
+
+            <tr class="border-b border-slate-800">
+              <td class="py-4">General applications</td>
+              <td class="text-cyan-400 font-semibold">Sonnet</td>
+              <td>Good balance of quality and efficiency</td>
+            </tr>
+
+            <tr>
+              <td class="py-4">High-volume simple tasks</td>
+              <td class="text-emerald-400 font-semibold">Haiku</td>
+              <td>Fast and efficient processing</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="mt-6 bg-amber-500/10 border border-amber-500/20 rounded-xl p-5">
+        <b class="text-amber-400">Exam concept:</b>
+        <span class="text-slate-300">
+          Model selection is a trade-off involving capability,
+          latency, and cost.
+        </span>
+      </div>
+
+    </section>
+
+    <!-- Claude API -->
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-8">
+
+      <h2 class="text-2xl font-bold mb-4">
+        3. Claude API & Model
+      </h2>
+
+      <p class="text-slate-300">
+        The Claude API allows applications to communicate with Claude
+        programmatically.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-4 mt-6">
+
+        <div class="bg-slate-800 rounded-xl p-5">
+          <div class="text-2xl">📤</div>
+          <h3 class="font-bold mt-2">Request</h3>
+          <p class="text-slate-400 text-sm mt-2">
+            Application sends instructions and data.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 rounded-xl p-5">
+          <div class="text-2xl">🤖</div>
+          <h3 class="font-bold mt-2">Claude</h3>
+          <p class="text-slate-400 text-sm mt-2">
+            Selected model processes the request.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 rounded-xl p-5">
+          <div class="text-2xl">📥</div>
+          <h3 class="font-bold mt-2">Response</h3>
+          <p class="text-slate-400 text-sm mt-2">
+            Application receives generated output.
+          </p>
+        </div>
+
+      </div>
+
+      <pre class="mt-6 bg-black rounded-xl p-5 overflow-x-auto text-cyan-300 text-sm">{
+  "model": "claude-model-id",
+  "max_tokens": 1024,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain APIs simply."
+    }
+  ]
+}</pre>
+
+    </section>
+
+    <!-- Roles -->
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-8">
+
+      <h2 class="text-2xl font-bold mb-5">
+        4. API Message Roles
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-5">
+
+        <div class="bg-slate-800 rounded-xl p-5">
+          <span class="text-blue-400 font-bold">USER</span>
+
+          <p class="text-slate-300 mt-3">
+            Contains the user's request, question, data,
+            or task instructions.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 rounded-xl p-5">
+          <span class="text-green-400 font-bold">ASSISTANT</span>
+
+          <p class="text-slate-300 mt-3">
+            Represents Claude's response or previous assistant
+            conversation content.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 rounded-xl p-5">
+          <span class="text-purple-400 font-bold">SYSTEM</span>
+
+          <p class="text-slate-300 mt-3">
+            Provides high-level behavior, role, rules,
+            and context for Claude.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- System Prompt -->
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-8">
+
+      <h2 class="text-2xl font-bold mb-4">
+        5. System Prompts
+      </h2>
+
+      <p class="text-slate-300">
+        A system prompt establishes the behavior and operating context
+        that Claude should follow.
+      </p>
+
+      <div class="mt-5 bg-black rounded-xl p-5">
+        <p class="text-slate-500 text-sm mb-2">Example</p>
+
+        <p class="text-cyan-300">
+          "You are a concise technical tutor.
+          Explain concepts using simple examples."
+        </p>
+      </div>
+
+      <div class="mt-5 bg-purple-500/10 border border-purple-500/20 rounded-xl p-5">
+        <b>Remember:</b>
+        System instructions and user task instructions serve different
+        purposes in an API interaction.
+      </div>
+
+    </section>
+
+    <!-- Parameters -->
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+
+      <h2 class="text-2xl font-bold mb-5">
+        6. API Request Parameters
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="bg-slate-800 p-5 rounded-xl">
+          <code class="text-cyan-400">model</code>
+          <p class="text-slate-400 mt-2">
+            Specifies which Claude model should process the request.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 p-5 rounded-xl">
+          <code class="text-cyan-400">max_tokens</code>
+          <p class="text-slate-400 mt-2">
+            Sets the maximum number of output tokens requested.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 p-5 rounded-xl">
+          <code class="text-cyan-400">messages</code>
+          <p class="text-slate-400 mt-2">
+            Contains the conversation input.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 p-5 rounded-xl">
+          <code class="text-cyan-400">system</code>
+          <p class="text-slate-400 mt-2">
+            Supplies high-level instructions and context.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Summary -->
+    <section class="mt-8 bg-cyan-500/10 border border-cyan-500/20 rounded-2xl p-6">
+
+      <h2 class="text-xl font-bold text-cyan-400">
+        📝 Day 2 Quick Memory
+      </h2>
+
+      <p class="text-slate-300 mt-3">
+        <b>Model</b> = capability choice |
+        <b>System</b> = behavior/context |
+        <b>Messages</b> = conversation |
+        <b>Parameters</b> = request controls
+      </p>
+
+    </section>
+
+  </div>
+
+</body>
+</html>
