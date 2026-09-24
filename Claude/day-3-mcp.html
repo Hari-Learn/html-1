@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Agent Reliability & MCP</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+<div class="max-w-5xl mx-auto p-6 space-y-6">
+<header>
+<p class="text-emerald-400 font-bold">CLAUDE • AGENT RELIABILITY</p>
+<h1 class="text-4xl font-bold mt-2">📊 Evaluation, Observability & MCP</h1>
+<p class="text-slate-400 mt-2">Measure agents, understand failures, and connect tools through MCP.</p>
+</header>
+
+<section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold">9. 📊 Agent Evaluation</h2>
+<p class="text-slate-300 mt-3">Evaluation measures whether an agent completes tasks correctly and reliably.</p>
+<div class="grid md:grid-cols-3 gap-4 mt-5">
+<div class="bg-slate-800 p-4 rounded-xl"><b>Accuracy</b><p class="text-slate-400 text-sm mt-2">Was the result correct?</p></div>
+<div class="bg-slate-800 p-4 rounded-xl"><b>Success</b><p class="text-slate-400 text-sm mt-2">Was the goal completed?</p></div>
+<div class="bg-slate-800 p-4 rounded-xl"><b>Efficiency</b><p class="text-slate-400 text-sm mt-2">How many steps/tools were used?</p></div>
+</div>
+</section>
+
+<section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold">10. 👀 Agent Observability</h2>
+<p class="text-slate-300 mt-3">Observability helps developers understand what an agent did and why a run succeeded or failed.</p>
+<ul class="mt-4 space-y-2 text-slate-400">
+<li>• Logs → recorded events</li><li>• Traces → sequence of agent steps</li>
+<li>• Metrics → latency, errors, tool calls</li><li>• Tool results → external actions and responses</li>
+</ul>
+</section>
+
+<section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold">11. ⚠️ Agent Failure Modes</h2>
+<div class="grid md:grid-cols-2 gap-4 mt-5">
+<div class="bg-red-500/10 border border-red-500/20 p-4 rounded-xl">❌ Wrong tool selection</div>
+<div class="bg-red-500/10 border border-red-500/20 p-4 rounded-xl">❌ Incorrect planning</div>
+<div class="bg-red-500/10 border border-red-500/20 p-4 rounded-xl">❌ Hallucinated information</div>
+<div class="bg-red-500/10 border border-red-500/20 p-4 rounded-xl">❌ Tool/API failure</div>
+<div class="bg-red-500/10 border border-red-500/20 p-4 rounded-xl">❌ Infinite or excessive loops</div>
+<div class="bg-red-500/10 border border-red-500/20 p-4 rounded-xl">❌ Unsafe action</div>
+</div>
+<div class="mt-5 bg-amber-500/10 border border-amber-500/20 rounded-xl p-4"><b>Reduce failures with:</b> guardrails + validation + HITL + testing + observability.</div>
+</section>
+
+<section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold">12. 🔌 MCP — Model Context Protocol</h2>
+<p class="text-slate-300 mt-3">MCP is an open protocol for connecting AI applications to external tools and data sources through a standardized interface.</p>
+<div class="flex flex-wrap items-center justify-center gap-3 mt-5 text-center">
+<div class="bg-slate-800 p-4 rounded-xl">🤖 AI App</div><b>↔</b>
+<div class="bg-emerald-500/20 border border-emerald-500/30 p-4 rounded-xl">🔌 MCP</div><b>↔</b>
+<div class="bg-slate-800 p-4 rounded-xl">🛠️ Tools / Data</div>
+</div>
+<div class="grid md:grid-cols-3 gap-3 mt-5">
+<div class="bg-slate-800 p-4 rounded-xl"><b>Tools</b><p class="text-slate-400 text-sm mt-1">Actions an AI can request.</p></div>
+<div class="bg-slate-800 p-4 rounded-xl"><b>Resources</b><p class="text-slate-400 text-sm mt-1">Context/data exposed to the AI.</p></div>
+<div class="bg-slate-800 p-4 rounded-xl"><b>Servers</b><p class="text-slate-400 text-sm mt-1">Provide MCP capabilities.</p></div>
+</div>
+</section>
+
+<section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold">🧩 Agent Mental Model</h2>
+<div class="flex flex-wrap justify-center gap-2 mt-5">
+<span class="bg-slate-800 px-4 py-2 rounded-lg">Goal</span><span>→</span>
+<span class="bg-slate-800 px-4 py-2 rounded-lg">Plan</span><span>→</span>
+<span class="bg-slate-800 px-4 py-2 rounded-lg">Tool</span><span>→</span>
+<span class="bg-slate-800 px-4 py-2 rounded-lg">Observe</span><span>→</span>
+<span class="bg-slate-800 px-4 py-2 rounded-lg">Evaluate</span><span>→</span>
+<span class="bg-emerald-500/20 px-4 py-2 rounded-lg">Complete</span>
+</div>
+</section>
+
+<div class="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-5">
+<b>🧠 Quick Memory:</b>
+Evaluation = measure • Observability = see what happened • Failure modes = ways agents go wrong • MCP = standardized connection between AI apps and external tools/data.
+</div>
+</div>
+</body>
+</html>
