@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Agents vs Chatbots</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+<div class="max-w-5xl mx-auto p-6 space-y-6">
+<header>
+<p class="text-cyan-400 font-bold">CLAUDE • AGENTS</p>
+<h1 class="text-4xl font-bold mt-2">🤖 Agents vs Chatbots</h1>
+<p class="text-slate-400 mt-2">Understand how AI agents differ from simple conversational systems.</p>
+</header>
+
+<section class="grid md:grid-cols-2 gap-5">
+<div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold">💬 Chatbot</h2>
+<p class="text-slate-400 mt-3">Mainly responds to user messages.</p>
+<ul class="mt-4 space-y-2 text-slate-300">
+<li>• User asks → AI answers</li><li>• Usually one response cycle</li>
+<li>• Limited autonomous action</li><li>• Conversation focused</li>
+</ul>
+</div>
+<div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold text-cyan-400">🤖 Agent</h2>
+<p class="text-slate-400 mt-3">Can reason, plan, use tools, observe results, and continue toward a goal.</p>
+<ul class="mt-4 space-y-2 text-slate-300">
+<li>• Goal → plan → action</li><li>• Uses external tools</li>
+<li>• Observes results</li><li>• Can perform multiple steps</li>
+</ul>
+</div>
+</section>
+
+<section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold">1. 🔄 Agentic Loop</h2>
+<div class="flex flex-wrap justify-center gap-3 mt-5 text-center">
+<span class="bg-slate-800 p-3 rounded-lg">Goal</span><b>→</b>
+<span class="bg-slate-800 p-3 rounded-lg">Plan</span><b>→</b>
+<span class="bg-slate-800 p-3 rounded-lg">Act</span><b>→</b>
+<span class="bg-slate-800 p-3 rounded-lg">Observe</span><b>→</b>
+<span class="bg-cyan-500/20 p-3 rounded-lg">Repeat</span>
+</div>
+<p class="text-slate-400 mt-4">The agent repeatedly evaluates the situation and takes actions until the goal is completed or stopped.</p>
+</section>
+
+<section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold">2. 📋 Agent vs Workflow</h2>
+<div class="grid md:grid-cols-2 gap-4 mt-4">
+<div class="bg-slate-800 p-4 rounded-xl"><b>Workflow</b><p class="text-slate-400 mt-2">Predefined steps: A → B → C.</p></div>
+<div class="bg-slate-800 p-4 rounded-xl"><b>Agent</b><p class="text-slate-400 mt-2">Chooses actions dynamically based on the situation.</p></div>
+</div>
+</section>
+
+<section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold">3. 👤 Human-in-the-Loop (HITL)</h2>
+<p class="text-slate-300 mt-3">A human reviews, approves, rejects, or modifies an agent's action.</p>
+<div class="mt-4 bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">🤖 Agent proposes → 👤 Human approves → ⚙️ Action happens</div>
+<p class="text-slate-400 mt-3">Useful for high-impact, sensitive, or irreversible actions.</p>
+</section>
+
+<section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold">4. 🛡️ Guardrails</h2>
+<p class="text-slate-300 mt-3">Rules and controls that restrict unsafe, invalid, or unwanted agent behavior.</p>
+<ul class="mt-3 text-slate-400 space-y-1">
+<li>• Input validation</li><li>• Tool restrictions</li><li>• Output checks</li><li>• Permission limits</li>
+</ul>
+</section>
+
+<div class="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-5">
+<b>🧠 Memory:</b> Chatbot = mainly answers. Agent = reasons + acts + observes + continues.
+</div>
+</div>
+</body>
+</html>
