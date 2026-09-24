@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Agent Architecture</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+<div class="max-w-5xl mx-auto p-6 space-y-6">
+<header>
+<p class="text-violet-400 font-bold">CLAUDE • AGENT ARCHITECTURE</p>
+<h1 class="text-4xl font-bold mt-2">🧠 Agent Architecture</h1>
+<p class="text-slate-400 mt-2">Planning, memory, tools, and multiple agents.</p>
+</header>
+
+<section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold">5. 🧠 Agent Planning</h2>
+<p class="text-slate-300 mt-3">Planning means deciding what steps should be taken to reach a goal.</p>
+<div class="flex flex-wrap gap-3 justify-center mt-5">
+<span class="bg-slate-800 p-3 rounded-lg">Goal</span><b>→</b>
+<span class="bg-slate-800 p-3 rounded-lg">Break into tasks</span><b>→</b>
+<span class="bg-slate-800 p-3 rounded-lg">Choose actions</span><b>→</b>
+<span class="bg-violet-500/20 p-3 rounded-lg">Execute</span>
+</div>
+<p class="text-slate-400 mt-4">Planning can be fixed beforehand or generated dynamically by the agent.</p>
+</section>
+
+<section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold">6. 📌 Agent State & Memory</h2>
+<div class="grid md:grid-cols-2 gap-4 mt-4">
+<div class="bg-slate-800 p-4 rounded-xl">
+<b>State</b><p class="text-slate-400 mt-2">Information about the current task, progress, tool results, and active context.</p>
+</div>
+<div class="bg-slate-800 p-4 rounded-xl">
+<b>Memory</b><p class="text-slate-400 mt-2">Information retained for use beyond the immediate step or interaction.</p>
+</div>
+</div>
+<div class="mt-4 bg-violet-500/10 border border-violet-500/20 rounded-xl p-4">
+<b>Simple idea:</b> State = "What is happening now?" • Memory = "What should I remember?"
+</div>
+</section>
+
+<section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold">7. 🛠️ Tool Orchestration</h2>
+<p class="text-slate-300 mt-3">The agent selects and coordinates tools to complete a task.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-5 text-center">
+<div class="bg-slate-800 p-4 rounded-xl">🔎 Search</div>
+<div class="bg-slate-800 p-4 rounded-xl">🧮 Calculator</div>
+<div class="bg-slate-800 p-4 rounded-xl">🗄️ Database</div>
+<div class="bg-slate-800 p-4 rounded-xl">🔌 API</div>
+</div>
+<p class="text-slate-400 mt-4">Orchestration decides which tool to call, in what order, and how to use each result.</p>
+</section>
+
+<section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold">8. 👥 Multi-Agent Systems</h2>
+<p class="text-slate-300 mt-3">Multiple specialized agents cooperate on a larger task.</p>
+<div class="flex flex-wrap justify-center gap-3 mt-5">
+<div class="bg-slate-800 p-4 rounded-xl">🧑‍💻 Research Agent</div>
+<div class="bg-slate-800 p-4 rounded-xl">✍️ Writing Agent</div>
+<div class="bg-slate-800 p-4 rounded-xl">🔍 Review Agent</div>
+<div class="bg-violet-500/20 p-4 rounded-xl">🎯 Coordinator</div>
+</div>
+<p class="text-slate-400 mt-4">Each agent can have a specialized role, tools, instructions, and responsibilities.</p>
+</section>
+
+<section class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+<h2 class="text-2xl font-bold">🔄 Example</h2>
+<p class="text-slate-300 mt-3">Research Agent → collects information → Writing Agent creates draft → Review Agent checks result.</p>
+</section>
+
+<div class="bg-violet-500/10 border border-violet-500/20 rounded-xl p-5">
+<b>🧠 Memory:</b> Planning = decide steps • State = current progress • Tools = actions • Multi-agent = specialized agents working together.
+</div>
+</div>
+</body>
+</html>
