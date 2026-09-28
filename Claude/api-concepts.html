@@ -1,0 +1,78 @@
+Here is **1 Tailwind HTML page**, under 100 lines, focused on **API Concepts** for your CCAO-F exam revision.
+
+```html id="k7p3sa"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>API Concepts</title>
+</head>
+<body class="bg-slate-950 text-white p-6">
+<div class="max-w-5xl mx-auto">
+<h1 class="text-3xl font-bold text-cyan-400 mb-2">🔌 API Concepts</h1>
+<p class="text-slate-400 mb-6">Quick CCAO-F Study Guide</p>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">1. What is an API?</h2>
+<p class="mt-2">API = Application Programming Interface. It allows one software application to communicate with another.</p>
+<div class="bg-slate-800 p-3 rounded mt-3 text-center">
+Application → API Request → AI Model → API Response
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">2. API Request</h2>
+<p class="mt-2">A request tells the API what you want the model to do.</p>
+<ul class="list-disc ml-6 mt-3 space-y-1">
+<li>Model</li><li>Messages</li><li>System instructions</li>
+<li>Parameters</li><li>Tools, when required</li>
+</ul>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">3. Message Roles</h2>
+<div class="grid md:grid-cols-3 gap-3 mt-3">
+<div class="bg-slate-800 p-3 rounded"><b>System</b><br>Sets behavior and instructions.</div>
+<div class="bg-slate-800 p-3 rounded"><b>User</b><br>Provides the user's request.</div>
+<div class="bg-slate-800 p-3 rounded"><b>Assistant</b><br>Contains model responses.</div>
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">4. Common API Parameters</h2>
+<ul class="list-disc ml-6 mt-3 space-y-1">
+<li><b>Model:</b> Which model to use.</li>
+<li><b>Max tokens:</b> Limits generated output.</li>
+<li><b>Temperature:</b> Controls output variation.</li>
+<li><b>System prompt:</b> Defines behavior/instructions.</li>
+</ul>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">5. API Response</h2>
+<p class="mt-2">The API returns the model's generated result along with response metadata such as usage or status information.</p>
+<div class="bg-slate-800 p-3 rounded mt-3">Request → Processing → Response</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">6. Authentication & Security</h2>
+<p class="mt-2">APIs commonly require an API key or other credentials.</p>
+<p class="text-red-300 mt-2">Never expose API keys in client-side code, public repositories, or user-facing applications.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">7. Errors & Retries</h2>
+<p class="mt-2">API calls can fail because of rate limits, temporary network problems, invalid requests, or server errors.</p>
+<div class="bg-slate-800 p-3 rounded mt-3">Error → Check error type → Wait if needed → Retry safely</div>
+</section>
+
+<div class="bg-cyan-950 p-5 rounded-xl">
+<b>🧠 Exam Memory:</b> API = Communication interface | Request = Ask |
+Response = Result | Authentication = Prove access | Retry = Handle temporary failures safely.
+</div>
+</div>
+</body>
+</html>
+
