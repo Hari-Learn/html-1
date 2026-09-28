@@ -1,0 +1,78 @@
+Here is the **Prompting & Context** page in the same style, kept **under 100 lines** and focused on exam revision.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Prompting & Context</title>
+</head>
+<body class="bg-slate-950 text-white p-6">
+<div class="max-w-5xl mx-auto">
+<h1 class="text-3xl font-bold text-cyan-400 mb-2">📝 Prompting & Context</h1>
+<p class="text-slate-400 mb-6">Quick CCAO-F Study Guide</p>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">1. What is Prompting?</h2>
+<p class="mt-2">A prompt is an instruction or input given to an AI model to produce a desired result.</p>
+<div class="bg-slate-800 p-3 rounded mt-3">Prompt → Model processes context → Response</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">2. Good Prompt</h2>
+<p class="mt-2">A good prompt clearly explains <b>what to do, what context to use, and what output is expected</b>.</p>
+<div class="bg-slate-800 p-3 rounded mt-3">
+Task + Context + Constraints + Output Format
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">3. Zero-Shot Prompting</h2>
+<p class="mt-2">Ask the model to perform a task without providing examples.</p>
+<p class="text-cyan-300 mt-2">Example: “Classify this review as positive or negative.”</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">4. Few-Shot Prompting</h2>
+<p class="mt-2">Provide examples to show the model the expected pattern.</p>
+<div class="bg-slate-800 p-3 rounded mt-3">
+Example 1 → Input: Good → Output: Positive<br>
+Example 2 → Input: Bad → Output: Negative<br>
+New Input → Model predicts the pattern
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">5. What is Context?</h2>
+<p class="mt-2">Context is the information available to the model that helps it understand and complete the task.</p>
+<div class="bg-slate-800 p-3 rounded mt-3">Instructions + Conversation + Documents + Examples + Tool Results</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">6. Context Window</h2>
+<p class="mt-2">The context window is the amount of information a model can consider within a request or conversation.</p>
+<p class="text-amber-300 mt-2">Too much irrelevant context can make it harder to focus on the important information.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">7. Context Engineering</h2>
+<p class="mt-2">Context engineering means deliberately selecting, organizing, and managing the information given to an agent or model.</p>
+<p class="mt-2">Goal: <b>Give the right information at the right time.</b></p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">8. Task Decomposition</h2>
+<p class="mt-2">Break a large task into smaller, manageable steps.</p>
+<div class="bg-slate-800 p-3 rounded mt-3">Large Task → Step 1 → Step 2 → Step 3 → Final Result</div>
+</section>
+
+<section class="bg-cyan-950 p-5 rounded-xl">
+<h2 class="font-bold text-cyan-300">🧠 Exam Memory</h2>
+<p class="mt-2">Prompt = Instruction | Context = Relevant information | Zero-shot = No examples | Few-shot = Examples | Context window = Information capacity | Context engineering = Manage the right context.</p>
+</section>
+</div>
+</body>
+</html>
+```
