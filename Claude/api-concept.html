@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Claude API Concepts</title>
+</head>
+<body class="bg-slate-950 text-white p-6">
+<div class="max-w-5xl mx-auto">
+<h1 class="text-3xl font-bold text-cyan-400 mb-2">🔌 Claude API Concepts</h1>
+<p class="text-slate-400 mb-6">Request • Messages • Parameters • Response</p>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-5">
+<h2 class="text-xl font-bold text-cyan-300">1. What is an API?</h2>
+<p class="mt-2">An API allows your application to communicate with Claude programmatically.</p>
+<div class="bg-slate-800 p-4 rounded mt-3 text-center">
+Your App → Claude API → Claude Model → Response
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-5">
+<h2 class="text-xl font-bold text-cyan-300">2. Basic Messages API Request</h2>
+<div class="bg-slate-800 p-4 rounded mt-3 font-mono text-sm overflow-auto">
+model + max_tokens + messages
+</div>
+<p class="mt-3">The request specifies which model to use, the output limit, and the conversation content.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-5">
+<h2 class="text-xl font-bold text-cyan-300">3. Message Roles</h2>
+<div class="grid md:grid-cols-3 gap-3 mt-3">
+<div class="bg-slate-800 p-3 rounded"><b>System</b><br>Defines behavior and instructions.</div>
+<div class="bg-slate-800 p-3 rounded"><b>User</b><br>Provides the task or input.</div>
+<div class="bg-slate-800 p-3 rounded"><b>Assistant</b><br>Represents model output.</div>
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-5">
+<h2 class="text-xl font-bold text-cyan-300">4. API Flow</h2>
+<div class="bg-slate-800 p-4 rounded mt-3 text-center">
+Request → Authentication → Model Processing → Response
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">5. Important API Features</h2>
+<ul class="list-disc ml-6 mt-3 space-y-1">
+<li>Tool use / function calling</li>
+<li>Streaming responses</li>
+<li>Structured outputs</li>
+<li>Thinking / effort</li>
+<li>Prompt caching</li>
+<li>Batch processing</li>
+</ul>
+</section>
+
+<div class="bg-cyan-950 p-4 rounded-xl mt-5">
+<b>🧠 Remember:</b> API = Application ↔ Claude communication.
+</div>
+</div>
+</body>
+</html>
