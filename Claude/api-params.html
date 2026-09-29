@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Claude API Parameters</title>
+</head>
+<body class="bg-slate-950 text-white p-6">
+<div class="max-w-5xl mx-auto">
+<h1 class="text-3xl font-bold text-cyan-400 mb-2">⚙️ Claude API Parameters</h1>
+<p class="text-slate-400 mb-6">Know what each parameter controls</p>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">1. model</h2>
+<p class="mt-2">Specifies which Claude model should process the request.</p>
+<div class="bg-slate-800 p-3 rounded mt-2">model → "claude-sonnet-5"</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">2. max_tokens</h2>
+<p class="mt-2">Sets the maximum number of tokens the model can generate in the response.</p>
+<p class="text-amber-300 mt-2">Think: Output size limit</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">3. messages</h2>
+<p class="mt-2">Contains the conversation input, including user messages and their content.</p>
+<div class="bg-slate-800 p-3 rounded mt-2">messages → role + content</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">4. system</h2>
+<p class="mt-2">Provides high-level instructions that guide Claude's behavior.</p>
+<div class="bg-slate-800 p-3 rounded mt-2">system → "You are a helpful coding assistant."</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">5. thinking / effort</h2>
+<p class="mt-2">Controls how much reasoning effort Claude uses when supported by the model.</p>
+<p class="text-green-300 mt-2">More effort can be useful for difficult reasoning tasks.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">6. tools</h2>
+<p class="mt-2">Defines tools that Claude can use to perform actions or retrieve information.</p>
+<div class="bg-slate-800 p-3 rounded mt-2">Claude → Tool Call → Tool Result → Claude</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl mb-4">
+<h2 class="text-xl font-bold text-cyan-300">7. stream</h2>
+<p class="mt-2">Allows the response to be delivered progressively instead of waiting for the complete response.</p>
+<p class="text-cyan-300 mt-2">Useful for better perceived responsiveness.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">8. Important Current Note</h2>
+<p class="mt-2">Older parameters such as <b>temperature, top_p, and top_k</b> are deprecated for newer Claude models. For current models, follow Anthropic's model-specific API documentation.</p>
+</section>
+
+<div class="bg-cyan-950 p-4 rounded-xl mt-5">
+<b>🧠 Exam Memory:</b> model = which model | max_tokens = output limit |
+messages = conversation | system = behavior | thinking/effort = reasoning effort |
+tools = actions | stream = progressive response.
+</div>
+</div>
+</body>
+</html>
