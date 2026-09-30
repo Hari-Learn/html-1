@@ -1,0 +1,95 @@
+Here’s a compact **Agent Evaluation** page, also kept under 100 lines.
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Agent Evaluation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+
+  <main class="max-w-5xl mx-auto px-6 py-12">
+
+    <header class="mb-10">
+      <span class="text-sm text-purple-400">AI QUALITY FRAMEWORK</span>
+      <h1 class="text-4xl font-bold mt-2">Agent Evaluation</h1>
+      <p class="text-slate-400 mt-3 max-w-2xl">
+        Evaluate an AI agent across performance, accuracy, reasoning,
+        tool usage, and safety.
+      </p>
+    </header>
+
+    <div class="grid md:grid-cols-4 gap-4 mb-10">
+      <div class="card">
+        <p>Accuracy</p><strong>92%</strong>
+      </div>
+      <div class="card">
+        <p>Task Success</p><strong>89%</strong>
+      </div>
+      <div class="card">
+        <p>Tool Usage</p><strong>94%</strong>
+      </div>
+      <div class="card">
+        <p>Safety</p><strong>98%</strong>
+      </div>
+    </div>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-5">Evaluation Criteria</h2>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="item"><b>01</b><span>Task understanding and instruction following</span></div>
+        <div class="item"><b>02</b><span>Accuracy and factual correctness</span></div>
+        <div class="item"><b>03</b><span>Quality and relevance of responses</span></div>
+        <div class="item"><b>04</b><span>Reasoning and decision consistency</span></div>
+        <div class="item"><b>05</b><span>Correct selection of available tools</span></div>
+        <div class="item"><b>06</b><span>Proper handling of tool outputs</span></div>
+        <div class="item"><b>07</b><span>Performance on edge cases</span></div>
+        <div class="item"><b>08</b><span>Recovery from errors and failures</span></div>
+        <div class="item"><b>09</b><span>Security and safety compliance</span></div>
+        <div class="item"><b>10</b><span>Overall task completion quality</span></div>
+      </div>
+    </section>
+
+    <section class="mt-10 p-6 rounded-2xl border border-purple-400/20 bg-purple-400/5">
+      <div class="flex justify-between items-center">
+        <div>
+          <p class="text-purple-400 font-medium">Evaluation Result</p>
+          <h2 class="text-2xl font-bold mt-1">Evaluation Complete</h2>
+        </div>
+        <div class="text-3xl font-bold text-purple-400">93%</div>
+      </div>
+      <div class="mt-5 h-2 bg-slate-800 rounded-full overflow-hidden">
+        <div class="h-full w-[93%] bg-purple-500 rounded-full"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <style>
+    .card{
+      padding:20px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      border-radius:16px;
+    }
+    .card p{color:#94a3b8;font-size:14px}
+    .card strong{display:block;font-size:28px;margin-top:6px}
+    .item{
+      display:flex;
+      gap:16px;
+      padding:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+      border-radius:14px;
+      color:#cbd5e1;
+    }
+    .item b{color:#a78bfa}
+  </style>
+
+</body>
+</html>
+```
