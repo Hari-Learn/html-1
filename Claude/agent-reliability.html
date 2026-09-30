@@ -1,0 +1,99 @@
+Here’s a compact **Agent Reliability** version, kept under 100 lines.
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Agent Reliability</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+
+  <div class="max-w-5xl mx-auto px-6 py-12">
+
+    <header class="mb-10">
+      <div class="inline-block px-3 py-1 rounded-full bg-blue-500/10
+                  text-blue-400 text-sm mb-4">
+        AI Agent Evaluation
+      </div>
+      <h1 class="text-4xl font-bold">Agent Reliability</h1>
+      <p class="text-slate-400 mt-3 max-w-2xl">
+        A concise workflow for testing whether an AI agent performs
+        consistently, accurately, and safely.
+      </p>
+    </header>
+
+    <div class="grid md:grid-cols-3 gap-4 mb-10">
+      <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+        <p class="text-slate-400 text-sm">Consistency</p>
+        <p class="text-2xl font-bold mt-1">High</p>
+      </div>
+      <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+        <p class="text-slate-400 text-sm">Accuracy</p>
+        <p class="text-2xl font-bold mt-1">Verified</p>
+      </div>
+      <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+        <p class="text-slate-400 text-sm">Safety</p>
+        <p class="text-2xl font-bold mt-1">Checked</p>
+      </div>
+    </div>
+
+    <section class="space-y-3">
+      <h2 class="text-2xl font-semibold mb-5">Reliability Checks</h2>
+
+      <div class="check"><b>01</b><span>Define expected agent behavior.</span></div>
+      <div class="check"><b>02</b><span>Test the same task multiple times.</span></div>
+      <div class="check"><b>03</b><span>Compare outputs for consistency.</span></div>
+      <div class="check"><b>04</b><span>Verify factual accuracy.</span></div>
+      <div class="check"><b>05</b><span>Check tool calls and parameters.</span></div>
+      <div class="check"><b>06</b><span>Test incomplete or ambiguous inputs.</span></div>
+      <div class="check"><b>07</b><span>Test invalid and unexpected inputs.</span></div>
+      <div class="check"><b>08</b><span>Measure task completion rate.</span></div>
+      <div class="check"><b>09</b><span>Check whether failures recover correctly.</span></div>
+      <div class="check"><b>10</b><span>Verify safety and permission boundaries.</span></div>
+      <div class="check"><b>11</b><span>Run edge-case scenarios.</span></div>
+      <div class="check"><b>12</b><span>Record failures and unexpected behavior.</span></div>
+      <div class="check"><b>13</b><span>Repeat tests after configuration changes.</span></div>
+      <div class="check"><b>14</b><span>Compare results against success criteria.</span></div>
+      <div class="check"><b>15</b><span>Document evidence for every failed test.</span></div>
+
+    </section>
+
+    <div class="mt-10 p-6 rounded-2xl border border-emerald-400/20
+                bg-emerald-400/5">
+      <p class="text-emerald-400 font-semibold">Reliability Status</p>
+      <h2 class="text-2xl font-bold mt-1">Ready for Review</h2>
+      <p class="text-slate-400 mt-2">
+        Reliability should be based on repeatable tests, measurable criteria,
+        observed behavior, and documented evidence.
+      </p>
+    </div>
+
+  </div>
+
+  <style>
+    .check{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      padding:16px 18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+      border-radius:12px;
+      color:#cbd5e1;
+    }
+    .check b{
+      color:#60a5fa;
+      min-width:28px;
+    }
+    .check:hover{
+      border-color:rgba(96,165,250,.35);
+      background:rgba(96,165,250,.05);
+    }
+  </style>
+
+</body>
+</html>
+```
