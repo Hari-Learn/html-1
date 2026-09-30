@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent Verification in Claude</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            claude: {
+              50: "#faf8f5",
+              100: "#f3eee8",
+              200: "#e6ddd2",
+              500: "#c96b3c",
+              600: "#b9572c",
+              700: "#914321"
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-slate-950 text-slate-100 antialiased">
+
+  <!-- Header -->
+  <header class="border-b border-white/10 bg-slate-950/95 sticky top-0 z-50 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-orange-500 flex items-center justify-center font-bold">
+          A
+        </div>
+        <div>
+          <h1 class="font-semibold">Agent Verification</h1>
+          <p class="text-xs text-slate-400">Claude workflow</p>
+        </div>
+      </div>
+
+      <div class="hidden sm:flex items-center gap-2 text-sm text-slate-400">
+        <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
+        Verification guide
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-purple-500/10"></div>
+
+    <div class="relative max-w-6xl mx-auto px-6 py-20">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full
+                    border border-orange-400/20 bg-orange-400/10
+                    text-orange-300 text-sm mb-6">
+          <span>●</span>
+          Under 100 steps
+        </div>
+
+        <h2 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+          Agent verification
+          <span class="text-orange-400">in Claude</span>
+        </h2>
+
+        <p class="mt-6 text-lg text-slate-400 max-w-2xl leading-8">
+          A practical workflow for checking whether an AI agent behaves
+          reliably, follows instructions, uses tools correctly, and produces
+          verifiable results.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#steps"
+             class="px-5 py-3 rounded-xl bg-orange-500 hover:bg-orange-400
+                    text-white font-medium transition">
+            Start verification
+          </a>
+
+          <a href="#checklist"
+             class="px-5 py-3 rounded-xl border border-white/10
+                    hover:bg-white/5 transition">
+            View checklist
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="max-w-6xl mx-auto px-6 -mt-4">
+    <div class="grid sm:grid-cols-3 gap-4">
+
+      <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+        <p class="text-sm text-slate-500">Verification steps</p>
+        <p class="text-3xl font-bold mt-1">20</p>
+      </div>
+
+      <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+        <p class="text-sm text-slate-500">Core areas</p>
+        <p class="text-3xl font-bold mt-1">5</p>
+      </div>
+
+      <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+        <p class="text-sm text-slate-500">Target outcome</p>
+        <p class="text-3xl font-bold mt-1 text-emerald-400">Verified</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <main id="steps" class="max-w-6xl mx-auto px-6 py-16">
+
+    <div class="mb-10">
+      <p class="text-orange-400 text-sm font-semibold uppercase tracking-widest">
+        Verification workflow
+      </p>
+      <h3 class="text-3xl font-bold mt-2">20 steps to verify an agent</h3>
+      <p class="text-slate-400 mt-3 max-w-2xl">
+        Work through each stage and record evidence rather than relying only
+        on the agent's final response.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+
+      <!-- Step -->
+      <div class="step">
+        <span class="number">01</span>
+        <div>
+          <h4>Define the agent's objective</h4>
+          <p>Write down exactly what the Claude agent is expected to accomplish.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">02</span>
+        <div>
+          <h4>Define success criteria</h4>
+          <p>Specify measurable conditions that determine whether the task succeeded.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">03</span>
+        <div>
+          <h4>Identify allowed tools</h4>
+          <p>Document which tools, APIs, files, or external resources the agent may use.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">04</span>
+        <div>
+          <h4>Prepare a controlled test</h4>
+          <p>Create a repeatable input so the same agent behavior can be evaluated consistently.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">05</span>
+        <div>
+          <h4>Send the initial task</h4>
+          <p>Give Claude the task without adding hidden assumptions after execution begins.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">06</span>
+        <div>
+          <h4>Check instruction following</h4>
+          <p>Verify that the agent follows the stated requirements and constraints.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">07</span>
+        <div>
+          <h4>Inspect tool selection</h4>
+          <p>Check whether the agent selects appropriate tools for each operation.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">08</span>
+        <div>
+          <h4>Verify tool inputs</h4>
+          <p>Confirm that arguments sent to tools are accurate, complete, and within scope.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">09</span>
+        <div>
+          <h4>Verify tool outputs</h4>
+          <p>Check that returned information is interpreted correctly rather than assumed.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">10</span>
+        <div>
+          <h4>Check intermediate reasoning</h4>
+          <p>Review observable decisions and intermediate actions for consistency with the task.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">11</span>
+        <div>
+          <h4>Test missing information</h4>
+          <p>Provide incomplete inputs and check whether the agent asks for clarification when needed.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">12</span>
+        <div>
+          <h4>Test invalid inputs</h4>
+          <p>Introduce malformed or unsupported inputs and verify graceful handling.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">13</span>
+        <div>
+          <h4>Test boundary conditions</h4>
+          <p>Evaluate unusual but valid cases near the limits of the task requirements.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">14</span>
+        <div>
+          <h4>Check safety constraints</h4>
+          <p>Verify that the agent respects permissions, access boundaries, and defined restrictions.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">15</span>
+        <div>
+          <h4>Check external claims</h4>
+          <p>Require important claims to be supported by available evidence or clearly marked as uncertain.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">16</span>
+        <div>
+          <h4>Repeat the same test</h4>
+          <p>Run the scenario multiple times to identify inconsistent behavior.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">17</span>
+        <div>
+          <h4>Run adversarial cases</h4>
+          <p>Try misleading instructions, conflicting requirements, and unexpected task sequences.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">18</span>
+        <div>
+          <h4>Compare results against criteria</h4>
+          <p>Match the observed behavior against the success criteria defined at the beginning.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">19</span>
+        <div>
+          <h4>Record evidence</h4>
+          <p>Capture relevant inputs, outputs, tool calls, failures, and verification results.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="number">20</span>
+        <div>
+          <h4>Mark verification status</h4>
+          <p>Record whether the agent passed, failed, or requires another verification cycle.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Checklist -->
+  <section id="checklist" class="bg-slate-900 border-y border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+
+      <div class="max-w-2xl mb-10">
+        <p class="text-orange-400 text-sm font-semibold uppercase tracking-widest">
+          Final checklist
+        </p>
+        <h3 class="text-3xl font-bold mt-2">Verification evidence</h3>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="check">
+          <span>✓</span>
+          <div>
+            <strong>Objective is explicit</strong>
+            <p>The agent's expected behavior is clearly documented.</p>
+          </div>
+        </div>
+
+        <div class="check">
+          <span>✓</span>
+          <div>
+            <strong>Tools are controlled</strong>
+            <p>Tool access and permitted operations are known.</p>
+          </div>
+        </div>
+
+        <div class="check">
+          <span>✓</span>
+          <div>
+            <strong>Outputs are testable</strong>
+            <p>Results can be compared against defined criteria.</p>
+          </div>
+        </div>
+
+        <div class="check">
+          <span>✓</span>
+          <div>
+            <strong>Failures are recorded</strong>
+            <p>Unexpected behavior is documented instead of ignored.</p>
+          </div>
+        </div>
+
+        <div class="check">
+          <span>✓</span>
+          <div>
+            <strong>Edge cases are tested</strong>
+            <p>The agent has been tested beyond the simplest happy path.</p>
+          </div>
+        </div>
+
+        <div class="check">
+          <span>✓</span>
+          <div>
+            <strong>Evidence is reproducible</strong>
+            <p>Another reviewer can repeat the verification process.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Result -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <div class="rounded-3xl border border-emerald-400/20
+                bg-emerald-400/5 p-8 md:p-10">
+
+      <div class="flex flex-col md:flex-row md:items-center
+                  md:justify-between gap-8">
+
+        <div>
+          <p class="text-emerald-400 font-semibold">Verification complete</p>
+          <h3 class="text-3xl font-bold mt-2">
+            Evidence-backed agent verification
+          </h3>
+          <p class="text-slate-400 mt-3 max-w-2xl">
+            A verified workflow should document what was tested, what happened,
+            which tools were used, and how the result matched the expected criteria.
+          </p>
+        </div>
+
+        <div class="shrink-0 w-28 h-28 rounded-full border-4
+                    border-emerald-400/30 flex items-center justify-center">
+          <div class="text-center">
+            <div class="text-2xl font-bold text-emerald-400">20</div>
+            <div class="text-xs text-slate-500">STEPS</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col
+                sm:flex-row justify-between gap-4 text-sm text-slate-500">
+      <p>Agent Verification • Claude workflow</p>
+      <p>Single-page verification guide</p>
+    </div>
+  </footer>
+
+  <style>
+    .step {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.025);
+      border-radius: 1rem;
+      transition: .2s ease;
+    }
+
+    .step:hover {
+      border-color: rgba(249,115,22,.35);
+      background: rgba(249,115,22,.04);
+      transform: translateY(-1px);
+    }
+
+    .step .number {
+      flex-shrink: 0;
+      width: 2.75rem;
+      height: 2.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: .75rem;
+      background: rgba(249,115,22,.12);
+      color: #fb923c;
+      font-weight: 700;
+      font-size: .875rem;
+    }
+
+    .step h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .step p {
+      margin-top: .4rem;
+      color: #94a3b8;
+      line-height: 1.6;
+      font-size: .925rem;
+    }
+
+    .check {
+      display: flex;
+      gap: 1rem;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .check > span {
+      color: #34d399;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .check strong {
+      color: white;
+    }
+
+    .check p {
+      margin-top: .3rem;
+      color: #94a3b8;
+      font-size: .875rem;
+      line-height: 1.5;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
+</body>
+</html>
