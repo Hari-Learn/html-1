@@ -1,0 +1,87 @@
+Here’s a **single-page Tailwind HTML under 100 lines** for **Agent Planning**:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Planning</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <header class="text-center mb-12">
+      <p class="text-violet-400 font-semibold">AGENTIC AI</p>
+      <h1 class="text-5xl font-bold mt-2">Agent Planning</h1>
+      <p class="text-slate-400 mt-4">
+        How an AI agent turns a goal into a sequence of useful actions.
+      </p>
+    </header>
+
+    <section class="grid md:grid-cols-5 gap-4 items-center">
+      <div class="card">
+        <b>🎯 Goal</b>
+        <p>Understand what needs to be achieved.</p>
+      </div>
+      <span class="arrow">→</span>
+      <div class="card">
+        <b>🧩 Decompose</b>
+        <p>Break the goal into smaller tasks.</p>
+      </div>
+      <span class="arrow">→</span>
+      <div class="card">
+        <b>🗺️ Plan</b>
+        <p>Choose the steps and order of execution.</p>
+      </div>
+    </section>
+
+    <div class="text-center text-violet-400 text-3xl my-6">↓</div>
+
+    <section class="grid md:grid-cols-2 gap-5">
+      <div class="card">
+        <b>🛠️ Execute</b>
+        <p>Use tools, APIs, or other actions to complete each step.</p>
+      </div>
+      <div class="card">
+        <b>👀 Evaluate</b>
+        <p>Check results and determine whether the plan worked.</p>
+      </div>
+    </section>
+
+    <div class="mt-8 p-6 rounded-2xl bg-violet-500/10 border border-violet-500/30 text-center">
+      <h2 class="text-xl font-bold">🔄 Re-plan when needed</h2>
+      <p class="text-slate-400 mt-2">
+        If the result differs from expectations, the agent updates its plan
+        and continues toward the goal.
+      </p>
+    </div>
+
+    <div class="mt-8 text-center text-lg font-semibold text-violet-300">
+      Goal → Decompose → Plan → Execute → Evaluate → Re-plan ↺
+    </div>
+  </main>
+
+  <style>
+    .card {
+      padding: 1.25rem;
+      border-radius: 1rem;
+      background: #0f172a;
+      border: 1px solid #334155;
+      text-align: center;
+    }
+    .card b { font-size: 1.1rem; }
+    .card p {
+      color: #94a3b8;
+      font-size: .875rem;
+      margin-top: .5rem;
+    }
+    .arrow {
+      color: #a78bfa;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  </style>
+</body>
+</html>
+```
