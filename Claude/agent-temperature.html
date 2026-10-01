@@ -1,0 +1,72 @@
+Here’s a **single-page Tailwind HTML under 100 lines** explaining **Agent Temperature, Randomness & Variability**:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Agent Temperature</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <header class="text-center mb-10">
+      <p class="text-cyan-400 font-semibold">AGENTIC AI</p>
+      <h1 class="text-5xl font-bold mt-2">Temperature</h1>
+      <p class="text-slate-400 mt-4">
+        Temperature controls how much randomness can influence token selection.
+      </p>
+    </header>
+
+    <section class="grid md:grid-cols-3 gap-5">
+      <div class="card">
+        <span class="text-3xl">❄️</span>
+        <h2>Low Temperature</h2>
+        <p>More predictable and consistent outputs. Useful when precision matters.</p>
+        <div class="bar"><i style="width:20%"></i></div>
+      </div>
+
+      <div class="card border-cyan-500/40">
+        <span class="text-3xl">🌤️</span>
+        <h2>Medium Temperature</h2>
+        <p>A balance between consistency and variation for general tasks.</p>
+        <div class="bar"><i style="width:55%"></i></div>
+      </div>
+
+      <div class="card">
+        <span class="text-3xl">🔥</span>
+        <h2>High Temperature</h2>
+        <p>More variation and creative possibilities, but less predictable.</p>
+        <div class="bar"><i style="width:90%"></i></div>
+      </div>
+    </section>
+
+    <section class="mt-8 p-6 rounded-2xl bg-slate-900 border border-slate-800">
+      <h2 class="text-xl font-bold mb-4">🎲 Randomness & Variability</h2>
+      <div class="grid md:grid-cols-3 gap-4 text-center">
+        <div><b>Temperature</b><p>Controls sampling randomness.</p></div>
+        <div><b>Same Prompt</b><p>Can produce different outputs.</p></div>
+        <div><b>Higher T</b><p>Usually increases variation.</p></div>
+      </div>
+    </section>
+
+    <div class="mt-8 text-center">
+      <p class="text-slate-400">Think of temperature as a creativity/variability dial:</p>
+      <div class="mt-4 text-cyan-400 font-bold text-lg">
+        Predictable ←── ❄️ ─── 🌤️ ─── 🔥 ──→ Variable
+      </div>
+    </div>
+  </main>
+
+  <style>
+    .card{padding:1.5rem;border-radius:1rem;background:#0f172a;
+      border:1px solid #334155;tegn:center}
+    .card h2{font-size:1.2rem;font-weight:700;margin-top:.7rem}
+    .card p{color:#94a3b8;font-size:.875rem;margin-top:.5rem}
+    .bar{height:7px;background:#1e293b;border-radius:9px;margin-top:1rem}
+    .bar i{display:block;height:100%;background:#22d3ee;border-radius:9px}
+  </style>
+</body>
+</html>
+```
