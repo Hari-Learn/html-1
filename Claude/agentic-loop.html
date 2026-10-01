@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Agentic Loop in Claude</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <header class="text-center mb-12">
+      <span class="text-violet-400 font-semibold">CLAUDE • AGENTIC AI</span>
+      <h1 class="text-4xl md:text-6xl font-bold mt-3">The Agentic Loop</h1>
+      <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+        Claude doesn't just answer once—it can reason, use tools, observe results,
+        and iterate until the task is complete.
+      </p>
+    </header>
+
+    <section class="grid md:grid-cols-5 gap-4 items-center">
+      <div class="p-5 rounded-2xl bg-slate-900 border border-violet-500/30 text-center">
+        <div class="text-3xl mb-3">🎯</div><h2 class="font-bold">Goal</h2>
+        <p class="text-sm text-slate-400 mt-2">Understand the user's objective.</p>
+      </div>
+      <div class="text-center text-violet-400 text-2xl">→</div>
+      <div class="p-5 rounded-2xl bg-slate-900 border border-violet-500/30 text-center">
+        <div class="text-3xl mb-3">🧠</div><h2 class="font-bold">Reason</h2>
+        <p class="text-sm text-slate-400 mt-2">Plan the next useful action.</p>
+      </div>
+      <div class="text-center text-violet-400 text-2xl">→</div>
+      <div class="p-5 rounded-2xl bg-slate-900 border border-violet-500/30 text-center">
+        <div class="text-3xl mb-3">🛠️</div><h2 class="font-bold">Act</h2>
+        <p class="text-sm text-slate-400 mt-2">Call tools or perform an action.</p>
+      </div>
+    </section>
+
+    <section class="my-6 flex justify-center text-violet-400 text-3xl">↓</section>
+
+    <section class="grid md:grid-cols-3 gap-5">
+      <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800">
+        <h3 class="font-bold text-lg">👀 Observe</h3>
+        <p class="text-slate-400 text-sm mt-2">Read the tool output or new information.</p>
+      </div>
+      <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800">
+        <h3 class="font-bold text-lg">🔄 Iterate</h3>
+        <p class="text-slate-400 text-sm mt-2">Update the plan based on what happened.</p>
+      </div>
+      <div class="p-6 bg-emerald-500/10 rounded-2xl border border-emerald-500/30">
+        <h3 class="font-bold text-lg text-emerald-400">✅ Complete</h3>
+        <p class="text-slate-400 text-sm mt-2">Stop when the objective has been achieved.</p>
+      </div>
+    </section>
+
+    <div class="mt-10 p-6 rounded-2xl bg-gradient-to-r from-violet-600/20 to-indigo-600/20 border border-violet-500/20 text-center">
+      <p class="font-semibold">Goal → Reason → Act → Observe → Iterate ↺</p>
+      <p class="text-sm text-slate-400 mt-2">The loop continues until Claude has enough information to finish the task.</p>
+    </div>
+  </main>
+</body>
+</html>
