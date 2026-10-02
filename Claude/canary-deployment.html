@@ -1,0 +1,78 @@
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canary Deployment</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <header class="mb-10">
+      <span class="inline-block px-3 py-1 text-sm rounded-full bg-yellow-400/10 text-yellow-300">
+        Deployment Strategy
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold mt-4">Canary Deployment</h1>
+      <p class="text-slate-400 mt-3 max-w-2xl">
+        Release a new version to a small percentage of users first, monitor its
+        behavior, and gradually increase traffic when everything looks healthy.
+      </p>
+    </header>
+
+    <section class="grid md:grid-cols-3 gap-5 mb-10">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-3">🚦</div>
+        <h2 class="font-semibold text-lg">1. Start Small</h2>
+        <p class="text-slate-400 text-sm mt-2">Route 5% of traffic to the new version.</p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-3">📊</div>
+        <h2 class="font-semibold text-lg">2. Monitor</h2>
+        <p class="text-slate-400 text-sm mt-2">Track errors, latency, and key metrics.</p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-3xl mb-3">🚀</div>
+        <h2 class="font-semibold text-lg">3. Roll Forward</h2>
+        <p class="text-slate-400 text-sm mt-2">Gradually increase traffic to the new release.</p>
+      </div>
+    </section>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+      <div class="flex justify-between items-center mb-4">
+        <div>
+          <h2 class="text-xl font-semibold">Traffic Distribution</h2>
+          <p class="text-sm text-slate-400">Current deployment status</p>
+        </div>
+        <span class="text-emerald-400 text-sm font-medium">● Healthy</span>
+      </div>
+
+      <div class="h-4 bg-slate-800 rounded-full overflow-hidden flex">
+        <div class="bg-blue-500 w-[95%]"></div>
+        <div class="bg-yellow-400 w-[5%]"></div>
+      </div>
+
+      <div class="flex justify-between mt-3 text-sm">
+        <span class="text-blue-400">Stable · 95%</span>
+        <span class="text-yellow-300">Canary · 5%</span>
+      </div>
+    </section>
+
+    <section class="mt-8 grid md:grid-cols-3 gap-4">
+      <div class="bg-slate-900 rounded-xl p-5">
+        <p class="text-slate-400 text-sm">Error Rate</p>
+        <p class="text-2xl font-bold mt-1">0.08%</p>
+      </div>
+      <div class="bg-slate-900 rounded-xl p-5">
+        <p class="text-slate-400 text-sm">Avg. Latency</p>
+        <p class="text-2xl font-bold mt-1">142ms</p>
+      </div>
+      <div class="bg-slate-900 rounded-xl p-5">
+        <p class="text-slate-400 text-sm">Requests</p>
+        <p class="text-2xl font-bold mt-1">24.8K/min</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+```
