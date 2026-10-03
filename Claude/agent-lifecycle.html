@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Life Cycle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <main class="max-w-6xl mx-auto px-6 py-12">
+
+    <header class="mb-10">
+      <span class="inline-block px-3 py-1 rounded-full bg-cyan-400/10 text-cyan-300 text-sm">
+        AI Agent Architecture
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold mt-4">Agent Life Cycle</h1>
+      <p class="text-slate-400 mt-3 max-w-2xl">
+        The agent life cycle describes how an AI agent receives a goal,
+        plans and executes tasks, evaluates results, and continuously improves.
+      </p>
+    </header>
+
+    <section class="grid md:grid-cols-3 gap-5">
+
+      <div class="bg-slate-900 border border-cyan-500/30 rounded-2xl p-6">
+        <div class="text-cyan-400 text-sm font-semibold">01</div>
+        <h2 class="text-xl font-semibold mt-2">Understand</h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Receive the user's goal, context, constraints, and available information.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-purple-400 text-sm font-semibold">02</div>
+        <h2 class="text-xl font-semibold mt-2">Plan</h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Break the goal into smaller tasks and determine the steps needed.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-blue-400 text-sm font-semibold">03</div>
+        <h2 class="text-xl font-semibold mt-2">Act</h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Use tools, APIs, data, or other systems to execute the planned tasks.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-yellow-400 text-sm font-semibold">04</div>
+        <h2 class="text-xl font-semibold mt-2">Observe</h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Collect tool outputs, system responses, and other results from execution.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-orange-400 text-sm font-semibold">05</div>
+        <h2 class="text-xl font-semibold mt-2">Evaluate</h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Check whether the result satisfies the goal and identify errors or gaps.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-emerald-400 text-sm font-semibold">06</div>
+        <h2 class="text-xl font-semibold mt-2">Respond</h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Deliver the final result, explain relevant outcomes, and finish the task.
+        </p>
+      </div>
+
+    </section>
+
+    <section class="mt-8 bg-slate-900 border border-slate-800 rounded-2xl p-6">
+      <h2 class="text-xl font-semibold">Agent Loop</h2>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 mt-6 text-sm">
+        <span class="px-4 py-2 bg-cyan-500/10 text-cyan-300 rounded-full">Understand</span>
+        <span class="text-slate-600">→</span>
+        <span class="px-4 py-2 bg-purple-500/10 text-purple-300 rounded-full">Plan</span>
+        <span class="text-slate-600">→</span>
+        <span class="px-4 py-2 bg-blue-500/10 text-blue-300 rounded-full">Act</span>
+        <span class="text-slate-600">→</span>
+        <span class="px-4 py-2 bg-yellow-500/10 text-yellow-300 rounded-full">Observe</span>
+        <span class="text-slate-600">→</span>
+        <span class="px-4 py-2 bg-orange-500/10 text-orange-300 rounded-full">Evaluate</span>
+        <span class="text-slate-600">→</span>
+        <span class="px-4 py-2 bg-emerald-500/10 text-emerald-300 rounded-full">Respond</span>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
