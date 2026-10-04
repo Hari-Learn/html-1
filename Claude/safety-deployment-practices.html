@@ -1,0 +1,45 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Safe Deployment Practices</title>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100">
+  <main class="mx-auto max-w-4xl px-6 py-16">
+    <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-sm text-emerald-300">
+      Deployment Guide
+    </span>
+
+    <h1 class="mt-5 text-4xl font-bold">Safe Deployment Practices</h1>
+
+    <p class="mt-4 text-lg text-slate-400">
+      Reduce deployment risk by shipping small, observable, reversible changes.
+    </p>
+
+    <div class="mt-10 space-y-4">
+      <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <h2 class="font-semibold">1. Validate</h2>
+        <p class="mt-2 text-slate-400">
+          Run automated tests, security checks, migrations, and staging verification before release.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <h2 class="font-semibold">2. Release Gradually</h2>
+        <p class="mt-2 text-slate-400">
+          Use feature flags, canary releases, or phased rollouts to limit blast radius.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <h2 class="font-semibold">3. Prepare Rollback</h2>
+        <p class="mt-2 text-slate-400">
+          Know exactly how to restore the previous version and who owns the decision.
+        </p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
