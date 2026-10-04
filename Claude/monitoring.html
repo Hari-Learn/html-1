@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Production Monitoring</title>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100">
+  <main class="mx-auto max-w-4xl px-6 py-16">
+    <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">
+      Observability
+    </span>
+
+    <h1 class="mt-5 text-4xl font-bold">Production Monitoring</h1>
+
+    <p class="mt-4 text-lg text-slate-400">
+      Monitor the signals that tell you whether a release is healthy.
+    </p>
+
+    <section class="mt-10 grid gap-4 sm:grid-cols-3">
+      <article class="rounded-2xl border border-slate-800 bg-slate-900 p-5">
+        <h2 class="font-semibold">Metrics</h2>
+        <p class="mt-2 text-sm text-slate-400">
+          Track latency, traffic, error rate, saturation, and business KPIs.
+        </p>
+      </article>
+
+      <article class="rounded-2xl border border-slate-800 bg-slate-900 p-5">
+        <h2 class="font-semibold">Logs</h2>
+        <p class="mt-2 text-sm text-slate-400">
+          Centralize structured logs and alert on meaningful error patterns.
+        </p>
+      </article>
+
+      <article class="rounded-2xl border border-slate-800 bg-slate-900 p-5">
+        <h2 class="font-semibold">Alerts</h2>
+        <p class="mt-2 text-sm text-slate-400">
+          Use actionable thresholds with clear owners and escalation paths.
+        </p>
+      </article>
+    </section>
+
+    <div class="mt-8 rounded-2xl border border-blue-500/30 bg-blue-500/10 p-6 text-blue-100">
+      <strong>Tip:</strong> Watch key signals before, during, and after deployment so regressions are detected early.
+    </div>
+  </main>
+</body>
+</html>
