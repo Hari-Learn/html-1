@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Production Changes</title>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100">
+  <main class="mx-auto max-w-4xl px-6 py-16">
+    <span class="rounded-full bg-blue-500/10 px-3 py-1 text-sm text-blue-300">
+      Production Engineering
+    </span>
+
+    <h1 class="mt-5 text-4xl font-bold">Production Changes</h1>
+
+    <p class="mt-4 text-lg text-slate-400">
+      Make every production change deliberate, reviewable, and easy to reverse.
+    </p>
+
+    <section class="mt-10 grid gap-5 sm:grid-cols-2">
+      <article class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <h2 class="text-xl font-semibold">Before the Change</h2>
+        <ul class="mt-4 space-y-3 text-slate-400">
+          <li>• Define scope, risk, and success criteria.</li>
+          <li>• Review the change with another engineer.</li>
+          <li>• Confirm backups and rollback steps.</li>
+        </ul>
+      </article>
+
+      <article class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <h2 class="text-xl font-semibold">After the Change</h2>
+        <ul class="mt-4 space-y-3 text-slate-400">
+          <li>• Verify health checks and key metrics.</li>
+          <li>• Watch logs for unexpected errors.</li>
+          <li>• Document the outcome and follow-ups.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
