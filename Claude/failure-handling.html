@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Failure Handling</title>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+  <main class="mx-auto max-w-4xl px-6 py-16">
+    <span class="rounded-full bg-red-500/10 px-3 py-1 text-sm text-red-300">
+      Reliability
+    </span>
+
+    <h1 class="mt-5 text-4xl font-bold">Failure Handling</h1>
+
+    <p class="mt-4 text-lg text-slate-400">
+      Design systems to handle failures predictably instead of allowing errors to cascade.
+    </p>
+
+    <section class="mt-10 space-y-4">
+      <article class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <h2 class="text-xl font-semibold">Detect</h2>
+        <p class="mt-2 text-slate-400">
+          Identify failures using timeouts, health checks, logs, and meaningful metrics.
+        </p>
+      </article>
+
+      <article class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <h2 class="text-xl font-semibold">Contain</h2>
+        <p class="mt-2 text-slate-400">
+          Prevent one failed component from taking down dependent services.
+        </p>
+      </article>
+
+      <article class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <h2 class="text-xl font-semibold">Recover</h2>
+        <p class="mt-2 text-slate-400">
+          Return a safe fallback response and provide a clear recovery path.
+        </p>
+      </article>
+    </section>
+
+    <div class="mt-8 rounded-2xl bg-amber-500/10 p-6 text-amber-200">
+      <strong>Rule:</strong> Fail safely, log enough context, and avoid exposing sensitive error details.
+    </div>
+  </main>
+</body>
+</html>
