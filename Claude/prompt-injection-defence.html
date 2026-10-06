@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Injection Defense</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white">
+  <main class="max-w-5xl mx-auto px-6 py-16">
+    <div class="text-center max-w-3xl mx-auto">
+      <span class="text-rose-400 font-semibold text-sm uppercase tracking-widest">
+        AI Security
+      </span>
+
+      <h1 class="mt-4 text-5xl md:text-6xl font-black">
+        Prompt Injection Defense
+      </h1>
+
+      <p class="mt-6 text-lg text-slate-400">
+        A practical defense layer for keeping untrusted instructions from
+        controlling your AI agent.
+      </p>
+    </div>
+
+    <section class="mt-14 grid md:grid-cols-2 gap-5">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+        <div class="text-rose-400 font-bold text-sm">01</div>
+        <h2 class="mt-3 text-xl font-bold">Treat Input as Untrusted</h2>
+        <p class="mt-2 text-slate-400">
+          User messages, web pages, documents, emails, and tool results may
+          contain instructions designed to manipulate the model.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+        <div class="text-rose-400 font-bold text-sm">02</div>
+        <h2 class="mt-3 text-xl font-bold">Separate Instructions</h2>
+        <p class="mt-2 text-slate-400">
+          Clearly distinguish trusted system instructions from untrusted data
+          and retrieved content.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+        <div class="text-rose-400 font-bold text-sm">03</div>
+        <h2 class="mt-3 text-xl font-bold">Limit Tool Permissions</h2>
+        <p class="mt-2 text-slate-400">
+          Give agents only the tools and permissions required for their task.
+          Use least privilege by default.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+        <div class="text-rose-400 font-bold text-sm">04</div>
+        <h2 class="mt-3 text-xl font-bold">Require Approval</h2>
+        <p class="mt-2 text-slate-400">
+          Add human approval before external side effects such as sending,
+          deleting, purchasing, or publishing.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-10 rounded-2xl bg-black/30 border border-rose-400/20 p-6">
+      <h2 class="font-bold text-lg">Defense checklist</h2>
+
+      <ul class="mt-5 space-y-3 text-slate-300">
+        <li>✓ Validate tool arguments</li>
+        <li>✓ Never expose secrets to the model unnecessarily</li>
+        <li>✓ Keep retrieved content separate from trusted instructions</li>
+        <li>✓ Apply least-privilege permissions</li>
+        <li>✓ Log sensitive actions</li>
+        <li>✓ Add human approval for high-impact operations</li>
+      </ul>
+    </section>
+
+    <footer class="mt-12 text-center text-sm text-slate-500">
+      Defense in depth beats relying on a single prompt rule.
+    </footer>
+  </main>
+</body>
+</html>
