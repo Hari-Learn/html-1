@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graceful Failure & Bounded Retries</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white">
+  <main class="max-w-5xl mx-auto px-6 py-16">
+    <div class="max-w-3xl">
+      <span class="text-blue-400 text-sm font-bold uppercase tracking-widest">Reliability</span>
+      <h1 class="mt-4 text-5xl font-black">Graceful Failure & Bounded Retries</h1>
+      <p class="mt-6 text-xl text-slate-400">
+        Build systems that recover from temporary failures without creating
+        infinite loops, duplicate actions, or cascading outages.
+      </p>
+    </div>
+
+    <section class="grid md:grid-cols-3 gap-5 mt-14">
+      <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+        <div class="text-blue-400 font-bold">01</div>
+        <h2 class="mt-3 text-xl font-bold">Detect Failure</h2>
+        <p class="mt-2 text-slate-400">
+          Distinguish temporary errors from permanent failures before deciding
+          whether another attempt makes sense.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+        <div class="text-blue-400 font-bold">02</div>
+        <h2 class="mt-3 text-xl font-bold">Bound Retries</h2>
+        <p class="mt-2 text-slate-400">
+          Set a maximum number of attempts and use exponential backoff with
+          jitter to avoid overwhelming dependent services.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+        <div class="text-blue-400 font-bold">03</div>
+        <h2 class="mt-3 text-xl font-bold">Fail Gracefully</h2>
+        <p class="mt-2 text-slate-400">
+          Return a safe fallback, clear error, or human-review path when
+          recovery is no longer possible.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-10 rounded-2xl bg-slate-900 border border-white/10 p-7">
+      <h2 class="text-2xl font-bold">Safe retry flow</h2>
+      <div class="mt-5 flex flex-wrap gap-3 text-sm">
+        <span class="px-4 py-2 bg-blue-500/10 text-blue-300 rounded-lg">Request</span>
+        <span class="text-slate-500 py-2">→</span>
+        <span class="px-4 py-2 bg-blue-500/10 text-blue-300 rounded-lg">Failure</span>
+        <span class="text-slate-500 py-2">→</span>
+        <span class="px-4 py-2 bg-blue-500/10 text-blue-300 rounded-lg">Backoff</span>
+        <span class="text-slate-500 py-2">→</span>
+        <span class="px-4 py-2 bg-blue-500/10 text-blue-300 rounded-lg">Retry</span>
+        <span class="text-slate-500 py-2">→</span>
+        <span class="px-4 py-2 bg-emerald-500/10 text-emerald-300 rounded-lg">Success / Fallback</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
