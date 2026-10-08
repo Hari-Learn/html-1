@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Prompt Engineering Strategies</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen p-6">
+  <main class="max-w-3xl mx-auto py-10">
+    <p class="text-orange-400 font-semibold">CLAUDE API · LESSON 04</p>
+    <h1 class="text-4xl font-bold mt-3">Prompt Engineering</h1>
+    <p class="text-slate-400 mt-4">Design better prompts for accurate, useful AI responses.</p>
+    <section class="grid sm:grid-cols-2 gap-4 mt-8">
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h2 class="text-orange-300 font-bold">Be Specific</h2>
+        <p class="mt-2 text-slate-300">Define the task, audience, format, and constraints.</p>
+      </article>
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h2 class="text-orange-300 font-bold">Give Examples</h2>
+        <p class="mt-2 text-slate-300">Show sample inputs and outputs to guide responses.</p>
+      </article>
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h2 class="text-orange-300 font-bold">Use XML Tags</h2>
+        <p class="mt-2 text-slate-300">Separate instructions, context, and source text clearly.</p>
+      </article>
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h2 class="text-orange-300 font-bold">Set Constraints</h2>
+        <p class="mt-2 text-slate-300">Specify word limits, tone, and output structure.</p>
+      </article>
+    </section>
+    <section class="mt-8">
+      <h2 class="text-2xl font-bold mb-3">Example Prompt</h2>
+      <pre class="bg-black p-5 rounded-xl whitespace-pre-wrap text-green-300">You are a technical tutor.
+
+Task: Explain REST APIs.
+Audience: Beginners.
+Format: 5 bullet points.
+Limit: Under 100 words.
+Include one practical example.</pre>
+    </section>
+    <section class="mt-8 bg-slate-900 rounded-xl p-5">
+      <h2 class="font-bold text-xl">Best Practices</h2>
+      <ul class="list-disc pl-6 mt-3 space-y-2 text-slate-300">
+        <li>Put the main task in clear language.</li>
+        <li>Provide relevant context and reference data.</li>
+        <li>Ask for structured output when needed.</li>
+        <li>Test prompts against multiple examples.</li>
+        <li>Evaluate accuracy, consistency, and relevance.</li>
+      </ul>
+    </section>
+    <p class="text-slate-500 mt-8">Practice: Write a prompt that summarizes a document in 5 bullet points.</p>
+  </main>
+</body>
+</html>
