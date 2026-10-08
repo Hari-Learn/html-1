@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Tool Use and Function Calling</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen p-6">
+  <main class="max-w-3xl mx-auto py-10">
+    <p class="text-purple-400 font-semibold">CLAUDE API · LESSON 06</p>
+    <h1 class="text-4xl font-bold mt-3">Tool Use & Function Calling</h1>
+    <p class="text-slate-400 mt-4">Let Claude request external tools to perform tasks and retrieve data.</p>
+    <section class="mt-8 grid sm:grid-cols-3 gap-3">
+      <article class="bg-slate-900 rounded-xl p-4">
+        <h2 class="font-bold text-purple-300">1. Define</h2>
+        <p class="text-slate-300 text-sm mt-2">Describe the tool and its input schema.</p>
+      </article>
+      <article class="bg-slate-900 rounded-xl p-4">
+        <h2 class="font-bold text-purple-300">2. Request</h2>
+        <p class="text-slate-300 text-sm mt-2">Claude returns a tool-use request.</p>
+      </article>
+      <article class="bg-slate-900 rounded-xl p-4">
+        <h2 class="font-bold text-purple-300">3. Execute</h2>
+        <p class="text-slate-300 text-sm mt-2">Your application runs the tool and returns results.</p>
+      </article>
+    </section>
+    <section class="mt-8">
+      <h2 class="text-2xl font-bold mb-3">Example: Calculator Tool</h2>
+      <pre class="bg-black p-4 rounded-xl overflow-x-auto text-sm text-green-300"><code>import anthropic
+
+client = anthropic.Anthropic()
+
+tools = [{
+    "name": "add_numbers",
+    "description": "Add two numbers.",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "a": {"type": "number"},
+            "b": {"type": "number"}
+        },
+        "required": ["a", "b"]
+    }
+}]
+
+response = client.messages.create(
+    model="claude-sonnet-4-5",
+    max_tokens=200,
+    tools=tools,
+    messages=[{
+        "role": "user",
+        "content": "What is 12 plus 8?"
+    }]
+)
+
+for block in response.content:
+    if block.type == "tool_use":
+        result = block.input["a"] + block.input["b"]
+        print("Tool result:", result)</code></pre>
+    </section>
+    <aside class="border border-purple-500/40 rounded-xl p-5 mt-8">
+      <h2 class="font-bold text-purple-300">Production Note</h2>
+      <p class="text-slate-300 mt-2">This example demonstrates tool request detection and execution. A complete tool loop must send the tool result back to Claude in a user message containing a tool_result block, then handle further responses.</p>
+    </aside>
+    <p class="text-slate-500 mt-8">Practice: Build a weather lookup tool or database search tool.</p>
+  </main>
+</body>
+</html>
