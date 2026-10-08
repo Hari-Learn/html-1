@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Long Context Handling</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen p-6">
+  <main class="max-w-3xl mx-auto py-10">
+    <p class="text-blue-400 font-semibold">CLAUDE API · LESSON 05</p>
+    <h1 class="text-4xl font-bold mt-3">Long-Context Handling</h1>
+    <p class="text-slate-400 mt-4">Work effectively with large documents and lengthy conversations.</p>
+    <section class="mt-8 bg-slate-900 rounded-xl p-6">
+      <h2 class="text-xl font-bold">Core Strategies</h2>
+      <ul class="list-disc pl-6 mt-3 space-y-3 text-slate-300">
+        <li><b>Organize:</b> Divide documents into logical sections.</li>
+        <li><b>Prioritize:</b> Place key instructions and questions clearly.</li>
+        <li><b>Filter:</b> Include only context relevant to the task.</li>
+        <li><b>Summarize:</b> Create concise notes from earlier conversations.</li>
+        <li><b>Verify:</b> Ask for evidence from the supplied source.</li>
+      </ul>
+    </section>
+    <section class="mt-8">
+      <h2 class="text-2xl font-bold mb-3">Example with Python</h2>
+      <pre class="bg-black p-4 rounded-xl overflow-x-auto text-sm text-green-300"><code>import anthropic
+
+client = anthropic.Anthropic()
+
+with open("report.txt", encoding="utf-8") as f:
+    document = f.read()
+
+response = client.messages.create(
+    model="claude-sonnet-4-5",
+    max_tokens=500,
+    messages=[{
+        "role": "user",
+        "content": f"""
+        Analyze this report.
+        Summarize key findings and risks.
+        Cite relevant sections where possible.
+        <document>
+        {document}
+        </document>
+        """
+    }]
+)
+
+print(response.content[0].text)</code></pre>
+    </section>
+    <aside class="border border-blue-500/40 bg-blue-500/10 rounded-xl p-5 mt-8">
+      <h2 class="font-bold text-blue-300">Important</h2>
+      <p class="text-slate-300 mt-2">Check the model's context window and output-token limits. Large files may require chunking, retrieval, or staged analysis.</p>
+    </aside>
+    <p class="text-slate-500 mt-8">Practice: Extract decisions, risks, and action items from a long report.</p>
+  </main>
+</body>
+</html>
