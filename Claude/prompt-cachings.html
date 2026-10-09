@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Caching</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-white min-h-screen">
+  <nav class="p-6 border-b border-zinc-800">
+    <h1 class="text-xl font-bold text-emerald-400">AI Concepts</h1>
+  </nav>
+  <main class="max-w-4xl mx-auto px-6 py-20">
+    <span class="text-emerald-400 uppercase tracking-widest text-sm">03 / Optimization</span>
+    <h2 class="text-5xl font-extrabold mt-4 mb-6">Prompt Caching</h2>
+    <p class="text-zinc-300 text-lg leading-8 mb-10">
+      Prompt caching reuses previously processed prompt prefixes when
+      supported by an AI provider, reducing repeated computation and often
+      improving response speed and cost efficiency.
+    </p>
+    <div class="grid md:grid-cols-2 gap-5 mb-8">
+      <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
+        <h3 class="text-emerald-400 font-bold mb-3">Cache Miss</h3>
+        <p class="text-zinc-400">New prompt prefix → Process input → Generate response.</p>
+      </div>
+      <div class="bg-zinc-900 p-6 rounded-xl border border-emerald-900">
+        <h3 class="text-emerald-400 font-bold mb-3">Cache Hit</h3>
+        <p class="text-zinc-400">Repeated prefix → Reuse cached computation → Faster processing.</p>
+      </div>
+    </div>
+    <section class="bg-emerald-950/30 border border-emerald-900 p-6 rounded-xl">
+      <h3 class="text-xl font-bold mb-4">Best Practices</h3>
+      <ul class="space-y-3 text-zinc-300">
+        <li>✓ Keep reusable instructions at the beginning.</li>
+        <li>✓ Put changing user details toward the end.</li>
+        <li>✓ Use prompts that share the same prefix.</li>
+        <li>✓ Check provider-specific caching requirements.</li>
+      </ul>
+    </section>
+    <section class="mt-8">
+      <h3 class="font-bold text-lg mb-2">Common Use Cases</h3>
+      <p class="text-zinc-400">Chatbots, long system prompts, document analysis, and AI agents.</p>
+    </section>
+  </main>
+  <footer class="text-center text-zinc-500 p-6">AI Learning Hub © 2026</footer>
+</body>
+</html>
