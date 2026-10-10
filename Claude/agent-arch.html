@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Application Architecture</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <nav class="p-6 border-b border-slate-800">
+    <h1 class="text-xl font-bold text-orange-400">Claude AI Systems</h1>
+  </nav>
+  <main class="max-w-5xl mx-auto px-6 py-16">
+    <p class="text-orange-400 uppercase tracking-widest text-sm">01 / Architecture</p>
+    <h2 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6">Claude Application Architecture</h2>
+    <p class="text-slate-300 text-lg leading-8 mb-10">
+      A Claude application connects users to an AI model through a secure
+      backend that manages prompts, context, tools, and responses.
+    </p>
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+      <h3 class="text-xl font-bold mb-5">Architecture Flow</h3>
+      <div class="space-y-3 text-center">
+        <div class="bg-orange-950 border border-orange-800 p-4 rounded-lg">User Interface</div>
+        <div class="text-orange-400 text-xl">↓</div>
+        <div class="bg-slate-800 p-4 rounded-lg">Backend API and Authentication</div>
+        <div class="text-orange-400 text-xl">↓</div>
+        <div class="bg-slate-800 p-4 rounded-lg">Prompt and Context Management</div>
+        <div class="text-orange-400 text-xl">↓</div>
+        <div class="bg-orange-950 border border-orange-800 p-4 rounded-lg">Claude API</div>
+        <div class="text-orange-400 text-xl">↓</div>
+        <div class="bg-slate-800 p-4 rounded-lg">Response Validation and UI</div>
+      </div>
+    </section>
+    <div class="grid md:grid-cols-3 gap-5 mt-8">
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h3 class="text-orange-400 font-bold mb-2">Frontend</h3>
+        <p class="text-slate-400">Chat interface, streaming responses, and user feedback.</p>
+      </article>
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h3 class="text-orange-400 font-bold mb-2">Backend</h3>
+        <p class="text-slate-400">API keys, business logic, rate limits, and tool execution.</p>
+      </article>
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h3 class="text-orange-400 font-bold mb-2">AI Layer</h3>
+        <p class="text-slate-400">Model inference, prompt instructions, and optional tool use.</p>
+      </article>
+    </div>
+  </main>
+  <footer class="text-center text-slate-500 p-6">Claude Production Guide © 2026</footer>
+</body>
+</html>
