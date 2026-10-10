@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Production Architecture and Design</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-white min-h-screen">
+  <nav class="p-6 border-b border-gray-800">
+    <h1 class="text-xl font-bold text-cyan-400">Production AI</h1>
+  </nav>
+  <main class="max-w-5xl mx-auto px-6 py-16">
+    <p class="text-cyan-400 uppercase tracking-widest text-sm">02 / System Design</p>
+    <h2 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6">Production Architecture and Design</h2>
+    <p class="text-gray-300 text-lg leading-8 mb-10">
+      Production architecture makes AI applications reliable, scalable,
+      observable, and maintainable under real-world workloads.
+    </p>
+    <section class="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+      <h3 class="text-xl font-bold mb-5">System Components</h3>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-gray-800 p-5 rounded-xl">
+          <h4 class="text-cyan-400 font-bold mb-2">API Gateway</h4>
+          <p class="text-gray-400">Authentication, routing, throttling, and request validation.</p>
+        </div>
+        <div class="bg-gray-800 p-5 rounded-xl">
+          <h4 class="text-cyan-400 font-bold mb-2">Application Services</h4>
+          <p class="text-gray-400">Business logic, workflow orchestration, and model calls.</p>
+        </div>
+        <div class="bg-gray-800 p-5 rounded-xl">
+          <h4 class="text-cyan-400 font-bold mb-2">Data Layer</h4>
+          <p class="text-gray-400">Databases, caching, document stores, and vector search.</p>
+        </div>
+        <div class="bg-gray-800 p-5 rounded-xl">
+          <h4 class="text-cyan-400 font-bold mb-2">Observability</h4>
+          <p class="text-gray-400">Metrics, traces, logs, latency, and error monitoring.</p>
+        </div>
+      </div>
+    </section>
+    <section class="mt-8 bg-cyan-950/30 border border-cyan-900 rounded-xl p-6">
+      <h3 class="text-xl font-bold mb-3">Production Best Practices</h3>
+      <ul class="space-y-3 text-gray-300">
+        <li>✓ Use retries with exponential backoff and timeouts.</li>
+        <li>✓ Apply caching and queues where appropriate.</li>
+        <li>✓ Scale services horizontally when needed.</li>
+        <li>✓ Track token usage, latency, and operating costs.</li>
+        <li>✓ Configure health checks, alerts, and disaster recovery.</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="text-center text-gray-500 p-6">Claude Production Guide © 2026</footer>
+</body>
+</html>
