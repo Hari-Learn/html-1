@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security, Safety and Evaluation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-white min-h-screen">
+  <nav class="p-6 border-b border-zinc-800">
+    <h1 class="text-xl font-bold text-emerald-400">Responsible AI</h1>
+  </nav>
+  <main class="max-w-5xl mx-auto px-6 py-16">
+    <p class="text-emerald-400 uppercase tracking-widest text-sm">03 / Trust and Quality</p>
+    <h2 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6">Security and Safety in Production</h2>
+    <p class="text-zinc-300 text-lg leading-8 mb-8">
+      Secure AI applications protect user data, limit unauthorized access,
+      and reduce harmful or unexpected model behavior.
+    </p>
+    <div class="grid md:grid-cols-2 gap-5">
+      <article class="bg-zinc-900 border border-zinc-800 p-6 rounded-xl">
+        <h3 class="text-emerald-400 text-xl font-bold mb-3">Security</h3>
+        <ul class="text-zinc-400 space-y-3">
+          <li>• Store API keys in a secrets manager.</li>
+          <li>• Enforce authentication and authorization.</li>
+          <li>• Encrypt sensitive data in transit and at rest.</li>
+          <li>• Defend against prompt injection and data leaks.</li>
+        </ul>
+      </article>
+      <article class="bg-zinc-900 border border-zinc-800 p-6 rounded-xl">
+        <h3 class="text-emerald-400 text-xl font-bold mb-3">Safety</h3>
+        <ul class="text-zinc-400 space-y-3">
+          <li>• Validate model outputs when appropriate.</li>
+          <li>• Apply permissions to tools and external actions.</li>
+          <li>• Redact sensitive information from logs.</li>
+          <li>• Escalate high-risk actions for human review.</li>
+        </ul>
+      </article>
+    </div>
+    <h2 class="text-3xl font-bold mt-12 mb-4">Evaluation in Production</h2>
+    <p class="text-zinc-400 mb-6">
+      Continuously measure quality, safety, reliability, and cost using
+      representative test cases and real-world monitoring.
+    </p>
+    <div class="grid sm:grid-cols-3 gap-4">
+      <div class="bg-emerald-950/40 p-5 rounded-xl">
+        <h3 class="font-bold text-emerald-400 mb-2">Quality</h3>
+        <p class="text-zinc-400">Accuracy, relevance, and grounded answers.</p>
+      </div>
+      <div class="bg-emerald-950/40 p-5 rounded-xl">
+        <h3 class="font-bold text-emerald-400 mb-2">Performance</h3>
+        <p class="text-zinc-400">Latency, availability, and token usage.</p>
+      </div>
+      <div class="bg-emerald-950/40 p-5 rounded-xl">
+        <h3 class="font-bold text-emerald-400 mb-2">Safety Tests</h3>
+        <p class="text-zinc-400">Adversarial prompts, regressions, and policy compliance.</p>
+      </div>
+    </div>
+    <p class="mt-8 text-sm text-zinc-500">Best practice: run evaluations before releases and monitor continuously after deployment.</p>
+  </main>
+  <footer class="text-center text-zinc-500 p-6">Claude Production Guide © 2026</footer>
+</body>
+</html>
