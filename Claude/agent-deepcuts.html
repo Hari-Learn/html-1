@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Deep Cuts | Hidden AI Knowledge</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: Inter, sans-serif; }
+    .glow { background: radial-gradient(circle at top right, #573a25, #151515 55%); }
+    .glass { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); }
+  </style>
+</head>
+<body class="bg-[#111111] text-white">
+  <nav class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+    <a href="index.html" class="text-xl font-extrabold tracking-tight">claude<span class="text-orange-400">/</span>rare</a>
+    <div class="flex gap-5 text-sm text-gray-400">
+      <a class="text-orange-300" href="index.html">Discover</a>
+      <a class="hover:text-white" href="research.html">Research</a>
+      <a class="hover:text-white" href="lab.html">Lab</a>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-6">
+    <section class="glow rounded-3xl p-8 md:p-16 border border-white/10 mt-8">
+      <span class="text-orange-300 text-xs tracking-[.25em] uppercase">Beyond the obvious</span>
+      <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight mt-5 max-w-3xl">
+        The side of Claude AI most people never explore.
+      </h1>
+      <p class="text-gray-400 text-lg mt-6 max-w-2xl leading-8">
+        A curated field guide to model behavior, hidden-in-plain-sight features,
+        context engineering, and the ideas shaping modern AI.
+      </p>
+      <a href="#topics" class="inline-block mt-8 bg-orange-400 text-black font-semibold px-6 py-3 rounded-xl hover:bg-orange-300 transition">
+        Explore the unknown ↗
+      </a>
+    </section>
+
+    <section id="topics" class="py-16">
+      <div class="flex justify-between items-end mb-7">
+        <div>
+          <p class="text-orange-300 text-sm">01 / DISCOVERY</p>
+          <h2 class="text-3xl font-bold mt-2">Rare topics</h2>
+        </div>
+        <p class="text-gray-500 text-sm hidden md:block">Three ideas worth understanding</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <article class="glass rounded-2xl p-6 hover:border-orange-400/50 transition">
+          <span class="text-3xl">◈</span>
+          <p class="text-xs text-orange-300 mt-6">MODEL BEHAVIOR</p>
+          <h3 class="text-xl font-bold mt-2">The refusal boundary</h3>
+          <p class="text-gray-400 text-sm leading-6 mt-3">
+            Explore how safety rules, ambiguous requests, and instruction conflicts
+            can influence an AI model's response.
+          </p>
+          <a href="research.html#constitutional" class="text-sm text-orange-300 inline-block mt-5">Explore topic ↗</a>
+        </article>
+
+        <article class="glass rounded-2xl p-6 hover:border-orange-400/50 transition">
+          <span class="text-3xl">⌘</span>
+          <p class="text-xs text-orange-300 mt-6">AI INFRASTRUCTURE</p>
+          <h3 class="text-xl font-bold mt-2">The context economy</h3>
+          <p class="text-gray-400 text-sm leading-6 mt-3">
+            Understand context windows, prompt caching, and why the structure
+            of information matters in long AI sessions.
+          </p>
+          <a href="lab.html#caching" class="text-sm text-orange-300 inline-block mt-5">Explore topic ↗</a>
+        </article>
+
+        <article class="glass rounded-2xl p-6 hover:border-orange-400/50 transition">
+          <span class="text-3xl">◎</span>
+          <p class="text-xs text-orange-300 mt-6">AGENT SYSTEMS</p>
+          <h3 class="text-xl font-bold mt-2">Tools beyond chat</h3>
+          <p class="text-gray-400 text-sm leading-6 mt-3">
+            Learn how MCP can connect compatible AI applications to external
+            tools, resources, and workflows.
+          </p>
+          <a href="lab.html#mcp" class="text-sm text-orange-300 inline-block mt-5">Explore topic ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="border-t border-white/10 py-12">
+      <p class="text-gray-500 text-sm">THE CENTRAL QUESTION</p>
+      <h2 class="text-2xl md:text-4xl font-bold mt-3 max-w-3xl leading-tight">
+        What changes when you stop treating AI as a chatbot and start treating it as a system?
+      </h2>
+      <p class="text-gray-400 mt-4 max-w-2xl leading-7">
+        Better inputs, connected tools, structured context, and thoughtful
+        evaluation can make AI workflows more reliable.
+      </p>
+    </section>
+
+    <footer class="border-t border-white/10 py-6 flex justify-between text-xs text-gray-500">
+      <span>CLAUDE / RARE</span>
+      <span>Curiosity is a workflow.</span>
+    </footer>
+  </main>
+</body>
+</html>
