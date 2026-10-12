@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Behind Claude | AI Research</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: Inter, sans-serif; }
+    .panel { background: #181818; border: 1px solid #303030; }
+  </style>
+</head>
+<body class="bg-[#101010] text-white">
+  <nav class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+    <a href="index.html" class="text-xl font-extrabold">claude<span class="text-orange-400">/</span>rare</a>
+    <div class="flex gap-5 text-sm text-gray-400">
+      <a href="index.html">Discover</a>
+      <a class="text-orange-300" href="research.html">Research</a>
+      <a href="lab.html">Lab</a>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-6">
+    <header class="py-16 md:py-24">
+      <p class="text-orange-300 uppercase tracking-[.25em] text-xs">02 / Research notes</p>
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mt-5 max-w-4xl">
+        Inside the ideas behind Claude.
+      </h1>
+      <p class="text-gray-400 text-lg mt-6 max-w-2xl leading-8">
+        Alignment, interpretability, and the difficult question of how to
+        build AI systems that behave as intended.
+      </p>
+    </header>
+
+    <section id="constitutional" class="grid md:grid-cols-[1.2fr_.8fr] gap-6 mb-8">
+      <article class="panel rounded-3xl p-7 md:p-10">
+        <span class="text-orange-300 text-sm">FIELD NOTE 001</span>
+        <h2 class="text-3xl font-bold mt-4">Constitutional AI</h2>
+        <p class="text-gray-400 leading-7 mt-5">
+          Constitutional AI is an approach developed by Anthropic that uses
+          an explicit set of principles to help guide model behavior. A training
+          process can include model-generated critiques and revisions rather
+          than relying exclusively on human feedback for every example.
+        </p>
+        <div class="mt-7 space-y-4">
+          <div class="border-l-2 border-orange-400 pl-4">
+            <h3 class="font-semibold">01 — Principles</h3>
+            <p class="text-sm text-gray-400 mt-1">Define behavioral guidance and safety goals.</p>
+          </div>
+          <div class="border-l-2 border-orange-400/60 pl-4">
+            <h3 class="font-semibold">02 — Critique</h3>
+            <p class="text-sm text-gray-400 mt-1">Evaluate a response against relevant principles.</p>
+          </div>
+          <div class="border-l-2 border-orange-400/30 pl-4">
+            <h3 class="font-semibold">03 — Revision</h3>
+            <p class="text-sm text-gray-400 mt-1">Use feedback to improve the response or training signal.</p>
+          </div>
+        </div>
+      </article>
+
+      <aside class="rounded-3xl bg-orange-400 text-black p-7 md:p-9">
+        <p class="uppercase tracking-widest text-xs font-semibold">The big question</p>
+        <h2 class="text-3xl font-extrabold mt-6 leading-tight">
+          Can AI critique itself reliably?
+        </h2>
+        <p class="mt-5 leading-7 text-black/75">
+          Self-critique can help, but a model may miss its own errors.
+          Independent evaluation and human oversight remain important.
+        </p>
+        <div class="mt-10 pt-5 border-t border-black/20 text-sm font-semibold">
+          Alignment is a research problem, not a checkbox.
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-6 mb-16">
+      <article class="panel rounded-2xl p-7">
+        <p class="text-orange-300 text-xs tracking-widest">FIELD NOTE 002</p>
+        <h2 class="text-2xl font-bold mt-4">Mechanistic interpretability</h2>
+        <p class="text-gray-400 leading-7 mt-3">
+          Researchers investigate internal model representations and
+          computational circuits to better understand how particular
+          behaviors arise. The goal is to move beyond simply observing outputs.
+        </p>
+        <div class="mt-6 p-4 bg-black/40 rounded-xl text-sm text-gray-300">
+          Research question: which internal features contribute to a model's
+          behavior, and how consistently can they be identified?
+        </div>
+      </article>
+
+      <article class="panel rounded-2xl p-7">
+        <p class="text-orange-300 text-xs tracking-widest">FIELD NOTE 003</p>
+        <h2 class="text-2xl font-bold mt-4">The limits of confidence</h2>
+        <p class="text-gray-400 leading-7 mt-3">
+          A fluent explanation is not proof that a model's answer is correct.
+          Confidence, factual accuracy, and a faithful explanation of internal
+          computation are different things.
+        </p>
+        <div class="mt-6 p-4 bg-black/40 rounded-xl text-sm text-gray-300">
+          Experiment: compare AI-generated claims with primary sources,
+          counterexamples, and independent tests.
+        </div>
+      </article>
+    </section>
+
+    <section class="border-t border-white/10 py-10">
+      <h2 class="text-2xl font-bold">Continue exploring</h2>
+      <p class="text-gray-400 mt-2">Take research concepts into practical workflows.</p>
+      <a href="lab.html" class="inline-block mt-5 px-5 py-3 rounded-xl bg-orange-400 text-black font-semibold">
+        Enter Claude Lab →
+      </a>
+    </section>
+
+    <footer class="border-t border-white/10 py-6 text-xs text-gray-500">
+      CLAUDE / RARE · RESEARCH NOTES
+    </footer>
+  </main>
+</body>
+</html>
