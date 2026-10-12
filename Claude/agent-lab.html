@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Lab | Advanced AI Workflows</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: Inter, sans-serif; }
+    .card { background: #191919; border: 1px solid #303030; }
+    .code { background: #080808; color: #d6d3d1; }
+  </style>
+</head>
+<body class="bg-[#101010] text-white">
+  <nav class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+    <a href="index.html" class="text-xl font-extrabold">claude<span class="text-orange-400">/</span>rare</a>
+    <div class="flex gap-5 text-sm text-gray-400">
+      <a href="index.html">Discover</a>
+      <a href="research.html">Research</a>
+      <a class="text-orange-300" href="lab.html">Lab</a>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-6">
+    <header class="py-16">
+      <p class="text-orange-300 text-xs uppercase tracking-[.25em]">03 / The workshop</p>
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mt-5">
+        Build beyond the prompt.
+      </h1>
+      <p class="text-gray-400 text-lg mt-6 max-w-2xl leading-8">
+        Discover the infrastructure and workflow techniques that help turn
+        Claude from a conversational assistant into part of a larger system.
+      </p>
+    </header>
+
+    <section id="mcp" class="card rounded-3xl p-7 md:p-10 mb-6">
+      <div class="flex flex-wrap justify-between gap-4 items-start">
+        <div>
+          <p class="text-orange-300 text-xs tracking-widest">TOOL ECOSYSTEM / 001</p>
+          <h2 class="text-3xl font-bold mt-3">Model Context Protocol (MCP)</h2>
+        </div>
+        <span class="border border-orange-400/40 text-orange-300 rounded-full px-4 py-2 text-xs">CONNECTIVITY</span>
+      </div>
+      <p class="text-gray-400 leading-7 mt-5 max-w-3xl">
+        MCP is an open protocol for connecting compatible AI applications
+        to external data sources and tools. Depending on the integration,
+        it can let an assistant retrieve information or invoke supported actions.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-4 mt-8">
+        <div class="bg-black/40 rounded-xl p-5">
+          <span class="text-orange-300 text-xl">01</span>
+          <h3 class="font-semibold mt-3">Resources</h3>
+          <p class="text-gray-500 text-sm mt-2">Expose useful information and context.</p>
+        </div>
+        <div class="bg-black/40 rounded-xl p-5">
+          <span class="text-orange-300 text-xl">02</span>
+          <h3 class="font-semibold mt-3">Tools</h3>
+          <p class="text-gray-500 text-sm mt-2">Provide defined actions an AI client can request.</p>
+        </div>
+        <div class="bg-black/40 rounded-xl p-5">
+          <span class="text-orange-300 text-xl">03</span>
+          <h3 class="font-semibold mt-3">Prompts</h3>
+          <p class="text-gray-500 text-sm mt-2">Offer reusable prompt templates where supported.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="caching" class="grid md:grid-cols-2 gap-6 mb-6">
+      <article class="card rounded-2xl p-7">
+        <p class="text-orange-300 text-xs tracking-widest">PERFORMANCE / 002</p>
+        <h2 class="text-2xl font-bold mt-4">Prompt caching</h2>
+        <p class="text-gray-400 leading-7 mt-3">
+          Prompt caching can reuse eligible portions of a repeated prompt
+          instead of processing the same prefix from scratch each time.
+          Depending on the API, this can reduce latency and input costs.
+        </p>
+        <div class="code rounded-xl p-4 mt-5 font-mono text-xs leading-6 overflow-x-auto">
+          <p class="text-gray-500">// Conceptual workflow</p>
+          <p>Stable instructions</p>
+          <p>+ Reusable reference material</p>
+          <p>+ New user question</p>
+          <p class="text-orange-300 mt-2">→ Less repeated processing</p>
+        </div>
+        <p class="text-gray-500 text-xs mt-4">
+          Actual caching behavior depends on the API, cache boundaries,
+          expiration rules, and request configuration.
+        </p>
+      </article>
+
+      <article class="card rounded-2xl p-7">
+        <p class="text-orange-300 text-xs tracking-widest">CONTEXT / 003</p>
+        <h2 class="text-2xl font-bold mt-4">Context engineering</h2>
+        <p class="text-gray-400 leading-7 mt-3">
+          Context engineering is the practice of deciding what information,
+          instructions, tools, and examples an AI system should receive.
+          More context is not automatically better.
+        </p>
+        <ul class="mt-5 space-y-3 text-sm text-gray-300">
+          <li>✓ Keep instructions clear and consistent.</li>
+          <li>✓ Retrieve relevant documents instead of dumping everything.</li>
+          <li>✓ Separate trusted reference data from untrusted input.</li>
+          <li>✓ Test whether additional context improves results.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="rounded-3xl bg-[#211810] border border-orange-400/20 p-7 md:p-10 mb-16">
+      <p class="text-orange-300 text-xs tracking-widest">YOUR NEXT EXPERIMENT</p>
+      <h2 class="text-3xl font-bold mt-4">Design a better AI workflow.</h2>
+      <p class="text-gray-400 mt-3 leading-7 max-w-2xl">
+        Start with a repetitive research task. Give Claude a clear objective,
+        a small set of reliable sources, and a structured output format.
+        Compare the result with a baseline and measure accuracy, time, and cost.
+      </p>
+      <a href="index.html" class="inline-block mt-7 bg-orange-400 text-black font-semibold px-6 py-3 rounded-xl hover:bg-orange-300 transition">
+        Back to discovery ↗
+      </a>
+    </section>
+
+    <footer class="border-t border-white/10 py-6 flex justify-between text-xs text-gray-500">
+      <span>CLAUDE / RARE</span>
+      <span>Learn. Test. Iterate.</span>
+    </footer>
+  </main>
+</body>
+</html>
