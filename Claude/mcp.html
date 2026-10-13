@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Model Context Protocol</title>
+</head>
+<body class="bg-gray-950 text-white min-h-screen">
+  <nav class="p-6 border-b border-gray-800">
+    <a href="rag.html" class="text-violet-400 font-bold">AI Learn</a>
+    <span class="float-right text-gray-400">MCP Fundamentals</span>
+  </nav>
+  <main class="max-w-4xl mx-auto px-6 py-16">
+    <p class="text-violet-400 font-semibold mb-3">AI INTEGRATION</p>
+    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+      Model Context Protocol
+    </h1>
+    <p class="text-gray-300 text-lg mb-10">
+      MCP is an open protocol that standardizes how AI applications
+      connect to external tools, resources, and data sources.
+    </p>
+    <section class="bg-gray-900 rounded-2xl p-6 mb-8">
+      <h2 class="text-2xl font-bold mb-4">MCP architecture</h2>
+      <div class="grid md:grid-cols-3 gap-4 text-center">
+        <div class="bg-violet-950 p-5 rounded-xl">
+          <p class="text-xl">🤖</p><b>MCP Host</b>
+          <p class="text-sm text-gray-300">AI application</p>
+        </div>
+        <div class="bg-gray-800 p-5 rounded-xl">
+          <p class="text-xl">🔌</p><b>MCP Client</b>
+          <p class="text-sm text-gray-300">Manages connection</p>
+        </div>
+        <div class="bg-gray-800 p-5 rounded-xl">
+          <p class="text-xl">🛠️</p><b>MCP Server</b>
+          <p class="text-sm text-gray-300">Provides capabilities</p>
+        </div>
+      </div>
+    </section>
+    <section class="space-y-4 mb-8">
+      <h2 class="text-2xl font-bold">Core concepts</h2>
+      <p class="text-gray-300"><b>Tools:</b> Functions an AI application can invoke.</p>
+      <p class="text-gray-300"><b>Resources:</b> Contextual data exposed by servers.</p>
+      <p class="text-gray-300"><b>Prompts:</b> Reusable prompt templates offered by servers.</p>
+      <p class="text-gray-300"><b>Transports:</b> Methods used to communicate between components.</p>
+    </section>
+    <section class="border border-violet-900 rounded-xl p-6">
+      <h2 class="text-xl font-bold mb-2">Real-world applications</h2>
+      <p class="text-gray-300">Connecting AI assistants to databases,
+      local files, developer tools, APIs, and business applications.</p>
+    </section>
+    <footer class="mt-12 text-gray-500 text-sm">
+      AI Learn · MCP Module · <a class="text-violet-400" href="rag.html">← Back to RAG</a>
+    </footer>
+  </main>
+</body>
+</html>
