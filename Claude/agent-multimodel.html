@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Tokens and Context Windows</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <main class="max-w-4xl mx-auto px-6 py-16">
+    <p class="text-cyan-400 font-semibold">CLAUDE AI • MODULE 02</p>
+    <h1 class="text-4xl md:text-5xl font-bold mt-4">Tokens & Context Windows</h1>
+    <p class="text-slate-400 mt-4 text-lg">Explore how AI processes text, images, and other inputs.</p>
+    <section class="mt-10 bg-slate-900 rounded-2xl p-6 border border-slate-800">
+      <h2 class="text-2xl font-bold text-cyan-300">What are tokens?</h2>
+      <p class="text-slate-300 leading-7 mt-3">Tokens are units of data processed by language models. A token may represent a word, part of a word, punctuation, or another piece of text.</p>
+      <div class="mt-5 bg-slate-800 p-4 rounded-xl">
+        <p class="text-slate-400 text-sm">Example sentence</p>
+        <p class="mt-2 text-lg">Claude can explain AI.</p>
+        <p class="text-cyan-300 mt-2 text-sm">Tokenization varies by model.</p>
+      </div>
+    </section>
+    <section class="mt-6 bg-slate-900 rounded-2xl p-6">
+      <h2 class="text-xl font-bold">Context window</h2>
+      <p class="text-slate-400 mt-2 leading-7">The context window is the amount of input and conversation context a model can process in a request. Limits vary by model.</p>
+      <div class="flex gap-2 mt-5">
+        <div class="bg-cyan-600 rounded p-3 text-center flex-1">Instructions</div>
+        <div class="bg-blue-600 rounded p-3 text-center flex-1">History</div>
+        <div class="bg-violet-600 rounded p-3 text-center flex-1">Documents</div>
+      </div>
+    </section>
+    <section class="mt-6 bg-slate-900 rounded-2xl p-6">
+      <h2 class="text-xl font-bold">Multimodal AI</h2>
+      <p class="text-slate-400 mt-2 leading-7">Multimodal models can work with more than one type of input or output, such as text, images, and documents, depending on the model and interface.</p>
+      <div class="flex flex-wrap gap-3 mt-4">
+        <span class="bg-slate-800 rounded-full px-4 py-2">Text</span>
+        <span class="bg-slate-800 rounded-full px-4 py-2">Images</span>
+        <span class="bg-slate-800 rounded-full px-4 py-2">Documents</span>
+        <span class="bg-slate-800 rounded-full px-4 py-2">Audio / tools*</span>
+      </div>
+      <p class="text-slate-500 text-sm mt-3">*Availability depends on the model and product.</p>
+    </section>
+    <footer class="text-slate-500 mt-12 text-sm">Claude AI Learning Path • 02 / 03</footer>
+  </main>
+</body>
+</html>
