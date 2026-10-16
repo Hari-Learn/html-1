@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Prompt Chaining and Multistep Tasks</title>
+</head>
+<body class="bg-gray-950 text-white min-h-screen p-8">
+  <main class="max-w-3xl mx-auto space-y-6">
+    <p class="text-emerald-400">Claude AI / Prompt Engineering</p>
+    <h1 class="text-4xl font-bold">Prompt Chaining</h1>
+    <p class="text-gray-400">Break complex tasks into smaller prompts where each stage builds on previous results.</p>
+    <section class="space-y-3">
+      <article class="bg-gray-900 rounded-xl p-4 border-l-4 border-emerald-500">
+        <span class="text-emerald-400 font-semibold">Step 1</span>
+        <h2 class="text-xl font-semibold">Research</h2>
+        <p class="text-gray-300">Ask Claude to extract relevant facts from source material.</p>
+      </article>
+      <div class="text-center text-emerald-400">↓ Output becomes next input</div>
+      <article class="bg-gray-900 rounded-xl p-4 border-l-4 border-blue-500">
+        <span class="text-blue-400 font-semibold">Step 2</span>
+        <h2 class="text-xl font-semibold">Analyze</h2>
+        <p class="text-gray-300">Use the extracted facts to identify patterns and key insights.</p>
+      </article>
+      <div class="text-center text-emerald-400">↓ Analysis becomes next input</div>
+      <article class="bg-gray-900 rounded-xl p-4 border-l-4 border-purple-500">
+        <span class="text-purple-400 font-semibold">Step 3</span>
+        <h2 class="text-xl font-semibold">Generate</h2>
+        <p class="text-gray-300">Create a report based on the verified analysis.</p>
+      </article>
+    </section>
+    <section class="bg-gray-900 rounded-xl p-5">
+      <h2 class="text-xl font-semibold mb-3">Practical Example</h2>
+      <p class="text-gray-300 mb-3">Task: Create a market research report.</p>
+      <pre class="whitespace-pre-wrap text-sm text-green-300">Prompt 1: Extract market facts.
+Prompt 2: Analyze trends using those facts.
+Prompt 3: Write an executive summary.
+Prompt 4: Check claims against sources.</pre>
+    </section>
+    <section class="border border-emerald-800 rounded-xl p-5">
+      <h2 class="font-semibold mb-2">Best Practices</h2>
+      <ul class="list-disc ml-5 space-y-2 text-gray-300">
+        <li>Define a clear goal for each stage.</li>
+        <li>Pass relevant outputs between prompts.</li>
+        <li>Validate important intermediate results.</li>
+        <li>Add human review for high-impact decisions.</li>
+      </ul>
+    </section>
+    <footer class="text-sm text-gray-500">Claude Prompt Engineering • Module 3</footer>
+  </main>
+</body>
+</html>
