@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude Output Formatting</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen p-8">
+  <main class="max-w-3xl mx-auto space-y-6">
+    <p class="text-cyan-400">Claude AI / Prompt Engineering</p>
+    <h1 class="text-4xl font-bold">Output Formatting</h1>
+    <p class="text-slate-400">Control how Claude presents information using explicit instructions.</p>
+    <section class="grid sm:grid-cols-2 gap-4">
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h2 class="text-xl font-semibold text-cyan-400">Tables</h2>
+        <p class="mt-2 text-slate-300">Best for comparisons and structured summaries.</p>
+        <pre class="mt-3 text-sm text-green-300">Create a table with
+Name, Price, Features.</pre>
+      </article>
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h2 class="text-xl font-semibold text-cyan-400">JSON</h2>
+        <p class="mt-2 text-slate-300">Best for APIs and machine-readable data.</p>
+        <pre class="mt-3 text-sm text-green-300">Return valid JSON with
+"name" and "category".</pre>
+      </article>
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h2 class="text-xl font-semibold text-cyan-400">Markdown</h2>
+        <p class="mt-2 text-slate-300">Best for readable documents and reports.</p>
+        <pre class="mt-3 text-sm text-green-300">Use headings, bold text,
+and short paragraphs.</pre>
+      </article>
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h2 class="text-xl font-semibold text-cyan-400">Lists</h2>
+        <p class="mt-2 text-slate-300">Best for steps, checklists, and key points.</p>
+        <pre class="mt-3 text-sm text-green-300">Give 5 numbered steps
+in execution order.</pre>
+      </article>
+    </section>
+    <section class="bg-slate-900 rounded-xl p-5">
+      <h2 class="text-xl font-semibold mb-3">Example JSON Output</h2>
+      <pre class="text-sm text-green-300">{
+  "topic": "Prompt Engineering",
+  "level": "Beginner",
+  "skills": ["XML", "JSON", "Markdown"]
+}</pre>
+    </section>
+    <section class="border border-cyan-800 rounded-xl p-5">
+      <h2 class="font-semibold mb-2">Pro Tip</h2>
+      <p class="text-slate-300">Specify the exact format, required fields, item count, and whether extra commentary is allowed. Validate JSON when strict machine-readable output is required.</p>
+    </section>
+    <footer class="text-sm text-slate-500">Claude Prompt Engineering • Module 2</footer>
+  </main>
+</body>
+</html>
