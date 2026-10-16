@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Structuring Prompts with XML Tags</title>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen p-8">
+  <main class="max-w-3xl mx-auto space-y-6">
+    <a href="#" class="text-violet-400">Claude AI / Prompt Engineering</a>
+    <h1 class="text-4xl font-bold">Structuring Prompts with XML Tags</h1>
+    <p class="text-gray-400">Use XML tags to organize instructions, context, examples, and input.</p>
+    <section class="bg-gray-900 rounded-xl p-5">
+      <h2 class="text-xl font-semibold mb-3">Why XML Tags?</h2>
+      <p>XML tags help Claude distinguish different parts of a prompt and reduce ambiguity.</p>
+    </section>
+    <section>
+      <h2 class="text-2xl font-semibold mb-3">Common Tags</h2>
+      <ul class="list-disc ml-6 space-y-2 text-gray-300">
+        <li><code class="text-violet-400">&lt;instructions&gt;</code> — defines the task.</li>
+        <li><code class="text-violet-400">&lt;context&gt;</code> — provides background.</li>
+        <li><code class="text-violet-400">&lt;examples&gt;</code> — shows desired behavior.</li>
+        <li><code class="text-violet-400">&lt;input&gt;</code> — contains user data.</li>
+        <li><code class="text-violet-400">&lt;output_format&gt;</code> — specifies the response format.</li>
+      </ul>
+    </section>
+    <section class="bg-gray-900 rounded-xl p-5">
+      <h2 class="text-xl font-semibold mb-3">Example Prompt</h2>
+      <pre class="whitespace-pre-wrap text-sm text-green-300">&lt;instructions&gt;
+Summarize the provided article in 3 bullets.
+&lt;/instructions&gt;
+&lt;context&gt;The audience is beginners.&lt;/context&gt;
+&lt;input&gt;Artificial intelligence automates tasks...&lt;/input&gt;
+&lt;output_format&gt;Markdown bullet list&lt;/output_format&gt;</pre>
+    </section>
+    <section class="border border-violet-700 rounded-xl p-5">
+      <h2 class="font-semibold mb-2">Best Practices</h2>
+      <p class="text-gray-300">Use descriptive tag names, keep sections clear, and explicitly state the task and expected output.</p>
+    </section>
+    <footer class="text-sm text-gray-500">Claude Prompt Engineering • Module 1</footer>
+  </main>
+</body>
+</html>
