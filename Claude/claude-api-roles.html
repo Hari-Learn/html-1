@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Inputs and API Responses</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen p-6">
+  <main class="max-w-3xl mx-auto py-10">
+    <p class="text-orange-400 font-semibold">CLAUDE API · LESSON 03</p>
+    <h1 class="text-4xl font-bold mt-3">Inputs & Responses</h1>
+    <p class="text-slate-400 mt-4">Send text or documents and process Claude's output.</p>
+    <section class="mt-8">
+      <h2 class="text-2xl font-bold mb-3">1. Send text input</h2>
+      <pre class="bg-black p-4 rounded-lg overflow-x-auto text-sm text-green-300"><code>response = client.messages.create(
+    model="claude-sonnet-4-5",
+    max_tokens=300,
+    messages=[{
+        "role": "user",
+        "content": "Summarize: AI helps automate tasks."
+    }]
+)
+
+print(response.content[0].text)</code></pre>
+    </section>
+    <section class="mt-8">
+      <h2 class="text-2xl font-bold mb-3">2. Send a PDF document</h2>
+      <pre class="bg-black p-4 rounded-lg overflow-x-auto text-sm text-green-300"><code>import base64
+
+with open("document.pdf", "rb") as file:
+    pdf_data = base64.b64encode(file.read()).decode("utf-8")
+
+response = client.messages.create(
+    model="claude-sonnet-4-5",
+    max_tokens=500,
+    messages=[{
+        "role": "user",
+        "content": [
+            {
+                "type": "document",
+                "source": {
+                    "type": "base64",
+                    "media_type": "application/pdf",
+                    "data": pdf_data
+                }
+            },
+            {"type": "text", "text": "Summarize this PDF."}
+        ]
+    }]
+)</code></pre>
+    </section>
+    <section class="mt-8 bg-slate-900 rounded-xl p-6">
+      <h2 class="text-xl font-bold">3. Handle the response</h2>
+      <pre class="bg-black p-4 rounded-lg mt-3 overflow-x-auto text-sm text-green-300"><code>for block in response.content:
+    if block.type == "text":
+        print(block.text)
+
+print("Stop reason:", response.stop_reason)
+print("Input tokens:", response.usage.input_tokens)
+print("Output tokens:", response.usage.output_tokens)</code></pre>
+    </section>
+    <aside class="border border-orange-500/40 rounded-xl p-5 mt-8">
+      <h2 class="font-bold text-orange-300">Remember</h2>
+      <p class="text-slate-300 mt-2">Handle API errors, validate inputs, protect sensitive documents, and check token usage. PDF support and size limits depend on the API's current documentation.</p>
+    </aside>
+  </main>
+</body>
+</html>
