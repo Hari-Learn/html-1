@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>First Claude API Request</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen p-6">
+  <main class="max-w-3xl mx-auto py-10">
+    <p class="text-orange-400 font-semibold">CLAUDE API · LESSON 01</p>
+    <h1 class="text-4xl font-bold mt-3">Your First API Request</h1>
+    <p class="text-slate-400 mt-4">Connect your application to Claude using the Anthropic API.</p>
+    <section class="bg-slate-900 rounded-xl p-6 mt-8">
+      <h2 class="text-xl font-semibold mb-3">Prerequisites</h2>
+      <ul class="list-disc pl-6 text-slate-300 space-y-2">
+        <li>An Anthropic Console account</li>
+        <li>An API key with access to a model</li>
+        <li>Python and the Anthropic SDK</li>
+      </ul>
+    </section>
+    <section class="mt-8">
+      <h2 class="text-2xl font-bold mb-3">1. Install the SDK</h2>
+      <pre class="bg-black p-4 rounded-lg overflow-x-auto text-green-300">pip install anthropic</pre>
+    </section>
+    <section class="mt-6">
+      <h2 class="text-2xl font-bold mb-3">2. Send a request</h2>
+      <pre class="bg-black p-4 rounded-lg overflow-x-auto text-sm text-green-300"><code>import anthropic
+
+client = anthropic.Anthropic()
+
+response = client.messages.create(
+    model="claude-sonnet-4-5",
+    max_tokens=200,
+    messages=[
+        {"role": "user", "content": "Explain AI simply."}
+    ]
+)
+
+print(response.content[0].text)</code></pre>
+    </section>
+    <aside class="border border-orange-500/40 bg-orange-500/10 rounded-xl p-5 mt-8">
+      <h2 class="font-bold text-orange-300">Important</h2>
+      <p class="text-slate-300 mt-2">Set ANTHROPIC_API_KEY as an environment variable. Never expose your API key in browser JavaScript.</p>
+    </aside>
+    <footer class="text-slate-500 mt-8">Learning outcome: Make a request and display Claude's response.</footer>
+  </main>
+</body>
+</html>
