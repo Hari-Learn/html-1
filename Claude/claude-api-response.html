@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>System Prompts and Roles</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen p-6">
+  <main class="max-w-3xl mx-auto py-10">
+    <p class="text-orange-400 font-semibold">CLAUDE API · LESSON 02</p>
+    <h1 class="text-4xl font-bold mt-3">System Prompts & Roles</h1>
+    <p class="text-slate-400 mt-4">Control Claude's behavior and structure conversations.</p>
+    <section class="grid sm:grid-cols-2 gap-4 mt-8">
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h2 class="font-bold text-orange-300">System prompt</h2>
+        <p class="text-slate-300 mt-2">Defines instructions, expertise, tone, and constraints.</p>
+      </article>
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h2 class="font-bold text-blue-300">User role</h2>
+        <p class="text-slate-300 mt-2">Contains the question, task, or input from the user.</p>
+      </article>
+    </section>
+    <section class="mt-8">
+      <h2 class="text-2xl font-bold mb-3">Example using Python</h2>
+      <pre class="bg-black p-4 rounded-lg overflow-x-auto text-sm text-green-300"><code>import anthropic
+
+client = anthropic.Anthropic()
+
+response = client.messages.create(
+    model="claude-sonnet-4-5",
+    max_tokens=200,
+    system="You are a friendly Python tutor. Use simple examples.",
+    messages=[
+        {
+            "role": "user",
+            "content": "Explain Python variables."
+        }
+    ]
+)
+
+print(response.content[0].text)</code></pre>
+    </section>
+    <section class="bg-slate-900 rounded-xl p-6 mt-8">
+      <h2 class="text-xl font-bold">Key concepts</h2>
+      <ul class="list-disc pl-6 mt-3 space-y-2 text-slate-300">
+        <li>The system parameter provides high-level instructions.</li>
+        <li>The user role supplies the task or question.</li>
+        <li>The assistant role represents Claude's replies in conversation history.</li>
+        <li>Keep instructions clear, specific, and consistent.</li>
+      </ul>
+    </section>
+    <p class="text-slate-500 mt-8">Practice: Change the system prompt to make Claude act as a math tutor.</p>
+  </main>
+</body>
+</html>
