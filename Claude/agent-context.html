@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Context Engineering</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <a href="#" class="text-cyan-400 text-sm">Claude AI / Learning</a>
+    <h1 class="text-4xl font-bold mt-5">Context Engineering</h1>
+    <p class="text-slate-400 mt-3 text-lg">Give AI the right information at the right time.</p>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mt-8">
+      <h2 class="text-xl font-semibold text-cyan-300">What is Context Engineering?</h2>
+      <p class="text-slate-300 mt-3">Context engineering is the process of designing the information an AI model receives before generating a response.</p>
+    </section>
+
+    <h2 class="text-2xl font-bold mt-10">Core Techniques</h2>
+    <div class="grid sm:grid-cols-2 gap-4 mt-5">
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h3 class="font-semibold text-cyan-300">1. System Instructions</h3>
+        <p class="text-slate-400 mt-2">Define the AI's role, rules, goals, and response style.</p>
+      </article>
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h3 class="font-semibold text-cyan-300">2. Relevant Context</h3>
+        <p class="text-slate-400 mt-2">Include only information that helps solve the current task.</p>
+      </article>
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h3 class="font-semibold text-cyan-300">3. Retrieval (RAG)</h3>
+        <p class="text-slate-400 mt-2">Retrieve useful documents from external knowledge sources.</p>
+      </article>
+      <article class="bg-slate-900 p-5 rounded-xl">
+        <h3 class="font-semibold text-cyan-300">4. Context Management</h3>
+        <p class="text-slate-400 mt-2">Summarize history and remove irrelevant details.</p>
+      </article>
+    </div>
+
+    <section class="mt-8 bg-cyan-950/40 border border-cyan-900 rounded-xl p-6">
+      <h2 class="font-bold text-lg">Example Prompt</h2>
+      <p class="text-slate-300 mt-3">"You are a Python tutor. The learner is a beginner. Explain concepts in simple language and provide one example."</p>
+    </section>
+
+    <footer class="text-slate-500 text-sm mt-10">Claude AI Learning Series · Module 1</footer>
+  </main>
+</body>
+</html>
