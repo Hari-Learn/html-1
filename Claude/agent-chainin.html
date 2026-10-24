@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Structured Outputs & Prompt Chaining</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <a href="#" class="text-emerald-400 text-sm">Claude AI / Learning</a>
+    <h1 class="text-4xl font-bold mt-5">Structured Outputs</h1>
+    <p class="text-slate-400 mt-3 text-lg">Turn AI responses into predictable data.</p>
+
+    <section class="bg-slate-900 rounded-2xl p-6 mt-8">
+      <h2 class="text-xl font-semibold text-emerald-300">What are Structured Outputs?</h2>
+      <p class="text-slate-300 mt-3">Structured outputs format responses using a defined schema, such as JSON, making results easier for applications to validate and process.</p>
+      <pre class="bg-slate-950 text-emerald-300 p-4 rounded-lg mt-4 overflow-x-auto text-sm">{
+  "topic": "Claude AI",
+  "difficulty": "beginner",
+  "completed": true
+}</pre>
+    </section>
+
+    <h2 class="text-2xl font-bold mt-10">Prompt Chaining</h2>
+    <p class="text-slate-400 mt-2">Break a complex task into smaller prompts where each step uses the previous result.</p>
+    <div class="grid sm:grid-cols-3 gap-3 mt-5">
+      <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
+        <span class="text-emerald-400 font-bold">STEP 01</span>
+        <h3 class="font-semibold mt-2">Research</h3>
+        <p class="text-slate-400 text-sm mt-2">Collect relevant facts.</p>
+      </div>
+      <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
+        <span class="text-emerald-400 font-bold">STEP 02</span>
+        <h3 class="font-semibold mt-2">Analyze</h3>
+        <p class="text-slate-400 text-sm mt-2">Identify patterns and insights.</p>
+      </div>
+      <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
+        <span class="text-emerald-400 font-bold">STEP 03</span>
+        <h3 class="font-semibold mt-2">Generate</h3>
+        <p class="text-slate-400 text-sm mt-2">Produce the final report.</p>
+      </div>
+    </div>
+
+    <section class="mt-8 bg-emerald-950/40 border border-emerald-900 rounded-xl p-6">
+      <h2 class="font-bold text-lg">Task Decomposition Example</h2>
+      <p class="text-slate-300 mt-3">Task: Build a market research report.</p>
+      <ul class="list-disc list-inside text-slate-300 mt-3 space-y-2">
+        <li>Define the research question.</li>
+        <li>Gather and verify information.</li>
+        <li>Analyze competitors and trends.</li>
+        <li>Return findings in a specified JSON schema.</li>
+      </ul>
+    </section>
+
+    <footer class="text-slate-500 text-sm mt-10">Claude AI Learning Series · Module 3</footer>
+  </main>
+</body>
+</html>
