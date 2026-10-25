@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Embeddings & Vector Databases</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen p-8">
+  <nav class="mb-12 text-sm text-cyan-400">AI / RAG Learning</nav>
+  <main class="max-w-3xl mx-auto">
+    <p class="text-cyan-400 uppercase tracking-widest text-sm">Module 01</p>
+    <h1 class="text-4xl font-bold mt-3">Embeddings & Vector Databases</h1>
+    <p class="text-slate-400 mt-4">Convert text into vectors and retrieve semantically similar information.</p>
+    <section class="grid md:grid-cols-2 gap-4 mt-8">
+      <div class="bg-slate-900 p-5 rounded-xl border border-slate-800">
+        <h2 class="text-xl font-semibold">Embeddings</h2>
+        <p class="text-slate-400 mt-2">Numerical representations of text that capture semantic meaning.</p>
+      </div>
+      <div class="bg-slate-900 p-5 rounded-xl border border-slate-800">
+        <h2 class="text-xl font-semibold">Vector Database</h2>
+        <p class="text-slate-400 mt-2">Stores vectors and searches for similar items efficiently.</p>
+      </div>
+    </section>
+    <section class="mt-8 bg-slate-900 p-6 rounded-xl">
+      <h2 class="text-xl font-semibold">Example</h2>
+      <p class="text-slate-300 mt-3">Query: "How can I reset my password?"</p>
+      <p class="text-slate-400 mt-2">A semantic search may find: "Steps to recover your account."</p>
+      <div class="mt-4 bg-slate-800 p-3 rounded text-cyan-300 text-sm">Text → Embedding → Similarity Search → Results</div>
+    </section>
+    <a href="chunking.html" class="inline-block mt-8 bg-cyan-500 text-slate-950 px-5 py-3 rounded-lg font-semibold">Next: Chunking →</a>
+  </main>
+</body>
+</html>

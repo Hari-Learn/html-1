@@ -1,0 +1,129 @@
+Here’s a matching **Agent Operation Control** dashboard page using Tailwind CSS, kept under 100 lines.
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Operation Control</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <main class="max-w-6xl mx-auto px-6 py-10">
+
+    <header class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+      <div>
+        <span class="text-xs px-3 py-1 rounded-full bg-cyan-400/10 text-cyan-300">
+          Agent Operations
+        </span>
+        <h1 class="text-4xl font-bold mt-3">Operation Control</h1>
+        <p class="text-slate-400 mt-2">
+          Monitor, control, and manage AI agent operations in real time.
+        </p>
+      </div>
+      <div class="mt-4 md:mt-0 px-4 py-2 rounded-xl bg-emerald-400/10 text-emerald-400">
+        ● System Operational
+      </div>
+    </header>
+
+    <section class="grid md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-slate-900 rounded-2xl p-5 border border-slate-800">
+        <p class="text-slate-400 text-sm">Active Agents</p>
+        <p class="text-3xl font-bold mt-2">24</p>
+      </div>
+      <div class="bg-slate-900 rounded-2xl p-5 border border-slate-800">
+        <p class="text-slate-400 text-sm">Running Tasks</p>
+        <p class="text-3xl font-bold mt-2">138</p>
+      </div>
+      <div class="bg-slate-900 rounded-2xl p-5 border border-slate-800">
+        <p class="text-slate-400 text-sm">Success Rate</p>
+        <p class="text-3xl font-bold text-emerald-400 mt-2">98.4%</p>
+      </div>
+      <div class="bg-slate-900 rounded-2xl p-5 border border-slate-800">
+        <p class="text-slate-400 text-sm">Alerts</p>
+        <p class="text-3xl font-bold text-yellow-400 mt-2">3</p>
+      </div>
+    </section>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-8">
+      <div class="flex justify-between items-center mb-5">
+        <div>
+          <h2 class="text-xl font-semibold">Agent Control</h2>
+          <p class="text-sm text-slate-400">Current agent activity</p>
+        </div>
+        <button class="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950
+          font-semibold rounded-lg transition">
+          + Deploy Agent
+        </button>
+      </div>
+
+      <div class="space-y-3">
+        <div class="flex items-center justify-between bg-slate-800/60 rounded-xl p-4">
+          <div>
+            <p class="font-medium">Research Agent</p>
+            <p class="text-xs text-slate-400">Task: Market analysis</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-emerald-400 text-sm">● Running</span>
+            <button class="text-yellow-400 text-sm">Pause</button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between bg-slate-800/60 rounded-xl p-4">
+          <div>
+            <p class="font-medium">Support Agent</p>
+            <p class="text-xs text-slate-400">Task: Customer requests</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-emerald-400 text-sm">● Running</span>
+            <button class="text-yellow-400 text-sm">Pause</button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between bg-slate-800/60 rounded-xl p-4">
+          <div>
+            <p class="font-medium">Data Agent</p>
+            <p class="text-xs text-slate-400">Task: Data pipeline</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-slate-400 text-sm">● Idle</span>
+            <button class="text-emerald-400 text-sm">Start</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <h2 class="font-semibold text-lg">Safety Controls</h2>
+        <div class="mt-5 space-y-4 text-sm">
+          <div class="flex justify-between">
+            <span>Human Approval</span>
+            <span class="text-emerald-400">Enabled</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Tool Restrictions</span>
+            <span class="text-emerald-400">Enabled</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Audit Logging</span>
+            <span class="text-emerald-400">Enabled</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <h2 class="font-semibold text-lg">Recent Events</h2>
+        <div class="mt-5 space-y-3 text-sm">
+          <p><span class="text-emerald-400">●</span> Agent completed task</p>
+          <p><span class="text-cyan-400">●</span> New agent deployed</p>
+          <p><span class="text-yellow-400">●</span> Approval requested</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
+```
