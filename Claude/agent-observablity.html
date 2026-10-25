@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Logging and Observability</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <main class="max-w-4xl mx-auto p-6 md:p-12">
+    <p class="text-sky-400 font-semibold">CLAUDE AI / MODULE 2</p>
+    <h1 class="text-4xl font-bold mt-4">Logging & Observability</h1>
+    <p class="text-slate-400 mt-3">Understand, debug, and monitor AI systems in production.</p>
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mt-8">
+      <h2 class="text-xl font-bold text-sky-400">What is Observability?</h2>
+      <p class="text-slate-300 mt-3">Observability uses logs, metrics, and traces to explain system behavior, detect failures, and improve application reliability.</p>
+    </section>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Three Pillars</h2>
+    <div class="grid sm:grid-cols-3 gap-4">
+      <article class="bg-slate-900 p-5 rounded-xl"><h3 class="font-bold text-sky-300">Logs</h3><p class="text-slate-400 mt-2">Record errors, request IDs, model names, and outcomes.</p></article>
+      <article class="bg-slate-900 p-5 rounded-xl"><h3 class="font-bold text-sky-300">Metrics</h3><p class="text-slate-400 mt-2">Track latency, token usage, error rates, and quality.</p></article>
+      <article class="bg-slate-900 p-5 rounded-xl"><h3 class="font-bold text-sky-300">Traces</h3><p class="text-slate-400 mt-2">Follow a request across API calls and application steps.</p></article>
+    </div>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Example Log</h2>
+    <pre class="bg-slate-900 border border-slate-800 rounded-xl p-5 text-sm text-sky-300 overflow-x-auto">{
+  "request_id": "req_1024",
+  "model": "claude-model",
+  "latency_ms": 820,
+  "input_tokens": 1200,
+  "output_tokens": 250,
+  "status": "success"
+}</pre>
+    <section class="mt-8 bg-sky-950/40 border border-sky-900 rounded-xl p-6">
+      <h2 class="font-bold">Best Practices</h2>
+      <ul class="list-disc list-inside text-slate-300 mt-3 space-y-2">
+        <li>Use unique request IDs and structured logs.</li>
+        <li>Monitor latency percentiles and error rates.</li>
+        <li>Set alerts for unusual failures or usage spikes.</li>
+        <li>Redact API keys, personal data, and sensitive prompts.</li>
+      </ul>
+    </section>
+    <footer class="text-slate-500 mt-10 text-sm">Claude AI Learning Series · Monitoring</footer>
+  </main>
+</body>
+</html>
