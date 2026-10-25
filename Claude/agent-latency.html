@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Latency and Cost Optimization</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <main class="max-w-4xl mx-auto p-6 md:p-12">
+    <p class="text-amber-400 font-semibold">CLAUDE AI / MODULE 3</p>
+    <h1 class="text-4xl font-bold mt-4">Latency & Cost Optimization</h1>
+    <p class="text-slate-400 mt-3">Build faster AI applications while controlling API spending.</p>
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mt-8">
+      <h2 class="text-xl font-bold text-amber-400">What Should You Optimize?</h2>
+      <p class="text-slate-300 mt-3">Latency measures how long a request takes. Cost depends on model pricing, token consumption, caching, and usage patterns.</p>
+    </section>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Optimization Techniques</h2>
+    <div class="space-y-4">
+      <article class="bg-slate-900 p-5 rounded-xl"><h3 class="font-bold text-amber-300">1. Choose the Right Model</h3><p class="text-slate-400 mt-2">Use a smaller, faster model for simple tasks when quality is sufficient.</p></article>
+      <article class="bg-slate-900 p-5 rounded-xl"><h3 class="font-bold text-amber-300">2. Reduce Tokens</h3><p class="text-slate-400 mt-2">Remove redundant context and limit output length appropriately.</p></article>
+      <article class="bg-slate-900 p-5 rounded-xl"><h3 class="font-bold text-amber-300">3. Prompt Caching</h3><p class="text-slate-400 mt-2">Cache eligible repeated prompt prefixes to reduce processing cost and latency.</p></article>
+      <article class="bg-slate-900 p-5 rounded-xl"><h3 class="font-bold text-amber-300">4. Stream Responses</h3><p class="text-slate-400 mt-2">Display generated text progressively to improve perceived responsiveness.</p></article>
+    </div>
+    <section class="mt-8 bg-amber-950/40 border border-amber-900 rounded-xl p-6">
+      <h2 class="font-bold text-lg">Cost Estimation</h2>
+      <p class="text-slate-300 mt-3">Estimated cost = (Input tokens ÷ 1,000,000 × input price per million) + (Output tokens ÷ 1,000,000 × output price per million).</p>
+      <p class="text-slate-400 text-sm mt-3">Use the current price for your selected model and account for applicable caching rates.</p>
+    </section>
+    <footer class="text-slate-500 mt-10 text-sm">Claude AI Learning Series · Performance Engineering</footer>
+  </main>
+</body>
+</html>
