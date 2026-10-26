@@ -2,41 +2,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>Agent Loops</title>
+  <title>Agent Loops & Stopping Conditions</title>
 </head>
-<body class="bg-slate-950 text-white min-h-screen flex items-center justify-center p-6">
-  <main class="max-w-2xl w-full">
-    <p class="text-purple-400 font-semibold mb-3">AI AGENTS / 03</p>
-    <h1 class="text-4xl font-bold mb-4">Agent Loops & Stopping Conditions</h1>
-    <p class="text-slate-300 mb-8">An agent repeats reasoning and actions until the task is complete or a stopping rule is triggered.</p>
-    <div class="space-y-3 text-center">
-      <div class="bg-slate-800 rounded-xl p-4 font-semibold">1. Observe the current state</div>
-      <div class="text-purple-400">↓</div>
-      <div class="bg-slate-800 rounded-xl p-4 font-semibold">2. Plan the next action</div>
-      <div class="text-purple-400">↓</div>
-      <div class="bg-slate-800 rounded-xl p-4 font-semibold">3. Execute tool or action</div>
-      <div class="text-purple-400">↓</div>
-      <div class="bg-purple-950 border border-purple-800 rounded-xl p-4 font-semibold">4. Evaluate the result</div>
-      <div class="text-purple-300">↙ Continue loop or finish ↘</div>
-      <div class="grid grid-cols-2 gap-4">
-        <div class="bg-blue-950 border border-blue-800 rounded-xl p-4">Continue<br><span class="text-sm text-slate-300">More work required</span></div>
-        <div class="bg-emerald-950 border border-emerald-800 rounded-xl p-4">Stop<br><span class="text-sm text-slate-300">Goal achieved</span></div>
+
+<body class="min-h-screen bg-[#080D1A] text-slate-100 antialiased selection:bg-cyan-400/30">
+
+  <main class="relative mx-auto max-w-5xl overflow-hidden px-5 py-12 sm:px-8 sm:py-16">
+
+    <!-- Background decoration -->
+    <div class="pointer-events-none absolute -right-24 -top-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl"></div>
+
+    <!-- Header -->
+    <header class="relative mb-12">
+      <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/5 px-3 py-1.5 text-xs font-semibold tracking-[0.18em] text-cyan-300">
+        <span class="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_10px_#22d3ee]"></span>
+        AI SYSTEMS <span class="text-slate-600">/</span> MODULE 03
       </div>
+
+      <h1 class="max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-6xl">
+        Agent Loops &
+        <span class="bg-gradient-to-r from-cyan-300 via-sky-400 to-emerald-300 bg-clip-text text-transparent">
+          Stopping Conditions
+        </span>
+      </h1>
+
+      <p class="mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
+        An AI agent continuously observes, plans, and acts—evaluating every result until the goal is achieved or a stopping rule is triggered.
+      </p>
+    </header>
+
+    <!-- Main layout -->
+    <div class="relative grid gap-6 lg:grid-cols-[1.4fr_0.8fr]">
+
+      <!-- Agent workflow -->
+      <section class="rounded-3xl border border-white/[0.08] bg-[#101827]/90 p-5 shadow-2xl shadow-black/20 sm:p-8">
+        <div class="mb-7 flex items-center justify-between">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Execution pipeline</p>
+            <h2 class="mt-2 text-xl font-bold">The Agent Loop</h2>
+          </div>
+          <div class="rounded-xl border border-cyan-400/15 bg-cyan-400/5 p-3 text-cyan-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12a9 9 0 0 1 15.36-6.36L21 8"/>
+              <path d="M21 3v5h-5"/>
+              <path d="M21 12a9 9 0 0 1-15.36 6.36L3 16"/>
+              <path d="M3 21v-5h5"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="space-y-0">
+
+          <!-- Step 1 -->
+          <div class="group flex gap-4 rounded-2xl border border-white/[0.06] bg-white/[0.025] p-4 transition hover:border-cyan-400/30 hover:bg-cyan-400/[0.04]">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-sm font-bold text-cyan-300">01</div>
+            <div class="min-w-0 flex-1">
+              <h3 class="font-semibold text-white">Observe the current state</h3>
+              <p class="mt-1 text-sm leading-6 text-slate-400">Gather context, inspect outputs, and understand the environment.</p>
+            </div>
+            <span class="hidden self-center text-xs text-cyan-300 sm:block">INPUT</span>
+          </div>
+
+          <div class="ml-9 flex h-9 items-center border-l border-dashed border-slate-700 pl-4">
+            <span class="text-xs text-slate-600">↓</span>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="group flex gap-4 rounded-2xl border border-white/[0.06] bg-white/[0.025] p-4 transition hover:border-cyan-400/30 hover:bg-cyan-400/[0.04]">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-sky-400/20 bg-sky-400/10 text-sm font-bold text-sky-300">02</div>
+            <div class="min-w-0 flex-1">
+              <h3 class="font-semibold text-white">Plan the next action</h3>
+              <p class="mt-1 text-sm leading-6 text-slate-400">Reason about the goal and select the best next step.</p>
+            </div>
+            <span class="hidden self-center text-xs text-sky-300 sm:block">PLAN</span>
+          </div>
+
+          <div class="ml-9 flex h-9 items-center border-l border-dashed border-slate-700 pl-4">
+            <span class="text-xs text-slate-600">↓</span>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="group flex gap-4 rounded-2xl border border-white/[0.06] bg-white/[0.025] p-4 transition hover:border-cyan-400/30 hover:bg-cyan-400/[0.04]">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-indigo-400/20 bg-indigo-400/10 text-sm font-bold text-indigo-300">03</div>
+            <div class="min-w-0 flex-1">
+              <h3 class="font-semibold text-white">Execute a tool or action</h3>
+              <p class="mt-1 text-sm leading-6 text-slate-400">Call an API, run code, search, or perform an approved operation.</p>
+            </div>
+            <span class="hidden self-center text-xs text-indigo-300 sm:block">ACT</span>
+          </div>
+
+          <div class="ml-9 flex h-9 items-center border-l border-dashed border-slate-700 pl-4">
+            <span class="text-xs text-slate-600">↓</span>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="relative flex gap-4 overflow-hidden rounded-2xl border border-cyan-400/30 bg-gradient-to-r from-cyan-400/10 to-sky-400/[0.03] p-4">
+            <div class="absolute bottom-0 left-0 top-0 w-1 bg-gradient-to-b from-cyan-300 to-sky-500"></div>
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-cyan-300/25 bg-cyan-300/10 text-sm font-bold text-cyan-200">04</div>
+            <div class="min-w-0 flex-1">
+              <h3 class="font-semibold text-white">Evaluate the result</h3>
+              <p class="mt-1 text-sm leading-6 text-slate-300">Check success, validate the output, and decide whether to continue.</p>
+            </div>
+            <span class="hidden self-center text-xs font-semibold text-cyan-300 sm:block">CHECK</span>
+          </div>
+
+          <!-- Decision branches -->
+          <div class="grid grid-cols-2 gap-3 pt-5">
+            <div class="rounded-2xl border border-sky-400/20 bg-sky-400/[0.06] p-4">
+              <div class="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-sky-400/10 text-sky-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-sky-200">Continue loop</h3>
+              <p class="mt-1 text-xs leading-5 text-slate-400">Goal incomplete. Feed the result back into the next observation.</p>
+              <div class="mt-3 inline-flex rounded-md bg-sky-400/10 px-2 py-1 text-[10px] font-bold tracking-wider text-sky-300">ITERATE</div>
+            </div>
+
+            <div class="rounded-2xl border border-emerald-400/20 bg-emerald-400/[0.06] p-4">
+              <div class="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-400/10 text-emerald-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6L9 17l-5-5"/>
+                  <circle cx="12" cy="12" r="10"/>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-emerald-200">Finish task</h3>
+              <p class="mt-1 text-xs leading-5 text-slate-400">Goal satisfied. Return the result and end execution.</p>
+              <div class="mt-3 inline-flex rounded-md bg-emerald-400/10 px-2 py-1 text-[10px] font-bold tracking-wider text-emerald-300">COMPLETE</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-start gap-3 rounded-xl border border-white/[0.06] bg-black/20 p-4">
+          <span class="mt-0.5 text-cyan-300">↻</span>
+          <p class="text-xs leading-5 text-slate-400">
+            <span class="font-semibold text-slate-200">Feedback loop:</span>
+            When continuing, the latest observation and tool result become context for the next iteration.
+          </p>
+        </div>
+      </section>
+
+      <!-- Stopping conditions -->
+      <aside class="space-y-5">
+        <section class="rounded-3xl border border-white/[0.08] bg-[#101827]/90 p-6 shadow-2xl shadow-black/20 sm:p-7">
+          <div class="mb-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Control layer</p>
+            <h2 class="mt-2 text-xl font-bold">When should an agent stop?</h2>
+            <p class="mt-2 text-sm leading-6 text-slate-400">Every autonomous workflow needs explicit exit rules.</p>
+          </div>
+
+          <div class="space-y-5">
+
+            <div class="flex gap-3">
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-400/10 text-emerald-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold">Goal achieved</h3>
+                <p class="mt-1 text-xs leading-5 text-slate-400">The task meets its defined success criteria.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-400/10 text-amber-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold">Iteration or time limit</h3>
+                <p class="mt-1 text-xs leading-5 text-slate-400">Prevent endless loops and runaway execution.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-400/10 text-violet-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold">Token or budget limit</h3>
+                <p class="mt-1 text-xs leading-5 text-slate-400">Stop when compute, API spend, or token usage reaches its cap.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rose-400/10 text-rose-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9L1.8 18.5A2 2 0 0 0 3.5 21h17a2 2 0 0 0 1.7-2.5L13.7 3.9a2 2 0 0 0-3.4 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold">Unrecoverable error</h3>
+                <p class="mt-1 text-xs leading-5 text-slate-400">Exit safely when a tool fails repeatedly or state becomes invalid.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-400/10 text-orange-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="10"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold">Human approval needed</h3>
+                <p class="mt-1 text-xs leading-5 text-slate-400">Pause before sensitive, risky, or irreversible actions.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Safety card -->
+        <section class="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 via-[#101827] to-emerald-400/[0.06] p-6">
+          <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-cyan-400/10 blur-2xl"></div>
+          <div class="relative">
+            <div class="mb-3 flex items-center gap-2 text-cyan-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+              <span class="text-xs font-bold uppercase tracking-[0.16em]">Best practice</span>
+            </div>
+            <h3 class="text-lg font-bold">Bound every loop.</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-400">
+              Define success criteria, set execution limits, validate tool outputs, and provide a safe failure path.
+            </p>
+          </div>
+        </section>
+      </aside>
     </div>
-    <div class="bg-slate-800 rounded-xl p-5 mt-6">
-      <h2 class="font-bold mb-2">Stopping conditions</h2>
-      <ul class="text-slate-300 text-sm space-y-2">
-        <li>• Goal achieved successfully</li>
-        <li>• Maximum iteration or time limit reached</li>
-        <li>• Token or budget limit exceeded</li>
-        <li>• Tool failure or unrecoverable error</li>
-        <li>• Human approval or intervention required</li>
-      </ul>
-    </div>
-    <p class="text-slate-500 text-sm mt-5">Always define iteration limits and safe failure handling.</p>
+
+    <!-- Footer -->
+    <footer class="relative mt-8 flex flex-col gap-3 border-t border-white/[0.08] pt-5 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-xs text-slate-500">AUTONOMOUS SYSTEMS <span class="mx-2 text-slate-700">/</span> EXECUTION CONTROL</p>
+      <p class="text-xs text-slate-500">Observe → Plan → Act → Evaluate → Repeat or Stop</p>
+    </footer>
+
   </main>
 </body>
 </html>
