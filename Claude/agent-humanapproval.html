@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Human Approval</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen flex items-center justify-center p-6">
+  <main class="max-w-2xl w-full">
+    <p class="text-amber-400 font-semibold mb-3">AI AGENTS / 02</p>
+    <h1 class="text-4xl font-bold mb-4">Human Approval & Intervention</h1>
+    <p class="text-slate-300 mb-8">Keep humans in control when an agent performs sensitive or high-impact actions.</p>
+    <div class="space-y-3">
+      <div class="bg-slate-800 rounded-xl p-4"><span class="text-amber-400 font-bold">01.</span> Agent proposes an action</div>
+      <div class="text-center text-slate-500">↓</div>
+      <div class="bg-slate-800 rounded-xl p-4"><span class="text-amber-400 font-bold">02.</span> System requests human approval</div>
+      <div class="text-center text-slate-500">↓</div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-emerald-950 border border-emerald-800 p-4 rounded-xl">
+          <h2 class="font-bold text-emerald-400">Approve</h2>
+          <p class="text-sm mt-2 text-slate-300">Execute the action.</p>
+        </div>
+        <div class="bg-red-950 border border-red-800 p-4 rounded-xl">
+          <h2 class="font-bold text-red-400">Reject</h2>
+          <p class="text-sm mt-2 text-slate-300">Stop or revise the action.</p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-slate-800 rounded-xl p-5 mt-6">
+      <h2 class="font-bold mb-2">When is approval needed?</h2>
+      <ul class="text-slate-300 text-sm space-y-2">
+        <li>• Sending emails to customers</li>
+        <li>• Making payments or purchases</li>
+        <li>• Deleting or modifying critical data</li>
+        <li>• Performing security-sensitive operations</li>
+      </ul>
+    </div>
+    <p class="text-slate-500 text-sm mt-5">Principle: autonomy with accountability.</p>
+  </main>
+</body>
+</html>
