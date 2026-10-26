@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Agent Loops</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen flex items-center justify-center p-6">
+  <main class="max-w-2xl w-full">
+    <p class="text-purple-400 font-semibold mb-3">AI AGENTS / 03</p>
+    <h1 class="text-4xl font-bold mb-4">Agent Loops & Stopping Conditions</h1>
+    <p class="text-slate-300 mb-8">An agent repeats reasoning and actions until the task is complete or a stopping rule is triggered.</p>
+    <div class="space-y-3 text-center">
+      <div class="bg-slate-800 rounded-xl p-4 font-semibold">1. Observe the current state</div>
+      <div class="text-purple-400">↓</div>
+      <div class="bg-slate-800 rounded-xl p-4 font-semibold">2. Plan the next action</div>
+      <div class="text-purple-400">↓</div>
+      <div class="bg-slate-800 rounded-xl p-4 font-semibold">3. Execute tool or action</div>
+      <div class="text-purple-400">↓</div>
+      <div class="bg-purple-950 border border-purple-800 rounded-xl p-4 font-semibold">4. Evaluate the result</div>
+      <div class="text-purple-300">↙ Continue loop or finish ↘</div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-blue-950 border border-blue-800 rounded-xl p-4">Continue<br><span class="text-sm text-slate-300">More work required</span></div>
+        <div class="bg-emerald-950 border border-emerald-800 rounded-xl p-4">Stop<br><span class="text-sm text-slate-300">Goal achieved</span></div>
+      </div>
+    </div>
+    <div class="bg-slate-800 rounded-xl p-5 mt-6">
+      <h2 class="font-bold mb-2">Stopping conditions</h2>
+      <ul class="text-slate-300 text-sm space-y-2">
+        <li>• Goal achieved successfully</li>
+        <li>• Maximum iteration or time limit reached</li>
+        <li>• Token or budget limit exceeded</li>
+        <li>• Tool failure or unrecoverable error</li>
+        <li>• Human approval or intervention required</li>
+      </ul>
+    </div>
+    <p class="text-slate-500 text-sm mt-5">Always define iteration limits and safe failure handling.</p>
+  </main>
+</body>
+</html>
