@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude Code - Commands and Skills</title>
+</head>
+<body class="bg-slate-950 text-white">
+  <nav class="p-5 border-b border-slate-800">
+    <h1 class="text-xl font-bold text-orange-400">Claude Code Academy</h1>
+    <p class="text-sm text-slate-400">Developer Learning Series</p>
+  </nav>
+
+  <main class="max-w-5xl mx-auto p-6 space-y-8">
+    <header>
+      <span class="text-orange-400 text-sm">MODULE 02</span>
+      <h2 class="text-4xl font-bold mt-2">Custom Commands & Skills</h2>
+      <p class="text-slate-400 mt-3">Build reusable workflows and specialized capabilities in Claude Code.</p>
+    </header>
+
+    <section class="bg-slate-900 p-6 rounded-xl">
+      <h3 class="text-xl font-semibold mb-3">1. Custom Commands</h3>
+      <p class="text-slate-300 leading-7">Custom commands allow developers to create reusable prompt workflows that can be triggered using slash commands.</p>
+      <h4 class="font-semibold mt-4 mb-2">Example folder structure</h4>
+      <pre class="bg-black p-4 rounded-lg text-green-400">.claude/
+└── commands/
+    ├── review.md
+    └── test.md</pre>
+      <h4 class="font-semibold mt-4 mb-2">Example: review.md</h4>
+      <pre class="bg-black p-4 rounded-lg text-green-300">---
+description: Review project code
+---
+
+Review the selected code.
+
+Check:
+- Code quality
+- Security issues
+- Performance
+- Best practices
+
+Provide improvement suggestions.</pre>
+      <p class="text-orange-400 mt-3 text-sm">Usage: /review</p>
+    </section>
+
+    <section class="bg-slate-900 p-6 rounded-xl">
+      <h3 class="text-xl font-semibold mb-3">2. Claude Skills</h3>
+      <p class="text-slate-300 leading-7">Skills are reusable instruction packages that teach Claude how to perform specialized tasks. They can include instructions, scripts and supporting resources.</p>
+      <h4 class="font-semibold mt-4 mb-2">Example folder structure</h4>
+      <pre class="bg-black p-4 rounded-lg text-green-400">.claude/
+└── skills/
+    └── code-review/
+        ├── SKILL.md
+        └── examples/
+            └── sample.md</pre>
+      <h4 class="font-semibold mt-4 mb-2">Example: SKILL.md</h4>
+      <pre class="bg-black p-4 rounded-lg text-green-300">---
+name: code-review
+description: Review code for quality and security.
+---
+
+# Code Review Skill
+
+1. Inspect the code.
+2. Identify bugs.
+3. Check security risks.
+4. Suggest improvements.
+5. Summarize findings.</pre>
+    </section>
+
+    <section>
+      <h3 class="text-xl font-semibold mb-3">3. Commands vs Skills</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border border-slate-700">
+          <tr class="bg-slate-800"><th class="p-3">Custom Commands</th><th class="p-3">Skills</th></tr>
+          <tr><td class="p-3 border-t border-slate-700">Explicit slash invocation</td><td class="p-3 border-t border-slate-700">Can be selected based on task context</td></tr>
+          <tr><td class="p-3 border-t border-slate-700">Reusable workflows</td><td class="p-3 border-t border-slate-700">Reusable specialized capabilities</td></tr>
+          <tr><td class="p-3 border-t border-slate-700">Markdown prompts</td><td class="p-3 border-t border-slate-700">Instructions and supporting files</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="bg-orange-500/10 border border-orange-500/30 p-5 rounded-xl">
+      <h3 class="text-orange-400 font-semibold">Practical Exercise</h3>
+      <p class="text-slate-300 mt-2">Create a custom command for code review and a Skill for generating unit tests. Test both inside a sample project.</p>
+    </section>
+
+    <footer class="border-t border-slate-800 pt-5 text-slate-500 text-sm">Claude Code Academy · Module 02</footer>
+  </main>
+</body>
+</html>
