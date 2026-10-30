@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude Code - Advanced Features</title>
+</head>
+<body class="bg-slate-950 text-white">
+  <nav class="p-5 border-b border-slate-800">
+    <h1 class="text-xl font-bold text-orange-400">Claude Code Academy</h1>
+    <p class="text-sm text-slate-400">Developer Learning Series</p>
+  </nav>
+
+  <main class="max-w-5xl mx-auto p-6 space-y-8">
+    <header>
+      <span class="text-orange-400 text-sm">MODULE 03</span>
+      <h2 class="text-4xl font-bold mt-2">Hooks, Permissions & Subagents</h2>
+      <p class="text-slate-400 mt-3">Control execution, improve security and delegate development tasks.</p>
+    </header>
+
+    <section class="bg-slate-900 p-6 rounded-xl">
+      <h3 class="text-xl font-semibold mb-3">1. Hooks</h3>
+      <p class="text-slate-300 leading-7">Hooks are event-driven automation mechanisms that execute configured actions when specific Claude Code events occur.</p>
+      <h4 class="font-semibold mt-4 mb-2">Common Hook Events</h4>
+      <ul class="list-disc pl-6 text-slate-300 space-y-2">
+        <li>PreToolUse</li>
+        <li>PostToolUse</li>
+        <li>UserPromptSubmit</li>
+        <li>Stop</li>
+        <li>SessionStart</li>
+        <li>SessionEnd</li>
+      </ul>
+      <h4 class="font-semibold mt-4 mb-2">Example use cases</h4>
+      <pre class="bg-black p-4 rounded-lg text-green-300">{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run lint"
+          }
+        ]
+      }
+    ]
+  }
+}</pre>
+    </section>
+
+    <section class="bg-slate-900 p-6 rounded-xl">
+      <h3 class="text-xl font-semibold mb-3">2. Permissions</h3>
+      <p class="text-slate-300 leading-7">Permissions control which tools and operations Claude Code can execute automatically or only after approval.</p>
+      <h4 class="font-semibold mt-4 mb-2">Permission Categories</h4>
+      <ul class="list-disc pl-6 text-slate-300 space-y-2">
+        <li>Allow – permit specific operations.</li>
+        <li>Ask – request user approval.</li>
+        <li>Deny – block specific operations.</li>
+      </ul>
+      <pre class="bg-black p-4 rounded-lg text-green-300 mt-4">{
+  "permissions": {
+    "allow": ["Read"],
+    "ask": ["Bash"],
+    "deny": ["Bash(rm -rf *)"]
+  }
+}</pre>
+      <p class="text-sm text-slate-400 mt-2">Illustrative permission policy; configure using Claude Code's supported settings schema.</p>
+    </section>
+
+    <section class="bg-slate-900 p-6 rounded-xl">
+      <h3 class="text-xl font-semibold mb-3">3. Subagents</h3>
+      <p class="text-slate-300 leading-7">Subagents are specialized Claude Code agents that can handle delegated tasks with their own instructions, tools and context.</p>
+      <h4 class="font-semibold mt-4 mb-2">Example folder structure</h4>
+      <pre class="bg-black p-4 rounded-lg text-green-400">.claude/
+└── agents/
+    ├── code-reviewer.md
+    ├── tester.md
+    └── researcher.md</pre>
+      <h4 class="font-semibold mt-4 mb-2">Example: code-reviewer.md</h4>
+      <pre class="bg-black p-4 rounded-lg text-green-300">---
+name: code-reviewer
+description: Reviews code for bugs and quality.
+tools: Read, Grep, Glob
+---
+
+You are a code review specialist.
+
+1. Inspect the codebase.
+2. Identify potential bugs.
+3. Check code quality.
+4. Report security concerns.
+5. Suggest improvements.</pre>
+    </section>
+
+    <section class="bg-orange-500/10 border border-orange-500/30 rounded-xl p-5">
+      <h3 class="text-orange-400 font-semibold">Practical Exercise</h3>
+      <p class="text-slate-300 mt-2">Create a hook that runs linting after code edits, configure permissions for shell commands, and create a code-reviewer subagent.</p>
+    </section>
+
+    <footer class="border-t border-slate-800 pt-5 text-slate-500 text-sm">Claude Code Academy · Module 03</footer>
+  </main>
+</body>
+</html>
