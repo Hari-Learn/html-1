@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Streaming Responses</title>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <nav class="bg-indigo-700 text-white p-5">
+    <h1 class="text-2xl font-bold">Claude API Learning</h1>
+    <p class="text-sm">Lesson 02: Streaming Responses</p>
+  </nav>
+
+  <main class="max-w-4xl mx-auto p-6">
+    <h2 class="text-3xl font-bold mb-4">Streaming Responses</h2>
+    <p class="mb-6">Streaming means Claude sends its answer
+      little by little instead of waiting to finish the entire answer.</p>
+
+    <div class="bg-white p-5 rounded-xl shadow mb-5">
+      <h3 class="font-bold mb-3">Normal vs Streaming</h3>
+      <div class="bg-orange-100 p-4 rounded-lg mb-3">
+        <b>Normal:</b>
+        <p>Wait... Wait... Complete answer appears.</p>
+      </div>
+      <div class="bg-green-100 p-4 rounded-lg">
+        <b>Streaming:</b>
+        <p>Hello → Hello, how → Hello, how are you?</p>
+      </div>
+    </div>
+
+    <div class="bg-slate-900 text-green-300 p-5 rounded-xl mb-5">
+      <h3 class="text-white font-bold mb-3">API Example</h3>
+      <pre class="whitespace-pre-wrap text-sm">{
+  "model": "claude-sonnet-4-5",
+  "max_tokens": 1024,
+  "stream": true,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Explain AI"
+    }
+  ]
+}</pre>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow mb-5">
+      <h3 class="font-bold mb-3">Try a simple streaming demo</h3>
+      <button onclick="startStream()"
+        class="bg-indigo-600 text-white px-4 py-2 rounded-lg">
+        Start Demo
+      </button>
+      <p id="output" class="mt-4 text-indigo-700 font-medium"></p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow">
+      <h3 class="font-bold mb-2">Remember</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Streaming sends data in chunks.</li>
+        <li>Users see answers sooner.</li>
+        <li>Claude API supports streaming using SSE.</li>
+        <li>Streaming is useful for chat applications.</li>
+      </ul>
+    </div>
+
+    <div class="flex justify-between mt-6">
+      <a href="messages.html" class="text-indigo-700">← Previous</a>
+      <a href="tokens-parameters.html"
+        class="bg-indigo-600 text-white px-5 py-3 rounded-lg">
+        Next: Tokens →
+      </a>
+    </div>
+  </main>
+  <script>
+    const words = "Hello! Streaming sends my answer one piece at a time.";
+    function startStream() {
+      const output = document.getElementById("output");
+      output.textContent = "";
+      let i = 0;
+      const timer = setInterval(() => {
+        output.textContent += words[i++];
+        if (i >= words.length) clearInterval(timer);
+      }, 60);
+    }
+  </script>
+</body>
+</html>
