@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Prompt Injection</title>
+</head>
+<body class="bg-slate-950 text-white">
+<nav class="p-6 border-b border-slate-800 flex justify-between">
+<a href="index.html" class="text-cyan-400 font-bold">AI Safety</a>
+<a href="index.html">Home</a>
+</nav>
+<main class="max-w-4xl mx-auto px-6 py-16">
+<p class="text-cyan-400">AI SAFETY / MODULE 02</p>
+<h1 class="text-4xl font-bold mt-4">Prompt Injection</h1>
+<p class="text-slate-400 text-lg mt-5">Prompt injection is an attack where malicious instructions attempt to manipulate an AI system into ignoring its intended rules.</p>
+<div class="bg-slate-900 p-6 rounded-xl mt-8">
+<h2 class="text-xl font-bold text-cyan-400">Example Scenario</h2>
+<p class="text-slate-400 mt-3">An AI assistant summarizes an uploaded document containing hidden instructions asking it to reveal confidential information.</p>
+<p class="text-red-400 mt-4 font-semibold">Risk: Untrusted content manipulates AI behavior.</p>
+</div>
+<h2 class="text-2xl font-bold mt-10">How to Prevent It</h2>
+<ul class="mt-5 space-y-3 text-slate-300">
+<li>✓ Treat external content as untrusted input.</li>
+<li>✓ Separate system instructions from user content.</li>
+<li>✓ Validate AI outputs before sensitive actions.</li>
+<li>✓ Limit AI access to tools and private data.</li>
+<li>✓ Require human approval for critical operations.</li>
+</ul>
+<div class="bg-slate-900 p-6 rounded-xl mt-8">
+<h2 class="font-bold text-cyan-400">Key Takeaway</h2>
+<p class="text-slate-400 mt-2">Never assume an AI model can reliably distinguish every malicious instruction from legitimate content.</p>
+</div>
+<a href="api-security.html" class="inline-block mt-8 bg-cyan-500 text-slate-950 px-6 py-3 rounded-lg font-bold">Next: API Security →</a>
+</main>
+</body></html>
