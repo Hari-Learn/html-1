@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Hybrid Search</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <nav class="p-5 border-b border-slate-700">
+    <h1 class="text-xl font-bold text-cyan-400">AI Search Academy</h1>
+  </nav>
+  <main class="max-w-4xl mx-auto p-8">
+    <span class="text-cyan-400 font-semibold">SEARCH TECHNOLOGY / 03</span>
+    <h2 class="text-4xl font-bold mt-4">Hybrid Search</h2>
+    <p class="text-slate-400 mt-4 text-lg">Hybrid search combines keyword-based BM25 search with semantic vector search to improve retrieval accuracy.</p>
+
+    <section class="mt-8 bg-slate-900 p-6 rounded-xl">
+      <h3 class="text-xl font-bold mb-4">Hybrid Search Architecture</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-center">
+        <div class="bg-blue-950 p-5 rounded-xl">
+          <h4 class="font-bold text-blue-300">BM25 Search</h4>
+          <p class="text-slate-400 mt-2">Keyword matching</p>
+        </div>
+        <div class="bg-purple-950 p-5 rounded-xl">
+          <h4 class="font-bold text-purple-300">Semantic Search</h4>
+          <p class="text-slate-400 mt-2">Meaning matching</p>
+        </div>
+      </div>
+      <div class="text-center text-2xl text-cyan-400 my-4">↓</div>
+      <div class="bg-cyan-950 p-5 rounded-xl text-center">
+        <h4 class="font-bold text-cyan-300">Result Fusion</h4>
+        <p class="text-slate-400 mt-2">Combine and rank results</p>
+      </div>
+      <div class="text-center text-2xl text-cyan-400 my-4">↓</div>
+      <div class="bg-green-950 p-4 rounded-xl text-center text-green-300 font-bold">Final Relevant Results</div>
+    </section>
+
+    <section class="mt-6 bg-slate-900 p-6 rounded-xl">
+      <h3 class="text-xl font-bold mb-3">How It Works</h3>
+      <ol class="list-decimal ml-5 space-y-2 text-slate-300">
+        <li>Receive the user's query.</li>
+        <li>Run BM25 keyword search.</li>
+        <li>Run semantic vector search.</li>
+        <li>Combine retrieved results.</li>
+        <li>Apply score fusion or reranking.</li>
+        <li>Return the most relevant documents.</li>
+      </ol>
+    </section>
+
+    <section class="mt-6 bg-slate-900 p-5 rounded-xl">
+      <h3 class="text-xl font-bold mb-3">Fusion Technique</h3>
+      <p class="text-cyan-300">Reciprocal Rank Fusion (RRF)</p>
+      <p class="text-slate-400 mt-2">RRF combines rankings from multiple search methods using their rank positions.</p>
+      <div class="bg-slate-800 p-4 rounded-lg mt-3 text-center text-cyan-300">
+        RRF(d) = Σ 1 / (k + rank(d))
+      </div>
+    </section>
+
+    <section class="mt-6 grid md:grid-cols-2 gap-4">
+      <div class="bg-slate-900 p-5 rounded-xl">
+        <h3 class="font-bold text-green-400">Advantages</h3>
+        <p class="text-slate-400 mt-2">Combines exact keyword matching with contextual understanding.</p>
+      </div>
+      <div class="bg-slate-900 p-5 rounded-xl">
+        <h3 class="font-bold text-red-400">Limitations</h3>
+        <p class="text-slate-400 mt-2">More complex and resource-intensive to implement.</p>
+      </div>
+    </section>
+
+    <section class="mt-6 bg-slate-900 p-5 rounded-xl">
+      <h3 class="font-bold text-xl">Applications</h3>
+      <p class="text-slate-400 mt-2">Enterprise search, RAG applications, AI assistants, and intelligent knowledge management.</p>
+    </section>
+
+    <footer class="text-center text-slate-500 mt-10">AI Search Academy | Hybrid Search</footer>
+  </main>
+</body>
+</html>
