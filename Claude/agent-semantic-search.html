@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Semantic Search</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <nav class="p-5 border-b border-slate-700">
+    <h1 class="text-xl font-bold text-purple-400">AI Search Academy</h1>
+  </nav>
+  <main class="max-w-4xl mx-auto p-8">
+    <span class="text-purple-400 font-semibold">SEARCH TECHNOLOGY / 02</span>
+    <h2 class="text-4xl font-bold mt-4">Semantic Search</h2>
+    <p class="text-slate-400 mt-4 text-lg">Semantic search understands the meaning and context behind a query rather than matching only exact keywords.</p>
+
+    <section class="mt-8 bg-slate-900 p-6 rounded-xl">
+      <h3 class="text-xl font-bold mb-3">How Semantic Search Works</h3>
+      <ol class="list-decimal ml-5 space-y-2 text-slate-300">
+        <li>Receive a user query.</li>
+        <li>Convert text into vector embeddings.</li>
+        <li>Store document embeddings in a vector database.</li>
+        <li>Convert the query into an embedding.</li>
+        <li>Compare vectors using similarity metrics.</li>
+        <li>Retrieve the most relevant documents.</li>
+      </ol>
+    </section>
+
+    <section class="mt-6 bg-slate-900 p-6 rounded-xl">
+      <h3 class="text-xl font-bold mb-3">Example</h3>
+      <div class="space-y-3">
+        <p class="text-purple-300">User Query: How can I fix my laptop?</p>
+        <p class="text-slate-400">Matching Document: Troubleshooting common computer problems.</p>
+        <p class="text-green-400">Result: Relevant even without identical keywords.</p>
+      </div>
+    </section>
+
+    <section class="mt-6">
+      <h3 class="text-xl font-bold mb-3">Core Technologies</h3>
+      <div class="grid md:grid-cols-2 gap-3">
+        <div class="bg-slate-900 p-4 rounded-lg">Text Embeddings</div>
+        <div class="bg-slate-900 p-4 rounded-lg">Vector Databases</div>
+        <div class="bg-slate-900 p-4 rounded-lg">Cosine Similarity</div>
+        <div class="bg-slate-900 p-4 rounded-lg">Neural Networks</div>
+      </div>
+    </section>
+
+    <section class="mt-6 grid md:grid-cols-2 gap-4">
+      <div class="bg-slate-900 p-5 rounded-xl">
+        <h3 class="font-bold text-green-400">Advantages</h3>
+        <p class="text-slate-400 mt-2">Understands context, synonyms, and related concepts.</p>
+      </div>
+      <div class="bg-slate-900 p-5 rounded-xl">
+        <h3 class="font-bold text-red-400">Limitations</h3>
+        <p class="text-slate-400 mt-2">Requires embedding models and vector infrastructure.</p>
+      </div>
+    </section>
+
+    <section class="mt-6 bg-slate-900 p-5 rounded-xl">
+      <h3 class="font-bold text-xl">Applications</h3>
+      <p class="text-slate-400 mt-2">RAG systems, AI chatbots, recommendation systems, and intelligent document search.</p>
+    </section>
+
+    <footer class="text-center text-slate-500 mt-10">AI Search Academy | Semantic Search</footer>
+  </main>
+</body>
+</html>
