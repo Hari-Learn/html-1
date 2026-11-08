@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Guardrails and Validation</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+  <main class="max-w-4xl mx-auto p-6 md:p-12">
+    <p class="text-emerald-400 font-semibold">CLAUDE AI / MODULE 1</p>
+    <h1 class="text-4xl font-bold mt-4">Guardrails & Validation</h1>
+    <p class="text-slate-400 mt-3">Build safer, more reliable AI applications.</p>
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mt-8">
+      <h2 class="text-xl font-bold text-emerald-400">What are Guardrails?</h2>
+      <p class="text-slate-300 mt-3">Guardrails are rules and controls that limit unsafe behavior, enforce requirements, and keep AI outputs within acceptable boundaries.</p>
+    </section>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Core Concepts</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <article class="bg-slate-900 p-5 rounded-xl"><h3 class="font-bold">Input Validation</h3><p class="text-slate-400 mt-2">Check input types, lengths, formats, and allowed values.</p></article>
+      <article class="bg-slate-900 p-5 rounded-xl"><h3 class="font-bold">Output Validation</h3><p class="text-slate-400 mt-2">Verify responses against schemas and business rules.</p></article>
+      <article class="bg-slate-900 p-5 rounded-xl"><h3 class="font-bold">Safety Filters</h3><p class="text-slate-400 mt-2">Detect harmful requests and sensitive information.</p></article>
+      <article class="bg-slate-900 p-5 rounded-xl"><h3 class="font-bold">Human Approval</h3><p class="text-slate-400 mt-2">Require review before high-impact actions.</p></article>
+    </div>
+    <section class="mt-8 bg-emerald-950/40 border border-emerald-900 rounded-xl p-6">
+      <h2 class="font-bold text-lg">Validation Workflow</h2>
+      <p class="text-slate-300 mt-3">User Input → Validate → Claude API → Validate Output → Return Response</p>
+      <pre class="bg-slate-950 rounded-lg p-4 mt-4 text-sm text-emerald-300 overflow-x-auto">if not input_text.strip():
+    raise ValueError("Input is required")
+
+result = call_claude(input_text)
+validate_schema(result)
+return result</pre>
+      <p class="text-slate-400 text-sm mt-3">Illustrative Python pseudocode; implement actual API calls and schema checks.</p>
+    </section>
+    <footer class="text-slate-500 mt-10 text-sm">Claude AI Learning Series · Safety & Reliability</footer>
+  </main>
+</body>
+</html>
