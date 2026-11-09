@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude - Context Management</title>
+</head>
+<body class="bg-slate-950 text-slate-100 p-6">
+<main class="max-w-3xl mx-auto space-y-5">
+  <h1 class="text-3xl font-bold text-cyan-400">Context Management</h1>
+  <p class="text-slate-400">How to manage large conversations and documents effectively.</p>
+
+  <section class="bg-slate-900 p-5 rounded-xl">
+    <h2 class="text-xl font-bold text-cyan-300">1. What is Context?</h2>
+    <p class="mt-2">Context is the information available to Claude when generating a response.</p>
+    <p class="mt-3 text-emerald-300">ELI10: Context is like the contents of your school bag. Claude can use what is inside the bag.</p>
+  </section>
+
+  <section class="bg-slate-900 p-5 rounded-xl">
+    <h2 class="text-xl font-bold text-cyan-300">2. Context Window</h2>
+    <p class="mt-2">The context window is the maximum amount of information the model can process in a request.</p>
+    <div class="bg-slate-800 p-4 rounded-lg mt-3">
+      <div class="flex justify-between text-sm mb-2">
+        <span>Context window capacity</span>
+        <span class="text-cyan-300">Illustration</span>
+      </div>
+      <div class="w-full bg-slate-700 rounded-full h-5 overflow-hidden">
+        <div class="bg-cyan-500 h-5 w-3/4"></div>
+      </div>
+      <p class="text-xs text-slate-400 mt-2">Used context + available capacity</p>
+    </div>
+    <p class="mt-3">The actual limit depends on the Claude model and configuration.</p>
+  </section>
+
+  <section class="bg-slate-900 p-5 rounded-xl">
+    <h2 class="text-xl font-bold text-cyan-300">3. What Uses Context?</h2>
+    <ul class="list-disc ml-5 mt-2 space-y-2">
+      <li>System instructions</li>
+      <li>User messages</li>
+      <li>Conversation history</li>
+      <li>Documents and images supplied to the model</li>
+      <li>Tool results</li>
+      <li>Other content included in the request</li>
+    </ul>
+  </section>
+
+  <section class="bg-slate-900 p-5 rounded-xl">
+    <h2 class="text-xl font-bold text-cyan-300">4. Managing Long Conversations</h2>
+    <ul class="list-disc ml-5 mt-2 space-y-2">
+      <li>Remove irrelevant conversation history where appropriate.</li>
+      <li>Summarise older discussions.</li>
+      <li>Retrieve only relevant document sections.</li>
+      <li>Keep instructions concise and clear.</li>
+      <li>Use retrieval systems for large knowledge bases.</li>
+    </ul>
+    <p class="mt-3 text-emerald-300">Goal: Give Claude the relevant information without unnecessary content.</p>
+  </section>
+
+  <section class="bg-slate-900 p-5 rounded-xl">
+    <h2 class="text-xl font-bold text-cyan-300">5. Retrieval vs Full Document Input</h2>
+    <div class="grid md:grid-cols-2 gap-3 mt-3">
+      <div class="bg-slate-800 p-3 rounded-lg">
+        <h3 class="font-bold text-amber-300">Full document</h3>
+        <p class="text-sm mt-2">Send the entire document when broad context is needed and it fits.</p>
+      </div>
+      <div class="bg-slate-800 p-3 rounded-lg">
+        <h3 class="font-bold text-emerald-300">Retrieval</h3>
+        <p class="text-sm mt-2">Find and send only relevant sections when the knowledge base is large.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-900 p-5 rounded-xl">
+    <h2 class="text-xl font-bold text-cyan-300">6. Exam Scenario</h2>
+    <p class="mt-2">A company has thousands of pages of policy documents. Each question needs only a few relevant paragraphs. What is a sensible approach?</p>
+    <details class="mt-3 bg-slate-800 p-3 rounded-lg">
+      <summary class="cursor-pointer text-emerald-300 font-bold">Reveal answer</summary>
+      <p class="mt-2">Use retrieval to find relevant passages and include those passages in Claude's context.</p>
+    </details>
+  </section>
+
+  <p class="text-sm text-slate-500">Remember: Context window = capacity. Context = information supplied.</p>
+</main>
+</body>
+</html>
