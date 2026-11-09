@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude - Model Selection</title>
+</head>
+<body class="bg-slate-950 text-slate-100 p-6">
+<main class="max-w-3xl mx-auto space-y-5">
+  <h1 class="text-3xl font-bold text-cyan-400">Model Selection</h1>
+  <p class="text-slate-400">Choosing the right Claude model and balancing quality, speed and cost.</p>
+
+  <section class="bg-slate-900 p-5 rounded-xl">
+    <h2 class="text-xl font-bold text-cyan-300">1. Why Model Selection Matters</h2>
+    <p class="mt-2">Different models have different capabilities, response speeds and costs.</p>
+    <p class="mt-3 text-emerald-300">ELI10: You don't need a specialist for every small job. Choose the right tool for the task.</p>
+  </section>
+
+  <section class="bg-slate-900 p-5 rounded-xl">
+    <h2 class="text-xl font-bold text-cyan-300">2. Claude Model Families</h2>
+    <div class="space-y-3 mt-3">
+      <div class="bg-slate-800 p-3 rounded-lg">
+        <h3 class="font-bold text-emerald-300">Haiku</h3>
+        <p class="text-sm mt-1">Designed for fast, efficient tasks such as classification and simple extraction.</p>
+      </div>
+      <div class="bg-slate-800 p-3 rounded-lg">
+        <h3 class="font-bold text-cyan-300">Sonnet</h3>
+        <p class="text-sm mt-1">A balanced choice for many everyday business and coding tasks.</p>
+      </div>
+      <div class="bg-slate-800 p-3 rounded-lg">
+        <h3 class="font-bold text-purple-300">Opus</h3>
+        <p class="text-sm mt-1">Designed for demanding tasks requiring advanced reasoning and capabilities.</p>
+      </div>
+    </div>
+    <p class="text-xs text-slate-500 mt-3">Exact capabilities, names and pricing vary by model generation.</p>
+  </section>
+
+  <section class="bg-slate-900 p-5 rounded-xl">
+    <h2 class="text-xl font-bold text-cyan-300">3. Thinking / Extended Thinking</h2>
+    <p class="mt-2">For supported models, extended thinking allows Claude to spend additional effort reasoning through complex problems before answering.</p>
+    <p class="mt-3">Useful for:</p>
+    <ul class="list-disc ml-5 mt-2 space-y-1">
+      <li>Complex mathematical problems</li>
+      <li>Multi-step analysis</li>
+      <li>Difficult coding tasks</li>
+      <li>Complicated planning and reasoning</li>
+    </ul>
+    <p class="mt-3 text-amber-300">More thinking effort can increase latency and token usage.</p>
+  </section>
+
+  <section class="bg-slate-900 p-5 rounded-xl">
+    <h2 class="text-xl font-bold text-cyan-300">4. Cost Optimisation Strategies</h2>
+    <ul class="list-disc ml-5 mt-2 space-y-2">
+      <li>Use an appropriate smaller model for simple tasks.</li>
+      <li>Use a more capable model when task complexity justifies it.</li>
+      <li>Keep prompts focused and avoid unnecessary tokens.</li>
+      <li>Use prompt caching for repeated shared context.</li>
+      <li>Use batch processing for suitable non-urgent workloads.</li>
+      <li>Measure quality, latency and cost before changing models.</li>
+    </ul>
+  </section>
+
+  <section class="bg-slate-900 p-5 rounded-xl">
+    <h2 class="text-xl font-bold text-cyan-300">5. Model Selection Examples</h2>
+    <div class="space-y-2 mt-3 text-sm">
+      <p class="bg-slate-800 p-3 rounded-lg">Classify one million simple support messages → Consider Haiku.</p>
+      <p class="bg-slate-800 p-3 rounded-lg">Analyse a complex business strategy → Consider Opus.</p>
+      <p class="bg-slate-800 p-3 rounded-lg">Handle everyday document drafting → Consider Sonnet.</p>
+    </div>
+  </section>
+
+  <section class="bg-slate-900 p-5 rounded-xl">
+    <h2 class="text-xl font-bold text-cyan-300">6. Exam Scenario</h2>
+    <p class="mt-2">A company uses a powerful model for every simple classification request. The system is expensive. What should the team do?</p>
+    <details class="mt-3 bg-slate-800 p-3 rounded-lg">
+      <summary class="cursor-pointer text-emerald-300 font-bold">Reveal answer</summary>
+      <p class="mt-2">Evaluate a smaller, faster model on representative examples. Switch only if it meets the required accuracy and quality.</p>
+    </details>
+  </section>
+
+  <p class="text-sm text-slate-500">Remember: Choose based on task complexity, quality, latency and cost.</p>
+</main>
+</body>
+</html>
