@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Claude - Token Counting</title>
+</head>
+<body class="bg-slate-950 text-slate-100 p-6">
+<main class="max-w-3xl mx-auto space-y-5">
+<h1 class="text-3xl font-bold text-cyan-400">Token Counting API</h1>
+<p class="text-slate-400">Estimate token usage before sending a request to Claude.</p>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">1. What is Token Counting?</h2>
+<p class="mt-2">Claude's token counting endpoint estimates how many tokens a message will use.</p>
+<p class="mt-3 text-emerald-300">ELI10: Before packing a bag, count how many items you need to fit inside.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">2. Why is it useful?</h2>
+<ul class="list-disc ml-5 mt-2 space-y-2">
+<li>Estimate input token usage.</li>
+<li>Check whether content may fit the context window.</li>
+<li>Plan requests before sending them.</li>
+<li>Help manage cost and processing requirements.</li>
+</ul>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">3. Important Difference</h2>
+<div class="grid md:grid-cols-2 gap-3 mt-3">
+<div class="bg-slate-800 p-3 rounded-lg">
+<h3 class="font-bold text-amber-300">Token counting</h3>
+<p class="text-sm mt-2">Estimates tokens before a request is sent.</p>
+</div>
+<div class="bg-slate-800 p-3 rounded-lg">
+<h3 class="font-bold text-emerald-300">Actual API request</h3>
+<p class="text-sm mt-2">Sends the request and generates a response.</p>
+</div>
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">4. Important Limitations</h2>
+<ul class="list-disc ml-5 mt-2 space-y-2">
+<li>It provides an estimate, not a generated answer.</li>
+<li>It does not guarantee the request will succeed.</li>
+<li>Actual usage can depend on the request structure and model.</li>
+<li>Output tokens must also be considered when planning limits.</li>
+</ul>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">5. Exam Scenario</h2>
+<p class="mt-2">An application sends very large prompts. Developers want to estimate input token usage before making API calls. What should they use?</p>
+<details class="mt-3 bg-slate-800 p-3 rounded-lg">
+<summary class="cursor-pointer text-emerald-300 font-bold">Reveal answer</summary>
+<p class="mt-2">Use Claude's Token Counting API to estimate input tokens before sending the actual request.</p>
+</details>
+</section>
+
+<p class="text-sm text-slate-500">Remember: Count first, send second. Counting does not generate a response.</p>
+</main>
+</body>
+</html>
