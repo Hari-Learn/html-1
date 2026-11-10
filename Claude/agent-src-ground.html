@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Claude - Citations and RAG</title>
+</head>
+<body class="bg-slate-950 text-slate-100 p-6">
+<main class="max-w-3xl mx-auto space-y-5">
+<h1 class="text-3xl font-bold text-cyan-400">Citations & RAG</h1>
+<p class="text-slate-400">Making Claude answers traceable to supporting information.</p>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">1. What is RAG?</h2>
+<p class="mt-2">Retrieval-Augmented Generation (RAG) retrieves relevant information and supplies it to Claude before generating an answer.</p>
+<p class="mt-3 text-emerald-300">ELI10: Instead of answering from memory, Claude first looks up the relevant pages in a library.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">2. RAG Workflow</h2>
+<div class="bg-slate-800 p-4 rounded-lg text-center space-y-2">
+<p class="text-amber-300 font-bold">User asks a question</p>
+<p>↓</p>
+<p class="text-cyan-300 font-bold">Retrieve relevant documents</p>
+<p>↓</p>
+<p class="text-purple-300 font-bold">Provide retrieved content to Claude</p>
+<p>↓</p>
+<p class="text-emerald-300 font-bold">Generate grounded answer</p>
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">3. What are Citations?</h2>
+<p class="mt-2">Citations identify the source passages supporting an answer.</p>
+<div class="bg-slate-800 p-3 rounded-lg mt-3">
+<p class="text-sm">Answer: Employees receive 20 days of annual leave.</p>
+<p class="text-xs text-cyan-300 mt-2">Source: HR Policy, page 12, paragraph 3</p>
+</div>
+<p class="mt-3">Claude's API supports citation features for supported document inputs and formats. Citation support depends on the input method.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">4. Why Citations Matter</h2>
+<ul class="list-disc ml-5 mt-2 space-y-2">
+<li>Users can verify information.</li>
+<li>Answers become easier to audit.</li>
+<li>Unsupported claims are easier to identify.</li>
+<li>Useful for legal, financial and policy documents.</li>
+</ul>
+<p class="text-amber-300 mt-3">A citation does not automatically guarantee that a claim is correct. Check whether the cited passage actually supports it.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">5. Exam Scenario</h2>
+<p class="mt-2">A company wants Claude to answer questions from internal HR policies and show the exact supporting passages. Which approach is suitable?</p>
+<details class="mt-3 bg-slate-800 p-3 rounded-lg">
+<summary class="cursor-pointer text-emerald-300 font-bold">Reveal answer</summary>
+<p class="mt-2">Use RAG to retrieve relevant policy content and provide citations or source references so users can verify the answer.</p>
+</details>
+</section>
+
+<p class="text-sm text-slate-500">Remember: RAG finds information. Citations show where supporting information came from.</p>
+</main>
+</body>
+</html>
