@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Claude - Tool Control</title>
+</head>
+<body class="bg-slate-950 text-white p-6">
+<main class="max-w-3xl mx-auto space-y-5">
+<h1 class="text-3xl font-bold text-cyan-400">Tool Control & Handoffs</h1>
+<p class="text-slate-400">How Claude decides when and how tools are used.</p>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">1. What is Tool Choice?</h2>
+<p class="mt-2">Tool choice controls how Claude uses tools made available by the application.</p>
+<p class="text-emerald-300 mt-3">ELI10: You give a worker access to a calculator. Tool choice determines whether they can use it, must use it, or cannot use it.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">2. Common Tool Choice Modes</h2>
+<div class="space-y-3 mt-3">
+<div class="bg-slate-800 p-3 rounded-lg">
+<p class="font-bold text-emerald-300">Auto</p>
+<p class="text-sm">Claude decides whether to call an available tool.</p>
+</div>
+<div class="bg-slate-800 p-3 rounded-lg">
+<p class="font-bold text-amber-300">Any</p>
+<p class="text-sm">Claude must call one of the available tools.</p>
+</div>
+<div class="bg-slate-800 p-3 rounded-lg">
+<p class="font-bold text-purple-300">Tool</p>
+<p class="text-sm">Claude is directed to use a specific tool.</p>
+</div>
+<div class="bg-slate-800 p-3 rounded-lg">
+<p class="font-bold text-red-300">None</p>
+<p class="text-sm">Claude is not allowed to call tools for that request.</p>
+</div>
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">3. Parallel Tool Use</h2>
+<p class="mt-2">Claude may request multiple independent tool calls in one response.</p>
+<div class="bg-slate-800 p-4 rounded-lg mt-3 text-center">
+<p class="font-bold text-cyan-300">Claude requests information</p>
+<p class="my-2">↙ ↓ ↘</p>
+<div class="grid grid-cols-3 gap-2 text-xs">
+<p class="bg-slate-700 p-2 rounded">Weather</p>
+<p class="bg-slate-700 p-2 rounded">Currency</p>
+<p class="bg-slate-700 p-2 rounded">Calendar</p>
+</div>
+<p class="mt-3 text-emerald-300">Results are combined</p>
+</div>
+<p class="text-sm text-slate-400 mt-2">Only independent operations should run in parallel.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">4. Tool Handoff</h2>
+<p class="mt-2">When Claude requests a tool, the application executes it and returns the result. Claude can then continue generating its response.</p>
+<ul class="list-disc ml-5 mt-2 space-y-1">
+<li>Claude sends a tool request.</li>
+<li>Application executes the tool.</li>
+<li>Tool result is returned.</li>
+<li>Claude uses the result to continue.</li>
+</ul>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">5. Exam Scenario</h2>
+<p class="mt-2">Claude needs current weather and currency rates. Both tools work independently. What can improve efficiency?</p>
+<details class="bg-slate-800 p-3 rounded-lg mt-3">
+<summary class="cursor-pointer text-emerald-300 font-bold">Reveal answer</summary>
+<p class="mt-2">Parallel tool calls, because both requests can execute independently.</p>
+</details>
+</section>
+
+<p class="text-sm text-slate-500">Remember: Tool request is not tool execution. The application executes the call.</p>
+</main>
+</body>
+</html>
