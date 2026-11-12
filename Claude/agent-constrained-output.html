@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Claude - Structured Outputs</title>
+</head>
+<body class="bg-slate-950 text-white p-6">
+<main class="max-w-3xl mx-auto space-y-5">
+<h1 class="text-3xl font-bold text-cyan-400">Structured Outputs</h1>
+<p class="text-slate-400">Making Claude return predictable, schema-based data.</p>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">1. What is it?</h2>
+<p class="mt-2">Structured outputs constrain Claude's response to follow a defined JSON Schema.</p>
+<p class="text-emerald-300 mt-3">ELI10: Instead of asking someone to write freely, give them a form with fixed fields to fill.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">2. Without vs With Schema</h2>
+<div class="grid md:grid-cols-2 gap-3 mt-3">
+<div class="bg-slate-800 p-3 rounded-lg">
+<h3 class="text-amber-300 font-bold">Without schema</h3>
+<p class="text-sm mt-2">Name: Ravi, maybe 30 years old. Email is...</p>
+<p class="text-xs text-slate-400 mt-2">Output may vary.</p>
+</div>
+<div class="bg-slate-800 p-3 rounded-lg">
+<h3 class="text-emerald-300 font-bold">With schema</h3>
+<pre class="text-xs mt-2 whitespace-pre-wrap">{
+ "name": "Ravi",
+ "age": 30,
+ "email": "ravi@example.com"
+}</pre>
+</div>
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">3. How it works</h2>
+<ol class="list-decimal ml-5 mt-2 space-y-2">
+<li>Developer defines a JSON Schema.</li>
+<li>Schema is sent through <code>output_config.format</code>.</li>
+<li>Claude generates schema-constrained output.</li>
+<li>Application reads and processes the JSON.</li>
+</ol>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">4. Important API Detail</h2>
+<p class="mt-2">The Messages API uses <code>output_config.format</code> with <code>type: json_schema</code>.</p>
+<p class="mt-2 text-amber-300">Do not confuse JSON outputs with strict tool use. JSON outputs constrain responses; strict tool use constrains tool names and inputs.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">5. Exam Scenario</h2>
+<p class="mt-2">An application extracts customer details. Its JSON parser frequently fails because Claude returns inconsistent formats. What should developers use?</p>
+<details class="bg-slate-800 p-3 rounded-lg mt-3">
+<summary class="cursor-pointer text-emerald-300 font-bold">Reveal answer</summary>
+<p class="mt-2">Structured outputs with a JSON Schema to constrain the response format.</p>
+</details>
+</section>
+<p class="text-sm text-slate-500">Remember: JSON Schema = predefined output structure.</p>
+</main>
+</body>
+</html>
