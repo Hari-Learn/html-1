@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Claude - Context Editing</title>
+</head>
+<body class="bg-slate-950 text-white p-6">
+<main class="max-w-3xl mx-auto space-y-5">
+<h1 class="text-3xl font-bold text-cyan-400">Context Editing & Compaction</h1>
+<p class="text-slate-400">Managing long-running Claude conversations and agent tasks.</p>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">1. The Problem</h2>
+<p class="mt-2">Long-running agents accumulate messages, screenshots, tool results and other content.</p>
+<p class="text-emerald-300 mt-3">ELI10: Your school bag becomes full of old notebooks. You need to organise it to make room for new books.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">2. Context Editing</h2>
+<p class="mt-2">Context editing selectively clears old content that is no longer needed.</p>
+<ul class="list-disc ml-5 mt-2 space-y-2">
+<li>Clear older tool results.</li>
+<li>Manage older thinking blocks.</li>
+<li>Preserve recent useful information.</li>
+</ul>
+<p class="text-amber-300 mt-3">It removes selected content; it does not necessarily summarise the conversation.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">3. Compaction</h2>
+<p class="mt-2">Compaction replaces older conversation history with a summary so the agent can continue its task.</p>
+<div class="bg-slate-800 p-4 rounded-lg mt-3 text-center">
+<p class="text-red-300">Large conversation history</p>
+<p class="my-2">↓</p>
+<p class="text-cyan-300">Generate summary</p>
+<p class="my-2">↓</p>
+<p class="text-emerald-300">Continue with compacted context</p>
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">4. Key Difference</h2>
+<div class="space-y-3 mt-3">
+<div class="bg-slate-800 p-3 rounded-lg">
+<p class="font-bold text-amber-300">Context editing</p>
+<p class="text-sm mt-1">Removes selected old content, such as bulky tool results.</p>
+</div>
+<div class="bg-slate-800 p-3 rounded-lg">
+<p class="font-bold text-emerald-300">Compaction</p>
+<p class="text-sm mt-1">Summarises older history and replaces it with a compact representation.</p>
+</div>
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">5. When to Use?</h2>
+<ul class="list-disc ml-5 mt-2 space-y-2">
+<li>Large research tasks with many search results.</li>
+<li>Agents processing hundreds of files.</li>
+<li>Long-running tool workflows.</li>
+<li>Conversations approaching context limits.</li>
+</ul>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">6. Exam Scenario</h2>
+<p class="mt-2">An agent has analysed 100 files. The conversation is becoming too large, but the agent must continue its work. Which technique replaces older history with a summary?</p>
+<details class="bg-slate-800 p-3 rounded-lg mt-3">
+<summary class="cursor-pointer text-emerald-300 font-bold">Reveal answer</summary>
+<p class="mt-2">Compaction. It summarises older conversation history so the agent can continue with a smaller context.</p>
+</details>
+</section>
+<p class="text-sm text-slate-500">Remember: Editing = clear selected content. Compaction = summarise older history.</p>
+</main>
+</body>
+</html>
