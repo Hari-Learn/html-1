@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude - Streaming Events</title>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <header class="bg-slate-900 text-white p-5">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-2xl font-bold">Streaming Events</h1>
+      <p class="text-slate-400 text-sm">Understanding real-time API responses</p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto p-5 space-y-5">
+    <section class="bg-white p-5 rounded-lg shadow-sm">
+      <h2 class="text-lg font-bold text-blue-700">1. What is Streaming?</h2>
+      <p class="mt-2">Streaming allows an application to receive Claude's response progressively instead of waiting for the complete message.</p>
+      <p class="mt-3 bg-blue-50 p-3 rounded">
+        ELI10: Like watching someone type a message instead of receiving the whole message at once.
+      </p>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-sm">
+      <h2 class="text-lg font-bold text-blue-700">2. Important Events</h2>
+      <div class="space-y-2 mt-3">
+        <div class="bg-slate-100 p-3 rounded">
+          <b>message_start</b>
+          <p class="text-sm mt-1">A new message begins.</p>
+        </div>
+        <div class="bg-slate-100 p-3 rounded">
+          <b>content_block_start</b>
+          <p class="text-sm mt-1">A content block begins.</p>
+        </div>
+        <div class="bg-slate-100 p-3 rounded">
+          <b>content_block_delta</b>
+          <p class="text-sm mt-1">A piece of content arrives.</p>
+        </div>
+        <div class="bg-slate-100 p-3 rounded">
+          <b>content_block_stop</b>
+          <p class="text-sm mt-1">A content block ends.</p>
+        </div>
+        <div class="bg-slate-100 p-3 rounded">
+          <b>message_delta</b>
+          <p class="text-sm mt-1">Message-level information is updated.</p>
+        </div>
+        <div class="bg-slate-100 p-3 rounded">
+          <b>message_stop</b>
+          <p class="text-sm mt-1">The message stream ends.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-sm">
+      <h2 class="text-lg font-bold text-blue-700">3. Streaming Flow</h2>
+      <div class="flex flex-col items-center gap-2 mt-3 text-center">
+        <div class="bg-slate-100 p-3 rounded w-full">Message starts</div>
+        <span>↓</span>
+        <div class="bg-slate-100 p-3 rounded w-full">Content blocks arrive</div>
+        <span>↓</span>
+        <div class="bg-slate-100 p-3 rounded w-full">Content deltas arrive progressively</div>
+        <span>↓</span>
+        <div class="bg-blue-100 p-3 rounded w-full">Message stops</div>
+      </div>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-sm">
+      <h2 class="text-lg font-bold text-blue-700">4. Partial JSON</h2>
+      <p class="mt-2">When Claude streams structured output, JSON may arrive in incomplete pieces.</p>
+      <pre class="bg-slate-900 text-green-300 p-3 rounded mt-3 text-sm overflow-x-auto">{"name":
+"Ravi",
+"age": 30}</pre>
+      <p class="mt-3 text-amber-700">Do not assume each incoming chunk is a complete valid JSON object. Assemble the content before parsing.</p>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-sm">
+      <h2 class="text-lg font-bold text-blue-700">5. Why Streaming Matters</h2>
+      <ul class="list-disc ml-5 mt-2 space-y-2">
+        <li>Improves perceived response speed.</li>
+        <li>Displays text progressively.</li>
+        <li>Supports responsive user interfaces.</li>
+        <li>Allows applications to process events as they arrive.</li>
+      </ul>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-sm">
+      <h2 class="text-lg font-bold text-blue-700">6. Exam Scenario</h2>
+      <p class="mt-2">A developer parses every streaming chunk as a complete JSON object. The parser frequently fails. What is the problem?</p>
+      <details class="mt-3 bg-slate-100 p-3 rounded">
+        <summary class="cursor-pointer font-semibold">Reveal answer</summary>
+        <p class="mt-2">Chunks can contain partial JSON. Accumulate the relevant content and parse it when the complete structured output is available.</p>
+      </details>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-sm">
+      <h2 class="text-lg font-bold text-blue-700">7. Quick Revision</h2>
+      <p>Streaming = Progressive response delivery</p>
+      <p>Delta = Incremental content update</p>
+      <p>message_stop = Stream completed</p>
+      <p>Partial JSON = Accumulate before parsing</p>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 p-4 text-center text-sm">
+    Claude AI Study Notes | CCAO-F Supplementary Revision
+  </footer>
+</body>
+</html>
