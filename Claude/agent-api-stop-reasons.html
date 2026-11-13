@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude - Stop Reasons</title>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <header class="bg-slate-900 text-white p-5">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-2xl font-bold">Claude API Stop Reasons</h1>
+      <p class="text-slate-400 text-sm">Understanding why a response ends</p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto p-5 space-y-5">
+    <section class="bg-white p-5 rounded-lg shadow-sm">
+      <h2 class="text-lg font-bold text-blue-700">1. What is stop_reason?</h2>
+      <p class="mt-2">The stop_reason field tells your application why Claude stopped generating a message.</p>
+      <p class="mt-3 bg-blue-50 p-3 rounded">
+        ELI10: It is like knowing why a student stopped writing an answer.
+      </p>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-sm">
+      <h2 class="text-lg font-bold text-blue-700">2. Important Stop Reasons</h2>
+      <div class="grid md:grid-cols-2 gap-3 mt-3">
+        <div class="bg-green-50 p-3 rounded">
+          <b> end_turn </b>
+          <p class="text-sm mt-1">Claude completed its response normally.</p>
+        </div>
+        <div class="bg-yellow-50 p-3 rounded">
+          <b> max_tokens </b>
+          <p class="text-sm mt-1">The response reached its output token limit.</p>
+        </div>
+        <div class="bg-blue-50 p-3 rounded">
+          <b> tool_use </b>
+          <p class="text-sm mt-1">Claude is handing control to a tool.</p>
+        </div>
+        <div class="bg-red-50 p-3 rounded">
+          <b> stop_sequence </b>
+          <p class="text-sm mt-1">A configured stop sequence was encountered.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-sm">
+      <h2 class="text-lg font-bold text-blue-700">3. Message Lifecycle</h2>
+      <div class="flex flex-col items-center gap-2 mt-3 text-center">
+        <div class="bg-slate-100 p-3 rounded w-full">Application sends request</div>
+        <span>↓</span>
+        <div class="bg-slate-100 p-3 rounded w-full">Claude generates message</div>
+        <span>↓</span>
+        <div class="bg-slate-100 p-3 rounded w-full">API returns stop_reason</div>
+        <span>↓</span>
+        <div class="bg-blue-100 p-3 rounded w-full">Application decides next action</div>
+      </div>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-sm">
+      <h2 class="text-lg font-bold text-blue-700">4. Why It Matters</h2>
+      <ul class="list-disc ml-5 mt-2 space-y-2">
+        <li>Know whether Claude finished normally.</li>
+        <li>Detect responses cut short by token limits.</li>
+        <li>Recognise when a tool must be executed.</li>
+        <li>Build reliable agent workflows.</li>
+      </ul>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-sm">
+      <h2 class="text-lg font-bold text-blue-700">5. Exam Scenario</h2>
+      <p class="mt-2">Claude returns stop_reason as tool_use. What should the application do?</p>
+      <details class="mt-3 bg-slate-100 p-3 rounded">
+        <summary class="cursor-pointer font-semibold">Reveal answer</summary>
+        <p class="mt-2">Execute the requested tool, return its result to Claude and continue the conversation.</p>
+      </details>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-sm">
+      <h2 class="text-lg font-bold text-blue-700">6. Quick Revision</h2>
+      <p class="mt-2">end_turn = finished</p>
+      <p>max_tokens = output limit reached</p>
+      <p>tool_use = tool handoff</p>
+      <p>stop_sequence = configured stopping text found</p>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 p-4 text-center text-sm">
+    Claude AI Study Notes | CCAO-F Supplementary Revision
+  </footer>
+</body>
+</html>
