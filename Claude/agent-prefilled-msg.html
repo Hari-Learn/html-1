@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude - Prefilled Messages</title>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <header class="bg-slate-900 text-white p-5">
+    <h1 class="text-2xl font-bold">Claude API: Prefilled Messages</h1>
+    <p class="text-sm text-slate-300">Rare Topic 19 | CCAO-F Notes</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">1. What is prefill?</h2>
+        <p class="text-sm">A prefilled assistant message is a partial assistant response supplied by the application.</p>
+        <p class="mt-3 text-sm">Example: the conversation ends with an assistant message beginning with:</p>
+        <code class="block bg-slate-100 p-3 mt-2 rounded text-sm">{"role":"assistant","content":"{ \"answer\": "}</code>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">2. Why was it used?</h2>
+        <ul class="list-disc pl-5 text-sm space-y-2">
+          <li>Encourage a specific output format.</li>
+          <li>Start a response with a required phrase.</li>
+          <li>Continue a partially written structure.</li>
+        </ul>
+        <p class="mt-3 text-sm">Think of it as giving Claude the first few words of its answer.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">3. Important model change</h2>
+        <p class="text-sm">Anthropic documents that final-turn assistant prefills are not supported on Claude 4.6 and later models covered by its migration guidance.</p>
+        <p class="text-sm mt-2">A request using an unsupported prefill can return a 400 error.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">4. Better alternatives</h2>
+        <ul class="list-disc pl-5 text-sm space-y-2">
+          <li>Use clear system instructions.</li>
+          <li>Describe the required output format.</li>
+          <li>Use structured outputs when suitable.</li>
+          <li>Validate the returned data in your application.</li>
+        </ul>
+      </div>
+
+      <div class="bg-amber-50 border border-amber-200 p-5 rounded-lg md:col-span-2">
+        <h2 class="font-bold mb-2">ELI10 Example</h2>
+        <p class="text-sm">Old method: You give a student the beginning of a sentence and ask them to finish it.</p>
+        <p class="text-sm mt-2">New method: You tell the student exactly what format to follow, without supplying a partial answer.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow md:col-span-2">
+        <h2 class="font-bold text-lg mb-2">Exam Scenario</h2>
+        <p class="text-sm">An application uses a partial assistant message to force JSON output. After changing to a newer Claude model, the API returns a 400 error. What should the developer do?</p>
+        <details class="mt-3">
+          <summary class="cursor-pointer font-semibold text-blue-700">Reveal answer</summary>
+          <p class="mt-2 text-sm">Remove the unsupported final-turn prefill and use an appropriate output-format instruction or structured output feature.</p>
+        </details>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-white text-center p-4 text-sm">
+    Claude CCAO-F | Supplementary Notes | Page 19
+  </footer>
+</body>
+</html>
