@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude - Web Search Tool</title>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <header class="bg-slate-900 text-white p-5">
+    <h1 class="text-2xl font-bold">Claude: Server-Side Web Search</h1>
+    <p class="text-sm text-slate-300">Rare Topic 20 | CCAO-F Notes</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">1. What is it?</h2>
+        <p class="text-sm">A built-in tool that lets Claude search the web for current information.</p>
+        <p class="text-sm mt-3">Useful when a question needs information beyond the model's existing knowledge.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">2. When is it useful?</h2>
+        <ul class="list-disc pl-5 text-sm space-y-2">
+          <li>Latest news and announcements.</li>
+          <li>Current product information.</li>
+          <li>Recent company updates.</li>
+          <li>Information that may have changed.</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">3. How does it work?</h2>
+        <div class="space-y-2 text-sm">
+          <div class="bg-slate-100 p-3 rounded">1. User asks a question.</div>
+          <div class="text-center">↓</div>
+          <div class="bg-slate-100 p-3 rounded">2. Claude decides to search.</div>
+          <div class="text-center">↓</div>
+          <div class="bg-slate-100 p-3 rounded">3. Search tool returns results.</div>
+          <div class="text-center">↓</div>
+          <div class="bg-slate-100 p-3 rounded">4. Claude prepares an answer with citations.</div>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">4. Important controls</h2>
+        <ul class="list-disc pl-5 text-sm space-y-2">
+          <li><code>max_uses</code> limits searches per request.</li>
+          <li><code>allowed_domains</code> restricts sources.</li>
+          <li><code>blocked_domains</code> excludes selected sources.</li>
+          <li>Domain allowlist and blocklist are alternatives, not combined settings.</li>
+        </ul>
+      </div>
+
+      <div class="bg-blue-50 border border-blue-200 p-5 rounded-lg md:col-span-2">
+        <h2 class="font-bold mb-2">5. Citations matter</h2>
+        <p class="text-sm">Search results can provide source information that Claude uses to attach citations to parts of its answer.</p>
+        <p class="text-sm mt-2">Your application should preserve and display those citations so users can inspect the sources.</p>
+      </div>
+
+      <div class="bg-amber-50 border border-amber-200 p-5 rounded-lg md:col-span-2">
+        <h2 class="font-bold mb-2">ELI10: Who does the searching?</h2>
+        <p class="text-sm">Think of Claude as a researcher. You give it a question, it asks the built-in librarian to find sources, then it explains what it found.</p>
+        <p class="text-sm mt-2">Your application does not need to write its own search execution code for this server-side tool.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow md:col-span-2">
+        <h2 class="font-bold text-lg mb-2">Exam Scenario</h2>
+        <p class="text-sm">A company wants Claude to search only its approved websites. Which setting should it configure?</p>
+        <details class="mt-3">
+          <summary class="cursor-pointer font-semibold text-blue-700">Reveal answer</summary>
+          <p class="mt-2 text-sm"><code>allowed_domains</code>. It restricts search results to the specified domains.</p>
+        </details>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-white text-center p-4 text-sm">
+    Claude CCAO-F | Supplementary Notes | Page 20
+  </footer>
+</body>
+</html>
