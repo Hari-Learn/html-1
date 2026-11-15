@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude - Cache Invalidation</title>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <header class="bg-slate-900 text-white p-5">
+    <h1 class="text-2xl font-bold">Claude API: Cache Invalidation</h1>
+    <p class="text-sm text-slate-300">Rare Topic 24 | CCAO-F Notes</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">1. What is invalidation?</h2>
+        <p class="text-sm">Cache invalidation means an existing cached prefix can no longer be reused because the relevant content or configuration changed.</p>
+        <p class="text-sm mt-3">Claude may need to create a new cache entry.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">2. Understand the hierarchy</h2>
+        <div class="space-y-2 text-sm">
+          <div class="bg-blue-100 p-3 rounded text-center font-semibold">Tools</div>
+          <div class="text-center">↓</div>
+          <div class="bg-green-100 p-3 rounded text-center font-semibold">System Prompt</div>
+          <div class="text-center">↓</div>
+          <div class="bg-amber-100 p-3 rounded text-center font-semibold">Messages</div>
+        </div>
+        <p class="text-xs text-slate-500 mt-3">The cache is based on matching prefixes in this order.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow md:col-span-2">
+        <h2 class="font-bold text-lg mb-3">3. What changes invalidate?</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-left">
+            <thead class="bg-slate-200">
+              <tr>
+                <th class="p-3">Change</th>
+                <th class="p-3">Affected cache</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="p-3">Change tool definitions</td>
+                <td class="p-3">Tools + System + Messages</td>
+              </tr>
+              <tr class="border-b">
+                <td class="p-3">Change system prompt</td>
+                <td class="p-3">System + Messages</td>
+              </tr>
+              <tr class="border-b">
+                <td class="p-3">Change tool choice</td>
+                <td class="p-3">Messages</td>
+              </tr>
+              <tr class="border-b">
+                <td class="p-3">Add or remove images</td>
+                <td class="p-3">Messages</td>
+              </tr>
+              <tr>
+                <td class="p-3">Change thinking settings</td>
+                <td class="p-3">Messages; sometimes earlier cache levels too, depending on model</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">4. Example: Tool change</h2>
+        <p class="text-sm">Your application has 10 tool definitions. You add an 11th tool.</p>
+        <p class="text-sm mt-3">The tool-definition prefix has changed, so the existing cache based on that prefix cannot be reused.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">5. Example: Tool choice</h2>
+        <p class="text-sm">Your tool definitions and system prompt remain the same, but you change the <code>tool_choice</code> setting.</p>
+        <p class="text-sm mt-3">The tools and system cache can remain valid; the messages cache is affected.</p>
+      </div>
+
+      <div class="bg-blue-50 border border-blue-200 p-5 rounded-lg md:col-span-2">
+        <h2 class="font-bold mb-2">6. How to reduce unnecessary invalidation</h2>
+        <ul class="list-disc pl-5 text-sm space-y-2">
+          <li>Keep tool definitions stable.</li>
+          <li>Keep frequently reused system instructions unchanged.</li>
+          <li>Place stable content before changing content.</li>
+          <li>Avoid changing configuration unnecessarily between requests.</li>
+          <li>Check model-specific caching behaviour.</li>
+        </ul>
+      </div>
+
+      <div class="bg-amber-50 border border-amber-200 p-5 rounded-lg md:col-span-2">
+        <h2 class="font-bold mb-2">ELI10 Example: A school notebook</h2>
+        <p class="text-sm">Think of a notebook with three parts: school rules, teacher instructions and daily lessons.</p>
+        <p class="text-sm mt-2">If you change the school rules, later parts may need to be rewritten. If you change only today's lesson, the earlier pages can remain unchanged.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow md:col-span-2">
+        <h2 class="font-bold text-lg mb-2">Exam Scenario</h2>
+        <p class="text-sm">A developer changes only the <code>tool_choice</code> parameter. The tool definitions and system prompt stay unchanged. Which cache level is affected?</p>
+        <details class="mt-3">
+          <summary class="cursor-pointer font-semibold text-blue-700">Reveal answer</summary>
+          <p class="mt-2 text-sm">The messages cache. The tools and system cache can remain valid.</p>
+        </details>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-white text-center p-4 text-sm">
+    Claude CCAO-F | Supplementary Notes | Page 24
+  </footer>
+</body>
+</html>
