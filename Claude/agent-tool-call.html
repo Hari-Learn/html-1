@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude - Programmatic Tool Calling</title>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <header class="bg-slate-900 text-white p-5">
+    <h1 class="text-2xl font-bold">Claude: Programmatic Tool Calling</h1>
+    <p class="text-sm text-slate-300">Rare Topic 26 | CCAO-F Notes</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">1. What is it?</h2>
+        <p class="text-sm">Claude writes code that calls your application tools from inside a Code Execution container.</p>
+        <p class="text-sm mt-3">Instead of asking Claude to handle every tool result separately, code can process several results first.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">2. Traditional approach</h2>
+        <div class="space-y-2 text-sm">
+          <div class="bg-slate-100 p-3 rounded">Claude calls Tool A</div>
+          <div class="bg-slate-100 p-3 rounded">Result goes back to Claude</div>
+          <div class="bg-slate-100 p-3 rounded">Claude calls Tool B</div>
+          <div class="bg-slate-100 p-3 rounded">Result goes back to Claude</div>
+          <div class="bg-slate-100 p-3 rounded">Claude calls Tool C</div>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">3. Programmatic approach</h2>
+        <div class="space-y-2 text-sm">
+          <div class="bg-slate-100 p-3 rounded">Claude writes one script</div>
+          <div class="text-center">↓</div>
+          <div class="bg-slate-100 p-3 rounded">Script calls A, B and C</div>
+          <div class="text-center">↓</div>
+          <div class="bg-slate-100 p-3 rounded">Code filters and combines results</div>
+          <div class="text-center">↓</div>
+          <div class="bg-slate-100 p-3 rounded">Claude receives final output</div>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">4. Important setting</h2>
+        <code class="block bg-slate-100 p-3 rounded text-sm">"allowed_callers": [
+  "code_execution_20260120"
+]</code>
+        <p class="text-sm mt-3">This is an illustrative supported tool configuration. Check model and tool-version compatibility.</p>
+      </div>
+
+      <div class="bg-blue-50 border border-blue-200 p-5 rounded-lg md:col-span-2">
+        <h2 class="font-bold mb-2">5. Why use it?</h2>
+        <ul class="list-disc pl-5 text-sm space-y-2">
+          <li>Reduce repeated model round trips.</li>
+          <li>Filter large tool results before they enter model context.</li>
+          <li>Run loops and conditional operations.</li>
+          <li>Reduce unnecessary input tokens in suitable workflows.</li>
+        </ul>
+      </div>
+
+      <div class="bg-amber-50 border border-amber-200 p-5 rounded-lg md:col-span-2">
+        <h2 class="font-bold mb-2">ELI10 Example</h2>
+        <p class="text-sm">A manager asks you to check 20 employee expense records. Instead of bringing each record to the manager one by one, you check all 20, filter the exceptions and show only the employees who exceeded their budget.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow md:col-span-2">
+        <h2 class="font-bold text-lg mb-2">6. When is it NOT ideal?</h2>
+        <p class="text-sm">When each tool result requires Claude to think and decide what to do next, separate model round trips may be necessary. It may also add overhead for very small tasks.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow md:col-span-2">
+        <h2 class="font-bold text-lg mb-2">Exam Scenario</h2>
+        <p class="text-sm">An agent must query 50 customer records, filter inactive customers and return only a summary. The developer wants fewer model round trips. What should be considered?</p>
+        <details class="mt-3">
+          <summary class="cursor-pointer font-semibold text-blue-700">Reveal answer</summary>
+          <p class="mt-2 text-sm">Programmatic Tool Calling, because the script can call tools repeatedly and filter results before returning the final output to Claude.</p>
+        </details>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-white text-center p-4 text-sm">
+    Claude CCAO-F | Supplementary Notes | Page 26
+  </footer>
+</body>
+</html>
