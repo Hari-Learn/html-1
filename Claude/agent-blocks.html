@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude - Thinking Signatures</title>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <header class="bg-slate-900 text-white p-5">
+    <h1 class="text-2xl font-bold">Claude: Thinking Blocks & Signatures</h1>
+    <p class="text-sm text-slate-300">Rare Topic 27 | CCAO-F Notes</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">1. What is a thinking block?</h2>
+        <p class="text-sm">When thinking is enabled, Claude's API response can contain a separate block of thinking-related content before the final text response.</p>
+        <p class="text-sm mt-3">It is a distinct content block, not ordinary user-facing answer text.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">2. What is a signature?</h2>
+        <p class="text-sm">A signature is an opaque, encrypted value associated with a thinking block.</p>
+        <p class="text-sm mt-3">It helps the API verify and preserve the thinking block when it is sent back in a continuing conversation.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">3. Important block types</h2>
+        <ul class="list-disc pl-5 text-sm space-y-2">
+          <li><code>thinking</code> — thinking-related content.</li>
+          <li><code>redacted_thinking</code> — encrypted, safety-redacted thinking content.</li>
+          <li><code>text</code> — normal response text.</li>
+          <li><code>tool_use</code> — a tool call.</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">4. The critical rule</h2>
+        <p class="text-sm">When continuing a tool-use conversation, pass the relevant thinking blocks back exactly as received.</p>
+        <p class="text-sm mt-3">Do not edit, rearrange or partially rebuild them.</p>
+      </div>
+
+      <div class="bg-blue-50 border border-blue-200 p-5 rounded-lg md:col-span-2">
+        <h2 class="font-bold mb-2">5. What can go wrong?</h2>
+        <p class="text-sm">Suppose application code keeps only blocks where <code>type == "thinking"</code> and drops <code>redacted_thinking</code>.</p>
+        <p class="text-sm mt-2">The conversation may fail with a 400 invalid request error because required blocks were modified or omitted.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">6. Correct handling</h2>
+        <ul class="list-disc pl-5 text-sm space-y-2">
+          <li>Preserve the complete relevant block.</li>
+          <li>Keep its signature unchanged.</li>
+          <li>Keep redacted thinking blocks too.</li>
+          <li>Return the original assistant content sequence.</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">7. What NOT to do</h2>
+        <ul class="list-disc pl-5 text-sm space-y-2">
+          <li>Do not decode the signature.</li>
+          <li>Do not invent a signature.</li>
+          <li>Do not rewrite the thinking block.</li>
+          <li>Do not filter out required blocks.</li>
+        </ul>
+      </div>
+
+      <div class="bg-amber-50 border border-amber-200 p-5 rounded-lg md:col-span-2">
+        <h2 class="font-bold mb-2">ELI10 Example</h2>
+        <p class="text-sm">Imagine a sealed envelope with a security seal. You need to send it to another person. You must pass the envelope and seal along unchanged. You should not open it, modify it or replace the seal.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow md:col-span-2">
+        <h2 class="font-bold text-lg mb-2">Exam Scenario</h2>
+        <p class="text-sm">An application uses Claude with thinking and tools. Its code removes all <code>redacted_thinking</code> blocks before sending the previous assistant response back. The API returns a 400 error. What is the likely fix?</p>
+        <details class="mt-3">
+          <summary class="cursor-pointer font-semibold text-blue-700">Reveal answer</summary>
+          <p class="mt-2 text-sm">Preserve and return the relevant thinking and redacted_thinking blocks unchanged, including their associated signatures or encrypted data.</p>
+        </details>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-white text-center p-4 text-sm">
+    Claude CCAO-F | Supplementary Notes | Page 27
+  </footer>
+</body>
+</html>
