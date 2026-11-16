@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude - Code Execution</title>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <header class="bg-slate-900 text-white p-5">
+    <h1 class="text-2xl font-bold">Claude: Code Execution Tool</h1>
+    <p class="text-sm text-slate-300">Rare Topic 25 | CCAO-F Notes</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">1. What is Code Execution?</h2>
+        <p class="text-sm">A server-side tool that allows Claude to write and run code to solve tasks.</p>
+        <p class="text-sm mt-3">It can use Python, shell commands and file operations in a managed environment.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">2. When is it useful?</h2>
+        <ul class="list-disc pl-5 text-sm space-y-2">
+          <li>Complex calculations.</li>
+          <li>Analysing CSV data.</li>
+          <li>Creating charts.</li>
+          <li>Processing files.</li>
+          <li>Running simulations.</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">3. How does it work?</h2>
+        <div class="space-y-2 text-sm">
+          <div class="bg-slate-100 p-3 rounded">1. User asks for data analysis.</div>
+          <div class="text-center">↓</div>
+          <div class="bg-slate-100 p-3 rounded">2. Claude decides to execute code.</div>
+          <div class="text-center">↓</div>
+          <div class="bg-slate-100 p-3 rounded">3. Code runs in a sandbox.</div>
+          <div class="text-center">↓</div>
+          <div class="bg-slate-100 p-3 rounded">4. Results return to Claude.</div>
+          <div class="text-center">↓</div>
+          <div class="bg-slate-100 p-3 rounded">5. Claude explains the result.</div>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-2">4. Sandbox restrictions</h2>
+        <ul class="list-disc pl-5 text-sm space-y-2">
+          <li>Runs in an isolated container.</li>
+          <li>No internet access in the execution environment.</li>
+          <li>Only pre-installed libraries are available.</li>
+          <li>New requests usually get a new container unless one is reused.</li>
+        </ul>
+      </div>
+
+      <div class="bg-blue-50 border border-blue-200 p-5 rounded-lg md:col-span-2">
+        <h2 class="font-bold mb-2">5. Client Tool vs Code Execution</h2>
+        <p class="text-sm"><b>Client tool:</b> Your application runs the function.</p>
+        <p class="text-sm mt-2"><b>Code Execution:</b> Anthropic runs code in its managed sandbox.</p>
+        <p class="text-sm mt-3">Remember: these are different execution locations.</p>
+      </div>
+
+      <div class="bg-amber-50 border border-amber-200 p-5 rounded-lg md:col-span-2">
+        <h2 class="font-bold mb-2">ELI10 Example</h2>
+        <p class="text-sm">You give Claude a spreadsheet with 10,000 sales records and ask for the total. Claude can write Python code to calculate it instead of manually reading every row.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-lg shadow md:col-span-2">
+        <h2 class="font-bold text-lg mb-2">Exam Scenario</h2>
+        <p class="text-sm">A user asks Claude to analyse a large CSV file and create a chart. Which capability is suitable?</p>
+        <details class="mt-3">
+          <summary class="cursor-pointer font-semibold text-blue-700">Reveal answer</summary>
+          <p class="mt-2 text-sm">The Code Execution tool. It can process data and generate charts inside the sandbox.</p>
+        </details>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-white text-center p-4 text-sm">
+    Claude CCAO-F | Supplementary Notes | Page 25
+  </footer>
+</body>
+</html>
