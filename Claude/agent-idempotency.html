@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude - Page 28</title>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <header class="bg-indigo-700 text-white p-6">
+    <h1 class="text-2xl font-bold">Agent Reliability</h1>
+    <p>Page 28 | Building dependable agents</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-lg text-indigo-700">1. Idempotency</h2>
+        <p class="mt-2">An operation is idempotent when repeating it produces the same final result as doing it once.</p>
+        <p class="mt-2 font-semibold">Example:</p>
+        <p>Refund request sent twice with the same idempotency key should not create two refunds.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-lg text-indigo-700">2. Idempotency Key</h2>
+        <p class="mt-2">A unique identifier attached to an operation.</p>
+        <p class="mt-2">The backend uses it to recognize duplicate requests.</p>
+        <p class="mt-2 font-semibold">Example: refund-ORD123-001</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-lg text-indigo-700">3. Timeout</h2>
+        <p class="mt-2">The agent waits for a tool response, but the response does not arrive within the allowed time.</p>
+        <p class="mt-2">Important: Timeout does not always mean the operation failed.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-lg text-indigo-700">4. Retry Strategy</h2>
+        <p class="mt-2">Retry temporary failures using controlled attempts.</p>
+        <p class="mt-2">Exponential backoff increases the waiting time between retries.</p>
+        <p class="mt-2">Example: 1s → 2s → 4s → 8s.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-lg text-indigo-700">5. Circuit Breaker</h2>
+        <p class="mt-2">Temporarily stops calls to a failing service.</p>
+        <p class="mt-2">Prevents repeated requests from overwhelming an unhealthy backend.</p>
+        <p class="mt-2">States: Closed, Open, Half-open.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-lg text-indigo-700">6. Graceful Degradation</h2>
+        <p class="mt-2">When one service fails, the agent still provides whatever useful service is safely possible.</p>
+        <p class="mt-2">Example: Explain refund eligibility even if refund processing is temporarily unavailable.</p>
+      </div>
+
+    </div>
+
+    <div class="bg-indigo-50 p-5 rounded-xl mt-5">
+      <h2 class="font-bold text-indigo-800">Remember</h2>
+      <p>Retry handles temporary failure.</p>
+      <p>Idempotency prevents duplicate actions.</p>
+      <p>Circuit breaker protects failing services.</p>
+      <p>Graceful degradation preserves useful functionality.</p>
+    </div>
+  </main>
+
+  <footer class="text-center p-5 text-gray-500">
+    Claude CCAO-F Preparation | Page 28
+  </footer>
+</body>
+</html>
