@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude - Page 29</title>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <header class="bg-blue-700 text-white p-6">
+    <h1 class="text-2xl font-bold">Agent State Management</h1>
+    <p>Page 29 | Maintaining context and progress</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-blue-700 text-lg">1. Agent State</h2>
+        <p class="mt-2">Information about what the agent is doing and what has already happened.</p>
+        <p class="mt-2">Example: Customer verified, order retrieved, refund pending.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-blue-700 text-lg">2. Conversation History</h2>
+        <p class="mt-2">Previous messages exchanged between customer and agent.</p>
+        <p class="mt-2">Helps Claude understand earlier questions and responses.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-blue-700 text-lg">3. Short-Term Memory</h2>
+        <p class="mt-2">Information needed during the current task or conversation.</p>
+        <p class="mt-2">Example: Current order ID and refund status.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-blue-700 text-lg">4. Long-Term Memory</h2>
+        <p class="mt-2">Information retained across separate conversations when the application supports it.</p>
+        <p class="mt-2">Example: A customer's preferred communication language.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-blue-700 text-lg">5. Checkpointing</h2>
+        <p class="mt-2">Saving the agent's progress at important stages.</p>
+        <p class="mt-2">If execution stops, the system may resume from a saved checkpoint.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-blue-700 text-lg">6. Context Compaction</h2>
+        <p class="mt-2">Reducing lengthy conversation history into a shorter useful representation.</p>
+        <p class="mt-2">Preserve important decisions, facts and pending tasks.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-blue-700 text-lg">7. State vs Memory</h2>
+        <p class="mt-2">State describes the current execution status.</p>
+        <p class="mt-2">Memory stores useful information for future reasoning.</p>
+        <p class="mt-2">They are related, but not identical.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-blue-700 text-lg">8. State Persistence</h2>
+        <p class="mt-2">Storing state outside temporary execution memory.</p>
+        <p class="mt-2">Useful when an agent needs to survive restarts or continue later.</p>
+      </div>
+
+    </div>
+
+    <div class="bg-blue-50 p-5 rounded-xl mt-5">
+      <h2 class="font-bold text-blue-800">Example Workflow</h2>
+      <p>Customer asks for refund → Verify customer → Retrieve order → Save progress → Process refund → Update state → Respond.</p>
+    </div>
+  </main>
+
+  <footer class="text-center p-5 text-gray-500">
+    Claude CCAO-F Preparation | Page 29
+  </footer>
+</body>
+</html>
