@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude - Page 30</title>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <header class="bg-emerald-700 text-white p-6">
+    <h1 class="text-2xl font-bold">Agent Observability</h1>
+    <p>Page 30 | Monitoring and evaluating production agents</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-emerald-700 text-lg">1. Logging</h2>
+        <p class="mt-2">Recording important events during agent execution.</p>
+        <p class="mt-2">Example: Tool called, response received, error occurred.</p>
+        <p class="mt-2">Never log passwords or sensitive data unnecessarily.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-emerald-700 text-lg">2. Metrics</h2>
+        <p class="mt-2">Numerical measurements used to understand system performance.</p>
+        <p class="mt-2">Examples: Success rate, latency, token usage, cost and escalation rate.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-emerald-700 text-lg">3. Distributed Tracing</h2>
+        <p class="mt-2">Tracks a request across multiple services and tools.</p>
+        <p class="mt-2">Example: Customer request → Claude → MCP tool → Payment backend.</p>
+        <p class="mt-2">Helps locate where delays or failures occur.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-emerald-700 text-lg">4. Latency</h2>
+        <p class="mt-2">The time taken to complete a request.</p>
+        <p class="mt-2">High latency can result from slow tools, network delays or long model responses.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-emerald-700 text-lg">5. Evaluation</h2>
+        <p class="mt-2">Testing whether the agent produces the expected result.</p>
+        <p class="mt-2">Evaluate accuracy, tool selection, policy compliance and response quality.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-emerald-700 text-lg">6. Regression Testing</h2>
+        <p class="mt-2">Running previous tests after a change.</p>
+        <p class="mt-2">Ensures a new prompt or tool update does not break existing behaviour.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-emerald-700 text-lg">7. First Contact Resolution</h2>
+        <p class="mt-2">Measures the percentage of customer issues resolved during the first interaction.</p>
+        <p class="mt-2">Formula: Resolved on first contact ÷ Total eligible cases × 100.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-emerald-700 text-lg">8. Root Cause Analysis</h2>
+        <p class="mt-2">Finding the underlying reason for a failure rather than treating only its symptom.</p>
+        <p class="mt-2">Example: Repeated refund failures caused by an expired backend credential.</p>
+      </div>
+
+    </div>
+
+    <div class="bg-emerald-50 p-5 rounded-xl mt-5">
+      <h2 class="font-bold text-emerald-800">Production Example</h2>
+      <p>Customer reports a failed refund.</p>
+      <p>Logs show the tool call. Traces identify the slow payment service. Metrics show increasing timeout rates. Root cause analysis identifies the backend problem.</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow mt-5">
+      <h2 class="font-bold text-lg">Quick Revision</h2>
+      <ul class="list-disc pl-5 mt-2 space-y-2">
+        <li>Logs = What happened?</li>
+        <li>Metrics = How much / how often?</li>
+        <li>Traces = Where did the request travel?</li>
+        <li>Evaluation = Was the answer correct?</li>
+        <li>Regression = Did the change break anything?</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="text-center p-5 text-gray-500">
+    Claude CCAO-F Preparation | Page 30
+  </footer>
+</body>
+</html>
