@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Claude - Files API</title>
+</head>
+<body class="bg-slate-950 text-white p-6">
+<main class="max-w-3xl mx-auto space-y-5">
+<h1 class="text-3xl font-bold text-cyan-400">Files API</h1>
+<p class="text-slate-400">Working with reusable files in Claude applications.</p>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">1. What is the Files API?</h2>
+<p class="mt-2">Anthropic's Files API provides a way to upload and manage files for use in supported API workflows.</p>
+<p class="text-emerald-300 mt-3">ELI10: Upload a document once and refer to it again instead of repeatedly sending the same file.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">2. Typical Workflow</h2>
+<div class="bg-slate-800 p-4 rounded-lg text-center space-y-2">
+<p class="text-amber-300 font-bold">Upload a file</p>
+<p>↓</p>
+<p class="text-cyan-300">Receive a file ID</p>
+<p>↓</p>
+<p class="text-purple-300">Reference file in a supported request</p>
+<p>↓</p>
+<p class="text-emerald-300 font-bold">Claude processes the content</p>
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">3. Why Use It?</h2>
+<ul class="list-disc ml-5 mt-2 space-y-2">
+<li>Reuse uploaded files across supported requests.</li>
+<li>Reduce repeated file-upload work.</li>
+<li>Build document-processing applications.</li>
+<li>Manage file references using file IDs.</li>
+</ul>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">4. Important Considerations</h2>
+<ul class="list-disc ml-5 mt-2 space-y-2">
+<li>File API availability and supported formats can vary.</li>
+<li>Some features may require beta headers or specific API versions.</li>
+<li>Do not assume every uploaded file is automatically available in every request.</li>
+<li>Protect file IDs and sensitive document content.</li>
+<li>Follow retention and deletion requirements.</li>
+</ul>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">5. Exam Scenario</h2>
+<p class="mt-2">An application repeatedly analyses the same policy document. The team wants to avoid uploading the same file for every supported request. Which feature could help?</p>
+<details class="bg-slate-800 p-3 rounded-lg mt-3">
+<summary class="cursor-pointer text-emerald-300 font-bold">Reveal answer</summary>
+<p class="mt-2">The Files API, by uploading the document and reusing its file reference in supported workflows.</p>
+</details>
+</section>
+
+<p class="text-sm text-slate-500">Remember: File ID = reference to an uploaded file, not the file's actual contents.</p>
+</main>
+</body>
+</html>

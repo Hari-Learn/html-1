@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude - Page 31</title>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <header class="bg-sky-800 text-white p-6">
+    <h1 class="text-2xl font-bold">Tool Permissions & Least Privilege</h1>
+    <p>Page 31 | Agent Security</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-sky-700 text-lg">1. Least Privilege</h2>
+        <p class="mt-2">Give an agent only the permissions it needs to perform its task.</p>
+        <p class="mt-2">Example: A shipping agent can check tracking but cannot issue refunds.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-sky-700 text-lg">2. Read vs Write Tools</h2>
+        <p class="mt-2">Read tools retrieve information. Write tools change something in the real world.</p>
+        <p class="mt-2">Example: get_order is read. cancel_order is write.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-sky-700 text-lg">3. Tool Authorization</h2>
+        <p class="mt-2">Verify that the agent and user are allowed to perform an action.</p>
+        <p class="mt-2">Never rely only on Claude's decision to enforce authorization.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-sky-700 text-lg">4. Human Approval</h2>
+        <p class="mt-2">Require human confirmation before sensitive or high-impact actions.</p>
+        <p class="mt-2">Example: Large refund, account closure or unusual payment action.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-sky-700 text-lg">5. Scope Restrictions</h2>
+        <p class="mt-2">Restrict tools to specific accounts, resources or data.</p>
+        <p class="mt-2">Example: Agent can access only the current customer's orders.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-sky-700 text-lg">6. Permission Separation</h2>
+        <p class="mt-2">Separate responsibilities across tools or agents.</p>
+        <p class="mt-2">One component retrieves data; another authorized component performs sensitive actions.</p>
+      </div>
+
+    </div>
+
+    <div class="bg-sky-50 p-5 rounded-xl mt-5">
+      <h2 class="font-bold text-sky-900">Exam Scenario</h2>
+      <p class="mt-2">A customer-support agent can retrieve customer records and issue refunds. A malicious customer asks it to refund another person's order.</p>
+      <p class="mt-2 font-semibold">Best protection: Enforce customer ownership and refund authorization in the backend, not just in the prompt.</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow mt-5">
+      <h2 class="font-bold">Quick Revision</h2>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li>Least privilege = minimum necessary access.</li>
+        <li>Read tools = retrieve information.</li>
+        <li>Write tools = change information or perform actions.</li>
+        <li>Authorization = verify permission.</li>
+        <li>Human approval = extra oversight for sensitive actions.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="text-center text-gray-500 p-5">
+    Claude CCAO-F Preparation | Page 31
+  </footer>
+</body>
+</html>

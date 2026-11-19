@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Claude - Computer Use</title>
+</head>
+<body class="bg-slate-950 text-white p-6">
+<main class="max-w-3xl mx-auto space-y-5">
+<h1 class="text-3xl font-bold text-cyan-400">Computer Use</h1>
+<p class="text-slate-400">Allowing Claude to interact with a desktop environment.</p>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">1. What is Computer Use?</h2>
+<p class="mt-2">Claude can inspect screenshots and request mouse and keyboard actions through a computer-use toolset.</p>
+<p class="text-emerald-300 mt-3">ELI10: Claude sees your computer screen and can request clicks and typing like a human operator.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">2. Available Actions</h2>
+<div class="grid grid-cols-2 gap-3 mt-3 text-sm">
+<div class="bg-slate-800 p-3 rounded-lg">Screenshot – inspect screen</div>
+<div class="bg-slate-800 p-3 rounded-lg">Left click – select item</div>
+<div class="bg-slate-800 p-3 rounded-lg">Type – enter text</div>
+<div class="bg-slate-800 p-3 rounded-lg">Key – press keyboard keys</div>
+<div class="bg-slate-800 p-3 rounded-lg">Scroll – move page</div>
+<div class="bg-slate-800 p-3 rounded-lg">Zoom – inspect a region</div>
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">3. Screenshot Loop</h2>
+<div class="bg-slate-800 p-4 rounded-lg text-center space-y-2">
+<p class="text-amber-300">Take screenshot</p>
+<p>↓</p>
+<p class="text-cyan-300">Claude understands screen</p>
+<p>↓</p>
+<p class="text-purple-300">Claude requests an action</p>
+<p>↓</p>
+<p class="text-emerald-300">Application executes action</p>
+<p>↓</p>
+<p class="text-amber-300">New screenshot → repeat</p>
+</div>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">4. Important Safety</h2>
+<ul class="list-disc ml-5 mt-2 space-y-2">
+<li>Run actions in a controlled environment.</li>
+<li>Validate coordinates and actions.</li>
+<li>Protect passwords and sensitive information.</li>
+<li>Require human approval for risky actions.</li>
+<li>Do not trust instructions found on arbitrary webpages.</li>
+</ul>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">5. Computer Use vs Browser Use</h2>
+<p class="mt-2"><b class="text-cyan-300">Computer Use:</b> General desktop interaction using screenshots, coordinates and keyboard actions.</p>
+<p class="mt-2"><b class="text-emerald-300">Browser Use:</b> Page-aware interaction for browser tasks such as forms and navigation.</p>
+</section>
+
+<section class="bg-slate-900 p-5 rounded-xl">
+<h2 class="text-xl font-bold text-cyan-300">6. Exam Scenario</h2>
+<p class="mt-2">Claude must open a desktop application, inspect its screen and click a button. Which capability is appropriate?</p>
+<details class="bg-slate-800 p-3 rounded-lg mt-3">
+<summary class="cursor-pointer text-emerald-300 font-bold">Reveal answer</summary>
+<p class="mt-2">Computer Use with screenshot, mouse and keyboard actions.</p>
+</details>
+</section>
+<p class="text-sm text-slate-500">Remember: Claude requests actions; your application executes them.</p>
+</main>
+</body>
+</html>

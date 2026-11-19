@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>API Key Security</title>
+</head>
+<body class="bg-slate-950 text-white">
+<nav class="p-6 border-b border-slate-800 flex justify-between">
+<a href="index.html" class="text-cyan-400 font-bold">AI Safety</a>
+<a href="index.html">Home</a>
+</nav>
+<main class="max-w-4xl mx-auto px-6 py-16">
+<p class="text-cyan-400">AI SAFETY / MODULE 03</p>
+<h1 class="text-4xl font-bold mt-4">Secure API Key Management</h1>
+<p class="text-slate-400 text-lg mt-5">API keys authenticate applications and provide access to services. Exposed keys can lead to unauthorized access and financial loss.</p>
+<div class="bg-slate-900 p-6 rounded-xl mt-8">
+<h2 class="text-xl font-bold text-cyan-400">Security Best Practices</h2>
+<ul class="text-slate-300 mt-4 space-y-3">
+<li>✓ Store keys in environment variables.</li>
+<li>✓ Never commit keys to GitHub.</li>
+<li>✓ Use secret management services.</li>
+<li>✓ Restrict permissions and API access.</li>
+<li>✓ Rotate keys regularly.</li>
+<li>✓ Revoke exposed credentials immediately.</li>
+</ul>
+</div>
+<h2 class="text-xl font-bold mt-10">Example: Environment Variable</h2>
+<pre class="bg-black text-green-400 p-5 rounded-xl mt-4 overflow-x-auto"><code>API_KEY=your_secret_key
+
+# Python example
+import os
+api_key = os.getenv("API_KEY")</code></pre>
+<div class="bg-slate-900 p-6 rounded-xl mt-8 border border-cyan-900">
+<h2 class="text-cyan-400 font-bold">Important Security Rule</h2>
+<p class="text-slate-400 mt-2">Never expose secret API keys in frontend JavaScript, public repositories, screenshots, or application logs.</p>
+</div>
+<a href="index.html" class="inline-block mt-8 bg-cyan-500 text-slate-950 px-6 py-3 rounded-lg font-bold">← Back to Home</a>
+</main>
+</body></html>
