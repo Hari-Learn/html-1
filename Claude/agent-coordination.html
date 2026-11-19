@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude - Page 33</title>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <header class="bg-violet-800 text-white p-6">
+    <h1 class="text-2xl font-bold">Multi-Agent Coordination</h1>
+    <p>Page 33 | Delegation and orchestration</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-violet-700 text-lg">1. Multi-Agent System</h2>
+        <p class="mt-2">Multiple agents work together to solve a larger task.</p>
+        <p class="mt-2">Each agent may have a specific role, tools or responsibilities.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-violet-700 text-lg">2. Orchestrator</h2>
+        <p class="mt-2">The main agent coordinates the workflow.</p>
+        <p class="mt-2">It assigns work, collects results and decides what happens next.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-violet-700 text-lg">3. Subagent</h2>
+        <p class="mt-2">A delegated agent handles a specific task.</p>
+        <p class="mt-2">Example: A research subagent finds relevant information while the main agent handles the final response.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-violet-700 text-lg">4. Parallel Execution</h2>
+        <p class="mt-2">Independent tasks can run at the same time.</p>
+        <p class="mt-2">Example: Check order history and review refund policy simultaneously.</p>
+        <p class="mt-2">May reduce total latency.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-violet-700 text-lg">5. Sequential Execution</h2>
+        <p class="mt-2">Tasks run in order when one depends on another.</p>
+        <p class="mt-2">Example: Verify customer → retrieve order → calculate refund → process refund.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-violet-700 text-lg">6. Delegation Boundaries</h2>
+        <p class="mt-2">Define what the subagent can do, what information it receives and what it must return.</p>
+        <p class="mt-2">Avoid giving every agent unrestricted access to every tool.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-violet-700 text-lg">7. Coordination Overhead</h2>
+        <p class="mt-2">More agents can increase complexity, token usage, latency and failure points.</p>
+        <p class="mt-2">Use multiple agents only when delegation provides real value.</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="font-bold text-violet-700 text-lg">8. Result Validation</h2>
+        <p class="mt-2">The orchestrator should verify delegated results before using them.</p>
+        <p class="mt-2">Subagents may return incomplete, inaccurate or conflicting information.</p>
+      </div>
+
+    </div>
+
+    <div class="bg-violet-50 p-5 rounded-xl mt-5">
+      <h2 class="font-bold text-violet-900">Exam Scenario</h2>
+      <p class="mt-2">A travel agent must compare 10 hotels, 10 flights and weather at the destination.</p>
+      <p class="mt-2 font-semibold">Best design: Delegate independent research tasks in parallel, then let the orchestrator compare and combine results before making the final recommendation.</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow mt-5">
+      <h2 class="font-bold">Quick Revision</h2>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li>Orchestrator = coordinates.</li>
+        <li>Subagent = performs delegated work.</li>
+        <li>Parallel = independent tasks at the same time.</li>
+        <li>Sequential = dependent tasks in order.</li>
+        <li>Delegation = clear task and boundaries.</li>
+        <li>More agents do not always mean better results.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="text-center text-gray-500 p-5">
+    Claude CCAO-F Preparation | Page 33
+  </footer>
+</body>
+</html>
