@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Agent Loop & Termination</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-indigo-700 text-white p-5">
+    <h1 class="text-2xl font-bold">Agent Loops & Termination</h1>
+    <p>How an agent decides when to continue or stop</p>
+  </header>
+
+  <main class="p-5 max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-lg text-indigo-700">Agent Loop</h2>
+        <p class="mt-2">An agent repeatedly thinks, acts, observes and decides.</p>
+        <ul class="list-disc ml-5 mt-2">
+          <li>Understand the task</li>
+          <li>Choose an action or tool</li>
+          <li>Observe the result</li>
+          <li>Decide the next step</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-lg text-indigo-700">When Does It Stop?</h2>
+        <p class="mt-2">The agent stops when:</p>
+        <ul class="list-disc ml-5 mt-2">
+          <li>Task is completed</li>
+          <li>It cannot make progress</li>
+          <li>Human intervention is needed</li>
+          <li>A safety boundary is reached</li>
+          <li>Maximum turns or limits are reached</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-lg text-indigo-700">Max Turns</h2>
+        <p class="mt-2">A limit on how many agent steps or turns can occur.</p>
+        <p class="mt-2"><strong>Purpose:</strong> Prevent endless loops, excess cost and delays.</p>
+        <p class="mt-2">If reached, the agent should stop safely or return control.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-lg text-indigo-700">Example</h2>
+        <p class="mt-2">Agent tries to find an order 10 times but fails.</p>
+        <p class="mt-2">Instead of retrying forever, it stops and escalates.</p>
+      </div>
+
+    </div>
+
+    <div class="bg-yellow-100 p-4 rounded-xl mt-5">
+      <h2 class="font-bold">Exam Insight</h2>
+      <p class="mt-2">When an agent keeps repeating actions, consider termination conditions, max-turn limits and loop prevention.</p>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 p-4">
+    Claude CCAO-F Study | Page 34
+  </footer>
+</body>
+</html>
