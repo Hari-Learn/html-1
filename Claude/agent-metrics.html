@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Agent Evaluation</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-sky-700 text-white p-5">
+    <h1 class="text-2xl font-bold">Agent Evaluation & Metrics</h1>
+    <p>How to measure whether an agent is actually performing well</p>
+  </header>
+
+  <main class="p-5 max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-lg text-sky-700">Why Evaluate?</h2>
+        <p class="mt-2">A demo may work once, but a production agent must work reliably across many situations.</p>
+        <p class="mt-2">Evaluation helps find weaknesses before real users experience them.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-lg text-sky-700">Core Metrics</h2>
+        <ul class="list-disc ml-5 mt-2">
+          <li>Task success rate</li>
+          <li>Accuracy</li>
+          <li>First-contact resolution</li>
+          <li>Tool call success rate</li>
+          <li>Latency / response time</li>
+          <li>Cost per task</li>
+          <li>Safety / policy violations</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-lg text-sky-700">Trade-offs</h2>
+        <p class="mt-2">Improving one metric can hurt another.</p>
+        <ul class="list-disc ml-5 mt-2">
+          <li>More thinking → better reasoning but higher latency</li>
+          <li>More retries → better recovery but more cost</li>
+          <li>More tools → greater capability but more risk</li>
+          <li>More strict rules → safer but less flexibility</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-lg text-sky-700">Evaluation Approach</h2>
+        <ul class="list-disc ml-5 mt-2">
+          <li>Build representative test cases</li>
+          <li>Include edge cases and failures</li>
+          <li>Test with real-world scenarios</li>
+          <li>Compare against a baseline</li>
+          <li>Track changes across versions</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="bg-yellow-100 p-4 rounded-xl mt-5">
+      <h2 class="font-bold">Exam Insight</h2>
+      <p class="mt-2">Choose the metric that matches the actual problem. Don't optimize only speed or cost when the real issue is task success, safety or reliability.</p>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 p-4">
+    Claude CCAO-F Study | Page 36
+  </footer>
