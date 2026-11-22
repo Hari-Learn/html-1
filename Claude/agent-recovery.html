@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Tool Error Recovery</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-emerald-700 text-white p-5">
+    <h1 class="text-2xl font-bold">Tool Errors & Recovery</h1>
+    <p>How agents handle failures without creating bigger problems</p>
+  </header>
+
+  <main class="p-5 max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white rounded-xl p-4 shadow">
+        <h2 class="text-lg font-bold text-emerald-700">Types of Errors</h2>
+        <ul class="list-disc ml-5 mt-2">
+          <li>Timeout — response took too long</li>
+          <li>Rate limit — too many requests</li>
+          <li>Validation error — wrong input</li>
+          <li>Permission error — not authorized</li>
+          <li>Server error — backend problem</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-xl p-4 shadow">
+        <h2 class="text-lg font-bold text-emerald-700">Retry vs Don't Retry</h2>
+        <p class="mt-2"><strong>Retry:</strong> temporary network issue, timeout, transient server failure.</p>
+        <p class="mt-2"><strong>Don't blindly retry:</strong> invalid input, denied permission, policy violation.</p>
+      </div>
+
+      <div class="bg-white rounded-xl p-4 shadow">
+        <h2 class="text-lg font-bold text-emerald-700">Exponential Backoff</h2>
+        <p class="mt-2">Increase waiting time after each retry.</p>
+        <p class="mt-2">Example: 1 sec → 2 sec → 4 sec → 8 sec.</p>
+        <p class="mt-2">Add jitter (random delay) to reduce simultaneous retries.</p>
+      </div>
+
+      <div class="bg-white rounded-xl p-4 shadow">
+        <h2 class="text-lg font-bold text-emerald-700">Safe Recovery</h2>
+        <ul class="list-disc ml-5 mt-2">
+          <li>Check whether action already succeeded</li>
+          <li>Use idempotency keys for sensitive operations</li>
+          <li>Limit retry attempts</li>
+          <li>Provide fallback or human escalation</li>
+          <li>Communicate honestly with the user</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="bg-yellow-100 p-4 rounded-xl mt-5">
+      <h2 class="font-bold">Exam Insight</h2>
+      <p class="mt-2">A timeout does not always mean the action failed. Verify the outcome before repeating actions like refunds, payments or bookings.</p>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 p-4">
+    Claude CCAO-F Study | Page 35
+  </footer>
+</body>
+</html>
