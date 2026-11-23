@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Agent Orchestration Patterns</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-violet-700 text-white p-5">
+    <h1 class="text-2xl font-bold">Agent Orchestration Patterns</h1>
+    <p>How multiple steps or agents work together</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-violet-700 text-lg">1. Sequential Workflow</h2>
+        <p class="mt-2">Each step waits for the previous step to finish.</p>
+        <p class="mt-2 font-semibold">A → B → C</p>
+        <p class="mt-2">Example: Collect data → Analyse → Generate report.</p>
+        <p class="mt-2 text-sm text-gray-500">Use when steps depend on each other.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-violet-700 text-lg">2. Parallel Workflow</h2>
+        <p class="mt-2">Independent tasks run simultaneously.</p>
+        <p class="mt-2 font-semibold">A + B + C → Combine</p>
+        <p class="mt-2">Example: Analyse sales, expenses and inventory at the same time.</p>
+        <p class="mt-2 text-sm text-gray-500">Use when tasks don't depend on each other.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-violet-700 text-lg">3. Routing Pattern</h2>
+        <p class="mt-2">A router decides which specialist or workflow should handle the request.</p>
+        <p class="mt-2">Example: Billing request → Billing agent.</p>
+        <p class="mt-2">Technical issue → Technical support agent.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-violet-700 text-lg">4. Supervisor Pattern</h2>
+        <p class="mt-2">One central agent coordinates several specialist agents.</p>
+        <p class="mt-2">Supervisor → Researcher, Writer, Reviewer.</p>
+        <p class="mt-2">The supervisor assigns tasks and combines results.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-violet-700 text-lg">5. Evaluator–Optimizer</h2>
+        <p class="mt-2">One agent produces an output. Another evaluates it and gives feedback.</p>
+        <p class="mt-2">Generate → Evaluate → Improve → Repeat.</p>
+        <p class="mt-2">Example: Draft an answer, check quality, rewrite if necessary.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-violet-700 text-lg">Avoid Overengineering</h2>
+        <p class="mt-2">Do not create multiple agents for every task.</p>
+        <p class="mt-2">A single agent with good tools may be simpler, cheaper and easier to maintain.</p>
+      </div>
+
+    </div>
+
+    <div class="bg-amber-100 p-4 rounded-xl mt-5">
+      <h2 class="font-bold">Exam Insight</h2>
+      <p class="mt-2">Independent work → Parallel. Dependency → Sequential. Different request types → Routing. Multiple specialists coordinated → Supervisor.</p>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 p-4">
+    Claude CCAO-F Study | Page 37
+  </footer>
+</body>
+</html>
