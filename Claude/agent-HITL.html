@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Human in the Loop</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-teal-700 text-white p-5">
+    <h1 class="text-2xl font-bold">Human-in-the-Loop</h1>
+    <p>When should an agent ask a human before proceeding?</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-teal-700 text-lg">What Is HITL?</h2>
+        <p class="mt-2">Human-in-the-Loop means a human participates in an automated workflow at a defined point.</p>
+        <p class="mt-2">The human may review, approve, reject or correct an action.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-teal-700 text-lg">When Is Approval Needed?</h2>
+        <ul class="list-disc ml-5 mt-2">
+          <li>High-value financial transactions</li>
+          <li>Deleting important records</li>
+          <li>Policy exceptions</li>
+          <li>High-impact decisions</li>
+          <li>Uncertain or sensitive actions</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-teal-700 text-lg">Approval Workflow</h2>
+        <p class="mt-2 font-semibold">Prepare → Pause → Human Review → Approve or Reject → Continue</p>
+        <p class="mt-2">The agent should not execute the protected action before approval.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-teal-700 text-lg">What Should Human See?</h2>
+        <ul class="list-disc ml-5 mt-2">
+          <li>What action is requested?</li>
+          <li>Why is it needed?</li>
+          <li>What is the expected impact?</li>
+          <li>Relevant supporting information</li>
+          <li>Approve and reject options</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-teal-700 text-lg">If Approval Is Rejected</h2>
+        <p class="mt-2">Do not execute the action.</p>
+        <p class="mt-2">Explain the outcome and offer a safe alternative if possible.</p>
+        <p class="mt-2">Record the decision for auditing when appropriate.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-teal-700 text-lg">Important Safeguard</h2>
+        <p class="mt-2">Approval must be linked to the exact action and its parameters.</p>
+        <p class="mt-2">If the amount, recipient or action changes, obtain approval again when required.</p>
+      </div>
+
+    </div>
+
+    <div class="bg-amber-100 p-4 rounded-xl mt-5">
+      <h2 class="font-bold">Exam Insight</h2>
+      <p class="mt-2">For sensitive or irreversible actions, pause execution and obtain appropriate human approval. Enforce approval in the application/backend, not only through a prompt.</p>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 p-4">
+    Claude CCAO-F Study | Page 42
+  </footer>
+</body>
+</html>
