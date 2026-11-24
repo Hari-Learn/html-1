@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Model Fallback Strategies</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-blue-700 text-white p-5">
+    <h1 class="text-2xl font-bold">Model Fallback Strategies</h1>
+    <p>Choosing the right model and recovering when it fails</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-blue-700 text-lg">What Is Model Routing?</h2>
+        <p class="mt-2">Routing selects a suitable model based on the task.</p>
+        <p class="mt-2">Simple task → Faster, lower-cost model.</p>
+        <p class="mt-2">Complex reasoning → More capable model.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-blue-700 text-lg">What Is Fallback?</h2>
+        <p class="mt-2">Fallback means switching to an alternative when the primary model or service is unavailable or unsuitable.</p>
+        <p class="mt-2">Example: Primary model unavailable → Try an approved alternative.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-blue-700 text-lg">When to Use Fallback?</h2>
+        <ul class="list-disc ml-5 mt-2">
+          <li>Temporary service outage</li>
+          <li>Availability problems</li>
+          <li>Capacity constraints</li>
+          <li>Specific latency requirements</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-blue-700 text-lg">Important Checks</h2>
+        <ul class="list-disc ml-5 mt-2">
+          <li>Does the alternative support required features?</li>
+          <li>Is its output quality acceptable?</li>
+          <li>Does it meet security requirements?</li>
+          <li>Is the cost acceptable?</li>
+          <li>Are tool and output formats compatible?</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-blue-700 text-lg">Fallback Is Not a Blind Retry</h2>
+        <p class="mt-2">A fallback model may behave differently.</p>
+        <p class="mt-2">Validate its output before using it for sensitive decisions.</p>
+        <p class="mt-2">Do not silently downgrade quality for critical tasks.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-blue-700 text-lg">Example</h2>
+        <p class="mt-2">A classification service uses a fast model.</p>
+        <p class="mt-2">Complex or uncertain cases are routed to a more capable model.</p>
+        <p class="mt-2">This balances cost, speed and quality.</p>
+      </div>
+
+    </div>
+
+    <div class="bg-amber-100 p-4 rounded-xl mt-5">
+      <h2 class="font-bold">Exam Insight</h2>
+      <p class="mt-2">Choose fallback based on feature compatibility, quality, security and cost—not simply because another model is available.</p>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 p-4">
+    Claude CCAO-F Study | Page 40
+  </footer>
+</body>
+</html>
