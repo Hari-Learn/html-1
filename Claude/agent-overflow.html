@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Context Window Recovery</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-purple-700 text-white p-5">
+    <h1 class="text-2xl font-bold">Context Window Management</h1>
+    <p>What happens when a conversation becomes too large?</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-purple-700 text-lg">Context Window</h2>
+        <p class="mt-2">Think of it as a bucket.</p>
+        <p class="mt-2">The bucket has limited capacity. Every message, document and tool result consumes space.</p>
+        <p class="mt-2">When the available capacity is insufficient, the request cannot fit.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-purple-700 text-lg">Signs of Overflow</h2>
+        <ul class="list-disc ml-5 mt-2">
+          <li>Input exceeds context limit</li>
+          <li>Very long conversation history</li>
+          <li>Large tool outputs</li>
+          <li>Huge documents or retrieved content</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-purple-700 text-lg">Strategy 1: Summarization</h2>
+        <p class="mt-2">Convert old conversation history into a shorter summary.</p>
+        <p class="mt-2">Keep important decisions, facts and pending tasks.</p>
+        <p class="mt-2">Replace unnecessary older details with the summary.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-purple-700 text-lg">Strategy 2: Truncation</h2>
+        <p class="mt-2">Remove less important content.</p>
+        <p class="mt-2">Example: Remove old irrelevant messages or duplicate tool results.</p>
+        <p class="mt-2">Warning: Important information may be lost.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-purple-700 text-lg">Strategy 3: Retrieval</h2>
+        <p class="mt-2">Store information outside the active context.</p>
+        <p class="mt-2">Retrieve only the relevant information when needed.</p>
+        <p class="mt-2">Example: Search a document store instead of loading every document.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-purple-700 text-lg">Strategy 4: Compact Tool Results</h2>
+        <p class="mt-2">Avoid placing huge tool outputs into the conversation.</p>
+        <p class="mt-2">Filter, summarise or select only relevant fields.</p>
+      </div>
+
+    </div>
+
+    <div class="bg-amber-100 p-4 rounded-xl mt-5">
+      <h2 class="font-bold">Exam Insight</h2>
+      <p class="mt-2">If context is too large, don't blindly remove everything. Preserve important instructions, decisions and task state; summarise or retrieve information selectively.</p>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 p-4">
+    Claude CCAO-F Study | Page 41
+  </footer>
+</body>
+</html>
