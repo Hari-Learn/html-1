@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>MCP Sampling</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-purple-800 text-white p-5">
+    <h1 class="text-2xl font-bold">MCP Sampling</h1>
+    <p>How MCP servers request model-generated results</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-purple-700 text-lg">What Is Sampling?</h2>
+        <p class="mt-2">Sampling allows an MCP server to request an LLM completion through the connected client.</p>
+        <p class="mt-2">The client controls the model interaction rather than the server directly accessing the model.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-purple-700 text-lg">Normal Tool Call vs Sampling</h2>
+        <p class="mt-2"><strong>Tool call:</strong> The model asks a server to perform an operation.</p>
+        <p class="mt-2"><strong>Sampling:</strong> The server asks the client to obtain model-generated content.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-purple-700 text-lg">Sampling Flow</h2>
+        <p class="mt-2 font-semibold">MCP Server → Client → Model → Client → MCP Server</p>
+        <p class="mt-2">The client receives the request, applies its policies and decides how to handle it.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-purple-700 text-lg">Example</h2>
+        <p class="mt-2">A research MCP server collects several documents.</p>
+        <p class="mt-2">It requests a model-generated summary through the client.</p>
+        <p class="mt-2">The client processes the request and returns the generated result.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-purple-700 text-lg">Security & Control</h2>
+        <ul class="list-disc ml-5 mt-2">
+          <li>Client can apply model-use policies</li>
+          <li>Client can control model selection</li>
+          <li>Requests and results need validation</li>
+          <li>Untrusted server instructions must not override trusted policies</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-purple-700 text-lg">Important Limitation</h2>
+        <p class="mt-2">Sampling is an optional MCP capability.</p>
+        <p class="mt-2">Both the relevant client and server must support the required functionality.</p>
+        <p class="mt-2">It does not mean every MCP server can freely call Claude.</p>
+      </div>
+
+    </div>
+
+    <div class="bg-amber-100 p-4 rounded-xl mt-5">
+      <h2 class="font-bold">Exam Insight</h2>
+      <p class="mt-2">If an MCP server needs an LLM-generated result, consider sampling. Remember that the client mediates the request and retains control over model access.</p>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 p-4">
+    Claude Advanced Topics | Page 45
+  </footer>
+</body>
+</html>
