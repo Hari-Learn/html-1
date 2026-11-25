@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>MCP Lifecycle</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-indigo-800 text-white p-5">
+    <h1 class="text-2xl font-bold">MCP Lifecycle & Capabilities</h1>
+    <p>How an MCP client and server establish communication</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-indigo-700 text-lg">1. Initialization</h2>
+        <p class="mt-2">The client connects to the MCP server and sends initialization information.</p>
+        <p class="mt-2">Both sides establish protocol compatibility and exchange capabilities.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-indigo-700 text-lg">2. Capability Negotiation</h2>
+        <p class="mt-2">Client and server advertise the features they support.</p>
+        <ul class="list-disc ml-5 mt-2">
+          <li>Tools</li>
+          <li>Resources</li>
+          <li>Prompts</li>
+          <li>Sampling</li>
+          <li>Other supported capabilities</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-indigo-700 text-lg">3. Initialized Notification</h2>
+        <p class="mt-2">After initialization, the client sends an initialized notification.</p>
+        <p class="mt-2">Normal operation can then begin.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-indigo-700 text-lg">4. Normal Operation</h2>
+        <p class="mt-2">The client and server exchange requests, responses and notifications.</p>
+        <p class="mt-2">Example: Client requests a tool; server returns its result.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-indigo-700 text-lg">Why Capabilities Matter</h2>
+        <p class="mt-2">A client should not assume every server supports every feature.</p>
+        <p class="mt-2">It should use the capabilities actually advertised by the connected server.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-indigo-700 text-lg">Common Mistake</h2>
+        <p class="mt-2">A server supports tools but not sampling.</p>
+        <p class="mt-2">The client must not assume it can use sampling just because it supports MCP.</p>
+      </div>
+
+    </div>
+
+    <div class="bg-amber-100 p-4 rounded-xl mt-5">
+      <h2 class="font-bold">Exam Insight</h2>
+      <p class="mt-2">When an MCP feature is unavailable, check initialization and advertised capabilities before assuming the server is broken.</p>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 p-4">
+    Claude Advanced Topics | Page 43
+  </footer>
+</body>
+</html>
