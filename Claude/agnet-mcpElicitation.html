@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>MCP Elicitation</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-teal-800 text-white p-5">
+    <h1 class="text-2xl font-bold">MCP Elicitation</h1>
+    <p>How an MCP server requests additional information</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-5">
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-teal-700 text-lg">What Is Elicitation?</h2>
+        <p class="mt-2">Elicitation allows an MCP server to request information from the user through the client.</p>
+        <p class="mt-2">Think of it as asking a clarification question before continuing.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-teal-700 text-lg">Example</h2>
+        <p class="mt-2">User: "Book a table for me."</p>
+        <p class="mt-2">Server needs more information:</p>
+        <ul class="list-disc ml-5 mt-2">
+          <li>Which date?</li>
+          <li>How many people?</li>
+          <li>What time?</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-teal-700 text-lg">Elicitation Flow</h2>
+        <p class="mt-2 font-semibold">Server → Client → User → Client → Server</p>
+        <p class="mt-2">The server pauses its workflow while the client obtains the requested information.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-teal-700 text-lg">Why Is It Useful?</h2>
+        <ul class="list-disc ml-5 mt-2">
+          <li>Avoids guessing missing information</li>
+          <li>Supports interactive workflows</li>
+          <li>Improves input completeness</li>
+          <li>Reduces invalid tool calls</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-teal-700 text-lg">User Control</h2>
+        <p class="mt-2">The user may provide the information, decline or cancel.</p>
+        <p class="mt-2">The server must handle these outcomes safely.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h2 class="font-bold text-teal-700 text-lg">Important Limitation</h2>
+        <p class="mt-2">Elicitation requires client support.</p>
+        <p class="mt-2">It is not permission to collect passwords, secret keys or other sensitive credentials through an ordinary form.</p>
+      </div>
+
+    </div>
+
+    <div class="bg-amber-100 p-4 rounded-xl mt-5">
+      <h2 class="font-bold">Exam Insight</h2>
+      <p class="mt-2">When a workflow needs missing user input, elicitation can request it instead of allowing the agent to invent values. Check whether the client supports this capability.</p>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 p-4">
+    Claude Advanced Topics | Page 44
+  </footer>
+</body>
+</html>
