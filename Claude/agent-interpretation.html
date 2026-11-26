@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Page 51 - Tool Result Handling</title>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <main class="max-w-4xl mx-auto p-6 space-y-6">
+    <header class="bg-emerald-900 text-white rounded-2xl p-6">
+      <p class="text-emerald-200 text-sm">CLAUDE CCAO-F • ADVANCED TOPIC • PAGE 51</p>
+      <h1 class="text-3xl font-bold mt-2">Advanced Tool-Result Handling</h1>
+      <p class="mt-2">Understanding tool IDs, error results and safe recovery.</p>
+    </header>
+
+    <div class="bg-white p-5 rounded-xl shadow">
+      <h2 class="text-xl font-bold">1. Tool call is not the same as tool success</h2>
+      <p class="mt-2">Imagine asking a bank employee to transfer ₹5,000.</p>
+      <p class="mt-2">The employee accepting your request does not mean the money has been transferred.</p>
+      <div class="mt-4 grid md:grid-cols-2 gap-3">
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <b>Tool call</b>
+          <p class="mt-2">Claude requests an action.</p>
+        </div>
+        <div class="bg-green-50 p-4 rounded-lg">
+          <b>Tool result</b>
+          <p class="mt-2">The tool reports what happened.</p>
+        </div>
+      </div>
+      <p class="mt-3 font-semibold">Always inspect the result before claiming success.</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow">
+      <h2 class="text-xl font-bold">2. Understand tool_use_id</h2>
+      <p class="mt-2">Every tool call has an identifier. The corresponding tool result must refer to that same identifier.</p>
+      <div class="bg-slate-900 text-green-300 p-4 rounded-lg mt-3 text-sm overflow-x-auto">
+        <pre>{
+  "type": "tool_use",
+  "id": "toolu_123",
+  "name": "lookup_order",
+  "input": {
+    "order_id": "ORD-100"
+  }
+}</pre>
+      </div>
+      <div class="text-center text-2xl my-2">↓</div>
+      <div class="bg-slate-900 text-cyan-300 p-4 rounded-lg text-sm overflow-x-auto">
+        <pre>{
+  "type": "tool_result",
+  "tool_use_id": "toolu_123",
+  "content": "Order found"
+}</pre>
+      </div>
+      <p class="mt-3">The result's <code>tool_use_id</code> connects it to the original call.</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow">
+      <h2 class="text-xl font-bold">3. What does is_error mean?</h2>
+      <p class="mt-2">In a tool-result block, <code>is_error</code> indicates whether the tool execution reported an error.</p>
+      <div class="grid md:grid-cols-2 gap-3 mt-3">
+        <div class="bg-green-50 p-4 rounded-lg">
+          <b class="text-green-800">is_error: false</b>
+          <p class="mt-2">The tool did not report an execution error.</p>
+        </div>
+        <div class="bg-red-50 p-4 rounded-lg">
+          <b class="text-red-800">is_error: true</b>
+          <p class="mt-2">The tool reports an execution error. Claude can use that information to recover or explain the problem.</p>
+        </div>
+      </div>
+      <p class="text-sm text-slate-500 mt-3">A non-error result still needs to be checked for business meaning. For example, "order not found" may be a valid lookup outcome rather than a technical failure.</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow">
+      <h2 class="text-xl font-bold">4. Three different failure categories</h2>
+      <div class="space-y-3 mt-3">
+        <div class="border-l-4 border-red-500 bg-red-50 p-3">
+          <b>Protocol error</b>
+          <p>Invalid request structure, invalid parameters or protocol-level problems.</p>
+        </div>
+        <div class="border-l-4 border-amber-500 bg-amber-50 p-3">
+          <b>Tool execution error</b>
+          <p>The tool was called but could not complete its operation.</p>
+        </div>
+        <div class="border-l-4 border-blue-500 bg-blue-50 p-3">
+          <b>Business outcome</b>
+          <p>The tool worked correctly but returned a result such as "refund not eligible".</p>
+        </div>
+      </div>
+      <p class="mt-3 font-semibold">Do not treat every negative business outcome as a technical error.</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow">
+      <h2 class="text-xl font-bold">5. Partial failure in multiple tools</h2>
+      <p class="mt-2">Suppose Claude needs to perform three independent operations:</p>
+      <div class="grid md:grid-cols-3 gap-3 mt-3 text-center">
+        <div class="bg-green-50 p-3 rounded-lg"><b>Tool A</b><p class="text-green-700 mt-1">Success</p></div>
+        <div class="bg-red-50 p-3 rounded-lg"><b>Tool B</b><p class="text-red-700 mt-1">Failure</p></div>
+        <div class="bg-green-50 p-3 rounded-lg"><b>Tool C</b><p class="text-green-700 mt-1">Success</p></div>
+      </div>
+      <p class="mt-3">The entire workflow is not automatically successful just because two tools succeeded.</p>
+      <p class="mt-2">The application should track each result, decide whether the failed step can be retried and avoid repeating completed side effects.</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow">
+      <h2 class="text-xl font-bold">6. Safe recovery patterns</h2>
+      <ul class="list-disc ml-6 mt-3 space-y-2">
+        <li><b>Validate:</b> Check tool arguments before execution.</li>
+        <li><b>Correlate:</b> Match each result to its correct tool call ID.</li>
+        <li><b>Classify:</b> Identify protocol, execution or business errors.</li>
+        <li><b>Retry carefully:</b> Retry transient failures only when safe.</li>
+        <li><b>Use idempotency:</b> Prevent duplicate side effects during retries.</li>
+        <li><b>Escalate:</b> Send unresolved or sensitive cases to a human.</li>
+      </ul>
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 p-5 rounded-xl">
+      <h2 class="text-xl font-bold">7. Exam scenario</h2>
+      <p class="mt-2">Claude calls a refund tool. The backend times out. The application does not know whether the refund was processed.</p>
+      <p class="mt-3 font-semibold">Which is the safest next step?</p>
+      <details class="mt-3 bg-white p-3 rounded-lg">
+        <summary class="cursor-pointer font-semibold text-emerald-800">Reveal answer</summary>
+        <p class="mt-2">Check the refund's transaction status using a reliable lookup mechanism. If a retry is needed, use an idempotency key or equivalent duplicate-prevention control. Do not claim success until confirmed.</p>
+      </details>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow">
+      <h2 class="text-xl font-bold">8. Final notebook summary</h2>
+      <div class="bg-emerald-50 p-4 rounded-lg mt-3">
+        <p><b>tool_use</b> = Claude asks a tool to do something.</p>
+        <p class="mt-2"><b>tool_result</b> = Tool returns its outcome.</p>
+        <p class="mt-2"><b>tool_use_id</b> = Connects the result to its call.</p>
+        <p class="mt-2"><b>is_error</b> = Indicates an execution error in the result.</p>
+        <p class="mt-2"><b>Idempotency</b> = Helps prevent duplicate effects.</p>
+      </div>
+    </div>
+
+    <footer class="text-center text-sm text-slate-500">Page 51 • Advanced tool reliability • Not guaranteed exam coverage</footer>
+  </main>
+</body>
+</html>
