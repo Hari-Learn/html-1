@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Page 52 - Dynamic Tool Discovery</title>
+</head>
+
+<body class="bg-slate-100 text-slate-800">
+  <main class="max-w-4xl mx-auto p-6 space-y-6">
+
+    <header class="bg-violet-950 text-white rounded-2xl p-6">
+      <p class="text-violet-200 text-sm">CLAUDE CCAO-F • ADVANCED TOPIC • PAGE 52</p>
+      <h1 class="text-3xl font-bold mt-2">Dynamic Tool Discovery</h1>
+      <p class="mt-2">How Claude finds the right tool without loading every tool upfront.</p>
+    </header>
+
+    <div class="bg-white rounded-xl p-5 shadow">
+      <h2 class="text-xl font-bold">1. Understand with an analogy</h2>
+      <p class="mt-2">Imagine entering a huge supermarket with 10,000 products.</p>
+      <p class="mt-2">Instead of reading every product label, you first search for "milk".</p>
+      <p class="mt-3 font-semibold text-violet-800">Dynamic tool discovery works similarly: search for relevant tools instead of exposing every tool immediately.</p>
+    </div>
+
+    <div class="bg-white rounded-xl p-5 shadow">
+      <h2 class="text-xl font-bold">2. What is the problem with too many tools?</h2>
+      <ul class="list-disc ml-6 mt-3 space-y-2">
+        <li>Large tool definitions consume context tokens.</li>
+        <li>Similar tool descriptions can confuse selection.</li>
+        <li>More tools can increase prompt complexity.</li>
+        <li>Maintaining a huge tool catalogue becomes difficult.</li>
+        <li>Tool selection can become less reliable.</li>
+      </ul>
+      <div class="bg-amber-50 p-3 rounded-lg mt-4">
+        <b>Remember:</b> More available tools do not automatically mean a better agent.
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl p-5 shadow">
+      <h2 class="text-xl font-bold">3. Traditional vs dynamic tool loading</h2>
+      <div class="grid md:grid-cols-2 gap-4 mt-4">
+        <div class="border rounded-xl p-4">
+          <h3 class="font-bold text-red-700">Traditional approach</h3>
+          <p class="text-sm mt-2">Load all 200 tool definitions into the model context.</p>
+          <div class="bg-red-50 rounded-lg p-3 mt-3 text-sm">Tool 1 + Tool 2 + Tool 3 + ... + Tool 200</div>
+          <p class="text-sm mt-3">Large initial context requirement.</p>
+        </div>
+        <div class="border rounded-xl p-4">
+          <h3 class="font-bold text-green-700">Dynamic approach</h3>
+          <p class="text-sm mt-2">Start with a tool-search capability.</p>
+          <div class="bg-green-50 rounded-lg p-3 mt-3 text-sm">Search → Find relevant tool → Load definition → Use tool</div>
+          <p class="text-sm mt-3">Only relevant definitions are loaded when needed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl p-5 shadow">
+      <h2 class="text-xl font-bold">4. Example: Banking assistant</h2>
+      <p class="mt-2">Imagine an assistant with 100 banking tools.</p>
+      <p class="mt-3 font-semibold">Customer says: "Show my recent transactions."</p>
+      <div class="space-y-2 mt-4">
+        <div class="bg-violet-50 p-3 rounded-lg">Step 1: Search available tools for transaction history.</div>
+        <div class="text-center">↓</div>
+        <div class="bg-violet-50 p-3 rounded-lg">Step 2: Discover <code>get_transactions</code>.</div>
+        <div class="text-center">↓</div>
+        <div class="bg-violet-50 p-3 rounded-lg">Step 3: Load its description and input schema.</div>
+        <div class="text-center">↓</div>
+        <div class="bg-violet-50 p-3 rounded-lg">Step 4: Call the tool with authorized account context.</div>
+        <div class="text-center">↓</div>
+        <div class="bg-green-50 p-3 rounded-lg">Step 5: Present the returned transactions.</div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl p-5 shadow">
+      <h2 class="text-xl font-bold">5. Tool Search is not Tool Execution</h2>
+      <div class="overflow-x-auto mt-3">
+        <table class="w-full border-collapse text-left">
+          <tr class="bg-slate-200">
+            <th class="p-3">Action</th>
+            <th class="p-3">Purpose</th>
+          </tr>
+          <tr class="border-b">
+            <td class="p-3 font-semibold">Tool Search</td>
+            <td class="p-3">Finds a relevant tool.</td>
+          </tr>
+          <tr class="border-b">
+            <td class="p-3 font-semibold">Tool Loading</td>
+            <td class="p-3">Makes the selected tool definition available.</td>
+          </tr>
+          <tr>
+            <td class="p-3 font-semibold">Tool Execution</td>
+            <td class="p-3">Actually performs the requested operation.</td>
+          </tr>
+        </table>
+      </div>
+      <p class="mt-3 font-semibold text-violet-800">Finding a tool does not mean that the tool has executed.</p>
+    </div>
+
+    <div class="bg-white rounded-xl p-5 shadow">
+      <h2 class="text-xl font-bold">6. Important design considerations</h2>
+      <ul class="list-disc ml-6 mt-3 space-y-2">
+        <li><b>Clear descriptions:</b> Explain what each tool does and when it should be used.</li>
+        <li><b>Specific schemas:</b> Define required parameters accurately.</li>
+        <li><b>Permission checks:</b> Discovering a tool must not grant permission to use it.</li>
+        <li><b>Tool governance:</b> Restrict sensitive operations using application-side authorization.</li>
+        <li><b>Observability:</b> Track searches, selections, calls and failures.</li>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-xl p-5 shadow">
+      <h2 class="text-xl font-bold">7. Rare concept: Deferred tool loading</h2>
+      <p class="mt-2">A deferred tool is not fully exposed to the model at the beginning.</p>
+      <p class="mt-2">Its full definition can be made available later when the agent discovers that it needs it.</p>
+      <p class="mt-3">This can reduce the initial context cost when working with a very large tool catalogue.</p>
+      <div class="bg-blue-50 p-3 rounded-lg mt-3">
+        <b>Memory trick:</b> Search first, load later, execute only when appropriate.
+      </div>
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+      <h2 class="text-xl font-bold">8. Exam scenario</h2>
+      <p class="mt-2">A company gives Claude 300 tool definitions at the start of every conversation. The context is becoming large, and many tools are irrelevant to each request.</p>
+      <p class="mt-3 font-semibold">Which design improvement is most appropriate?</p>
+      <details class="bg-white rounded-lg p-3 mt-3">
+        <summary class="font-semibold cursor-pointer text-violet-800">Reveal answer</summary>
+        <p class="mt-2">Introduce tool search or dynamic discovery so relevant tool definitions are loaded when needed. Maintain separate authorization checks for actual tool execution.</p>
+      </details>
+    </div>
+
+    <div class="bg-white rounded-xl p-5 shadow">
+      <h2 class="text-xl font-bold">9. Five points to remember</h2>
+      <ol class="list-decimal ml-6 mt-3 space-y-2">
+        <li>Too many tool definitions can consume context.</li>
+        <li>Tool search discovers relevant capabilities.</li>
+        <li>Deferred loading reduces upfront definitions.</li>
+        <li>Discovery is different from execution.</li>
+        <li>Authorization must still be enforced separately.</li>
+      </ol>
+    </div>
+
+    <footer class="text-center text-sm text-slate-500">
+      Page 52 • Advanced Claude tool architecture • Not guaranteed exam coverage
+    </footer>
+
+  </main>
+</body>
+</html>
