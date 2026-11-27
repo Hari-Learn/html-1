@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude CCAO-F - Page 56</title>
+</head>
+<body class="bg-slate-950 text-slate-100">
+<header class="bg-teal-700 p-6">
+  <p class="text-teal-200 text-sm">CLAUDE CCAO-F • PAGE 56</p>
+  <h1 class="text-2xl font-bold mt-2">API Request Metadata & Distributed Tracing</h1>
+  <p class="mt-2 text-teal-100">How to trace a request across Claude, tools and backend services.</p>
+</header>
+<main class="max-w-4xl mx-auto p-5 space-y-6">
+
+  <div class="bg-slate-800 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-teal-300">1. What is Request Metadata?</h2>
+    <p class="mt-3">Metadata is additional information associated with an API request. It helps identify, organise and investigate requests.</p>
+    <p class="mt-3 font-semibold">Example:</p>
+    <pre class="bg-slate-950 text-green-300 rounded-lg p-3 text-sm overflow-x-auto">{
+  "model": "your-selected-model",
+  "max_tokens": 1024,
+  "metadata": {
+    "user_id": "user_123",
+    "session_id": "session_456"
+  }
+}</pre>
+    <p class="text-sm text-slate-300 mt-3">This is an illustrative request structure. Use the actual API schema supported by the endpoint you are calling.</p>
+    <div class="bg-teal-950 p-4 rounded-lg mt-4">
+      <p class="font-semibold text-teal-200">ELI10 analogy</p>
+      <p class="text-sm mt-1">A courier package has a tracking number, sender details and destination. These details help locate the package when something goes wrong. API metadata serves a similar identification purpose.</p>
+    </div>
+  </div>
+
+  <div class="bg-slate-800 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-teal-300">2. What is a Request ID?</h2>
+    <p class="mt-2">A request ID is a unique identifier associated with an individual API request. It helps support teams and developers locate a particular request in logs or provider-side diagnostics.</p>
+    <div class="bg-slate-900 rounded-lg p-4 mt-3">
+      <p class="text-sm text-slate-400">Illustrative response header</p>
+      <p class="font-mono text-sm text-green-300 mt-2">request-id: req_abc123xyz</p>
+    </div>
+    <p class="text-sm text-slate-300 mt-3">If an API request fails, record the request ID along with the error, timestamp and relevant application context.</p>
+    <p class="text-amber-300 text-sm mt-3">Exam trap: A request ID identifies an API request. It is not automatically the same as a user ID or conversation ID.</p>
+  </div>
+
+  <div class="bg-slate-800 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-teal-300">3. What is Distributed Tracing?</h2>
+    <p class="mt-2 text-sm text-slate-300">In an agent application, one customer request may travel through multiple services.</p>
+    <div class="bg-slate-900 rounded-lg p-4 mt-4">
+      <div class="text-center bg-indigo-900 rounded-lg p-3">
+        <p class="font-semibold">Customer request</p>
+      </div>
+      <div class="text-center text-teal-300 text-xl">↓</div>
+      <div class="text-center bg-indigo-900 rounded-lg p-3">
+        <p class="font-semibold">Application backend</p>
+      </div>
+      <div class="text-center text-teal-300 text-xl">↓</div>
+      <div class="text-center bg-indigo-900 rounded-lg p-3">
+        <p class="font-semibold">Claude API</p>
+      </div>
+      <div class="text-center text-teal-300 text-xl">↓</div>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="bg-slate-800 rounded-lg p-3 text-center">
+          <p class="font-semibold">Order lookup tool</p>
+        </div>
+        <div class="bg-slate-800 rounded-lg p-3 text-center">
+          <p class="font-semibold">Payment service</p>
+        </div>
+      </div>
+      <div class="text-center text-teal-300 text-xl">↓</div>
+      <div class="text-center bg-emerald-900 rounded-lg p-3">
+        <p class="font-semibold">Final response</p>
+      </div>
+    </div>
+    <p class="text-sm text-slate-300 mt-3">Distributed tracing follows the journey across these components so you can understand where the request slowed down or failed.</p>
+  </div>
+
+  <div class="bg-slate-800 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-teal-300">4. Trace ID vs Span ID</h2>
+    <div class="space-y-3 mt-4">
+      <div class="bg-slate-900 p-4 rounded-lg">
+        <h3 class="font-bold text-emerald-300">Trace ID</h3>
+        <p class="text-sm mt-1">Identifies the entire journey of a request across multiple services.</p>
+        <p class="font-mono text-xs text-slate-400 mt-2">trace_id = trace_001</p>
+      </div>
+      <div class="bg-slate-900 p-4 rounded-lg">
+        <h3 class="font-bold text-sky-300">Span ID</h3>
+        <p class="text-sm mt-1">Identifies one individual operation within that journey.</p>
+        <p class="font-mono text-xs text-slate-400 mt-2">span_id = span_002</p>
+      </div>
+    </div>
+    <p class="text-sm text-slate-300 mt-3">One trace can contain many spans. For example, one span for the Claude API call, another for order lookup and another for refund processing.</p>
+    <div class="bg-teal-950 p-3 rounded-lg mt-3">
+      <p class="font-semibold text-teal-200">Easy memory trick</p>
+      <p class="text-sm mt-1">Trace ID = whole journey. Span ID = one step in the journey.</p>
+    </div>
+  </div>
+
+  <div class="bg-slate-800 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-teal-300">5. Example: Finding a Slow Agent</h2>
+    <p class="text-sm text-slate-300 mt-2">A customer reports that a refund took 12 seconds. Your monitoring system shows:</p>
+    <div class="overflow-x-auto mt-3">
+      <table class="w-full text-sm border border-slate-700">
+        <tr class="bg-slate-700"><th class="p-3 text-left">Operation</th><th class="p-3 text-left">Duration</th></tr>
+        <tr><td class="p-3 border-t border-slate-700">Application processing</td><td class="p-3 border-t border-slate-700">0.5 sec</td></tr>
+        <tr><td class="p-3 border-t border-slate-700">Claude API call</td><td class="p-3 border-t border-slate-700">2 sec</td></tr>
+        <tr><td class="p-3 border-t border-slate-700">Order lookup tool</td><td class="p-3 border-t border-slate-700">1 sec</td></tr>
+        <tr><td class="p-3 border-t border-slate-700">Payment service</td><td class="p-3 border-t border-slate-700">8.5 sec</td></tr>
+        <tr class="bg-slate-700"><td class="p-3 font-bold">Total</td><td class="p-3 font-bold">12 sec</td></tr>
+      </table>
+    </div>
+    <p class="text-emerald-300 font-semibold mt-3">Finding: The payment service is the main bottleneck.</p>
+    <p class="text-sm text-slate-300 mt-1">Without tracing, developers might waste time optimising Claude when the actual delay is in the payment service.</p>
+  </div>
+
+  <div class="bg-slate-800 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-teal-300">6. What Should You Log?</h2>
+    <ul class="list-disc ml-6 mt-3 space-y-2 text-sm text-slate-300">
+      <li>Trace ID and span ID.</li>
+      <li>API request ID, when available.</li>
+      <li>Timestamp and operation name.</li>
+      <li>Model identifier and application version.</li>
+      <li>Latency and token usage.</li>
+      <li>Tool name, outcome and error category.</li>
+      <li>Retry count and final status.</li>
+    </ul>
+    <div class="bg-red-950 border border-red-800 p-3 rounded-lg mt-4">
+      <p class="font-semibold text-red-300">Privacy warning</p>
+      <p class="text-sm mt-1">Do not log API keys, passwords, access tokens or unnecessary personal data. Redact sensitive information and restrict access to logs.</p>
+    </div>
+  </div>
+
+  <div class="bg-slate-800 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-teal-300">7. Logging vs Metrics vs Traces</h2>
+    <div class="space-y-3 mt-3">
+      <div class="bg-slate-900 p-3 rounded-lg">
+        <p class="font-bold text-emerald-300">Logs – What happened?</p>
+        <p class="text-sm text-slate-300 mt-1">Example: Refund tool returned a timeout error.</p>
+      </div>
+      <div class="bg-slate-900 p-3 rounded-lg">
+        <p class="font-bold text-sky-300">Metrics – How much or how often?</p>
+        <p class="text-sm text-slate-300 mt-1">Example: 8% of refund requests timed out.</p>
+      </div>
+      <div class="bg-slate-900 p-3 rounded-lg">
+        <p class="font-bold text-purple-300">Traces – Where did it happen?</p>
+        <p class="text-sm text-slate-300 mt-1">Example: The payment service caused most of the delay.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-teal-950 border border-teal-700 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-teal-200">8. CCAO-F Scenario Challenge</h2>
+    <p class="mt-3 text-sm">A Claude-powered banking assistant sometimes takes 15 seconds to answer. The application uses Claude, an account lookup tool and a transaction service. Developers know the total response time but cannot identify which component causes the delay.</p>
+    <p class="font-semibold mt-3">What is the BEST solution?</p>
+    <div class="space-y-2 text-sm mt-3">
+      <p class="bg-slate-800 p-3 rounded-lg">A. Increase the model's maximum token limit.</p>
+      <p class="bg-slate-800 p-3 rounded-lg">B. Add distributed tracing with trace IDs and spans across the model call and backend tools.</p>
+      <p class="bg-slate-800 p-3 rounded-lg">C. Increase the number of application servers immediately.</p>
+      <p class="bg-slate-800 p-3 rounded-lg">D. Disable all logs to improve response speed.</p>
+    </div>
+    <details class="mt-4 bg-slate-900 rounded-lg p-4">
+      <summary class="cursor-pointer text-teal-300 font-semibold">Reveal answer</summary>
+      <p class="text-emerald-300 font-bold mt-3">Correct answer: B</p>
+      <p class="text-sm mt-2">The problem is identifying the bottleneck. Distributed tracing reveals the time spent in each component before deciding what to optimise.</p>
+    </details>
+  </div>
+
+  <div class="bg-slate-800 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-teal-300">9. Notebook Revision</h2>
+    <ul class="list-disc ml-6 mt-3 space-y-2 text-sm text-slate-300">
+      <li>Metadata = additional request information.</li>
+      <li>Request ID = identifier for an individual API request.</li>
+      <li>Trace ID = identifier for the entire request journey.</li>
+      <li>Span ID = identifier for an individual operation.</li>
+      <li>Logs = events and details.</li>
+      <li>Metrics = numerical measurements.</li>
+      <li>Traces = flow and timing across services.</li>
+      <li>Never expose secrets in logs or metadata.</li>
+    </ul>
+  </div>
+
+</main>
+<footer class="text-center text-slate-500 text-sm p-6">Claude CCAO-F Preparation • Page 56</footer>
+</body>
+</html>
