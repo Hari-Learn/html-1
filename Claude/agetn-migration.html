@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Claude CCAO-F - Page 54</title>
+</head>
+<body class="bg-slate-950 text-slate-100">
+<header class="bg-indigo-700 p-6">
+  <p class="text-indigo-200 text-sm">CLAUDE CCAO-F • PAGE 54</p>
+  <h1 class="text-2xl font-bold mt-2">Model Migration & Compatibility Testing</h1>
+  <p class="mt-2 text-indigo-100">How to upgrade Claude models without breaking your application.</p>
+</header>
+<main class="max-w-4xl mx-auto p-5 space-y-6">
+
+  <div class="bg-slate-800 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-indigo-300">1. What is Model Migration?</h2>
+    <p class="mt-3">Model migration means moving an application from one model version to another.</p>
+    <p class="mt-2 text-slate-300">Example: Your customer-support application uses one Claude model today. You want to move to a newer model for better reasoning, speed or cost.</p>
+    <div class="bg-indigo-950 p-4 rounded-lg mt-4">
+      <p class="font-semibold text-indigo-200">ELI10 analogy</p>
+      <p class="text-sm mt-1">Imagine replacing an experienced employee with a new employee. The new employee may be faster, but you must check whether they follow the same procedures and produce acceptable results.</p>
+    </div>
+  </div>
+
+  <div class="bg-slate-800 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-indigo-300">2. Why Can a Model Upgrade Break Things?</h2>
+    <div class="space-y-3 mt-3">
+      <div class="border border-slate-700 p-3 rounded-lg">
+        <h3 class="font-semibold text-amber-300">Different response style</h3>
+        <p class="text-sm text-slate-300 mt-1">A new model may produce longer or shorter responses.</p>
+      </div>
+      <div class="border border-slate-700 p-3 rounded-lg">
+        <h3 class="font-semibold text-amber-300">Different tool behaviour</h3>
+        <p class="text-sm text-slate-300 mt-1">Tool selection, argument construction or sequencing may change.</p>
+      </div>
+      <div class="border border-slate-700 p-3 rounded-lg">
+        <h3 class="font-semibold text-amber-300">Different instruction following</h3>
+        <p class="text-sm text-slate-300 mt-1">The new model may interpret an ambiguous prompt differently.</p>
+      </div>
+      <div class="border border-slate-700 p-3 rounded-lg">
+        <h3 class="font-semibold text-amber-300">Different cost and latency</h3>
+        <p class="text-sm text-slate-300 mt-1">The upgrade may change token usage, response time and overall cost.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-800 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-indigo-300">3. The Safe Migration Process</h2>
+    <ol class="list-decimal ml-6 mt-3 space-y-3 text-sm text-slate-300">
+      <li><b class="text-white">Identify the current baseline.</b> Record accuracy, latency, cost, tool success and safety performance.</li>
+      <li><b class="text-white">Create a representative test set.</b> Include normal, difficult, ambiguous and adversarial requests.</li>
+      <li><b class="text-white">Run both models on the same cases.</b> Compare outputs under equivalent conditions.</li>
+      <li><b class="text-white">Evaluate the differences.</b> Check task success, policy compliance, tool calls and user experience.</li>
+      <li><b class="text-white">Deploy gradually.</b> Send a small percentage of traffic to the new model.</li>
+      <li><b class="text-white">Monitor and roll back if necessary.</b> Keep the previous working configuration available.</li>
+    </ol>
+  </div>
+
+  <div class="bg-slate-800 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-indigo-300">4. Shadow Testing vs Canary Deployment</h2>
+    <div class="grid md:grid-cols-2 gap-3 mt-4">
+      <div class="bg-slate-900 rounded-lg p-4">
+        <h3 class="font-bold text-emerald-300">Shadow testing</h3>
+        <p class="text-sm mt-2">The new model receives copied requests and its responses are evaluated, but users still receive the old model's answer.</p>
+        <p class="text-xs text-slate-400 mt-3">Useful for observing behaviour without exposing users to the new output.</p>
+      </div>
+      <div class="bg-slate-900 rounded-lg p-4">
+        <h3 class="font-bold text-sky-300">Canary deployment</h3>
+        <p class="text-sm mt-2">A small percentage of real users receive responses from the new model.</p>
+        <p class="text-xs text-slate-400 mt-3">Useful for measuring real production impact gradually.</p>
+      </div>
+    </div>
+    <p class="text-amber-300 text-sm mt-3">Exam trap: Shadow testing does not mean users are receiving the new model's answers.</p>
+  </div>
+
+  <div class="bg-slate-800 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-indigo-300">5. What Should You Compare?</h2>
+    <div class="overflow-x-auto mt-3">
+      <table class="w-full text-sm border border-slate-700">
+        <tr class="bg-slate-700"><th class="p-3 text-left">Metric</th><th class="p-3 text-left">Question</th></tr>
+        <tr><td class="p-3 border-t border-slate-700">Task success</td><td class="p-3 border-t border-slate-700">Does it solve the user's problem?</td></tr>
+        <tr><td class="p-3 border-t border-slate-700">Tool accuracy</td><td class="p-3 border-t border-slate-700">Does it call the correct tools?</td></tr>
+        <tr><td class="p-3 border-t border-slate-700">Safety</td><td class="p-3 border-t border-slate-700">Does it respect boundaries?</td></tr>
+        <tr><td class="p-3 border-t border-slate-700">Latency</td><td class="p-3 border-t border-slate-700">How long does it take?</td></tr>
+        <tr><td class="p-3 border-t border-slate-700">Cost</td><td class="p-3 border-t border-slate-700">How much does each task cost?</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="bg-indigo-950 border border-indigo-700 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-indigo-200">6. CCAO-F Scenario Challenge</h2>
+    <p class="mt-3 text-sm">A company migrates its support agent to a newer Claude model. Internal tests look good, but the team is concerned about unexpected production behaviour. They want to validate the new model without changing what customers see yet.</p>
+    <p class="font-semibold mt-3">What is the BEST next step?</p>
+    <div class="space-y-2 text-sm mt-3">
+      <p class="bg-slate-800 p-3 rounded-lg">A. Immediately route all customers to the new model.</p>
+      <p class="bg-slate-800 p-3 rounded-lg">B. Run shadow testing with representative production requests and compare results against the current model.</p>
+      <p class="bg-slate-800 p-3 rounded-lg">C. Increase temperature to make the new model more flexible.</p>
+      <p class="bg-slate-800 p-3 rounded-lg">D. Stop evaluating because the new model is newer.</p>
+    </div>
+    <details class="mt-4 bg-slate-900 rounded-lg p-4">
+      <summary class="cursor-pointer text-indigo-300 font-semibold">Reveal answer</summary>
+      <p class="text-emerald-300 font-bold mt-3">Correct answer: B</p>
+      <p class="text-sm mt-2">Shadow testing lets the team observe the new model's behaviour while keeping the existing customer-facing response unchanged.</p>
+    </details>
+  </div>
+
+  <div class="bg-slate-800 rounded-xl p-5">
+    <h2 class="text-xl font-bold text-indigo-300">7. Notebook Revision</h2>
+    <ul class="list-disc ml-6 mt-3 space-y-2 text-sm text-slate-300">
+      <li>Migration = moving to another model version.</li>
+      <li>Baseline = current performance before migration.</li>
+      <li>Shadow testing = evaluate new output without showing it to users.</li>
+      <li>Canary = expose a small percentage of users to the new version.</li>
+      <li>Rollback = return to the previous working version.</li>
+      <li>Compare quality, safety, latency, cost and tool behaviour.</li>
+    </ul>
+  </div>
+</main>
+<footer class="text-center text-slate-500 text-sm p-6">Claude CCAO-F Preparation • Page 54</footer>
+</body>
+</html>
